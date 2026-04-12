@@ -5442,36 +5442,57 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <!-- Breathing center glow -->
       <rect class="ga-breathe" width="340" height="260" fill="url(#ga-cg)"/>
       <!-- Glow halos -->
-      <circle class="ga-dot d1" cx="50" cy="40" r="30" fill="url(#ga-gg)"/>
-      <circle class="ga-dot d2" cx="290" cy="40" r="30" fill="url(#ga-gc)"/>
-      <circle class="ga-dot d3" cx="50" cy="220" r="30" fill="url(#ga-gt)"/>
-      <circle class="ga-dot d4" cx="290" cy="220" r="30" fill="url(#ga-gb)"/>
-      <!-- Edges draw -->
-      <line class="ga-line l-top" x1="50" y1="40" x2="290" y2="40" stroke="#252542" stroke-width="2" style="--len:240"/>
-      <line class="ga-line l-right" x1="290" y1="40" x2="290" y2="220" stroke="#252542" stroke-width="2" style="--len:180"/>
-      <line class="ga-line l-bottom" x1="290" y1="220" x2="50" y2="220" stroke="#252542" stroke-width="2" style="--len:240"/>
-      <line class="ga-line l-left" x1="50" y1="220" x2="50" y2="40" stroke="#252542" stroke-width="2" style="--len:180"/>
-      <!-- Body fill -->
-      <rect class="ga-fill2" x="50" y="40" width="240" height="180" rx="14" fill="#12122a"/>
-      <!-- Flap diagonals -->
-      <line class="ga-line l-flap1" x1="50" y1="40" x2="170" y2="140" stroke="#D4A843" stroke-width="2.5" stroke-linecap="round" style="--len:160"/>
-      <line class="ga-line l-flap2" x1="290" y1="40" x2="170" y2="140" stroke="#D4A843" stroke-width="2.5" stroke-linecap="round" style="--len:160"/>
-      <!-- Flap fill -->
-      <g class="ga-fill" filter="url(#ga-gf)"><path d="M50 40 L170 140 L290 40 Z" fill="url(#ga-fl)"/></g>
-      <!-- Flap highlight -->
-      <path class="ga-highlight" d="M56 43 L170 134 L284 43" fill="none" stroke="#fff" stroke-width=".5"/>
-      <!-- Inner V -->
-      <path class="ga-glow" d="M50 220 L170 155 L290 220" stroke="#252542" stroke-width=".8"/>
-      <!-- Four dots -->
-      <circle class="ga-dot d1" cx="50" cy="40" r="14" fill="#D4A843"/>
-      <circle class="ga-dot d2" cx="290" cy="40" r="14" fill="#D46B7E"/>
-      <circle class="ga-dot d3" cx="50" cy="220" r="14" fill="#43B8A0"/>
-      <circle class="ga-dot d4" cx="290" cy="220" r="14" fill="#5B8FD4"/>
-      <!-- Dot highlights -->
-      <circle class="ga-highlight" cx="46" cy="36" r="4.5" fill="#fff"/>
-      <circle class="ga-highlight" cx="286" cy="36" r="4.5" fill="#fff" style="animation-delay:4.3s"/>
-      <circle class="ga-highlight" cx="46" cy="216" r="4.5" fill="#fff" style="animation-delay:4.4s"/>
-      <circle class="ga-highlight" cx="286" cy="216" r="4.5" fill="#fff" style="animation-delay:4.5s"/>
+      <circle class="ga-dot d1" cx="70" cy="50" r="30" fill="url(#ga-gg)"/>
+      <circle class="ga-dot d2" cx="270" cy="50" r="30" fill="url(#ga-gc)"/>
+      <circle class="ga-dot d3" cx="70" cy="200" r="30" fill="url(#ga-gt)"/>
+      <circle class="ga-dot d4" cx="270" cy="200" r="30" fill="url(#ga-gb)"/>
+      <!-- Edges draw (rectangle connecting the people) -->
+      <line class="ga-line l-top" x1="70" y1="50" x2="270" y2="50" stroke="#D4A843" stroke-width="2" style="--len:200"/>
+      <line class="ga-line l-right" x1="270" y1="50" x2="270" y2="200" stroke="#D4A843" stroke-width="2" style="--len:150"/>
+      <line class="ga-line l-bottom" x1="270" y1="200" x2="70" y2="200" stroke="#D4A843" stroke-width="2" style="--len:200"/>
+      <line class="ga-line l-left" x1="70" y1="200" x2="70" y2="50" stroke="#D4A843" stroke-width="2" style="--len:150"/>
+      <!-- Cross-connection lines (the exchange) -->
+      <line class="ga-line l-flap1" x1="70" y1="50" x2="270" y2="200" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" opacity="0.6" style="--len:280"/>
+      <line class="ga-line l-flap2" x1="270" y1="50" x2="70" y2="200" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" opacity="0.6" style="--len:280"/>
+      <!-- Teal cross-connections -->
+      <line class="ga-fill" x1="70" y1="50" x2="270" y2="50" stroke="#43B8A0" stroke-width="1" opacity="0.4" style="transform:translateY(8px)"/>
+      <line class="ga-fill" x1="70" y1="200" x2="270" y2="200" stroke="#43B8A0" stroke-width="1" opacity="0.4" style="transform:translateY(-8px)"/>
+      <line class="ga-fill2" x1="70" y1="200" x2="270" y2="50" stroke="#43B8A0" stroke-width="1" opacity="0.3"/>
+      <!-- Center node (where value meets) -->
+      <circle class="ga-glow" cx="170" cy="125" r="8" fill="rgba(212,168,83,0.2)" stroke="rgba(212,168,83,0.3)" stroke-width="1"/>
+      <circle class="ga-highlight" cx="170" cy="125" r="3" fill="#D4A843" opacity="0"/>
+      <!-- Person 1: Top-left (gold) -->
+      <g class="ga-dot d1">
+        <circle cx="70" cy="40" r="12" fill="none" stroke="#D4A843" stroke-width="2"/>
+        <circle cx="66" cy="37" r="2" fill="#D46B7E" opacity="0.7"/>
+        <circle cx="74" cy="37" r="2" fill="#43B8A0" opacity="0.7"/>
+        <line x1="70" y1="52" x2="70" y2="75" stroke="#D4A843" stroke-width="1.5"/>
+        <line x1="60" y1="68" x2="80" y2="68" stroke="#D4A843" stroke-width="1.5"/>
+      </g>
+      <!-- Person 2: Top-right (pink) -->
+      <g class="ga-dot d2">
+        <circle cx="270" cy="40" r="12" fill="none" stroke="#D46B7E" stroke-width="2"/>
+        <circle cx="266" cy="37" r="2" fill="#43B8A0" opacity="0.7"/>
+        <circle cx="274" cy="37" r="2" fill="#D4A843" opacity="0.7"/>
+        <line x1="270" y1="52" x2="270" y2="75" stroke="#D46B7E" stroke-width="1.5"/>
+        <line x1="260" y1="68" x2="280" y2="68" stroke="#D46B7E" stroke-width="1.5"/>
+      </g>
+      <!-- Person 3: Bottom-left (teal) -->
+      <g class="ga-dot d3">
+        <circle cx="70" cy="190" r="12" fill="none" stroke="#43B8A0" stroke-width="2"/>
+        <circle cx="66" cy="187" r="2" fill="#D4A843" opacity="0.7"/>
+        <circle cx="74" cy="187" r="2" fill="#5B8FD4" opacity="0.7"/>
+        <line x1="70" y1="202" x2="70" y2="225" stroke="#43B8A0" stroke-width="1.5"/>
+        <line x1="60" y1="218" x2="80" y2="218" stroke="#43B8A0" stroke-width="1.5"/>
+      </g>
+      <!-- Person 4: Bottom-right (blue) -->
+      <g class="ga-dot d4">
+        <circle cx="270" cy="190" r="12" fill="none" stroke="#5B8FD4" stroke-width="2"/>
+        <circle cx="266" cy="187" r="2" fill="#D46B7E" opacity="0.7"/>
+        <circle cx="274" cy="187" r="2" fill="#D4A843" opacity="0.7"/>
+        <line x1="270" y1="202" x2="270" y2="225" stroke="#5B8FD4" stroke-width="1.5"/>
+        <line x1="260" y1="218" x2="280" y2="218" stroke="#5B8FD4" stroke-width="1.5"/>
+      </g>
     </svg>
   </div>
   <div class="ga-text" style="text-align:center;margin-top:24px;opacity:0" id="gntLogoText">
