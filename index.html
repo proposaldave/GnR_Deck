@@ -4986,6 +4986,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- SLIDE 10: The Teaser (3.0 vs Data Drip) -->
 <div class="casey-slide ds-intro" id="cs-10">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Matchmaking in Social Sports</div>
 
   <div class="teaser-container" style="max-width:900px">
     <div class="teaser-question" style="margin-bottom:24px">
@@ -5011,7 +5012,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         </svg>
         <div style="font-family:'Playfair Display',serif;font-size:clamp(48px,8vw,72px);font-weight:900;color:var(--red,#e04040);margin:8px 0;line-height:1">3.0</div>
         <div style="font-size:0.72rem;color:rgba(232,224,208,0.4)">One number. One dimension.</div>
-        <div style="font-size:0.6rem;color:rgba(232,224,208,0.25);margin-top:4px">That&rsquo;s all anyone knows about you.</div>
       </div>
 
       <!-- ARROW -->
@@ -5022,54 +5022,87 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">The New Way</div>
 
         <!-- Central person being digitized -->
-        <svg id="dataDripSvg" width="100%" height="220" viewBox="0 0 380 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Central person (larger, glowing) -->
-          <circle cx="190" cy="90" r="22" fill="rgba(212,168,83,0.08)" stroke="#D4A843" stroke-width="2"/>
-          <circle cx="190" cy="82" r="8" fill="none" stroke="#D4A843" stroke-width="1.5" opacity="0.8"/>
-          <line x1="190" y1="98" x2="190" y2="130" stroke="#D4A843" stroke-width="1.5" opacity="0.6"/>
-          <line x1="175" y1="112" x2="205" y2="112" stroke="#D4A843" stroke-width="1.5" opacity="0.6"/>
+        <svg id="dataDripSvg" width="100%" height="280" viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Central person (YOU — larger, glowing gold) -->
+          <circle cx="220" cy="120" r="14" fill="none" stroke="#D4A843" stroke-width="2.5"/>
+          <line x1="220" y1="134" x2="220" y2="175" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
+          <line x1="200" y1="152" x2="240" y2="152" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
+          <line x1="220" y1="175" x2="204" y2="200" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
+          <line x1="220" y1="175" x2="236" y2="200" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
+          <text x="220" y="218" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#D4A843" font-weight="700" opacity="0.8">YOU</text>
           <!-- Glow -->
-          <circle cx="190" cy="100" r="30" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0.15">
-            <animate attributeName="r" values="28;36;28" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.15;0.05;0.15" dur="3s" repeatCount="indefinite"/>
+          <circle cx="220" cy="150" r="40" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0.12">
+            <animate attributeName="r" values="38;48;38" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.12;0.04;0.12" dur="3s" repeatCount="indefinite"/>
           </circle>
 
-          <!-- Surrounding people with data lines flowing IN -->
-          <!-- Person 1: top-left -->
-          <g><circle cx="60" cy="30" r="6" fill="none" stroke="#43B8A0" stroke-width="1.2"/><circle cx="60" cy="26" r="2.5" fill="none" stroke="#43B8A0" stroke-width="0.8" opacity="0.7"/><line x1="60" y1="36" x2="60" y2="46" stroke="#43B8A0" stroke-width="0.8" opacity="0.5"/></g>
-          <line x1="70" y1="38" x2="170" y2="85" stroke="#43B8A0" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" repeatCount="indefinite"/></line>
-          <circle r="2" fill="#43B8A0" opacity="0.7"><animateMotion dur="1.8s" repeatCount="indefinite" path="M70,38 L170,85"/></circle>
-          <text x="52" y="58" font-family="Manrope,sans-serif" font-size="6" fill="#43B8A0" opacity="0.5">invites you back</text>
+          <!-- Person 1: top-left (teal) -->
+          <g>
+            <circle cx="65" cy="30" r="10" fill="none" stroke="#43B8A0" stroke-width="1.8"/>
+            <line x1="65" y1="40" x2="65" y2="68" stroke="#43B8A0" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="50" y1="52" x2="80" y2="52" stroke="#43B8A0" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="65" y1="68" x2="53" y2="86" stroke="#43B8A0" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="65" y1="68" x2="77" y2="86" stroke="#43B8A0" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <line x1="80" y1="50" x2="200" y2="125" stroke="#43B8A0" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" repeatCount="indefinite"/></line>
+          <circle r="2.5" fill="#43B8A0" opacity="0.8"><animateMotion dur="1.8s" repeatCount="indefinite" path="M80,50 L200,125"/></circle>
+          <text x="56" y="98" font-family="Manrope,sans-serif" font-size="7" fill="#43B8A0" opacity="0.6" text-anchor="middle">invites you back</text>
 
-          <!-- Person 2: top-right -->
-          <g><circle cx="320" cy="30" r="6" fill="none" stroke="#D46B7E" stroke-width="1.2"/><circle cx="320" cy="26" r="2.5" fill="none" stroke="#D46B7E" stroke-width="0.8" opacity="0.7"/><line x1="320" y1="36" x2="320" y2="46" stroke="#D46B7E" stroke-width="0.8" opacity="0.5"/></g>
-          <line x1="310" y1="38" x2="210" y2="85" stroke="#D46B7E" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.8s" repeatCount="indefinite"/></line>
-          <circle r="2" fill="#D46B7E" opacity="0.7"><animateMotion dur="2s" repeatCount="indefinite" path="M310,38 L210,85"/></circle>
-          <text x="296" y="58" font-family="Manrope,sans-serif" font-size="6" fill="#D46B7E" opacity="0.5">picks you first</text>
+          <!-- Person 2: top-right (pink) -->
+          <g>
+            <circle cx="375" cy="30" r="10" fill="none" stroke="#D46B7E" stroke-width="1.8"/>
+            <line x1="375" y1="40" x2="375" y2="68" stroke="#D46B7E" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="360" y1="52" x2="390" y2="52" stroke="#D46B7E" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="375" y1="68" x2="363" y2="86" stroke="#D46B7E" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="375" y1="68" x2="387" y2="86" stroke="#D46B7E" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <line x1="360" y1="50" x2="240" y2="125" stroke="#D46B7E" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.8s" repeatCount="indefinite"/></line>
+          <circle r="2.5" fill="#D46B7E" opacity="0.8"><animateMotion dur="2s" repeatCount="indefinite" path="M360,50 L240,125"/></circle>
+          <text x="375" y="98" font-family="Manrope,sans-serif" font-size="7" fill="#D46B7E" opacity="0.6" text-anchor="middle">picks you first</text>
 
-          <!-- Person 3: left -->
-          <g><circle cx="30" cy="120" r="6" fill="none" stroke="#5B8FD4" stroke-width="1.2"/><circle cx="30" cy="116" r="2.5" fill="none" stroke="#5B8FD4" stroke-width="0.8" opacity="0.7"/><line x1="30" y1="126" x2="30" y2="136" stroke="#5B8FD4" stroke-width="0.8" opacity="0.5"/></g>
-          <line x1="42" y1="120" x2="168" y2="95" stroke="#5B8FD4" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2.2s" repeatCount="indefinite"/></line>
-          <circle r="2" fill="#5B8FD4" opacity="0.7"><animateMotion dur="2.2s" repeatCount="indefinite" path="M42,120 L168,95"/></circle>
-          <text x="14" y="148" font-family="Manrope,sans-serif" font-size="6" fill="#5B8FD4" opacity="0.5">rates you ★★★★★</text>
+          <!-- Person 3: left (blue) -->
+          <g>
+            <circle cx="22" cy="148" r="10" fill="none" stroke="#5B8FD4" stroke-width="1.8"/>
+            <line x1="22" y1="158" x2="22" y2="186" stroke="#5B8FD4" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="7" y1="170" x2="37" y2="170" stroke="#5B8FD4" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="22" y1="186" x2="10" y2="204" stroke="#5B8FD4" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="22" y1="186" x2="34" y2="204" stroke="#5B8FD4" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <line x1="38" y1="155" x2="200" y2="140" stroke="#5B8FD4" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2.2s" repeatCount="indefinite"/></line>
+          <circle r="2.5" fill="#5B8FD4" opacity="0.8"><animateMotion dur="2.2s" repeatCount="indefinite" path="M38,155 L200,140"/></circle>
+          <text x="22" y="216" font-family="Manrope,sans-serif" font-size="7" fill="#5B8FD4" opacity="0.6" text-anchor="middle">rates you ★★★★★</text>
 
-          <!-- Person 4: right -->
-          <g><circle cx="350" cy="120" r="6" fill="none" stroke="#E8CC60" stroke-width="1.2"/><circle cx="350" cy="116" r="2.5" fill="none" stroke="#E8CC60" stroke-width="0.8" opacity="0.7"/><line x1="350" y1="126" x2="350" y2="136" stroke="#E8CC60" stroke-width="0.8" opacity="0.5"/></g>
-          <line x1="338" y1="120" x2="212" y2="95" stroke="#E8CC60" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.6s" repeatCount="indefinite"/></line>
-          <circle r="2" fill="#E8CC60" opacity="0.7"><animateMotion dur="1.6s" repeatCount="indefinite" path="M338,120 L212,95"/></circle>
-          <text x="322" y="148" font-family="Manrope,sans-serif" font-size="6" fill="#E8CC60" opacity="0.5">never cancels</text>
+          <!-- Person 4: right (yellow) -->
+          <g>
+            <circle cx="418" cy="148" r="10" fill="none" stroke="#E8CC60" stroke-width="1.8"/>
+            <line x1="418" y1="158" x2="418" y2="186" stroke="#E8CC60" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="403" y1="170" x2="433" y2="170" stroke="#E8CC60" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="418" y1="186" x2="406" y2="204" stroke="#E8CC60" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="418" y1="186" x2="430" y2="204" stroke="#E8CC60" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <line x1="402" y1="155" x2="240" y2="140" stroke="#E8CC60" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.6s" repeatCount="indefinite"/></line>
+          <circle r="2.5" fill="#E8CC60" opacity="0.8"><animateMotion dur="1.6s" repeatCount="indefinite" path="M402,155 L240,140"/></circle>
+          <text x="418" y="216" font-family="Manrope,sans-serif" font-size="7" fill="#E8CC60" opacity="0.6" text-anchor="middle">never cancels</text>
 
-          <!-- Person 5: bottom-left -->
-          <g><circle cx="90" cy="195" r="6" fill="none" stroke="#c76bdb" stroke-width="1.2"/><circle cx="90" cy="191" r="2.5" fill="none" stroke="#c76bdb" stroke-width="0.8" opacity="0.7"/><line x1="90" y1="201" x2="90" y2="211" stroke="#c76bdb" stroke-width="0.8" opacity="0.5"/></g>
-          <line x1="100" y1="190" x2="180" y2="110" stroke="#c76bdb" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2s" repeatCount="indefinite"/></line>
-          <circle r="2" fill="#c76bdb" opacity="0.7"><animateMotion dur="2s" repeatCount="indefinite" path="M100,190 L180,110"/></circle>
-          <text x="64" y="216" font-family="Manrope,sans-serif" font-size="6" fill="#c76bdb" opacity="0.5">refers friends</text>
+          <!-- Person 5: bottom-left (purple) -->
+          <g>
+            <circle cx="100" cy="240" r="10" fill="none" stroke="#c76bdb" stroke-width="1.8"/>
+            <line x1="100" y1="250" x2="100" y2="270" stroke="#c76bdb" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="85" y1="258" x2="115" y2="258" stroke="#c76bdb" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <line x1="112" y1="238" x2="210" y2="175" stroke="#c76bdb" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2s" repeatCount="indefinite"/></line>
+          <circle r="2.5" fill="#c76bdb" opacity="0.8"><animateMotion dur="2s" repeatCount="indefinite" path="M112,238 L210,175"/></circle>
+          <text x="100" y="280" font-family="Manrope,sans-serif" font-size="7" fill="#c76bdb" opacity="0.6" text-anchor="middle">refers friends</text>
 
-          <!-- Person 6: bottom-right -->
-          <g><circle cx="290" cy="195" r="6" fill="none" stroke="#4ae8c1" stroke-width="1.2"/><circle cx="290" cy="191" r="2.5" fill="none" stroke="#4ae8c1" stroke-width="0.8" opacity="0.7"/><line x1="290" y1="201" x2="290" y2="211" stroke="#4ae8c1" stroke-width="0.8" opacity="0.5"/></g>
-          <line x1="280" y1="190" x2="200" y2="110" stroke="#4ae8c1" stroke-width="0.8" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite"/></line>
-          <circle r="2" fill="#4ae8c1" opacity="0.7"><animateMotion dur="1.4s" repeatCount="indefinite" path="M280,190 L200,110"/></circle>
-          <text x="264" y="216" font-family="Manrope,sans-serif" font-size="6" fill="#4ae8c1" opacity="0.5">says "best group"</text>
+          <!-- Person 6: bottom-right (mint) -->
+          <g>
+            <circle cx="340" cy="240" r="10" fill="none" stroke="#4ae8c1" stroke-width="1.8"/>
+            <line x1="340" y1="250" x2="340" y2="270" stroke="#4ae8c1" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="325" y1="258" x2="355" y2="258" stroke="#4ae8c1" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <line x1="328" y1="238" x2="230" y2="175" stroke="#4ae8c1" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite"/></line>
+          <circle r="2.5" fill="#4ae8c1" opacity="0.8"><animateMotion dur="1.4s" repeatCount="indefinite" path="M328,238 L230,175"/></circle>
+          <text x="340" y="280" font-family="Manrope,sans-serif" font-size="7" fill="#4ae8c1" opacity="0.6" text-anchor="middle">says &quot;best group&quot;</text>
         </svg>
 
         <div style="font-size:0.72rem;color:rgba(232,224,208,0.5);margin-top:4px">Who you are, digitized by the people who experience you.</div>
@@ -5081,7 +5114,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- SLIDE 11 -->
 <div class="casey-slide ds-focus" id="cs-11">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">How It Starts</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Today at New England Pickleball Club</div>
 <section id="s3b">
 <div class="orb orb-m" style="width:500px;height:500px;top:-10%;left:20%"></div>
 <div class="inner">
@@ -6404,39 +6437,33 @@ function openPanel(key, e) {
       // (bottom label removed)
     },
 
-    // 3. PEAK HUMAN VALUE — Ascending golden steps
+    // 3. PEAK HUMAN VALUE — Concentric rings of compounding value
     peakvalue(svg, color) {
-      const stages = ['Schedule', 'Measure', 'Automate', 'Match', 'Connect', 'Compound', 'Peak'];
-      const startX = 80, stepW = 70, baseY = 340;
-      stages.forEach((label, i) => {
-        const x = startX + i * stepW;
-        const h = 30 + i * 38;
-        const y = baseY - h;
+      const cx = 300, cy = 200;
+      const rings = [
+        { r: 40, label: 'You', color: '#d4a853', opacity: 0.8 },
+        { r: 90, label: 'Your people', color: color, opacity: 0.5 },
+        { r: 140, label: 'Their people', color: color, opacity: 0.3 },
+        { r: 190, label: 'The community', color: color, opacity: 0.15 },
+      ];
+      rings.forEach((ring, i) => {
         const g = svgEl('g', { opacity: '0' });
-        // Bar
-        const intensity = 0.3 + (i / stages.length) * 0.7;
-        const barColor = i === stages.length - 1 ? '#d4a853' : color;
-        g.appendChild(svgEl('rect', { x, y, width: stepW - 6, height: h, rx: 6, fill: barColor, opacity: String(intensity) }));
-        // Glow on peak
-        if (i === stages.length - 1) {
-          g.appendChild(svgEl('rect', { x: x - 2, y: y - 2, width: stepW - 2, height: h + 4, rx: 8, fill: 'none', stroke: '#d4a853', 'stroke-width': '2', opacity: '0.6' }));
-        }
-        // Label
-        const t = svgEl('text', { x: x + (stepW - 6) / 2, y: baseY + 18, 'text-anchor': 'middle', 'font-size': '10', fill: 'rgba(232,224,208,0.5)', 'font-family': 'DM Sans, sans-serif', 'font-weight': '600' });
-        t.textContent = label;
+        g.appendChild(svgEl('circle', { cx, cy, r: ring.r, fill: 'none', stroke: ring.color, 'stroke-width': i === 0 ? '2.5' : '1.2', opacity: String(ring.opacity), 'stroke-dasharray': i === 0 ? 'none' : '4 3' }));
+        const t = svgEl('text', { x: cx, y: cy - ring.r + 16, 'text-anchor': 'middle', 'font-size': '10', fill: ring.color, 'font-family': 'DM Sans, sans-serif', 'font-weight': '600', opacity: String(ring.opacity + 0.2) });
+        t.textContent = ring.label;
         g.appendChild(t);
         svg.appendChild(g);
-        setTimeout(() => { g.style.transition = 'opacity 0.5s'; g.setAttribute('opacity', '1'); }, 300 + i * 180);
+        setTimeout(() => { g.style.transition = 'opacity 0.6s'; g.setAttribute('opacity', '1'); }, 300 + i * 300);
       });
-      // Arrow
-      const arrow = svgEl('path', { d: 'M90 80 L520 80', stroke: 'rgba(232,224,208,0.15)', 'stroke-width': '1', 'stroke-dasharray': '4 4', fill: 'none', opacity: '0' });
-      svg.appendChild(arrow);
-      setTimeout(() => { arrow.style.transition = 'opacity 0.6s'; arrow.setAttribute('opacity', '1'); }, 1800);
-      const arrowLabel = svgEl('text', { x: 520, y: 70, 'text-anchor': 'end', 'font-size': '11', fill: '#d4a853', 'font-family': 'DM Sans, sans-serif', 'font-weight': '700' });
-      arrowLabel.textContent = 'Give more, get more. Measured and reciprocated. →';
-      arrowLabel.setAttribute('opacity', '0');
-      svg.appendChild(arrowLabel);
-      setTimeout(() => { arrowLabel.style.transition = 'opacity 0.6s'; arrowLabel.setAttribute('opacity', '0.7'); }, 2000);
+      // Center glow
+      const glow = svgEl('circle', { cx, cy, r: '30', fill: '#d4a853', opacity: '0' });
+      svg.appendChild(glow);
+      setTimeout(() => { glow.style.transition = 'opacity 0.8s'; glow.setAttribute('opacity', '0.12'); }, 400);
+      // Label
+      const label = svgEl('text', { x: cx, y: 60, 'text-anchor': 'middle', 'font-size': '12', fill: '#d4a853', 'font-family': 'DM Sans, sans-serif', 'font-weight': '700', opacity: '0' });
+      label.textContent = 'Every interaction compounds into the graph.';
+      svg.appendChild(label);
+      setTimeout(() => { label.style.transition = 'opacity 0.6s'; label.setAttribute('opacity', '0.7'); }, 1600);
     },
 
     // 4. SOCIAL MATCHMAKING — Two groups rearranging into optimal pairs
