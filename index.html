@@ -373,7 +373,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060609;color:#f5f2e
     font-family: 'Playfair Display', serif;
     font-size: clamp(14px, 1.6vw, 20px);
     font-weight: 700;
-    color: rgba(232, 224, 208, 0.5);
+    color: #f5f2ec;
     text-align: center;
     line-height: 1.4;
   }
@@ -4222,7 +4222,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 .race-tiers{display:flex;flex-direction:column;gap:0;margin-top:36px;max-width:800px}
 .race-tier{position:relative;padding:20px 24px;border-left:2px solid transparent;overflow:hidden}
 .race-tier::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.04;z-index:0}
-.race-t1{border-left-color:rgba(237,233,224,.15)}
+.race-t1{border-left-color:rgba(237,233,224,.4)}
 .race-t1::before{background:linear-gradient(90deg,rgba(237,233,224,.08),transparent 40%)}
 .race-t2{border-left-color:rgba(73,180,160,.3)}
 .race-t2::before{background:linear-gradient(90deg,rgba(73,180,160,.08),transparent 50%)}
@@ -4231,7 +4231,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 .race-label{font-size:.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px;position:relative;z-index:1}
 .race-headline{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.25;position:relative;z-index:1}
-.race-examples{font-family:var(--text);font-size:.72rem;color:rgba(237,233,224,.3);margin-top:6px;font-style:italic;position:relative;z-index:1}
+.race-examples{font-family:var(--text);font-size:.72rem;color:rgba(237,233,224,.55);margin-top:6px;font-style:italic;position:relative;z-index:1}
 .race-count{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--gold);line-height:1;margin-right:16px;min-width:48px;display:inline-block}
 
 .race-bar{height:4px;border-radius:2px;margin-top:10px;position:relative;z-index:1;opacity:.5}
@@ -4251,8 +4251,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 .conf{position:absolute;bottom:24px;right:48px;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(237,233,224,.08)}
 
 .cta{text-align:center}
-.cta-s{font-size:.95rem;font-weight:300;color:rgba(237,233,224,.35);margin-top:16px}
-.cta-sub{font-family:var(--text);font-style:italic;font-size:clamp(1rem,1.8vw,1.25rem);color:rgba(237,233,224,.35);margin-top:12px}
+.cta-s{font-size:.95rem;font-weight:300;color:rgba(237,233,224,.6);margin-top:16px}
+.cta-sub{font-family:var(--text);font-style:italic;font-size:clamp(1rem,1.8vw,1.25rem);color:rgba(237,233,224,.6);margin-top:12px}
 
 .pivot{font-family:var(--ui);font-size:.6rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--mint);margin-bottom:24px}
 
@@ -5000,17 +5000,122 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="casey-slide ds-focus" id="cs-5">
 <div class="orb orb-g" style="width:600px;height:600px;top:-15%;left:-10%"></div>
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);z-index:10;">The Data Exists</div>
-<div class="inner">
-  <div class="display">The most valuable, networkable, untapped<br>dataset on the planet<br>is <em>trapped inside<br>all of our heads.</em></div>
+
+<!-- Subtle head profile silhouette with trapped data particles (background accent) -->
+<svg id="trappedMindSvg" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.55" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="mindGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="rgba(212,168,83,0.05)"/>
+      <stop offset="100%" stop-color="rgba(212,168,83,0)"/>
+    </radialGradient>
+    <clipPath id="mindClip">
+      <!-- Smaller, right-side profile silhouette -->
+      <path d="M 1020,280 C 1050,273 1095,291 1118,325 C 1144,362 1155,416 1148,469 C 1144,499 1133,525 1110,540 L 1106,567 C 1103,590 1088,602 1069,602 L 1043,602 C 1036,627 1017,642 990,642 C 960,642 934,627 915,602 C 892,572 877,534 881,496 C 877,466 888,436 907,410 L 907,383 C 907,353 922,325 945,305 C 964,290 985,280 1020,280 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Faint glow -->
+  <ellipse cx="1020" cy="460" rx="135" ry="160" fill="url(#mindGlow)"/>
+
+  <!-- Subtle outline -->
+  <path d="M 1020,280 C 1050,273 1095,291 1118,325 C 1144,362 1155,416 1148,469 C 1144,499 1133,525 1110,540 L 1106,567 C 1103,590 1088,602 1069,602 L 1043,602 C 1036,627 1017,642 990,642 C 960,642 934,627 915,602 C 892,572 877,534 881,496 C 877,466 888,436 907,410 L 907,383 C 907,353 922,325 945,305 C 964,290 985,280 1020,280 Z"
+        fill="none"
+        stroke="rgba(212,168,83,0.18)"
+        stroke-width="1"
+        stroke-dasharray="2 4"/>
+
+  <!-- Sparse particle cloud inside -->
+  <g id="trappedParticles" clip-path="url(#mindClip)"></g>
+</svg>
+
+<div class="inner" style="position:relative;z-index:2;justify-self:flex-start;align-self:center;padding-left:60px;margin-right:auto;max-width:620px">
+  <div class="display" style="text-align:left">The most valuable,<br>networkable, untapped<br>dataset on the planet<br>is <em>trapped inside<br>all of our heads.</em></div>
 </div>
-<canvas id="nodes-trapped" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1"></canvas>
+
+<script>
+(function populateTrappedMind(){
+  const fig = document.getElementById('trappedParticles');
+  const esc = document.getElementById('escapeAttempts');
+  if (!fig || !esc) return;
+  const NS = 'http://www.w3.org/2000/svg';
+  const colors = [
+    '#43B8A0','#4ae8c1','#43B8A0','#4ae8c1',
+    '#D46B7E','#e85a7a','#ff8a65',
+    '#5B8FD4','#64b5f6','#4a9de8',
+    '#c76bdb','#ce93d8','#c76bdb',
+    '#3dff7a','#5ae87a','#81c784',
+    '#f48fb1','#a5d6a7','#90caf9',
+    '#f0c040','#D4A843','#E8CC60'
+  ];
+  // Generate dense particle cloud roughly following head shape (x:640-1010, y:200-680)
+  // Focus particles in the brain/head area
+  const regions = [
+    {cx:820, cy:370, rx:150, ry:180, count:180}, // main cloud
+    {cx:780, cy:300, rx:80, ry:60, count:40},    // forehead
+    {cx:860, cy:500, rx:80, ry:80, count:40},    // back of head
+    {cx:750, cy:550, rx:50, ry:40, count:20}     // mouth/jaw area
+  ];
+  regions.forEach(r => {
+    for (let i=0;i<r.count;i++){
+      const angle = Math.random()*Math.PI*2;
+      const dist = Math.pow(Math.random(), 0.7);
+      const x = r.cx + Math.cos(angle)*dist*r.rx;
+      const y = r.cy + Math.sin(angle)*dist*r.ry;
+      const radius = (1.5 + Math.random()*3).toFixed(1);
+      const color = colors[Math.floor(Math.random()*colors.length)];
+      const dur = (1.8 + Math.random()*2.2).toFixed(2);
+      const delay = (Math.random()*3).toFixed(2);
+      const maxOp = (0.55 + Math.random()*0.4).toFixed(2);
+      const minOp = (0.1 + Math.random()*0.15).toFixed(2);
+      const c = document.createElementNS(NS,'circle');
+      c.setAttribute('cx', x.toFixed(1));
+      c.setAttribute('cy', y.toFixed(1));
+      c.setAttribute('r', radius);
+      c.setAttribute('fill', color);
+      const a = document.createElementNS(NS,'animate');
+      a.setAttribute('attributeName','opacity');
+      a.setAttribute('values', minOp+';'+maxOp+';'+minOp);
+      a.setAttribute('dur', dur+'s');
+      a.setAttribute('repeatCount','indefinite');
+      a.setAttribute('begin', delay+'s');
+      c.appendChild(a);
+      fig.appendChild(c);
+    }
+  });
+  // A few "escape attempts" — particles that briefly appear outside the head and fade
+  // (drifting out from the head's edges, but dimming as they go)
+  const escapePoints = [
+    {x: 1020, y: 320}, {x: 1020, y: 400}, {x: 640, y: 350},
+    {x: 670, y: 650}, {x: 900, y: 680}, {x: 720, y: 220},
+    {x: 1010, y: 500}, {x: 640, y: 480}
+  ];
+  escapePoints.forEach((p,i) => {
+    const c = document.createElementNS(NS,'circle');
+    c.setAttribute('cx', p.x);
+    c.setAttribute('cy', p.y);
+    c.setAttribute('r', '2');
+    c.setAttribute('fill', colors[i % colors.length]);
+    const a = document.createElementNS(NS,'animate');
+    a.setAttribute('attributeName','opacity');
+    a.setAttribute('values', '0;0.5;0');
+    a.setAttribute('dur', (3 + Math.random()*2).toFixed(2)+'s');
+    a.setAttribute('repeatCount','indefinite');
+    a.setAttribute('begin', (i*0.4).toFixed(2)+'s');
+    c.appendChild(a);
+    esc.appendChild(c);
+  });
+})();
+</script>
+
 <div class="mark">Give 'n Take</div><div class="conf">Privileged &amp; Confidential</div>
 </div>
 
-<!-- SLIDE 6 (say it out loud) -->
+<!-- SLIDE 6 (say it out loud) — carries over the trapped-mind silhouette from slide 5 -->
 <div class="casey-slide ds-focus" id="cs-6">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);z-index:10;">Core Problem: The Cost of Honesty</div>
 <div class="orb orb-b" style="width:450px;height:450px;bottom:-15%;right:-8%"></div>
+
+
 <div class="inner">
   <div class="display">You'd never<br><em>say it out loud.</em></div>
   <div class="whispers">
@@ -5022,12 +5127,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <span class="whisper" style="top:14%;left:54%;font-size:.95rem;opacity:.7;animation-delay:2.5s">"He's not really a 4.0."</span>
   </div>
 </div>
+
+
 <div class="mark">Give 'n Take</div><div class="conf">Privileged &amp; Confidential</div>
 </div>
 
 <!-- SLIDE 7 (Human connection measured) -->
 <div class="casey-slide ds-measure" id="cs-7">
-<div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">The Future</div>
+<div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">The Future of Humanity</div>
 <!-- Magic background -->
 <canvas id="magicCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none"></canvas>
 <div class="s" data-i="0" style="position:relative;z-index:1">
@@ -5101,31 +5208,31 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- Center node -->
       <div class="graph-center-node">
-        <div class="graph-center-label">You get<br>magic</div>
+        <div class="graph-center-label">Magic<br>happens</div>
       </div>
 
       <!-- Orbit concept nodes — clickable -->
-      <div class="graph-node first-node" data-angle="51" data-color="#e88a4a" data-panel="uniqueness" onclick="openPanel('uniqueness',event)">
+      <div class="graph-node first-node" data-angle="30" data-color="#e88a4a" data-panel="uniqueness" onclick="openPanel('uniqueness',event)">
         <div class="node-dot" style="background:#e88a4a"></div>
         <div class="node-label">Our Uniqueness<br>To Others</div>
       </div>
-      <div class="graph-node" data-angle="103" data-color="#4a9de8" data-panel="matchmaking" onclick="openPanel('matchmaking',event)">
+      <div class="graph-node" data-angle="90" data-color="#4a9de8" data-panel="matchmaking" onclick="openPanel('matchmaking',event)">
         <div class="node-dot" style="background:#4a9de8"></div>
         <div class="node-label">True Social<br>Matchmaking</div>
       </div>
-      <div class="graph-node" data-angle="154" data-color="#4ae8c1" data-panel="peakvalue" onclick="openPanel('peakvalue',event)">
+      <div class="graph-node" data-angle="150" data-color="#4ae8c1" data-panel="peakvalue" onclick="openPanel('peakvalue',event)">
         <div class="node-dot" style="background:#4ae8c1"></div>
         <div class="node-label">Peak Human<br>Value</div>
       </div>
-      <div class="graph-node" data-angle="206" data-color="#5ae87a" data-panel="compounding" onclick="openPanel('compounding',event)">
+      <div class="graph-node" data-angle="210" data-color="#5ae87a" data-panel="compounding" onclick="openPanel('compounding',event)">
         <div class="node-dot" style="background:#5ae87a"></div>
         <div class="node-label">Peak Community<br>Value</div>
       </div>
-      <div class="graph-node" data-angle="257" data-color="#e85a7a" data-panel="groupformation" onclick="openPanel('groupformation',event)">
+      <div class="graph-node" data-angle="270" data-color="#e85a7a" data-panel="groupformation" onclick="openPanel('groupformation',event)">
         <div class="node-dot" style="background:#e85a7a"></div>
         <div class="node-label">Group<br>Formation</div>
       </div>
-      <div class="graph-node" data-angle="309" data-color="#f0e060" data-panel="belonging" onclick="openPanel('belonging',event)">
+      <div class="graph-node" data-angle="330" data-color="#f0e060" data-panel="belonging" onclick="openPanel('belonging',event)">
         <div class="node-dot" style="background:#f0e060"></div>
         <div class="node-label">Belonging</div>
       </div>
@@ -5141,6 +5248,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div class="h" style="font-size:clamp(22px,3.8vw,36px);max-width:1000px;">When you digitize what we mean to each other, you can:</div>
       <div id="digitizeList" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:20px">
         <span data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">graph it</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span data-color="#c76bdb" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#c76bdb;transition:all 0.4s ease">simulate it</span>
         <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
         <span data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">orchestrate it</span>
         <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
@@ -5175,7 +5284,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="flex:1;min-width:200px;max-width:340px;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.15);border-radius:16px;padding:32px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative">
         <!-- INCORRECT PARADIGM stamp -->
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-18deg);z-index:5;pointer-events:none;white-space:nowrap;border:3px solid rgba(224,64,64,0.7);padding:6px 28px;font-family:'DM Sans',sans-serif;font-size:clamp(12px,1.8vw,18px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red,#e04040);background:rgba(224,64,64,0.08);box-shadow:0 0 30px rgba(224,64,64,0.15),inset 0 0 20px rgba(224,64,64,0.05)">INCORRECT PARADIGM</div>
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red,#e04040);margin-bottom:16px">The Old Way</div>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red,#e04040);margin-bottom:16px">The Old Data</div>
         <!-- Person with number -->
         <svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="60" cy="32" r="18" fill="none" stroke="rgba(232,224,208,0.25)" stroke-width="2"/>
@@ -5196,7 +5305,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- RIGHT: Data drip digitization -->
       <div style="flex:1;min-width:280px;max-width:420px;background:rgba(61,255,122,0.02);border:1px solid rgba(61,255,122,0.1);border-radius:16px;padding:24px;text-align:center;position:relative;overflow:hidden">
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">The Correct Way</div>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">The Correct Data</div>
 
         <!-- Central person being digitized -->
         <svg id="dataDripSvg" width="100%" height="280" viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5218,130 +5327,19 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             <animate attributeName="r" values="33;40;33" dur="3s" repeatCount="indefinite"/>
             <animate attributeName="opacity" values="0.1;0.03;0.1" dur="3s" repeatCount="indefinite"/>
           </circle>
-          <!-- Person body — DENSE DIGITAL PARTICLE CLOUD (every dot fades in/out) -->
-          <g filter="url(#digiGlow)" transform="translate(220,150) scale(1.5) translate(-220,-150)">
-            <!-- HEAD — dense dot cluster forming a circle -->
-            <circle cx="220" cy="107" r="1.6" fill="#E8CC60"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.8s" repeatCount="indefinite"/></circle>
-            <circle cx="217" cy="105" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.3s" repeatCount="indefinite" begin="0.4s"/></circle>
-            <circle cx="223" cy="105" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.1s" repeatCount="indefinite" begin="0.8s"/></circle>
-            <circle cx="215" cy="108" r="1.3" fill="#E8CC60"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.5s" repeatCount="indefinite" begin="0.2s"/></circle>
-            <circle cx="225" cy="108" r="1.3" fill="#E8CC60"><animate attributeName="opacity" values="0.7;0.25;0.7" dur="1.9s" repeatCount="indefinite" begin="1.1s"/></circle>
-            <circle cx="214" cy="111" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.7s" repeatCount="indefinite" begin="0.6s"/></circle>
-            <circle cx="226" cy="111" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.0s" repeatCount="indefinite" begin="1.3s"/></circle>
-            <circle cx="220" cy="113" r="1.2" fill="#E8CC60"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.4s" repeatCount="indefinite" begin="0.9s"/></circle>
-            <circle cx="217" cy="113" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="1.7s" repeatCount="indefinite" begin="1.5s"/></circle>
-            <circle cx="223" cy="113" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.2s" repeatCount="indefinite" begin="0.3s"/></circle>
-            <circle cx="220" cy="103" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.05;0.4" dur="2.6s" repeatCount="indefinite" begin="1.0s"/></circle>
-            <circle cx="216" cy="104" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="3.0s" repeatCount="indefinite" begin="0.7s"/></circle>
-            <circle cx="224" cy="104" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.8s" repeatCount="indefinite" begin="1.4s"/></circle>
-            <circle cx="219" cy="109" r="1.4" fill="#E8CC60"><animate attributeName="opacity" values="0.85;0.25;0.85" dur="2.0s" repeatCount="indefinite" begin="0.5s"/></circle>
-            <circle cx="221" cy="106" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.3s" repeatCount="indefinite" begin="1.2s"/></circle>
-            <!-- NECK -->
-            <circle cx="220" cy="117" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.1s" repeatCount="indefinite" begin="0.3s"/></circle>
-            <circle cx="219" cy="120" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.4s" repeatCount="indefinite" begin="0.9s"/></circle>
-            <circle cx="221" cy="119" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.4;0.08;0.4" dur="1.9s" repeatCount="indefinite" begin="1.6s"/></circle>
-            <!-- TORSO — dense column with width -->
-            <circle cx="220" cy="124" r="1.4" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.2s" repeatCount="indefinite" begin="0.1s"/></circle>
-            <circle cx="218" cy="127" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.5s" repeatCount="indefinite" begin="0.7s"/></circle>
-            <circle cx="222" cy="127" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.0s" repeatCount="indefinite" begin="1.3s"/></circle>
-            <circle cx="220" cy="130" r="1.5" fill="#D4A843"><animate attributeName="opacity" values="0.75;0.2;0.75" dur="1.8s" repeatCount="indefinite" begin="0.4s"/></circle>
-            <circle cx="217" cy="133" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.6s" repeatCount="indefinite" begin="1.0s"/></circle>
-            <circle cx="223" cy="133" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.12;0.5" dur="2.3s" repeatCount="indefinite" begin="0.6s"/></circle>
-            <circle cx="220" cy="136" r="1.6" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.18;0.7" dur="2.1s" repeatCount="indefinite" begin="1.5s"/></circle>
-            <circle cx="216" cy="138" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.4;0.08;0.4" dur="2.7s" repeatCount="indefinite" begin="0.2s"/></circle>
-            <circle cx="224" cy="138" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.1;0.45" dur="1.9s" repeatCount="indefinite" begin="0.8s"/></circle>
-            <circle cx="220" cy="141" r="1.3" fill="#E8CC60"><animate attributeName="opacity" values="0.65;0.15;0.65" dur="2.4s" repeatCount="indefinite" begin="1.1s"/></circle>
-            <circle cx="219" cy="145" r="1.5" fill="#D4A843"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.0s" repeatCount="indefinite" begin="0.5s"/></circle>
-            <circle cx="221" cy="144" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.12;0.5" dur="2.8s" repeatCount="indefinite" begin="1.4s"/></circle>
-            <circle cx="217" cy="148" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.2s" repeatCount="indefinite" begin="0.3s"/></circle>
-            <circle cx="223" cy="148" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="2.5s" repeatCount="indefinite" begin="0.9s"/></circle>
-            <circle cx="220" cy="152" r="1.4" fill="#E8CC60"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="1.7s" repeatCount="indefinite" begin="1.2s"/></circle>
-            <circle cx="220" cy="157" r="1.2" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.12;0.55" dur="2.3s" repeatCount="indefinite" begin="0.6s"/></circle>
-            <circle cx="218" cy="155" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.08;0.4" dur="2.6s" repeatCount="indefinite" begin="1.8s"/></circle>
-            <circle cx="222" cy="155" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.1s" repeatCount="indefinite" begin="0.1s"/></circle>
-            <circle cx="220" cy="162" r="1.3" fill="#D4A843"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="2.4s" repeatCount="indefinite" begin="0.7s"/></circle>
-            <circle cx="220" cy="167" r="1.5" fill="#E8CC60"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.9s" repeatCount="indefinite" begin="1.3s"/></circle>
-            <!-- LEFT ARM — dots trailing outward, fading at tips -->
-            <circle cx="216" cy="130" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.3s" repeatCount="indefinite" begin="0.2s"/></circle>
-            <circle cx="213" cy="133" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.0s" repeatCount="indefinite" begin="0.8s"/></circle>
-            <circle cx="210" cy="135" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="2.5s" repeatCount="indefinite" begin="1.4s"/></circle>
-            <circle cx="207" cy="137" r="1.2" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.2s" repeatCount="indefinite" begin="0.5s"/></circle>
-            <circle cx="204" cy="139" r="0.8" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.7s" repeatCount="indefinite" begin="1.1s"/></circle>
-            <circle cx="201" cy="140" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.3;0.04;0.3" dur="1.8s" repeatCount="indefinite" begin="1.7s"/></circle>
-            <circle cx="198" cy="141" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.25;0.03;0.25" dur="2.4s" repeatCount="indefinite" begin="0.3s"/></circle>
-            <circle cx="195" cy="142" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.2;0.02;0.2" dur="2.6s" repeatCount="indefinite" begin="0.9s"/></circle>
-            <!-- RIGHT ARM — dots trailing outward -->
-            <circle cx="224" cy="130" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.1s" repeatCount="indefinite" begin="0.6s"/></circle>
-            <circle cx="227" cy="133" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.4s" repeatCount="indefinite" begin="1.2s"/></circle>
-            <circle cx="230" cy="135" r="0.9" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="1.9s" repeatCount="indefinite" begin="0.1s"/></circle>
-            <circle cx="233" cy="137" r="1.2" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.6s" repeatCount="indefinite" begin="0.7s"/></circle>
-            <circle cx="236" cy="139" r="0.8" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.3s" repeatCount="indefinite" begin="1.5s"/></circle>
-            <circle cx="239" cy="140" r="1.0" fill="#E8CC60"><animate attributeName="opacity" values="0.3;0.04;0.3" dur="2.0s" repeatCount="indefinite" begin="0.4s"/></circle>
-            <circle cx="242" cy="141" r="0.7" fill="#D4A843"><animate attributeName="opacity" values="0.25;0.03;0.25" dur="2.8s" repeatCount="indefinite" begin="1.0s"/></circle>
-            <circle cx="245" cy="142" r="1.1" fill="#E8CC60"><animate attributeName="opacity" values="0.2;0.02;0.2" dur="2.2s" repeatCount="indefinite" begin="1.6s"/></circle>
-            <!-- LEFT LEG — dots trailing down-left -->
-            <circle cx="218" cy="170" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.1s" repeatCount="indefinite" begin="0.3s"/></circle>
-            <circle cx="216" cy="174" r="0.9" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.08;0.5" dur="2.5s" repeatCount="indefinite" begin="0.9s"/></circle>
-            <circle cx="214" cy="178" r="1.2" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="1.8s" repeatCount="indefinite" begin="1.5s"/></circle>
-            <circle cx="212" cy="182" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.3s" repeatCount="indefinite" begin="0.5s"/></circle>
-            <circle cx="210" cy="186" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.7s" repeatCount="indefinite" begin="1.1s"/></circle>
-            <circle cx="208" cy="190" r="0.7" fill="#E8CC60"><animate attributeName="opacity" values="0.3;0.04;0.3" dur="2.0s" repeatCount="indefinite" begin="1.7s"/></circle>
-            <circle cx="206" cy="194" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.25;0.03;0.25" dur="2.4s" repeatCount="indefinite" begin="0.2s"/></circle>
-            <circle cx="204" cy="198" r="0.9" fill="#E8CC60"><animate attributeName="opacity" values="0.2;0.02;0.2" dur="2.6s" repeatCount="indefinite" begin="0.8s"/></circle>
-            <!-- RIGHT LEG — dots trailing down-right -->
-            <circle cx="222" cy="170" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.4s" repeatCount="indefinite" begin="0.7s"/></circle>
-            <circle cx="224" cy="174" r="0.9" fill="#E8CC60"><animate attributeName="opacity" values="0.5;0.08;0.5" dur="1.9s" repeatCount="indefinite" begin="1.3s"/></circle>
-            <circle cx="226" cy="178" r="1.2" fill="#D4A843"><animate attributeName="opacity" values="0.45;0.08;0.45" dur="2.2s" repeatCount="indefinite" begin="0.4s"/></circle>
-            <circle cx="228" cy="182" r="0.8" fill="#E8CC60"><animate attributeName="opacity" values="0.4;0.06;0.4" dur="2.7s" repeatCount="indefinite" begin="1.0s"/></circle>
-            <circle cx="230" cy="186" r="1.0" fill="#D4A843"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2.0s" repeatCount="indefinite" begin="1.6s"/></circle>
-            <circle cx="232" cy="190" r="0.7" fill="#E8CC60"><animate attributeName="opacity" values="0.3;0.04;0.3" dur="2.5s" repeatCount="indefinite" begin="0.2s"/></circle>
-            <circle cx="234" cy="194" r="1.1" fill="#D4A843"><animate attributeName="opacity" values="0.25;0.03;0.25" dur="1.8s" repeatCount="indefinite" begin="0.8s"/></circle>
-            <circle cx="236" cy="198" r="0.9" fill="#E8CC60"><animate attributeName="opacity" values="0.2;0.02;0.2" dur="2.3s" repeatCount="indefinite" begin="1.4s"/></circle>
-            <!-- VIBRANT MULTI-COLOR DATA PARTICLES throughout the body -->
-            <!-- Teal particles (matching surrounding people) -->
-            <circle cx="219" cy="110" r="1.4" fill="#43B8A0"><animate attributeName="opacity" values="0;0.85;0" dur="2.0s" repeatCount="indefinite"/></circle>
-            <circle cx="222" cy="132" r="1.6" fill="#4ae8c1"><animate attributeName="opacity" values="0;0.9;0" dur="2.4s" repeatCount="indefinite" begin="0.6s"/></circle>
-            <circle cx="216" cy="150" r="1.2" fill="#43B8A0"><animate attributeName="opacity" values="0;0.7;0" dur="1.8s" repeatCount="indefinite" begin="1.2s"/></circle>
-            <circle cx="225" cy="165" r="1.3" fill="#4ae8c1"><animate attributeName="opacity" values="0;0.8;0" dur="2.6s" repeatCount="indefinite" begin="0.3s"/></circle>
-            <!-- Pink/rose particles -->
-            <circle cx="221" cy="108" r="1.3" fill="#D46B7E"><animate attributeName="opacity" values="0;0.8;0" dur="2.2s" repeatCount="indefinite" begin="0.4s"/></circle>
-            <circle cx="218" cy="138" r="1.5" fill="#e85a7a"><animate attributeName="opacity" values="0;0.85;0" dur="1.9s" repeatCount="indefinite" begin="1.0s"/></circle>
-            <circle cx="224" cy="155" r="1.1" fill="#D46B7E"><animate attributeName="opacity" values="0;0.7;0" dur="2.5s" repeatCount="indefinite" begin="1.6s"/></circle>
-            <circle cx="215" cy="175" r="1.4" fill="#e85a7a"><animate attributeName="opacity" values="0;0.75;0" dur="2.1s" repeatCount="indefinite" begin="0.8s"/></circle>
-            <!-- Blue particles -->
-            <circle cx="217" cy="115" r="1.2" fill="#5B8FD4"><animate attributeName="opacity" values="0;0.75;0" dur="2.3s" repeatCount="indefinite" begin="0.9s"/></circle>
-            <circle cx="223" cy="143" r="1.5" fill="#64b5f6"><animate attributeName="opacity" values="0;0.85;0" dur="2.0s" repeatCount="indefinite" begin="0.2s"/></circle>
-            <circle cx="220" cy="163" r="1.3" fill="#5B8FD4"><animate attributeName="opacity" values="0;0.7;0" dur="2.7s" repeatCount="indefinite" begin="1.4s"/></circle>
-            <circle cx="226" cy="180" r="1.1" fill="#64b5f6"><animate attributeName="opacity" values="0;0.65;0" dur="1.8s" repeatCount="indefinite" begin="0.5s"/></circle>
-            <!-- Purple particles -->
-            <circle cx="220" cy="125" r="1.4" fill="#c76bdb"><animate attributeName="opacity" values="0;0.8;0" dur="2.1s" repeatCount="indefinite" begin="1.3s"/></circle>
-            <circle cx="216" cy="145" r="1.2" fill="#ce93d8"><animate attributeName="opacity" values="0;0.75;0" dur="2.5s" repeatCount="indefinite" begin="0.7s"/></circle>
-            <circle cx="224" cy="170" r="1.5" fill="#c76bdb"><animate attributeName="opacity" values="0;0.85;0" dur="1.9s" repeatCount="indefinite" begin="1.8s"/></circle>
-            <!-- Green glow particles (data signals) -->
-            <circle cx="210" cy="122" r="0.9" fill="#3dff7a"><animate attributeName="opacity" values="0;0.9;0" dur="2.0s" repeatCount="indefinite"/></circle>
-            <circle cx="232" cy="145" r="0.9" fill="#3dff7a"><animate attributeName="opacity" values="0;0.85;0" dur="2.4s" repeatCount="indefinite" begin="0.8s"/></circle>
-            <circle cx="207" cy="152" r="0.8" fill="#3dff7a"><animate attributeName="opacity" values="0;0.7;0" dur="1.8s" repeatCount="indefinite" begin="1.5s"/></circle>
-            <circle cx="231" cy="122" r="0.9" fill="#3dff7a"><animate attributeName="opacity" values="0;0.8;0" dur="2.2s" repeatCount="indefinite" begin="0.4s"/></circle>
-            <circle cx="198" cy="135" r="0.7" fill="#3dff7a"><animate attributeName="opacity" values="0;0.6;0" dur="2.6s" repeatCount="indefinite" begin="1.2s"/></circle>
-            <circle cx="243" cy="135" r="0.7" fill="#3dff7a"><animate attributeName="opacity" values="0;0.6;0" dur="2.1s" repeatCount="indefinite" begin="0.6s"/></circle>
-            <circle cx="215" cy="165" r="0.8" fill="#3dff7a"><animate attributeName="opacity" values="0;0.7;0" dur="2.3s" repeatCount="indefinite" begin="1.8s"/></circle>
-            <circle cx="226" cy="162" r="0.8" fill="#3dff7a"><animate attributeName="opacity" values="0;0.7;0" dur="1.7s" repeatCount="indefinite" begin="0.3s"/></circle>
-            <!-- Bright gold core particles (stronger than body dots) -->
-            <circle cx="220" cy="107" r="2.0" fill="#f0c040"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite"/></circle>
-            <circle cx="220" cy="135" r="2.2" fill="#f0c040"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.0s" repeatCount="indefinite" begin="0.5s"/></circle>
-            <circle cx="220" cy="155" r="1.8" fill="#f0c040"><animate attributeName="opacity" values="0.25;0.85;0.25" dur="1.8s" repeatCount="indefinite" begin="1.1s"/></circle>
-            <!-- Arm tip color bursts -->
-            <circle cx="196" cy="142" r="1.3" fill="#43B8A0"><animate attributeName="opacity" values="0;0.7;0" dur="2.3s" repeatCount="indefinite" begin="0.9s"/></circle>
-            <circle cx="244" cy="142" r="1.3" fill="#D46B7E"><animate attributeName="opacity" values="0;0.7;0" dur="2.1s" repeatCount="indefinite" begin="1.5s"/></circle>
-            <!-- Foot color bursts -->
-            <circle cx="204" cy="198" r="1.2" fill="#5B8FD4"><animate attributeName="opacity" values="0;0.6;0" dur="2.4s" repeatCount="indefinite" begin="0.4s"/></circle>
-            <circle cx="236" cy="198" r="1.2" fill="#c76bdb"><animate attributeName="opacity" values="0;0.6;0" dur="2.0s" repeatCount="indefinite" begin="1.0s"/></circle>
-          </g>
+          <!-- Person body — JS-generated dense multi-color particle cloud -->
+          <g id="digiFigure" filter="url(#digiGlow)" transform="translate(220,150) scale(1.9) translate(-220,-150)"></g>
           <!-- Scan line sweeping over the figure -->
-          <line x1="200" y1="110" x2="240" y2="110" stroke="#3dff7a" stroke-width="1" opacity="0">
+          <line x1="195" y1="110" x2="245" y2="110" stroke="#3dff7a" stroke-width="2" opacity="0" filter="url(#digiGlow)">
             <animate attributeName="y1" values="106;204;106" dur="3s" repeatCount="indefinite"/>
             <animate attributeName="y2" values="106;204;106" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>
+          </line>
+          <!-- Secondary glow line for emphasis -->
+          <line x1="190" y1="110" x2="250" y2="110" stroke="#3dff7a" stroke-width="4" opacity="0">
+            <animate attributeName="y1" values="106;204;106" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="106;204;106" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.35;0.1;0.35" dur="3s" repeatCount="indefinite"/>
           </line>
           <!-- Data points appearing on body -->
           <circle cx="214" cy="145" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/></circle>
@@ -5418,8 +5416,153 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <line x1="328" y1="238" x2="230" y2="175" stroke="#4ae8c1" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite"/></line>
           <circle r="2.5" fill="#4ae8c1" opacity="0.8"><animateMotion dur="1.4s" repeatCount="indefinite" path="M328,238 L230,175"/></circle>
         </svg>
+        <script>
+        (function populateDigiFigure(){
+          const fig = document.getElementById('digiFigure');
+          if (!fig) return;
+          const NS = 'http://www.w3.org/2000/svg';
+          const colors = [
+            '#43B8A0','#4ae8c1',
+            '#D46B7E','#e85a7a',
+            '#5B8FD4','#64b5f6','#4a9de8',
+            '#c76bdb','#ce93d8',
+            '#3dff7a','#5ae87a',
+            '#f0c040','#D4A843'
+          ];
 
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">Digitized by the people<br>who experience you.</div>
+          // Structured grid-based figure. Build a set of points, then connect adjacent ones with thin wireframe lines.
+          const points = [];
+
+          // HEAD — hexagonal grid points inside a circle
+          const headCx = 220, headCy = 107, headR = 8.5;
+          const hexSpacing = 2.4;
+          for (let row = -5; row <= 5; row++) {
+            for (let col = -5; col <= 5; col++) {
+              const x = headCx + col*hexSpacing + (row%2 ? hexSpacing/2 : 0);
+              const y = headCy + row*hexSpacing*0.866;
+              const dx = x-headCx, dy = y-headCy;
+              if (dx*dx + dy*dy <= headR*headR) points.push({x, y, part:'head'});
+            }
+          }
+
+          // NECK — 2 columns, 3 rows
+          for (let r=0; r<3; r++) {
+            const y = 118 + r*2;
+            points.push({x:219, y:y, part:'neck'});
+            points.push({x:221, y:y, part:'neck'});
+          }
+
+          // TORSO — 3 columns × 10 rows, regular grid
+          const torsoCols = [-3, 0, 3];
+          for (let r=0; r<11; r++) {
+            const y = 124 + r*4.4;
+            torsoCols.forEach(dx => {
+              points.push({x:220+dx, y, part:'torso'});
+            });
+          }
+
+          // LEFT ARM — points along diagonal with 2 tracks
+          for (let i=0; i<10; i++) {
+            const t = i/9;
+            const cx = 218 + t*(198-218);
+            const cy = 128 + t*(145-128);
+            points.push({x:cx, y:cy, part:'arm-l'});
+            // perpendicular offset (widens at shoulder, thins at wrist)
+            const width = 2.0 - t*1.2;
+            points.push({x:cx - width*0.85, y:cy + width*0.5, part:'arm-l'});
+          }
+
+          // RIGHT ARM — mirror
+          for (let i=0; i<10; i++) {
+            const t = i/9;
+            const cx = 222 + t*(242-222);
+            const cy = 128 + t*(145-128);
+            points.push({x:cx, y:cy, part:'arm-r'});
+            const width = 2.0 - t*1.2;
+            points.push({x:cx + width*0.85, y:cy + width*0.5, part:'arm-r'});
+          }
+
+          // LEFT LEG — 2 columns going down-left
+          for (let i=0; i<16; i++) {
+            const t = i/15;
+            const cx = 217 + t*(207-217);
+            const cy = 168 + t*(205-168);
+            points.push({x:cx-1.3, y:cy, part:'leg-l'});
+            points.push({x:cx+1.3, y:cy, part:'leg-l'});
+          }
+
+          // RIGHT LEG
+          for (let i=0; i<16; i++) {
+            const t = i/15;
+            const cx = 223 + t*(233-223);
+            const cy = 168 + t*(205-168);
+            points.push({x:cx-1.3, y:cy, part:'leg-r'});
+            points.push({x:cx+1.3, y:cy, part:'leg-r'});
+          }
+
+          // Draw wireframe LINES between nearby points first (behind dots)
+          const MAX_DIST = 3.6;
+          for (let i=0; i<points.length; i++) {
+            for (let j=i+1; j<points.length; j++) {
+              const a = points[i], b = points[j];
+              // Only connect within same body part (keeps it structured)
+              if (a.part !== b.part) continue;
+              const dx = a.x-b.x, dy = a.y-b.y;
+              const d = Math.sqrt(dx*dx + dy*dy);
+              if (d > 0 && d < MAX_DIST) {
+                const line = document.createElementNS(NS,'line');
+                line.setAttribute('x1', a.x.toFixed(1));
+                line.setAttribute('y1', a.y.toFixed(1));
+                line.setAttribute('x2', b.x.toFixed(1));
+                line.setAttribute('y2', b.y.toFixed(1));
+                line.setAttribute('stroke', 'rgba(212,168,83,0.22)');
+                line.setAttribute('stroke-width', '0.3');
+                fig.appendChild(line);
+              }
+            }
+          }
+
+          // Draw dots on top — uniform small size for most, with occasional "data nodes"
+          points.forEach((p, i) => {
+            const isNode = Math.random() < 0.15; // 15% chance of being a brighter "data node"
+            const radius = isNode ? (1.4 + Math.random()*0.6) : (0.9 + Math.random()*0.3);
+            const color = colors[Math.floor(Math.random()*colors.length)];
+            const dur = (1.8 + Math.random()*1.6).toFixed(2);
+            const delay = (Math.random()*2.5).toFixed(2);
+            const maxOp = isNode ? (0.85 + Math.random()*0.15).toFixed(2) : (0.55 + Math.random()*0.25).toFixed(2);
+            const minOp = (0.15 + Math.random()*0.15).toFixed(2);
+            const c = document.createElementNS(NS,'circle');
+            c.setAttribute('cx', p.x.toFixed(1));
+            c.setAttribute('cy', p.y.toFixed(1));
+            c.setAttribute('r', radius.toFixed(2));
+            c.setAttribute('fill', color);
+            const a = document.createElementNS(NS,'animate');
+            a.setAttribute('attributeName','opacity');
+            a.setAttribute('values', minOp+';'+maxOp+';'+minOp);
+            a.setAttribute('dur', dur+'s');
+            a.setAttribute('repeatCount','indefinite');
+            a.setAttribute('begin', delay+'s');
+            c.appendChild(a);
+            fig.appendChild(c);
+          });
+
+          // "you" label below the figure
+          const label = document.createElementNS(NS,'text');
+          label.setAttribute('x', '220');
+          label.setAttribute('y', '218');
+          label.setAttribute('text-anchor', 'middle');
+          label.setAttribute('font-family', 'Manrope, sans-serif');
+          label.setAttribute('font-size', '8');
+          label.setAttribute('font-weight', '700');
+          label.setAttribute('letter-spacing', '4');
+          label.setAttribute('fill', '#D4A843');
+          label.setAttribute('opacity', '0.75');
+          label.textContent = 'YOU';
+          fig.appendChild(label);
+        })();
+        </script>
+
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">Digitized by the people<br>who experience you</div>
       </div>
     </div>
   </div>
@@ -5436,22 +5579,22 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="flex:1;min-width:130px;border:1px solid rgba(202,165,74,.15);border-radius:8px;padding:12px 14px;background:rgba(202,165,74,.03)">
       <div style="font-size:1.1rem;margin-bottom:6px">&#x1F4E8;</div>
       <div style="font-size:.48rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px">GnT Invitations</div>
-      <div style="font-family:var(--text);font-size:.65rem;color:rgba(237,233,224,.3);line-height:1.35">Every group she builds encodes who belongs together</div>
+      <div style="font-family:var(--text);font-size:.65rem;color:rgba(237,233,224,.55);line-height:1.35">Every group she builds encodes who belongs together</div>
     </div>
     <div style="flex:1;min-width:130px;border:1px solid rgba(73,180,160,.15);border-radius:8px;padding:12px 14px;background:rgba(73,180,160,.03)">
       <div style="font-size:1.1rem;margin-bottom:6px">&#x1F916;</div>
       <div style="font-size:.48rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin-bottom:3px">Slack Agent</div>
-      <div style="font-family:var(--text);font-size:.65rem;color:rgba(237,233,224,.3);line-height:1.35">Direct conversation &mdash; overrides, insights, personality notes</div>
+      <div style="font-family:var(--text);font-size:.65rem;color:rgba(237,233,224,.55);line-height:1.35">Direct conversation &mdash; overrides, insights, personality notes</div>
     </div>
     <div style="flex:1;min-width:130px;border:1px solid rgba(196,107,120,.15);border-radius:8px;padding:12px 14px;background:rgba(196,107,120,.03)">
       <div style="font-size:1.1rem;margin-bottom:6px">&#x1F4F1;</div>
       <div style="font-size:.48rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blush);margin-bottom:3px">Fill Texts</div>
-      <div style="font-family:var(--text);font-size:.65rem;color:rgba(237,233,224,.3);line-height:1.35">22K texts &mdash; who she calls first reveals who she trusts</div>
+      <div style="font-family:var(--text);font-size:.65rem;color:rgba(237,233,224,.55);line-height:1.35">22K texts &mdash; who she calls first reveals who she trusts</div>
     </div>
     <div style="flex:1;min-width:130px;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px 14px;background:rgba(255,255,255,.02)">
       <div style="font-size:1.1rem;margin-bottom:6px">&#x1F4CB;</div>
       <div style="font-size:.48rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(237,233,224,.4);margin-bottom:3px">Event Setup</div>
-      <div style="font-family:var(--text);font-size:.65rem;color:rgba(237,233,224,.3);line-height:1.35">Court assignments, time slots, cohort choices &mdash; all signal</div>
+      <div style="font-family:var(--text);font-size:.65rem;color:rgba(237,233,224,.55);line-height:1.35">Court assignments, time slots, cohort choices &mdash; all signal</div>
     </div>
   </div>
   <div class="flood-wrap">
@@ -5509,7 +5652,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="orb orb-b" style="width:550px;height:550px;top:-8%;left:20%"></div>
 <div class="inner" style="padding-top:56px">
   <div class="title" style="color:rgba(237,233,224,.4);margin-bottom:12px">That agent Krista talks to in Slack?</div>
-  <div class="display" style="margin-bottom:8px"><em>Everyone gets one over SMS.</em></div>
+  <div class="display" style="margin-bottom:8px"><em>Every staff member gets one. Then, every player gets one over SMS.</em></div>
   <div style="display:flex;gap:32px;margin:20px 0;align-items:flex-start;flex-wrap:wrap">
     <!-- Phone 1: Marcus (new player) — FIRST -->
     <div style="flex-shrink:0;width:200px;border:2px solid rgba(73,180,160,.2);border-radius:20px;padding:12px 10px 16px;background:rgba(255,255,255,.02);margin:0 auto">
@@ -5585,7 +5728,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
 
   <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">Every interaction trains it.<br><em>It never stops getting smarter.</em></div>
-  <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-bottom:28px">Domain experts + players + communities + AI = a self-improving coordination engine</div>
+  <div style="font-size:0.72rem;color:rgba(237,233,224,.6);margin-bottom:28px">Domain experts + players + communities + AI = a self-improving coordination engine</div>
 
   <!-- Flywheel visualization -->
   <div style="position:relative;width:min(440px,85vw);height:min(440px,85vw);margin:0 auto">
@@ -5734,10 +5877,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="casey-slide ds-main" id="cs-16">
 <div class="slide" data-slide="9" data-section="main">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">The Perfect Outlier Wedge</div>
-  <h1 class="slide-title anim-up-d1">Pickleball is the lowest-risk path to the world's first autonomous social coordination network.</h1>
-  <p class="subtitle anim-up-d1" style="color:var(--accent); font-style:italic; margin-bottom:0.6rem;">19.8M US players. ~1M rated. The other 18.8M coordinate through texts, group chats, and open plays that don&rsquo;t get smarter.</p>
-  <p class="anim-up-d1" style="font-size:0.65rem; color:var(--text-dim); margin-bottom:1.2rem; font-style:normal;">SFIA 2025 &middot; DUPR public data</p>
-  <div class="wedge-grid anim-up-d2">
+  <h1 class="slide-title anim-up-d1">Pickleball is the lowest-risk wedge.</h1>
+  <p class="subtitle anim-up-d1" style="color:var(--accent); font-style:italic; margin-bottom:1.2rem;">19.8M US players. The other 18.8M coordinate through texts and group chats that don&rsquo;t get smarter. <span style="color:var(--text-dim);font-style:normal;font-size:0.85em">(SFIA 2025 &middot; DUPR)</span></p>
+  <div class="wedge-grid anim-up-d2" style="grid-template-columns:repeat(3,1fr)">
     <div class="wedge-cell">
       <svg class="wedge-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 38 Q12 32 18 30 Q24 28 30 22 Q36 16 42 8" stroke="var(--blue)" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -5745,27 +5887,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <text x="28" y="12" font-size="7" fill="var(--accent)" font-family="JetBrains Mono, monospace" font-weight="500">90+</text>
         <path d="M6 38 Q12 34 18 32 Q24 30 30 26 Q36 22 42 18" stroke="rgba(91,159,196,0.3)" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
       </svg>
-      <h4>90+ New Clubs/Mo</h4><p>Fastest growing sport in US history</p>
-    </div>
-    <div class="wedge-cell">
-      <svg class="wedge-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="8" y="8" width="32" height="32" rx="3" stroke="var(--text-muted)" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
-        <line x1="16" y1="20" x2="32" y2="20" stroke="var(--text-muted)" stroke-width="1" opacity="0.5"/>
-        <line x1="16" y1="26" x2="28" y2="26" stroke="var(--text-muted)" stroke-width="1" opacity="0.5"/>
-        <line x1="16" y1="32" x2="24" y2="32" stroke="var(--text-muted)" stroke-width="1" opacity="0.5"/>
-        <text x="20" y="16" font-size="8" fill="var(--accent)" font-family="Inter, sans-serif" font-weight="600">MANUAL</text>
-        <line x1="14" y1="14" x2="34" y2="34" stroke="var(--accent)" stroke-width="1.5" opacity="0.4"/>
-      </svg>
-      <h4>Manual Everywhere</h4><p>Texts, spreadsheets, one person's memory</p>
-    </div>
-    <div class="wedge-cell">
-      <svg class="wedge-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="24" cy="24" r="16" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
-        <path d="M24 12 V24 L32 28" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="24" cy="24" r="2" fill="var(--accent)"/>
-        <path d="M16 38 L20 42 M28 38 L32 42" stroke="rgba(224,92,92,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <h4>Perishable Inventory</h4><p>Every empty hour = lost $</p>
+      <h4>90+ new clubs / month</h4><p>Fastest-growing sport in US history</p>
     </div>
     <div class="wedge-cell">
       <svg class="wedge-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5780,7 +5902,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <line x1="18" y1="18" x2="30" y2="30" stroke="rgba(91,159,196,0.2)" stroke-width="1" stroke-dasharray="3,2"/>
         <line x1="30" y1="18" x2="18" y2="30" stroke="rgba(224,92,92,0.2)" stroke-width="1" stroke-dasharray="3,2"/>
       </svg>
-      <h4>Dense Social Signal Loop</h4><p>4 players / court</p>
+      <h4>4 players / court</h4><p>Densest social signal per session</p>
     </div>
     <div class="wedge-cell">
       <svg class="wedge-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5790,18 +5912,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <path d="M10 36 L21 32 L32 28 L40 22" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
         <circle cx="40" cy="22" r="2.5" fill="var(--accent)"/>
       </svg>
-      <h4>3&ndash;4x / Week</h4><p>Graph densifies fast</p>
-    </div>
-    <div class="wedge-cell">
-      <svg class="wedge-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="24" cy="24" r="14" stroke="var(--blue)" stroke-width="1.5" fill="none"/>
-        <path d="M24 10 A14 14 0 0 1 38 24" stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M38 24 A14 14 0 0 1 24 38" stroke="#6bcf8e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M24 38 A14 14 0 0 1 10 24" stroke="var(--blue)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M10 24 A14 14 0 0 1 24 10" stroke="rgba(200,180,255,0.6)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <circle cx="24" cy="24" r="4" fill="rgba(91,159,196,0.2)" stroke="var(--blue)" stroke-width="1"/>
-      </svg>
-      <h4>Closed-Loop Data</h4><p>Every action feeds the graph</p>
+      <h4>3&ndash;4x / week</h4><p>Graph densifies fast</p>
     </div>
   </div>
 </div>
@@ -5874,14 +5985,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="orb orb-g" style="width:500px;height:500px;top:-5%;left:-15%"></div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:900px">
 
-  <div class="display" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:36px">Real connection is the biggest new network opportunity, ever</div>
+  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:36px;line-height:1.25">Digitizing the most deeply human-social thing &mdash; <em class="ember">real connection</em> &mdash; is the biggest network opportunity, ever.</div>
 
   <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:36px">
     <!-- Platform era stack -->
     <div style="display:flex;flex-direction:column;gap:6px;min-width:180px">
       <div style="background:rgba(212,168,83,0.15);border:1px solid var(--gold,#caa54a);border-radius:6px;padding:10px 24px;font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:var(--gold,#caa54a);letter-spacing:0.08em">AI</div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.35);letter-spacing:0.08em">SOCIAL MEDIA</div>
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.25);letter-spacing:0.08em">SMARTPHONES</div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.6);letter-spacing:0.08em">SOCIAL MEDIA</div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.5);letter-spacing:0.08em">SMARTPHONES</div>
       <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.18);letter-spacing:0.08em">THE INTERNET</div>
       <div style="background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.03);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.12);letter-spacing:0.08em">COMPUTING</div>
     </div>
@@ -5900,10 +6011,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <!-- Facebook comparison -->
   <div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;padding:20px 32px;background:rgba(212,168,83,0.04);border:1px solid rgba(212,168,83,0.12);border-radius:12px;max-width:680px;margin:0 auto">
     <div style="text-align:center">
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(237,233,224,.3);margin-bottom:4px">2004</div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(237,233,224,.55);margin-bottom:4px">2004</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:rgba(237,233,224,.7)">Facebook</div>
-      <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-top:2px">college communities</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.2);margin-top:6px;font-style:italic">digital connection</div>
+      <div style="font-size:0.72rem;color:rgba(237,233,224,.6);margin-top:2px">college communities</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.45);margin-top:6px;font-style:italic">digital connection</div>
     </div>
     <div style="font-size:1.2rem;color:var(--gold,#caa54a);opacity:0.4">&#10230;</div>
     <div style="text-align:center">
@@ -5930,24 +6041,24 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     &ldquo;Getting people connecting in the real world is the ultimate promise of the internet.&rdquo;
   </div>
   <div style="font-size:0.82rem;font-weight:600;color:var(--gold,#caa54a);letter-spacing:0.1em">Brian Chesky</div>
-  <div style="font-size:0.68rem;color:rgba(237,233,224,.25);margin-top:4px">Founder, Airbnb</div>
+  <div style="font-size:0.68rem;color:rgba(237,233,224,.5);margin-top:4px">Founder, Airbnb</div>
 
   <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold,#caa54a),transparent);margin:36px auto"></div>
 
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:24px">
     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 16px;text-align:center">
       <div style="font-size:0.65rem;color:rgba(237,233,224,.5)">Max lived problem</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.25);margin-top:2px">domain expertise</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.5);margin-top:2px">domain expertise</div>
     </div>
-    <div style="font-size:0.8rem;color:rgba(237,233,224,.15);align-self:center">&#10230;</div>
+    <div style="font-size:0.8rem;color:rgba(237,233,224,.4);align-self:center">&#10230;</div>
     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 16px;text-align:center">
       <div style="font-size:0.65rem;color:rgba(237,233,224,.5)">Idea maze</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.25);margin-top:2px">reinvention</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.5);margin-top:2px">reinvention</div>
     </div>
-    <div style="font-size:0.8rem;color:rgba(237,233,224,.15);align-self:center">&#10230;</div>
+    <div style="font-size:0.8rem;color:rgba(237,233,224,.4);align-self:center">&#10230;</div>
     <div style="background:rgba(212,168,83,0.06);border:1px solid rgba(212,168,83,0.15);border-radius:8px;padding:10px 16px;text-align:center">
       <div style="font-size:0.65rem;color:var(--gold,#caa54a)">Epic unsolved problem</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">scaling real human connection</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">scaling real human connection</div>
     </div>
   </div>
 
@@ -5957,7 +6068,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <circle cx="40" cy="30" r="14" fill="#D4A843"/><circle cx="280" cy="30" r="14" fill="#D46B7E"/>
     <circle cx="40" cy="210" r="14" fill="#43B8A0"/><circle cx="280" cy="210" r="14" fill="#5B8FD4"/>
   </svg>
-  <div style="font-size:0.72rem;color:rgba(237,233,224,.3);letter-spacing:.08em;margin-top:8px">dave@gnt.ai</div>
+  <div style="font-size:0.72rem;color:rgba(237,233,224,.55);letter-spacing:.08em;margin-top:8px">dave@gnt.ai</div>
 </div>
 </section>
 </div>
@@ -5968,7 +6079,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder Dave Velardo</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
   <div class="display" style="font-size:clamp(1.2rem,2.5vw,1.8rem);margin-bottom:8px">I turned down an acquisition because I knew the answer wasn&rsquo;t another skill rating system.</div>
-  <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-bottom:28px">Years of watching who people choose, who they avoid, and what no software has ever captured.</div>
+  <div style="font-size:0.72rem;color:rgba(237,233,224,.6);margin-bottom:28px">Years of watching who people choose, who they avoid, and what no software has ever captured.</div>
 
   <!-- Timeline -->
   <div style="display:flex;align-items:flex-start;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;position:relative">
@@ -5976,27 +6087,27 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="text-align:center;min-width:100px;position:relative;z-index:1">
       <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px;box-shadow:0 0 8px rgba(212,168,83,.3)"></div>
       <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2020</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">#27 ranked<br>pro tour</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">#27 ranked<br>pro tour</div>
     </div>
     <div style="text-align:center;min-width:100px;position:relative;z-index:1">
       <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
       <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2021</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">DUPR acquisition<br>offer declined</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">DUPR acquisition<br>offer declined</div>
     </div>
     <div style="text-align:center;min-width:100px;position:relative;z-index:1">
       <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
       <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2022</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">Built New England Pickleball Club<br>to live the problem</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">Built New England Pickleball Club<br>to live the problem</div>
     </div>
     <div style="text-align:center;min-width:100px;position:relative;z-index:1">
       <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
       <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2024</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">Bet on the<br>invitation feed</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">Bet on the<br>invitation feed</div>
     </div>
     <div style="text-align:center;min-width:100px;position:relative;z-index:1">
       <div style="width:10px;height:10px;border-radius:50%;background:var(--mint,#49b4a0);margin:7px auto 8px;box-shadow:0 0 8px rgba(73,180,160,.3)"></div>
       <div style="font-size:0.65rem;font-weight:700;color:var(--mint,#49b4a0)">2025</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">Steve (CTO) joins<br>System goes live</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">Steve (CTO) joins<br>System goes live</div>
     </div>
   </div>
 
@@ -6004,41 +6115,131 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
     <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">$2M+</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.3);margin-top:2px">ARR testbed communities</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px">ARR testbed communities</div>
     </div>
     <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">60 courts/wk</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.3);margin-top:2px">powered by GnT</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px">powered by GnT</div>
     </div>
     <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">$215K</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.3);margin-top:2px">court fees ARR (NEPC)</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px">court fees ARR (NEPC)</div>
     </div>
     <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">Self-funded</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.3);margin-top:2px">from day one</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px">from day one</div>
     </div>
   </div>
 </div>
 </section>
 </div>
 
-<!-- SLIDE 21: The Promise -->
-<div class="casey-slide ds-measure" id="cs-21">
+<!-- SLIDE 21: Club Impact — 3x Net Profit Impact with bar chart -->
+<div class="casey-slide ds-focus" id="cs-21">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red,#e04040);z-index:10;">Impact</div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:960px">
+  <div class="display" style="font-size:clamp(1.6rem,3.4vw,2.6rem);margin-bottom:8px"><span style="color:var(--cream)">3&times; Net Profit Impact</span></div>
+  <div style="font-size:0.82rem;color:rgba(237,233,224,.65);margin-bottom:32px;font-style:italic">GnT handles the complexity of people. You 3&times; the value of your community.</div>
+
+  <!-- Bar chart -->
+  <div style="display:flex;align-items:flex-end;justify-content:center;gap:32px;margin:0 0 12px 0;flex-wrap:wrap;max-width:860px;margin-left:auto;margin-right:auto">
+    <!-- Before GnT -->
+    <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
+      <div style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:rgba(237,233,224,.7);margin-bottom:4px">$300K</div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);margin-bottom:8px">&mdash;</div>
+      <div style="width:92px;height:100px;background:rgba(237,233,224,.08);border:1px solid rgba(237,233,224,.18);border-bottom:none;border-radius:8px 8px 0 0;position:relative">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:rgba(237,233,224,.6)">55%</div>
+        <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:0.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,233,224,.35)">util</div>
+      </div>
+      <div style="border-top:1px solid rgba(237,233,224,.2);width:92px"></div>
+      <div style="font-size:0.68rem;font-weight:600;color:rgba(237,233,224,.65);margin-top:10px">Before GnT</div>
+    </div>
+
+    <!-- Stage 1 today -->
+    <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--mint,#49b4a0);margin-bottom:4px">$410K</div>
+      <div style="font-size:0.7rem;color:var(--green-glow,#3dff7a);font-weight:700;margin-bottom:8px">+37%</div>
+      <div style="width:92px;height:136px;background:rgba(73,180,160,.1);border:1px solid rgba(73,180,160,.3);border-bottom:none;border-radius:8px 8px 0 0;position:relative">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--mint,#49b4a0)">61%</div>
+        <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:0.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(73,180,160,.5)">util</div>
+      </div>
+      <div style="border-top:1px solid rgba(237,233,224,.2);width:92px"></div>
+      <div style="font-size:0.68rem;font-weight:600;color:var(--cream,#e8e0d0);margin-top:10px">Stage 1</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px;font-style:italic">today</div>
+    </div>
+
+    <!-- Stage 2 human-in-loop -->
+    <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--mint,#49b4a0);margin-bottom:4px">$630K</div>
+      <div style="font-size:0.7rem;color:var(--green-glow,#3dff7a);font-weight:700;margin-bottom:8px">+110%</div>
+      <div style="width:92px;height:210px;background:rgba(73,180,160,.15);border:1px solid rgba(73,180,160,.4);border-bottom:none;border-radius:8px 8px 0 0;position:relative">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--mint,#49b4a0)">70%</div>
+        <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:0.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(73,180,160,.55)">util</div>
+      </div>
+      <div style="border-top:1px solid rgba(237,233,224,.2);width:92px"></div>
+      <div style="font-size:0.68rem;font-weight:600;color:var(--cream,#e8e0d0);margin-top:10px">Stage 2</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px;font-style:italic">human-in-loop</div>
+    </div>
+
+    <!-- Stage 3 autonomous (highlighted) -->
+    <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;color:var(--gold,#caa54a);margin-bottom:4px">$850K</div>
+      <div style="font-size:0.78rem;color:var(--red,#e04040);font-weight:900;margin-bottom:8px">+183%</div>
+      <div style="width:92px;height:284px;background:rgba(212,168,83,.2);border:1.5px solid rgba(212,168,83,.6);border-bottom:none;border-radius:8px 8px 0 0;position:relative;box-shadow:0 0 28px rgba(212,168,83,.2)">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--gold,#caa54a)">80%</div>
+        <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:0.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(212,168,83,.7)">util</div>
+      </div>
+      <div style="border-top:1px solid rgba(212,168,83,.4);width:92px"></div>
+      <div style="font-size:0.68rem;font-weight:700;color:var(--gold,#caa54a);margin-top:10px">Stage 3</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.65);margin-top:2px;font-style:italic">autonomous</div>
+    </div>
+  </div>
+
+  <!-- Krista quote -->
+  <div style="margin-top:28px;padding:14px 20px;border-left:3px solid var(--red,#e04040);text-align:left;max-width:720px;margin-left:auto;margin-right:auto">
+    <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.88rem;color:rgba(237,233,224,.85);line-height:1.5;margin-bottom:4px">&ldquo;The GnT invite has three courts all month &mdash; the skill rating event couldn&rsquo;t fill one.&rdquo;</div>
+    <div style="font-size:0.65rem;color:rgba(237,233,224,.6)">&mdash; Krista Trefethen, NEPC General Manager</div>
+  </div>
+</div>
+</section>
+</div>
+
+<!-- SLIDE 22: The Promise -->
+<div class="casey-slide ds-measure" id="cs-22">
 <div class="stg">
-  <div class="h" style="font-size:clamp(24px,4.5vw,42px); max-width:860px;">Get <span class="ember">the most out of your community,</span><br>while <span class="ember">your community gets the most out of you.</span></div>
+  <div class="h" style="font-size:clamp(22px,4vw,38px); max-width:900px;">Get <span class="ember">the most out of your community,</span><br>while <span class="ember">your community gets the most out of you.</span></div>
 </div>
 </div>
 
-<!-- SLIDE 22: Animated Logo Closer -->
-<div class="casey-slide ds-focus" id="cs-22">
+<!-- SLIDE 23: Animated Logo Closer -->
+<div class="casey-slide ds-focus" id="cs-23">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
 <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-  <div id="gntLogoAnim"><img src="data:image/png;base64,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" style="height:120px;opacity:0.95" alt="Give n Take"/></div>
+  <div id="gntLogoAnim">
+    <svg viewBox="0 0 280 180" width="280" height="180" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="logoGradClosing" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#60a5fa"/>
+          <stop offset="100%" stop-color="#fb7185"/>
+        </linearGradient>
+      </defs>
+      <!-- G letter -->
+      <text x="20" y="138" font-family="Playfair Display, serif" font-size="128" font-weight="700" fill="#60a5fa" opacity="0.95">G</text>
+      <!-- N letter (gradient) -->
+      <text x="98" y="138" font-family="Playfair Display, serif" font-size="128" font-weight="700" fill="url(#logoGradClosing)">N</text>
+      <!-- Give arrow (up) -->
+      <path d="M141 37 L141 18 L131 26 L141 18 L151 26" stroke="#60a5fa" stroke-width="4.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+      <!-- Take arrow (down) -->
+      <path d="M165 15 L165 34 L155 25 L165 34 L175 25" stroke="#fb7185" stroke-width="4.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+      <!-- T letter -->
+      <text x="186" y="138" font-family="Playfair Display, serif" font-size="128" font-weight="700" fill="#fb7185" opacity="0.95">T</text>
+    </svg>
+  </div>
   <div class="ga-text" style="text-align:center;margin-top:24px;opacity:0" id="gntLogoText">
     <div style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(237,233,224,.85);letter-spacing:0.02em">Give &lsquo;n Take</div>
     <div style="font-family:'Playfair Display',serif;font-size:clamp(0.9rem,1.6vw,1.2rem);font-weight:700;font-style:italic;color:var(--gold,#caa54a);margin-top:12px;letter-spacing:0.04em;opacity:0.7">Autonomous human connection.</div>
-    <div style="font-size:0.72rem;color:rgba(237,233,224,.3);margin-top:12px;letter-spacing:.08em">dave@gnt.ai</div>
+    <div style="font-size:0.72rem;color:rgba(237,233,224,.55);margin-top:12px;letter-spacing:.08em">dave@gnt.ai</div>
   </div>
 </div>
 </section>
@@ -6046,45 +6247,62 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- ===== APPENDIX SLIDES ===== -->
 
-<!-- APPENDIX SLIDE 1: Market Size -->
+<!-- APPENDIX SLIDE 1: The thesis (our uniqueness, value, connection) -->
 <div class="casey-slide ds-focus appendix-slide" id="cs-a1" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Thesis</div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:960px">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.6vw,2.8rem);font-weight:700;color:var(--cream,#e8e0d0);line-height:1.25;margin-bottom:20px">
+    Our <em class="ember">uniqueness,</em> <em class="ember">value,</em> and <em class="ember">connection</em> to each other&nbsp;&mdash;
+  </div>
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.6vw,2rem);font-weight:700;font-style:italic;color:var(--gold,#caa54a);line-height:1.3">
+    finally measured and scalable.
+  </div>
+  <div style="width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold,#caa54a),transparent);margin:36px auto"></div>
+  <div style="font-size:0.72rem;color:rgba(237,233,224,.5);letter-spacing:.15em;text-transform:uppercase">Appendix</div>
+</div>
+</section>
+</div>
+
+Market Size -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a2" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Market Size</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
   <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:36px">Pickleball: two sides, one graph</div>
   <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:32px">
-    <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.15);border-radius:12px;padding:24px 32px;min-width:260px">
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mint,#49b4a0);margin-bottom:8px">Direct-to-Players</div>
-      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--mint,#49b4a0)">$2.4B</div>
-      <div style="font-size:0.68rem;color:rgba(237,233,224,.4);margin-top:4px">ARR TAM</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.25);margin-top:8px">10M regulars &times; $20/mo</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.2);margin-top:2px">Comp: Strava $12/mo</div>
-    </div>
     <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:12px;padding:24px 32px;min-width:260px">
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:8px">B2B / Clubs</div>
       <div style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--gold,#caa54a)">$150M</div>
-      <div style="font-size:0.68rem;color:rgba(237,233,224,.4);margin-top:4px">ARR TAM</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.25);margin-top:8px">5,000 managed clubs &times; $2,500/mo</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.2);margin-top:2px">15,000 total venues</div>
+      <div style="font-size:0.68rem;color:rgba(237,233,224,.6);margin-top:4px">ARR TAM</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.55);margin-top:8px">5,000 managed clubs &times; $2,500/mo</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.5);margin-top:2px">15,000 total venues</div>
+    </div>
+    <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.15);border-radius:12px;padding:24px 32px;min-width:260px">
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mint,#49b4a0);margin-bottom:8px">Direct-to-Players</div>
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--mint,#49b4a0)">$2.4B</div>
+      <div style="font-size:0.68rem;color:rgba(237,233,224,.6);margin-top:4px">ARR TAM</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.55);margin-top:8px">10M regulars &times; $20/mo</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.5);margin-top:2px">Comp: Strava $12/mo</div>
     </div>
   </div>
-  <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(237,233,224,.2);margin-bottom:8px">Growth</div>
+  <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(237,233,224,.45);margin-bottom:8px">Growth</div>
   <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
-    <div style="font-size:0.68rem;color:rgba(237,233,224,.35)">Player growth: <strong style="color:var(--mint,#49b4a0)">+45.8% YoY</strong></div>
-    <div style="font-size:0.68rem;color:rgba(237,233,224,.35)">Courts: <strong style="color:var(--gold,#caa54a)">+37% YoY</strong></div>
-    <div style="font-size:0.68rem;color:rgba(237,233,224,.35)">Locations: <strong style="color:rgba(237,233,224,.6)">+34% YoY</strong></div>
+    <div style="font-size:0.68rem;color:rgba(237,233,224,.6)">Player growth: <strong style="color:var(--mint,#49b4a0)">+45.8% YoY</strong></div>
+    <div style="font-size:0.68rem;color:rgba(237,233,224,.6)">Courts: <strong style="color:var(--gold,#caa54a)">+37% YoY</strong></div>
+    <div style="font-size:0.68rem;color:rgba(237,233,224,.6)">Locations: <strong style="color:rgba(237,233,224,.6)">+34% YoY</strong></div>
   </div>
 </div>
 </section>
 </div>
 
-<!-- APPENDIX SLIDE 2: Traction / Testimonials -->
-<div class="casey-slide ds-focus appendix-slide" id="cs-a2" style="display:none">
+<!-- APPENDIX SLIDE 3: Traction / Testimonials -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a3" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Traction</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
   <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">Your 24/7 personalized matchmaker</div>
-  <div style="font-size:0.78rem;color:rgba(237,233,224,.35);margin-bottom:32px">Radical player behavior change. 20,000 accepted invitations. 250 active players.</div>
+  <div style="font-size:0.78rem;color:rgba(237,233,224,.6);margin-bottom:32px">Radical player behavior change. 20,000 accepted invitations. 250 active players.</div>
   <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
     <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px 24px;max-width:260px;text-align:left">
       <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(237,233,224,.6);line-height:1.5;margin-bottom:12px">&ldquo;It&rsquo;s such a psychological phenomenon &mdash; I couldn&rsquo;t fill a skill rating event on Monday at 5pm to save my soul, and now the Give &lsquo;n Take invite has three courts all month.&rdquo;</div>
@@ -6097,43 +6315,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px 24px;max-width:260px;text-align:left">
       <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(237,233,224,.6);line-height:1.5;margin-bottom:12px">&ldquo;I don&rsquo;t even check calendar events anymore.&rdquo;</div>
       <div style="font-size:0.65rem;font-weight:600;color:var(--gold,#caa54a)">&mdash; Member Dean Taylor</div>
-    </div>
-  </div>
-</div>
-</section>
-</div>
-
-<!-- APPENDIX SLIDE 3: Revenue Impact -->
-<div class="casey-slide ds-focus appendix-slide" id="cs-a3" style="display:none">
-<section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Club Impact</div>
-<div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
-  <div class="display" style="font-size:clamp(1.2rem,2.8vw,2rem);margin-bottom:8px">GnT handles the complexity of people.<br><em>You 3&times; your community.</em></div>
-  <div style="display:flex;align-items:flex-end;justify-content:center;gap:48px;margin:36px 0;flex-wrap:wrap">
-    <!-- Before -->
-    <div style="text-align:center">
-      <div style="width:80px;height:120px;background:rgba(237,233,224,.08);border:1px solid rgba(237,233,224,.12);border-bottom:none;border-radius:8px 8px 0 0;margin:0 auto"></div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:rgba(237,233,224,.4);margin-top:8px">56%</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.25)">court utilization</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.15);margin-top:4px">Healthy club without GnT</div>
-    </div>
-    <!-- Arrow -->
-    <div style="font-size:1.5rem;color:var(--gold,#caa54a);opacity:0.4;margin-bottom:40px">&#10230;</div>
-    <!-- After phase 1 -->
-    <div style="text-align:center">
-      <div style="width:80px;height:180px;background:rgba(73,180,160,.12);border:1px solid rgba(73,180,160,.25);border-bottom:none;border-radius:8px 8px 0 0;margin:0 auto"></div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--mint,#49b4a0);margin-top:8px">64%</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.35)">+$120K revenue</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.2);margin-top:4px">Initial implementation</div>
-    </div>
-    <!-- Arrow -->
-    <div style="font-size:1.5rem;color:var(--gold,#caa54a);opacity:0.4;margin-bottom:40px">&#10230;</div>
-    <!-- After flywheel -->
-    <div style="text-align:center">
-      <div style="width:80px;height:240px;background:rgba(212,168,83,.15);border:1px solid rgba(212,168,83,.3);border-bottom:none;border-radius:8px 8px 0 0;margin:0 auto"></div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold,#caa54a);margin-top:8px">85%</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.4)">+$250K boost</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.25);margin-top:4px">AI flywheel</div>
     </div>
   </div>
 </div>
@@ -6220,19 +6401,31 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="casey-slide ds-focus appendix-slide" id="cs-a6" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Team</div>
-<div class="inner" style="padding-top:56px;text-align:center;max-width:700px">
-  <div class="display" style="font-size:clamp(1.2rem,2.5vw,1.8rem);margin-bottom:32px">Team building out of New England Pickleball Club</div>
-  <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap">
-    <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:12px;padding:24px 28px;min-width:240px;text-align:left">
+<div class="inner" style="padding-top:56px;text-align:center;max-width:960px">
+  <div class="display" style="font-size:clamp(1.3rem,2.6vw,2rem);margin-bottom:8px">The team making <em class="ember">human connection autonomous.</em></div>
+  <div style="font-size:0.78rem;color:rgba(237,233,224,.6);font-style:italic;margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto">Rare combination of outlier real-world community domain expertise and serious tech expertise &mdash; solving it for the first time.</div>
+
+  <div style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap">
+    <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:12px;padding:22px 24px;min-width:220px;max-width:260px;text-align:left">
       <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold,#caa54a);margin-bottom:4px">Dave Velardo</div>
-      <div style="font-size:0.68rem;color:rgba(237,233,224,.5);margin-bottom:12px">Founder &amp; CEO</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.3);line-height:1.6">Former #27 ranked player in the world<br>6 years developing domain expertise<br>Built $2M+ ARR testbed communities</div>
+      <div style="font-size:0.68rem;color:rgba(237,233,224,.65);margin-bottom:12px">Founder &amp; CEO</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.7);line-height:1.6">Former #27 ranked player in the world<br>6 years developing domain expertise<br>Built $2M+ ARR testbed communities</div>
     </div>
-    <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.15);border-radius:12px;padding:24px 28px;min-width:240px;text-align:left">
+    <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.15);border-radius:12px;padding:22px 24px;min-width:220px;max-width:260px;text-align:left">
       <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--mint,#49b4a0);margin-bottom:4px">Steve Callan</div>
-      <div style="font-size:0.68rem;color:rgba(237,233,224,.5);margin-bottom:12px">CTO</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.3);line-height:1.6">25 years tech experience<br>Hill Holliday, Ex-SVP Tech<br>KingsCrowd, Ex Head of Tech</div>
+      <div style="font-size:0.68rem;color:rgba(237,233,224,.65);margin-bottom:12px">Co-Founder &amp; CTO</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.7);line-height:1.6">25 years tech experience<br>Hill Holliday, Ex-SVP Tech<br>KingsCrowd, Ex Head of Tech</div>
     </div>
+    <div style="background:rgba(224,64,64,.05);border:1px solid rgba(224,64,64,.15);border-radius:12px;padding:22px 24px;min-width:220px;max-width:260px;text-align:left">
+      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--red,#e04040);margin-bottom:4px">Krista Trefethen</div>
+      <div style="font-size:0.68rem;color:rgba(237,233,224,.65);margin-bottom:12px">Domain Expert &middot; NEPC GM</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.7);line-height:1.6">The coordinator the AI learns from<br>500+ invitations / week<br>Every correction = training data</div>
+    </div>
+  </div>
+
+  <div style="margin-top:28px;background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.12);border-radius:10px;padding:14px 24px;max-width:720px;margin-left:auto;margin-right:auto">
+    <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:4px">Why this team</div>
+    <div style="font-size:0.72rem;color:rgba(237,233,224,.7);line-height:1.5">Domain + tech + lived experience running a real community. First team ever positioned to solve autonomous human connection.</div>
   </div>
 </div>
 </section>
@@ -6251,22 +6444,22 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;padding:18px 12px">
       <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:var(--gold,#caa54a)">2</div>
       <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Clubs</div>
-      <div style="font-size:0.5rem;color:rgba(237,233,224,.25);margin-top:2px">Rye, NH &middot; Middleton, MA</div>
+      <div style="font-size:0.5rem;color:rgba(237,233,224,.5);margin-top:2px">Rye, NH &middot; Middleton, MA</div>
     </div>
     <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;padding:18px 12px">
       <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:var(--gold,#caa54a)">1,000+</div>
       <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Players</div>
-      <div style="font-size:0.5rem;color:rgba(237,233,224,.25);margin-top:2px">Real, active, paying</div>
+      <div style="font-size:0.5rem;color:rgba(237,233,224,.5);margin-top:2px">Real, active, paying</div>
     </div>
     <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;padding:18px 12px">
       <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:var(--gold,#caa54a)">12</div>
       <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Courts</div>
-      <div style="font-size:0.5rem;color:rgba(237,233,224,.25);margin-top:2px">Owned and operated</div>
+      <div style="font-size:0.5rem;color:rgba(237,233,224,.5);margin-top:2px">Owned and operated</div>
     </div>
     <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;padding:18px 12px">
       <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:var(--gold,#caa54a)">$2M+</div>
       <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">ARR</div>
-      <div style="font-size:0.5rem;color:rgba(237,233,224,.25);margin-top:2px">Self-funded testbed</div>
+      <div style="font-size:0.5rem;color:rgba(237,233,224,.5);margin-top:2px">Self-funded testbed</div>
     </div>
   </div>
 
@@ -6292,7 +6485,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap">
       <div>
         <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:rgba(237,233,224,.5)">55%</span>
-        <span style="font-size:0.68rem;color:rgba(237,233,224,.35)"> util</span>
+        <span style="font-size:0.68rem;color:rgba(237,233,224,.6)"> util</span>
       </div>
       <div style="font-size:1.2rem;color:var(--green-glow,#3dff7a);opacity:0.6">&#10230;</div>
       <div>
@@ -6334,10 +6527,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <!-- GATE 3 -->
     <div style="background:rgba(255,255,255,0.02);border:1.5px dashed rgba(237,233,224,0.2);border-radius:12px;padding:22px 18px;position:relative">
       <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg,#0a0f0d);padding:2px 12px;font-size:0.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,233,224,.4)">Target</div>
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(237,233,224,.3);margin-top:6px;margin-bottom:10px">Gate 3</div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(237,233,224,.55);margin-top:6px;margin-bottom:10px">Gate 3</div>
       <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:rgba(237,233,224,.6);line-height:1.3;margin-bottom:12px">Does it work at a club we don't own?</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:rgba(237,233,224,.5);margin:10px 0">80%</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.3)">of Krista's quality without Krista</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.55)">of Krista's quality without Krista</div>
     </div>
   </div>
 
@@ -6359,34 +6552,34 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <!-- Horizontal timeline -->
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:900px;margin:0 auto;position:relative">
     <!-- Connecting line -->
-    <div style="position:absolute;top:28px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,var(--green-glow,#3dff7a),var(--gold,#caa54a),var(--mint,#49b4a0),rgba(237,233,224,.2));opacity:0.4;z-index:0"></div>
+    <div style="position:absolute;top:28px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,var(--green-glow,#3dff7a),var(--gold,#caa54a),var(--mint,#49b4a0),rgba(237,233,224,.45));opacity:0.4;z-index:0"></div>
 
     <!-- TODAY -->
     <div style="position:relative;z-index:1;text-align:center">
       <div style="width:16px;height:16px;border-radius:50%;background:var(--green-glow,#3dff7a);box-shadow:0 0 16px rgba(61,255,122,0.5);margin:20px auto 14px auto"></div>
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:6px">Today</div>
-      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 1 live at NEPC<br><span style="color:rgba(237,233,224,.3)">61% util, +$110K</span><br><span style="color:rgba(237,233,224,.3)">250 active players</span></div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 1 live at NEPC<br><span style="color:rgba(237,233,224,.55)">61% util, +$110K</span><br><span style="color:rgba(237,233,224,.55)">250 active players</span></div>
     </div>
 
     <!-- 6 MONTHS -->
     <div style="position:relative;z-index:1;text-align:center">
       <div style="width:14px;height:14px;border-radius:50%;background:var(--gold,#caa54a);box-shadow:0 0 12px rgba(212,168,83,0.4);margin:21px auto 14px auto"></div>
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:6px">6 Months</div>
-      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 2 at NEPC<br><span style="color:rgba(237,233,224,.3)">50% auto-approval</span><br><span style="color:rgba(237,233,224,.3)">First external pilot</span></div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 2 at NEPC<br><span style="color:rgba(237,233,224,.55)">50% auto-approval</span><br><span style="color:rgba(237,233,224,.55)">First external pilot</span></div>
     </div>
 
     <!-- 12 MONTHS -->
     <div style="position:relative;z-index:1;text-align:center">
       <div style="width:14px;height:14px;border-radius:50%;background:var(--mint,#49b4a0);box-shadow:0 0 12px rgba(73,180,160,0.4);margin:21px auto 14px auto"></div>
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mint,#49b4a0);margin-bottom:6px">12 Months</div>
-      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 3 validated<br><span style="color:rgba(237,233,224,.3)">3&ndash;5 external clubs live</span><br><span style="color:rgba(237,233,224,.3)">Signed to live &lt;30 days</span></div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 3 validated<br><span style="color:rgba(237,233,224,.55)">3&ndash;5 external clubs live</span><br><span style="color:rgba(237,233,224,.55)">Signed to live &lt;30 days</span></div>
     </div>
 
     <!-- 3 YEARS -->
     <div style="position:relative;z-index:1;text-align:center">
       <div style="width:12px;height:12px;border-radius:50%;border:2px solid rgba(237,233,224,0.3);margin:22px auto 14px auto"></div>
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,233,224,.4);margin-bottom:6px">3 Years</div>
-      <div style="font-size:0.65rem;color:rgba(237,233,224,.35);line-height:1.5">Network of clubs<br><span style="color:rgba(237,233,224,.25)">Every club's data</span><br><span style="color:rgba(237,233,224,.25)">trains every club's AI</span></div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.6);line-height:1.5">Network of clubs<br><span style="color:rgba(237,233,224,.5)">Every club's data</span><br><span style="color:rgba(237,233,224,.5)">trains every club's AI</span></div>
     </div>
   </div>
 
@@ -6412,13 +6605,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="text-align:center;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.15);border-radius:16px;padding:24px 28px;min-width:240px">
       <div style="font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;color:var(--red,#e04040);line-height:1">70%</div>
       <div style="font-size:0.72rem;font-weight:600;color:rgba(237,233,224,.6);margin-top:8px">of declines follow<br>social avoidance patterns</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.35);margin-top:8px;font-style:italic">They're not busy. They're choosing.</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.6);margin-top:8px;font-style:italic">They're not busy. They're choosing.</div>
     </div>
     <!-- 0.6% -->
     <div style="text-align:center;background:rgba(73,180,160,0.04);border:1px solid rgba(73,180,160,0.15);border-radius:16px;padding:24px 28px;min-width:240px">
       <div style="font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;color:var(--mint,#49b4a0);line-height:1">0.6%</div>
       <div style="font-size:0.72rem;font-weight:600;color:rgba(237,233,224,.6);margin-top:8px">will say so<br>directly</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.35);margin-top:8px;font-style:italic">The behavior says it. The words don't.</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.6);margin-top:8px;font-style:italic">The behavior says it. The words don't.</div>
     </div>
   </div>
 
@@ -6426,7 +6619,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     The invitation is the instrument. Every accept, every decline, every hesitation is a signal about belonging.
   </div>
 
-  <div style="margin-top:24px;font-size:0.58rem;color:rgba(237,233,224,.25);letter-spacing:.1em;text-transform:uppercase">
+  <div style="margin-top:24px;font-size:0.58rem;color:rgba(237,233,224,.5);letter-spacing:.1em;text-transform:uppercase">
     Source: NEPC invitation system &middot; 20,000 invitations &middot; 500,000+ signals &middot; 1,000+ players
   </div>
 </div>
@@ -6502,7 +6695,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <nav class="casey-nav" id="cnav"></nav>
 
 <script>
-const TOTAL = 22;
+const TOTAL = 23;
 const APPENDIX_TOTAL = 12;
 let current = 1;
 let inAppendix = false;
@@ -6525,7 +6718,7 @@ function caseyGo(n) {
   if (n === 10) animateIntroTeaser();
   if (n === 8) animateIntroOrbit();
   if (n === 15) animateIntroExpansion();
-  if (n === 22) replayGntLogo();
+  if (n === 23) replayGntLogo();
 }
 
 function enterAppendix() {
@@ -6576,7 +6769,7 @@ const slideLabels = [
   'Social Sports',
   'The Data Exists',
   'The Cost of Honesty',
-  'The Future',
+  'The Future of Humanity',
   'Invitation-Feed',
   'Human Value Marketplace',
   'Matchmaking in Social Sports Communities',
@@ -6590,6 +6783,7 @@ const slideLabels = [
   'Opportunity Size',
   'Brian Chesky',
   'Founder Journey',
+  'Club Impact',
   'The Promise',
   'Give \'n Take'
 ];
@@ -6711,6 +6905,8 @@ function animateIntroTeaser() {
 }
 
 function animateIntroOrbit() {
+  const slide = document.getElementById('cs-8');
+  const topText = slide ? slide.querySelector('.graph-top-text') : null;
   const container = document.querySelector('#cs-8 .graph-container');
   if (!container) return;
   const nodes = container.querySelectorAll('.graph-node');
@@ -6718,24 +6914,54 @@ function animateIntroOrbit() {
   const w = container.offsetWidth, h = container.offsetHeight;
   const cx = w / 2, cy = h / 2, radius = w * 0.38;
   const positions = [];
+
+  // STAGE 1: Hide everything except the center "You get magic" node.
+  // Center node is inside .graph-container, already visible.
+  if (topText) {
+    topText.style.opacity = '0';
+    topText.style.transform = 'translateY(-8px)';
+    topText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  }
+  nodes.forEach(n => n.classList.remove('show'));
+  svg.innerHTML = '';
+  svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+
+  // Compute node positions (invisible until shown)
   nodes.forEach((node, i) => {
     const angle = parseFloat(node.dataset.angle) * (Math.PI / 180) - Math.PI / 2;
     const x = cx + radius * Math.cos(angle), y = cy + radius * Math.sin(angle);
     node.style.left = (x - 18) + 'px'; node.style.top = (y - 18) + 'px';
     positions.push({ x, y, color: node.dataset.color });
-    node.classList.remove('show');
-    setTimeout(() => node.classList.add('show'), 300 + i * 120);
   });
-  svg.innerHTML = '';
-  svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+
+  // STAGE 2: After the center answer "You get magic" has landed (900ms),
+  // fade in the top text + cascade the orbit.
+  const HOLD = 900; // ms the center sits alone
+
+  // Top text fades in first
+  setTimeout(() => {
+    if (topText) {
+      topText.style.opacity = '1';
+      topText.style.transform = 'translateY(0)';
+    }
+  }, HOLD);
+
+  // Orbit nodes cascade in
+  nodes.forEach((node, i) => {
+    setTimeout(() => node.classList.add('show'), HOLD + 300 + i * 120);
+  });
+
+  // Radial lines from center to each orbit node
   positions.forEach((p, i) => {
     const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
     line.setAttribute('x1', cx); line.setAttribute('y1', cy);
     line.setAttribute('x2', p.x); line.setAttribute('y2', p.y);
     line.setAttribute('stroke', p.color);
     svg.appendChild(line);
-    setTimeout(() => line.classList.add('show'), 600 + i * 100);
+    setTimeout(() => line.classList.add('show'), HOLD + 600 + i * 100);
   });
+
+  // Cross-connecting pairs (the social graph texture)
   const pairs = [[0,2],[1,4],[2,5],[3,6],[4,0],[5,1],[6,3]];
   pairs.forEach((pair, i) => {
     if (positions[pair[0]] && positions[pair[1]]) {
@@ -6745,298 +6971,359 @@ function animateIntroOrbit() {
       line.setAttribute('stroke', positions[pair[0]].color);
       line.style.opacity = '0'; line.style.strokeDasharray = '3 5';
       svg.appendChild(line);
-      setTimeout(() => { line.style.opacity = '0.15'; line.style.transition = 'opacity 1s ease'; }, 1200 + i * 150);
+      setTimeout(() => { line.style.opacity = '0.15'; line.style.transition = 'opacity 1s ease'; }, HOLD + 1200 + i * 150);
     }
   });
 }
 window.addEventListener('resize', () => { if (current === 8) animateIntroOrbit(); });
 
-// ===== COURT FORMATION ANIMATION (slide 9) =====
+// ===== HUMAN VALUE MARKETPLACE SIMULATION (slide 9) =====
 let courtFormRunning = false, courtFormFrame = 0;
 function startCourtForm() {
   if (courtFormRunning) return;
   courtFormRunning = true;
   const c = document.getElementById('courtFormCanvas');
-  const scoreEl = document.getElementById('courtFormScore');
   if (!c) return;
   const ctx = c.getContext('2d');
   const W = c.width, H = c.height;
 
-  // Community — 16 people in a network graph
   const pColors = ['#D4A843','#D46B7E','#43B8A0','#5B8FD4','#E8CC60','#c76bdb','#4ae8c1','#e85a7a',
                    '#f0c040','#ff8a65','#81c784','#64b5f6','#ce93d8','#a5d6a7','#f48fb1','#4fc3f7'];
   const pNames = ['Alex','Sam','Jordan','Pat','Chris','Morgan','Taylor','Riley',
                   'Casey','Jamie','Quinn','Avery','Drew','Blake','Sage','Reese'];
   const people = [];
-  // Arrange in a loose circle on the left
-  const gcx = 160, gcy = 160, gr = 110;
-  for (let i = 0; i < 16; i++) {
-    const angle = (i / 16) * Math.PI * 2 - Math.PI / 2;
-    const jx = (Math.random() - 0.5) * 20, jy = (Math.random() - 0.5) * 20;
-    people.push({
-      hx: gcx + Math.cos(angle) * gr + jx, hy: gcy + Math.sin(angle) * gr + jy, // home
-      x: gcx + Math.cos(angle) * gr + jx, y: gcy + Math.sin(angle) * gr + jy,
-      color: pColors[i], name: pNames[i], r: 8, selected: false, onCourt: false
-    });
-  }
+  const gcx = 120, gcy = 170;
+  // CLUSTER-BASED social graph: 4 overlapping clusters of people who play together a lot
+  const clusters = [
+    { cx: gcx - 55, cy: gcy - 55, size: 4 },  // top-left cluster
+    { cx: gcx + 50, cy: gcy - 40, size: 4 },  // top-right cluster
+    { cx: gcx - 40, cy: gcy + 55, size: 5 },  // bottom-left cluster (larger)
+    { cx: gcx + 45, cy: gcy + 50, size: 3 }   // bottom-right cluster
+  ];
+  const clusterAssignment = []; // track which cluster each person belongs to
+  let personIdx = 0;
+  clusters.forEach((cluster, ci) => {
+    for (let k = 0; k < cluster.size; k++) {
+      // Place people tightly within the cluster center (small radius + jitter)
+      const ang = (k / cluster.size) * Math.PI * 2 + Math.random()*0.4;
+      const rad = 10 + Math.random() * 18;
+      const jx = (Math.random()-0.5)*6;
+      const jy = (Math.random()-0.5)*6;
+      const hx = cluster.cx + Math.cos(ang)*rad + jx;
+      const hy = cluster.cy + Math.sin(ang)*rad + jy;
+      people.push({
+        hx, hy, x: hx, y: hy,
+        color: pColors[personIdx],
+        name: pNames[personIdx],
+        r: 6, status: 'home', cluster: ci
+      });
+      clusterAssignment.push(ci);
+      personIdx++;
+    }
+  });
 
-  // Connections between neighbors
+  // Edges: dense WITHIN clusters (they play together a lot), sparse BETWEEN clusters (occasional bridges)
   const edges = [];
   for (let i = 0; i < 16; i++) {
-    edges.push([i, (i + 1) % 16]);
-    if (i % 3 === 0) edges.push([i, (i + 4) % 16]);
+    for (let j = i+1; j < 16; j++) {
+      const sameCluster = clusterAssignment[i] === clusterAssignment[j];
+      if (sameCluster) {
+        // Dense connections within cluster (70% chance)
+        if (Math.random() < 0.70) edges.push([i, j]);
+      } else {
+        // Sparse bridges between clusters (8% chance)
+        if (Math.random() < 0.08) edges.push([i, j]);
+      }
+    }
   }
 
-  // Court positions (right side) — real pickleball 44'×20' = 2.2:1 ratio
-  const courtX = 505, courtY = 105, courtW = 250, courtH = 114;
-  const courtSlots = [
-    [courtX + 45, courtY + 30],
-    [courtX + 205, courtY + 30],
-    [courtX + 45, courtY + 84],
-    [courtX + 205, courtY + 84]
+  const simCourtW = 170, simCourtH = 72;
+  const simCourtX = 255;
+  const simCourts = [
+    { x: simCourtX, y: 15,  w: simCourtW, h: simCourtH },
+    { x: simCourtX, y: 120, w: simCourtW, h: simCourtH },
+    { x: simCourtX, y: 225, w: simCourtW, h: simCourtH }
   ];
+  const sims = simCourts.map((c, i) => ({
+    court: c,
+    slots: [
+      [c.x + c.w*0.28, c.y + c.h*0.35],
+      [c.x + c.w*0.72, c.y + c.h*0.35],
+      [c.x + c.w*0.28, c.y + c.h*0.70],
+      [c.x + c.w*0.72, c.y + c.h*0.70]
+    ],
+    phase: 'idle', phaseFrame: 0, selected: [], targetScore: 0, displayedScore: 0,
+    startDelay: i * 40
+  }));
 
-  // Value exchange labels
-  const valueLabels = [
-    ['lifts energy','welcomes','competitive match','great rally partner'],
-    ['funny','reliable','pushes you','positive attitude'],
-    ['makes you better','encouraging','calm presence','good communicator']
+  const winCourt = { x: 470, y: 65, w: 310, h: 210 };
+  const winSlots = [
+    [winCourt.x + winCourt.w*0.22, winCourt.y + winCourt.h*0.30],
+    [winCourt.x + winCourt.w*0.78, winCourt.y + winCourt.h*0.30],
+    [winCourt.x + winCourt.w*0.22, winCourt.y + winCourt.h*0.70],
+    [winCourt.x + winCourt.w*0.78, winCourt.y + winCourt.h*0.70]
   ];
+  const winState = { phase: 'empty', phaseFrame: 0, group: [], incomingFrom: null, quality: 0 };
 
-  let phase = 'idle'; // idle, selecting, moving, showing, returning
-  let phaseTimer = 0;
-  let selected = [];
-  let valueLines = [];
-  let score = 0;
-  let round = 0;
+  function lerp(a,b,t){return a + (b-a)*Math.min(1,t);}
 
-  function pickFour() {
-    const indices = [];
-    const pool = [...Array(16).keys()];
+  function drawCourt(x, y, w, h, opts) {
+    ctx.save();
+    ctx.fillStyle = opts.fill || 'rgba(45,90,61,0.06)';
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = opts.border || 'rgba(232,224,208,0.25)';
+    ctx.lineWidth = opts.lw || 1.2;
+    ctx.strokeRect(x, y, w, h);
+    ctx.beginPath();
+    ctx.moveTo(x + w/2, y); ctx.lineTo(x + w/2, y + h);
+    ctx.strokeStyle = opts.net || 'rgba(232,224,208,0.18)';
+    ctx.setLineDash([4,4]); ctx.stroke(); ctx.setLineDash([]);
+    const kw = w * 0.16;
+    ctx.strokeStyle = opts.kitchen || 'rgba(232,224,208,0.12)';
+    ctx.lineWidth = 0.8;
+    ctx.strokeRect(x + w/2 - kw, y, kw, h);
+    ctx.strokeRect(x + w/2, y, kw, h);
+    ctx.restore();
+  }
+
+  function drawPerson(x, y, color, r, opts) {
+    opts = opts || {};
+    ctx.save();
+    ctx.globalAlpha = opts.alpha || 1;
+    ctx.beginPath(); ctx.arc(x, y - r*0.8, r*0.55, 0, Math.PI*2);
+    ctx.strokeStyle = color; ctx.lineWidth = opts.lw || 1.5;
+    ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x, y - r*0.25); ctx.lineTo(x, y + r*1.2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x - r*0.8, y + r*0.3); ctx.lineTo(x + r*0.8, y + r*0.3); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x, y + r*1.2); ctx.lineTo(x - r*0.7, y + r*2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x, y + r*1.2); ctx.lineTo(x + r*0.7, y + r*2); ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawQualityBar(x, y, w, h, score) {
+    ctx.fillStyle = 'rgba(255,255,255,0.06)';
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+    ctx.lineWidth = 0.5;
+    ctx.strokeRect(x, y, w, h);
+    let fillColor;
+    if (score < 55) fillColor = '#e04040';
+    else if (score < 75) fillColor = '#f59e0b';
+    else fillColor = '#3dff7a';
+    const fillW = (score/100) * w;
+    ctx.fillStyle = fillColor;
+    ctx.fillRect(x, y, fillW, h);
+    if (score >= 75) {
+      ctx.shadowColor = '#3dff7a';
+      ctx.shadowBlur = 6;
+      ctx.fillRect(x, y, fillW, h);
+      ctx.shadowBlur = 0;
+    }
+    ctx.fillStyle = fillColor;
+    ctx.font = '700 9px Manrope, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText(Math.round(score) + '%', x + w + 24, y + h);
+  }
+
+  function pickFourFromCommunity() {
+    const pool = [];
+    for (let i = 0; i < 16; i++) if (people[i].status === 'home') pool.push(i);
+    if (pool.length < 4) return null;
+    const picked = [];
     for (let i = 0; i < 4; i++) {
       const idx = Math.floor(Math.random() * pool.length);
-      indices.push(pool.splice(idx, 1)[0]);
+      picked.push(pool.splice(idx, 1)[0]);
     }
-    return indices;
+    return picked;
   }
 
-  function lerp(a, b, t) { return a + (b - a) * Math.min(1, t); }
+  function stepSim(sim, simIndex) {
+    if (sim.phase === 'idle') {
+      if (sim.phaseFrame >= sim.startDelay) {
+        const picks = pickFourFromCommunity();
+        if (picks) {
+          sim.selected = picks;
+          sim.selected.forEach(i => { people[i].status = 'sim'+(simIndex+1); });
+          sim.phase = 'recruiting';
+          sim.phaseFrame = 0;
+          sim.targetScore = 35 + Math.random() * 65;
+          sim.displayedScore = 0;
+        }
+      }
+    } else if (sim.phase === 'recruiting') {
+      const t = sim.phaseFrame / 30;
+      sim.selected.forEach((pi, si) => {
+        people[pi].x = lerp(people[pi].hx, sim.slots[si][0], t);
+        people[pi].y = lerp(people[pi].hy, sim.slots[si][1], t);
+      });
+      if (sim.phaseFrame >= 30) { sim.phase = 'simulating'; sim.phaseFrame = 0; }
+    } else if (sim.phase === 'simulating') {
+      sim.displayedScore = lerp(sim.displayedScore, sim.targetScore, 0.04);
+      if (sim.phaseFrame >= 70) { sim.phase = 'resolved'; sim.phaseFrame = 0; }
+    } else if (sim.phase === 'resolved') {
+      sim.displayedScore = sim.targetScore;
+      if (sim.phaseFrame >= 20) {
+        if (sim.targetScore >= 75 && winState.phase === 'empty') {
+          sim.phase = 'promoting'; sim.phaseFrame = 0;
+          winState.phase = 'arriving'; winState.phaseFrame = 0;
+          winState.group = sim.selected.slice();
+          winState.incomingFrom = simIndex;
+          winState.quality = sim.targetScore;
+          sim.selected.forEach(i => { people[i].status = 'winning'; });
+        } else if (sim.targetScore >= 75) {
+          if (sim.phaseFrame >= 60) { sim.phase = 'rejecting'; sim.phaseFrame = 0; }
+        } else {
+          sim.phase = 'rejecting'; sim.phaseFrame = 0;
+        }
+      }
+    } else if (sim.phase === 'promoting') {
+      const t = sim.phaseFrame / 35;
+      sim.selected.forEach((pi, si) => {
+        const startX = sim.slots[si][0], startY = sim.slots[si][1];
+        const endX = winSlots[si][0], endY = winSlots[si][1];
+        people[pi].x = lerp(startX, endX, t);
+        people[pi].y = lerp(startY, endY, t);
+      });
+      if (sim.phaseFrame >= 35) {
+        sim.phase = 'idle'; sim.phaseFrame = 0;
+        sim.selected = []; sim.targetScore = 0; sim.displayedScore = 0;
+        sim.startDelay = 25 + Math.random()*25;
+      }
+    } else if (sim.phase === 'rejecting') {
+      const t = sim.phaseFrame / 25;
+      sim.selected.forEach((pi, si) => {
+        people[pi].x = lerp(sim.slots[si][0], people[pi].hx, t);
+        people[pi].y = lerp(sim.slots[si][1], people[pi].hy, t);
+      });
+      if (sim.phaseFrame >= 25) {
+        sim.selected.forEach(i => { people[i].status = 'home'; });
+        sim.phase = 'idle'; sim.phaseFrame = 0;
+        sim.selected = []; sim.targetScore = 0; sim.displayedScore = 0;
+        sim.startDelay = 20 + Math.random()*25;
+      }
+    }
+    sim.phaseFrame++;
+  }
+
+  function stepWinning() {
+    if (winState.phase === 'empty') return;
+    if (winState.phase === 'arriving') {
+      if (winState.phaseFrame >= 35) { winState.phase = 'playing'; winState.phaseFrame = 0; }
+    } else if (winState.phase === 'playing') {
+      if (winState.phaseFrame >= 120) { winState.phase = 'leaving'; winState.phaseFrame = 0; }
+    } else if (winState.phase === 'leaving') {
+      const t = winState.phaseFrame / 35;
+      winState.group.forEach((pi, si) => {
+        people[pi].x = lerp(winSlots[si][0], people[pi].hx, t);
+        people[pi].y = lerp(winSlots[si][1], people[pi].hy, t);
+      });
+      if (winState.phaseFrame >= 35) {
+        winState.group.forEach(i => { people[i].status = 'home'; });
+        winState.phase = 'empty'; winState.phaseFrame = 0;
+        winState.group = [];
+      }
+    }
+    winState.phaseFrame++;
+  }
 
   function draw() {
     if (!courtFormRunning) return;
     ctx.clearRect(0, 0, W, H);
     courtFormFrame++;
 
-    // --- GRAPH (left side) ---
-    // Draw edges with bidirectional value arrows
-    edges.forEach(([a, b]) => {
+    edges.forEach(([a,b]) => {
       const pa = people[a], pb = people[b];
-      const sel = pa.selected || pb.selected;
-      const mx = (pa.x + pb.x) / 2, my = (pa.y + pb.y) / 2;
-      // Main line
+      if (pa.status !== 'home' || pb.status !== 'home') return;
       ctx.beginPath();
-      ctx.moveTo(pa.x, pa.y);
-      ctx.lineTo(pb.x, pb.y);
-      ctx.strokeStyle = sel ? 'rgba(212,168,83,0.1)' : 'rgba(232,224,208,0.12)';
-      ctx.lineWidth = 1;
+      ctx.moveTo(pa.hx, pa.hy); ctx.lineTo(pb.hx, pb.hy);
+      ctx.strokeStyle = 'rgba(232,224,208,0.09)';
+      ctx.lineWidth = 0.7;
       ctx.stroke();
-      // Give arrow (a→b) — slight offset
-      if (!sel) {
-        const dx = pb.x - pa.x, dy = pb.y - pa.y;
-        const len = Math.sqrt(dx * dx + dy * dy);
-        const nx = -dy / len * 2, ny = dx / len * 2;
-        ctx.beginPath();
-        ctx.moveTo(pa.x + nx, pa.y + ny);
-        ctx.lineTo(mx + nx, my + ny);
-        ctx.strokeStyle = pa.color;
-        ctx.globalAlpha = 0.15;
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
-        // Take arrow (b→a) — opposite offset
-        ctx.beginPath();
-        ctx.moveTo(pb.x - nx, pb.y - ny);
-        ctx.lineTo(mx - nx, my - ny);
-        ctx.strokeStyle = pb.color;
-        ctx.stroke();
-        ctx.globalAlpha = 1;
-      }
     });
-    // Draw people
-    people.forEach((p, i) => {
-      const dim = p.selected ? 1 : (phase === 'showing' ? 0.25 : 0.6);
-      // Head
-      ctx.beginPath();
-      ctx.arc(p.x, p.y - 4, p.r * 0.55, 0, Math.PI * 2);
-      ctx.strokeStyle = p.color;
-      ctx.globalAlpha = dim;
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-      // Body
-      ctx.beginPath();
-      ctx.moveTo(p.x, p.y + p.r * 0.1);
-      ctx.lineTo(p.x, p.y + p.r * 1.4);
-      ctx.stroke();
-      // Arms
-      ctx.beginPath();
-      ctx.moveTo(p.x - p.r * 0.7, p.y + p.r * 0.7);
-      ctx.lineTo(p.x + p.r * 0.7, p.y + p.r * 0.7);
-      ctx.stroke();
-      ctx.globalAlpha = 1;
-    });
+    ctx.fillStyle = 'rgba(232,224,208,0.45)';
+    ctx.font = '700 9px Manrope, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('YOUR COMMUNITY', gcx, 22);
+    ctx.fillStyle = 'rgba(232,224,208,0.3)';
+    ctx.font = '500 7px Manrope, sans-serif';
+    ctx.fillText('16 people', gcx, 32);
 
-    // --- COURT (right side — pickleball court) ---
-    const cx2 = courtX + courtW / 2, cy2 = courtY + courtH / 2;
-    // Court surface
-    ctx.fillStyle = 'rgba(45,90,61,0.08)';
-    ctx.fillRect(courtX, courtY, courtW, courtH);
-    // Outer boundary
-    ctx.strokeStyle = 'rgba(232,224,208,0.2)';
-    ctx.lineWidth = 1.5;
-    ctx.strokeRect(courtX, courtY, courtW, courtH);
-    // Net line (center, dashed)
-    ctx.beginPath();
-    ctx.moveTo(cx2, courtY);
-    ctx.lineTo(cx2, courtY + courtH);
-    ctx.strokeStyle = 'rgba(232,224,208,0.15)';
-    ctx.lineWidth = 2;
-    ctx.setLineDash([4, 4]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-    // Kitchen/NVZ lines (7-foot zones on each side of net — 7/22 ≈ 32% of half-court)
-    const kitchenW = courtW * 0.16;
-    ctx.strokeStyle = 'rgba(232,224,208,0.1)';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(cx2 - kitchenW, courtY, kitchenW, courtH);
-    ctx.strokeRect(cx2, courtY, kitchenW, courtH);
-    // Centerline — divides service boxes on each half (baseline to kitchen)
-    ctx.beginPath();
-    ctx.moveTo(courtX, cy2);
-    ctx.lineTo(cx2 - kitchenW, cy2);
-    ctx.strokeStyle = 'rgba(232,224,208,0.06)';
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(cx2 + kitchenW, cy2);
-    ctx.lineTo(courtX + courtW, cy2);
-    ctx.stroke();
+    sims.forEach((sim, i) => stepSim(sim, i));
+    stepWinning();
 
-    // --- PHASE LOGIC ---
-    phaseTimer++;
-
-    if (phase === 'idle' && phaseTimer > 80) {
-      phase = 'selecting';
-      phaseTimer = 0;
-      selected = pickFour();
-      selected.forEach(i => { people[i].selected = true; });
-      round++;
-    }
-
-    if (phase === 'selecting' && phaseTimer > 50) {
-      phase = 'moving';
-      phaseTimer = 0;
-    }
-
-    if (phase === 'moving') {
-      const t = phaseTimer / 60;
-      selected.forEach((pi, si) => {
-        people[pi].x = lerp(people[pi].hx, courtSlots[si][0], t);
-        people[pi].y = lerp(people[pi].hy, courtSlots[si][1], t);
+    sims.forEach((sim, i) => {
+      const c = sim.court;
+      const isGreen = sim.displayedScore >= 75 && (sim.phase === 'simulating' || sim.phase === 'resolved' || sim.phase === 'promoting');
+      drawCourt(c.x, c.y, c.w, c.h, {
+        fill: isGreen ? 'rgba(61,255,122,0.04)' : 'rgba(255,255,255,0.02)',
+        border: isGreen ? 'rgba(61,255,122,0.5)' : 'rgba(232,224,208,0.2)',
+        lw: isGreen ? 1.5 : 1
       });
-      if (phaseTimer >= 60) {
-        phase = 'showing';
-        phaseTimer = 0;
-        score = 75 + Math.floor(Math.random() * 22);
-        const vSet = valueLabels[round % valueLabels.length];
-        valueLines = [];
-        for (let i = 0; i < 4; i++) {
-          for (let j = i + 1; j < 4; j++) {
-            valueLines.push({ a: i, b: j, label: vSet[(i + j) % vSet.length], progress: 0 });
-          }
-        }
-        // score text removed
+      ctx.fillStyle = 'rgba(232,224,208,0.4)';
+      ctx.font = '700 7px Manrope, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('SIM ' + (i+1), c.x, c.y - 2);
+      if (sim.phase !== 'idle') {
+        drawQualityBar(c.x, c.y + c.h + 6, c.w - 30, 4, sim.displayedScore);
       }
+    });
+
+    const winGreen = winState.phase !== 'empty';
+    drawCourt(winCourt.x, winCourt.y, winCourt.w, winCourt.h, {
+      fill: winGreen ? 'rgba(61,255,122,0.05)' : 'rgba(45,90,61,0.08)',
+      border: winGreen ? 'rgba(61,255,122,0.5)' : 'rgba(232,224,208,0.25)',
+      lw: 1.5
+    });
+    ctx.fillStyle = winGreen ? '#3dff7a' : 'rgba(212,168,83,0.55)';
+    ctx.font = '700 10px Manrope, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(winGreen ? 'COURT GOES LIVE' : 'AWAITING GREEN GROUP', winCourt.x + winCourt.w/2, winCourt.y - 6);
+    if (winState.phase === 'playing') {
+      ctx.fillStyle = '#3dff7a';
+      ctx.font = '700 14px Playfair Display, serif';
+      ctx.fillText(Math.round(winState.quality) + '% compatibility', winCourt.x + winCourt.w/2, winCourt.y + winCourt.h + 18);
     }
 
-    if (phase === 'showing') {
-      // Draw value exchange lines between court players
-      valueLines.forEach((vl, vi) => {
-        vl.progress = Math.min(1, (phaseTimer - vi * 5) / 20);
-        if (vl.progress <= 0) return;
-        const a = courtSlots[vl.a], b = courtSlots[vl.b];
-        const mx = lerp(a[0], b[0], vl.progress), my = lerp(a[1], b[1], vl.progress);
+    if (winState.phase === 'playing' && winState.phaseFrame > 15) {
+      const pairs = [[0,1],[2,3],[0,3],[1,2],[0,2],[1,3]];
+      pairs.forEach((pair, pi) => {
+        const a = winSlots[pair[0]], b = winSlots[pair[1]];
+        const progress = Math.min(1, (winState.phaseFrame - 15 - pi*6) / 14);
+        if (progress <= 0) return;
+        const mx = lerp(a[0], b[0], progress);
+        const my = lerp(a[1], b[1], progress);
         ctx.beginPath();
-        ctx.moveTo(a[0], a[1]);
-        ctx.lineTo(mx, my);
-        ctx.strokeStyle = people[selected[vl.a]].color;
-        ctx.globalAlpha = 0.3;
+        ctx.moveTo(a[0], a[1]); ctx.lineTo(mx, my);
+        ctx.strokeStyle = people[winState.group[pair[0]]].color;
+        ctx.globalAlpha = 0.4;
         ctx.lineWidth = 1;
-        ctx.setLineDash([3, 3]);
+        ctx.setLineDash([3,3]);
         ctx.stroke();
         ctx.setLineDash([]);
         ctx.globalAlpha = 1;
-        // Midpoint pulse dot instead of overlapping text labels
-        if (vl.progress > 0.8) {
-          const lx = (a[0] + b[0]) / 2, ly = (a[1] + b[1]) / 2;
+        if (progress > 0.9) {
           ctx.beginPath();
-          ctx.arc(lx, ly, 2, 0, Math.PI * 2);
-          ctx.fillStyle = people[selected[vl.a]].color;
-          ctx.globalAlpha = 0.4 + 0.2 * Math.sin(courtFormFrame * 0.08 + vi);
+          ctx.arc((a[0]+b[0])/2, (a[1]+b[1])/2, 2.3, 0, Math.PI*2);
+          ctx.fillStyle = people[winState.group[pair[0]]].color;
+          ctx.globalAlpha = 0.5 + 0.3*Math.sin(courtFormFrame*0.1 + pi);
           ctx.fill();
           ctx.globalAlpha = 1;
         }
       });
-
-      // Draw selected people on court (bigger, brighter)
-      selected.forEach((pi, si) => {
-        const p = people[pi];
-        // Head
-        ctx.beginPath();
-        ctx.arc(p.x, p.y - 6, 10, 0, Math.PI * 2);
-        ctx.strokeStyle = p.color;
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        // Body
-        ctx.beginPath(); ctx.moveTo(p.x, p.y + 4); ctx.lineTo(p.x, p.y + 22); ctx.stroke();
-        // Arms
-        ctx.beginPath(); ctx.moveTo(p.x - 10, p.y + 12); ctx.lineTo(p.x + 10, p.y + 12); ctx.stroke();
-        // Legs
-        ctx.beginPath(); ctx.moveTo(p.x, p.y + 22); ctx.lineTo(p.x - 8, p.y + 35); ctx.stroke();
-        ctx.beginPath(); ctx.moveTo(p.x, p.y + 22); ctx.lineTo(p.x + 8, p.y + 35); ctx.stroke();
-      });
-
-      // Quality bar at bottom of court
-      const barX = courtX + 10, barY = courtY + courtH + 14, barW = courtW - 20, barH = 6;
-      ctx.fillStyle = 'rgba(232,224,208,0.06)';
-      ctx.fillRect(barX, barY, barW, barH);
-      const fillW = barW * Math.min(1, phaseTimer / 30) * (score / 100);
-      const grd = ctx.createLinearGradient(barX, 0, barX + fillW, 0);
-      grd.addColorStop(0, '#43B8A0');
-      grd.addColorStop(1, '#3dff7a');
-      ctx.fillStyle = grd;
-      ctx.fillRect(barX, barY, fillW, barH);
-
-      if (phaseTimer > 180) {
-        phase = 'returning';
-        phaseTimer = 0;
-        if (scoreEl) scoreEl.style.opacity = '0';
-      }
     }
 
-    if (phase === 'returning') {
-      const t = phaseTimer / 30;
-      selected.forEach(pi => {
-        people[pi].x = lerp(people[pi].x, people[pi].hx, t);
-        people[pi].y = lerp(people[pi].y, people[pi].hy, t);
-      });
-      if (phaseTimer >= 30) {
-        selected.forEach(pi => {
-          people[pi].selected = false;
-          people[pi].x = people[pi].hx;
-          people[pi].y = people[pi].hy;
-        });
-        phase = 'idle';
-        phaseTimer = 0;
-      }
-    }
+    people.forEach((p, i) => {
+      let r = 5, alpha = 1;
+      if (p.status === 'home') { r = 5; alpha = 0.55; }
+      else if (p.status.indexOf('sim') === 0) { r = 5.5; alpha = 0.9; }
+      else if (p.status === 'winning') { r = 7; alpha = 1; }
+      drawPerson(p.x, p.y, p.color, r, { alpha, lw: alpha > 0.8 ? 1.8 : 1 });
+    });
+
+    ctx.fillStyle = 'rgba(232,224,208,0.45)';
+    ctx.font = '700 9px Manrope, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('AI SIMULATIONS', simCourtX + simCourtW/2, 8);
 
     requestAnimationFrame(draw);
   }
