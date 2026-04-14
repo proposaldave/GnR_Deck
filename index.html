@@ -4634,18 +4634,19 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 /* ======== COMPREHENSIVE MOBILE OVERRIDES ======== */
 @media (max-width: 768px) {
-  /* Allow vertical scrolling within slides on mobile, keep content centered */
+  /* Allow vertical scrolling within slides on mobile. Use flex spacers
+     to center short content while keeping long content reachable from the top. */
   .casey-slide {
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch;
     padding: 52px 14px 70px !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
   }
-  /* When content is taller than viewport, let it scroll from top */
-  .casey-slide > * {
-    margin-top: auto !important;
-    margin-bottom: auto !important;
+  .casey-slide::before, .casey-slide::after {
+    content: "";
+    flex: 1 1 0;
+    min-height: 0;
   }
   .casey-slide > * {
     max-width: 100% !important;
@@ -4782,7 +4783,31 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   .teaser-question { font-size: clamp(18px, 5.5vw, 28px) !important; }
 
   /* ===== Appendix slides ===== */
-  .appendix-slide { padding: 12px !important; }
+  .appendix-slide { padding: 52px 14px 70px !important; }
+  /* NEPC Today (a8): stack 4-col to 2-col, 3-col to 1-col */
+  #cs-a8 .inner > div[style*="grid-template-columns:repeat(4"],
+  #cs-a8 .inner > div[style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #cs-a8 .inner > div[style*="grid-template-columns:repeat(3"],
+  #cs-a8 .inner > div[style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  /* Three Gates (a9): stack 3 columns to 1 */
+  #cs-a9 .inner > div[style*="grid-template-columns:repeat(3"],
+  #cs-a9 .inner > div[style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  /* Roadmap (a10): horizontal grid keeps 4 columns but tighter */
+  #cs-a10 .inner > div[style*="grid-template-columns:repeat(4"],
+  #cs-a10 .inner > div[style*="grid-template-columns: repeat(4"] {
+    gap: 4px !important;
+  }
+  #cs-a10 .inner div[style*="font-size:0.65rem"] {
+    font-size: 0.56rem !important;
+  }
 
   /* ===== Generic HR-like elements ===== */
   hr { margin: 12px 0 !important; }
@@ -6213,6 +6238,252 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
+<!-- APPENDIX SLIDE 8: NEPC Today — Proving Ground (by the numbers) -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a8" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">NEPC Today</div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:860px">
+  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">The proving ground is already running.</div>
+  <div style="font-size:0.78rem;color:rgba(237,233,224,.4);margin-bottom:32px;font-style:italic">New England Pickleball Club &mdash; self-funded, built to live the problem.</div>
+
+  <!-- Row 1: Scale -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:780px;margin:0 auto 18px auto">
+    <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;padding:18px 12px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:var(--gold,#caa54a)">2</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Clubs</div>
+      <div style="font-size:0.5rem;color:rgba(237,233,224,.25);margin-top:2px">Rye, NH &middot; Middleton, MA</div>
+    </div>
+    <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;padding:18px 12px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:var(--gold,#caa54a)">1,000+</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Players</div>
+      <div style="font-size:0.5rem;color:rgba(237,233,224,.25);margin-top:2px">Real, active, paying</div>
+    </div>
+    <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;padding:18px 12px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:var(--gold,#caa54a)">12</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Courts</div>
+      <div style="font-size:0.5rem;color:rgba(237,233,224,.25);margin-top:2px">Owned and operated</div>
+    </div>
+    <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;padding:18px 12px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;color:var(--gold,#caa54a)">$2M+</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">ARR</div>
+      <div style="font-size:0.5rem;color:rgba(237,233,224,.25);margin-top:2px">Self-funded testbed</div>
+    </div>
+  </div>
+
+  <!-- Row 2: Signal -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:620px;margin:0 auto 20px auto">
+    <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.15);border-radius:10px;padding:16px 12px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.3vw,1.8rem);font-weight:700;color:var(--mint,#49b4a0)">20,000+</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Invitations sent</div>
+    </div>
+    <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.15);border-radius:10px;padding:16px 12px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.3vw,1.8rem);font-weight:700;color:var(--mint,#49b4a0)">500K+</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Signals captured</div>
+    </div>
+    <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.15);border-radius:10px;padding:16px 12px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.3vw,1.8rem);font-weight:700;color:var(--mint,#49b4a0)">250</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4);margin-top:2px">Active on GnT</div>
+    </div>
+  </div>
+
+  <!-- Impact -->
+  <div style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.15);border-radius:12px;padding:18px 24px;max-width:620px;margin:0 auto">
+    <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:8px">Stage 1 Impact</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap">
+      <div>
+        <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:rgba(237,233,224,.5)">55%</span>
+        <span style="font-size:0.68rem;color:rgba(237,233,224,.35)"> util</span>
+      </div>
+      <div style="font-size:1.2rem;color:var(--green-glow,#3dff7a);opacity:0.6">&#10230;</div>
+      <div>
+        <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--green-glow,#3dff7a)">61%</span>
+        <span style="font-size:0.68rem;color:rgba(237,233,224,.5)"> util</span>
+      </div>
+      <div style="font-size:0.78rem;color:var(--gold,#caa54a);font-weight:700">+$110K new revenue</div>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
+<!-- APPENDIX SLIDE 9: The Three Gates — Where We Are Today -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a9" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Earning Trust</div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:900px">
+  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">Three gates. The system earns its way in.</div>
+  <div style="font-size:0.78rem;color:rgba(237,233,224,.4);margin-bottom:32px;font-style:italic">Each gate unlocks the next. No skipping ahead.</div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:840px;margin:0 auto">
+    <!-- GATE 1 -->
+    <div style="background:rgba(61,255,122,0.04);border:2px solid rgba(61,255,122,0.35);border-radius:12px;padding:22px 18px;position:relative">
+      <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg,#0a0f0d);padding:2px 12px;font-size:0.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-glow,#3dff7a)">Active Now</div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold,#caa54a);margin-top:6px;margin-bottom:10px">Gate 1</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.3;margin-bottom:12px">Does the AI understand the community?</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--green-glow,#3dff7a);margin:10px 0">6/10</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4)">Matchmaker approves AI rec direction</div>
+    </div>
+    <!-- GATE 2 -->
+    <div style="background:rgba(212,168,83,0.04);border:1.5px solid rgba(212,168,83,0.25);border-radius:12px;padding:22px 18px;position:relative">
+      <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg,#0a0f0d);padding:2px 12px;font-size:0.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#caa54a)">Next</div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold,#caa54a);margin-top:6px;margin-bottom:10px">Gate 2</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.3;margin-bottom:12px">Can it help fill courts with human approval?</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold,#caa54a);margin:10px 0">50% / 70%</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.4)">Unmodified approval &middot; Fill success</div>
+    </div>
+    <!-- GATE 3 -->
+    <div style="background:rgba(255,255,255,0.02);border:1.5px dashed rgba(237,233,224,0.2);border-radius:12px;padding:22px 18px;position:relative">
+      <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg,#0a0f0d);padding:2px 12px;font-size:0.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,233,224,.4)">Target</div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(237,233,224,.3);margin-top:6px;margin-bottom:10px">Gate 3</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:rgba(237,233,224,.6);line-height:1.3;margin-bottom:12px">Does it work at a club we don't own?</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:rgba(237,233,224,.5);margin:10px 0">80%</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.3)">of Krista's quality without Krista</div>
+    </div>
+  </div>
+
+  <div style="margin-top:28px;font-size:0.72rem;color:rgba(237,233,224,.4);max-width:640px;margin-left:auto;margin-right:auto;font-style:italic">
+    We don't skip to autonomous matching. We earn it. Every gate trains the system on a harder version of the same problem.
+  </div>
+</div>
+</section>
+</div>
+
+<!-- APPENDIX SLIDE 10: The Roadmap — Today → Year 1 → Year 3 -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a10" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Roadmap</div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:900px">
+  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">From NEPC to the network.</div>
+  <div style="font-size:0.78rem;color:rgba(237,233,224,.4);margin-bottom:36px;font-style:italic">Concrete milestones, not a hockey stick.</div>
+
+  <!-- Horizontal timeline -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:900px;margin:0 auto;position:relative">
+    <!-- Connecting line -->
+    <div style="position:absolute;top:28px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,var(--green-glow,#3dff7a),var(--gold,#caa54a),var(--mint,#49b4a0),rgba(237,233,224,.2));opacity:0.4;z-index:0"></div>
+
+    <!-- TODAY -->
+    <div style="position:relative;z-index:1;text-align:center">
+      <div style="width:16px;height:16px;border-radius:50%;background:var(--green-glow,#3dff7a);box-shadow:0 0 16px rgba(61,255,122,0.5);margin:20px auto 14px auto"></div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:6px">Today</div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 1 live at NEPC<br><span style="color:rgba(237,233,224,.3)">61% util, +$110K</span><br><span style="color:rgba(237,233,224,.3)">250 active players</span></div>
+    </div>
+
+    <!-- 6 MONTHS -->
+    <div style="position:relative;z-index:1;text-align:center">
+      <div style="width:14px;height:14px;border-radius:50%;background:var(--gold,#caa54a);box-shadow:0 0 12px rgba(212,168,83,0.4);margin:21px auto 14px auto"></div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:6px">6 Months</div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 2 at NEPC<br><span style="color:rgba(237,233,224,.3)">50% auto-approval</span><br><span style="color:rgba(237,233,224,.3)">First external pilot</span></div>
+    </div>
+
+    <!-- 12 MONTHS -->
+    <div style="position:relative;z-index:1;text-align:center">
+      <div style="width:14px;height:14px;border-radius:50%;background:var(--mint,#49b4a0);box-shadow:0 0 12px rgba(73,180,160,0.4);margin:21px auto 14px auto"></div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mint,#49b4a0);margin-bottom:6px">12 Months</div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.45);line-height:1.5">Gate 3 validated<br><span style="color:rgba(237,233,224,.3)">3&ndash;5 external clubs live</span><br><span style="color:rgba(237,233,224,.3)">Signed to live &lt;30 days</span></div>
+    </div>
+
+    <!-- 3 YEARS -->
+    <div style="position:relative;z-index:1;text-align:center">
+      <div style="width:12px;height:12px;border-radius:50%;border:2px solid rgba(237,233,224,0.3);margin:22px auto 14px auto"></div>
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,233,224,.4);margin-bottom:6px">3 Years</div>
+      <div style="font-size:0.65rem;color:rgba(237,233,224,.35);line-height:1.5">Network of clubs<br><span style="color:rgba(237,233,224,.25)">Every club's data</span><br><span style="color:rgba(237,233,224,.25)">trains every club's AI</span></div>
+    </div>
+  </div>
+
+  <!-- North star -->
+  <div style="margin-top:36px;background:rgba(212,168,83,0.04);border:1px solid rgba(212,168,83,0.12);border-radius:12px;padding:18px 24px;max-width:680px;margin-left:auto;margin-right:auto">
+    <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:6px">North Star</div>
+    <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.3rem);color:rgba(245,242,236,.85)">Autonomous human connection becomes the default for all social sports communities.</div>
+  </div>
+</div>
+</section>
+</div>
+
+<!-- APPENDIX SLIDE 11: The Secret Inside the Invitation -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a11" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Proof Signal</div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:860px">
+  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px">The secret inside the invitation.</div>
+  <div style="font-size:0.78rem;color:rgba(237,233,224,.4);margin-bottom:32px;font-style:italic">When people say no to a group, they almost never tell you the real reason.</div>
+
+  <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;max-width:720px;margin:0 auto 32px auto">
+    <!-- 70% -->
+    <div style="text-align:center;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.15);border-radius:16px;padding:24px 28px;min-width:240px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;color:var(--red,#e04040);line-height:1">70%</div>
+      <div style="font-size:0.72rem;font-weight:600;color:rgba(237,233,224,.6);margin-top:8px">of declines follow<br>social avoidance patterns</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.35);margin-top:8px;font-style:italic">They're not busy. They're choosing.</div>
+    </div>
+    <!-- 0.6% -->
+    <div style="text-align:center;background:rgba(73,180,160,0.04);border:1px solid rgba(73,180,160,0.15);border-radius:16px;padding:24px 28px;min-width:240px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;color:var(--mint,#49b4a0);line-height:1">0.6%</div>
+      <div style="font-size:0.72rem;font-weight:600;color:rgba(237,233,224,.6);margin-top:8px">will say so<br>directly</div>
+      <div style="font-size:0.6rem;color:rgba(237,233,224,.35);margin-top:8px;font-style:italic">The behavior says it. The words don't.</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(0.95rem,1.8vw,1.2rem);color:rgba(245,242,236,.8);max-width:620px;margin:0 auto;line-height:1.5">
+    The invitation is the instrument. Every accept, every decline, every hesitation is a signal about belonging.
+  </div>
+
+  <div style="margin-top:24px;font-size:0.58rem;color:rgba(237,233,224,.25);letter-spacing:.1em;text-transform:uppercase">
+    Source: NEPC invitation system &middot; 20,000 invitations &middot; 500,000+ signals &middot; 1,000+ players
+  </div>
+</div>
+</section>
+</div>
+
+<!-- APPENDIX SLIDE 12: The Ask -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a12" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">The Ask</div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:860px">
+  <div style="font-size:0.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:12px">Seed round</div>
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(3.5rem,8vw,6rem);font-weight:900;color:var(--cream,#e8e0d0);line-height:1;margin-bottom:12px">$1.5M</div>
+  <div class="display" style="font-size:clamp(1.1rem,2.2vw,1.6rem);color:var(--gold,#caa54a);font-style:italic;margin-bottom:32px">to prove it transfers.</div>
+
+  <!-- What we'll deliver -->
+  <div style="background:rgba(212,168,83,0.04);border:1px solid rgba(212,168,83,0.15);border-radius:14px;padding:24px 32px;max-width:640px;margin:0 auto 24px auto;text-align:left">
+    <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:14px;text-align:center">18-Month Sprint &middot; End of 2026</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:10px">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="color:var(--green-glow,#3dff7a);font-size:1rem;line-height:1;margin-top:2px">&#10003;</div>
+        <div style="font-size:0.78rem;color:rgba(245,242,236,.8)">Full autonomous social coordination live at NEPC</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="color:var(--green-glow,#3dff7a);font-size:1rem;line-height:1;margin-top:2px">&#10003;</div>
+        <div style="font-size:0.78rem;color:rgba(245,242,236,.8)">3&ndash;5 external clubs sold &amp; onboarded</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="color:var(--green-glow,#3dff7a);font-size:1rem;line-height:1;margin-top:2px">&#10003;</div>
+        <div style="font-size:0.78rem;color:rgba(245,242,236,.8)">Repeatable onboarding: signed to live in &lt;30 days</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="color:var(--green-glow,#3dff7a);font-size:1rem;line-height:1;margin-top:2px">&#10003;</div>
+        <div style="font-size:0.78rem;color:rgba(245,242,236,.8)">Series A position: external ARR + proven playbook</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Small team framing -->
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;max-width:640px;margin:0 auto">
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px 18px">
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(237,233,224,.4)">Team</div>
+      <div style="font-size:0.78rem;color:rgba(245,242,236,.8);margin-top:2px">Small, focused, shipping</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px 18px">
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(237,233,224,.4)">Runway</div>
+      <div style="font-size:0.78rem;color:rgba(245,242,236,.8);margin-top:2px">18 months</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px 18px">
+      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(237,233,224,.4)">Proving ground</div>
+      <div style="font-size:0.78rem;color:rgba(245,242,236,.8);margin-top:2px">Already running</div>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
 <!-- APPENDIX SLIDE 7: Wrong Paradigm -->
 <div class="casey-slide ds-intro appendix-slide" id="cs-a7" style="display:none">
   <div class="s3-combined">
@@ -6232,7 +6503,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <script>
 const TOTAL = 22;
-const APPENDIX_TOTAL = 7;
+const APPENDIX_TOTAL = 12;
 let current = 1;
 let inAppendix = false;
 let appendixCurrent = 1;
