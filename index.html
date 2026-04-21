@@ -5870,19 +5870,19 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     Pickleball: <span style="color:var(--green-glow,#3dff7a);font-weight:900;font-size:1.45em;letter-spacing:-0.02em">24</span> measurable social experiments per week, per player.
   </div>
 
-  <!-- Female player silhouette — simplified BUST matching the 24 in-court mini silhouettes exactly (same composition, same coral shirt, same hair, just scaled up). -->
+  <!-- Female player silhouette — simplified bust, proportions now fixed (head r=10, body ~1.2x head height, hair cap sits on head not above it). Matches the 24 in-court mini silhouettes exactly. -->
   <div style="display:flex;justify-content:center;margin-bottom:12px;opacity:0.95">
-    <svg viewBox="0 0 80 80" width="56" height="56" aria-label="pickleball player">
-      <!-- Ponytail (behind head, right side) -->
-      <path d="M 48 20 Q 60 26 58 42 Q 52 32 46 26" fill="#2a1e16"/>
+    <svg viewBox="0 0 80 58" width="60" height="44" aria-label="pickleball player">
+      <!-- Ponytail (behind head, right side, shortened to fit proportion) -->
+      <path d="M 48 20 Q 57 24 55 34 Q 51 28 46 25" fill="#2a1e16"/>
       <!-- Head (peach) -->
-      <circle cx="40" cy="20" r="10" fill="#f4c5a0" stroke="#a07848" stroke-width="0.6"/>
-      <!-- Hair crown on top (same curve style as mini) -->
-      <path d="M 30 15 Q 40 4 50 15 L 48.5 22 Q 40 10 31.5 22 Z" fill="#2a1e16"/>
-      <!-- Body: CORAL shirt — hourglass trapezoid, identical shape to mini -->
-      <path d="M 26 32 Q 26 28 30 28 L 36 28 L 40 33 L 44 28 L 50 28 Q 54 28 54 32 L 58 76 L 22 76 Z" fill="#e88a4a" opacity="0.94"/>
-      <!-- Collar V -->
-      <path d="M 36 28 L 40 33 L 44 28" stroke="#b06020" stroke-width="0.8" fill="none"/>
+      <circle cx="40" cy="20" r="10" fill="#f4c5a0" stroke="#a07848" stroke-width="0.55"/>
+      <!-- Hair crown — sits ON the head like a cap, not above like a hat -->
+      <path d="M 30 18 Q 40 9 50 18 L 48.5 22 Q 40 13 31.5 22 Z" fill="#2a1e16"/>
+      <!-- Body: CORAL shirt — bust proportions, tapered trapezoid with neckline -->
+      <path d="M 28 28 Q 28 26 30 26 L 34 26 L 37 27 L 40 30 L 43 27 L 46 26 L 50 26 Q 52 26 52 28 L 54 50 L 26 50 Z" fill="#e88a4a" opacity="0.94"/>
+      <!-- Collar V accent -->
+      <path d="M 37 27 L 40 30 L 43 27" stroke="#b06020" stroke-width="0.7" fill="none" stroke-linecap="round"/>
     </svg>
   </div>
   <div style="font-size:0.6rem;color:rgba(237,233,224,.42);letter-spacing:0.16em;text-transform:uppercase;font-weight:600;margin-bottom:22px">Through her eyes &middot; one week</div>
@@ -5937,7 +5937,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <script>
 (function buildWhyPickleballRoundsMain(){
   const days = ['tue', 'thu', 'sat'];
-  const PALETTE = ['#f0c040','#5B8FD4','#D46B7E','#c76bdb','#4ae8c1','#ff8a65','#e04040','#E8CC60','#ce93d8','#64b5f6'];
+  const PALETTE = ['#f0c040','#5B8FD4','#D46B7E','#c76bdb','#4ae8c1','#e04040','#E8CC60','#ce93d8','#64b5f6'];
   const NS = 'http://www.w3.org/2000/svg';
   function shuffled(arr) {
     const a = arr.slice();
