@@ -5787,7 +5787,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   </div>
 
   <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;margin:2px auto 14px;color:rgba(212,168,83,0.88)">
-    Her <span style="color:#3dff7a">reality</span> &middot; <span style="color:#3dff7a">digitized</span>
+    Her <span style="color:#3dff7a">reality</span>
   </div>
   <!-- 7-column week grid; MON/WED/FRI/SUN dim. TUE/THU/SAT active with 8 rounds each. -->
   <div id="cs3-week-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:1140px;margin:0 auto;align-items:start"></div>
@@ -5900,25 +5900,24 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       };
     });
 
-    // Animated DRAWING LINES on every edge (cs-8 style, mini-scale).
-    // Lines draw in, hold, fade out -- this is "human connection" visual language.
+    // Animated DRAWING LINES on every edge — STRONGER: thicker, brighter, faster
     edges.forEach(([a,b],idx)=>{
       const P = edgeProfiles[idx];
       const dx = b.pos.x - a.pos.x, dy = b.pos.y - a.pos.y;
       const len = Math.sqrt(dx*dx + dy*dy);
-      const dur = 3.2 + rand()*1.8;
-      const beginA = (idx*0.22 + rand()*0.4).toFixed(2);
-      // Line A (a's color on YOU-incident edges, partner color otherwise)
+      const dur = 1.6 + rand()*1.0;   // was 3.2-5.0s; now 1.6-2.6s (much faster)
+      const beginA = (idx*0.14 + rand()*0.25).toFixed(2);
+      // Line (a's color on YOU-incident edges, partner color otherwise)
       const L = document.createElementNS(NS,'line');
       L.setAttribute('x1',a.pos.x); L.setAttribute('y1',a.pos.y);
       L.setAttribute('x2',b.pos.x); L.setAttribute('y2',b.pos.y);
       L.setAttribute('stroke', a.id==='you' ? b.color : a.color);
-      L.setAttribute('stroke-width', P.thickness.toFixed(2));
+      L.setAttribute('stroke-width', (P.thickness * 2.2).toFixed(2));  // was ~0.3-0.6; now ~0.7-1.3
       L.setAttribute('stroke-linecap','round');
       L.setAttribute('opacity','0');
       const op = document.createElementNS(NS,'animate');
       op.setAttribute('attributeName','opacity');
-      op.setAttribute('values','0;0.7;0.7;0');
+      op.setAttribute('values','0;0.98;0.98;0');   // peak was 0.7; now 0.98
       op.setAttribute('dur', dur.toFixed(2)+'s');
       op.setAttribute('repeatCount','indefinite');
       op.setAttribute('begin', beginA+'s');
