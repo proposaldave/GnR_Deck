@@ -4906,9 +4906,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">The Previous Era</div>
 
   <div class="sm-slide-container">
-    <div class="sm-headline-big">
-      Today,<br>
-      <strong style="font-weight:700;font-size:clamp(28px,5vw,48px)">technology makes human connection worse.</strong>
+    <div class="sm-headline-big" style="white-space:nowrap">
+      Today, <strong style="font-weight:700">technology makes human connection worse.</strong>
     </div>
 
     <div class="sm-shift">
@@ -4931,7 +4930,22 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       </div>
       <div class="sm-arrow" style="color:#9aa0a6 !important;font-size:44px !important;opacity:0.7;font-weight:300">→</div>
       <div class="sm-to">
-        <div class="sm-circle sm-new" style="padding:0;overflow:visible">
+        <style>
+          @keyframes liveItHeartbeat {
+            0%   { transform: scale(1);    }
+            14%  { transform: scale(1.09); }
+            28%  { transform: scale(1);    }
+            42%  { transform: scale(1.055); }
+            56%  { transform: scale(1);    }
+            100% { transform: scale(1);    }
+          }
+          .sm-live-it-heart {
+            animation: liveItHeartbeat 1.4s ease-in-out infinite;
+            transform-origin: 50% 50%;
+            will-change: transform;
+          }
+        </style>
+        <div class="sm-circle sm-new sm-live-it-heart" style="padding:0;overflow:visible">
           <svg width="140" height="140" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Envelope -->
             <rect x="12" y="22" width="56" height="40" rx="4" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="2" opacity="0.9"/>
