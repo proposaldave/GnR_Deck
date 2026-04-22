@@ -5305,7 +5305,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       Every tech wave unleashed <em style="font-style:italic">one resource.</em>
     </div>
     <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.2vw,3.3rem);font-weight:700;font-style:italic;color:#d4a853;line-height:1.1;letter-spacing:-0.01em;margin-bottom:60px">
-      Ours only shows the one that matters most to each of us.
+      Ours unleashes the one that actually matters.
     </div>
 
     <!-- TECH WAVES STACK -->
@@ -5379,7 +5379,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div class="uw-row">
         <div class="uw-label">Social</div>
         <div class="uw-track"><div class="uw-bar" style="width:24%;animation-delay:0.3s"></div></div>
-        <div class="uw-resource">voice</div>
+        <div class="uw-resource">sharing</div>
       </div>
       <div class="uw-row">
         <div class="uw-label">Mobile</div>
@@ -5705,7 +5705,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:6px">Before the session</div>
       <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:12px">Invitation Feed</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.35;margin-bottom:10px">
-        In the future, everyone will have a <em style="color:var(--gold,#caa54a);font-style:italic">personalized invitation feed.</em>
+        Everyone will have a <em style="color:var(--gold,#caa54a);font-style:italic">personalized invitation feed.</em>
       </div>
       <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(91,143,212,0.85);padding-top:10px;border-top:1px solid rgba(91,143,212,0.2);margin-top:4px">
         Every RSVP is a data point
@@ -5770,10 +5770,19 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Enter Pickleball</div>
 
 <div class="inner" style="padding-top:18px;text-align:center;max-width:1180px">
+  <style>
+    @keyframes liveDot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%     { opacity:0.35; transform:scale(0.75); }
+    }
+  </style>
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:8px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
     <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player. <span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own social experiment.</em>
   </div>
 
+  <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;margin:2px auto 14px;color:rgba(212,168,83,0.88)">
+    Her <span style="color:#3dff7a">reality</span> &middot; <span style="color:#3dff7a">digitized</span>
+  </div>
   <!-- 7-column week grid; MON/WED/FRI/SUN dim. TUE/THU/SAT active with 8 rounds each. -->
   <div id="cs3-week-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:1140px;margin:0 auto;align-items:start"></div>
 </div>
@@ -6021,40 +6030,69 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     return svg;
   }
 
-  // ========== HER EXPERIENCE BARS — 3 factors, traffic-light coloring ==========
-  // Layout: SIDEBAR (right of court) so card height stays compact.
-  // Story-accurate dims: VIBE (did it feel good) / BOND (did she connect) / FIT (right matchup)
-  // Traffic-light: green >= 0.68, orange 0.40 - 0.68, red < 0.40
+  // ========== HER REALITY — DIGITIZED ==========
+  // 3 stacked sparklines = telemetry of the round. No labels. Each trace is
+  // a unique waveform derived from the court seed — "signal being captured."
   function buildExperienceBars(seed){
-    const rand = mulberry(seed + 777);
-    const DIMS = [
-      { label: 'CHALLENGE' },  // right difficulty / skill match — the game dimension
-      { label: 'BOND'      },  // social chemistry with the 3 partners
-      { label: 'JOY'       }   // her net emotional takeaway
-    ];
-    function colorFor(v){
-      if (v >= 0.68) return '#3dff7a';   // green -- good
-      if (v >= 0.40) return '#f0a060';   // orange -- medium
-      return '#e04040';                   // red -- low
-    }
+    const W = 46, H = 12, N = 26;
     const panel = document.createElement('div');
-    panel.style.cssText = 'width:52px;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:4px 4px 4px 2px;flex-shrink:0';
-    DIMS.forEach(d => {
-      const row = document.createElement('div');
-      row.style.cssText = 'display:flex;flex-direction:column;gap:2px';
-      const lbl = document.createElement('span');
-      lbl.style.cssText = 'font-family:Manrope,sans-serif;font-size:7px;font-weight:700;letter-spacing:0.5px;color:rgba(237,233,224,0.82);text-transform:uppercase;line-height:1';
-      lbl.textContent = d.label;
-      row.appendChild(lbl);
-      const track = document.createElement('div');
-      track.style.cssText = 'width:100%;height:3.5px;background:rgba(237,233,224,0.08);border-radius:1.5px;overflow:hidden';
-      const fill = document.createElement('div');
-      const v = 0.22 + rand() * 0.76;  // 0.22 - 0.98 range so traffic lights actually vary
-      fill.style.cssText = 'height:100%;width:' + (v*100).toFixed(0) + '%;background:' + colorFor(v) + ';border-radius:1.5px;box-shadow:0 0 4px ' + colorFor(v) + '66';
-      track.appendChild(fill);
-      row.appendChild(track);
-      panel.appendChild(row);
-    });
+    panel.style.cssText = 'width:50px;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:3px 3px 3px 1px;flex-shrink:0';
+    // Top status mark: tiny blinking green dot suggesting "live capture"
+    const mark = document.createElement('div');
+    mark.style.cssText = 'display:flex;align-items:center;gap:3px;margin-bottom:1px';
+    const dot = document.createElement('span');
+    dot.style.cssText = 'width:3px;height:3px;background:#3dff7a;border-radius:50%;box-shadow:0 0 4px #3dff7a;animation:liveDot 1.4s ease-in-out infinite';
+    mark.appendChild(dot);
+    const tick = document.createElement('span');
+    tick.style.cssText = 'font-family:Manrope,sans-serif;font-size:5.5px;font-weight:700;letter-spacing:0.8px;color:rgba(61,255,122,0.72);text-transform:uppercase;line-height:1';
+    tick.textContent = 'LIVE';
+    mark.appendChild(tick);
+    panel.appendChild(mark);
+    // Build 3 sparkline traces, each with its own seed offset so they differ per court AND between rows
+    for (let row = 0; row < 3; row++){
+      const rand = mulberry(seed + 4001 + row * 1279);
+      const svg = document.createElementNS(NS,'svg');
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      svg.setAttribute('preserveAspectRatio','none');
+      svg.style.cssText = 'display:block;width:100%;height:11px';
+      // Base line (dim)
+      const base = document.createElementNS(NS,'line');
+      base.setAttribute('x1', 0); base.setAttribute('x2', W);
+      base.setAttribute('y1', H/2); base.setAttribute('y2', H/2);
+      base.setAttribute('stroke', 'rgba(237,233,224,0.08)');
+      base.setAttribute('stroke-width', '0.3');
+      svg.appendChild(base);
+      // Waveform
+      const pts = [];
+      let prev = H/2;
+      for (let i = 0; i < N; i++){
+        const x = (i / (N-1)) * W;
+        // Smooth random walk so it looks like real telemetry
+        const delta = (rand() - 0.5) * H * 0.5;
+        let y = prev + delta;
+        y = Math.max(H * 0.1, Math.min(H * 0.9, y));
+        prev = y;
+        pts.push(x.toFixed(1) + ',' + y.toFixed(1));
+      }
+      const poly = document.createElementNS(NS,'polyline');
+      poly.setAttribute('points', pts.join(' '));
+      poly.setAttribute('fill', 'none');
+      poly.setAttribute('stroke', '#3dff7a');
+      poly.setAttribute('stroke-width', '0.7');
+      poly.setAttribute('stroke-linecap', 'round');
+      poly.setAttribute('stroke-linejoin', 'round');
+      poly.setAttribute('opacity', '0.82');
+      svg.appendChild(poly);
+      // Cursor dot at the end of each trace (live-capture feel)
+      const lastY = pts[pts.length - 1].split(',')[1];
+      const cursor = document.createElementNS(NS,'circle');
+      cursor.setAttribute('cx', W - 0.5); cursor.setAttribute('cy', lastY);
+      cursor.setAttribute('r', '0.9');
+      cursor.setAttribute('fill', '#3dff7a');
+      cursor.setAttribute('opacity', '0.95');
+      svg.appendChild(cursor);
+      panel.appendChild(svg);
+    }
     return panel;
   }
 
