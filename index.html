@@ -5528,6 +5528,25 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             group.appendChild(legR);
             // YOU label below
             if (isYou){
+              // Paddle in right hand (scaled for big court)
+              const ph = document.createElementNS(NS,'line');
+              ph.setAttribute('x1', cx); ph.setAttribute('y1', cy - 5*SCALE);
+              ph.setAttribute('x2', cx + 18*SCALE); ph.setAttribute('y2', cy - 16*SCALE);
+              ph.setAttribute('stroke', col); ph.setAttribute('stroke-width','2.8');
+              ph.setAttribute('stroke-linecap','round');
+              group.appendChild(ph);
+              const paddle = document.createElementNS(NS,'rect');
+              paddle.setAttribute('x', cx + 16*SCALE);
+              paddle.setAttribute('y', cy - 26*SCALE);
+              paddle.setAttribute('width', 10*SCALE);
+              paddle.setAttribute('height', 12*SCALE);
+              paddle.setAttribute('rx', 3*SCALE);
+              paddle.setAttribute('fill', col);
+              paddle.setAttribute('stroke', '#6b3e1a');
+              paddle.setAttribute('stroke-width','0.8');
+              paddle.setAttribute('opacity','0.95');
+              paddle.setAttribute('transform','rotate(25 '+(cx+20*SCALE)+' '+(cy-20*SCALE)+')');
+              group.appendChild(paddle);
               const lbl = document.createElementNS(NS,'text');
               lbl.setAttribute('x', cx); lbl.setAttribute('y', cy + 38);
               lbl.setAttribute('text-anchor','middle');
@@ -5650,15 +5669,82 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Enter Pickleball</div>
 
 <div class="inner" style="padding-top:32px;text-align:center;max-width:1180px">
-  <!-- Female player silhouette -->
-  <div style="display:flex;justify-content:center;margin-bottom:6px;opacity:0.95">
-    <svg viewBox="0 0 80 58" width="54" height="40" aria-label="pickleball player">
-      <path d="M 48 20 Q 57 24 55 34 Q 51 28 46 25" fill="#2a1e16"/>
-      <circle cx="40" cy="20" r="10" fill="#f4c5a0" stroke="#a07848" stroke-width="0.55"/>
-      <path d="M 30 18 Q 40 9 50 18 L 48.5 22 Q 40 13 31.5 22 Z" fill="#2a1e16"/>
-      <path d="M 28 28 Q 28 26 30 26 L 34 26 L 37 27 L 40 30 L 43 27 L 46 26 L 50 26 Q 52 26 52 28 L 54 50 L 26 50 Z" fill="#e88a4a" opacity="0.94"/>
-      <path d="M 37 27 L 40 30 L 43 27" stroke="#b06020" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <!-- Pickleball hero: orange-shirted player holding paddle + ball in the air. Unmistakable. -->
+  <style>
+    @keyframes pbBallBounce {
+      0%,100% { transform: translateY(0) rotate(-4deg); }
+      50%     { transform: translateY(-8px) rotate(8deg); }
+    }
+    @keyframes pbPaddleSwing {
+      0%,100% { transform: rotate(-22deg); }
+      50%     { transform: rotate(-12deg); }
+    }
+    .pb-hero-ball   { animation: pbBallBounce 1.6s ease-in-out infinite; }
+    .pb-hero-paddle { animation: pbPaddleSwing 1.6s ease-in-out infinite; transform-origin: 50% 90%; }
+  </style>
+  <div style="display:flex;justify-content:center;align-items:center;margin-bottom:10px;opacity:0.98">
+    <svg viewBox="0 0 300 160" width="270" height="144" aria-label="pickleball player with paddle and ball">
+      <defs>
+        <radialGradient id="heroBallGlow" cx="35%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#fff6c8" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#f0c040" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="heroShirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#f0a060"/>
+          <stop offset="100%" stop-color="#c67a3c"/>
+        </linearGradient>
+      </defs>
+      <!-- PLAYER (left side, facing right) -->
+      <g transform="translate(110,20)">
+        <!-- Head -->
+        <circle cx="0" cy="14" r="14" fill="#f4c5a0" stroke="#a07848" stroke-width="1.2"/>
+        <!-- Hair / ponytail -->
+        <path d="M -12 10 Q 0 -4 12 10 L 10 16 Q 0 4 -10 16 Z" fill="#2a1e16"/>
+        <path d="M 10 8 Q 17 12 15 22 Q 12 18 9 14 Z" fill="#2a1e16"/>
+        <!-- Neck -->
+        <line x1="0" y1="26" x2="0" y2="32" stroke="#f4c5a0" stroke-width="5"/>
+        <!-- Orange shirt (torso) -->
+        <path d="M -22 34 Q -22 32 -18 32 L -6 32 L 0 36 L 6 32 L 18 32 Q 22 32 22 34 L 26 86 L -26 86 Z"
+              fill="url(#heroShirtGrad)" stroke="#6b3e1a" stroke-width="1.2"/>
+        <!-- Collar v -->
+        <path d="M -6 32 L 0 36 L 6 32" fill="none" stroke="#8b4a1a" stroke-width="1.4" stroke-linecap="round"/>
+        <!-- Left arm (relaxed at side) -->
+        <line x1="-22" y1="38" x2="-28" y2="68" stroke="#f4c5a0" stroke-width="6.5" stroke-linecap="round"/>
+        <!-- Right arm (raised, holding paddle) -->
+        <line x1="22" y1="38" x2="52" y2="18" stroke="#f4c5a0" stroke-width="6.5" stroke-linecap="round"/>
+        <!-- Legs -->
+        <rect x="-22" y="86" width="16" height="40" rx="3" fill="#1a1a1a"/>
+        <rect x="6" y="86" width="16" height="40" rx="3" fill="#1a1a1a"/>
+        <!-- Sneakers -->
+        <ellipse cx="-14" cy="128" rx="11" ry="4" fill="#e8e0d0"/>
+        <ellipse cx="14"  cy="128" rx="11" ry="4" fill="#e8e0d0"/>
+      </g>
+      <!-- PADDLE (attached to raised right arm, angled) -->
+      <g class="pb-hero-paddle" transform="translate(180,24)">
+        <rect x="-26" y="-38" width="52" height="50" rx="16" fill="#c67a3c" stroke="#6b3e1a" stroke-width="1.4"/>
+        <rect x="-23" y="-35" width="46" height="10" rx="5" fill="rgba(255,230,190,0.25)"/>
+        <text x="0" y="-5" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="14" font-weight="900" fill="#2a1e16" opacity="0.55">GnT</text>
+        <!-- Handle -->
+        <rect x="-4" y="12" width="8" height="16" rx="2" fill="#2a1e16"/>
+        <line x1="-3" y1="16" x2="3" y2="16" stroke="#5b3a20" stroke-width="0.6"/>
+        <line x1="-3" y1="20" x2="3" y2="20" stroke="#5b3a20" stroke-width="0.6"/>
+        <line x1="-3" y1="24" x2="3" y2="24" stroke="#5b3a20" stroke-width="0.6"/>
+      </g>
+      <!-- BALL in the air, flying toward paddle -->
+      <g class="pb-hero-ball" transform="translate(238,44)" style="transform-box:fill-box">
+        <circle cx="0" cy="0" r="14" fill="#f0c040" stroke="#8b6820" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="14" fill="url(#heroBallGlow)" opacity="0.55"/>
+        <circle cx="0" cy="-7"   r="1.6" fill="#2a1e16" opacity="0.78"/>
+        <circle cx="-7" cy="-3"  r="1.6" fill="#2a1e16" opacity="0.78"/>
+        <circle cx="7"  cy="-3"  r="1.6" fill="#2a1e16" opacity="0.78"/>
+        <circle cx="-7" cy="4"   r="1.6" fill="#2a1e16" opacity="0.78"/>
+        <circle cx="7"  cy="4"   r="1.6" fill="#2a1e16" opacity="0.78"/>
+        <circle cx="0"  cy="8.5" r="1.6" fill="#2a1e16" opacity="0.78"/>
+      </g>
+      <!-- Motion trail between ball and paddle -->
+      <path d="M 225 48 Q 215 42 204 40" stroke="rgba(240,192,64,0.4)" stroke-width="1.4" fill="none" stroke-dasharray="3 3" stroke-linecap="round"/>
     </svg>
+  </div>
   </div>
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:14px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
     <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player. <span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own social experiment.</em>
@@ -5819,9 +5905,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     // Sprites on top
     entities.forEach(e=>{
       if (e.id==='you'){
-        // YOU as stick figure in coral/orange (matches the other 3 stick figures)
+        // YOU as stick figure in coral/orange, HOLDING A PICKLEBALL PADDLE in raised right hand
         const cx = e.pos.x, cy = e.pos.y;
         const col = '#e88a4a';
+        // Head
         const head = document.createElementNS(NS,'circle');
         head.setAttribute('cx', cx); head.setAttribute('cy', cy-3.1);
         head.setAttribute('r', '1.35');
@@ -5829,18 +5916,39 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         head.setAttribute('stroke', col);
         head.setAttribute('stroke-width','0.7');
         svg.appendChild(head);
+        // Torso
         const torso = document.createElementNS(NS,'line');
         torso.setAttribute('x1', cx); torso.setAttribute('x2', cx);
         torso.setAttribute('y1', cy-1.75); torso.setAttribute('y2', cy+1.4);
         torso.setAttribute('stroke', col); torso.setAttribute('stroke-width','0.7');
         torso.setAttribute('stroke-linecap','round');
         svg.appendChild(torso);
-        const arms = document.createElementNS(NS,'line');
-        arms.setAttribute('x1', cx-1.7); arms.setAttribute('x2', cx+1.7);
-        arms.setAttribute('y1', cy-0.7); arms.setAttribute('y2', cy-0.7);
-        arms.setAttribute('stroke', col); arms.setAttribute('stroke-width','0.65');
-        arms.setAttribute('stroke-linecap','round');
-        svg.appendChild(arms);
+        // Left arm (down/horizontal)
+        const armL = document.createElementNS(NS,'line');
+        armL.setAttribute('x1', cx); armL.setAttribute('x2', cx-1.7);
+        armL.setAttribute('y1', cy-0.7); armL.setAttribute('y2', cy-0.4);
+        armL.setAttribute('stroke', col); armL.setAttribute('stroke-width','0.65');
+        armL.setAttribute('stroke-linecap','round');
+        svg.appendChild(armL);
+        // Right arm (raised, holding paddle)
+        const armR = document.createElementNS(NS,'line');
+        armR.setAttribute('x1', cx); armR.setAttribute('x2', cx+2.0);
+        armR.setAttribute('y1', cy-0.7); armR.setAttribute('y2', cy-2.1);
+        armR.setAttribute('stroke', col); armR.setAttribute('stroke-width','0.65');
+        armR.setAttribute('stroke-linecap','round');
+        svg.appendChild(armR);
+        // Paddle (small rounded rect rotated to match arm angle)
+        const paddle = document.createElementNS(NS,'rect');
+        paddle.setAttribute('x', (cx+1.5).toFixed(2));
+        paddle.setAttribute('y', (cy-3.5).toFixed(2));
+        paddle.setAttribute('width','1.6');
+        paddle.setAttribute('height','2.0');
+        paddle.setAttribute('rx','0.5');
+        paddle.setAttribute('fill',col);
+        paddle.setAttribute('opacity','0.95');
+        paddle.setAttribute('transform','rotate(30 '+(cx+2.3)+' '+(cy-2.5)+')');
+        svg.appendChild(paddle);
+        // Legs
         const legL = document.createElementNS(NS,'line');
         legL.setAttribute('x1', cx); legL.setAttribute('x2', cx-1.2);
         legL.setAttribute('y1', cy+1.4); legL.setAttribute('y2', cy+3.3);
