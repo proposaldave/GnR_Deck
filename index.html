@@ -5386,7 +5386,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div class="uw-row">
         <div class="uw-label">AI</div>
         <div class="uw-track"><div class="uw-bar" style="width:48%;animation-delay:0.9s"></div></div>
-        <div class="uw-resource">reasoning</div>
+        <div class="uw-resource">intelligence</div>
       </div>
       <div class="uw-divider"></div>
       <div class="uw-row uw-gnt">
@@ -6036,17 +6036,20 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   }
 
   // ========== HER REALITY — 4 VERTICAL BARS PER ROUND ==========
-  // Discrete data points (not livestream). Unique heights per court from seed.
-  // No labels. Clean, simple, unmistakably "bar chart."
+  // Discrete data points, no labels. 4 distinct accent colors, unique heights per court.
+  // Fixed pixel heights (not %) so layout resolves reliably inside the flex row.
   function buildExperienceBars(seed){
     const rand = mulberry(seed + 4001);
     const panel = document.createElement('div');
-    panel.style.cssText = 'width:42px;height:100%;display:flex;align-items:flex-end;justify-content:center;gap:2px;padding:4px 3px 4px 1px;flex-shrink:0';
-    // 4 bars, each with a unique height seeded from the court
+    // Fixed height matches cardWrap min-height; flex column so row = full height
+    panel.style.cssText = 'width:44px;height:42px;display:flex;align-items:flex-end;justify-content:center;gap:3px;padding:2px 3px 2px 1px;flex-shrink:0';
+    const COLORS = ['#3dff7a', '#f0c040', '#e88a4a', '#c76bdb'];  // green, gold, coral, purple
+    const MAX_H = 36;  // px — max bar height inside the 42px panel (minus padding)
     for (let i = 0; i < 4; i++){
-      const v = 0.25 + rand() * 0.72;  // 0.25 - 0.97
+      const v = 0.30 + rand() * 0.68;  // 0.30 - 0.98
+      const h = Math.max(4, v * MAX_H);
       const bar = document.createElement('div');
-      bar.style.cssText = 'width:5px;height:' + (v*100).toFixed(0) + '%;background:#3dff7a;border-radius:1px;box-shadow:0 0 3px rgba(61,255,122,0.4);opacity:0.88';
+      bar.style.cssText = 'width:5.5px;height:' + h.toFixed(1) + 'px;background:' + COLORS[i] + ';border-radius:1px;box-shadow:0 0 3px ' + COLORS[i] + '55;opacity:0.92';
       panel.appendChild(bar);
     }
     return panel;
