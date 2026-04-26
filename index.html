@@ -4878,27 +4878,36 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="casey-bar" id="cbar"></div>
 <div class="casey-count" id="ccount"></div>
 
+<!-- Persistent GnR brand mark, visible on every slide. Sits BELOW slide counter (top:12px),
+     "READ" badge (top:8px), and appendix pink-dot label (top:26px) — placed at top:54px to
+     avoid overlap with all of them. Blue G + cream italic n + burgundy R. -->
+<div id="gnr-mark" aria-hidden="true" style="position:fixed;top:54px;right:24px;z-index:60;display:flex;align-items:baseline;font-family:'Playfair Display',Georgia,serif;line-height:1;letter-spacing:-0.01em;opacity:0.78;pointer-events:none;user-select:none">
+  <span style="font-size:17px;font-weight:600;color:#5B8FD4">G</span>
+  <span style="font-size:15px;font-weight:400;font-style:italic;color:#e8e0d0;padding:0 1.5px">n</span>
+  <span style="font-size:17px;font-weight:600;color:#e04040">R</span>
+</div>
+
 
 <!-- SLIDE 1: GnT Title -->
 <div class="casey-slide ds-measure active" id="cs-1">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Give 'n Receive</div>
 <div class="s on">
-    <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%">
-      <!-- Give n Receive wordmark — original GnT palette: blue Give + cream italic n + red Receive. -->
-      <svg viewBox="0 0 1200 240" width="100%" style="max-width:660px;height:auto;margin:0 auto 32px auto;display:block" xmlns="http://www.w3.org/2000/svg">
-        <!-- Decorative arc above "n" — cream, low opacity, neutral -->
+    <div class="stg">
+      <!-- Give n Receive wordmark — blue Give + cream italic n + burgundy Receive. Centered via margin auto. -->
+      <svg viewBox="0 0 1200 240" width="660" height="132" preserveAspectRatio="xMidYMid meet" style="display:block;margin:0 auto 32px auto;max-width:88%;height:auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Decorative arc above "n" — cream, low opacity -->
         <path d="M 395 72 Q 432 22 470 72" stroke="#e8e0d0" stroke-width="2.2" fill="none" opacity="0.45" stroke-linecap="round"/>
-        <circle cx="395" cy="72" r="3.2" fill="#5B8FD4" opacity="0.85"/>
-        <circle cx="470" cy="72" r="3.2" fill="#e04040" opacity="0.85"/>
+        <circle cx="395" cy="72" r="3.2" fill="#5B8FD4" opacity="0.9"/>
+        <circle cx="470" cy="72" r="3.2" fill="#e04040" opacity="0.95"/>
         <!-- Give (blue) -->
         <text x="20" y="195" font-family="Playfair Display, Georgia, serif" font-size="150" font-weight="500" fill="#5B8FD4" letter-spacing="-2">Give</text>
         <!-- italic n (cream) -->
         <text x="395" y="195" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="112" font-weight="400" fill="#e8e0d0">n</text>
-        <!-- Receive (red) -->
+        <!-- Receive (burgundy) -->
         <text x="510" y="195" font-family="Playfair Display, Georgia, serif" font-size="150" font-weight="500" fill="#e04040" letter-spacing="-2">Receive</text>
       </svg>
 
-      <div class="h" style="font-size:clamp(18px,3.4vw,40px);font-style:italic;margin:0 auto;text-align:center;white-space:nowrap;max-width:none">Abundant, autonomous human connection</div>
+      <div class="h" style="display:block;font-size:clamp(18px,3.4vw,40px);font-style:italic;margin:0 auto;text-align:center;white-space:nowrap;max-width:none">Abundant, autonomous human connection</div>
       <div class="divider" style="margin:28px auto 20px;"></div>
     </div>
   </div>
@@ -4906,12 +4915,12 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- SLIDE 2 -->
 <div class="casey-slide ds-intro" id="cs-2">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Loneliness Epidemic</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Human connection is unsolved</div>
 
   <div class="sm-slide-container">
     <div class="sm-headline-big">
-      The need for human connection has never been higher<br>
-      <strong style="font-weight:700">and is about to go parabolic.</strong>
+      And yet &mdash; it's unmeasured.<br>
+      <strong style="font-weight:700">And unsolved.</strong>
     </div>
 
     <div class="sm-shift">
@@ -5303,92 +5312,87 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Opportunity Size</div>
   <div style="padding:60px 48px;text-align:center;max-width:1120px;margin:0 auto;width:100%">
-    <!-- HEADLINE — answers the question from the previous slide ("What happens when that data within all of us gets digitized?") -->
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.8vw,3.8rem);font-weight:700;color:#e8e0d0;line-height:1.12;letter-spacing:-0.015em;margin-bottom:64px;max-width:22ch;margin-left:auto;margin-right:auto">
-      We are about to unleash the resource that <em style="font-style:italic;color:#d4a853">matters most to us.</em>
+    <!-- HEADLINE — just one word: Abundance. Hero treatment. -->
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(5rem,13vw,10.5rem);font-weight:900;line-height:1;letter-spacing:-0.04em;margin-bottom:72px;background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 0 60px rgba(212,168,83,0.22)">
+      Abundance
     </div>
 
-    <!-- TECH WAVES STACK -->
+    <!-- TECH-ERA STACK: company logos -> the resource each era unlocked -->
     <style>
-      @keyframes unleashBarFill {
-        from { width: 0%; }
-      }
+      @keyframes unleashBarFill { from { width: 0%; } }
       .uw-row {
         display:grid;
-        grid-template-columns: 150px 1fr 180px;
-        gap: 20px;
+        grid-template-columns: 220px 1fr 180px;
+        gap: 26px;
         align-items:center;
-        margin-bottom: 14px;
-        font-family:'Manrope',sans-serif;
+        margin-bottom: 20px;
       }
-      .uw-label {
-        text-align:right;
-        font-size: .8rem;
-        font-weight:700;
-        letter-spacing:.18em;
-        text-transform:uppercase;
-        color:rgba(232,224,208,0.55);
-      }
+      .uw-logo { text-align:right; line-height:1; }
       .uw-track {
-        height: 10px;
+        height: 12px;
         background:rgba(255,255,255,0.03);
-        border-radius: 2px;
+        border-radius:3px;
         position:relative;
         overflow:hidden;
       }
       .uw-bar {
         height:100%;
         background:rgba(232,224,208,0.42);
-        border-radius:2px;
+        border-radius:3px;
         animation: unleashBarFill 1.3s cubic-bezier(.22,.61,.36,1) both;
       }
       .uw-resource {
         text-align:left;
         font-family:'Playfair Display',serif;
         font-style:italic;
-        font-size: .95rem;
-        color:rgba(232,224,208,0.55);
+        font-size: 1rem;
+        color:rgba(232,224,208,0.6);
       }
-      /* GnT row -- hero treatment */
-      .uw-gnt .uw-label   { color:#d4a853; font-size:.88rem; font-weight:900; }
-      .uw-gnt .uw-track   { height: 18px; background:rgba(212,168,83,0.06); border: 1px solid rgba(212,168,83,0.22); box-shadow: 0 0 24px rgba(212,168,83,0.18); }
-      .uw-gnt .uw-bar     {
+      .uw-gnr .uw-track { height: 22px; background:rgba(212,168,83,0.06); border: 1px solid rgba(212,168,83,0.3); box-shadow: 0 0 28px rgba(212,168,83,0.22); }
+      .uw-gnr .uw-bar {
         background: linear-gradient(90deg, #e88a4a 0%, #d4a853 55%, #f0c040 100%);
-        box-shadow: 0 0 22px rgba(212,168,83,0.55), inset 0 0 12px rgba(255,220,150,0.35);
+        box-shadow: 0 0 24px rgba(212,168,83,0.6), inset 0 0 14px rgba(255,220,150,0.4);
         animation: unleashBarFill 2.0s cubic-bezier(.22,.61,.36,1) 1.8s both;
       }
-      .uw-gnt .uw-resource {
-        font-style: italic;
-        color:#e8e0d0;
-        font-size: 1.05rem;
-        font-weight: 700;
-      }
-      .uw-divider {
-        height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(212,168,83,0.28), transparent);
-        margin: 18px 0 16px;
-      }
+      .uw-gnr .uw-resource { font-style: italic; color:#e8e0d0; font-size: 1.1rem; font-weight: 700; }
+      .uw-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(212,168,83,0.32), transparent); margin: 22px 0 18px; }
     </style>
 
-    <div style="max-width:940px;margin:0 auto;text-align:left">
-      <div class="uw-row" style="animation-delay:0s">
-        <div class="uw-label">Internet</div>
+    <div style="max-width:980px;margin:0 auto;text-align:left">
+      <!-- Google -> information -->
+      <div class="uw-row">
+        <div class="uw-logo">
+          <span style="font-family:'Product Sans','Inter',Arial,sans-serif;font-weight:500;font-size:1.55rem;letter-spacing:-0.02em">
+            <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+          </span>
+        </div>
         <div class="uw-track"><div class="uw-bar" style="width:16%;animation-delay:0s"></div></div>
         <div class="uw-resource">information</div>
       </div>
+      <!-- Meta -> sharing -->
       <div class="uw-row">
-        <div class="uw-label">Social</div>
+        <div class="uw-logo">
+          <span style="font-family:'Inter',Arial,sans-serif;font-weight:800;font-size:1.55rem;color:#0668E1;letter-spacing:-0.04em">Meta</span>
+        </div>
         <div class="uw-track"><div class="uw-bar" style="width:24%;animation-delay:0.3s"></div></div>
         <div class="uw-resource">sharing</div>
       </div>
+      <!-- OpenAI -> intelligence -->
       <div class="uw-row">
-        <div class="uw-label">AI</div>
+        <div class="uw-logo">
+          <span style="font-family:'Helvetica Neue','Inter',Arial,sans-serif;font-weight:600;font-size:1.45rem;color:#e8e0d0;letter-spacing:-0.005em">OpenAI</span>
+        </div>
         <div class="uw-track"><div class="uw-bar" style="width:48%;animation-delay:0.9s"></div></div>
         <div class="uw-resource">intelligence</div>
       </div>
       <div class="uw-divider"></div>
-      <div class="uw-row uw-gnt">
-        <div class="uw-label">Give ’n Take</div>
+      <!-- Give 'n Receive -> human connection (hero row) -->
+      <div class="uw-row uw-gnr">
+        <div class="uw-logo">
+          <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;letter-spacing:-0.01em;line-height:1;display:inline-flex;align-items:baseline">
+            <span style="color:#5B8FD4;font-weight:600">Give</span><span style="color:#e8e0d0;font-style:italic;font-weight:400;padding:0 4px">n</span><span style="color:#e04040;font-weight:600">Receive</span>
+          </span>
+        </div>
         <div class="uw-track"><div class="uw-bar" style="width:100%"></div></div>
         <div class="uw-resource">human connection</div>
       </div>
@@ -5531,11 +5535,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
           // --- 4 thought-bubbles inside the head (other players in her mind) ---
           // Each bubble: outer color ring + tiny silhouette + outward data-pulse ring.
+          // dimCount = the 4-6 distinct thoughts/dimensions she carries about that player
+          // (skill match, partner-fit, energy, communication, fun, "would play again" etc).
           const thoughts = [
-            { cx: 175, cy: 92,  color: '#f0c040', begin: 0.0 },   // gold (top-left)
-            { cx: 268, cy: 86,  color: '#5B8FD4', begin: 0.55 },  // blue (top-right)
-            { cx: 168, cy: 160, color: '#D46B7E', begin: 1.10 },  // pink (bottom-left)
-            { cx: 268, cy: 156, color: '#c76bdb', begin: 1.65 }   // purple (bottom-right)
+            { cx: 175, cy: 92,  color: '#f0c040', begin: 0.0,  dimCount: 5 },   // gold (top-left)
+            { cx: 268, cy: 86,  color: '#5B8FD4', begin: 0.55, dimCount: 6 },   // blue (top-right)
+            { cx: 168, cy: 160, color: '#D46B7E', begin: 1.10, dimCount: 4 },   // pink (bottom-left)
+            { cx: 268, cy: 156, color: '#c76bdb', begin: 1.65, dimCount: 5 }    // purple (bottom-right)
           ];
           const R = 19;
 
@@ -5594,6 +5600,40 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             sBody.setAttribute('stroke-linecap','round');
             sBody.setAttribute('opacity','0.92');
             group.appendChild(sBody);
+
+            // --- 4-6 "dimension" dots — the distinct thoughts she carries about THIS player.
+            // Placed ABOVE top bubbles, BELOW bottom bubbles. Subtle arc curve. Stagger pulse.
+            const isTop = t.cy < 120;
+            const dimYBase = isTop ? t.cy - 30 : t.cy + 30;
+            const stem = document.createElementNS(NS,'line');
+            stem.setAttribute('x1', t.cx);
+            stem.setAttribute('y1', t.cy + (isTop ? -R : R));
+            stem.setAttribute('x2', t.cx);
+            stem.setAttribute('y2', dimYBase + (isTop ? 4 : -4));
+            stem.setAttribute('stroke', t.color);
+            stem.setAttribute('stroke-width','0.8');
+            stem.setAttribute('opacity','0.4');
+            stem.setAttribute('stroke-dasharray','1.5 2');
+            group.appendChild(stem);
+            for (let i = 0; i < t.dimCount; i++){
+              const mid = (t.dimCount - 1) / 2;
+              const dx = (i - mid) * 5.6;
+              const arc = Math.abs(i - mid) * 0.9 * (isTop ? 1 : -1);  // gentle bow
+              const dot = document.createElementNS(NS,'circle');
+              dot.setAttribute('cx', t.cx + dx);
+              dot.setAttribute('cy', dimYBase + arc);
+              dot.setAttribute('r','1.9');
+              dot.setAttribute('fill', t.color);
+              dot.setAttribute('opacity','0.7');
+              const dotAnim = document.createElementNS(NS,'animate');
+              dotAnim.setAttribute('attributeName','opacity');
+              dotAnim.setAttribute('values','0.35;0.95;0.35');
+              dotAnim.setAttribute('dur','2.4s');
+              dotAnim.setAttribute('repeatCount','indefinite');
+              dotAnim.setAttribute('begin', (t.begin + i*0.13).toFixed(2)+'s');
+              dot.appendChild(dotAnim);
+              group.appendChild(dot);
+            }
           });
 
           // YOU label below the head — the brain belongs to one player ("you").
@@ -5612,7 +5652,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         animateCs4Court();
         </script>
 
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">How you experience them.<br>How they experience you.</div>
       </div>
     </div>
   </div>
