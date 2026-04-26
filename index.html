@@ -5328,27 +5328,26 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Opportunity Size</div>
   <div style="padding:60px 48px;text-align:center;max-width:1120px;margin:0 auto;width:100%">
     <!-- HEADLINE — just one word: Abundance. Hero treatment. Reveals FIRST.
-         Each letter cascades in with scale + slight rotation, then the whole word breathes,
-         then a gold-burst halo radiates out behind it before bars appear. -->
-    <div class="uw-abundance" aria-label="Abundance" style="font-family:'Playfair Display',serif;font-size:clamp(5rem,13vw,10.5rem);font-weight:900;line-height:1;letter-spacing:-0.04em;margin-bottom:72px;background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 0 60px rgba(212,168,83,0.22);position:relative;display:inline-block">
+         Whole-word entrance: scale-up from blur, then breathe, with gold-burst halo behind. -->
+    <div class="uw-abundance-wrap" style="position:relative;display:inline-block;margin-bottom:72px">
       <span class="uw-burst" aria-hidden="true"></span>
-      <span class="uw-l" style="--i:0">A</span><span class="uw-l" style="--i:1">b</span><span class="uw-l" style="--i:2">u</span><span class="uw-l" style="--i:3">n</span><span class="uw-l" style="--i:4">d</span><span class="uw-l" style="--i:5">a</span><span class="uw-l" style="--i:6">n</span><span class="uw-l" style="--i:7">c</span><span class="uw-l" style="--i:8">e</span>
+      <div class="uw-abundance" style="font-family:'Playfair Display',serif;font-size:clamp(5rem,13vw,10.5rem);font-weight:900;line-height:1;letter-spacing:-0.04em;background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 0 60px rgba(212,168,83,0.22);position:relative;z-index:1">Abundance</div>
     </div>
 
     <!-- TECH-ERA STACK: company logos -> the resource each era unlocked. Reveals AFTER Abundance. -->
     <style>
-      /* Per-letter cascade: drop in from above, scale up, slight tilt, gold haze. */
-      @keyframes uwLetterIn {
-        0%   { opacity:0; transform: translateY(-110%) scale(0.35) rotate(-8deg); filter: blur(8px); }
-        55%  { opacity:1; transform: translateY(8%)    scale(1.12) rotate(2deg);  filter: blur(0); }
-        100% { opacity:1; transform: translateY(0)     scale(1)    rotate(0);     filter: blur(0); }
+      /* Whole-word entrance: from blurred + tiny + tilted, to crisp + full size */
+      @keyframes uwAbundanceIn {
+        0%   { opacity:0; transform: scale(0.4) rotate(-4deg); filter: blur(18px); }
+        60%  { opacity:1; transform: scale(1.06) rotate(1deg); filter: blur(0); }
+        100% { opacity:1; transform: scale(1) rotate(0); filter: blur(0); }
       }
-      /* Whole word breathes once the letters are seated */
+      /* Subtle ongoing breath after entrance */
       @keyframes uwAbundanceBreath {
         0%,100% { transform: scale(1); }
         50%     { transform: scale(1.025); }
       }
-      /* Gold-burst halo expanding behind the word right as the last letter lands */
+      /* Gold-burst halo expanding behind the word during entrance */
       @keyframes uwBurst {
         0%   { opacity:0; transform: translate(-50%,-50%) scale(0.2); }
         30%  { opacity:0.85; }
@@ -5357,16 +5356,12 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       @keyframes uwBarsIn      { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
       @keyframes unleashBarFill { from { width: 0%; } }
 
-      .uw-abundance { animation: uwAbundanceBreath 5s ease-in-out 2.4s infinite; }
-      .uw-abundance .uw-l {
-        display:inline-block;
-        opacity:0;
-        animation: uwLetterIn 0.95s cubic-bezier(.22,.72,.36,1.18) both;
-        animation-delay: calc(0.18s + (var(--i) * 0.075s));
-        transform-origin: 50% 100%;
+      .uw-abundance {
+        animation: uwAbundanceIn 1.3s cubic-bezier(.22,.72,.36,1.18) 0.2s both,
+                   uwAbundanceBreath 5s ease-in-out 2.4s infinite;
         will-change: transform, opacity, filter;
       }
-      .uw-abundance .uw-burst {
+      .uw-abundance-wrap .uw-burst {
         position:absolute;
         left:50%; top:50%;
         width: 120%; height: 220%;
@@ -5374,9 +5369,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         background: radial-gradient(ellipse at center, rgba(240,192,64,0.55) 0%, rgba(212,168,83,0.32) 28%, rgba(232,138,74,0.12) 55%, transparent 75%);
         filter: blur(8px);
         pointer-events:none;
-        z-index:-1;
+        z-index:0;
         opacity:0;
-        animation: uwBurst 1.4s cubic-bezier(.22,.61,.36,1) 1.0s both;
+        animation: uwBurst 1.4s cubic-bezier(.22,.61,.36,1) 0.8s both;
       }
       .uw-bars-wrap { animation: uwBarsIn 0.9s cubic-bezier(.22,.61,.36,1) 2.0s both; }
       .uw-row {
