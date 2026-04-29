@@ -4869,11 +4869,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 }
 .casey-slide > *{ position:relative; z-index:1 }
 
-/* Eyebrows: any uppercase tracking labels at top corners → JetBrains Mono solid black for clarity */
+/* Eyebrows: any uppercase tracking labels at top corners → JetBrains Mono solid black for clarity.
+   Also catches the .ps-kicker class used on cs-1b, cs-11d, and other proof-style slides
+   so all eyebrows in the deck render IDENTICALLY (Dave 2026-04-29). */
 .casey-slide > div[style*="position:absolute"][style*="top:28px"],
 .casey-slide div[style*="position:absolute"][style*="top:28px"][style*="text-transform:uppercase"],
 .casey-slide div[style*="position:absolute"][style*="top:24px"][style*="text-transform:uppercase"],
-.casey-slide div[style*="position:absolute"][style*="top:18px"][style*="text-transform:uppercase"]{
+.casey-slide div[style*="position:absolute"][style*="top:18px"][style*="text-transform:uppercase"],
+.casey-slide .ps-kicker{
   font-family:'JetBrains Mono',monospace !important;
   color: #1a1612 !important;
   letter-spacing: 0.22em !important;
