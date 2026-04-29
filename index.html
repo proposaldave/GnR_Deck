@@ -20,6 +20,48 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Manrope:wght@200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================================
+   EXPORT MODE — `?export=1` URL flag for high-fidelity PPTX/PDF capture.
+   Hides nav chrome, freezes animations to final state, locks viewport to 1920x1080.
+   Live deck (no flag) is unchanged.
+   ============================================================================ */
+html[data-export="1"] .casey-nav,
+html[data-export="1"] .casey-bar,
+html[data-export="1"] .casey-count,
+html[data-export="1"] #appendixBtn {
+  display: none !important;
+}
+html[data-export="1"], html[data-export="1"] body {
+  width: 1920px !important;
+  height: 1080px !important;
+  overflow: hidden !important;
+  min-width: 1920px !important;
+  min-height: 1080px !important;
+  max-width: 1920px !important;
+  max-height: 1080px !important;
+}
+/* Snap all transitions/animations to their final state instantly. */
+html[data-export="1"] *,
+html[data-export="1"] *::before,
+html[data-export="1"] *::after {
+  transition: none !important;
+  animation-duration: 0.001s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: forwards !important;
+  animation-play-state: paused !important;
+}
+/* Active slide must be fully opaque immediately, decorations stable */
+html[data-export="1"] .casey-slide.active {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+/* Hide non-active slides cleanly so they don't bleed through */
+html[data-export="1"] .casey-slide:not(.active) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* ============================================================================
    PAPER MODE — Dave 2026-04-29 deck-wide redesign
    Migrate every slide from dark to cream paper / ink editorial system.
    Matches cs-1's title slide aesthetic. Bungalow/museum-card energy.
@@ -6721,8 +6763,8 @@ html, body, html body{
          Like-button vs Invitation comparison teaches what an Invitation Feed
          IS in one visual. Punchline + brand caption + parallel question. -->
     <div style="flex:1;min-width:300px;max-width:420px;background:rgba(91,143,212,0.04);border:1px solid rgba(91,143,212,0.32);border-radius:14px;padding:18px 18px 16px;text-align:center">
-      <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.45);margin-bottom:4px">Before the room</div>
-      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:14px">Invitation Feed</div>
+      <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.6);margin-bottom:6px">Before the room</div>
+      <div style="font-size:1.05rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#5B8FD4;margin-bottom:18px">Invitation Feed</div>
 
       <!-- Vertical feed — Dave 2026-04-29: looks like Instagram/inbox feed.
            Each invitation = one row with bordered-circle people + group label + time. -->
@@ -6867,8 +6909,8 @@ html, body, html body{
           <circle cx="45" cy="45" r="2.0" fill="rgba(199,107,219,0.20)" stroke="#7a4a8c" stroke-width="0.5"/>
         </svg>
       </div>
-      <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.45);margin-bottom:6px">In the room</div>
-      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#2a8a4f;margin-bottom:8px">Group Formation</div>
+      <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.6);margin-bottom:6px">In the room</div>
+      <div style="font-size:1.05rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#2a8a4f;margin-bottom:8px">Group Formation</div>
     </div>
   </div>
 
@@ -7397,7 +7439,7 @@ html, body, html body{
       </div>
     </div>
     <div style="max-width:920px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(212,168,83,0.32);font-family:'Playfair Display',serif;font-size:clamp(1.05rem,1.85vw,1.4rem);color:#1a1612;font-weight:600;line-height:1.4">
-      <em style="font-style:italic;color:#b8954a">The invitation captures it.</em> <span style="font-style:italic;color:rgba(26,22,18,0.7);font-weight:500">Feedback, surveys don&rsquo;t.</span>
+      <em style="font-style:italic;color:#b8954a">The invitation captures it.</em> <span style="font-style:italic;color:rgba(26,22,18,0.7);font-weight:500">Feedback &amp; surveys don&rsquo;t.</span>
     </div>
   </div>
 </section>
