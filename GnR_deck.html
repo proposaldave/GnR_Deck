@@ -6961,7 +6961,7 @@ html, body, html body{
   <!-- The gap closer — completes the wedge: max signal + zero measurement (Dave 2026-04-29) -->
   <!-- Rainbow "24 unique experience-experiments" line removed: density claim is already made by eyebrow, hero, and grid visual. -->
   <div style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.3vw,1.65rem);font-weight:700;line-height:1.3;margin-top:32px;text-align:center;max-width:980px;margin-left:auto;margin-right:auto;color:#1a1612">
-    50+ products track the score.<span style="color:#c8462c;font-style:italic"> None measure what actually matters.</span>
+    50+ products track the score.<span style="color:#c8462c;font-style:italic"> None measure the human connection.</span>
   </div>
 </div>
 
@@ -7129,29 +7129,9 @@ html, body, html body{
       svg.appendChild(c);
     });
 
-    // SCORE CHIP — for "competitive/scored" courts: scoreboard at top-center.
-    // Visually represents what 50+ existing apps capture. Closer line names this.
-    // Sized to be legible at 1920x1080 export and on-screen at typical viewport.
-    if (isScored){
-      const chipBg = document.createElementNS(NS,'rect');
-      chipBg.setAttribute('x','30'); chipBg.setAttribute('y','1');
-      chipBg.setAttribute('width','50'); chipBg.setAttribute('height','13');
-      chipBg.setAttribute('rx','2.5');
-      chipBg.setAttribute('fill','#1a1612');
-      chipBg.setAttribute('stroke','#c8462c');
-      chipBg.setAttribute('stroke-width','0.7');
-      svg.appendChild(chipBg);
-      const chipText = document.createElementNS(NS,'text');
-      chipText.setAttribute('x','55'); chipText.setAttribute('y','11');
-      chipText.setAttribute('text-anchor','middle');
-      chipText.setAttribute('font-family','JetBrains Mono, monospace');
-      chipText.setAttribute('font-size','10');
-      chipText.setAttribute('font-weight','800');
-      chipText.setAttribute('fill','#f3ead8');
-      chipText.setAttribute('letter-spacing','0.6');
-      chipText.textContent = scoreText;
-      svg.appendChild(chipText);
-    }
+    // Score chip removed from inside SVG (Dave 2026-04-29) — now lives in the
+    // side panel position where 3-bars sit on social courts. Red frame still
+    // marks competitive courts visually.
 
     return svg;
   }
@@ -7211,8 +7191,17 @@ html, body, html body{
         const scoreText = SCORED_COURTS[courtIdx] || null;
         courtWrap.appendChild(makeMiniCourt(seed, scoreText));
         cardWrap.appendChild(courtWrap);
-        // 3-factor experience sidebar: VIBE / BOND / FIT, traffic-light colored
-        cardWrap.appendChild(buildExperienceBars(seed));
+        // Side panel: 3-bar experience signal on social courts; score on competitive courts.
+        // Same 44x42 footprint so the grid stays aligned.
+        if (scoreText){
+          const scorePanel = document.createElement('div');
+          scorePanel.style.cssText = 'width:44px;height:42px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#1a1612;border:1px solid #c8462c;border-radius:3px;font-family:\'JetBrains Mono\',monospace;font-size:11px;font-weight:800;color:#f3ead8;letter-spacing:0.5px';
+          scorePanel.textContent = scoreText;
+          cardWrap.appendChild(scorePanel);
+        } else {
+          // 3-factor experience sidebar: VIBE / BOND / FIT, traffic-light colored
+          cardWrap.appendChild(buildExperienceBars(seed));
+        }
         col.appendChild(cardWrap);
         courtIdx++;
       }
