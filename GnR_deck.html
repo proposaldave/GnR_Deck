@@ -7483,7 +7483,7 @@ html, body, html body{
 </div>
 
 <!-- How it Started at NEPC — nav pos 14 -->
-<div class="casey-slide ds-focus" id="cs-12">
+<div class="casey-slide ds-focus appendix-slide" id="cs-12" style="display:none">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our Moat &middot; Krista's judgment, digitized</div>
 <section id="s3b">
 <div class="orb orb-m" style="width:500px;height:500px;top:-10%;left:20%"></div>
@@ -8955,11 +8955,11 @@ const SLIDE_ORDER = [
   // Slides moved to appendix: cs-7, cs-8, cs-14, cs-16, cs-17, cs-20, cs-21, cs-1a.
   'cs-1','cs-1b','cs-2b','cs-11d','cs-11',
   'cs-11e','cs-3',
-  'cs-4',     //  8 Moat — data in our heads
-  'cs-13',    //  9 Engine — HITL Krista loop (+ 25% adoption)
-  'cs-16',    // 10 Autonomous Community Intelligence — the engine architecture (Dave 2026-04-29: re-added)
+  'cs-4',     //  8 Moat — data in our heads [LOCKED]
+  'cs-13',    //  9 Engine — HITL Krista loop + 25% adoption [LOCKED 2026-04-29]
+  'cs-16',    // 10 Autonomous Community Intelligence — the engine architecture [REVIEW 2026-04-29]
   'cs-11b',   // 11 NEPC Numbers
-  'cs-12',    // 11 Origin — How it started at NEPC
+  // cs-12 moved to APPENDIX 2026-04-29 — Dave's call
   'cs-18',    // 12 Founder Journey
   'cs-15',    // 13 The Leap (vision pivot)
   'cs-16b',   // 14 Autonomous social coordination (vision climax)
@@ -8978,33 +8978,35 @@ const TOTAL = SLIDE_ORDER.length;
 // Alt dots at REVIEW_POSITION render RED (matching primary review dot) — these are
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
-  // Slot 9 (post cs-4 "Data exists in our heads"): cs-13 primary with cs-12 as alt.
-  // cs-9 moved to last slot in main deck (Dave 2026-04-29 — may not use).
-  9: ['cs-12']
+  // Slot 10 (post cs-13 HITL+25%): cs-16 primary (orbital architecture), with red alts:
+  //   cs-16b = "Two loops · One engine" (autonomous coordination flywheel)
+  //   cs-15  = "The Leap" (every staff/player gets their own agent)
+  10: ['cs-16b', 'cs-15']
 };
-const REVIEW_POSITION = 9;
+const REVIEW_POSITION = 10;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
 // 1=cs-1 (Title), 2=cs-1b (Good Life), 3=cs-2b (What's a community?),
 // 4=cs-11d (Proof · the living lab), 5=cs-11 (Scheduling is measuring),
-// 6=cs-11e (NEPC Proving Ground), 7=cs-3 (Our Wedge), 8=cs-4 (Data exists in our heads).
-// All locked 2026-04-29.
-const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8];
+// 6=cs-11e (NEPC Proving Ground), 7=cs-3 (Our Wedge), 8=cs-4 (Data exists),
+// 9=cs-13 (HITL + 25% adoption) [LOCKED 2026-04-29].
+const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
   'cs-a20',  // 1: The Ask  (was cs-24)
-  'cs-a1',   // 2
-  'cs-a3',   // 3
-  'cs-a4',   // 4
-  'cs-a5',   // 5
-  'cs-a6',   // 6
-  'cs-a9',   // 7
-  'cs-a10',  // 8
-  'cs-a12',  // 9
-  'cs-a17',  // 10
-  'cs-a18',  // 11
-  'cs-a19'   // 12
+  'cs-12',   // 2: Krista's judgment, digitized — moved here from main deck Dave 2026-04-29
+  'cs-a1',   // 3
+  'cs-a3',   // 4
+  'cs-a4',   // 5
+  'cs-a5',   // 6
+  'cs-a6',   // 7
+  'cs-a9',   // 8
+  'cs-a10',  // 9
+  'cs-a12',  // 10
+  'cs-a17',  // 11
+  'cs-a18',  // 12
+  'cs-a19'   // 13
 ];
 const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 let current = 1;
