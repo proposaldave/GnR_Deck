@@ -8854,7 +8854,7 @@ html, body, html body{
   </div>
 
   <!-- TOMORROW label -->
-  <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:rgba(212,168,83,0.78);margin-bottom:18px">In the future, it will run on</div>
+  <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:rgba(212,168,83,0.78);margin-bottom:18px">In the future, civilization will run on</div>
 
   <!-- The destination — gold gradient hero -->
   <div style="font-family:'Playfair Display',serif;font-size:clamp(3.2rem,7.6vw,6.4rem);font-weight:900;line-height:1;letter-spacing:-0.04em;background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 0 60px rgba(212,168,83,0.3);margin-bottom:14px">Human Connection</div>
@@ -8888,8 +8888,9 @@ const SLIDE_ORDER = [
   'cs-1','cs-1b','cs-2b','cs-11d','cs-11',
   'cs-11e','cs-3',
   'cs-4',     //  8 Moat — data in our heads
-  'cs-13',    //  9 Engine — HITL Krista loop
-  'cs-11b',   // 10 NEPC Numbers
+  'cs-13',    //  9 Engine — HITL Krista loop (+ 25% adoption)
+  'cs-16',    // 10 Autonomous Community Intelligence — the engine architecture (Dave 2026-04-29: re-added)
+  'cs-11b',   // 11 NEPC Numbers
   'cs-12',    // 11 Origin — How it started at NEPC
   'cs-18',    // 12 Founder Journey
   'cs-15',    // 13 The Leap (vision pivot)
@@ -8922,7 +8923,23 @@ const REVIEW_POSITION = 9;
 // All locked 2026-04-29.
 const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const APPENDIX_TOTAL = 20;
+// Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
+// (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
+const APPENDIX_ORDER = [
+  'cs-a20',  // 1: The Ask  (was cs-24)
+  'cs-a1',   // 2
+  'cs-a3',   // 3
+  'cs-a4',   // 4
+  'cs-a5',   // 5
+  'cs-a6',   // 6
+  'cs-a9',   // 7
+  'cs-a10',  // 8
+  'cs-a12',  // 9
+  'cs-a17',  // 10
+  'cs-a18',  // 11
+  'cs-a19'   // 12
+];
+const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 let current = 1;
 let inAppendix = false;
 let appendixCurrent = 1;
@@ -8980,11 +8997,11 @@ function caseyGo(n) {
 
 function enterAppendix() {
   inAppendix = true;
-  // Land on cs-a1 so scroll-down advances through the appendix in order (Dave 2026-04-29).
+  // Land on first slot of APPENDIX_ORDER (cs-a20 The Ask). Scroll forward goes through the rest.
   appendixCurrent = 1;
   document.querySelectorAll('.casey-slide').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.appendix-slide').forEach(s => { s.style.display = ''; });
-  const target = document.getElementById('cs-a1');
+  const target = document.getElementById(APPENDIX_ORDER[0]);
   if (target) target.classList.add('active');
   document.getElementById('cbar').style.background = 'linear-gradient(90deg,#caa54a,#ff4d8f)';
   document.getElementById('cbar').style.width = ((1 / APPENDIX_TOTAL) * 100) + '%';
@@ -9011,7 +9028,9 @@ function appendixGo(n) {
   if (!inAppendix) return;
   if (n < 1 || n > APPENDIX_TOTAL) return;
   document.querySelectorAll('.appendix-slide').forEach(s => s.classList.remove('active'));
-  const target = document.getElementById('cs-a' + n);
+  // Use APPENDIX_ORDER mapping (Dave 2026-04-29 — The Ask first, then rest).
+  const targetId = APPENDIX_ORDER[n - 1];
+  const target = document.getElementById(targetId);
   if (target) target.classList.add('active');
   document.getElementById('cbar').style.width = ((n / APPENDIX_TOTAL) * 100) + '%';
   document.getElementById('ccount').textContent = 'A' + n + ' / ' + APPENDIX_TOTAL;
