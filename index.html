@@ -18,9 +18,21 @@ html,body{background:#f3ead8 !important;color:#1a1612 !important}
 /* Every slide: cream paper background unless overridden inline with !important
    (cs-1 and its variants already declare !important inline, so they win). */
 .casey-slide{
-  background:radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%);
-  color:#1a1612;
+  background:radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%) !important;
+  color:#1a1612 !important;
 }
+/* Force inner sections to be transparent so paper bg shows through */
+.casey-slide section,
+.casey-slide .slide,
+.casey-slide .a16z-slide,
+.casey-slide .ur-slide,
+.casey-slide .stg,
+.casey-slide .s,
+.casey-slide .inner{
+  background:transparent !important;
+}
+/* Body */
+body{ background:#f3ead8 !important; color:#1a1612 !important; }
 
 /* Paper grain texture overlay on every slide */
 .casey-slide::before{
@@ -47,9 +59,9 @@ html,body{background:#f3ead8 !important;color:#1a1612 !important}
 .casey-slide [style*="color:#1a1612"],
 .casey-slide [style*="color:#1a1612"],
 .casey-slide [style*="color:#1a1612"],
-.casey-slide [style*="color:#f4f1ea"],
-.casey-slide [style*="color:var(--cream,#e8e0d0)"],
-.casey-slide [style*="color:var(--cream)"],
+.casey-slide [style*="color:#1a1612"],
+.casey-slide [style*="color:#1a1612"],
+.casey-slide [style*="color:#1a1612"],
 .casey-slide [style*="color: var(--cream"]{
   color:#1a1612 !important;
 }
@@ -161,8 +173,8 @@ html,body{background:#f3ead8 !important;color:#1a1612 !important}
 }
 
 /* SVG strokes that were neon white/cream — convert to ink */
-.casey-slide [stroke="#e8e0d0"],
-.casey-slide [stroke="#f5f2ec"]{ stroke:#1a1612 !important }
+.casey-slide [stroke="#1a1612"],
+.casey-slide [stroke="#1a1612"]{ stroke:#1a1612 !important }
 
 /* Paper-mode kicker class for editorial eyebrows */
 .casey-slide .ps-kicker{
@@ -210,7 +222,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 
 .casey-slide.active{opacity:1;pointer-events:all}
 .casey-nav{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:999;background:rgba(0,0,0,0.45);backdrop-filter:blur(8px);padding:10px 16px;border-radius:20px;border:1px solid rgba(26,22,18,0.12)}
-.casey-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.18);border:none;padding:0;cursor:pointer;transition:all 0.3s ease}
+.casey-dot{width:10px;height:10px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.2)}
 .casey-dot.on{background:#d4a853;box-shadow:0 0 12px rgba(212,168,83,0.6);width:24px;border-radius:5px}
 .casey-dot.review{background:#e04040 !important;box-shadow:0 0 14px rgba(224,64,64,0.85) !important;animation:reviewPulse 1.6s ease-in-out infinite}
@@ -230,11 +242,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #0a0f0d;
+    --bg: #f3ead8;
     --green: #2d5a3d;
     --green-light: #4a8c5e;
     --green-glow: #3dff7a;
-    --cream: #e8e0d0;
+    --cream: #1a1612;
     --white: #f5f2ec;
     --gold: #d4a853;
     --red: #e04040;
@@ -273,7 +285,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-size: clamp(28px, 4vw, 56px);
     font-weight: 900;
     text-align: center;
-    color: var(--cream);
+    color: #1a1612;
     margin-bottom: 10px;
     line-height: 1.15;
   }
@@ -307,7 +319,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     cursor: pointer;
     transition: all 0.4s ease;
     border: 2px solid rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.03);
+    background: rgba(26,22,18,0.03);
     position: relative;
     overflow: hidden;
     padding-bottom: 12px;
@@ -343,7 +355,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-size: 13px;
     font-weight: 500;
     text-align: center;
-    color: var(--cream);
+    color: #1a1612;
     line-height: 1.2;
   }
 
@@ -406,7 +418,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     width: 100%;
     height: 5px;
     border-radius: 3px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(26,22,18,0.05);
     overflow: hidden;
   }
   .pain-bar-fill {
@@ -476,7 +488,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 3vw, 42px);
     font-weight: 900;
-    color: var(--cream);
+    color: #1a1612;
     margin-bottom: 8px;
   }
   .s2-sub {
@@ -518,7 +530,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
   }
   .pain-text {
     font-size: clamp(13px, 1.5vw, 17px);
-    color: var(--cream);
+    color: #1a1612;
     line-height: 1.4;
   }
 
@@ -536,7 +548,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(26,22,18,0.03);
     border: 2px solid rgba(255,255,255,0.08);
     transition: all 0.4s ease;
     cursor: pointer;
@@ -555,7 +567,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
   .sport-label {
     font-size: 12px;
     font-weight: 500;
-    color: var(--cream);
+    color: #1a1612;
   }
 
   /* ===== SLIDE 5: Community Graph (Network Visualization) ===== */
@@ -626,7 +638,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: 16px;
     font-weight: 900;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.2;
   }
@@ -650,7 +662,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    box-shadow: 0 0 16px rgba(255,255,255,0.15);
+    box-shadow: 0 0 16px rgba(26,22,18,0.18);
     transition: box-shadow 0.3s, transform 0.3s;
   }
   .graph-node:hover .node-dot {
@@ -661,7 +673,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     font-weight: 600;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.25;
     white-space: nowrap;
@@ -681,7 +693,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
+    background: rgba(26,22,18,0.18);
     border: 1px solid rgba(255,255,255,0.2);
     cursor: pointer;
     transition: all 0.3s;
@@ -703,8 +715,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     height: 44px;
     border-radius: 50%;
     border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.03);
-    color: var(--cream);
+    background: rgba(26,22,18,0.03);
+    color: #1a1612;
     font-size: 18px;
     cursor: pointer;
     display: flex;
@@ -757,7 +769,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(28px, 4vw, 50px);
     font-weight: 900;
-    color: var(--cream);
+    color: #1a1612;
     line-height: 1.1;
   }
   .s3-hero .fastest {
@@ -838,7 +850,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(18px, 2.4vw, 32px);
     font-weight: 700;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.3;
   }
@@ -928,7 +940,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(16px, 2vw, 24px);
     font-weight: 700;
-    color: var(--cream);
+    color: #1a1612;
     line-height: 1.4;
   }
   .wrong-stamp {
@@ -973,7 +985,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(22px, 3vw, 42px);
     font-weight: 900;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.2;
   }
@@ -1012,7 +1024,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(16px, 2.2vw, 26px);
     font-weight: 700;
-    color: var(--cream);
+    color: #1a1612;
     line-height: 1.3;
   }
   .cascade-line {
@@ -1056,7 +1068,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 2.6vw, 36px);
     font-weight: 700;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.3;
   }
@@ -1087,15 +1099,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
   }
   .teaser-line.t1 {
     font-size: clamp(22px, 3vw, 42px);
-    color: var(--cream);
+    color: #1a1612;
   }
   .teaser-line.t2 {
     font-size: clamp(24px, 3.4vw, 48px);
-    color: var(--cream);
+    color: #1a1612;
   }
   .teaser-line.t3 {
     font-size: clamp(26px, 3.8vw, 54px);
-    color: var(--cream);
+    color: #1a1612;
   }
   .teaser-line.t4 {
     font-size: clamp(18px, 2.2vw, 30px);
@@ -1178,7 +1190,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-size: 28px;
   }
   .sm-old {
-    background: rgba(255,255,255,0.04);
+    background: rgba(26,22,18,0.04);
     border: 1px solid rgba(255,255,255,0.1);
   }
   .sm-new {
@@ -1193,7 +1205,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     text-align: center;
   }
   .sm-arrow {
-    color: rgba(255,255,255,0.15);
+    color: rgba(26,22,18,0.18);
     font-size: 20px;
   }
 
@@ -1211,7 +1223,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Libre Caslon Display', 'Libre Caslon Text', Georgia, serif;
     font-size: clamp(22px, 3vw, 42px);
     font-weight: 400;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.15;
     letter-spacing: -0.5px;
@@ -1224,7 +1236,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     right: 24px;
     display: flex;
     gap: 2px;
-    background: rgba(255,255,255,0.04);
+    background: rgba(26,22,18,0.04);
     border-radius: 8px;
     padding: 3px;
     z-index: 10;
@@ -1276,7 +1288,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 2.8vw, 40px);
     font-weight: 900;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.25;
   }
@@ -1340,7 +1352,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.3;
   }
@@ -1402,7 +1414,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
   }
   .archive-toggle:hover {
     color: rgba(255,255,255,0.5);
-    border-color: rgba(255,255,255,0.15);
+    border-color: rgba(26,22,18,0.18);
     background: rgba(255,255,255,0.05);
   }
 
@@ -1412,7 +1424,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     right: -420px;
     width: 400px;
     height: 100vh;
-    background: #111614;
+    background: #fbf7ef;
     border-left: 1px solid rgba(255,255,255,0.08);
     z-index: 300;
     overflow-y: auto;
@@ -1433,7 +1445,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 700;
-    color: var(--cream);
+    color: #1a1612;
     letter-spacing: 1px;
     text-transform: uppercase;
     padding-bottom: 12px;
@@ -1560,7 +1572,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     font-family: 'Playfair Display', serif;
     font-size: clamp(22px, 3vw, 40px);
     font-weight: 900;
-    color: var(--cream);
+    color: #1a1612;
     text-align: center;
     line-height: 1.2;
   }
@@ -1590,7 +1602,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     box-shadow: 0 0 28px rgba(255,255,255,0.4);
   }
   .graph-node:hover .node-label {
-    color: #fff;
+    color: #1a1612;
   }
 
   @keyframes dash-flow {
@@ -1622,10 +1634,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .gnt-logo-contact { height: 80px; width: auto; margin-bottom: 1.5rem; }
 
 :root {
-  --bg-deep: #0d1520;
-  --bg-primary: #131f2e;
-  --bg-card: #1a2a3c;
-  --bg-card-hover: #213448;
+  --bg-deep: #e9dcc4;
+  --bg-primary: #fbf7ef;
+  --bg-card: rgba(26,22,18,0.04);
+  --bg-card-hover: rgba(26,22,18,0.08);
   --accent: #e05c5c;
   --accent-glow: rgba(224, 92, 92, 0.15);
   --blue: #5b9fc4;
@@ -1673,7 +1685,7 @@ html, body {
 /* ── Iframe slides (self-contained visuals) ── */
 .slide-iframe {
   padding: 0 !important;
-  background: #060A14 !important;
+  background: #f3ead8 !important;
 }
 .slide-iframe::before { display: none !important; }
 .slide-iframe iframe {
@@ -1801,7 +1813,7 @@ h1 {
 
 /* ── Ultra-rare Opportunity (Concentric Rings) ── */
 .ur-slide {
-  background: linear-gradient(160deg, #1a2e1a 0%, #0f1f0f 70%) !important;
+  background: linear-gradient(160deg, rgba(184,149,74,0.06) 0%, rgba(184,149,74,0.02) 70%) !important;
 }
 .ur-wrap {
   display: flex; width: 100%; height: 100%;
@@ -1969,7 +1981,7 @@ h1 {
   margin-bottom: 0.15rem;
   font-family: 'Inter', sans-serif;
   font-weight: 600; font-size: 1.1rem;
-  color: var(--text-cream);
+  color: #1a1612;
 }
 .founder-info .role {
   font-size: 0.8rem; color: var(--blue);
@@ -2470,7 +2482,7 @@ h1 {
   transition: background 0.3s, transform 0.3s, border-color 0.3s;
 }
 .nav-dot.active {
-  background: #ffffff; border-color: #ffffff;
+  background: #ffffff; border-color: #1a1612fff;
   transform: scale(1.4);
 }
 .nav-dot:hover { background: rgba(255,255,255,0.4); border-color: rgba(255,255,255,0.5); }
@@ -2479,7 +2491,7 @@ h1 {
   content: attr(data-tip);
   position: absolute; bottom: calc(100% + 8px); left: 50%;
   transform: translateX(-50%);
-  background: #0d1a28; color: #e8edf2; border: 1px solid var(--border);
+  background: #e9dcc4; color: #e8edf2; border: 1px solid var(--border);
   padding: 4px 10px; border-radius: 6px; font-size: 0.65rem;
   font-family: 'Inter', sans-serif; letter-spacing: 0.02em;
   white-space: nowrap; pointer-events: none; z-index: 999;
@@ -2591,7 +2603,7 @@ body:not(.present-mode) .slide.active .substep {
   opacity: 1;
 }
 .nav-dot.appendix-dot.active {
-  background: #ffffff; border-color: #ffffff;
+  background: #ffffff; border-color: #1a1612fff;
   opacity: 1;
   box-shadow: none;
   transform: scale(1.3);
@@ -3592,7 +3604,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 
 /* ===== S2: HUMAN NEED ===== */
 .s-need {
-  background: var(--dark); color: var(--text-cream);
+  background: var(--dark); color: #1a1612;
   flex-direction: row; gap: 0; padding: 60px 48px 100px;
 }
 .s-need .need-visual {
@@ -3628,7 +3640,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .threat-card {
   display: flex; align-items: center; gap: 16px;
   padding: 16px 20px; border-radius: var(--r-sm);
-  background: rgba(255,255,255,0.03);
+  background: rgba(26,22,18,0.03);
   border: 1px solid rgba(255,255,255,0.05);
   position: relative;
 }
@@ -3661,7 +3673,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 
 /* ===== S3: ABOUT DAVE — GROUND ZERO ===== */
 .a16z-deck .s-dave {
-  background: var(--dark); color: var(--text-cream);
+  background: var(--dark); color: #1a1612;
   flex-direction: row; gap: 0; padding: 60px 40px 100px;
 }
 /* Left: zoom-in funnel visual */
@@ -3756,17 +3768,17 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .a16z-deck .s-dave .dave-meta { margin-bottom: 28px; }
 .a16z-deck .s-dave .dave-name {
   font-weight: 700; font-size: 13px; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-cream);
+  text-transform: uppercase; color: #1a1612;
 }
 .a16z-deck .s-dave .dave-role { font-size: 12px; color: var(--text-cream-dim); margin-top: 3px; }
 /* Compact credential chips */
 .cred-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .cred {
   font-size: 11px; padding: 6px 14px; border-radius: 20px;
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(26,22,18,0.04); border: 1px solid rgba(255,255,255,0.06);
   color: var(--text-cream-dim);
 }
-.cred strong { color: var(--text-cream); font-weight: 600; }
+.cred strong { color: #1a1612; font-weight: 600; }
 
 /* ===== S4: MANUAL BOTTLENECK ===== */
 .s-bottleneck { background: var(--cream-deep); text-align: center; }
@@ -3794,7 +3806,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .bn-pain { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: var(--text-mid); max-width: 520px; line-height: 1.65; }
 
 /* ===== S5: PARADIGM ===== */
-.s-paradigm { background: var(--dark); color: var(--text-cream); text-align: center; }
+.s-paradigm { background: var(--dark); color: #1a1612; text-align: center; }
 .s-paradigm .orb-1 { width: 500px; height: 500px; background: rgba(212,113,94,0.05); top: -100px; right: -100px; }
 .s-paradigm .headline { font-size: clamp(28px, 4.5vw, 50px); max-width: 850px; margin-bottom: 72px; }
 .paradigm-shift { display: flex; align-items: center; gap: 56px; }
@@ -3803,7 +3815,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
   width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px;
   display: flex; align-items: center; justify-content: center; font-size: 44px;
 }
-.paradigm-left .paradigm-icon { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+.paradigm-left .paradigm-icon { background: rgba(26,22,18,0.04); border: 1px solid rgba(255,255,255,0.06); }
 .paradigm-right .paradigm-icon { background: rgba(232,192,119,0.08); border: 1px solid rgba(232,192,119,0.15); }
 .paradigm-side .label { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; }
 .paradigm-left .label { color: var(--text-cream-dim); }
@@ -3811,7 +3823,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .paradigm-arrow { font-size: 32px; color: var(--coral); flex-shrink: 0; opacity: 0.6; }
 
 /* ===== S6: DATA EXISTS ===== */
-.s-missing { text-align: center; color: var(--text-cream); background: var(--dark-warm); }
+.s-missing { text-align: center; color: #1a1612; background: var(--dark-warm); }
 .s-missing .orb-1 { width: 600px; height: 600px; background: rgba(123,175,150,0.06); top: 10%; left: -10%; }
 .s-missing .orb-2 { width: 400px; height: 400px; background: rgba(232,192,119,0.05); bottom: 10%; right: -5%; }
 .s-missing .ring-1 { width: 500px; height: 500px; top: -150px; right: -150px; border-color: rgba(255,255,255,0.03); }
@@ -3859,7 +3871,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .product-flow { display: flex; align-items: stretch; gap: 32px; justify-content: center; flex-wrap: wrap; }
 .data-in {
   padding: 28px; border-radius: var(--r); text-align: left;
-  background: var(--dark); color: var(--text-cream); min-width: 220px;
+  background: var(--dark); color: #1a1612; min-width: 220px;
 }
 .data-in h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; color: var(--text-cream-dim); margin-bottom: 16px; }
 .data-in ul { list-style: none; }
@@ -3877,7 +3889,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .intel-card p { font-size: 11px; color: var(--text-light); margin-top: 2px; }
 
 /* ===== S10: TROJAN HORSE ===== */
-.s-trojan { background: var(--dark); color: var(--text-cream); text-align: center; }
+.s-trojan { background: var(--dark); color: #1a1612; text-align: center; }
 .s-trojan .orb-1 { width: 500px; height: 500px; background: rgba(232,192,119,0.04); bottom: -100px; left: -100px; }
 .s-trojan .headline { font-size: clamp(26px, 4vw, 44px); max-width: 800px; margin-bottom: 12px; }
 .s-trojan .sub { font-size: 14px; color: var(--text-cream-dim); max-width: 600px; margin-bottom: 44px; line-height: 1.6; }
@@ -3901,7 +3913,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 /* ===== S11: PROOF ===== */
 .s-proof {
   background: linear-gradient(160deg, var(--dark-warm) 0%, var(--dark) 100%);
-  color: var(--text-cream); text-align: center;
+  color: #1a1612; text-align: center;
 }
 .s-proof .ring-1 { width: 300px; height: 300px; bottom: 15%; left: 8%; border-color: var(--amber); opacity: 0.05; }
 .s-proof .ring-2 { width: 200px; height: 200px; top: 20%; right: 12%; border-color: var(--sage); opacity: 0.04; }
@@ -3926,7 +3938,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .dna-card .trait { font-size: 12px; font-weight: 600; color: var(--text-dark); line-height: 1.3; }
 
 /* ===== S13: NETWORK STACK ===== */
-.a16z-deck .s-network { background: var(--dark); color: var(--text-cream); text-align: center; }
+.a16z-deck .s-network { background: var(--dark); color: #1a1612; text-align: center; }
 .a16z-deck .s-network .headline { font-size: clamp(26px, 4vw, 44px); margin-bottom: 48px; }
 .stack { display: flex; flex-direction: column; align-items: center; gap: 0; }
 .stack-block {
@@ -3934,8 +3946,8 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
   font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px;
   text-align: center; border-radius: 8px; position: relative;
 }
-.stack-block.past { background: rgba(255,255,255,0.03); color: var(--text-cream-dim); border: 1px solid rgba(255,255,255,0.04); }
-.stack-block.present { background: rgba(255,255,255,0.06); color: rgba(250,246,240,0.8); border: 1px solid rgba(255,255,255,0.08); }
+.stack-block.past { background: rgba(26,22,18,0.03); color: var(--text-cream-dim); border: 1px solid rgba(255,255,255,0.04); }
+.stack-block.present { background: rgba(26,22,18,0.05); color: rgba(250,246,240,0.8); border: 1px solid rgba(255,255,255,0.08); }
 .stack-block.future {
   background: linear-gradient(135deg, rgba(212,113,94,0.12), rgba(232,192,119,0.12));
   color: var(--amber); border: 1px solid rgba(232,192,119,0.2);
@@ -3994,7 +4006,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .a16z-deck .s-market .mkt-footer { font-size: 13px; color: var(--text-light); }
 
 /* ===== S16: PLAN ===== */
-.s-plan { background: var(--dark); color: var(--text-cream); text-align: center; }
+.s-plan { background: var(--dark); color: #1a1612; text-align: center; }
 .s-plan .headline { font-size: clamp(28px, 4vw, 48px); margin-bottom: 48px; }
 .plan-phases { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
 .plan-phase {
@@ -4007,7 +4019,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .plan-phase .desc { font-size: 13px; color: var(--text-cream-dim); line-height: 1.6; }
 .plan-line {
   position: relative; width: 80%; max-width: 600px; height: 2px;
-  background: rgba(255,255,255,0.06); margin: 0 auto;
+  background: rgba(26,22,18,0.05); margin: 0 auto;
 }
 .plan-dot {
   position: absolute; border-radius: 50%; top: 50%; transform: translateY(-50%);
@@ -4031,7 +4043,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .slide-app { padding: 48px 60px 80px; }
 
 /* A1: NEPC */
-.a16z-deck .s-nepc { background: var(--dark-warm); color: var(--text-cream); }
+.a16z-deck .s-nepc { background: var(--dark-warm); color: #1a1612; }
 .nepc-cols { display: flex; gap: 36px; justify-content: center; flex-wrap: wrap; }
 .nepc-col {
   flex: 1; min-width: 260px; max-width: 380px;
@@ -4071,7 +4083,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .team-card p { font-size: 11px; color: var(--text-mid); line-height: 1.5; }
 
 /* A4: ROADMAP */
-.a16z-deck .s-roadmap { background: var(--dark); color: var(--text-cream); }
+.a16z-deck .s-roadmap { background: var(--dark); color: #1a1612; }
 .a16z-deck .s-roadmap .roadmap-sub { font-size: 14px; color: var(--text-cream-dim); text-align: center; margin-bottom: 28px; }
 .rm-list { display: flex; flex-direction: column; gap: 10px; max-width: 560px; width: 100%; }
 .rm-item {
@@ -4080,7 +4092,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 }
 .rm-num { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--text-cream-dim); flex: 0 0 32px; }
 .rm-content { flex: 1; }
-.rm-content h4 { font-size: 13px; font-weight: 700; color: var(--text-cream); }
+.rm-content h4 { font-size: 13px; font-weight: 700; color: #1a1612; }
 .rm-content p { font-size: 11px; color: var(--text-cream-dim); margin-top: 2px; }
 .rm-badge {
   font-size: 9px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 10px;
@@ -4327,7 +4339,7 @@ body.present-mode.show-mode-indicator::after {
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#060609;--fg:#ede9e0;--gold:#caa54a;--mint:#49b4a0;--blush:#c46b78;
+  --bg:#f3ead8;--fg:#1a1612;--gold:#caa54a;--mint:#49b4a0;--blush:#c46b78;
   --glass:rgba(255,255,255,0.03);--line:rgba(202,165,74,0.15);
   --serif:'Libre Caslon Display','Libre Caslon Text',Georgia,serif;
   --text:'Libre Caslon Text',Georgia,serif;
@@ -4490,7 +4502,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@300;400;500;600;700&display=swap');
   :root {
-    --bg: #06080d;
+    --bg: #f3ead8;
     --warm: #f59e0b;
     --warm-soft: #fbbf24;
     --coral: #fb7185;
@@ -4670,9 +4682,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 .ds-focus section{min-height:100% !important;width:100%;scroll-snap-align:unset !important}
 .ds-focus{display:flex !important;align-items:center;justify-content:center}
 .ds-measure .s{position:relative !important;inset:auto !important;width:100%;height:100%;opacity:1 !important;pointer-events:all !important;transform:none !important}
-.ds-measure{display:flex !important;align-items:center;justify-content:center;background:#06080d;font-family:'Outfit',sans-serif;color:#eef2ff}
+.ds-measure{display:flex !important;align-items:center;justify-content:center;background:#f3ead8;font-family:'Outfit',sans-serif;color:#eef2ff}
 .ds-measure .stg > * {opacity:1 !important; transform:translateY(0) !important;}
-.ds-main{background:#131f2e;font-family:'Inter',-apple-system,sans-serif;color:#f0f2f5}
+.ds-main{background:#fbf7ef;font-family:'Inter',-apple-system,sans-serif;color:#f0f2f5}
 .ds-focus{background:transparent;font-family:'Manrope',system-ui,sans-serif;color:#1a1612}
 
 /* Node overlay */
@@ -4688,7 +4700,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 /* ======== DS-DIARY SCOPE (diary-agent-vision slide) ======== */
 
 
-:root{--bg:#060609;--fg:#e8e0d0;--dim:#887a6a;--gold:#caa54a;--mint:#49b4a0;--blush:#c46b78;--purple:#8b5cf6}
+:root{--bg:#f3ead8;--fg:#e8e0d0;--dim:#887a6a;--gold:#caa54a;--mint:#49b4a0;--blush:#c46b78;--purple:#8b5cf6}
 
 .ds-diary h1{font-family:'Libre Caslon Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);text-align:center;line-height:1.15}
 
@@ -4758,32 +4770,40 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 /* 3. Selection highlight visible on all text including gradient fills */
 .casey-slide.active ::selection {
   background: rgba(212,168,83,0.4) !important;
-  -webkit-text-fill-color: #fff !important;
-  color: #fff !important;
+  -webkit-text-fill-color: #1a1612 !important;
+  color: #1a1612 !important;
 }
 .casey-slide.active ::-moz-selection {
   background: rgba(212,168,83,0.4) !important;
-  color: #fff !important;
+  color: #1a1612 !important;
 }
 
-/* ======== ALL-BLACK BACKGROUNDS OVERRIDE ======== */
-.casey-slide { background: #060609 !important; }
-.casey-slide .slide { background: #060609 !important; }
-.casey-slide .a16z-slide { background: #060609 !important; }
-.ds-a16z .a16z-slide { background: #060609 !important; }
-.ds-main .slide { background: #060609 !important; }
-.ds-intro { background: #060609 !important; }
-.ds-measure { background: #060609 !important; }
-.ds-focus { background: #060609 !important; }
-.ds-diary { background: #060609 !important; }
-.s-paradigm { background: #060609 !important; }
-.s-need { background: #060609 !important; }
-.s-bottleneck { background: #060609 !important; color: var(--text-cream) !important; }
-.s-bottleneck .headline { color: var(--text-cream) !important; }
-.s-bottleneck .bn-pain { color: var(--text-cream-dim) !important; }
-.s-bottleneck .bn-label { color: var(--coral) !important; }
-.s-bottleneck h4 { color: var(--text-cream) !important; }
-.ur-slide { background: #060609 !important; }
+/* ======== PAPER MODE FORCE — Dave 2026-04-29 (replaces dark-mode block) ======== */
+/* Every slide variant now uses cream paper bg by default. cs-1 and cs-1A/B/C/D
+   variants override this with their own inline !important radial gradients,
+   so they keep their distinctive title-slide treatments. */
+.casey-slide,
+.casey-slide .slide,
+.casey-slide .a16z-slide,
+.ds-a16z,
+.ds-a16z .a16z-slide,
+.ds-main,
+.ds-main .slide,
+.ds-intro,
+.ds-measure,
+.ds-focus,
+.ds-diary,
+.s-paradigm,
+.s-need,
+.s-bottleneck,
+.ur-slide {
+  background: radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%) !important;
+  color: #1a1612 !important;
+}
+.s-bottleneck .headline { color: #1a1612 !important; }
+.s-bottleneck .bn-pain { color: rgba(26,22,18,0.62) !important; }
+.s-bottleneck .bn-label { color: #c8462c !important; }
+.s-bottleneck h4 { color: #1a1612 !important; }
 /* ======== LOGO ANIMATION (closing slide) ======== */
 @keyframes gntDotIn{0%{opacity:0;transform:scale(0)}100%{opacity:1;transform:scale(1)}}
 @keyframes gntDrawLine{0%{stroke-dashoffset:var(--len)}100%{stroke-dashoffset:0}}
@@ -5282,11 +5302,11 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <svg width="148" height="148" viewBox="0 0 52 52" fill="none">
             <!-- Lonely person -->
             <circle cx="26" cy="14" r="5" fill="rgba(232,224,208,0.35)"/>
-            <path d="M26 20 L26 34" stroke="rgba(232,224,208,0.3)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M20 26 L26 23 L32 26" stroke="rgba(232,224,208,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M22 34 L26 34 L30 34" stroke="rgba(232,224,208,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.3)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M22 34 L26 34 L30 34" stroke="rgba(26,22,18,0.25)" stroke-width="1.5" stroke-linecap="round"/>
             <!-- Phone in hand -->
-            <rect x="30" y="22" width="7" height="12" rx="1.5" fill="none" stroke="rgba(232,224,208,0.4)" stroke-width="1"/>
+            <rect x="30" y="22" width="7" height="12" rx="1.5" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1"/>
             <rect x="31.5" y="24" width="4" height="7" rx="0.5" fill="rgba(100,140,255,0.3)"/>
             <!-- Dim glow from phone -->
             <circle cx="33.5" cy="27" r="8" fill="rgba(100,140,255,0.06)"/>
@@ -5416,8 +5436,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="position:relative;width:104px;height:104px;margin:0 auto 22px">
         <svg width="104" height="104" viewBox="0 0 96 96" fill="none">
           <!-- Exponential growth curve compounding upward -->
-          <line x1="14" y1="82" x2="86" y2="82" stroke="rgba(232,224,208,0.3)" stroke-width="1" stroke-dasharray="2 2"/>
-          <line x1="14" y1="14" x2="14" y2="82" stroke="rgba(232,224,208,0.3)" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="14" y1="82" x2="86" y2="82" stroke="rgba(26,22,18,0.3)" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="14" y1="14" x2="14" y2="82" stroke="rgba(26,22,18,0.3)" stroke-width="1" stroke-dasharray="2 2"/>
           <path d="M 18 76 Q 50 76 76 22" stroke="#3dff7a" stroke-width="3.2" fill="none" stroke-linecap="round"/>
           <!-- Arrowhead at peak (kept inside the red circle, r=46 from center 48,48) -->
           <path d="M 76 22 L 68 26 M 76 22 L 72 30" stroke="#3dff7a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
@@ -5492,9 +5512,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <!-- Card 1 -->
     <div style="flex:1;min-width:180px;max-width:240px;background:rgba(224,64,64,0.06);border:1px solid rgba(224,64,64,0.2);border-radius:14px;padding:28px 20px;text-align:center">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="margin-bottom:14px">
-        <circle cx="18" cy="16" r="7" fill="none" stroke="rgba(232,224,208,0.3)" stroke-width="1.5"/>
-        <circle cx="30" cy="16" r="7" fill="none" stroke="rgba(232,224,208,0.3)" stroke-width="1.5"/>
-        <path d="M12 34 Q18 28 24 30 Q30 28 36 34" stroke="rgba(232,224,208,0.2)" stroke-width="1.5" fill="none"/>
+        <circle cx="18" cy="16" r="7" fill="none" stroke="rgba(26,22,18,0.3)" stroke-width="1.5"/>
+        <circle cx="30" cy="16" r="7" fill="none" stroke="rgba(26,22,18,0.3)" stroke-width="1.5"/>
+        <path d="M12 34 Q18 28 24 30 Q30 28 36 34" stroke="rgba(26,22,18,0.2)" stroke-width="1.5" fill="none"/>
         <line x1="10" y1="10" x2="38" y2="38" stroke="var(--red,#e04040)" stroke-width="1.5" opacity="0.5"/>
       </svg>
       <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:rgba(26,22,18,0.85)">True Social<br>Matchmaking</div>
@@ -5502,13 +5522,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <!-- Card 2 -->
     <div style="flex:1;min-width:180px;max-width:240px;background:rgba(224,64,64,0.06);border:1px solid rgba(224,64,64,0.2);border-radius:14px;padding:28px 20px;text-align:center">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="margin-bottom:14px">
-        <circle cx="14" cy="20" r="5" fill="none" stroke="rgba(232,224,208,0.3)" stroke-width="1.2"/>
-        <circle cx="24" cy="12" r="5" fill="none" stroke="rgba(232,224,208,0.3)" stroke-width="1.2"/>
-        <circle cx="34" cy="20" r="5" fill="none" stroke="rgba(232,224,208,0.3)" stroke-width="1.2"/>
-        <circle cx="19" cy="32" r="5" fill="none" stroke="rgba(232,224,208,0.3)" stroke-width="1.2"/>
-        <circle cx="29" cy="32" r="5" fill="none" stroke="rgba(232,224,208,0.3)" stroke-width="1.2"/>
-        <line x1="14" y1="20" x2="24" y2="12" stroke="rgba(232,224,208,0.1)" stroke-width="0.8" stroke-dasharray="2 3"/>
-        <line x1="24" y1="12" x2="34" y2="20" stroke="rgba(232,224,208,0.1)" stroke-width="0.8" stroke-dasharray="2 3"/>
+        <circle cx="14" cy="20" r="5" fill="none" stroke="rgba(26,22,18,0.3)" stroke-width="1.2"/>
+        <circle cx="24" cy="12" r="5" fill="none" stroke="rgba(26,22,18,0.3)" stroke-width="1.2"/>
+        <circle cx="34" cy="20" r="5" fill="none" stroke="rgba(26,22,18,0.3)" stroke-width="1.2"/>
+        <circle cx="19" cy="32" r="5" fill="none" stroke="rgba(26,22,18,0.3)" stroke-width="1.2"/>
+        <circle cx="29" cy="32" r="5" fill="none" stroke="rgba(26,22,18,0.3)" stroke-width="1.2"/>
+        <line x1="14" y1="20" x2="24" y2="12" stroke="rgba(26,22,18,0.1)" stroke-width="0.8" stroke-dasharray="2 3"/>
+        <line x1="24" y1="12" x2="34" y2="20" stroke="rgba(26,22,18,0.1)" stroke-width="0.8" stroke-dasharray="2 3"/>
         <line x1="10" y1="10" x2="38" y2="38" stroke="var(--red,#e04040)" stroke-width="1.5" opacity="0.5"/>
       </svg>
       <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:rgba(26,22,18,0.85)">Group-Experience<br>Formation</div>
@@ -5516,8 +5536,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <!-- Card 3 -->
     <div style="flex:1;min-width:180px;max-width:240px;background:rgba(224,64,64,0.06);border:1px solid rgba(224,64,64,0.2);border-radius:14px;padding:28px 20px;text-align:center">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="margin-bottom:14px">
-        <path d="M10 38 L10 28 L18 28 L18 22 L26 22 L26 16 L34 16 L34 10" stroke="rgba(232,224,208,0.2)" stroke-width="1.5" fill="none"/>
-        <circle cx="34" cy="10" r="3" fill="rgba(232,224,208,0.15)" stroke="rgba(232,224,208,0.3)" stroke-width="1"/>
+        <path d="M10 38 L10 28 L18 28 L18 22 L26 22 L26 16 L34 16 L34 10" stroke="rgba(26,22,18,0.2)" stroke-width="1.5" fill="none"/>
+        <circle cx="34" cy="10" r="3" fill="rgba(232,224,208,0.15)" stroke="rgba(26,22,18,0.3)" stroke-width="1"/>
         <line x1="10" y1="10" x2="38" y2="38" stroke="var(--red,#e04040)" stroke-width="1.5" opacity="0.5"/>
       </svg>
       <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:rgba(26,22,18,0.85)">Compounding<br>Community Value</div>
@@ -5998,7 +6018,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div class="uw-row">
         <div class="uw-logo" title="OpenAI">
           <svg viewBox="0 0 36 36" width="42" height="42" xmlns="http://www.w3.org/2000/svg" aria-label="OpenAI">
-            <g fill="none" stroke="#e8e0d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <g fill="none" stroke="#1a1612" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <ellipse cx="18" cy="18" rx="14" ry="6" transform="rotate(0 18 18)"/>
               <ellipse cx="18" cy="18" rx="14" ry="6" transform="rotate(60 18 18)"/>
               <ellipse cx="18" cy="18" rx="14" ry="6" transform="rotate(120 18 18)"/>
@@ -6033,15 +6053,15 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div class="h" style="font-size:clamp(22px,3.8vw,36px);max-width:1000px;">When you digitize what we mean to each other, you can:</div>
       <div id="digitizeList" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:20px">
         <span data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">graph it</span>
-        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(26,22,18,0.18)">&middot;</span>
         <span data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">orchestrate it</span>
-        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(26,22,18,0.18)">&middot;</span>
         <span data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">sell it</span>
-        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(26,22,18,0.18)">&middot;</span>
         <span data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">automate it</span>
-        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(26,22,18,0.18)">&middot;</span>
         <span data-color="#3dff7a" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#2a8a4f;transition:all 0.4s ease">incentivize it</span>
-        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(26,22,18,0.18)">&middot;</span>
         <span data-color="#e04040" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#c8462c;transition:all 0.4s ease">make it abundant</span>
       </div>
       <!-- Community-to-Court animation -->
@@ -6527,14 +6547,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         </svg>
         <!-- Person silhouette (larger) -->
         <svg width="84" height="98" viewBox="0 0 120 140" fill="none" style="flex-shrink:0">
-          <circle cx="60" cy="32" r="18" fill="none" stroke="rgba(232,224,208,0.25)" stroke-width="2"/>
+          <circle cx="60" cy="32" r="18" fill="none" stroke="rgba(26,22,18,0.25)" stroke-width="2"/>
           <circle cx="54" cy="28" r="2" fill="rgba(232,224,208,0.2)"/>
           <circle cx="66" cy="28" r="2" fill="rgba(232,224,208,0.2)"/>
-          <path d="M54 36 Q60 40 66 36" stroke="rgba(232,224,208,0.15)" stroke-width="1.2" fill="none"/>
-          <line x1="60" y1="50" x2="60" y2="90" stroke="rgba(232,224,208,0.2)" stroke-width="2"/>
-          <line x1="42" y1="70" x2="78" y2="70" stroke="rgba(232,224,208,0.2)" stroke-width="2"/>
-          <line x1="60" y1="90" x2="45" y2="120" stroke="rgba(232,224,208,0.2)" stroke-width="2"/>
-          <line x1="60" y1="90" x2="75" y2="120" stroke="rgba(232,224,208,0.2)" stroke-width="2"/>
+          <path d="M54 36 Q60 40 66 36" stroke="rgba(26,22,18,0.15)" stroke-width="1.2" fill="none"/>
+          <line x1="60" y1="50" x2="60" y2="90" stroke="rgba(26,22,18,0.2)" stroke-width="2"/>
+          <line x1="42" y1="70" x2="78" y2="70" stroke="rgba(26,22,18,0.2)" stroke-width="2"/>
+          <line x1="60" y1="90" x2="45" y2="120" stroke="rgba(26,22,18,0.2)" stroke-width="2"/>
+          <line x1="60" y1="90" x2="75" y2="120" stroke="rgba(26,22,18,0.2)" stroke-width="2"/>
         </svg>
         <div style="text-align:left">
           <div style="font-size:0.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(224,64,64,0.85);margin-bottom:8px">Skill Ratings &middot; the old paradigm</div>
@@ -6569,7 +6589,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="text-align:center;padding:32px 32px">
         <div style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:6px;background:#1877F2;margin-bottom:20px;box-shadow:0 2px 10px rgba(24,119,242,0.35)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg"><path d="M2 11.5C2 10.6716 2.67157 10 3.5 10H6V20H3.5C2.67157 20 2 19.3284 2 18.5V11.5Z"/><path d="M7 9.99998L11 1.99998C12.6569 1.99998 14 3.34313 14 4.99998V8.99998H19.5C20.5 8.99998 21.2333 9.93331 21 10.9333L19.4 18.9333C19.2333 19.5333 18.6 20 18 20H7V9.99998Z"/></svg>
-          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:.95rem;font-weight:700;color:#ffffff">Like</div>
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:.95rem;font-weight:700;color:#1a1612fff">Like</div>
         </div>
       </div>
       <!-- divider -->
@@ -6594,7 +6614,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Scheduling is measuring</div>
 
 <div class="inner" style="padding-top:52px;text-align:center;max-width:1100px">
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.6vw,2.7rem);color:var(--cream,#e8e0d0);line-height:1.18;margin-bottom:18px;font-weight:700;letter-spacing:-0.005em;max-width:920px;margin-left:auto;margin-right:auto">
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.6vw,2.7rem);color:#1a1612;line-height:1.18;margin-bottom:18px;font-weight:700;letter-spacing:-0.005em;max-width:920px;margin-left:auto;margin-right:auto">
     There&rsquo;s no like button in the real world.<br>
     <em style="font-style:italic;color:#b8954a;font-weight:700">But there&rsquo;s the invitation.</em>
   </div>
@@ -6753,7 +6773,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   </div>
 
   <!-- Bottom payoff line — Dave 2026-04-29 -->
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.1vw,1.65rem);font-weight:700;color:var(--cream,#e8e0d0);line-height:1.3;margin-top:14px;letter-spacing:-0.005em;max-width:920px;margin-left:auto;margin-right:auto">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.1vw,1.65rem);font-weight:700;color:#1a1612;line-height:1.3;margin-top:14px;letter-spacing:-0.005em;max-width:920px;margin-left:auto;margin-right:auto">
     <em style="color:#2a8a4f;font-style:italic">Who you choose</em> measures connection at the exact same time it schedules it.
   </div>
 
@@ -6767,8 +6787,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Max social signal &middot; density &middot; velocity &middot; need</div>
 
 <div class="inner" style="padding-top:14px;text-align:center;max-width:1180px">
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:14px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
-    <span style="color:var(--cream)">Average pickleballer:</span> <span style="color:#2a8a4f;font-weight:900">3</span> sessions, <span style="color:#2a8a4f;font-weight:900">24</span> rounds per week.
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:#1a1612;line-height:1.2;margin-bottom:14px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
+    <span style="color:#1a1612">Average pickleballer:</span> <span style="color:#2a8a4f;font-weight:900">3</span> sessions, <span style="color:#2a8a4f;font-weight:900">24</span> rounds per week.
   </div>
 
   <!-- Hero stick figure — moved to sit just above "Her reality"; paddle scaled up for clearer pickleball read -->
@@ -7410,7 +7430,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Behavior change</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:860px">
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:700;color:var(--cream,#e8e0d0);line-height:1.15;margin-bottom:10px">
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:700;color:#1a1612;line-height:1.15;margin-bottom:10px">
     Radical change in <em style="color:#b8954a">player behavior</em>.
   </div>
   <div style="font-size:0.82rem;color:rgba(26,22,18,0.58);margin-bottom:8px;font-style:italic">Your 24/7 personalized matchmaker.</div>
@@ -7596,20 +7616,20 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- Outer ring: Many players (all equal, all feeding in) -->
       <g>
-        <circle cx="220" cy="30" r="6" fill="none" stroke="rgba(232,224,208,0.25)" stroke-width="1.2"/>
-        <circle cx="145" cy="48" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="80" cy="100" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="45" cy="180" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="45" cy="260" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="80" cy="340" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="145" cy="392" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="220" cy="410" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="295" cy="392" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="360" cy="340" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="395" cy="260" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="395" cy="180" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="360" cy="100" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
-        <circle cx="295" cy="48" r="6" fill="none" stroke="rgba(232,224,208,0.2)" stroke-width="1"/>
+        <circle cx="220" cy="30" r="6" fill="none" stroke="rgba(26,22,18,0.25)" stroke-width="1.2"/>
+        <circle cx="145" cy="48" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="80" cy="100" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="45" cy="180" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="45" cy="260" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="80" cy="340" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="145" cy="392" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="220" cy="410" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="295" cy="392" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="360" cy="340" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="395" cy="260" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="395" cy="180" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="360" cy="100" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
+        <circle cx="295" cy="48" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
         <text x="220" y="18" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="0.06em" fill="rgba(232,224,208,0.7)">every player, every interaction</text>
       </g>
 
@@ -7747,7 +7767,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
   <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:40px 20px;box-sizing:border-box">
 
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,38px);font-weight:900;color:var(--cream);text-align:center;margin-bottom:32px">
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,38px);font-weight:900;color:#1a1612;text-align:center;margin-bottom:32px">
       Human connection, zero to one starts here.
     </div>
 
@@ -7894,7 +7914,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="background:rgba(212,168,83,0.15);border:1px solid var(--gold,#caa54a);border-radius:6px;padding:10px 24px;font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:#b8954a;letter-spacing:0.08em">AI</div>
       <div style="background:rgba(26,22,18,0.04);border:1px solid rgba(26,22,18,0.14);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(26,22,18,0.62);letter-spacing:0.08em">SOCIAL MEDIA</div>
       <div style="background:rgba(26,22,18,0.03);border:1px solid rgba(26,22,18,0.12);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(26,22,18,0.5);letter-spacing:0.08em">SMARTPHONES</div>
-      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.18);letter-spacing:0.08em">THE INTERNET</div>
+      <div style="background:rgba(26,22,18,0.03);border:1px solid rgba(255,255,255,0.04);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.18);letter-spacing:0.08em">THE INTERNET</div>
       <div style="background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.03);border-radius:6px;padding:8px 24px;font-size:0.75rem;font-weight:600;color:rgba(237,233,224,.12);letter-spacing:0.08em">COMPUTING</div>
     </div>
 
@@ -8050,7 +8070,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">Impact</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:960px">
-  <div class="display" style="font-size:clamp(1.6rem,3.4vw,2.6rem);margin-bottom:8px"><span style="color:var(--cream)">3&times; Net Profit Impact</span></div>
+  <div class="display" style="font-size:clamp(1.6rem,3.4vw,2.6rem);margin-bottom:8px"><span style="color:#1a1612">3&times; Net Profit Impact</span></div>
   <div style="font-size:0.82rem;color:rgba(237,233,224,.65);margin-bottom:32px;font-style:italic">GnT handles the complexity of people. You 3&times; the value of your community.</div>
 
   <!-- Bar chart -->
@@ -8076,7 +8096,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:0.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(73,180,160,.5)">util</div>
       </div>
       <div style="border-top:1px solid rgba(237,233,224,.2);width:92px"></div>
-      <div style="font-size:0.68rem;font-weight:600;color:var(--cream,#e8e0d0);margin-top:10px">Stage 1</div>
+      <div style="font-size:0.68rem;font-weight:600;color:#1a1612;margin-top:10px">Stage 1</div>
       <div style="font-size:0.55rem;color:rgba(26,22,18,0.58);margin-top:2px;font-style:italic">today</div>
     </div>
 
@@ -8089,7 +8109,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:0.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(73,180,160,.55)">util</div>
       </div>
       <div style="border-top:1px solid rgba(237,233,224,.2);width:92px"></div>
-      <div style="font-size:0.68rem;font-weight:600;color:var(--cream,#e8e0d0);margin-top:10px">Stage 2</div>
+      <div style="font-size:0.68rem;font-weight:600;color:#1a1612;margin-top:10px">Stage 2</div>
       <div style="font-size:0.55rem;color:rgba(26,22,18,0.58);margin-top:2px;font-style:italic">human-in-loop</div>
     </div>
 
@@ -8122,7 +8142,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The Ask</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:860px">
   <div style="font-size:0.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8954a;margin-bottom:12px">Seed round</div>
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(3.5rem,8vw,6rem);font-weight:900;color:var(--cream,#e8e0d0);line-height:1;margin-bottom:12px">$1.5M</div>
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(3.5rem,8vw,6rem);font-weight:900;color:#1a1612;line-height:1;margin-bottom:12px">$1.5M</div>
   <div class="display" style="font-size:clamp(1.1rem,2.2vw,1.6rem);color:#b8954a;font-style:italic;margin-bottom:32px">to prove it transfers.</div>
 
   <!-- What we'll deliver -->
@@ -8208,7 +8228,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Thesis</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:960px">
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.6vw,2.8rem);font-weight:700;color:var(--cream,#e8e0d0);line-height:1.25;margin-bottom:20px">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.6vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.25;margin-bottom:20px">
     Our <em class="ember">uniqueness,</em> <em class="ember">value,</em> and <em class="ember">connection</em> to each other&nbsp;&mdash;
   </div>
   <div style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.6vw,2rem);font-weight:700;font-style:italic;color:#b8954a;line-height:1.3">
@@ -8443,7 +8463,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="background:rgba(61,255,122,0.04);border:2px solid rgba(61,255,122,0.35);border-radius:12px;padding:22px 18px;position:relative">
       <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg,#0a0f0d);padding:2px 12px;font-size:0.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#2a8a4f">Active Now</div>
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#b8954a;margin-top:6px;margin-bottom:10px">Gate 1</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.3;margin-bottom:12px">Does the AI understand the community?</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1a1612;line-height:1.3;margin-bottom:12px">Does the AI understand the community?</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#2a8a4f;margin:10px 0">6/10</div>
       <div style="font-size:0.6rem;color:rgba(26,22,18,0.45)">Matchmaker approves AI rec direction</div>
     </div>
@@ -8451,12 +8471,12 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="background:rgba(212,168,83,0.04);border:1.5px solid rgba(212,168,83,0.25);border-radius:12px;padding:22px 18px;position:relative">
       <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg,#0a0f0d);padding:2px 12px;font-size:0.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8954a">Next</div>
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#b8954a;margin-top:6px;margin-bottom:10px">Gate 2</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.3;margin-bottom:12px">Can it help fill courts with human approval?</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1a1612;line-height:1.3;margin-bottom:12px">Can it help fill courts with human approval?</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:#b8954a;margin:10px 0">50% / 70%</div>
       <div style="font-size:0.6rem;color:rgba(26,22,18,0.45)">Unmodified approval &middot; Fill success</div>
     </div>
     <!-- GATE 3 -->
-    <div style="background:rgba(255,255,255,0.02);border:1.5px dashed rgba(237,233,224,0.2);border-radius:12px;padding:22px 18px;position:relative">
+    <div style="background:rgba(26,22,18,0.03);border:1.5px dashed rgba(237,233,224,0.2);border-radius:12px;padding:22px 18px;position:relative">
       <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg,#0a0f0d);padding:2px 12px;font-size:0.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,22,18,0.45)">Target</div>
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,22,18,0.58);margin-top:6px;margin-bottom:10px">Gate 3</div>
       <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:rgba(26,22,18,0.62);line-height:1.3;margin-bottom:12px">Does it work at a club we don't own?</div>
@@ -8562,7 +8582,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">The Urgency</div>
 <div class="inner" style="text-align:center;max-width:1040px;padding:0 48px">
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.8vw,3.8rem);font-weight:700;line-height:1.18;color:var(--cream,#e8e0d0);letter-spacing:-0.01em">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.8vw,3.8rem);font-weight:700;line-height:1.18;color:#1a1612;letter-spacing:-0.01em">
     Pickleball <em style="color:#c8462c;font-weight:900;font-style:italic">desperately</em><br>
     needs this new paradigm.
   </div>
@@ -8584,7 +8604,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div class="timeline-era show"><div class="tl-year">2020s</div><div class="tl-bar"></div><div class="tl-label">DUPR arrives &mdash;<br>still just a number</div></div>
     </div>
     <div class="wrong-assumption-box show"><div class="wrong-quote-mark">&ldquo;</div><div class="wrong-assumption-text">Matching players based on <span style="color:#c8462c;font-weight:700">competitive skill ratings data.</span></div><div class="wrong-stamp">INCORRECT PARADIGM</div></div>
-    <div class="wrong-bottom"><span style="color:var(--cream)">Pickleball is a wildly social sport. 85% of play is social.</span> <span style="color:rgba(26,22,18,0.4)">The system treats them like competitors.</span></div>
+    <div class="wrong-bottom"><span style="color:#1a1612">Pickleball is a wildly social sport. 85% of play is social.</span> <span style="color:rgba(26,22,18,0.4)">The system treats them like competitors.</span></div>
   </div>
 </div>
 
@@ -8605,7 +8625,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   .ps-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,#d4a853,transparent);margin:24px auto}
   .ps-footer{font-family:'Playfair Display',serif;font-size:clamp(0.95rem,1.5vw,1.2rem);font-style:italic;color:#1a1612;margin-top:24px;line-height:1.45;max-width:62ch;margin-left:auto;margin-right:auto}
   .ps-footer strong{color:#b8954a;font-weight:700;font-style:normal}
-  .ps-pillar{padding:18px 10px;border:1px solid rgba(26,22,18,0.14);border-radius:8px;background:rgba(255,255,255,0.02);display:flex;flex-direction:column;justify-content:space-between;min-height:158px}
+  .ps-pillar{padding:18px 10px;border:1px solid rgba(26,22,18,0.14);border-radius:8px;background:rgba(26,22,18,0.03);display:flex;flex-direction:column;justify-content:space-between;min-height:158px}
   .ps-pillar-label{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:#1a1612;margin-bottom:6px}
   .ps-pillar-sub{font-family:'Manrope',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,22,18,0.5);line-height:1.6}
   .ps-pillar-tech{font-family:'Manrope',sans-serif;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:#5fa896;margin-top:10px;line-height:1.7}
@@ -8631,7 +8651,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   .ps-col-meta{font-family:'DM Sans',sans-serif;font-size:.78rem;color:rgba(26,22,18,0.62);margin-top:14px;line-height:1.5}
   .ps-col.new .ps-col-meta{color:#b8954a}
   .ps-3up{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:880px;margin:28px auto 0}
-  .ps-3up .cell{padding:18px 12px;text-align:center;background:rgba(255,255,255,0.02);border:1px solid rgba(26,22,18,0.12);border-radius:8px}
+  .ps-3up .cell{padding:18px 12px;text-align:center;background:rgba(26,22,18,0.03);border:1px solid rgba(26,22,18,0.12);border-radius:8px}
   .ps-3up .cell-big{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.4vw,1.8rem);font-style:italic;color:#b8954a;margin-bottom:8px}
   .ps-3up .cell-sm{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(26,22,18,0.7);line-height:1.4}
   .ps-stat-lg{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:700;font-style:italic;color:#b8954a;line-height:1;letter-spacing:-0.02em}
@@ -9206,7 +9226,7 @@ const abtn = document.createElement('button');
 abtn.id = 'appendixBtn';
 abtn.innerHTML = 'Appendix <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 10px rgba(255,77,143,0.85);margin-left:6px;vertical-align:middle;animation:pinkPulse 2.2s ease-in-out infinite" title="5 bonus slides to review (Name Validated · Mechanism · Keep Going · Bottleneck · Measurement Leap)"></span>';
 abtn.style.cssText = 'font-family:var(--ui,"Manrope",sans-serif);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);background:rgba(26,22,18,0.05);border:1px solid rgba(26,22,18,0.14);border-radius:12px;padding:5px 14px;cursor:pointer;margin-left:8px;transition:all 0.3s';
-abtn.onmouseenter = () => { abtn.style.color = 'rgba(255,255,255,0.6)'; abtn.style.borderColor = 'rgba(255,255,255,0.15)'; };
+abtn.onmouseenter = () => { abtn.style.color = 'rgba(255,255,255,0.6)'; abtn.style.borderColor = 'rgba(26,22,18,0.18)'; };
 abtn.onmouseleave = () => { abtn.style.color = 'rgba(255,255,255,0.35)'; abtn.style.borderColor = 'rgba(255,255,255,0.08)'; };
 abtn.onclick = enterAppendix;
 nav.appendChild(abtn);
