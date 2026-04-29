@@ -5527,26 +5527,19 @@ html, body, html body{
     </div>
   </div>
 
-  <!-- Three converging arrows from the 3 cards above pointing down to "Done by hand." -->
-  <div style="display:flex;justify-content:center;align-items:flex-end;gap:0;max-width:880px;margin:6px auto -6px;padding:0 36px">
-    <div style="flex:1;display:flex;justify-content:center">
-      <svg width="22" height="44" viewBox="0 0 22 44" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11 2 L11 34" stroke="#b8954a" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 3" opacity="0.7"/>
-        <path d="M5 30 L11 38 L17 30" stroke="#b8954a" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <div style="flex:1;display:flex;justify-content:center">
-      <svg width="22" height="44" viewBox="0 0 22 44" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11 2 L11 34" stroke="#b8954a" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 3" opacity="0.7"/>
-        <path d="M5 30 L11 38 L17 30" stroke="#b8954a" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <div style="flex:1;display:flex;justify-content:center">
-      <svg width="22" height="44" viewBox="0 0 22 44" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11 2 L11 34" stroke="#b8954a" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 3" opacity="0.7"/>
-        <path d="M5 30 L11 38 L17 30" stroke="#b8954a" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
+  <!-- Three RED dashed arrows from the 3 cards above all converging at "Done by hand." text below. -->
+  <div style="max-width:880px;margin:8px auto -10px;padding:0 36px">
+    <svg viewBox="0 0 800 60" preserveAspectRatio="xMidYMid meet" width="100%" height="60" xmlns="http://www.w3.org/2000/svg" style="display:block">
+      <defs>
+        <marker id="redArrowhead" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 12 6 L 0 12 Z" fill="#c8462c"/>
+        </marker>
+      </defs>
+      <!-- Card centers above: x=140 / x=400 / x=660. Convergence target: x=400, y=50 (right above "Done by hand."). -->
+      <line x1="140" y1="4" x2="396" y2="48" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.85" marker-end="url(#redArrowhead)"/>
+      <line x1="400" y1="4" x2="400" y2="48" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.85" marker-end="url(#redArrowhead)"/>
+      <line x1="660" y1="4" x2="404" y2="48" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.85" marker-end="url(#redArrowhead)"/>
+    </svg>
   </div>
 
   <!-- Callback below: "Done by hand." then the diagnosis. Editorial serif. -->
@@ -9112,7 +9105,7 @@ const TOTAL = SLIDE_ORDER.length; // 29
 // Dave 2026-04-29 v2: position 4 = cs-11d (Secret Inside the Invitation, 70/0.6).
 // Alts: cs-3 (wedge), cs-11 (product), cs-8b (opportunity size).
 const SLIDE_ALTS = {
-  4: ['cs-3', 'cs-11', 'cs-8b']  // pos 4 alts below top pick cs-11d
+  4: ['cs-3', 'cs-11']  // pos 4 alts below top pick cs-11d (cs-8b removed per Dave 2026-04-29)
 };
 // REVIEW_POSITION: which dot position is currently under review — turns RED.
 const REVIEW_POSITION = 4;
