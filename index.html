@@ -5748,10 +5748,12 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       }
       .uw-resource {
         text-align:left;
-        font-family:'Playfair Display',serif;
-        font-style:italic;
-        font-size: 1rem;
-        color:rgba(232,224,208,0.6);
+        font-family:'Manrope','Inter',sans-serif;
+        font-style:normal;
+        font-size: 1.05rem;
+        font-weight: 600;
+        letter-spacing: -0.005em;
+        color:rgba(232,224,208,0.78);
       }
       .uw-gnr .uw-track { height: 22px; background:rgba(212,168,83,0.06); border: 1px solid rgba(212,168,83,0.3); box-shadow: 0 0 28px rgba(212,168,83,0.22); }
       .uw-gnr .uw-bar {
@@ -5876,7 +5878,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- TOP: GREEN HERO — the new paradigm answer -->
       <div style="width:100%;max-width:840px;background:rgba(61,255,122,0.03);border:1px solid rgba(61,255,122,0.22);border-radius:18px;padding:28px 28px 24px;text-align:center;position:relative;overflow:hidden;box-shadow:0 0 36px rgba(61,255,122,0.08)">
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(0.95rem,1.55vw,1.25rem);color:#e8e0d0;line-height:1.35;font-weight:600;margin-bottom:14px;padding:0 8px">The most valuable, networkable, untapped dataset on the planet is <em style="font-style:italic;color:#3dff7a">trapped inside all of our heads.</em></div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(0.95rem,1.55vw,1.3rem);color:#e8e0d0;line-height:1.4;font-weight:600;margin-bottom:14px;padding:0 8px">The most networkable, untapped dataset on the planet are the <em style="font-style:italic;color:#3dff7a">private thoughts and feelings we have about each other</em>, trapped in all our heads.</div>
 
         <!-- ONE PERSON'S BRAIN: a single human head, with thoughts of other players inside.
              The new data is not the court — it's the impression each player carries of each
@@ -6413,35 +6415,39 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:4px">Before the room</div>
       <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:18px">Invitation Feed</div>
 
-      <!-- 4 invitation envelopes in 2x2, each containing a 4-dot group cluster.
-           Direct visual parallel to RIGHT card's 4 group clusters: each invitation
-           on the LEFT = a possible group on the RIGHT. The user is choosing among them.
-           Dave 2026-04-28: "invitations to spend time with these people or these people". -->
+      <!-- 4 invitation envelopes in 2x2, each with DIFFERENT group sizes.
+           Some invitations are small (4-person doubles), some are medium (6-8 person
+           events), some are large (16+ person mixers). Dave 2026-04-28: invitations
+           come in many shapes — that's the truth of real-world social communities. -->
       <div style="margin:0 auto 18px;display:flex;align-items:center;justify-content:center">
         <svg viewBox="0 0 56 56" width="170" height="170">
-          <!-- Invitation 1 (top-left): blue/green/red/gold group -->
+          <!-- Invitation 1 (top-left): 4 people — doubles -->
           <rect x="3" y="4" width="22" height="18" rx="2" fill="rgba(91,143,212,0.07)" stroke="rgba(91,143,212,0.55)" stroke-width="1" stroke-dasharray="2 1.5"/>
           <path d="M3 6 L14 12 L25 6" stroke="rgba(91,143,212,0.45)" stroke-width="0.6" fill="none"/>
           <circle cx="10" cy="16" r="1.5" fill="#5B8FD4"/><circle cx="14" cy="16" r="1.5" fill="#3dff7a"/>
           <circle cx="10" cy="19.5" r="1.5" fill="#D46B7E"/><circle cx="14" cy="19.5" r="1.5" fill="#f0c040"/>
 
-          <!-- Invitation 2 (top-right): green/purple/teal/orange group -->
+          <!-- Invitation 2 (top-right): 6 people — small mixer -->
           <rect x="31" y="4" width="22" height="18" rx="2" fill="rgba(91,143,212,0.07)" stroke="rgba(91,143,212,0.55)" stroke-width="1" stroke-dasharray="2 1.5"/>
           <path d="M31 6 L42 12 L53 6" stroke="rgba(91,143,212,0.45)" stroke-width="0.6" fill="none"/>
-          <circle cx="38" cy="16" r="1.5" fill="#3dff7a"/><circle cx="42" cy="16" r="1.5" fill="#c76bdb"/>
-          <circle cx="38" cy="19.5" r="1.5" fill="#4ae8c1"/><circle cx="42" cy="19.5" r="1.5" fill="#ff8a65"/>
+          <circle cx="36" cy="16" r="1.3" fill="#3dff7a"/><circle cx="40" cy="16" r="1.3" fill="#c76bdb"/><circle cx="44" cy="16" r="1.3" fill="#ff8a65"/>
+          <circle cx="36" cy="19.5" r="1.3" fill="#4ae8c1"/><circle cx="40" cy="19.5" r="1.3" fill="#5B8FD4"/><circle cx="44" cy="19.5" r="1.3" fill="#f0c040"/>
+          <circle cx="48" cy="17.7" r="1.3" fill="#D46B7E"/>
 
-          <!-- Invitation 3 (bottom-left): green/red/yellow/lavender group -->
+          <!-- Invitation 3 (bottom-left): 8 people — round robin -->
           <rect x="3" y="32" width="22" height="18" rx="2" fill="rgba(91,143,212,0.07)" stroke="rgba(91,143,212,0.55)" stroke-width="1" stroke-dasharray="2 1.5"/>
           <path d="M3 34 L14 40 L25 34" stroke="rgba(91,143,212,0.45)" stroke-width="0.6" fill="none"/>
-          <circle cx="10" cy="44" r="1.5" fill="#3dff7a"/><circle cx="14" cy="44" r="1.5" fill="#e04040"/>
-          <circle cx="10" cy="47.5" r="1.5" fill="#E8CC60"/><circle cx="14" cy="47.5" r="1.5" fill="#ce93d8"/>
+          <circle cx="7" cy="44" r="1.15" fill="#3dff7a"/><circle cx="11" cy="44" r="1.15" fill="#e04040"/><circle cx="15" cy="44" r="1.15" fill="#E8CC60"/><circle cx="19" cy="44" r="1.15" fill="#ce93d8"/>
+          <circle cx="7" cy="47.5" r="1.15" fill="#5B8FD4"/><circle cx="11" cy="47.5" r="1.15" fill="#4ae8c1"/><circle cx="15" cy="47.5" r="1.15" fill="#D46B7E"/><circle cx="19" cy="47.5" r="1.15" fill="#ff8a65"/>
 
-          <!-- Invitation 4 (bottom-right): green/blue/red/purple group -->
+          <!-- Invitation 4 (bottom-right): 16 people — the big mixer / event -->
           <rect x="31" y="32" width="22" height="18" rx="2" fill="rgba(91,143,212,0.07)" stroke="rgba(91,143,212,0.55)" stroke-width="1" stroke-dasharray="2 1.5"/>
           <path d="M31 34 L42 40 L53 34" stroke="rgba(91,143,212,0.45)" stroke-width="0.6" fill="none"/>
-          <circle cx="38" cy="44" r="1.5" fill="#3dff7a"/><circle cx="42" cy="44" r="1.5" fill="#64b5f6"/>
-          <circle cx="38" cy="47.5" r="1.5" fill="#D46B7E"/><circle cx="42" cy="47.5" r="1.5" fill="#c76bdb"/>
+          <!-- 4x4 grid of 16 dots -->
+          <circle cx="35" cy="42.5" r="0.85" fill="#3dff7a"/><circle cx="39" cy="42.5" r="0.85" fill="#5B8FD4"/><circle cx="43" cy="42.5" r="0.85" fill="#D46B7E"/><circle cx="47" cy="42.5" r="0.85" fill="#c76bdb"/>
+          <circle cx="35" cy="44.7" r="0.85" fill="#f0c040"/><circle cx="39" cy="44.7" r="0.85" fill="#4ae8c1"/><circle cx="43" cy="44.7" r="0.85" fill="#ff8a65"/><circle cx="47" cy="44.7" r="0.85" fill="#e04040"/>
+          <circle cx="35" cy="46.9" r="0.85" fill="#E8CC60"/><circle cx="39" cy="46.9" r="0.85" fill="#ce93d8"/><circle cx="43" cy="46.9" r="0.85" fill="#3dff7a"/><circle cx="47" cy="46.9" r="0.85" fill="#5B8FD4"/>
+          <circle cx="35" cy="49.1" r="0.85" fill="#64b5f6"/><circle cx="39" cy="49.1" r="0.85" fill="#D46B7E"/><circle cx="43" cy="49.1" r="0.85" fill="#c76bdb"/><circle cx="47" cy="49.1" r="0.85" fill="#4ae8c1"/>
         </svg>
       </div>
 
@@ -7070,33 +7076,30 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- Secret Inside the Invitation — proprietary insight: 70% social avoidance, 0.6% admit it. Bungalow lift. -->
+<!-- Inside NEPC — bridges from cs-18 (founder built NEPC) into cs-11b (proof of operations there).
+     Simplified Dave 2026-04-28: lighter framing, NEPC eyebrow, the 70/0.6 secret stays as the
+     killer insight, closer is now the bridge into the operational proof slides. -->
 <div class="casey-slide ds-focus" id="cs-11d">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#e04040;z-index:10;">The Secret Inside the Invitation</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#e04040;z-index:10;">Inside New England Pickleball Club</div>
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.4vw,2.8rem);color:#e8e0d0;line-height:1.22;font-weight:600;margin-bottom:18px;max-width:1080px;margin-left:auto;margin-right:auto">
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.4vw,2.8rem);color:#e8e0d0;line-height:1.22;font-weight:600;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
       When people say <em style="font-style:italic;color:#e04040">no</em> to a group,<br>
       they almost never tell you the <em style="font-style:italic;color:#d4a853">real</em> reason.
-    </div>
-    <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(237,233,224,0.42);margin-bottom:36px">
-      NEPC &middot; 20,000+ invitations &middot; 645K behavioral signals &middot; 400 monthly active players
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto 28px">
       <div style="padding:36px 24px;border-radius:14px;background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.04) 100%);border:1px solid rgba(91,143,212,0.32);text-align:center">
         <div style="font-family:'Playfair Display',serif;font-size:clamp(3.6rem,8vw,6rem);font-weight:900;color:#5B8FD4;line-height:1;letter-spacing:-0.04em;margin-bottom:14px;text-shadow:0 0 32px rgba(91,143,212,0.32)">70%</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;color:#e8e0d0;line-height:1.4;font-weight:600;margin-bottom:10px">of declines follow <strong style="color:#5B8FD4;font-weight:800">social avoidance patterns</strong></div>
-        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.86rem;color:rgba(237,233,224,0.58);line-height:1.4">They&rsquo;re not busy.<br>They&rsquo;re choosing.</div>
+        <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:#e8e0d0;line-height:1.4;font-weight:600">follow <em style="color:#5B8FD4;font-style:italic">social avoidance</em> patterns</div>
       </div>
       <div style="padding:36px 24px;border-radius:14px;background:linear-gradient(180deg,rgba(224,64,64,0.10) 0%,rgba(224,64,64,0.04) 100%);border:1px solid rgba(224,64,64,0.32);text-align:center">
         <div style="font-family:'Playfair Display',serif;font-size:clamp(3.6rem,8vw,6rem);font-weight:900;color:#e04040;line-height:1;letter-spacing:-0.04em;margin-bottom:14px;text-shadow:0 0 32px rgba(224,64,64,0.32)">0.6%</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;color:#e8e0d0;line-height:1.4;font-weight:600;margin-bottom:10px">will say so <strong style="color:#e04040;font-weight:800">directly</strong></div>
-        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.86rem;color:rgba(237,233,224,0.58);line-height:1.4">The behavior says it.<br>The words don&rsquo;t.</div>
+        <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:#e8e0d0;line-height:1.4;font-weight:600">will say so <em style="color:#e04040;font-style:italic">directly</em></div>
       </div>
     </div>
-    <div style="max-width:880px;margin:0 auto;padding-top:22px;border-top:1px solid rgba(212,168,83,0.32);font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.3rem);color:#e8e0d0;font-weight:600;line-height:1.4">
-      The invitation is the <em style="font-style:italic;color:#d4a853">instrument</em>.<br>
-      Every accept, every decline, every hesitation is a <em style="font-style:italic;color:#3dff7a">signal about belonging</em>.
+    <div style="max-width:920px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(212,168,83,0.32);font-family:'Playfair Display',serif;font-size:clamp(1.05rem,1.85vw,1.4rem);color:#e8e0d0;font-weight:600;line-height:1.4">
+      <em style="font-style:italic;color:#d4a853">The invitation captures it anyway.</em><br>
+      <span style="font-size:0.85em;font-style:italic;font-weight:500;color:rgba(232,224,208,0.78)">This is the data of a real-world social community.</span>
     </div>
   </div>
 </section>
@@ -7797,69 +7800,76 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- Founder Journey (Dave Velardo) — nav pos 20 -->
+<!-- Founder Journey (Dave Velardo) — full redesign Dave 2026-04-28: bigger fonts,
+     proper vertical centering, horizontal connector line, readable captions. -->
 <div class="casey-slide ds-focus" id="cs-18">
-<section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder Dave Velardo</div>
-<div class="inner" style="padding-top:48px;text-align:center;max-width:920px">
-  <div class="display" style="font-size:clamp(1.35rem,2.7vw,2rem);margin-bottom:14px;line-height:1.25;font-weight:700">
-    I turned down the acquisition. Built <em style="font-style:italic;color:#d4a853">New England Pickleball Club</em> instead &mdash; to figure out the new future.
-  </div>
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(0.92rem,1.5vw,1.18rem);color:rgba(237,233,224,.85);margin-bottom:28px;line-height:1.5;font-style:italic;max-width:840px;margin-left:auto;margin-right:auto">
-    Real-world social communities run on <span style="color:#d4a853;font-style:italic">human connection</span>. That&rsquo;s what they are. But it&rsquo;s not measured.<br>
-    <strong style="font-weight:700;color:#3dff7a;font-style:normal">So we built the system that does.</strong>
-  </div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.62rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.9));z-index:10;">Founder &middot; Dave Velardo</div>
+<section style="position:relative;width:100%;min-height:100%;display:flex;align-items:center;justify-content:center;padding:80px 40px 60px">
+  <div style="text-align:center;max-width:1140px;width:100%">
 
-  <!-- Timeline -->
-  <div style="display:flex;align-items:flex-start;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;position:relative">
-    <div style="position:absolute;top:12px;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,83,.2),rgba(212,168,83,.2),transparent)"></div>
-    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
-      <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px;box-shadow:0 0 8px rgba(212,168,83,.3)"></div>
-      <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2020</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">#27 ranked<br>pro tour</div>
+    <!-- HEADLINE -->
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:700;line-height:1.18;color:#e8e0d0;margin-bottom:24px;letter-spacing:-0.01em">
+      I turned down the acquisition.<br>
+      Built <em style="font-style:italic;color:#d4a853">New England Pickleball Club</em> instead &mdash; to figure out the new future.
     </div>
-    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
-      <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
-      <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2021</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">DUPR acquisition<br>offer declined</div>
-    </div>
-    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
-      <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
-      <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2022</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">Built New England Pickleball Club<br>to live the problem</div>
-    </div>
-    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
-      <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
-      <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2024</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">Bet on the<br>invitation feed</div>
-    </div>
-    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
-      <div style="width:10px;height:10px;border-radius:50%;background:var(--mint,#49b4a0);margin:7px auto 8px;box-shadow:0 0 8px rgba(73,180,160,.3)"></div>
-      <div style="font-size:0.65rem;font-weight:700;color:var(--mint,#49b4a0)">2025</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.6);margin-top:2px">Steve (CTO) joins<br>System goes live</div>
-    </div>
-  </div>
 
-  <!-- Key stats -->
-  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-    <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">$2M+</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px">ARR testbed communities</div>
+    <!-- SUB -->
+    <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.1rem,1.9vw,1.4rem);font-weight:500;color:rgba(232,224,208,0.85);line-height:1.5;max-width:920px;margin:0 auto 56px">
+      Real-world social communities run on <span style="color:#d4a853;font-weight:600">human connection</span>. That&rsquo;s what they are. But it&rsquo;s not measured.<br>
+      <strong style="color:#3dff7a;font-weight:700;font-style:normal">So we built the system that does.</strong>
     </div>
-    <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">60 courts/wk</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px">powered by Give 'n Receive</div>
+
+    <!-- TIMELINE — horizontal, with connector line, readable labels -->
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1080px;margin:0 auto 50px;position:relative">
+      <div style="position:absolute;top:9px;left:10%;right:10%;height:1.5px;background:linear-gradient(90deg,transparent 0%,rgba(212,168,83,0.4) 12%,rgba(212,168,83,0.55) 50%,rgba(73,180,160,0.55) 88%,transparent 100%);z-index:0"></div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#d4a853;line-height:1;margin-bottom:8px">2020</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(232,224,208,0.82);line-height:1.45;font-weight:500">#27 ranked<br>pro tour</div>
+      </div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#d4a853;line-height:1;margin-bottom:8px">2021</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(232,224,208,0.82);line-height:1.45;font-weight:500">DUPR acquisition<br>offer declined</div>
+      </div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#d4a853;line-height:1;margin-bottom:8px">2022</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(232,224,208,0.82);line-height:1.45;font-weight:500">Built <strong style="color:#e8e0d0;font-weight:700">New England<br>Pickleball Club</strong> to live it</div>
+      </div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#d4a853;line-height:1;margin-bottom:8px">2024</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(232,224,208,0.82);line-height:1.45;font-weight:500">Bet on the<br>invitation feed</div>
+      </div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:14px;height:14px;border-radius:50%;background:#49b4a0;margin:2px auto 14px;box-shadow:0 0 16px rgba(73,180,160,0.65)"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#49b4a0;line-height:1;margin-bottom:8px">2025</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(232,224,208,0.82);line-height:1.45;font-weight:500"><strong style="color:#e8e0d0;font-weight:700">Steve (CTO)</strong> joins<br>System goes live</div>
+      </div>
     </div>
-    <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">$215K</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px">court fees ARR (NEPC)</div>
+
+    <!-- STATS — bigger numbers, bigger captions, more breathing room -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1020px;margin:0 auto">
+      <div style="background:rgba(212,168,83,0.05);border:1px solid rgba(212,168,83,0.24);border-radius:12px;padding:24px 18px;text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:800;color:#d4a853;line-height:1;margin-bottom:10px;letter-spacing:-0.01em">$2M+</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;font-weight:600;color:rgba(232,224,208,0.78);letter-spacing:0.03em;line-height:1.45">ARR testbed<br>communities</div>
+      </div>
+      <div style="background:rgba(212,168,83,0.05);border:1px solid rgba(212,168,83,0.24);border-radius:12px;padding:24px 18px;text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:800;color:#d4a853;line-height:1;margin-bottom:10px;letter-spacing:-0.01em">60 courts/wk</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;font-weight:600;color:rgba(232,224,208,0.78);letter-spacing:0.03em;line-height:1.45">powered by<br>Give &lsquo;n Receive</div>
+      </div>
+      <div style="background:rgba(212,168,83,0.05);border:1px solid rgba(212,168,83,0.24);border-radius:12px;padding:24px 18px;text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:800;color:#d4a853;line-height:1;margin-bottom:10px;letter-spacing:-0.01em">$215K</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;font-weight:600;color:rgba(232,224,208,0.78);letter-spacing:0.03em;line-height:1.45">court fees ARR<br>(NEPC)</div>
+      </div>
+      <div style="background:rgba(212,168,83,0.05);border:1px solid rgba(212,168,83,0.24);border-radius:12px;padding:24px 18px;text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:800;color:#d4a853;line-height:1;margin-bottom:10px;letter-spacing:-0.01em">Self-funded</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;font-weight:600;color:rgba(232,224,208,0.78);letter-spacing:0.03em;line-height:1.45">from<br>day one</div>
+      </div>
     </div>
-    <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">Self-funded</div>
-      <div style="font-size:0.55rem;color:rgba(237,233,224,.55);margin-top:2px">from day one</div>
-    </div>
+
   </div>
-</div>
 </section>
 </div>
 
@@ -8804,7 +8814,7 @@ const SLIDE_ORDER = [
   // cs-18 (Founder Journey / About Me) MOVED UP to right after cs-8b (Abundance) per Dave —
   //   the founder narrative lands when the 'Abundance' arc opens, before the proof slides.
   'cs-1','cs-1b','cs-2b','cs-11','cs-3',
-  'cs-4','cs-7','cs-8','cs-8b','cs-18','cs-11b','cs-11e','cs-11d','cs-11c','cs-19','cs-12','cs-13',
+  'cs-4','cs-7','cs-8','cs-8b','cs-18','cs-11d','cs-11b','cs-11e','cs-11c','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
@@ -8814,10 +8824,10 @@ const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transit
 // SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alternative slide IDs to stack BELOW the primary dot.
 // Top dot = AI's FIRST CHOICE. Stacked dots = alternatives in priority order (second-best below top).
 // Empty {} = AI is locked on its first choice; no alternatives proposed.
-// Title slide is committed to the new "Paper" design system (Dave 2026-04-28).
-// cs-1A..cs-1D variants kept in HTML but no longer mounted as alt dots.
-// cs-11 has an animated "Decisions in motion" alt — click the gold dot under slide-4.
-const SLIDE_ALTS = { 4: ['cs-11-anim'] };
+// Title slide committed to "Paper" design system (Dave 2026-04-28).
+// cs-1A..cs-1D variants and cs-11-anim "Decisions in Motion" alt kept in HTML
+// but unmounted from alt-dot stack — Dave 2026-04-28 didn't want alt dots showing.
+const SLIDE_ALTS = {};
 // REVIEW_POSITION: which dot position is currently under review — turns RED ("stop light, we're stopped here").
 // Set to null when not actively reviewing.
 const REVIEW_POSITION = 4;
