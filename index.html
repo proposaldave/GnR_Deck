@@ -4778,6 +4778,30 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   color: #1a1612 !important;
 }
 
+/* ======== PAPER MODE — REFINED CARD POLISH (Dave 2026-04-29) ======== */
+/* Subtle muted shadows on converted cards for paper depth */
+.casey-slide div[style*="border-radius"][style*="rgba(26,22,18"]{
+  box-shadow: 0 1px 2px rgba(26,22,18,0.04), 0 4px 12px rgba(26,22,18,0.04);
+}
+.casey-slide div[style*="border:1px solid rgba(91,143,212"],
+.casey-slide div[style*="border:1px solid rgba(61,255,122"],
+.casey-slide div[style*="border:1px solid rgba(212,168,83"],
+.casey-slide div[style*="border:1px solid rgba(224,64,64"],
+.casey-slide div[style*="border:1px solid rgba(184,149,74"]{
+  box-shadow: 0 1px 2px rgba(26,22,18,0.05), 0 6px 18px rgba(26,22,18,0.04);
+}
+.casey-slide .display,
+.casey-slide [class*="headline"],
+.casey-slide [class*="title"]{
+  color: #1a1612;
+}
+/* Section dividers: thin gold rule like cs-1 */
+.casey-slide hr{
+  border:none; height:1px;
+  background: linear-gradient(90deg, transparent, rgba(184,149,74,0.5), transparent);
+  margin: 28px auto; width: 60%;
+}
+
 /* ======== PAPER MODE TEXTURE — every slide gets paper grain + golden glow ======== */
 .casey-slide::before{
   content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
