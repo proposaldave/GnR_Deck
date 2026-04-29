@@ -5589,8 +5589,21 @@ html, body, html body{
     </div>
   </div>
 
-  <!-- (Connector removed Dave 2026-04-29 — "better to not have it at all" per his review.
-       The proximity of the 3 cards above and "Done by hand." below speaks for itself.) -->
+  <!-- Connector v3 — single hairline span across all 3 cards + one bold arrow to "Done by hand."
+       Cleaner than the merge tree. Visually says "all three -> one fate" without 3-stem noise. -->
+  <div style="max-width:880px;margin:14px auto -4px;padding:0 36px">
+    <svg viewBox="0 0 800 60" preserveAspectRatio="xMidYMid meet" width="100%" height="60" xmlns="http://www.w3.org/2000/svg" style="display:block">
+      <defs>
+        <marker id="dbhArrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 12 6 L 0 12 Z" fill="#c8462c"/>
+        </marker>
+      </defs>
+      <!-- Hairline horizontal grouper spanning all 3 cards -->
+      <path d="M 130 6 L 670 6" stroke="#c8462c" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
+      <!-- Single bold arrow from center pointing down to "Done by hand." -->
+      <path d="M 400 6 L 400 48" stroke="#c8462c" stroke-width="2.6" stroke-linecap="round" marker-end="url(#dbhArrow)"/>
+    </svg>
+  </div>
 
   <!-- Callback below: "Done by hand." then the diagnosis. Editorial serif. -->
   <div style="font-family:'Playfair Display',Georgia,serif;color:#1a1612;line-height:1.4;max-width:980px;margin:0 auto 24px">
