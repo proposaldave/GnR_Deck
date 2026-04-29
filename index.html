@@ -6933,8 +6933,16 @@ html, body, html body{
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Max social signal &middot; density &middot; velocity &middot; need</div>
 
 <div class="inner" style="padding-top:14px;text-align:center;max-width:1180px">
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:#1a1612;line-height:1.2;margin-bottom:14px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
-    <span style="color:#1a1612">Average pickleballer:</span> <span style="color:#2a8a4f;font-weight:900">3</span> sessions, <span style="color:#2a8a4f;font-weight:900">24</span> rounds per week.
+  <!-- Category claim hero (Dave 2026-04-29): the slide makes a category statement,
+       not just a description. 50+ league/tournament products in racquet sports — none
+       measure human connection. Stays "alone in the category we created." -->
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);color:#1a1612;line-height:1.2;margin-bottom:8px;font-weight:700;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.005em">
+    <span style="color:#1a1612">50 products track <em style="font-style:italic;color:#c8462c">who won</em>.</span><br>
+    <span style="color:#1a1612"><em style="font-style:italic;color:#2a8a4f;font-weight:800">Zero</em> track <em style="font-style:italic;color:#2a8a4f">who belongs together</em>.</span>
+  </div>
+  <!-- Velocity grounding sub-line (kept per brief — anchors the density visual below) -->
+  <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,1.2vw,1rem);font-weight:600;color:rgba(26,22,18,0.62);margin-bottom:18px;letter-spacing:0.01em;max-width:780px;margin-left:auto;margin-right:auto">
+    Average pickleballer: <strong style="color:#1a1612;font-weight:800">3 sessions, 24 rounds per week</strong>. Pickleball is the densest social signal source on earth.
   </div>
 
   <!-- Hero stick figure — moved to sit just above "Her reality"; paddle scaled up for clearer pickleball read -->
@@ -9155,8 +9163,10 @@ const SLIDE_ORDER = [
   // YC canon: Problem -> Insight -> Product -> Traction -> WEDGE -> Vision -> Ask.
   // Slide 7 = cs-3 (Pickleball Wedge). Bridges from "it works at NEPC" -> "why this scales".
   // Alts: cs-18 (Founder Journey — credibility), cs-19 (3x Net Profit — business case).
+  // cs-11c (Signal Density 645K) REMOVED from main flow Dave 2026-04-29 — 645K vs canonical
+  // ~145K is inflated; don't surface in main deck where investors will dig. Lives in HTML for appendix.
   'cs-1','cs-1b','cs-2b','cs-11d','cs-11',
-  'cs-11e','cs-3','cs-18','cs-19','cs-11b','cs-11c','cs-4','cs-7','cs-8','cs-8b','cs-12','cs-13',
+  'cs-11e','cs-3','cs-18','cs-19','cs-11b','cs-4','cs-7','cs-8','cs-8b','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
