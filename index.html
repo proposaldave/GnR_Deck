@@ -4814,11 +4814,16 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 }
 .casey-slide > *{ position:relative; z-index:1 }
 
-/* Eyebrows: any uppercase tracking labels at top corners → JetBrains Mono ink mono */
-.casey-slide > div[style*="position:absolute"][style*="top:28px"]{
+/* Eyebrows: any uppercase tracking labels at top corners → JetBrains Mono solid black for clarity */
+.casey-slide > div[style*="position:absolute"][style*="top:28px"],
+.casey-slide div[style*="position:absolute"][style*="top:28px"][style*="text-transform:uppercase"],
+.casey-slide div[style*="position:absolute"][style*="top:24px"][style*="text-transform:uppercase"],
+.casey-slide div[style*="position:absolute"][style*="top:18px"][style*="text-transform:uppercase"]{
   font-family:'JetBrains Mono',monospace !important;
-  color: rgba(26,22,18,0.5) !important;
+  color: #1a1612 !important;
   letter-spacing: 0.22em !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
 }
 
 /* Decorative orbs/blurs/glows: dim hard for paper mode */
@@ -5527,18 +5532,10 @@ html, body, html body{
     </div>
   </div>
 
-  <!-- Three RED dashed arrows from the 3 cards above all converging at "Done by hand." text below. -->
-  <div style="max-width:880px;margin:8px auto -10px;padding:0 36px">
-    <svg viewBox="0 0 800 60" preserveAspectRatio="xMidYMid meet" width="100%" height="60" xmlns="http://www.w3.org/2000/svg" style="display:block">
-      <defs>
-        <marker id="redArrowhead" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M 0 0 L 12 6 L 0 12 Z" fill="#c8462c"/>
-        </marker>
-      </defs>
-      <!-- Card centers above: x=140 / x=400 / x=660. Convergence target: x=400, y=50 (right above "Done by hand."). -->
-      <line x1="140" y1="4" x2="396" y2="48" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.85" marker-end="url(#redArrowhead)"/>
-      <line x1="400" y1="4" x2="400" y2="48" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.85" marker-end="url(#redArrowhead)"/>
-      <line x1="660" y1="4" x2="404" y2="48" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.85" marker-end="url(#redArrowhead)"/>
+  <!-- Single RED chevron pointing down to "Done by hand." (cleaner than 3 converging arrows). -->
+  <div style="display:flex;justify-content:center;margin:14px auto 4px">
+    <svg width="36" height="22" viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 4 4 L 18 18 L 32 4" stroke="#c8462c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </div>
 
@@ -7383,7 +7380,7 @@ html, body, html body{
       </div>
     </div>
     <div style="max-width:920px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(212,168,83,0.32);font-family:'Playfair Display',serif;font-size:clamp(1.05rem,1.85vw,1.4rem);color:#1a1612;font-weight:600;line-height:1.4">
-      <em style="font-style:italic;color:#b8954a">The invitation captures it.</em> <span style="font-style:italic;color:rgba(26,22,18,0.7);font-weight:500">Feedback doesn&rsquo;t.</span>
+      <em style="font-style:italic;color:#b8954a">The invitation captures it.</em> <span style="font-style:italic;color:rgba(26,22,18,0.7);font-weight:500">Feedback, surveys don&rsquo;t.</span>
     </div>
   </div>
 </section>
