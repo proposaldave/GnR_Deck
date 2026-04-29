@@ -7676,7 +7676,7 @@ html, body, html body{
       <text x="208" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="900" fill="#5B8FD4">G</text>
       <text x="220" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="17" font-weight="500" font-style="italic" fill="#1a1612">n</text>
       <text x="232" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="900" fill="#c8462c">R</text>
-      <text x="220" y="246" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="700" letter-spacing="1.6" fill="#b8954a">INTELLIGENCE</text>
+      <text x="220" y="246" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.8" fill="#b8954a">INTELLIGENCE</text>
       <!-- Pulse -->
       <circle cx="220" cy="220" r="46" fill="none" stroke="#b8954a" stroke-width="0.8" opacity="0">
         <animate attributeName="r" values="46;64;46" dur="2.5s" repeatCount="indefinite"/>
@@ -7749,24 +7749,25 @@ html, body, html body{
         <circle cx="395" cy="180" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
         <circle cx="360" cy="100" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
         <circle cx="295" cy="48" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <text x="220" y="14" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" letter-spacing="0.06em" fill="rgba(26,22,18,0.7)">every player, every interaction</text>
+        <!-- "every player, every interaction" deleted per Dave 2026-04-29 -->
       </g>
 
-      <!-- Output arrows: smarter matches, better groups, auto-scheduler -->
-      <line x1="220" y1="260" x2="220" y2="294" stroke="#2a8a4f" stroke-width="1.6" opacity="0.7" stroke-dasharray="3 3">
-        <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.5s" repeatCount="indefinite"/>
-      </line>
-      <text x="220" y="308" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">better groups out</text>
-
-      <line x1="200" y1="258" x2="170" y2="290" stroke="#2a8a4f" stroke-width="1.6" opacity="0.7" stroke-dasharray="3 3">
+      <!-- Output arrows: smarter matches (left), better groups (center), auto-scheduler (right).
+           Y stagger + wider X spread so labels don't overlap. -->
+      <line x1="200" y1="258" x2="100" y2="318" stroke="#2a8a4f" stroke-width="1.6" opacity="0.7" stroke-dasharray="3 3">
         <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.8s" repeatCount="indefinite"/>
       </line>
-      <text x="120" y="305" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">smarter matches</text>
+      <text x="60" y="335" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">smarter matches</text>
 
-      <line x1="240" y1="258" x2="270" y2="290" stroke="#2a8a4f" stroke-width="1.6" opacity="0.7" stroke-dasharray="3 3">
+      <line x1="220" y1="260" x2="220" y2="304" stroke="#2a8a4f" stroke-width="1.6" opacity="0.7" stroke-dasharray="3 3">
+        <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.5s" repeatCount="indefinite"/>
+      </line>
+      <text x="220" y="320" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">better groups out</text>
+
+      <line x1="240" y1="258" x2="340" y2="318" stroke="#2a8a4f" stroke-width="1.6" opacity="0.7" stroke-dasharray="3 3">
         <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.6s" repeatCount="indefinite"/>
       </line>
-      <text x="320" y="305" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">auto-scheduler</text>
+      <text x="385" y="335" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">auto-scheduler</text>
     </svg>
   </div>
 
