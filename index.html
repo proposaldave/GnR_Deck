@@ -6797,11 +6797,13 @@ html, body, html body{
          destination rectangles. Top arrow points right (toward green Group Formation)
          so it's green; bottom arrow points left (toward blue Invitation Feed) so it's blue. -->
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:72px">
-      <svg viewBox="0 0 64 74" width="62" height="72">
-        <path d="M 8 20 Q 32 4 56 20" stroke="#2a8a4f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-        <path d="M 52 15 L 56 20 L 52 25" stroke="#2a8a4f" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 56 54 Q 32 70 8 54" stroke="#5B8FD4" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-        <path d="M 12 49 L 8 54 L 12 59" stroke="#5B8FD4" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg viewBox="0 0 64 74" width="62" height="72" xmlns="http://www.w3.org/2000/svg">
+        <!-- Top: green arrow points right (toward Group Formation). Curve + filled triangle. -->
+        <path d="M 8 22 Q 32 4 52 20" stroke="#2a8a4f" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M 58 20 L 50 16 L 50 24 Z" fill="#2a8a4f" stroke="#2a8a4f" stroke-width="0.5" stroke-linejoin="round"/>
+        <!-- Bottom: blue arrow points left (toward Invitation Feed). -->
+        <path d="M 56 52 Q 32 70 12 54" stroke="#5B8FD4" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M 6 54 L 14 50 L 14 58 Z" fill="#5B8FD4" stroke="#5B8FD4" stroke-width="0.5" stroke-linejoin="round"/>
       </svg>
     </div>
 
@@ -6845,7 +6847,7 @@ html, body, html body{
 
   <!-- Bottom payoff line — Dave 2026-04-29 -->
   <div style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.1vw,1.65rem);font-weight:700;color:#1a1612;line-height:1.3;margin-top:14px;letter-spacing:-0.005em;max-width:920px;margin-left:auto;margin-right:auto">
-    <em style="color:#2a8a4f;font-style:italic">Who you choose</em> measures connection at the exact same time it schedules it.
+    <em style="color:#2a8a4f;font-style:italic">Who you choose to spend time with</em> measures connection at the exact same time it schedules it.
   </div>
 
 </div>
