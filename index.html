@@ -4778,6 +4778,53 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   color: #1a1612 !important;
 }
 
+/* ======== PAPER MODE TEXTURE — every slide gets paper grain + golden glow ======== */
+.casey-slide::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,0.05) 1px,transparent 0);
+  background-size:4px 4px; opacity:0.45; mix-blend-mode:multiply;
+}
+.casey-slide::after{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:radial-gradient(circle at 50% 38%,rgba(184,149,74,0.08),transparent 55%);
+}
+.casey-slide > *{ position:relative; z-index:1 }
+
+/* Eyebrows: any uppercase tracking labels at top corners → JetBrains Mono ink mono */
+.casey-slide > div[style*="position:absolute"][style*="top:28px"]{
+  font-family:'JetBrains Mono',monospace !important;
+  color: rgba(26,22,18,0.5) !important;
+  letter-spacing: 0.22em !important;
+}
+
+/* Decorative orbs/blurs/glows: dim hard for paper mode */
+.casey-slide .orb,
+.casey-slide .orb-g, .casey-slide .orb-b, .casey-slide .orb-m,
+.casey-slide .orb-1, .casey-slide .orb-2,
+.casey-slide .magic-bg, .casey-slide .magic-glow, .casey-slide .magic-ring,
+.casey-slide .pulse, .casey-slide .ring-1, .casey-slide .ring-2 {
+  opacity: 0.18 !important;
+  mix-blend-mode: multiply;
+}
+
+/* ======== PAPER MODE — ULTRA-FORCE per-slide-id (max specificity) ======== */
+/* Belt and suspenders: target every slide ID directly so nothing slips through. */
+div[id^="cs-"].casey-slide,
+div[id^="cs-"][class*="slide"]{
+  background: radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%) !important;
+  color: #1a1612 !important;
+}
+/* Body emergency override */
+html, body, html body{
+  background: #f3ead8 !important;
+  color: #1a1612 !important;
+}
+/* a16z-deck root + slides */
+.a16z-deck, .a16z-deck .a16z-slide, .ur-slide {
+  background: radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%) !important;
+  color: #1a1612 !important;
+}
+
 /* ======== PAPER MODE FORCE — Dave 2026-04-29 (replaces dark-mode block) ======== */
 /* Every slide variant now uses cream paper bg by default. cs-1 and cs-1A/B/C/D
    variants override this with their own inline !important radial gradients,
