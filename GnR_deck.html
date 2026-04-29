@@ -7652,14 +7652,14 @@ html, body, html body{
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Autonomous Community Intelligence</div>
 <div class="orb orb-g" style="width:500px;height:500px;top:-10%;right:-15%"></div>
-<div class="inner" style="padding-top:48px;text-align:center;max-width:1240px">
+<div class="inner" style="padding-top:40px;text-align:center;max-width:1240px;margin:0 auto">
 
-  <div class="display" style="font-size:clamp(1.55rem,3vw,2.4rem);margin-bottom:8px;line-height:1.15;font-weight:700">Every interaction trains GnR.<br><em style="color:#b8954a">It never stops getting smarter.</em></div>
+  <div class="display" style="font-size:clamp(1.55rem,3vw,2.4rem);margin-bottom:8px;line-height:1.15;font-weight:700">Every interaction trains <span style="font-family:'Playfair Display',serif;letter-spacing:-0.02em"><span style="color:#5B8FD4;font-weight:900">G</span><span style="font-style:italic;color:#1a1612;font-weight:600">n</span><span style="color:#c8462c;font-weight:900">R</span></span>.<br><em style="color:#b8954a">It never stops getting smarter.</em></div>
   <!-- "Domain experts + players + communities..." line deleted per Dave 2026-04-29 -->
 
   <!-- Flywheel visualization — sized big so 14 inputs + 3 outputs fit. -->
   <div style="position:relative;width:min(880px,95vw);height:min(660px,72vw);margin:0 auto;filter:drop-shadow(0 0 24px rgba(212,168,83,0.18))">
-    <svg viewBox="-90 -10 590 540" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+    <svg viewBox="-180 -30 820 580" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
       <!-- Outer ring (rotating) -->
       <circle cx="220" cy="220" r="190" fill="none" stroke="rgba(212,168,83,0.32)" stroke-width="1.4" stroke-dasharray="6 4">
         <animateTransform attributeName="transform" type="rotate" from="0 220 220" to="360 220 220" dur="30s" repeatCount="indefinite"/>
@@ -7767,74 +7767,59 @@ html, body, html body{
         <text x="80" y="115" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="0.04em" fill="#b8954a" text-anchor="end">expert overrides</text>
         <circle r="3" fill="#b8954a" filter="drop-shadow(0 0 4px #d4a853)"><animateMotion dur="2.0s" repeatCount="indefinite" path="M118,128 L194,205"/></circle>
       </g>
-      <!-- 9. Competitive scores (squeezed top-left between RSVPs & expert overrides) — Dave 2026-04-29 -->
+      <!-- ============================================================
+           OUTER RING: 7 secondary inputs evenly spaced (51.4° apart).
+           Cleaned up Dave 2026-04-29. r=215 from center (220,220).
+           Position math: cx = 220 + 215*cos(angle), cy = 220 + 215*sin(angle)
+           ============================================================ -->
+      <!-- 9. Slack, texts, voice — top (270°) -->
       <g>
-        <circle cx="170" cy="78" r="10" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.4"/>
-        <text x="160" y="60" text-anchor="end" font-family="Manrope,sans-serif" font-size="14" font-weight="700" letter-spacing="0.04em" fill="#5B8FD4">competitive scores</text>
-        <circle r="3" fill="#5B8FD4"><animateMotion dur="2.0s" repeatCount="indefinite" path="M174,86 L216,196"/></circle>
+        <circle cx="220" cy="5" r="9" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.4"/>
+        <text x="220" y="-12" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5B8FD4">Slack, texts, voice</text>
+        <circle r="2.6" fill="#5B8FD4"><animateMotion dur="2.4s" repeatCount="indefinite" path="M220,15 L220,176"/></circle>
       </g>
-      <!-- 10. Personality quiz — moved to bottom-right per Dave 2026-04-29 -->
+      <!-- 10. Competitive scores — top-right (321.4°) at (388, 86) -->
       <g>
-        <circle cx="300" cy="430" r="10" fill="rgba(122,74,140,0.18)" stroke="#7a4a8c" stroke-width="1.4"/>
-        <text x="300" y="452" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" letter-spacing="0.04em" fill="#7a4a8c">personality quiz</text>
-        <circle r="3" fill="#7a4a8c"><animateMotion dur="2.2s" repeatCount="indefinite" path="M294,422 L240,250"/></circle>
+        <circle cx="388" cy="86" r="9" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.4"/>
+        <text x="404" y="80" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5B8FD4">competitive scores</text>
+        <circle r="2.6" fill="#5B8FD4"><animateMotion dur="2.0s" repeatCount="indefinite" path="M381,93 L233,193"/></circle>
       </g>
-      <!-- 11. Relationship-AI (outer-left) — Dave 2026-04-29 -->
+      <!-- 11. Pro lesson feedback — right-upper (12.8°) at (430, 268) -->
       <g>
-        <circle cx="35" cy="170" r="9" fill="rgba(91,168,150,0.18)" stroke="#5fa896" stroke-width="1.4"/>
-        <text x="48" y="155" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5fa896">relationship-AI</text>
-        <circle r="2.6" fill="#5fa896"><animateMotion dur="2.4s" repeatCount="indefinite" path="M44,176 L186,212"/></circle>
+        <circle cx="430" cy="268" r="9" fill="rgba(232,138,74,0.18)" stroke="#c8632c" stroke-width="1.4"/>
+        <text x="446" y="272" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#c8632c">pro lesson feedback</text>
+        <circle r="2.6" fill="#c8632c"><animateMotion dur="2.5s" repeatCount="indefinite" path="M421,265 L255,232"/></circle>
       </g>
-      <!-- 12. Pro lesson feedback (outer-right) — Dave 2026-04-29 -->
+      <!-- 12. Personality quiz — lower-right (64.2°) at (314, 414) -->
       <g>
-        <circle cx="405" cy="170" r="9" fill="rgba(232,138,74,0.18)" stroke="#c8632c" stroke-width="1.4"/>
-        <text x="392" y="155" text-anchor="end" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#c8632c">pro lesson feedback</text>
-        <circle r="2.6" fill="#c8632c"><animateMotion dur="2.5s" repeatCount="indefinite" path="M396,176 L254,212"/></circle>
+        <circle cx="314" cy="414" r="9" fill="rgba(122,74,140,0.18)" stroke="#7a4a8c" stroke-width="1.4"/>
+        <text x="330" y="432" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#7a4a8c">personality quiz</text>
+        <circle r="2.6" fill="#7a4a8c"><animateMotion dur="2.2s" repeatCount="indefinite" path="M306,407 L240,253"/></circle>
       </g>
-      <!-- 13. Computer vision — moved to bottom-left per Dave 2026-04-29 -->
+      <!-- 13. Computer vision — lower-left (115.6°) at (127, 414) -->
       <g>
-        <circle cx="140" cy="430" r="9" fill="rgba(184,71,92,0.18)" stroke="#b8475c" stroke-width="1.4"/>
-        <text x="140" y="452" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#b8475c">computer vision</text>
-        <circle r="2.6" fill="#b8475c"><animateMotion dur="2.3s" repeatCount="indefinite" path="M148,422 L200,250"/></circle>
+        <circle cx="127" cy="414" r="9" fill="rgba(184,71,92,0.18)" stroke="#b8475c" stroke-width="1.4"/>
+        <text x="111" y="432" text-anchor="end" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#b8475c">computer vision</text>
+        <circle r="2.6" fill="#b8475c"><animateMotion dur="2.3s" repeatCount="indefinite" path="M134,407 L200,253"/></circle>
       </g>
-      <!-- 14. Historical court bookings (outer-far-bottom) — Dave 2026-04-29 -->
+      <!-- 14. Historical court bookings — left-lower (167°) at (10, 268) -->
       <g>
-        <circle cx="220" cy="455" r="9" fill="rgba(73,180,160,0.18)" stroke="#5fa896" stroke-width="1.4"/>
-        <text x="220" y="478" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5fa896">historical court bookings</text>
-        <circle r="2.6" fill="#5fa896"><animateMotion dur="2.6s" repeatCount="indefinite" path="M220,446 L220,250"/></circle>
+        <circle cx="10" cy="268" r="9" fill="rgba(73,180,160,0.18)" stroke="#5fa896" stroke-width="1.4"/>
+        <text x="-6" y="272" text-anchor="end" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5fa896">historical court bookings</text>
+        <circle r="2.6" fill="#5fa896"><animateMotion dur="2.6s" repeatCount="indefinite" path="M19,265 L185,232"/></circle>
       </g>
-      <!-- 15. Slack, texts, voice (top-far) — Dave 2026-04-29 -->
+      <!-- 15. Relationship-AI — top-left (218.4°) at (52, 86) -->
       <g>
-        <circle cx="220" cy="22" r="9" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.4"/>
-        <text x="220" y="6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5B8FD4">Slack, texts, voice</text>
-        <circle r="2.6" fill="#5B8FD4"><animateMotion dur="2.4s" repeatCount="indefinite" path="M220,32 L220,176"/></circle>
-      </g>
-
-      <!-- Outer ring: Many players (all equal, all feeding in) -->
-      <g>
-        <circle cx="220" cy="30" r="6" fill="none" stroke="rgba(26,22,18,0.25)" stroke-width="1.2"/>
-        <circle cx="145" cy="48" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="80" cy="100" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="45" cy="180" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="45" cy="260" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="80" cy="340" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="145" cy="392" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="220" cy="410" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="295" cy="392" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="360" cy="340" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="395" cy="260" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="395" cy="180" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="360" cy="100" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <circle cx="295" cy="48" r="6" fill="none" stroke="rgba(26,22,18,0.2)" stroke-width="1"/>
-        <!-- "every player, every interaction" deleted per Dave 2026-04-29 -->
+        <circle cx="52" cy="86" r="9" fill="rgba(91,168,150,0.18)" stroke="#5fa896" stroke-width="1.4"/>
+        <text x="36" y="80" text-anchor="end" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="0.04em" fill="#5fa896">relationship-AI</text>
+        <circle r="2.6" fill="#5fa896"><animateMotion dur="2.4s" repeatCount="indefinite" path="M59,93 L207,193"/></circle>
       </g>
 
-      <!-- OUTPUTS — moved to clean strip BELOW all inputs to eliminate overlap (Dave 2026-04-29).
-           No arrows: visual hierarchy is "ring of inputs feeds GnR center → outputs listed at bottom." -->
-      <text x="-30" y="510" text-anchor="start" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="0.22em" fill="rgba(26,22,18,0.45)">OUTPUTS &rarr;</text>
-      <text x="80" y="510" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">smarter matches</text>
-      <text x="240" y="510" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">auto-scheduler</text>
-      <text x="430" y="510" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-size="13" font-weight="700" fill="#b8954a">auto-research thriving communities</text>
+      <!-- OUTPUTS — clean caption strip far below all inputs to eliminate overlap. -->
+      <text x="-30" y="525" text-anchor="start" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="0.22em" fill="rgba(26,22,18,0.45)">OUTPUTS &rarr;</text>
+      <text x="100" y="525" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">smarter matches</text>
+      <text x="265" y="525" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" fill="#2a8a4f">auto-scheduler</text>
+      <text x="445" y="525" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-size="13" font-weight="700" fill="#b8954a">auto-research thriving communities</text>
     </svg>
   </div>
 
