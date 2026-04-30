@@ -7809,7 +7809,7 @@ html, body, html body{
 </div>
 
 <!-- Current Phase: Human-In-The-Loop — nav pos 15 -->
-<div class="casey-slide ds-focus" id="cs-13">
+<div class="casey-slide ds-focus appendix-slide" id="cs-13" style="display:none">
 <section id="s4" style="position:relative">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The Engine</div>
 <div class="orb orb-g" style="width:400px;height:400px;top:8%;right:-10%"></div>
@@ -11572,18 +11572,18 @@ const SLIDE_ORDER = [
   'cs-18',    // 14 Founder · CEO · Dave Velardo (moved here per Dave 2026-04-30 PM evening)
   'cs-27',    // 15 CTO · Steve Callan (moved here per Dave 2026-04-30 PM evening)
   'cs-4',     // 16 Moat — data in our heads
-  'cs-13',    // 17 Engine — HITL Krista loop + 25% adoption
-  'cs-16',    // 18 Autonomous Community Intelligence
-  'cs-a3',    // 19 Pickleball: two revenue streams (TAM)
-  'cs-11b',   // 20 NEPC Numbers — receipts
-  'cs-36',    // 21 10-Year North Star
-  'cs-33',    // 22 The Ask — $1.5M Seed
-  'cs-26'     // 23 Closer
+  'cs-16',    // 17 Autonomous Community Intelligence
+  'cs-a3',    // 18 Pickleball: two revenue streams (TAM)
+  'cs-11b',   // 19 NEPC Numbers — receipts
+  'cs-36',    // 20 10-Year North Star
+  'cs-33',    // 21 The Ask — $1.5M Seed
+  'cs-26'     // 22 Closer
   // Removed from main flow per Dave 2026-04-30 PM:
   //   cs-34 (Flywheel) → appendix · cs-30 (Why Now) → appendix · cs-32 (Distribution) → appendix
   //   cs-31 (Why We Win → archived) · cs-37 (Voice of Community → appendix)
   //   cs-35 (Comparable Outcomes → archived) · cs-9 (Invitation-Feed orbital → appendix)
   //   cs-a7 (Next Frontier · 3-icon) → appendix
+  //   cs-13 (Engine · Human-in-the-loop) → appendix [Dave 2026-04-30 PM evening]
 ];
 const TOTAL = SLIDE_ORDER.length;
 
@@ -11605,8 +11605,9 @@ const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
   'cs-a20',  // 1: The Ask  (was cs-24)
-  'cs-a7',   // 2: Next Frontier · 3-icon flow [moved from main 2026-04-30 PM per Dave]
-  'cs-8b',   // 3: Abundance · Opportunity Size [restored 2026-04-30 PM per Dave]
+  'cs-13',   // 2: The Engine · Human-in-the-loop [moved from main 2026-04-30 PM evening per Dave]
+  'cs-a7',   // 3: Next Frontier · 3-icon flow [moved from main 2026-04-30 PM per Dave]
+  'cs-8b',   // 4: Abundance · Opportunity Size [restored 2026-04-30 PM per Dave]
   'cs-1b',   // 4: BACKUP — original "The Good Life" before merge into cs-1bm1 [Dave 2026-04-30 PM]
   'cs-0a',   // 5: BACKUP — original "Two Imbalances" before merge into cs-1bm1 [Dave 2026-04-30 PM]
   'cs-34',   // 6: The Flywheel · network effects [moved from main 2026-04-30]
