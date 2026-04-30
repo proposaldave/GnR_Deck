@@ -5603,12 +5603,12 @@ html, body, html body{
   #cs-2b[data-shown="1"] .c2b-but { opacity: 1; }
   html[data-export="1"] #cs-2b .c2b-but { opacity: 1 !important; }
 
-  /* Click hint — pulses gently on first load, hides after reveal */
-  #cs-2b .c2b-hint { display:flex; flex-direction:column; align-items:center; gap:8px; margin: 8px auto 22px; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(184,149,74,0.85); animation: tiHintPulse 1.8s ease-in-out infinite; }
+  /* Click hint — pulses gently on first load, fades after reveal but KEEPS its layout space (otherwise the centered slide content shifts) */
+  #cs-2b .c2b-hint { display:flex; flex-direction:column; align-items:center; gap:8px; margin: 8px auto 22px; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(184,149,74,0.85); animation: tiHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
   #cs-2b .c2b-hint svg { transform: translateY(0); animation: c2bHintBounce 1.6s ease-in-out infinite; }
   @keyframes c2bHintBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
-  #cs-2b[data-shown="1"] .c2b-hint { display: none; }
-  html[data-export="1"] #cs-2b .c2b-hint { display: none !important; }
+  #cs-2b[data-shown="1"] .c2b-hint { opacity: 0; pointer-events: none; animation: none; }
+  html[data-export="1"] #cs-2b .c2b-hint { opacity: 0 !important; animation: none !important; }
 
   /* Cards: hidden until reveal, then stagger in */
   #cs-2b .c2b-card-anim { opacity: 0; }
@@ -7540,14 +7540,15 @@ html, body, html body{
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.5);z-index:10;">The honesty gap</div>
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
-    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:8px;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.018em">
-      What people <em style="font-style:italic;font-weight:500;color:#5B8FD4">say</em> &nbsp;<span style="color:rgba(26,22,18,0.4);font-weight:300">&ne;</span>&nbsp; what people <em style="font-style:italic;font-weight:500;color:#c8462c">do</em>.
+    <!-- Honest feedback frame: makes it explicit we're talking about what people say ABOUT OTHER PEOPLE [Dave 2026-04-30 PM] -->
+    <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:14px">Honest feedback &middot; about other players</div>
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:10px;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.018em">
+      What they <em style="font-style:italic;font-weight:500;color:#5B8FD4">say</em> &nbsp;<span style="color:rgba(26,22,18,0.4);font-weight:300">&ne;</span>&nbsp; what they <em style="font-style:italic;font-weight:500;color:#c8462c">do</em>.
     </div>
-    <!-- Context sub-line — explains what we're comparing, small/quiet -->
-    <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:30px">
-      &mdash; when declining a <span style="font-family:'Playfair Display',Georgia,serif;text-transform:none;letter-spacing:0;font-weight:700;font-size:0.96rem;vertical-align:baseline"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> invitation &mdash;
+    <!-- Context sub-line — names the situation explicitly -->
+    <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(.95rem,1.4vw,1.1rem);font-weight:500;color:rgba(26,22,18,0.7);margin-bottom:28px;line-height:1.4">
+      When invited to play with someone they'd rather <em style="color:#c8462c">avoid</em>.
     </div>
-    <div style="margin-bottom:24px"></div>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto 28px">
 
@@ -7561,7 +7562,7 @@ html, body, html body{
         <!-- Back face: closed GnR envelope (real photo asset) -->
         <div class="hg-ph" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border:1.5px dashed rgba(91,143,212,0.45);border-radius:14px;background:rgba(91,143,212,0.04);padding:24px 20px 28px">
           <img src="design_refs/envelope_gnr.png" alt="GnR invitation envelope" style="width:78%;max-width:240px;height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(184,149,74,0.18))"/>
-          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4">What they actually say</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4">What they'll say</div>
         </div>
        </div>
       </div>
@@ -7576,7 +7577,7 @@ html, body, html body{
         <!-- Back face: closed GnR envelope (real photo asset) -->
         <div class="hg-ph" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border:1.5px dashed rgba(200,70,44,0.45);border-radius:14px;background:rgba(200,70,44,0.04);padding:24px 20px 28px">
           <img src="design_refs/envelope_gnr.png" alt="GnR invitation envelope" style="width:78%;max-width:240px;height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(184,149,74,0.18))"/>
-          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c">What they actually do</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c">What they do</div>
         </div>
        </div>
       </div>
@@ -10288,7 +10289,6 @@ html, body, html body{
             <rect x="31.5" y="24" width="4" height="7" rx="0.5" fill="rgba(100,140,255,0.32)"/>
           </svg>
         </div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:800;letter-spacing:0.34em;text-transform:uppercase;color:#3a7da3">Tech Imbalance</div>
         <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);animation:tiHintPulse 1.8s ease-in-out infinite">&#9655; Click or press &rarr; to reveal</div>
       </div>
      </div>
@@ -10383,7 +10383,6 @@ html, body, html body{
             <path d="M35 38 L41 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.4" stroke-linecap="round"/>
           </svg>
         </div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:800;letter-spacing:0.34em;text-transform:uppercase;color:#c8462c">Values Imbalance</div>
         <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);animation:tiHintPulse 1.8s ease-in-out infinite">&#9655; Click or press &rarr; to reveal</div>
       </div>
      </div>
