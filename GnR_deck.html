@@ -5594,27 +5594,47 @@ html, body, html body{
 <!-- Coordination Stack Broken — main-flow slide AFTER cs-2 (next-frontier eyebrow).
      Per Dave 2026-04-26: real-world communities where coordination is desperately needed but
      completely broken. Today's coordination stacks don't track the reality at all. -->
-<!-- cs-2b stagger animation: 3 cards fade up first, THEN the bottom block (chevron + "Unsolved. Done by hand." + diagnosis) lands [Dave 2026-04-30 PM] -->
+<!-- cs-2b CLICK-TO-REVEAL: headline lands clean first ("our communities run on human connection") so Dave can deliver that line, then click reveals "But..." + cards + bottom [Dave 2026-04-30 PM] -->
 <style>
   @keyframes c2bCardIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* "But..." stays hidden until click */
+  #cs-2b .c2b-but { opacity: 0; transition: opacity 0.55s ease 0.25s; }
+  #cs-2b[data-shown="1"] .c2b-but { opacity: 1; }
+  html[data-export="1"] #cs-2b .c2b-but { opacity: 1 !important; }
+
+  /* Click hint — pulses gently on first load, hides after reveal */
+  #cs-2b .c2b-hint { display:flex; flex-direction:column; align-items:center; gap:8px; margin: 8px auto 22px; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(184,149,74,0.85); animation: tiHintPulse 1.8s ease-in-out infinite; }
+  #cs-2b .c2b-hint svg { transform: translateY(0); animation: c2bHintBounce 1.6s ease-in-out infinite; }
+  @keyframes c2bHintBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+  #cs-2b[data-shown="1"] .c2b-hint { display: none; }
+  html[data-export="1"] #cs-2b .c2b-hint { display: none !important; }
+
+  /* Cards: hidden until reveal, then stagger in */
   #cs-2b .c2b-card-anim { opacity: 0; }
-  #cs-2b.active .c2b-card-anim { animation: c2bCardIn 0.75s cubic-bezier(.45,.05,.18,1) forwards; }
-  #cs-2b.active .c2b-card-anim.c2b-1 { animation-delay: 0.6s; }
-  #cs-2b.active .c2b-card-anim.c2b-2 { animation-delay: 0.85s; }
-  #cs-2b.active .c2b-card-anim.c2b-3 { animation-delay: 1.10s; }
+  #cs-2b[data-shown="1"] .c2b-card-anim { animation: c2bCardIn 0.75s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-1 { animation-delay: 0.55s; }
+  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-2 { animation-delay: 0.80s; }
+  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-3 { animation-delay: 1.05s; }
   html[data-export="1"] #cs-2b .c2b-card-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 
-  /* Bottom block (chevron + "Unsolved. Done by hand." + diagnosis) fades up AFTER all 3 cards land */
+  /* Bottom block: hidden until reveal, then fades up after all 3 cards land */
   #cs-2b .c2b-bottom { opacity: 0; }
-  #cs-2b.active .c2b-bottom { animation: c2bCardIn 0.7s cubic-bezier(.45,.05,.18,1) forwards; animation-delay: 2.0s; }
+  #cs-2b[data-shown="1"] .c2b-bottom { animation: c2bCardIn 0.7s cubic-bezier(.45,.05,.18,1) forwards; animation-delay: 1.95s; }
   html[data-export="1"] #cs-2b .c2b-bottom { opacity: 1 !important; animation: none !important; transform: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-2b">
+<div class="casey-slide ds-focus" id="cs-2b" data-shown="0" onclick="cs2bAdvance()" style="cursor:pointer">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Real-world social communities</div>
 <div class="inner" style="text-align:center;max-width:1100px;padding-top:54px;margin:0 auto">
 
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.6rem);color:#1a1612;line-height:1.25;font-weight:600;margin-bottom:42px;max-width:1080px;margin-left:auto;margin-right:auto">
-    Our communities <em style="font-style:italic;color:#b8954a">run on human connection</em>.<br>That&rsquo;s what they <em style="font-style:italic;color:#b8954a">are</em>. <em style="font-style:italic;color:#c8462c;font-weight:700">But&hellip;</em>
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.6rem);color:#1a1612;line-height:1.25;font-weight:600;margin-bottom:18px;max-width:1080px;margin-left:auto;margin-right:auto">
+    Our communities <em style="font-style:italic;color:#b8954a">run on human connection</em>.<br>That&rsquo;s what they <em style="font-style:italic;color:#b8954a">are</em>. <span class="c2b-but"><em style="font-style:italic;color:#c8462c;font-weight:700">But&hellip;</em></span>
+  </div>
+
+  <!-- Click hint — visible only on first load -->
+  <div class="c2b-hint">
+    <span>&#9655; Click to continue</span>
+    <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 
   <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:36px">
@@ -7536,7 +7556,7 @@ html, body, html body{
        <div class="hg-flip-inner hg-flip-left">
         <div class="hg-card" style="padding:36px 24px;border-radius:14px;background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.04) 100%);border:1px solid rgba(91,143,212,0.32);text-align:center;display:flex;flex-direction:column;justify-content:center">
           <div style="font-family:'Playfair Display',serif;font-size:clamp(3.6rem,8vw,6rem);font-weight:900;color:#5B8FD4;line-height:1;letter-spacing:-0.04em;margin-bottom:14px;text-shadow:0 0 32px rgba(91,143,212,0.32)">0.6%</div>
-          <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:#1a1612;line-height:1.4;font-weight:600">say so <em style="color:#5B8FD4;font-style:italic">directly</em></div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:#1a1612;line-height:1.4;font-weight:600">say so <em style="color:#5B8FD4;font-style:italic">with feedback</em></div>
         </div>
         <!-- Back face: closed GnR envelope (real photo asset) -->
         <div class="hg-ph" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border:1.5px dashed rgba(91,143,212,0.45);border-radius:14px;background:rgba(91,143,212,0.04);padding:24px 20px 28px">
@@ -11021,6 +11041,21 @@ window.cs11dToggle = function(side) {
   const key = side === 'left' ? 'left' : 'right';
   slide.dataset[key] = slide.dataset[key] === '1' ? '0' : '1';
 };
+// cs-2b (Real-world social communities) — single click-reveal: headline first, then "But..." + cards + bottom [Dave 2026-04-30 PM]
+window.cs2bAdvance = function() {
+  const slide = document.getElementById('cs-2b');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.cs2bReverse = function() {
+  const slide = document.getElementById('cs-2b');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
 
 function caseyGo(n) {
   if (inAppendix) return;
@@ -11087,6 +11122,10 @@ function caseyGo(n) {
     // Reset per-card flip state on each entry [Dave 2026-04-30 PM]
     target.dataset.left = '0';
     target.dataset.right = '0';
+  }
+  if (targetId === 'cs-2b') {
+    // Reset click-reveal state on each entry [Dave 2026-04-30 PM]
+    target.dataset.shown = '0';
   }
   if (targetId === 'cs-11') {
     // Fun entrance: two cards bounce in from the sides + arrow flips once. Replays every visit. Dave 2026-04-29.
@@ -11398,16 +11437,18 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'd' || e.key === 'D') {
     e.preventDefault();
-    // cs-1bm1 / cs-11d click-reveal: right arrow advances reveal step before navigating
+    // cs-1bm1 / cs-2b / cs-11d click-reveal: right arrow advances reveal step before navigating
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d' && window.cs11dAdvance && window.cs11dAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  return;
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
   if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
     e.preventDefault();
-    // cs-1bm1 / cs-11d click-reveal: left arrow un-flips a card before navigating
+    // cs-1bm1 / cs-2b / cs-11d click-reveal: left arrow un-flips before navigating
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d' && window.cs11dReverse && window.cs11dReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  return;
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
   }
   if (e.key === 'Escape' && inAppendix) { e.preventDefault(); exitAppendix(); }
@@ -11421,24 +11462,32 @@ document.addEventListener('wheel', e => {
   e.preventDefault();
   wheelLock = true;
   if (e.deltaY > 0) {
-    // cs-1bm1 / cs-11d click-reveal: scroll-down advances reveal step before navigating to next slide
+    // cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-down advances reveal step before navigating to next slide
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d' && window.cs11dAdvance && window.cs11dAdvance()) {
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
   else if (e.deltaY < 0) {
-    // cs-1bm1 / cs-11d click-reveal: scroll-up un-flips a card before navigating to prev slide
+    // cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-up un-flips before navigating to prev slide
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d' && window.cs11dReverse && window.cs11dReverse()) {
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
