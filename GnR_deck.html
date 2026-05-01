@@ -9228,71 +9228,7 @@ html, body, html body{
 </div>
 
 
-<!-- ===== cs-cl4 · CLOSER · Inversion (provocative type-only reveal) ===== -->
-<style>
-  #cs-cl4 .cl4-line1 { opacity: 0; }
-  #cs-cl4.active .cl4-line1 { animation: cl4Line1In 0.9s 0.30s cubic-bezier(.45,.05,.18,1) forwards; }
-  @keyframes cl4Line1In { to { opacity: 1; } }
-
-  #cs-cl4 .cl4-strike {
-    position: absolute; left: 0; right: 0; top: 50%;
-    height: 3px; background: #c8462c; transform: scaleX(0);
-    transform-origin: left center; box-shadow: 0 0 8px rgba(200,70,44,0.35);
-  }
-  #cs-cl4.active .cl4-strike { animation: cl4StrikeIn 0.9s 1.80s cubic-bezier(.55,.1,.2,1) forwards; }
-  @keyframes cl4StrikeIn { to { transform: scaleX(1); } }
-
-  #cs-cl4 .cl4-line2 { opacity: 0; transform: translateY(14px) scale(0.96); }
-  #cs-cl4.active .cl4-line2 { animation: cl4Line2In 1.0s 2.50s cubic-bezier(.45,.05,.18,1) forwards; }
-  @keyframes cl4Line2In { to { opacity: 1; transform: translateY(0) scale(1); } }
-
-  #cs-cl4 .cl4-mark { opacity: 0; }
-  #cs-cl4.active .cl4-mark { animation: cl4MarkIn 0.7s 3.30s ease forwards; }
-  @keyframes cl4MarkIn { to { opacity: 1; } }
-
-  html[data-export="1"] #cs-cl4 .cl4-line1,
-  html[data-export="1"] #cs-cl4 .cl4-line2,
-  html[data-export="1"] #cs-cl4 .cl4-mark { opacity: 1 !important; transform: none !important; animation: none !important; }
-  html[data-export="1"] #cs-cl4 .cl4-strike { transform: scaleX(1) !important; animation: none !important; }
-</style>
-<div class="casey-slide ds-focus" id="cs-cl4">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">Closer · Variant D · REVIEW</div>
-  <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center;padding:60px 48px">
-    <div style="text-align:center;max-width:1180px">
-
-      <!-- Line 1: the inversion (with strikethrough overlay) -->
-      <div style="position:relative;display:inline-block">
-        <div class="cl4-line1" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4.8vw,4rem);font-weight:700;color:#1a1612;line-height:1.1;letter-spacing:-0.025em">
-          You don't choose your community.<br>It chooses you.
-        </div>
-        <div class="cl4-strike"></div>
-      </div>
-
-      <!-- Line 2: the gold reveal -->
-      <div class="cl4-line2" style="margin-top:48px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(2.4rem,6vw,5.2rem);font-weight:700;color:#b8954a;line-height:1;letter-spacing:-0.02em">
-        Until now.
-      </div>
-
-      <!-- GnR mark + contact -->
-      <div class="cl4-mark" style="margin-top:64px">
-        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px">
-          <div style="width:80px;height:1px;background:#b8954a"></div>
-          <div style="width:7px;height:7px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
-          <div style="width:80px;height:1px;background:#b8954a"></div>
-        </div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.1rem;color:rgba(26,22,18,0.62);letter-spacing:0.04em">
-          <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span>
-          &middot; Give n Receive
-        </div>
-        <div style="margin-top:14px;font-family:'Manrope',sans-serif;font-size:0.8rem;color:rgba(26,22,18,0.7);letter-spacing:0.04em">
-          <strong style="color:#1a1612">Dave Velardo</strong> &middot;
-          <a href="mailto:dave@givenreceive.com" style="color:#b8954a;text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.45)">dave@givenreceive.com</a>
-          &middot; 978-604-0223
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+<!-- cs-cl4 (Inversion / "Until now.") DELETED 2026-04-30 PM evening per Dave -->
 
 
 <!-- Closer — Promise + GnR wordmark merged. GnT branding deprecated. -->
@@ -12187,8 +12123,8 @@ const SLIDE_ORDER = [
   'cs-cl1',   // 26 Closer · Variant A · Empty Rooms [REVIEW]
   'cs-cl2',   // 27 Closer · Variant B · Connection Graph [REVIEW]
   'cs-cl3',   // 28 Closer · Variant C · Tuesday 6pm [REVIEW]
-  'cs-cl4',   // 29 Closer · Variant D · Inversion [REVIEW]
-  'cs-26'     // 30 Closer · current (Promise + GnR wordmark) — for comparison
+  // cs-cl4 (Inversion / "Until now.") DELETED 2026-04-30 PM evening per Dave
+  'cs-26'     // 29 Closer · current (Promise + GnR wordmark) — for comparison
   // Removed from main flow per Dave 2026-04-30 PM:
   //   cs-34 (Flywheel) → appendix · cs-30 (Why Now) → appendix · cs-32 (Distribution) → appendix
   //   cs-31 (Why We Win → archived) · cs-37 (Voice of Community → appendix)
