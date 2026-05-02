@@ -13236,21 +13236,32 @@ window.cs3Toggle = function() {
   slide.dataset.shown = slide.dataset.shown === '1' ? '0' : '1';
 };
 
-// cs-11 [Dave 2026-05-02]: header-only on load → click reveals BEFORE/AFTER cards + bottom; flip cards toggle independently
+// cs-11 [Dave 2026-05-02 PM]: multi-step scroll/swipe/arrow reveal.
+// Step 0: header only. Step 1: cards revealed. Step 2: LEFT card flipped. Step 3: RIGHT card flipped. Then next slide.
+// Direct click on a single card still toggles JUST that card (independent flip).
+// "d" key skips all reveals — handled in keyboard nav separately.
 window.cs11Advance = function() {
   const slide = document.getElementById('cs-11');
   if (!slide || !slide.classList.contains('active')) return false;
-  if (slide.dataset.shown === '1') return false;
-  slide.dataset.shown = '1';
-  return true;
+  // Step 0 -> 1: reveal cards
+  if (slide.dataset.shown !== '1') { slide.dataset.shown = '1'; return true; }
+  // Step 1 -> 2: flip LEFT card
+  if (slide.dataset.leftFlipped !== '1') { slide.dataset.leftFlipped = '1'; return true; }
+  // Step 2 -> 3: flip RIGHT card
+  if (slide.dataset.rightFlipped !== '1') { slide.dataset.rightFlipped = '1'; return true; }
+  // Step 3: fully revealed — let nav advance to next slide
+  return false;
 };
 window.cs11Reverse = function() {
   const slide = document.getElementById('cs-11');
   if (!slide || !slide.classList.contains('active')) return false;
-  if (slide.dataset.shown !== '1') return false;
-  slide.dataset.shown = '0';
-  return true;
+  // Reverse order: unflip RIGHT, then LEFT, then hide cards
+  if (slide.dataset.rightFlipped === '1') { slide.dataset.rightFlipped = '0'; return true; }
+  if (slide.dataset.leftFlipped === '1')  { slide.dataset.leftFlipped  = '0'; return true; }
+  if (slide.dataset.shown === '1')        { slide.dataset.shown        = '0'; return true; }
+  return false;
 };
+// Direct-card click — independent toggle, doesn't affect global step state
 window.cs11ToggleLeft = function() {
   const slide = document.getElementById('cs-11');
   if (!slide || !slide.classList.contains('active')) return;
