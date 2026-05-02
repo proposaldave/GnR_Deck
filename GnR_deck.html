@@ -7586,6 +7586,26 @@ html, body, html body{
   html[data-export="1"] #cs-gnr .gnr-envelope { animation:none !important; }
   /* Caption */
   #cs-gnr .gnr-caption { font-family:'Manrope',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.32em; text-transform:uppercase; color:rgba(184,149,74,0.85); margin-top:10px; }
+  /* 3 emphasis callouts framing the stage [Dave 2026-05-02] */
+  #cs-gnr .gnr-callout { position:absolute; max-width:230px; opacity:0; }
+  #cs-gnr.active .gnr-callout { animation: gnrCalloutIn 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
+  @keyframes gnrCalloutIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  #cs-gnr.active .gnr-callout-1 { animation-delay: 1.6s; }
+  #cs-gnr.active .gnr-callout-2 { animation-delay: 1.8s; }
+  #cs-gnr.active .gnr-callout-3 { animation-delay: 2.0s; }
+  html[data-export="1"] #cs-gnr .gnr-callout { opacity:1 !important; transform:none !important; animation:none !important; }
+  #cs-gnr .gnr-cnum { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:#b8954a; color:#f3ead8; font-family:'Playfair Display',serif; font-size:0.78rem; font-weight:700; margin-bottom:6px; box-shadow:0 2px 6px rgba(184,149,74,0.3); }
+  #cs-gnr .gnr-ctitle { font-family:'Fraunces','Playfair Display',serif; font-size:0.95rem; font-weight:700; color:#1a1612; line-height:1.2; margin-bottom:3px; letter-spacing:-0.005em; }
+  #cs-gnr .gnr-cdesc { font-family:'Playfair Display',serif; font-style:italic; font-size:0.78rem; line-height:1.35; color:rgba(26,22,18,0.65); }
+  /* Foursome preview strip on/under envelope [Dave 2026-05-02] */
+  #cs-gnr .gnr-preview { position:absolute; left:50%; top:50%; transform:translate(-50%, calc(-50% + 88px)); z-index:5; display:flex; gap:8px; align-items:center; background:#f3ead8; border:1.5px solid #b8954a; border-radius:99px; padding:5px 12px 5px 10px; box-shadow:0 6px 16px rgba(184,149,74,0.22); opacity:0; }
+  #cs-gnr.active .gnr-preview { animation: gnrPreviewIn 0.6s cubic-bezier(.45,.05,.18,1) forwards; animation-delay: 1.4s; }
+  @keyframes gnrPreviewIn { from { opacity:0; transform:translate(-50%, calc(-50% + 100px)); } to { opacity:1; transform:translate(-50%, calc(-50% + 88px)); } }
+  html[data-export="1"] #cs-gnr .gnr-preview { opacity:1 !important; transform:translate(-50%, calc(-50% + 88px)) !important; animation:none !important; }
+  #cs-gnr .gnr-preview-label { font-family:'Manrope',sans-serif; font-size:0.5rem; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:#b8954a; }
+  #cs-gnr .gnr-preview-faces { display:flex; align-items:center; }
+  #cs-gnr .gnr-preview-face { width:20px; height:20px; border-radius:50%; border:1.5px solid #f3ead8; margin-left:-5px; box-shadow:0 1px 3px rgba(26,22,18,0.18); }
+  #cs-gnr .gnr-preview-face:first-child { margin-left:0; }
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr">
 <section style="position:relative;min-height:100%;width:100%">
@@ -7632,6 +7652,36 @@ html, body, html body{
     <div class="gnr-person gnr-p6" style="left:13.6%;top:29%;background:rgba(91,168,150,0.12);border:1.5px solid rgba(91,168,150,0.55)">
       <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#5fa896"/><path d="M5 28 Q16 20 27 28" stroke="#5fa896" stroke-width="2.4" fill="rgba(91,168,150,0.25)" stroke-linecap="round"/></svg>
     </div>
+
+    <!-- Foursome preview strip — sits just below the envelope, shows who else is invited [Dave 2026-05-02] -->
+    <div class="gnr-preview">
+      <div class="gnr-preview-label">Joining you</div>
+      <div class="gnr-preview-faces">
+        <div class="gnr-preview-face" style="background:#5B8FD4"></div>
+        <div class="gnr-preview-face" style="background:#c8462c"></div>
+        <div class="gnr-preview-face" style="background:#4a8c5e"></div>
+        <div class="gnr-preview-face" style="background:#7a4a8c"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 emphasis callouts: what the invitation feels like [Dave 2026-05-02] -->
+  <div style="position:relative;width:100%;max-width:1100px;margin:18px auto 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:start;text-align:left">
+    <div class="gnr-callout gnr-callout-1" style="position:relative;padding-left:6px;border-left:2px solid rgba(184,149,74,0.4)">
+      <div class="gnr-cnum">1</div>
+      <div class="gnr-ctitle">Invitations come to you.</div>
+      <div class="gnr-cdesc">Wait for the right group. Easy scheduling — no hunting, no guessing.</div>
+    </div>
+    <div class="gnr-callout gnr-callout-2" style="position:relative;padding-left:6px;border-left:2px solid rgba(184,149,74,0.4)">
+      <div class="gnr-cnum">2</div>
+      <div class="gnr-ctitle">You belong.</div>
+      <div class="gnr-cdesc">The invite is proof. Your community chose you for this group.</div>
+    </div>
+    <div class="gnr-callout gnr-callout-3" style="position:relative;padding-left:6px;border-left:2px solid rgba(184,149,74,0.4)">
+      <div class="gnr-cnum">3</div>
+      <div class="gnr-ctitle">See who's joining.</div>
+      <div class="gnr-cdesc">The foursome is on the envelope. RSVP knowing exactly who you'll spend time with.</div>
+    </div>
   </div>
 
 
@@ -7659,7 +7709,7 @@ html, body, html body{
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <!-- Promoted to slide headline: 'Honest feedback · about other players' is now the main header [Dave 2026-04-30 PM] -->
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:36px;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.018em">
-      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> learns <em style="font-style:italic;font-weight:500;color:#b8954a">what players would never say to each other.</em>
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> invitations learn <em style="font-style:italic;font-weight:500;color:#b8954a">what players would never say to each other.</em>
     </div>
 
     <!-- 3-column grid: LEFT card | ≠ | RIGHT card -->
