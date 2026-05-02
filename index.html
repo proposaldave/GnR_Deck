@@ -7470,33 +7470,9 @@ html, body, html body{
 </div>
 
 <!-- cs-3a (Variant A · Radar per court) REMOVED — merged into cs-3 -->
-<!-- cs-11b: NEPC PROOF · Already running — 60 courts/wk · $215K ARR · +5% utilization -->
-<div class="casey-slide ds-focus appendix-slide" id="cs-11b" style="display:none">
-<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center">
-  <div class="ps-kicker">Proof &middot; the living lab</div>
-  <div class="ps-wrap" style="max-width:1100px">
-    <div class="ps-title">Running at <em>New England Pickleball Clubs</em><br><span style="font-size:0.7em;color:rgba(26,22,18,0.6);font-weight:500">Rye, NH &nbsp;&middot;&nbsp; Middleton, MA</span></div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1080px;margin:36px auto 0">
-      <div style="text-align:center;padding:28px 16px;border:1px solid rgba(91,143,212,0.28);border-radius:12px;background:rgba(91,143,212,0.04)">
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;font-style:italic;color:#5B8FD4;line-height:1;margin-bottom:10px">350</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:#1a1612;line-height:1.4">monthly active players with personalized invitation feed</div>
-      </div>
-      <div style="text-align:center;padding:28px 16px;border:1px solid rgba(212,168,83,0.2);border-radius:12px;background:rgba(212,168,83,0.03)">
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;font-style:italic;color:#b8954a;line-height:1;margin-bottom:10px">60</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:#1a1612;line-height:1.4">invitation courts &middot; per week</div>
-      </div>
-      <div style="text-align:center;padding:28px 16px;border:1px solid rgba(61,255,122,0.22);border-radius:12px;background:rgba(61,255,122,0.03)">
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;font-style:italic;color:#2a8a4f;line-height:1;margin-bottom:10px">$215K</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:#1a1612;line-height:1.4">ARR &middot; powered by Give &lsquo;n Receive</div>
-      </div>
-      <div style="text-align:center;padding:28px 16px;border:1px solid rgba(127,184,168,0.24);border-radius:12px;background:rgba(127,184,168,0.03)">
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;font-style:italic;color:#5fa896;line-height:1;margin-bottom:10px">+6%</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:#1a1612;line-height:1.4">court utilization lift</div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
+<!-- cs-11b ("NEPC PROOF · Already running" — 350 MAP, 60 courts/wk, $215K ARR, +6% util)
+     → DELETED 2026-05-02 per Dave (data folded into cs-rcp + cs-11e Proving Ground in main deck).
+     Slide div fully removed (was previously orphaned in HTML — array ref was already gone). -->
 
 <!-- Signal Density — 645K behavioral signals from 350 monthly active players. Plain-English signal cards. Source: v2.gnt.ai/meta-patterns -->
 <div class="casey-slide ds-focus" id="cs-11c">
@@ -10181,86 +10157,9 @@ html, body, html body{
 </div>
 
 
-<!-- ===== cs-mv7 · Mission · Mission Hero, Timeline as Evidence (mission dominant) ===== -->
-<style>
-  #cs-mv7 .mv7-mission { opacity: 0; transform: translateY(10px); }
-  #cs-mv7.active .mv7-mission { animation: mv7In 0.85s 0.20s cubic-bezier(.45,.05,.18,1) forwards; }
-  #cs-mv7ascending { /* spacer */ }
-  #cs-mv7 .mv7-evidence { opacity: 0; transform: translateY(8px); }
-  #cs-mv7.active .mv7-evidence { animation: mv7In 0.7s 1.10s cubic-bezier(.45,.05,.18,1) forwards; }
-  #cs-mv7 .mv7-chip { opacity: 0; transform: translateY(4px); }
-  #cs-mv7.active .mv7-chip { animation: mv7In 0.45s cubic-bezier(.45,.05,.18,1) forwards; }
-  #cs-mv7.active .mv7-chip:nth-child(1) { animation-delay: 1.40s; }
-  #cs-mv7.active .mv7-chip:nth-child(2) { animation-delay: 1.50s; }
-  #cs-mv7.active .mv7-chip:nth-child(3) { animation-delay: 1.60s; }
-  #cs-mv7.active .mv7-chip:nth-child(4) { animation-delay: 1.70s; }
-  #cs-mv7.active .mv7-chip:nth-child(5) { animation-delay: 1.80s; }
-  #cs-mv7.active .mv7-chip:nth-child(6) { animation-delay: 1.90s; }
-  #cs-mv7.active .mv7-chip:nth-child(7) { animation-delay: 2.10s; }
-  #cs-mv7 .mv7-foot { opacity: 0; transform: translateY(6px); }
-  #cs-mv7.active .mv7-foot { animation: mv7In 0.6s 2.50s cubic-bezier(.45,.05,.18,1) forwards; }
-  @keyframes mv7In { to { opacity: 1; transform: none; } }
-  html[data-export="1"] #cs-mv7 .mv7-mission,
-  html[data-export="1"] #cs-mv7 .mv7-evidence,
-  html[data-export="1"] #cs-mv7 .mv7-chip,
-  html[data-export="1"] #cs-mv7 .mv7-foot { opacity: 1 !important; transform: none !important; animation: none !important; }
-</style>
-<div class="casey-slide ds-focus appendix-slide" id="cs-mv7" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Mission</div>
-  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 48px">
-
-    <!-- HERO mission line -->
-    <div class="mv7-mission" style="text-align:center;max-width:1280px;margin-bottom:48px">
-      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.6rem,6vw,5rem);font-weight:700;color:#1a1612;line-height:1.04;letter-spacing:-0.025em">
-        Mission: for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
-      </div>
-    </div>
-
-    <!-- Evidence kicker -->
-    <div class="mv7-evidence" style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:rgba(26,22,18,0.6);margin-bottom:18px">Every era of civilization runs on something.</div>
-
-    <!-- Compact 7-chip timeline strip -->
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:1240px">
-      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(74,124,74,0.5);background:rgba(74,124,74,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5)">Pre-1800</div>
-        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#4a7c4a;line-height:1.1">Land</div>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
-      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(156,90,58,0.5);background:rgba(156,90,58,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5)">1800s</div>
-        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#9c5a3a;line-height:1.1">Labor</div>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
-      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(184,149,74,0.5);background:rgba(184,149,74,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5)">1900s</div>
-        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#b8954a;line-height:1.1">Capital</div>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
-      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(77,130,198,0.5);background:rgba(77,130,198,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5)">1990s</div>
-        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#4d82c6;line-height:1.1">Information</div>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
-      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(200,70,44,0.5);background:rgba(200,70,44,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5)">2010s</div>
-        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#c8462c;line-height:1.1">Attention</div>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
-      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(122,74,140,0.5);background:rgba(122,74,140,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5)">2020s</div>
-        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#7a4a8c;line-height:1.1">Intelligence</div>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#b8954a;font-weight:700">→</div>
-      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:2px solid #b8954a;background:linear-gradient(180deg,rgba(184,149,74,0.18),rgba(184,149,74,0.06));padding:9px 18px;border-radius:999px;min-width:108px;box-shadow:0 4px 14px rgba(184,149,74,0.22)">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:800;letter-spacing:0.2em;color:#b8954a;text-transform:none">2030s</div>
-        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#1a1612;line-height:1.1">Connection</div>
-      </div>
-    </div>
-
-    <!-- "GnR · the operating system of the next era" foot DELETED 2026-05-02 per Dave -->
-
-  </section>
-</div>
+<!-- cs-mv7 ("Mission · What runs the world?" — Land/Labor/Capital/Information/Attention/Intelligence → Connection)
+     → DELETED 2026-05-02 per Dave (was duplicate of cs-a19 which was also deleted; cs-mv6 is the canonical mission slide).
+     Slide div + style block fully removed (was previously orphaned in HTML — array ref was already gone). -->
 
 
 <!-- ===== cs-33 · THE ASK — moved back to APPENDIX 2026-04-30 per Dave ===== -->
