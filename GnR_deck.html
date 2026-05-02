@@ -5354,7 +5354,7 @@ html, body, html body{
       </svg>
       <!-- Primary descriptor (new) -->
       <div style="font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3vw,46px);font-weight:600;color:#1a1612;line-height:1.15;letter-spacing:-0.012em;margin:0 auto 14px;text-align:center">
-        Invitation-based <em style="font-style:italic;font-weight:500;color:#b8954a">matchmaking for our communities.</em>
+        Invitation-based <em style="font-style:italic;font-weight:500;color:#b8954a">matchmaking for our communities</em>
       </div>
       <!-- Tagline — Fraunces italic, ink, gold emphasis. white-space:nowrap forces single line per Dave 2026-05-01. -->
       <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(11px,1.05vw,16px);font-weight:400;color:rgba(26,22,18,0.78);line-height:1.45;margin:0 auto 22px;letter-spacing:-0.005em;white-space:nowrap;text-align:center">
@@ -7152,7 +7152,7 @@ html, body, html body{
 </div>
 
 <!-- Pickleball: 24 rounds a week - week-view, mini courts showing 4-player data flow -->
-<div class="casey-slide ds-focus" id="cs-3" data-shown="0" onclick="cs3Advance()" style="cursor:pointer">
+<div class="casey-slide ds-focus" id="cs-3" data-shown="0" onclick="cs3Toggle()" style="cursor:pointer">
 <style>
     /* cs-3 v2 — Codex redesign 2026-04-30 (week-grid: 24 rounds across TUE/THU/SAT). */
     /* Click-to-reveal: 4 .cs3-round.scored cards + closer text hidden on page load.
@@ -7589,12 +7589,10 @@ html, body, html body{
 <div class="inner" style="padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:0 auto">
-    <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> is <em style="font-style:italic;font-weight:500;color:#b8954a">invitation-based matchmaking for our communities.</em>
+    <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> is <em style="font-style:italic;font-weight:500;color:#b8954a">agentic invitation-based matchmaking for our communities.</em>
   </div>
 
-  <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.05rem,1.6vw,1.35rem);color:rgba(26,22,18,0.7);margin:14px auto 0;line-height:1.45;max-width:780px">
-    Learns from <em style="color:#b8954a;font-style:italic">every RSVP.</em>
-  </div>
+  <!-- "Learns from every RSVP" sub-line removed 2026-05-01 per Dave -->
 
   <!-- Center stage: envelope + 6 people around it, dashed gold connections -->
   <div class="gnr-stage">
@@ -8774,10 +8772,8 @@ html, body, html body{
     Pickleball is the lowest-risk path to the world's first <em style="font-style:italic;color:#b8954a">autonomous social coordination network.</em>
   </div>
 
-  <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.05rem,1.7vw,1.4rem);color:#c8462c;line-height:1.4;margin-bottom:6px;max-width:980px">
-    19.8M US players. <strong style="font-weight:800">18.8M build it by hand.</strong>
-  </div>
-  <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;color:rgba(26,22,18,0.5);letter-spacing:0.05em;margin-bottom:48px">SFIA 2025 &middot; DUPR public data</div>
+  <!-- "19.8M US players. 18.8M build it by hand." subtitle deleted 2026-05-01 per Dave -->
+  <div style="margin-bottom:48px"></div>
 
   <!-- 4 cards · 4 reasons pickleball is the perfect wedge [Dave 2026-04-30 PM evening] -->
   <style>
@@ -8828,7 +8824,7 @@ html, body, html body{
         </svg>
       </div>
       <div class="c25-title" style="color:#3a7da3">Socially dense.<br>High velocity.</div>
-      <div class="c25-detail">4 players &times; 6 relationships &times; 3+ sessions/wk</div>
+      <div class="c25-detail">24 unique groups per week, per club</div>
     </div>
 
     <!-- 3. Incumbent coordination stack stuck in 2005 -->
@@ -8844,7 +8840,7 @@ html, body, html body{
         </svg>
       </div>
       <div class="c25-title" style="color:#c8462c">Coordination stack<br>stuck in 2005.</div>
-      <div class="c25-detail">Ratings &middot; Court Booking &middot; Texts</div>
+      <div class="c25-detail">Court Booking &middot; Texts &middot; Ratings</div>
     </div>
 
     <!-- 4. Cold-start data cracked -->
@@ -8859,7 +8855,7 @@ html, body, html body{
         </svg>
       </div>
       <div class="c25-title" style="color:#2a8a4f">Cold-start<br>data cracked.</div>
-      <div class="c25-detail">NEPC's 2-yr history seeds the engine</div>
+      <div class="c25-detail">Historical schedule and private booking data</div>
     </div>
   </div>
 
@@ -10844,26 +10840,26 @@ html, body, html body{
     <!-- TOP: Personalized Invitations (blue) -->
     <g class="fw1-anim fw1-n1" transform="translate(360, 70)">
       <rect x="-145" y="-30" width="290" height="60" rx="30" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.7"/>
-      <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.2" fill="#3a7da3">PERSONALIZED INVITATIONS</text>
-      <text x="0" y="14" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.62)">sequential · from the right person</text>
+      <text x="0" y="-2" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.2" fill="#3a7da3">PERSONALIZED INVITATION FEED</text>
+      <text x="0" y="18" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.62)">sequential · curated</text>
     </g>
     <!-- RIGHT: RSVPs + Feedback (gold) -->
     <g class="fw1-anim fw1-n2" transform="translate(620, 300)">
       <rect x="-128" y="-30" width="256" height="60" rx="30" fill="rgba(184,149,74,0.08)" stroke="#b8954a" stroke-width="1.7"/>
-      <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.2" fill="#b8954a">RSVPs &amp; FEEDBACK</text>
-      <text x="0" y="14" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.62)">partners · opponents · wishlist</text>
+      <text x="0" y="-2" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.2" fill="#b8954a">RSVPs &amp; ROUND SELECTION</text>
+      <text x="0" y="18" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.62)">partners · opponents · wishlist</text>
     </g>
     <!-- BOTTOM: Filled Courts, Better Matches (green) -->
     <g class="fw1-anim fw1-n3" transform="translate(360, 530)">
       <rect x="-150" y="-30" width="300" height="60" rx="30" fill="rgba(42,138,79,0.08)" stroke="#2a8a4f" stroke-width="1.7"/>
       <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.2" fill="#2a8a4f">FILLED COURTS · BETTER MATCHES</text>
-      <text x="0" y="14" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.62)">right 4 people, right time · trusted reciprocity</text>
+      <text x="0" y="14" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.62)">right 4 people, right time</text>
     </g>
     <!-- LEFT: Compounding Value (coral) -->
     <g class="fw1-anim fw1-n4" transform="translate(100, 300)">
       <rect x="-138" y="-30" width="276" height="60" rx="30" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.7"/>
       <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.2" fill="#c8462c">COMPOUNDING VALUE</text>
-      <text x="0" y="14" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.62)">engagement · giving · 3× revenue</text>
+      <text x="0" y="14" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.62)">engagement · incentivized giving · 3× profit · networked reciprocity</text>
     </g>
 
     <!-- Clockwise arrows -->
@@ -12873,9 +12869,10 @@ const SLIDE_ORDER = [
   'cs-2c',    //  3 Community · 6-card grid (moved here per Dave 2026-04-30 PM evening)
   'cs-2b',    //  4 Built by hand · 4 manual bottlenecks [moved up to follow cs-2c per Dave 2026-05-01]
   'cs-gnr',   //  5 Introducing GnR · invitation matchmaking [NEW Dave 2026-04-30 PM evening]
-  'cs-4',     //  6 Moat — "the data exists in all our heads" [moved between cs-gnr and cs-11d per Dave 2026-05-01 — sets up "what's the data?" before showing "honest feedback" answer]
   'cs-11d','cs-11',
-  'cs-3','cs-11e',
+  'cs-3',
+  'cs-4',     //  9 Moat — "the data exists in all our heads" [moved AFTER cs-3 per Dave 2026-05-01 — pairs with the 24-experiences density story]
+  'cs-11e',
   'cs-19',    // 10 3× Net Profit · For Your Club
   'cs-fw1',   // 11 Flywheel · single loop [Dave decided ONE loop 2026-04-30 PM evening; locked as canonical 2026-05-01 — beat cs-34 in head-to-head: cleaner engine motif + better headline]
   // cs-34 (Flywheel · network effects) → APPENDIX 2026-05-01 per Dave — cs-fw1 won the head-to-head; "graph is moat" idea already covered by cs-4 + cs-ns1
@@ -13062,6 +13059,12 @@ window.cs3Reverse = function() {
   if (slide.dataset.shown !== '1') return false;
   slide.dataset.shown = '0';
   return true;
+};
+// cs-3 click toggle: click reveals AND click again un-reveals (per Dave 2026-05-01)
+window.cs3Toggle = function() {
+  const slide = document.getElementById('cs-3');
+  if (!slide || !slide.classList.contains('active')) return;
+  slide.dataset.shown = slide.dataset.shown === '1' ? '0' : '1';
 };
 
 function caseyGo(n) {
@@ -13575,18 +13578,31 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closePanel(e);
     return;
   }
-  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'd' || e.key === 'D') {
+  // 2026-05-01 keyboard rewrite per Dave:
+  //   Right arrow / Space  → advance reveal step on click-to-animate slides; if no reveal pending, advance to next slide
+  //   Left arrow            → reverse reveal step; if at start, go back to prev slide
+  //   D                     → ALWAYS advance to next slide (skip reveals — fast scrubber)
+  //   A                     → ALWAYS go back to prev slide (skip reverses — fast scrubber)
+  if (e.key === 'd' || e.key === 'D') {
     e.preventDefault();
-    // cs-1bm1 / cs-2b / cs-11d click-reveal: right arrow advances reveal step before navigating
+    if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
+    return;
+  }
+  if (e.key === 'a' || e.key === 'A') {
+    e.preventDefault();
+    if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
+    return;
+  }
+  if (e.key === 'ArrowRight' || e.key === ' ') {
+    e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  return;
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
-  if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+  if (e.key === 'ArrowLeft') {
     e.preventDefault();
-    // cs-1bm1 / cs-2b / cs-11d click-reveal: left arrow un-flips before navigating
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    return;
