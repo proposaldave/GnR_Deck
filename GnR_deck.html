@@ -5628,10 +5628,14 @@ html, body, html body{
   #cs-2b[data-shown="1"] .c2b-card-anim.c2b-5 { animation-delay: 1.45s; }  /* Communities become cliques */
   html[data-export="1"] #cs-2b .c2b-card-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 
-  /* Bottom block: HARD-hidden until reveal, fades up JUST AFTER the third card lands [Dave 2026-05-02: tightened timing — was 2.8s, last card finishes ~2.10s, so 2.20s makes "But no technology..." land right after the cards] */
-  #cs-2b .c2b-bottom { opacity: 0 !important; transition: opacity 0.6s cubic-bezier(.45,.05,.18,1) 0s; }
-  #cs-2b[data-shown="1"] .c2b-bottom { opacity: 1 !important; transition: opacity 0.6s cubic-bezier(.45,.05,.18,1) 2.20s; }
-  html[data-export="1"] #cs-2b .c2b-bottom { opacity: 1 !important; transition: none !important; }
+  /* Bottom block: HARD-hidden until reveal, fades up JUST AFTER the third card lands.
+     [Dave 2026-05-02 v2: switched from transition to animation — transition-on-rule-change was
+      unreliable on iPad Safari. Last card finishes at 2.10s; this fires at 2.30s for a clean
+      0.20s pause so "But no technology..." lands AFTER the cards.] */
+  #cs-2b .c2b-bottom { opacity: 0; transform: translateY(8px); }
+  #cs-2b[data-shown="1"] .c2b-bottom { animation: c2bBottomIn 0.7s cubic-bezier(.45,.05,.18,1) 2.30s forwards; }
+  @keyframes c2bBottomIn { to { opacity: 1; transform: translateY(0); } }
+  html[data-export="1"] #cs-2b .c2b-bottom { opacity: 1 !important; transform: none !important; animation: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-2b" data-shown="0" onclick="cs2bAdvance()" style="cursor:pointer">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Built by hand</div>
