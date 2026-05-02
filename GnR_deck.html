@@ -5628,9 +5628,9 @@ html, body, html body{
   #cs-2b[data-shown="1"] .c2b-card-anim.c2b-5 { animation-delay: 1.45s; }  /* Communities become cliques */
   html[data-export="1"] #cs-2b .c2b-card-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 
-  /* Bottom block: HARD-hidden until reveal, fades up after all 3 cards land */
-  #cs-2b .c2b-bottom { opacity: 0 !important; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1) 0s; }
-  #cs-2b[data-shown="1"] .c2b-bottom { opacity: 1 !important; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1) 2.8s; }
+  /* Bottom block: HARD-hidden until reveal, fades up JUST AFTER the third card lands [Dave 2026-05-02: tightened timing — was 2.8s, last card finishes ~2.10s, so 2.20s makes "But no technology..." land right after the cards] */
+  #cs-2b .c2b-bottom { opacity: 0 !important; transition: opacity 0.6s cubic-bezier(.45,.05,.18,1) 0s; }
+  #cs-2b[data-shown="1"] .c2b-bottom { opacity: 1 !important; transition: opacity 0.6s cubic-bezier(.45,.05,.18,1) 2.20s; }
   html[data-export="1"] #cs-2b .c2b-bottom { opacity: 1 !important; transition: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-2b" data-shown="0" onclick="cs2bAdvance()" style="cursor:pointer">
@@ -7529,41 +7529,88 @@ html, body, html body{
 <!-- Inside NEPC — bridges from cs-18 (founder built NEPC) into cs-11b (proof of operations there).
      Simplified Dave 2026-04-28: lighter framing, NEPC eyebrow, the 70/0.6 secret stays as the
      killer insight, closer is now the bridge into the operational proof slides. -->
-<!-- ===== cs-gnr — Introducing Give n Receive · invitation matchmaking [Dave 2026-04-30 PM evening] ===== -->
+<!-- ===== cs-gnr — Introducing Give n Receive · invitation matchmaking
+     v2 redesign [Dave 2026-05-02]: dropped 6-person hexagon (wrong metaphor — broadcast feel).
+     Replaced with premium invitation-card hero: YOUR perspective, YOUR foursome, YOUR personalization. ===== -->
 <style>
-  #cs-gnr .gnr-stage { position:relative; width:min(640px,68vmin); height:min(640px,68vmin); margin:24px auto 0; }
-  #cs-gnr .gnr-stage svg { width:100%; height:100%; }
-  /* Center envelope */
-  #cs-gnr .gnr-envelope { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:34%; max-width:220px; z-index:3; filter:drop-shadow(0 8px 22px rgba(184,149,74,0.22)); animation: gnrEnvFloat 4.5s ease-in-out infinite; }
-  @keyframes gnrEnvFloat { 0%,100% { transform:translate(-50%,-50%); } 50% { transform:translate(-50%,calc(-50% - 5px)); } }
-  /* People circles around envelope — perfect hexagon centered on stage [Dave 2026-04-30 PM evening fix] */
-  #cs-gnr .gnr-person { position:absolute; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:2; box-shadow:0 4px 14px rgba(26,22,18,0.08); transform:translate(-50%,-50%); opacity:0; }
-  #cs-gnr .gnr-person svg { width:30px; height:30px; }
-  #cs-gnr.active .gnr-person { animation: gnrPersonIn 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
-  @keyframes gnrPersonIn { from { opacity:0; transform:translate(-50%,-50%) scale(0.7); } to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
-  #cs-gnr.active .gnr-p1 { animation-delay: 0.7s; }
-  #cs-gnr.active .gnr-p2 { animation-delay: 0.85s; }
-  #cs-gnr.active .gnr-p3 { animation-delay: 1.0s; }
-  #cs-gnr.active .gnr-p4 { animation-delay: 1.15s; }
-  #cs-gnr.active .gnr-p5 { animation-delay: 1.3s; }
-  #cs-gnr.active .gnr-p6 { animation-delay: 1.45s; }
-  /* Dashed gold lines from envelope to each person */
-  #cs-gnr .gnr-lines path { stroke:#b8954a; stroke-width:1.5; stroke-dasharray:4 4; fill:none; opacity:0; }
-  #cs-gnr.active .gnr-lines path { animation: gnrLineIn 0.5s ease forwards; }
-  @keyframes gnrLineIn { from { opacity:0; } to { opacity:0.55; } }
-  #cs-gnr.active .gnr-lines path:nth-child(1) { animation-delay: 0.7s; }
-  #cs-gnr.active .gnr-lines path:nth-child(2) { animation-delay: 0.85s; }
-  #cs-gnr.active .gnr-lines path:nth-child(3) { animation-delay: 1.0s; }
-  #cs-gnr.active .gnr-lines path:nth-child(4) { animation-delay: 1.15s; }
-  #cs-gnr.active .gnr-lines path:nth-child(5) { animation-delay: 1.3s; }
-  #cs-gnr.active .gnr-lines path:nth-child(6) { animation-delay: 1.45s; }
-  html[data-export="1"] #cs-gnr .gnr-person { opacity:1 !important; transform:translate(-50%,-50%) scale(1) !important; animation:none !important; }
-  html[data-export="1"] #cs-gnr .gnr-lines path { opacity:.55 !important; animation:none !important; }
-  html[data-export="1"] #cs-gnr .gnr-envelope { animation:none !important; }
-  /* Caption */
-  #cs-gnr .gnr-caption { font-family:'Manrope',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.32em; text-transform:uppercase; color:rgba(184,149,74,0.85); margin-top:10px; }
-  /* 3 emphasis callouts framing the stage [Dave 2026-05-02] */
-  #cs-gnr .gnr-callout { position:absolute; max-width:230px; opacity:0; }
+  #cs-gnr .gnr-stage { position:relative; width:min(720px,82vmin); margin:14px auto 0; }
+  /* Envelope behind card — peeks above + below to reinforce "delivered to you" */
+  #cs-gnr .gnr-env-bg { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) rotate(-3deg); width:108%; max-width:760px; z-index:1; opacity:0; filter:drop-shadow(0 18px 44px rgba(184,149,74,0.28)); }
+  #cs-gnr.active .gnr-env-bg { animation: gnrEnvBgIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.15s; }
+  @keyframes gnrEnvBgIn { from { opacity:0; transform:translate(-50%,calc(-50% + 18px)) rotate(-5deg); } to { opacity:1; transform:translate(-50%,-50%) rotate(-3deg); } }
+
+  /* The invitation card — premium, gold-lined, like a wedding invitation re-imagined */
+  #cs-gnr .gnr-invite {
+    position:relative;
+    z-index:3;
+    background: linear-gradient(180deg, #fcf6e7 0%, #f3ead8 100%);
+    border: 1.5px solid rgba(184,149,74,0.45);
+    border-radius: 14px;
+    padding: 26px 36px 22px;
+    box-shadow: 0 28px 64px rgba(184,149,74,0.18), 0 6px 16px rgba(26,22,18,0.06), inset 0 1px 0 rgba(255,255,255,0.7);
+    transform: translateY(14px); opacity: 0;
+  }
+  #cs-gnr.active .gnr-invite { animation: gnrCardIn 0.85s cubic-bezier(.45,.05,.18,1) forwards 0.45s; }
+  @keyframes gnrCardIn { to { transform: translateY(0); opacity: 1; } }
+  /* Decorative gold corner accents — subtle stationery feel */
+  #cs-gnr .gnr-corner { position: absolute; width: 22px; height: 22px; border: 1.5px solid #b8954a; opacity: 0.32; }
+  #cs-gnr .gnr-corner-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; border-top-left-radius: 4px; }
+  #cs-gnr .gnr-corner-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; border-top-right-radius: 4px; }
+  #cs-gnr .gnr-corner-bl { bottom: 10px; left: 10px; border-right: none; border-top: none; border-bottom-left-radius: 4px; }
+  #cs-gnr .gnr-corner-br { bottom: 10px; right: 10px; border-left: none; border-top: none; border-bottom-right-radius: 4px; }
+
+  /* Top eyebrow row: GnR mark · INVITATION · FOR YOU */
+  #cs-gnr .gnr-eyebrow { display:flex; align-items:center; justify-content:space-between; margin-bottom: 14px; }
+  #cs-gnr .gnr-eyebrow-left { display:flex; align-items:center; gap:10px; font-family:'Manrope',sans-serif; font-size:.55rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:rgba(26,22,18,0.55); }
+  #cs-gnr .gnr-mark-sm { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; letter-spacing:0; }
+  #cs-gnr .gnr-mark-sm .g { color:#4d82c6; } #cs-gnr .gnr-mark-sm .n { color:#1a1612; font-style:italic; font-size:0.72em; padding:0 0.04em; } #cs-gnr .gnr-mark-sm .r { color:#c94d32; }
+  #cs-gnr .gnr-foryou { display:inline-flex; align-items:center; gap:7px; padding:4px 11px; background:linear-gradient(180deg,rgba(184,149,74,0.18),rgba(184,149,74,0.10)); border:1px solid rgba(184,149,74,0.55); border-radius:99px; font-family:'Manrope',sans-serif; font-size:.5rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:#8a6a2a; }
+  #cs-gnr .gnr-foryou-dot { width:14px; height:14px; border-radius:50%; background:linear-gradient(135deg,#b8954a,#8a6a2a); border:1.5px solid #faf0d6; box-shadow:0 0 0 1px rgba(184,149,74,0.55); }
+
+  /* Headline + sub */
+  #cs-gnr .gnr-headline { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.5rem,3.0vw,2.2rem); font-weight:700; color:#1a1612; line-height:1.08; letter-spacing:-0.022em; margin-bottom:4px; }
+  #cs-gnr .gnr-headline em { font-style:italic; font-weight:500; color:#b8954a; }
+  #cs-gnr .gnr-subline { font-family:'Playfair Display',serif; font-style:italic; font-size:.85rem; color:rgba(26,22,18,0.6); margin-bottom:18px; }
+
+  /* Match-meta row: WHEN · WHERE · LEVEL */
+  #cs-gnr .gnr-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:12px 0; border-top:1px solid rgba(184,149,74,0.22); border-bottom:1px solid rgba(184,149,74,0.22); margin-bottom:18px; }
+  #cs-gnr .gnr-meta-cell { text-align:left; }
+  #cs-gnr .gnr-meta-label { font-family:'Manrope',sans-serif; font-size:.46rem; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color:rgba(26,22,18,0.45); margin-bottom:3px; }
+  #cs-gnr .gnr-meta-value { font-family:'Playfair Display',serif; font-size:.92rem; font-weight:700; color:#1a1612; line-height:1.15; }
+  #cs-gnr .gnr-meta-value em { font-style:italic; font-weight:500; color:rgba(26,22,18,0.6); }
+
+  /* Foursome row — YOU + 3 others, named */
+  #cs-gnr .gnr-fs-label { font-family:'Manrope',sans-serif; font-size:.5rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:#b8954a; margin-bottom:10px; text-align:left; }
+  #cs-gnr .gnr-fs-row { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+  #cs-gnr .gnr-fs-you { display:flex; flex-direction:column; align-items:center; gap:5px; padding:6px 10px 8px; background:linear-gradient(180deg,rgba(184,149,74,0.16),rgba(184,149,74,0.06)); border:1.5px solid #b8954a; border-radius:12px; box-shadow:0 4px 12px rgba(184,149,74,0.18); }
+  #cs-gnr .gnr-fs-plus { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:300; color:rgba(184,149,74,0.65); padding:0 4px; }
+  #cs-gnr .gnr-fs-others { display:flex; gap:8px; flex:1; }
+  #cs-gnr .gnr-fs-card { display:flex; flex-direction:column; align-items:center; gap:5px; padding:6px 8px 8px; flex:1; background:rgba(255,255,255,0.5); border:1px solid rgba(26,22,18,0.10); border-radius:10px; }
+  #cs-gnr .gnr-fs-avatar { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(26,22,18,0.10); }
+  #cs-gnr .gnr-fs-avatar svg { width:22px; height:22px; }
+  #cs-gnr .gnr-fs-name { font-family:'Playfair Display',serif; font-size:.78rem; font-weight:700; color:#1a1612; line-height:1; }
+  #cs-gnr .gnr-fs-tag { font-family:'Manrope',sans-serif; font-size:.42rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.5); line-height:1; }
+  #cs-gnr .gnr-fs-you-tag { color:#b8954a; }
+
+  /* Why-you signal — the personalization annotation that makes investors gasp */
+  #cs-gnr .gnr-why { display:flex; align-items:flex-start; gap:10px; padding:12px 14px; background:rgba(91,143,212,0.06); border-left:2.5px solid #5B8FD4; border-radius:0 8px 8px 0; margin-bottom:6px; }
+  #cs-gnr .gnr-why-spark { font-family:'Playfair Display',serif; font-size:1rem; color:#5B8FD4; line-height:1; font-weight:700; flex-shrink:0; padding-top:1px; }
+  #cs-gnr .gnr-why-text { font-family:'Playfair Display',serif; font-style:italic; font-size:.74rem; line-height:1.4; color:rgba(26,22,18,0.78); text-align:left; }
+  #cs-gnr .gnr-why-text strong { font-style:normal; font-weight:700; color:#1a1612; }
+
+  /* Bottom strip — RSVP CTA mock */
+  #cs-gnr .gnr-cta-row { display:flex; align-items:center; justify-content:flex-end; gap:10px; margin-top:14px; padding-top:12px; border-top:1px dashed rgba(184,149,74,0.32); }
+  #cs-gnr .gnr-cta-pass { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.5); padding:8px 14px; }
+  #cs-gnr .gnr-cta-rsvp { display:inline-flex; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-size:.65rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:#faf0d6; background:linear-gradient(180deg,#b8954a,#8a6a2a); padding:9px 16px; border-radius:99px; box-shadow:0 4px 14px rgba(184,149,74,0.32); animation: gnrPulse 2.4s ease-in-out infinite 2.5s; }
+  @keyframes gnrPulse { 0%,100% { box-shadow:0 4px 14px rgba(184,149,74,0.32); } 50% { box-shadow:0 4px 20px rgba(184,149,74,0.55), 0 0 0 4px rgba(184,149,74,0.10); } }
+  html[data-export="1"] #cs-gnr .gnr-cta-rsvp { animation:none !important; }
+
+  html[data-export="1"] #cs-gnr .gnr-invite,
+  html[data-export="1"] #cs-gnr .gnr-env-bg { transform:none !important; opacity:1 !important; animation:none !important; }
+  html[data-export="1"] #cs-gnr .gnr-env-bg { transform:translate(-50%,-50%) rotate(-3deg) !important; }
+
+  /* 3 emphasis callouts (kept) */
+  #cs-gnr .gnr-callout { max-width:230px; opacity:0; }
   #cs-gnr.active .gnr-callout { animation: gnrCalloutIn 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
   @keyframes gnrCalloutIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
   #cs-gnr.active .gnr-callout-1 { animation-delay: 1.6s; }
@@ -7573,15 +7620,6 @@ html, body, html body{
   #cs-gnr .gnr-cnum { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:#b8954a; color:#f3ead8; font-family:'Playfair Display',serif; font-size:0.78rem; font-weight:700; margin-bottom:6px; box-shadow:0 2px 6px rgba(184,149,74,0.3); }
   #cs-gnr .gnr-ctitle { font-family:'Fraunces','Playfair Display',serif; font-size:0.95rem; font-weight:700; color:#1a1612; line-height:1.2; margin-bottom:3px; letter-spacing:-0.005em; }
   #cs-gnr .gnr-cdesc { font-family:'Playfair Display',serif; font-style:italic; font-size:0.78rem; line-height:1.35; color:rgba(26,22,18,0.65); }
-  /* Foursome preview strip on/under envelope [Dave 2026-05-02] */
-  #cs-gnr .gnr-preview { position:absolute; left:50%; top:50%; transform:translate(-50%, calc(-50% + 88px)); z-index:5; display:flex; gap:8px; align-items:center; background:#f3ead8; border:1.5px solid #b8954a; border-radius:99px; padding:5px 12px 5px 10px; box-shadow:0 6px 16px rgba(184,149,74,0.22); opacity:0; }
-  #cs-gnr.active .gnr-preview { animation: gnrPreviewIn 0.6s cubic-bezier(.45,.05,.18,1) forwards; animation-delay: 1.4s; }
-  @keyframes gnrPreviewIn { from { opacity:0; transform:translate(-50%, calc(-50% + 100px)); } to { opacity:1; transform:translate(-50%, calc(-50% + 88px)); } }
-  html[data-export="1"] #cs-gnr .gnr-preview { opacity:1 !important; transform:translate(-50%, calc(-50% + 88px)) !important; animation:none !important; }
-  #cs-gnr .gnr-preview-label { font-family:'Manrope',sans-serif; font-size:0.5rem; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:#b8954a; }
-  #cs-gnr .gnr-preview-faces { display:flex; align-items:center; }
-  #cs-gnr .gnr-preview-face { width:20px; height:20px; border-radius:50%; border:1.5px solid #f3ead8; margin-left:-5px; box-shadow:0 1px 3px rgba(26,22,18,0.18); }
-  #cs-gnr .gnr-preview-face:first-child { margin-left:0; }
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr">
 <section style="position:relative;min-height:100%;width:100%">
@@ -7592,51 +7630,105 @@ html, body, html body{
     <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> is <em style="font-style:italic;font-weight:500;color:#b8954a">invitation-based matchmaking for our communities.</em>
   </div>
 
-  <!-- "Learns from every RSVP" sub-line removed 2026-05-01 per Dave -->
-
-  <!-- Center stage: envelope + 6 people around it, dashed gold connections -->
+  <!-- ===== Center stage: PREMIUM INVITATION CARD — your perspective, your foursome [Dave 2026-05-02 v2] =====
+       Replaced the 6-person hexagon (broadcast metaphor — wrong) with a designed invitation card
+       that shows what GnR feels like when it lands in YOUR feed. ===== -->
   <div class="gnr-stage">
-    <!-- Dashed connection lines (perfect hexagon math: r=210 in 600x600 viewBox, center=(300,300)) -->
-    <svg class="gnr-lines" viewBox="0 0 600 600" style="position:absolute;inset:0;z-index:1">
-      <path d="M 300 300 L 300 90"/>
-      <path d="M 300 300 L 482 195"/>
-      <path d="M 300 300 L 482 405"/>
-      <path d="M 300 300 L 300 510"/>
-      <path d="M 300 300 L 118 405"/>
-      <path d="M 300 300 L 118 195"/>
-    </svg>
+    <!-- Soft envelope shadow behind the card (the invitation arrived in this) -->
+    <img class="gnr-env-bg" src="design_refs/envelope_gnr.png" alt=""/>
 
-    <!-- Envelope at center -->
-    <img class="gnr-envelope" src="design_refs/envelope_gnr.png" alt="GnR invitation envelope"/>
+    <!-- The invitation itself -->
+    <div class="gnr-invite">
+      <div class="gnr-corner gnr-corner-tl"></div>
+      <div class="gnr-corner gnr-corner-tr"></div>
+      <div class="gnr-corner gnr-corner-bl"></div>
+      <div class="gnr-corner gnr-corner-br"></div>
 
-    <!-- 6 people: perfect hexagon at r=42% from stage center, transform:translate(-50%,-50%) centers each dot on its position [Dave 2026-04-30 PM alignment fix] -->
-    <div class="gnr-person gnr-p1" style="left:50%;top:8%;background:rgba(91,143,212,0.12);border:1.5px solid rgba(91,143,212,0.5)">
-      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#5B8FD4"/><path d="M5 28 Q16 20 27 28" stroke="#5B8FD4" stroke-width="2.4" fill="rgba(91,143,212,0.25)" stroke-linecap="round"/></svg>
-    </div>
-    <div class="gnr-person gnr-p2" style="left:86.4%;top:29%;background:rgba(200,70,44,0.10);border:1.5px solid rgba(200,70,44,0.5)">
-      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#c8462c"/><path d="M5 28 Q16 20 27 28" stroke="#c8462c" stroke-width="2.4" fill="rgba(200,70,44,0.25)" stroke-linecap="round"/></svg>
-    </div>
-    <div class="gnr-person gnr-p3" style="left:86.4%;top:71%;background:rgba(184,149,74,0.12);border:1.5px solid rgba(184,149,74,0.55)">
-      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#b8954a"/><path d="M5 28 Q16 20 27 28" stroke="#b8954a" stroke-width="2.4" fill="rgba(184,149,74,0.25)" stroke-linecap="round"/></svg>
-    </div>
-    <div class="gnr-person gnr-p4" style="left:50%;top:92%;background:rgba(74,140,94,0.12);border:1.5px solid rgba(74,140,94,0.5)">
-      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#4a8c5e"/><path d="M5 28 Q16 20 27 28" stroke="#4a8c5e" stroke-width="2.4" fill="rgba(74,140,94,0.25)" stroke-linecap="round"/></svg>
-    </div>
-    <div class="gnr-person gnr-p5" style="left:13.6%;top:71%;background:rgba(122,74,140,0.10);border:1.5px solid rgba(122,74,140,0.5)">
-      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#7a4a8c"/><path d="M5 28 Q16 20 27 28" stroke="#7a4a8c" stroke-width="2.4" fill="rgba(122,74,140,0.25)" stroke-linecap="round"/></svg>
-    </div>
-    <div class="gnr-person gnr-p6" style="left:13.6%;top:29%;background:rgba(91,168,150,0.12);border:1.5px solid rgba(91,168,150,0.55)">
-      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#5fa896"/><path d="M5 28 Q16 20 27 28" stroke="#5fa896" stroke-width="2.4" fill="rgba(91,168,150,0.25)" stroke-linecap="round"/></svg>
-    </div>
+      <!-- Eyebrow: GnR mark · INVITATION · FOR YOU pill -->
+      <div class="gnr-eyebrow">
+        <div class="gnr-eyebrow-left">
+          <span class="gnr-mark-sm"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span>
+          <span style="opacity:0.4">·</span>
+          <span>Invitation</span>
+        </div>
+        <div class="gnr-foryou">
+          <span class="gnr-foryou-dot"></span>
+          <span>For you</span>
+        </div>
+      </div>
 
-    <!-- Foursome preview strip — sits just below the envelope, shows who else is invited [Dave 2026-05-02] -->
-    <div class="gnr-preview">
-      <div class="gnr-preview-label">Joining you</div>
-      <div class="gnr-preview-faces">
-        <!-- 3 faces (was 4) — Dave 2026-05-02: matches foursome metaphor (you + 3 others) -->
-        <div class="gnr-preview-face" style="background:#5B8FD4"></div>
-        <div class="gnr-preview-face" style="background:#c8462c"></div>
-        <div class="gnr-preview-face" style="background:#4a8c5e"></div>
+      <!-- Headline -->
+      <div class="gnr-headline">Tuesday's <em>foursome.</em></div>
+      <div class="gnr-subline">Hand-picked for you by Give &lsquo;n Receive.</div>
+
+      <!-- Match meta -->
+      <div class="gnr-meta">
+        <div class="gnr-meta-cell">
+          <div class="gnr-meta-label">When</div>
+          <div class="gnr-meta-value">Tue &middot; 6:30 PM <em style="display:block;font-size:.7rem">2 hours</em></div>
+        </div>
+        <div class="gnr-meta-cell">
+          <div class="gnr-meta-label">Where</div>
+          <div class="gnr-meta-value">Rye, NH <em style="display:block;font-size:.7rem">Court 3</em></div>
+        </div>
+        <div class="gnr-meta-cell">
+          <div class="gnr-meta-label">Level</div>
+          <div class="gnr-meta-value">3.5 mixed <em style="display:block;font-size:.7rem">competitive · friendly</em></div>
+        </div>
+      </div>
+
+      <!-- Foursome row -->
+      <div class="gnr-fs-label">Joining you</div>
+      <div class="gnr-fs-row">
+        <!-- YOU card (gold-bordered, anchors the "this is YOUR invitation" framing) -->
+        <div class="gnr-fs-you">
+          <div class="gnr-fs-avatar" style="background:linear-gradient(135deg,rgba(184,149,74,0.22),rgba(184,149,74,0.08));border:1.5px solid #b8954a">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#b8954a"/><path d="M5 28 Q16 20 27 28" stroke="#b8954a" stroke-width="2.4" fill="rgba(184,149,74,0.32)" stroke-linecap="round"/></svg>
+          </div>
+          <div class="gnr-fs-name">You</div>
+          <div class="gnr-fs-tag gnr-fs-you-tag">3.5 &middot; ME</div>
+        </div>
+
+        <span class="gnr-fs-plus">+</span>
+
+        <!-- 3 others -->
+        <div class="gnr-fs-others">
+          <div class="gnr-fs-card">
+            <div class="gnr-fs-avatar" style="background:rgba(91,143,212,0.12);border:1px solid rgba(91,143,212,0.4)">
+              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#5B8FD4"/><path d="M5 28 Q16 20 27 28" stroke="#5B8FD4" stroke-width="2.4" fill="rgba(91,143,212,0.25)" stroke-linecap="round"/></svg>
+            </div>
+            <div class="gnr-fs-name">Sarah</div>
+            <div class="gnr-fs-tag">3.5 &middot; partner</div>
+          </div>
+          <div class="gnr-fs-card">
+            <div class="gnr-fs-avatar" style="background:rgba(200,70,44,0.10);border:1px solid rgba(200,70,44,0.4)">
+              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#c8462c"/><path d="M5 28 Q16 20 27 28" stroke="#c8462c" stroke-width="2.4" fill="rgba(200,70,44,0.25)" stroke-linecap="round"/></svg>
+            </div>
+            <div class="gnr-fs-name">Mike</div>
+            <div class="gnr-fs-tag">3.5 &middot; opp</div>
+          </div>
+          <div class="gnr-fs-card">
+            <div class="gnr-fs-avatar" style="background:rgba(74,140,94,0.12);border:1px solid rgba(74,140,94,0.4)">
+              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#4a8c5e"/><path d="M5 28 Q16 20 27 28" stroke="#4a8c5e" stroke-width="2.4" fill="rgba(74,140,94,0.25)" stroke-linecap="round"/></svg>
+            </div>
+            <div class="gnr-fs-name">Jen</div>
+            <div class="gnr-fs-tag">3.5 &middot; opp</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why-you signal — the personalization that makes investors gasp -->
+      <div class="gnr-why">
+        <div class="gnr-why-spark">✦</div>
+        <div class="gnr-why-text">
+          <strong>Why this group?</strong>&nbsp; Sarah requested you. You haven&rsquo;t played Mike in 3 weeks. Jen&rsquo;s pace lifts your level.
+        </div>
+      </div>
+
+      <!-- RSVP CTA strip -->
+      <div class="gnr-cta-row">
+        <span class="gnr-cta-pass">Pass</span>
+        <span class="gnr-cta-rsvp">RSVP &rarr;</span>
       </div>
     </div>
   </div>
