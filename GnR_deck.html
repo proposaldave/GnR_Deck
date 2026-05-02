@@ -6418,21 +6418,46 @@ html, body, html body{
       <!-- TOP: GREEN HERO — FLIP CARD [Dave 2026-05-02 PM v2: front = simple graphic NO TEXT, back = existing rich content] -->
       <div class="cs4-anim cs4-green cs4-flip-wrap" onclick="cs4ToggleTop();event.stopPropagation()">
        <div class="cs4-flip-inner cs4-flip-top" style="min-height:380px">
-        <!-- FRONT: simple "private thoughts" graphic — head with thought bubbles, NO TEXT -->
+        <!-- FRONT: side-profile head with thought-bubbles containing OTHER PEOPLE
+             ("private thoughts and feelings about each other") — Dave 2026-05-02 PM v2 -->
         <div class="cs4-flip-front" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1.5px solid rgba(61,255,122,0.42);border-radius:18px;padding:36px;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12)">
-          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="100" cy="92" rx="60" ry="56" fill="rgba(42,138,79,0.06)" stroke="#2a8a4f" stroke-width="2.2"/>
-            <circle cx="76" cy="74" r="10" fill="rgba(184,149,74,0.30)" stroke="#b8954a" stroke-width="1.6"/>
-            <circle cx="124" cy="70" r="10" fill="rgba(91,143,212,0.30)" stroke="#5B8FD4" stroke-width="1.6"/>
-            <circle cx="74" cy="116" r="10" fill="rgba(184,71,92,0.30)" stroke="#b8475c" stroke-width="1.6"/>
-            <circle cx="126" cy="118" r="10" fill="rgba(122,74,140,0.30)" stroke="#7a4a8c" stroke-width="1.6"/>
-            <line x1="76" y1="74" x2="124" y2="70" stroke="#2a8a4f" stroke-width="0.8" opacity="0.5"/>
-            <line x1="76" y1="74" x2="74" y2="116" stroke="#2a8a4f" stroke-width="0.8" opacity="0.5"/>
-            <line x1="124" y1="70" x2="126" y2="118" stroke="#2a8a4f" stroke-width="0.8" opacity="0.5"/>
-            <line x1="74" y1="116" x2="126" y2="118" stroke="#2a8a4f" stroke-width="0.8" opacity="0.5"/>
-            <line x1="76" y1="74" x2="126" y2="118" stroke="#2a8a4f" stroke-width="0.8" opacity="0.3"/>
-            <line x1="124" y1="70" x2="74" y2="116" stroke="#2a8a4f" stroke-width="0.8" opacity="0.3"/>
-            <ellipse cx="100" cy="172" rx="52" ry="6" fill="rgba(26,22,18,0.06)"/>
+          <svg width="380" height="260" viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Side-profile head silhouette (bottom-left) — clearly a head looking right -->
+            <g transform="translate(40 60)">
+              <path d="M 30 20 Q 30 0 65 0 Q 100 0 105 30 L 110 50 Q 116 50 116 60 Q 116 70 108 72 L 105 95 Q 100 130 65 130 L 60 130 Q 60 145 70 155 L 70 170 L 0 170 L 0 145 Q 0 130 18 122 Q 30 110 30 95 Z"
+                    fill="rgba(42,138,79,0.10)" stroke="#2a8a4f" stroke-width="2.4" stroke-linejoin="round"/>
+              <circle cx="80" cy="55" r="3" fill="#2a8a4f"/>
+            </g>
+            <!-- Trail of small dots leading from head into thought-bubble cluster -->
+            <circle cx="172" cy="70" r="3" fill="rgba(42,138,79,0.45)"/>
+            <circle cx="184" cy="58" r="4.5" fill="rgba(42,138,79,0.55)"/>
+            <circle cx="200" cy="50" r="6" fill="rgba(42,138,79,0.65)"/>
+
+            <!-- 4 thought-bubbles, each containing a different person silhouette -->
+            <g transform="translate(220 12)">
+              <!-- Bubble 1: gold person -->
+              <circle cx="22" cy="22" r="22" fill="rgba(184,149,74,0.16)" stroke="#b8954a" stroke-width="2"/>
+              <circle cx="22" cy="17" r="5" fill="#b8954a"/>
+              <path d="M 11 36 Q 22 28 33 36" stroke="#b8954a" stroke-width="2.4" fill="rgba(184,149,74,0.30)" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(290 36)">
+              <!-- Bubble 2: blue person -->
+              <circle cx="22" cy="22" r="22" fill="rgba(91,143,212,0.16)" stroke="#5B8FD4" stroke-width="2"/>
+              <circle cx="22" cy="17" r="5" fill="#5B8FD4"/>
+              <path d="M 11 36 Q 22 28 33 36" stroke="#5B8FD4" stroke-width="2.4" fill="rgba(91,143,212,0.30)" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(220 96)">
+              <!-- Bubble 3: pink person -->
+              <circle cx="22" cy="22" r="22" fill="rgba(184,71,92,0.16)" stroke="#b8475c" stroke-width="2"/>
+              <circle cx="22" cy="17" r="5" fill="#b8475c"/>
+              <path d="M 11 36 Q 22 28 33 36" stroke="#b8475c" stroke-width="2.4" fill="rgba(184,71,92,0.30)" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(290 122)">
+              <!-- Bubble 4: purple person -->
+              <circle cx="22" cy="22" r="22" fill="rgba(122,74,140,0.16)" stroke="#7a4a8c" stroke-width="2"/>
+              <circle cx="22" cy="17" r="5" fill="#7a4a8c"/>
+              <path d="M 11 36 Q 22 28 33 36" stroke="#7a4a8c" stroke-width="2.4" fill="rgba(122,74,140,0.30)" stroke-linecap="round"/>
+            </g>
           </svg>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
         </div>
@@ -6894,19 +6919,25 @@ html, body, html body{
       <!-- BOTTOM: RED — FLIP CARD [Dave 2026-05-02 PM v2: front = simple graphic NO TEXT, back = existing rich content] -->
       <div class="cs4-anim cs4-red cs4-flip-wrap cs4-red-wrap" onclick="cs4ToggleBottom();event.stopPropagation()">
        <div class="cs4-flip-inner cs4-flip-bottom" style="min-height:200px">
-        <!-- FRONT: simple stick-person silhouette with X overlay, NO TEXT -->
-        <div class="cs4-flip-front" style="width:100%;background:rgba(224,64,64,0.04);border:1.5px solid rgba(224,64,64,0.32);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:center;min-height:200px;position:relative;overflow:hidden">
-          <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.7" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <line x1="6" y1="8" x2="94" y2="92" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
-            <line x1="94" y1="8" x2="6" y2="92" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
-          </svg>
-          <svg width="120" height="140" viewBox="0 0 120 140" fill="none" style="flex-shrink:0">
-            <circle cx="60" cy="32" r="18" fill="none" stroke="rgba(26,22,18,0.40)" stroke-width="2.4"/>
-            <line x1="60" y1="50" x2="60" y2="90" stroke="rgba(26,22,18,0.40)" stroke-width="2.4"/>
-            <line x1="42" y1="70" x2="78" y2="70" stroke="rgba(26,22,18,0.40)" stroke-width="2.4"/>
-            <line x1="60" y1="90" x2="45" y2="120" stroke="rgba(26,22,18,0.40)" stroke-width="2.4"/>
-            <line x1="60" y1="90" x2="75" y2="120" stroke="rgba(26,22,18,0.40)" stroke-width="2.4"/>
-          </svg>
+        <!-- FRONT: giant "3.0" struck through — universally reads as "skill rating, killed" — Dave 2026-05-02 PM v2 -->
+        <div class="cs4-flip-front" style="width:100%;background:rgba(224,64,64,0.04);border:1.5px solid rgba(224,64,64,0.32);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:center;gap:36px;min-height:200px;position:relative;overflow:hidden">
+          <!-- Stars row + 3.0 badge with strike-through line -->
+          <div style="display:flex;align-items:center;gap:24px;position:relative">
+            <!-- 5 stars (3 filled, 2 empty) -->
+            <div style="display:flex;gap:5px">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="rgba(26,22,18,0.30)"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="rgba(26,22,18,0.30)"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="rgba(26,22,18,0.30)"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="rgba(26,22,18,0.30)" stroke-width="1.8"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="rgba(26,22,18,0.30)" stroke-width="1.8"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
+            </div>
+            <!-- The number -->
+            <div style="font-family:'Playfair Display',serif;font-size:84px;font-weight:900;color:rgba(26,22,18,0.55);line-height:1;letter-spacing:-0.04em">3.0</div>
+            <!-- diagonal strike-through across stars + number -->
+            <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <line x1="2" y1="92" x2="98" y2="8" stroke="#c8462c" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
         </div>
         <!-- BACK: existing 3.0 + skill-rating content -->
@@ -6986,7 +7017,7 @@ html, body, html body{
 <!-- 2026-05-02: cs-11 converted per Dave: header-only on load, BEFORE/AFTER as flip cards, 'Scheduling is measuring' as bottom card -->
 <div class="casey-slide ds-focus" id="cs-11" data-shown="0" data-left-flipped="0" data-right-flipped="0" onclick="cs11Advance()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">How do you measure connection?</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Scheduling is measuring.</div>
 <style>
   /* cs-11 entrance — Dave 2026-04-29 v2:
      Phase 1: 4 invitation rows pop in one-by-one (left).
@@ -7314,12 +7345,7 @@ html, body, html body{
     </div>
   </div>
 
-  <!-- "Scheduling is measuring." now a styled bottom card per Dave 2026-05-02 -->
-  <div class="cs11-bottom-card" style="display:inline-flex;align-items:center;gap:14px;padding:14px 26px;background:linear-gradient(180deg,rgba(184,149,74,0.10),rgba(184,149,74,0.03));border:1.5px solid rgba(184,149,74,0.42);border-radius:14px;box-shadow:0 6px 20px rgba(184,149,74,0.14);margin:8px auto 0">
-    <span style="font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;white-space:nowrap">The insight</span>
-    <span style="width:1px;height:22px;background:rgba(184,149,74,0.32)"></span>
-    <span style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.1rem,1.85vw,1.5rem);font-weight:700;color:#1a1612;line-height:1.2">Scheduling <em style="color:#b8954a;font-style:italic;font-weight:600">is measuring.</em></span>
-  </div>
+  <!-- "Scheduling is measuring" bottom card deleted per Dave 2026-05-02 PM (now lives as the slide eyebrow) -->
 
 </div>
 </section>
