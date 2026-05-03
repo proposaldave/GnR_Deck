@@ -7406,8 +7406,9 @@ html, body, html body{
     <!-- RIGHT: Group Formation (FLIP CARD [Dave 2026-05-02 PM]) — front = simple graphic, back = social experience clusters -->
     <div class="cs11-flip-wrap" onclick="cs11ToggleRight();event.stopPropagation()">
      <div class="cs11-flip-inner cs11-flip-right">
-      <!-- FRONT: ONE group of 4 (cleaner — was 4 groups, simplified per Dave 2026-05-02 PM) -->
-      <div class="cs11-flip-front" style="background:rgba(61,255,122,0.04);border:1.5px solid rgba(61,255,122,0.42);border-radius:14px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:300px;position:relative">
+      <!-- FRONT: ONE group of 4 + 'IN THE ROOM' eyebrow (parallel to LEFT 'BEFORE THE ROOM') [Dave 2026-05-03 PM] -->
+      <div class="cs11-flip-front" style="background:rgba(61,255,122,0.04);border:1.5px solid rgba(61,255,122,0.42);border-radius:14px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:300px;position:relative">
+        <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,138,79,0.85);text-align:center">In the room</div>
         <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="90" cy="90" r="68" fill="rgba(61,255,122,0.05)" stroke="rgba(61,255,122,0.50)" stroke-width="2.4" stroke-dasharray="7 5"/>
           <circle cx="68" cy="68" r="14" fill="rgba(91,143,212,0.30)" stroke="#5B8FD4" stroke-width="2"/>
@@ -7417,9 +7418,9 @@ html, body, html body{
         </svg>
         <div class="cs11-flip-hint">&#x21BB; flip</div>
       </div>
-      <!-- BACK: simplified — just the 4 group circles, no rectangle list / legend / header.
-           Per Dave 2026-05-03: "i dont like this content, get rid of it and move the four circles as the content inside this box" -->
-      <div class="cs11-flip-back" style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.32);border-radius:14px;padding:32px;display:flex;align-items:center;justify-content:center;position:absolute;inset:0;transform:rotateY(180deg)">
+      <!-- BACK: 4 group circles + 'IN THE ROOM' eyebrow (parallel to FRONT and to LEFT 'BEFORE THE ROOM') -->
+      <div class="cs11-flip-back" style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.32);border-radius:14px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:absolute;inset:0;transform:rotateY(180deg)">
+        <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,138,79,0.85);text-align:center">In the room</div>
         <svg viewBox="0 0 56 56" width="240" height="240">
           <!-- 4 group clusters: each wrapped in <g class="cs11-group"> for staggered bloom. Dave 2026-04-29 v2 -->
           <g class="cs11-group">
@@ -7567,7 +7568,8 @@ html, body, html body{
     #cs-3 .cs3-closer em { color: #c8462c; font-style: italic; }
 </style>
 
-<div class="cs3-eyebrow">24 unique social experiences per week</div>
+<!-- cs3 eyebrow uses inline style identical to every other slide's top-left label spec [Dave 2026-05-03 PM] -->
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">24 unique social experiences per week</div>
 
 <div class="cs3-headline cs3-anim">
     Pickleball is the <em>fastest-growing, highest-velocity,<br>
