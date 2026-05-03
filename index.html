@@ -11309,6 +11309,64 @@ html, body, html body{
 
 <!-- ===== APPENDIX SLIDES ===== -->
 
+<!-- ===== cs-about · BRAND · "It's About" — appendix slide built from Dave's brand brain dump 2026-05-03 PM.
+     Editorial paper-aesthetic poem: stacked "It's about ___" lines with subtle thematic grouping
+     (the feeling → the act → the outcome). Distilled from his voice transcript. ===== -->
+<style>
+  #cs-about .ab-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:70px 56px; gap:18px; text-align:center; }
+  #cs-about .ab-eye { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.34em; text-transform:uppercase; color:#b8954a; }
+  #cs-about .ab-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.6rem,5vw,4.2rem); font-weight:700; color:#1a1612; line-height:1; letter-spacing:-0.025em; }
+  #cs-about .ab-head em { font-style:italic; font-weight:500; color:#b8954a; }
+  #cs-about .ab-list { display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:24px; max-width:980px; }
+  #cs-about .ab-line { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.85vw,1.5rem); font-weight:500; color:#1a1612; line-height:1.35; letter-spacing:-0.005em; }
+  #cs-about .ab-line .it { color:rgba(26,22,18,0.45); font-style:italic; font-weight:400; }
+  #cs-about .ab-line strong { font-weight:700; color:#1a1612; }
+  #cs-about .ab-line em { font-style:italic; font-weight:500; color:#b8954a; }
+  #cs-about .ab-divider { display:flex; align-items:center; justify-content:center; gap:10px; margin:8px 0; }
+  #cs-about .ab-divider .ln { width:50px; height:1px; background:rgba(184,149,74,0.4); }
+  #cs-about .ab-divider .dot { width:5px; height:5px; border:1px solid #b8954a; transform:rotate(45deg); }
+  #cs-about .ab-coda { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.95rem,1.4vw,1.2rem); color:rgba(26,22,18,0.62); margin-top:18px; max-width:760px; line-height:1.45; }
+  #cs-about .ab-coda em { font-style:italic; color:#b8954a; font-weight:600; }
+</style>
+<div class="casey-slide ds-focus appendix-slide" id="cs-about" style="display:none">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Brand</div>
+<section style="position:relative;min-height:100%;width:100%">
+  <div class="ab-stage">
+
+    <div class="ab-eye">It&rsquo;s About</div>
+
+    <div class="ab-head">
+      It&rsquo;s about <em>us.</em>
+    </div>
+
+    <div class="ab-list">
+      <!-- THE FEELING -->
+      <div class="ab-line"><span class="it">It&rsquo;s about</span> the <strong>human spirit</strong>.</div>
+      <div class="ab-line"><span class="it">It&rsquo;s about</span> <strong>spontaneity</strong>.</div>
+      <div class="ab-line"><span class="it">It&rsquo;s about</span> being our <strong>best, freest selves</strong>.</div>
+
+      <div class="ab-divider"><div class="ln"></div><div class="dot"></div><div class="ln"></div></div>
+
+      <!-- THE ACT -->
+      <div class="ab-line"><span class="it">It&rsquo;s about</span> <strong>giving</strong>.</div>
+      <div class="ab-line"><span class="it">It&rsquo;s about</span> <strong>kindness</strong>.</div>
+      <div class="ab-line"><span class="it">It&rsquo;s about</span> <strong>receiving</strong> the fun in the connection others give.</div>
+
+      <div class="ab-divider"><div class="ln"></div><div class="dot"></div><div class="ln"></div></div>
+
+      <!-- THE OUTCOME -->
+      <div class="ab-line"><span class="it">It&rsquo;s about</span> <strong>finding our fit</strong> &mdash; where we&rsquo;re valuable to others.</div>
+      <div class="ab-line"><span class="it">It&rsquo;s about</span> getting the most out of <em>one another</em>.</div>
+    </div>
+
+    <div class="ab-coda">
+      Every line is a thing the old stack can&rsquo;t measure. We measure all of it.
+    </div>
+
+  </div>
+</section>
+</div>
+
 <!-- ===== APPENDIX cs-a2 — The Epicenter (concentric expansion). Lifted from intro_deck slide6, paper-mode, +Padel ring. Dave 2026-04-29 ===== -->
 <div class="casey-slide ds-focus appendix-slide" id="cs-a2" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
@@ -13515,7 +13573,8 @@ const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
-  'cs-26',   // 1: Closer · "We're wired to Give n Receive. All of us." [moved from main deck to appendix 2026-05-03 PM per Dave]
+  'cs-about',// 1: Brand · "It's About" — human spirit / spontaneity / connection / giving / kindness / fit [NEW Dave 2026-05-03 PM brand brain dump]
+  'cs-26',   // 2: Closer · "We're wired to Give n Receive. All of us." [moved from main deck to appendix 2026-05-03 PM per Dave]
   // cs-8b (Abundance · Opportunity Size) MOVED to main flow as slot 15 per Dave 2026-05-03 PM
   'cs-33',   // 2: Raising $1.5M Seed
   'cs-a20',  // 3: The Ask  (was cs-24)
