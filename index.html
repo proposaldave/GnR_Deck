@@ -5639,23 +5639,20 @@ html, body, html body{
 <!-- cs-2b is now headline-only after the 3 bottleneck cards were deleted earlier (Dave 2026-05-03 PM).
      Removed onclick handler + click hint — nothing to reveal anymore. Right-arrow / click navigates to next slide normally. -->
 <div class="casey-slide ds-focus" id="cs-2b">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Human connection, community is unsolved</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Human connection is unsolved</div>
 <div class="inner" style="text-align:center;max-width:1100px;padding-top:54px;margin:0 auto">
+
+  <!-- GnR arc graphic — sits ABOVE the headline as the reality-being-measured visual [Dave 2026-05-03 PM] -->
+  <div style="display:flex;justify-content:center;margin-bottom:28px;opacity:0.9">
+    <svg width="220" height="68" viewBox="0 0 220 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 24 48 Q 110 -4 196 48" stroke="#b8954a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <circle cx="24" cy="48" r="8" fill="#5B8FD4"/>
+      <circle cx="196" cy="48" r="8" fill="#c8462c"/>
+    </svg>
+  </div>
 
   <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.2rem,6vw,5rem);color:#1a1612;line-height:1.08;font-weight:700;margin-bottom:8px;letter-spacing:-0.026em;max-width:1380px;margin-left:auto;margin-right:auto">
     But <strong style="color:#c8462c;font-weight:700">no technology measures<br>and powers</strong> <em style="font-style:italic;font-weight:500;color:#b8954a">that reality</em>.
-  </div>
-
-  <!-- GnR arc graphic — visualizes "that reality" (give-receive between two people, the brand mark from the title slide). [Dave 2026-05-03 PM] -->
-  <div style="display:flex;justify-content:center;margin-top:36px;opacity:0.85">
-    <svg width="200" height="64" viewBox="0 0 200 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Gold arc connecting two dots -->
-      <path d="M 24 44 Q 100 -4 176 44" stroke="#b8954a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-      <!-- Blue dot (left) -->
-      <circle cx="24" cy="44" r="7" fill="#5B8FD4"/>
-      <!-- Red dot (right) -->
-      <circle cx="176" cy="44" r="7" fill="#c8462c"/>
-    </svg>
   </div>
 
 
@@ -12973,9 +12970,15 @@ html, body, html body{
 
   /* Click-reveal: "Our communities run on human connection." text below grid [Dave 2026-05-03] */
   /* Belt-and-suspenders 2026-05-03 PM: force opacity 0 with !important so no cached rule wins */
-  #cs-2c .c2c-reveal { opacity: 0 !important; transform: translateY(10px); transition: opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events: none; visibility: hidden; }
-  #cs-2c[data-shown="1"] .c2c-reveal { opacity: 1 !important; transform: translateY(0); transition-delay: 0.15s; visibility: visible; }
-  html[data-export="1"] #cs-2c .c2c-reveal { opacity: 1 !important; transform: none !important; visibility: visible !important; }
+  #cs-2c .c2c-reveal { opacity: 0 !important; transform: translateY(10px); transition: opacity 0.5s cubic-bezier(.45,.05,.18,1), transform 0.5s cubic-bezier(.45,.05,.18,1); pointer-events: none; visibility: hidden; }
+  #cs-2c[data-shown="1"] .c2c-reveal { opacity: 1 !important; transform: translateY(0); transition-delay: 0.10s; visibility: visible; }
+  /* Staggered 3-part reveal [Dave 2026-05-03 PM]: each phrase fades in sequentially */
+  #cs-2c .c2c-r-part { opacity: 0; transition: opacity 0.55s cubic-bezier(.45,.05,.18,1); }
+  #cs-2c[data-shown="1"] .c2c-r-1 { opacity: 1; transition-delay: 0.20s; }
+  #cs-2c[data-shown="1"] .c2c-r-2 { opacity: 1; transition-delay: 0.50s; }
+  #cs-2c[data-shown="1"] .c2c-r-3 { opacity: 1; transition-delay: 0.80s; }
+  html[data-export="1"] #cs-2c .c2c-reveal,
+  html[data-export="1"] #cs-2c .c2c-r-part { opacity: 1 !important; transform: none !important; visibility: visible !important; }
 
   @keyframes c2cHintBounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(4px); } }
   @keyframes c2cHintPulse { 0%,100% { opacity:.85; } 50% { opacity:1; } }
@@ -13076,7 +13079,7 @@ html, body, html body{
        MOVED here from cs-2b on 2026-05-03 per Dave. cs-2b's title is now "But no technology measures..." -->
   <div class="c2c-reveal" style="margin: 30px auto 0; max-width:1200px; padding: 0 32px;">
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,2.5vw,2rem);color:#1a1612;line-height:1.25;font-weight:600;letter-spacing:-0.012em;text-align:center">
-      Our communities run on our <em style="font-style:italic;font-weight:500;color:#5B8FD4">uniqueness to each other</em>,<br>our <em style="font-style:italic;font-weight:500;color:#c8462c">connection</em>, and our <em style="font-style:italic;font-weight:500;color:#b8954a">value to each other</em>.
+<span class="c2c-r-part c2c-r-1">Our communities run on our <em style="font-style:italic;font-weight:500;color:#5B8FD4">uniqueness to each other</em>,</span><br><span class="c2c-r-part c2c-r-2">our <em style="font-style:italic;font-weight:500;color:#c8462c">connection</em>,</span> <span class="c2c-r-part c2c-r-3">and our <em style="font-style:italic;font-weight:500;color:#b8954a">value to each other</em>.</span>
     </div>
   </div>
 </div>
