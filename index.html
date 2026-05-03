@@ -10080,6 +10080,164 @@ html, body, html body{
 </section>
 </div>
 
+<!-- ===== cs-tv · MERGED VISION + TAM [NEW Dave 2026-05-03 PM]
+     Combines cs-ns1 (orbital 10-year map) + cs-a3 (Pickleball TAM cards) on one slide.
+     The inner rings (Year 1 + Year 3) are highlighted as the addressable pickleball TAM today.
+     Outer rings (Year 5 + Year 8) tee up the multiplier story for adjacent communities. ===== -->
+<style>
+  #cs-tv .tv-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:36px 32px 24px; gap:14px; }
+  #cs-tv .tv-head { text-align:center; max-width:1240px; }
+  #cs-tv .tv-head-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.55rem,3vw,2.4rem); font-weight:700; color:#1a1612; line-height:1.15; letter-spacing:-0.018em; }
+  #cs-tv .tv-head-text em { font-style:italic; font-weight:500; color:#b8954a; }
+  /* Orbital map — same content as cs-ns1 but compressed slightly */
+  #cs-tv .tv-map { width:min(1100px,98%); height:auto; display:block; }
+  /* TAM strip below map */
+  #cs-tv .tv-tam-row { display:flex; align-items:center; justify-content:center; gap:18px; margin-top:6px; flex-wrap:wrap; }
+  #cs-tv .tv-tam-eyebrow { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:#b8954a; text-align:center; margin-top:4px; }
+  #cs-tv .tv-tam-eyebrow em { font-style:italic; font-weight:600; color:#1a1612; text-transform:none; letter-spacing:0; }
+  #cs-tv .tv-tam-card { display:flex; flex-direction:column; align-items:center; gap:2px; padding:14px 30px; border-radius:14px; min-width:230px; }
+  #cs-tv .tv-tam-card-b2b { background:rgba(212,168,83,0.08); border:1px solid rgba(212,168,83,0.30); }
+  #cs-tv .tv-tam-card-d2p { background:rgba(73,180,160,0.08); border:1px solid rgba(73,180,160,0.32); }
+  #cs-tv .tv-tam-label { font-family:'Manrope',sans-serif; font-size:.6rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; }
+  #cs-tv .tv-tam-card-b2b .tv-tam-label { color:#b8954a; }
+  #cs-tv .tv-tam-card-d2p .tv-tam-label { color:#49b4a0; }
+  #cs-tv .tv-tam-num { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.6vw,2.8rem); font-weight:900; line-height:1; letter-spacing:-0.02em; }
+  #cs-tv .tv-tam-card-b2b .tv-tam-num { color:#b8954a; }
+  #cs-tv .tv-tam-card-d2p .tv-tam-num { color:#49b4a0; }
+  #cs-tv .tv-tam-arr { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.55); margin-top:2px; }
+  #cs-tv .tv-tam-detail { font-family:'Playfair Display',serif; font-style:italic; font-size:.72rem; color:rgba(26,22,18,0.55); margin-top:2px; }
+  #cs-tv .tv-tam-plus { font-family:'Playfair Display',serif; font-style:italic; font-size:1.4rem; color:rgba(184,149,74,0.6); }
+</style>
+<div class="casey-slide ds-focus" id="cs-tv">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Vision · Market Size</div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="tv-stage">
+
+      <div class="tv-head">
+        <div class="tv-head-text">
+          We're building the map of <em>human connection</em><br>&mdash; one invitation at a time.
+        </div>
+      </div>
+
+      <!-- Orbital map: SAME as cs-ns1 [Dave 2026-05-03 PM v1] -->
+      <svg class="tv-map" viewBox="0 -25 1400 800">
+        <defs>
+          <radialGradient id="tvCenterGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"  stop-color="#2a8a4f" stop-opacity="0.32"/>
+            <stop offset="100%" stop-color="#2a8a4f" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="tvInnerHighlight" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"  stop-color="#b8954a" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#b8954a" stop-opacity="0"/>
+            <stop offset="80%" stop-color="#b8954a" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- Subtle gold halo emphasizing the TAM = inner rings -->
+        <circle cx="700" cy="380" r="220" fill="url(#tvInnerHighlight)" opacity="0.7"/>
+
+        <!-- Radial lines -->
+        <g stroke="#b8954a" stroke-width="0.7" fill="none">
+          <line x1="700" y1="380" x2="765" y2="267"/>
+          <line x1="700" y1="380" x2="813" y2="445"/>
+          <line x1="700" y1="380" x2="635" y2="493"/>
+          <line x1="700" y1="380" x2="587" y2="315"/>
+          <line x1="700" y1="380" x2="886" y2="272"/>
+          <line x1="700" y1="380" x2="808" y2="566"/>
+          <line x1="700" y1="380" x2="514" y2="488"/>
+          <line x1="700" y1="380" x2="592" y2="194"/>
+          <line x1="700" y1="380" x2="912" y2="168"/>
+          <line x1="700" y1="380" x2="912" y2="592"/>
+          <line x1="700" y1="380" x2="488" y2="592"/>
+          <line x1="700" y1="380" x2="488" y2="168"/>
+          <line x1="700" y1="380" x2="1080" y2="380"/>
+          <line x1="700" y1="380" x2="320"  y2="380"/>
+          <line x1="700" y1="380" x2="975"  y2="65"/>
+          <line x1="700" y1="380" x2="425"  y2="65"/>
+          <line x1="700" y1="380" x2="975"  y2="695"/>
+          <line x1="700" y1="380" x2="425"  y2="695"/>
+        </g>
+
+        <!-- Concentric time rings -->
+        <g fill="none" stroke-width="1.4" stroke-dasharray="5 4">
+          <circle cx="700" cy="380" r="130" stroke="#5B8FD4" stroke-opacity="0.65"/>
+          <circle cx="700" cy="380" r="215" stroke="#b8954a" stroke-opacity="0.65"/>
+          <circle cx="700" cy="380" r="300" stroke="#c8462c" stroke-opacity="0.50"/>
+          <circle cx="700" cy="380" r="380" stroke="#7a4a8c" stroke-opacity="0.45"/>
+        </g>
+
+        <!-- TODAY center -->
+        <g>
+          <circle cx="700" cy="380" r="120" fill="url(#tvCenterGlow)"/>
+          <circle cx="700" cy="380" r="38" fill="rgba(42,138,79,0.18)" stroke="#2a8a4f" stroke-width="2.2"/>
+          <text x="700" y="374" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.4" fill="#2a8a4f">TODAY</text>
+          <text x="700" y="392" text-anchor="middle" font-family="Playfair Display,serif" font-size="13.5" font-weight="800" fill="#1a1612">NEPC</text>
+        </g>
+
+        <!-- Year labels -->
+        <g><rect x="650" y="234" width="100" height="26" rx="13" fill="#fbf6ec" stroke="#5B8FD4" stroke-width="1.2"/><text x="700" y="252" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="#3a7da3">YEAR 1</text></g>
+        <g><rect x="650" y="149" width="100" height="26" rx="13" fill="#fbf6ec" stroke="#b8954a" stroke-width="1.2"/><text x="700" y="167" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="#b8954a">YEAR 3</text></g>
+        <g><rect x="650" y="64"  width="100" height="26" rx="13" fill="#fbf6ec" stroke="#c8462c" stroke-width="1.2"/><text x="700" y="82"  text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="#c8462c">YEAR 5</text></g>
+        <g><rect x="645" y="-16" width="110" height="28" rx="14" fill="#fbf6ec" stroke="#7a4a8c" stroke-width="1.4"/><text x="700" y="3"   text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="800" letter-spacing="2.6" fill="#7a4a8c">YEAR 8</text></g>
+
+        <!-- YEAR 1 nodes -->
+        <g>
+          <circle cx="765" cy="267" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/><text x="765" y="295" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
+          <circle cx="813" cy="445" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/><text x="813" y="472" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
+          <circle cx="635" cy="493" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/><text x="635" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
+          <circle cx="587" cy="315" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/><text x="587" y="294" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
+        </g>
+
+        <!-- YEAR 3 nodes (adjacent sports) -->
+        <g>
+          <circle cx="886" cy="272" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/><text x="886" y="298" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">TENNIS</text>
+          <circle cx="808" cy="566" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/><text x="808" y="592" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">GOLF</text>
+          <circle cx="514" cy="488" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/><text x="514" y="514" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">CYCLING</text>
+          <circle cx="592" cy="194" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/><text x="592" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PADEL</text>
+        </g>
+
+        <!-- YEAR 5 nodes -->
+        <g>
+          <circle cx="912" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="912" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">YOGA</text>
+          <circle cx="912" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="912" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">DINNER</text>
+          <circle cx="488" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="488" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">BOOK CLUB</text>
+          <circle cx="488" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="488" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">CHURCH</text>
+        </g>
+
+        <!-- YEAR 8 outer scatter + ...AND BEYOND -->
+        <g>
+          <circle cx="1080" cy="380" r="9" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.7"/>
+          <circle cx="320"  cy="380" r="9" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.7"/>
+          <circle cx="975"  cy="65"  r="8" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
+          <circle cx="425"  cy="65"  r="8" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
+          <circle cx="975"  cy="695" r="8" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
+          <circle cx="425"  cy="695" r="8" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
+          <text x="1140" y="386" text-anchor="start" font-family="Manrope,sans-serif" font-size="10" font-weight="700" letter-spacing="1.8" fill="rgba(122,74,140,0.78)">&hellip; AND BEYOND</text>
+        </g>
+      </svg>
+
+      <!-- TAM strip — anchored to the inner rings -->
+      <div class="tv-tam-eyebrow">Pickleball TAM &nbsp;&middot;&nbsp; <em>just the inner rings, today</em></div>
+      <div class="tv-tam-row">
+        <div class="tv-tam-card tv-tam-card-b2b">
+          <div class="tv-tam-label">B2B / Clubs</div>
+          <div class="tv-tam-num">$150M</div>
+          <div class="tv-tam-arr">ARR TAM</div>
+          <div class="tv-tam-detail">5,000 clubs &times; $2,500/mo</div>
+        </div>
+        <div class="tv-tam-plus">+</div>
+        <div class="tv-tam-card tv-tam-card-d2p">
+          <div class="tv-tam-label">Direct-to-Players</div>
+          <div class="tv-tam-num">$2.4B</div>
+          <div class="tv-tam-arr">ARR TAM</div>
+          <div class="tv-tam-detail">10M regulars &times; $20/mo</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
 <!-- =============================================================================
      NEW MAIN-DECK SLIDES — a16z partner-conviction beats. Dave 2026-04-30.
      Inserted as cs-30, cs-31, cs-32. Order placement controlled by SLIDE_ORDER below.
@@ -13304,8 +13462,9 @@ const SLIDE_ORDER = [
   // cs-4 (Moat — data in our heads) → MOVED to slot 4 (after cs-2c) per Dave 2026-05-01 — tightens front-half problem-arc
   'cs-25',    // 13 Why pickleball first ("Pickleball is the clearest path to the world's first autonomous human connection network.")
   'cs-future',// 14 Future of our communities · 5 verbs ("When you digitize human connection within a community, you can") [moved here per Dave 2026-05-03 PM — lands right after cs-25]
+  'cs-tv',    // 15 MERGED Vision + Pickleball TAM [NEW Dave 2026-05-03 PM — orbital map + $150M B2B / $2.4B D2P annotation showing 'just the inner rings = $2.55B ARR']
   // cs-a7 ("Social media is a very narrow view of human connection technology") MOVED BACK to APPENDIX 2026-05-03 PM per Dave
-  'cs-8b',    // 16 Abundance · Opportunity Size [moved from appendix to main flow per Dave 2026-05-03 PM — lands right BEFORE the 7-Eras Mission slide so the OpenAI/Anthropic 'intelligence' bar sets up the 'land/labor/capital' progression]
+  'cs-8b',    // 16 The Next Frontier · Abundance [moved from appendix to main flow per Dave 2026-05-03 PM — lands right BEFORE the 7-Eras Mission slide so the OpenAI/Anthropic 'intelligence' bar sets up the 'land/labor/capital' progression]
   'cs-mv6',   // 16 Mission · GnR is the 7th Era [moved here right after cs-future per Dave 2026-05-03 PM]
   'cs-18',    // 16 Founder · CEO · Dave Velardo (moved here per Dave 2026-04-30 PM evening)
   'cs-27',    // 17 CTO · Steve Callan (moved here per Dave 2026-04-30 PM evening)
