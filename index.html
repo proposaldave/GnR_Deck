@@ -7436,7 +7436,7 @@ html, body, html body{
        <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M 6 21 L 26 21 M 18 11 L 28 21 L 18 31" stroke="#2a8a4f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
        </svg>
-       <div style="font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(42,138,79,0.8);margin-top:6px;text-align:center">Next slide</div>
+       <!-- 'Next slide' label removed 2026-05-03 PM per Dave — arrow alone is enough -->
      </div>
      <div class="cs11-flip-inner cs11-flip-right">
       <!-- FRONT: ONE group of 4 — graphic only, no eyebrow on load [Dave 2026-05-03 PM: 'IN THE ROOM' only on BACK] -->
@@ -8048,8 +8048,10 @@ html, body, html body{
               <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
-          <g transform="translate(258, 28)" filter="url(#cs-gnr-seal-shadow-1)">
-            <circle cx="0" cy="0" r="22" fill="url(#cs-gnr-seal-1)" stroke="#fbf7ef" stroke-width="2.2"/>
+          <g transform="translate(258, 28) rotate(-5)" filter="url(#cs-gnr-seal-shadow-1)">
+            <circle cx="0" cy="0" r="22.5" fill="url(#cs-gnr-seal-1)" stroke="#fbf7ef" stroke-width="2.2"/>
+            <!-- Subtle inner highlight (hand-pressed feel) -->
+            <ellipse cx="-6" cy="-7" rx="6" ry="3" fill="rgba(255,255,255,0.18)"/>
             <path d="M -10 0 L -3 8 L 11 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
           </g>
         </svg>
@@ -8075,9 +8077,10 @@ html, body, html body{
               <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
-          <g transform="translate(258, 28)" filter="url(#cs-gnr-seal-shadow-2)">
-            <circle cx="0" cy="0" r="22" fill="url(#cs-gnr-seal-2)" stroke="#fbf7ef" stroke-width="2.2"/>
-            <path d="M -10 0 L -3 8 L 11 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
+          <g transform="translate(258, 30) rotate(4)" filter="url(#cs-gnr-seal-shadow-2)">
+            <circle cx="0" cy="0" r="21.5" fill="url(#cs-gnr-seal-2)" stroke="#fbf7ef" stroke-width="2.2"/>
+            <ellipse cx="-5" cy="-7" rx="6" ry="3" fill="rgba(255,255,255,0.18)"/>
+            <path d="M -9 1 L -3 8 L 11 -8" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
           </g>
         </svg>
         <div class="gnr-env-text">You <em>belong.</em></div>
@@ -8102,9 +8105,10 @@ html, body, html body{
               <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
-          <g transform="translate(258, 28)" filter="url(#cs-gnr-seal-shadow-3)">
+          <g transform="translate(256, 29) rotate(-2)" filter="url(#cs-gnr-seal-shadow-3)">
             <circle cx="0" cy="0" r="22" fill="url(#cs-gnr-seal-3)" stroke="#fbf7ef" stroke-width="2.2"/>
-            <path d="M -10 0 L -3 8 L 11 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
+            <ellipse cx="-6" cy="-6" rx="6" ry="3" fill="rgba(255,255,255,0.18)"/>
+            <path d="M -10 -1 L -2 8 L 12 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
           </g>
         </svg>
         <div class="gnr-env-text">Who <em>gives?</em></div>
