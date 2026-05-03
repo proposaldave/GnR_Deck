@@ -5636,7 +5636,9 @@ html, body, html body{
   @keyframes c2bBottomIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   html[data-export="1"] #cs-2b .c2b-bottom { opacity: 1 !important; transform: none !important; visibility: visible !important; animation: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-2b" data-shown="0" onclick="cs2bAdvance()" style="cursor:pointer">
+<!-- cs-2b is now headline-only after the 3 bottleneck cards were deleted earlier (Dave 2026-05-03 PM).
+     Removed onclick handler + click hint — nothing to reveal anymore. Right-arrow / click navigates to next slide normally. -->
+<div class="casey-slide ds-focus" id="cs-2b">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Built by hand</div>
 <div class="inner" style="text-align:center;max-width:1100px;padding-top:54px;margin:0 auto">
 
@@ -5644,13 +5646,6 @@ html, body, html body{
     But <strong style="color:#c8462c;font-weight:700">no technology measures and powers</strong> <em style="font-style:italic;font-weight:500;color:#b8954a">that reality</em>.
   </div>
 
-  <!-- Click hint — visible only on first load -->
-  <div class="c2b-hint">
-    <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-
-  <!-- 3 bottleneck cards (Finding people slow & hard / Giving freely feels risky / Communities break into cliques) DELETED 2026-05-03 per Dave -->
-  <!-- THE MANUAL BOTTLENECK eyebrow + c2b-bottom block also previously removed -->
 
 </div>
 </div>
@@ -6387,7 +6382,11 @@ html, body, html body{
           }
           html[data-export="1"] #cs-4 .cs4-mind-svg .cs4-avatar { animation: none !important; }
         </style>
-        <div class="cs4-flip-front" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1.5px solid rgba(61,255,122,0.42);border-radius:18px;padding:36px;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12)">
+        <div class="cs4-flip-front" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1.5px solid rgba(61,255,122,0.42);border-radius:18px;padding:24px 36px 36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:420px;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12)">
+          <!-- Caption ABOVE the head: makes it explicit these are thoughts about people [Dave 2026-05-03 PM clarity pass] -->
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:rgba(26,22,18,0.65);text-align:center;line-height:1.3">
+            Your <em style="font-style:italic;color:#2a8a4f;font-weight:700">private thoughts &amp; feelings</em><br>about everyone you play with.
+          </div>
           <svg class="cs4-mind-svg" width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <!-- Warm gold mind-glow inside the head -->
@@ -6471,35 +6470,52 @@ html, body, html body{
               <path d="M 186 78 Q 162 105 138 132"/>
             </g>
 
-            <!-- 4 PORTRAIT AVATARS (gradient-filled, with white ring + soft halo + face hint) -->
-            <!-- Top-left: Gold -->
+            <!-- 4 THOUGHT-BUBBLE AVATARS — each portrait is wrapped in a classic cloud-shape thought bubble
+                 + 2 trailing dots leading toward the bottom of the head, signaling "this is a thought" [Dave 2026-05-03 PM clarity pass] -->
+
+            <!-- Top-left: Gold thought bubble (a fellow player you've played with) -->
             <g class="cs4-avatar av-1" style="color:#b8954a">
-              <circle cx="134" cy="78" r="17" fill="rgba(184,149,74,0.10)" opacity="0.7"/>
-              <circle cx="134" cy="78" r="12.5" fill="url(#avGold)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
-              <circle cx="134" cy="74" r="3" fill="#fff" opacity="0.9"/>
-              <path d="M 128 84 Q 134 88 140 84" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.75" stroke-linecap="round"/>
+              <!-- Cloud-shape thought bubble (puffy outline behind the avatar) -->
+              <path d="M 124 64 q -10 -2 -8 8 q -8 4 -2 12 q -4 8 6 10 q 4 8 14 4 q 6 8 14 0 q 8 0 6 -10 q 8 -4 2 -12 q 4 -10 -8 -10 q -6 -8 -14 -4 q -8 -4 -10 2 z"
+                    fill="rgba(255,255,255,0.55)" stroke="#b8954a" stroke-width="1" stroke-dasharray="2 1.8" opacity="0.9"/>
+              <!-- Portrait avatar (the person being thought about) -->
+              <circle cx="134" cy="78" r="11" fill="url(#avGold)" stroke="#fff" stroke-width="1.4" filter="url(#cs4SoftShadow)"/>
+              <circle cx="134" cy="74.5" r="2.4" fill="#fff" opacity="0.92"/>
+              <path d="M 129 83 Q 134 86 139 83" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.78" stroke-linecap="round"/>
             </g>
-            <!-- Top-right: Blue -->
+
+            <!-- Top-right: Blue thought bubble -->
             <g class="cs4-avatar av-2" style="color:#5B8FD4">
-              <circle cx="186" cy="78" r="17" fill="rgba(91,143,212,0.10)" opacity="0.7"/>
-              <circle cx="186" cy="78" r="12.5" fill="url(#avBlue)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
-              <circle cx="186" cy="74" r="3" fill="#fff" opacity="0.9"/>
-              <path d="M 180 84 Q 186 88 192 84" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.75" stroke-linecap="round"/>
+              <path d="M 176 64 q -10 -2 -8 8 q -8 4 -2 12 q -4 8 6 10 q 4 8 14 4 q 6 8 14 0 q 8 0 6 -10 q 8 -4 2 -12 q 4 -10 -8 -10 q -6 -8 -14 -4 q -8 -4 -10 2 z"
+                    fill="rgba(255,255,255,0.55)" stroke="#5B8FD4" stroke-width="1" stroke-dasharray="2 1.8" opacity="0.9"/>
+              <circle cx="186" cy="78" r="11" fill="url(#avBlue)" stroke="#fff" stroke-width="1.4" filter="url(#cs4SoftShadow)"/>
+              <circle cx="186" cy="74.5" r="2.4" fill="#fff" opacity="0.92"/>
+              <path d="M 181 83 Q 186 86 191 83" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.78" stroke-linecap="round"/>
             </g>
-            <!-- Bottom-left: Pink/Coral -->
+
+            <!-- Bottom-left: Pink/Coral thought bubble -->
             <g class="cs4-avatar av-3" style="color:#c8556a">
-              <circle cx="138" cy="132" r="17" fill="rgba(200,85,106,0.10)" opacity="0.7"/>
-              <circle cx="138" cy="132" r="12.5" fill="url(#avPink)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
-              <circle cx="138" cy="128" r="3" fill="#fff" opacity="0.9"/>
-              <path d="M 132 138 Q 138 142 144 138" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.75" stroke-linecap="round"/>
+              <path d="M 128 118 q -10 -2 -8 8 q -8 4 -2 12 q -4 8 6 10 q 4 8 14 4 q 6 8 14 0 q 8 0 6 -10 q 8 -4 2 -12 q 4 -10 -8 -10 q -6 -8 -14 -4 q -8 -4 -10 2 z"
+                    fill="rgba(255,255,255,0.55)" stroke="#c8556a" stroke-width="1" stroke-dasharray="2 1.8" opacity="0.9"/>
+              <circle cx="138" cy="132" r="11" fill="url(#avPink)" stroke="#fff" stroke-width="1.4" filter="url(#cs4SoftShadow)"/>
+              <circle cx="138" cy="128.5" r="2.4" fill="#fff" opacity="0.92"/>
+              <path d="M 133 137 Q 138 140 143 137" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.78" stroke-linecap="round"/>
             </g>
-            <!-- Bottom-right: Plum -->
+
+            <!-- Bottom-right: Plum thought bubble -->
             <g class="cs4-avatar av-4" style="color:#8a5aa0">
-              <circle cx="186" cy="132" r="17" fill="rgba(138,90,160,0.10)" opacity="0.7"/>
-              <circle cx="186" cy="132" r="12.5" fill="url(#avPlum)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
-              <circle cx="186" cy="128" r="3" fill="#fff" opacity="0.9"/>
-              <path d="M 180 138 Q 186 142 192 138" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.75" stroke-linecap="round"/>
+              <path d="M 176 118 q -10 -2 -8 8 q -8 4 -2 12 q -4 8 6 10 q 4 8 14 4 q 6 8 14 0 q 8 0 6 -10 q 8 -4 2 -12 q 4 -10 -8 -10 q -6 -8 -14 -4 q -8 -4 -10 2 z"
+                    fill="rgba(255,255,255,0.55)" stroke="#8a5aa0" stroke-width="1" stroke-dasharray="2 1.8" opacity="0.9"/>
+              <circle cx="186" cy="132" r="11" fill="url(#avPlum)" stroke="#fff" stroke-width="1.4" filter="url(#cs4SoftShadow)"/>
+              <circle cx="186" cy="128.5" r="2.4" fill="#fff" opacity="0.92"/>
+              <path d="M 181 137 Q 186 140 191 137" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.78" stroke-linecap="round"/>
             </g>
+
+            <!-- Faint "+more" thought bubbles peeking from the edges to suggest these are just a sample -->
+            <circle cx="100" cy="105" r="3.2" fill="rgba(255,255,255,0.5)" stroke="rgba(184,149,74,0.4)" stroke-width="0.7" stroke-dasharray="1 1.2"/>
+            <circle cx="220" cy="105" r="3.2" fill="rgba(255,255,255,0.5)" stroke="rgba(184,149,74,0.4)" stroke-width="0.7" stroke-dasharray="1 1.2"/>
+            <text x="100" y="108" text-anchor="middle" font-family="Manrope,sans-serif" font-size="4.2" font-weight="800" fill="rgba(26,22,18,0.45)">+</text>
+            <text x="220" y="108" text-anchor="middle" font-family="Manrope,sans-serif" font-size="4.2" font-weight="800" fill="rgba(26,22,18,0.45)">+</text>
           </svg>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
         </div>
@@ -6962,21 +6978,12 @@ html, body, html body{
        <div class="cs4-flip-inner cs4-flip-bottom" style="min-height:200px">
         <!-- FRONT: giant "3.0" struck through — universally reads as "skill rating, killed" — Dave 2026-05-02 PM v2 -->
         <div class="cs4-flip-front" style="width:100%;background:rgba(224,64,64,0.04);border:1.5px solid rgba(224,64,64,0.32);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:center;gap:36px;min-height:200px;position:relative;overflow:hidden">
-          <!-- Stars row + 3.0 badge with strike-through line -->
-          <div style="display:flex;align-items:center;gap:24px;position:relative">
-            <!-- 5 stars (3 filled, 2 empty) -->
-            <div style="display:flex;gap:5px">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="rgba(26,22,18,0.30)"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="rgba(26,22,18,0.30)"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="rgba(26,22,18,0.30)"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="rgba(26,22,18,0.30)" stroke-width="1.8"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="rgba(26,22,18,0.30)" stroke-width="1.8"><path d="M14 2 L17.5 10 L26 11 L19.5 17 L21 26 L14 21.5 L7 26 L8.5 17 L2 11 L10.5 10 Z"/></svg>
-            </div>
-            <!-- The number -->
+          <!-- "3.0" struck through — 5 stars row REMOVED 2026-05-03 PM per Dave -->
+          <div style="display:flex;align-items:center;justify-content:center;position:relative;padding:8px 24px">
             <div style="font-family:'Playfair Display',serif;font-size:84px;font-weight:900;color:rgba(26,22,18,0.55);line-height:1;letter-spacing:-0.04em">3.0</div>
-            <!-- diagonal strike-through across stars + number -->
+            <!-- diagonal strike-through -->
             <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <line x1="2" y1="92" x2="98" y2="8" stroke="#c8462c" stroke-width="2.6" stroke-linecap="round"/>
+              <line x1="6" y1="86" x2="94" y2="14" stroke="#c8462c" stroke-width="2.6" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
@@ -6989,16 +6996,40 @@ html, body, html body{
           <line x1="12" y1="16" x2="88" y2="84" stroke="#c8462c" stroke-width="2" stroke-linecap="butt"/>
           <line x1="88" y1="16" x2="12" y2="84" stroke="#c8462c" stroke-width="2" stroke-linecap="butt"/>
         </svg>
-        <!-- Person silhouette -->
-        <svg width="78" height="92" viewBox="0 0 120 140" fill="none" style="flex-shrink:0;position:relative;z-index:1">
-          <circle cx="60" cy="32" r="18" fill="none" stroke="rgba(26,22,18,0.28)" stroke-width="2"/>
-          <circle cx="54" cy="28" r="2" fill="rgba(26,22,18,0.22)"/>
-          <circle cx="66" cy="28" r="2" fill="rgba(26,22,18,0.22)"/>
-          <path d="M54 36 Q60 40 66 36" stroke="rgba(26,22,18,0.18)" stroke-width="1.2" fill="none"/>
-          <line x1="60" y1="50" x2="60" y2="90" stroke="rgba(26,22,18,0.22)" stroke-width="2"/>
-          <line x1="42" y1="70" x2="78" y2="70" stroke="rgba(26,22,18,0.22)" stroke-width="2"/>
-          <line x1="60" y1="90" x2="45" y2="120" stroke="rgba(26,22,18,0.22)" stroke-width="2"/>
-          <line x1="60" y1="90" x2="75" y2="120" stroke="rgba(26,22,18,0.22)" stroke-width="2"/>
+        <!-- Pickleball ball graphic — matches the Social Sports icon on cs-2c [Dave 2026-05-03 PM:
+             ties the OLD PARADIGM specifically to PICKLEBALL — what we're measuring TODAY in the sport] -->
+        <svg width="92" height="92" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;position:relative;z-index:1">
+          <defs>
+            <radialGradient id="cs4PbBall" cx="38%" cy="34%" r="62%">
+              <stop offset="0%" stop-color="#f0e85a"/>
+              <stop offset="60%" stop-color="#d8cf3a"/>
+              <stop offset="100%" stop-color="#a89c2a"/>
+            </radialGradient>
+          </defs>
+          <circle cx="30" cy="30" r="24" fill="url(#cs4PbBall)" stroke="#857c1c" stroke-width="0.8"/>
+          <g fill="#857c1c" opacity="0.78">
+            <circle cx="22" cy="14" r="1.6"/>
+            <circle cx="30" cy="11" r="1.6"/>
+            <circle cx="38" cy="14" r="1.6"/>
+            <circle cx="15" cy="22" r="1.6"/>
+            <circle cx="23" cy="22" r="1.6"/>
+            <circle cx="31" cy="20" r="1.6"/>
+            <circle cx="39" cy="22" r="1.6"/>
+            <circle cx="45" cy="22" r="1.6"/>
+            <circle cx="13" cy="31" r="1.6"/>
+            <circle cx="22" cy="31" r="1.6"/>
+            <circle cx="30" cy="30" r="1.6"/>
+            <circle cx="38" cy="31" r="1.6"/>
+            <circle cx="47" cy="31" r="1.6"/>
+            <circle cx="16" cy="40" r="1.6"/>
+            <circle cx="24" cy="40" r="1.6"/>
+            <circle cx="32" cy="41" r="1.6"/>
+            <circle cx="40" cy="40" r="1.6"/>
+            <circle cx="22" cy="48" r="1.6"/>
+            <circle cx="30" cy="50" r="1.6"/>
+            <circle cx="38" cy="48" r="1.6"/>
+          </g>
+          <ellipse cx="22" cy="20" rx="7" ry="3.6" fill="rgba(255,255,255,0.42)"/>
         </svg>
         <div style="text-align:left;position:relative;z-index:1;max-width:480px">
           <div style="font-size:0.66rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#c8462c;margin-bottom:10px">Old Paradigm &middot; All About Me</div>
@@ -13805,6 +13836,24 @@ window.cs4ToggleBottom = function() {
   slide.dataset.bottomFlipped = slide.dataset.bottomFlipped === '1' ? '0' : '1';
 };
 
+// cs-4 scroll/right-arrow staged advance [Dave 2026-05-03 PM]:
+// scroll-down/right-arrow flips TOP, then BOTTOM, then advances to next slide.
+// Click toggles individual card. Press 'd' to skip the reveals (handled separately).
+window.cs4Advance = function() {
+  const slide = document.getElementById('cs-4');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.topFlipped !== '1')    { slide.dataset.topFlipped = '1';    return true; }
+  if (slide.dataset.bottomFlipped !== '1') { slide.dataset.bottomFlipped = '1'; return true; }
+  return false;
+};
+window.cs4Reverse = function() {
+  const slide = document.getElementById('cs-4');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.bottomFlipped === '1') { slide.dataset.bottomFlipped = '0'; return true; }
+  if (slide.dataset.topFlipped === '1')    { slide.dataset.topFlipped = '0';    return true; }
+  return false;
+};
+
 // cs-mv6 Connection-card flip [Dave 2026-05-02]: front = Connection era, back = Mission line
 window.cs_mv6_flip = function() {
   const slide = document.getElementById('cs-mv6');
@@ -13847,6 +13896,14 @@ function caseyGo(n) {
   document.getElementById('cbar').style.width = ((n / TOTAL) * 100) + '%';
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
+  // RESET click-reveal state when entering a slide so the reveal animation runs fresh on every visit
+  // (Dave 2026-05-03 PM: cs-2c text was showing immediately on return because data-shown stayed at '1')
+  if (targetId === 'cs-2c'   && target) target.dataset.shown = '0';
+  if (targetId === 'cs-2b'   && target) target.dataset.shown = '0';
+  if (targetId === 'cs-3'    && target) target.dataset.shown = '0';
+  if (targetId === 'cs-fw1'  && target) target.dataset.stage = '0';
+  if (targetId === 'cs-1bm1' && target) { target.dataset.left = '0'; target.dataset.right = '0'; }
+  if (targetId === 'cs-11d'  && target) { target.dataset.left = '0'; target.dataset.right = '0'; }
   // Position-indexed triggers. Triggers are keyed by targetId so variant removal doesn't break them.
   if (targetId === 'cs-10') startCourtForm(); else stopCourtForm();
   if (targetId === 'cs-4') animateIntroTeaser();
@@ -14356,7 +14413,7 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   return;
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11'   && window.cs11Advance   && window.cs11Advance())   return;
@@ -14368,7 +14425,7 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
-    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Reverse    && window.cs4Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11'   && window.cs11Reverse   && window.cs11Reverse())   return;
@@ -14394,6 +14451,10 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance()) {
+      setTimeout(() => { wheelLock = false; }, 1000);
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance()) {
@@ -14430,6 +14491,10 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Reverse    && window.cs4Reverse()) {
+      setTimeout(() => { wheelLock = false; }, 1000);
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse()) { return; }
