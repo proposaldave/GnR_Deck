@@ -6392,115 +6392,65 @@ html, body, html body{
           html[data-export="1"] #cs-4 .cs4-mind-svg .cs4-avatar { animation: none !important; }
         </style>
         <div class="cs4-flip-front" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1.5px solid rgba(61,255,122,0.42);border-radius:18px;padding:36px;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12)">
-          <!-- Front is GRAPHIC ONLY — no text. The back card carries the line. [Dave 2026-05-03 PM] -->
-          <svg class="cs4-mind-svg" width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- FRONT graphic = SAME network of 5 heads-with-thoughts-inside as BACK [Dave 2026-05-03 PM]
+               *** ANY UPDATE TO THIS GRAPHIC MUST ALSO UPDATE THE BACK COPY (search "cs4-network-svg" for both copies). *** -->
+          <svg class="cs4-network-svg" width="380" height="320" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
             <defs>
-              <!-- Warm gold mind-glow inside the head -->
-              <radialGradient id="cs4MindGlow" cx="50%" cy="32%" r="42%">
-                <stop offset="0%" stop-color="rgba(240,200,120,0.55)"/>
-                <stop offset="50%" stop-color="rgba(212,168,83,0.20)"/>
+              <radialGradient id="cs4NetCenterFront" cx="50%" cy="40%" r="58%">
+                <stop offset="0%" stop-color="rgba(212,168,83,0.32)"/>
                 <stop offset="100%" stop-color="rgba(212,168,83,0)"/>
               </radialGradient>
-              <!-- Portrait gradients: highlight at top-left, depth at bottom-right -->
-              <radialGradient id="avGold" cx="36%" cy="30%" r="68%">
-                <stop offset="0%" stop-color="#f7d68a"/>
-                <stop offset="55%" stop-color="#c89a45"/>
-                <stop offset="100%" stop-color="#7a5a26"/>
-              </radialGradient>
-              <radialGradient id="avBlue" cx="36%" cy="30%" r="68%">
-                <stop offset="0%" stop-color="#a4cdf0"/>
-                <stop offset="55%" stop-color="#5B8FD4"/>
-                <stop offset="100%" stop-color="#2a4a78"/>
-              </radialGradient>
-              <radialGradient id="avPink" cx="36%" cy="30%" r="68%">
-                <stop offset="0%" stop-color="#f0a4b6"/>
-                <stop offset="55%" stop-color="#c8556a"/>
-                <stop offset="100%" stop-color="#722a3c"/>
-              </radialGradient>
-              <radialGradient id="avPlum" cx="36%" cy="30%" r="68%">
-                <stop offset="0%" stop-color="#cba8d8"/>
-                <stop offset="55%" stop-color="#8a5aa0"/>
-                <stop offset="100%" stop-color="#46245a"/>
-              </radialGradient>
-              <!-- Soft drop-shadow for portraits + head -->
-              <filter id="cs4SoftShadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="1.4" in="SourceAlpha"/>
-                <feOffset dx="0" dy="1.2"/>
-                <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
-                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
             </defs>
-
-            <!-- ELEGANT HEAD + SHOULDERS — slimmer human proportions, single continuous outline -->
-            <path d="M 160 30
-                     C 118 30 96 66 96 114
-                     C 96 140 105 162 116 175
-                     L 116 192
-                     C 116 206 100 214 78 224
-                     C 52 236 30 254 30 282
-                     L 30 308
-                     L 290 308
-                     L 290 282
-                     C 290 254 268 236 242 224
-                     C 220 214 204 206 204 192
-                     L 204 175
-                     C 215 162 224 140 224 114
-                     C 224 66 202 30 160 30 Z"
-                  fill="rgba(42,138,79,0.06)"
-                  stroke="#2a8a4f"
-                  stroke-width="2.4"
-                  stroke-linejoin="round"
-                  filter="url(#cs4SoftShadow)"/>
-
-            <!-- Warm mind glow (gold) inside the upper head -->
-            <ellipse cx="160" cy="98" rx="64" ry="58" fill="url(#cs4MindGlow)"/>
-
-            <!-- Subtle thinking sparks above the head -->
-            <g fill="#d4a853" opacity="0.55">
-              <circle cx="160" cy="18" r="1.4"/>
-              <circle cx="138" cy="22" r="0.9"/>
-              <circle cx="182" cy="22" r="0.9"/>
-              <circle cx="118" cy="38" r="0.7"/>
-              <circle cx="202" cy="38" r="0.7"/>
+            <circle cx="120" cy="100" r="68" fill="url(#cs4NetCenterFront)"/>
+            <g stroke="#b8954a" stroke-width="1" stroke-dasharray="2.4 3" opacity="0.65" fill="none">
+              <line x1="120" y1="100" x2="120" y2="34"/>
+              <line x1="120" y1="100" x2="56"  y2="74"/>
+              <line x1="120" y1="100" x2="184" y2="74"/>
+              <line x1="120" y1="100" x2="80"  y2="160"/>
+              <line x1="120" y1="100" x2="160" y2="160"/>
+              <line x1="120" y1="34"  x2="56"  y2="74"/>
+              <line x1="120" y1="34"  x2="184" y2="74"/>
+              <line x1="56"  y1="74"  x2="80"  y2="160"/>
+              <line x1="184" y1="74"  x2="160" y2="160"/>
+              <line x1="80"  y1="160" x2="160" y2="160"/>
             </g>
-
-            <!-- Organic connection arcs between the 4 avatars (private thoughts/feelings) -->
-            <g stroke="#b8954a" stroke-width="0.9" fill="none" stroke-dasharray="2.2 2.6" opacity="0.55">
-              <path d="M 134 78 Q 160 58 186 78"/>
-              <path d="M 134 78 Q 116 105 138 132"/>
-              <path d="M 186 78 Q 204 105 186 132"/>
-              <path d="M 138 132 Q 162 144 186 132"/>
-            </g>
-            <g stroke="#b8954a" stroke-width="0.7" fill="none" stroke-dasharray="1.6 2.4" opacity="0.32">
-              <path d="M 134 78 Q 162 105 186 132"/>
-              <path d="M 186 78 Q 162 105 138 132"/>
-            </g>
-
-            <!-- 4 PORTRAIT AVATARS inside the head — simple, clean, no cloud frames [Dave 2026-05-03 PM: simplified]
-                 The italic caption above the head does the storytelling. -->
-            <!-- Top-left: Gold -->
-            <g class="cs4-avatar av-1" style="color:#b8954a">
-              <circle cx="134" cy="78" r="14" fill="url(#avGold)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
-              <circle cx="134" cy="73.5" r="2.8" fill="#fff" opacity="0.92"/>
-              <path d="M 128 84 Q 134 88 140 84" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.8" stroke-linecap="round"/>
-            </g>
-            <!-- Top-right: Blue -->
-            <g class="cs4-avatar av-2" style="color:#5B8FD4">
-              <circle cx="186" cy="78" r="14" fill="url(#avBlue)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
-              <circle cx="186" cy="73.5" r="2.8" fill="#fff" opacity="0.92"/>
-              <path d="M 180 84 Q 186 88 192 84" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.8" stroke-linecap="round"/>
-            </g>
-            <!-- Bottom-left: Pink -->
-            <g class="cs4-avatar av-3" style="color:#c8556a">
-              <circle cx="138" cy="132" r="14" fill="url(#avPink)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
-              <circle cx="138" cy="127.5" r="2.8" fill="#fff" opacity="0.92"/>
-              <path d="M 132 138 Q 138 142 144 138" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.8" stroke-linecap="round"/>
-            </g>
-            <!-- Bottom-right: Plum -->
-            <g class="cs4-avatar av-4" style="color:#8a5aa0">
-              <circle cx="186" cy="132" r="14" fill="url(#avPlum)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
-              <circle cx="186" cy="127.5" r="2.8" fill="#fff" opacity="0.92"/>
-              <path d="M 180 138 Q 186 142 192 138" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.8" stroke-linecap="round"/>
+            <g>
+              <g transform="translate(120, 34)">
+                <circle cx="0" cy="-4" r="11" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.4"/>
+                <path d="M -11 16 Q -11 6 0 5 Q 11 6 11 16" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.4" stroke-linejoin="round"/>
+                <circle cx="-3.2" cy="-7" r="1.5" fill="#b8954a"/><circle cx="3.2"  cy="-7" r="1.5" fill="#c8556a"/>
+                <circle cx="-3.2" cy="-1" r="1.5" fill="#8a5aa0"/><circle cx="3.2"  cy="-1" r="1.5" fill="#5fa896"/>
+              </g>
+              <g transform="translate(56, 74)">
+                <circle cx="0" cy="-4" r="11" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/>
+                <path d="M -11 16 Q -11 6 0 5 Q 11 6 11 16" fill="rgba(184,149,74,0.10)" stroke="#b8954a" stroke-width="1.4" stroke-linejoin="round"/>
+                <circle cx="-3.2" cy="-7" r="1.5" fill="#5B8FD4"/><circle cx="3.2"  cy="-7" r="1.5" fill="#c8556a"/>
+                <circle cx="-3.2" cy="-1" r="1.5" fill="#8a5aa0"/><circle cx="3.2"  cy="-1" r="1.5" fill="#5fa896"/>
+              </g>
+              <g transform="translate(184, 74)">
+                <circle cx="0" cy="-4" r="11" fill="rgba(200,85,106,0.18)" stroke="#c8556a" stroke-width="1.4"/>
+                <path d="M -11 16 Q -11 6 0 5 Q 11 6 11 16" fill="rgba(200,85,106,0.10)" stroke="#c8556a" stroke-width="1.4" stroke-linejoin="round"/>
+                <circle cx="-3.2" cy="-7" r="1.5" fill="#5B8FD4"/><circle cx="3.2"  cy="-7" r="1.5" fill="#b8954a"/>
+                <circle cx="-3.2" cy="-1" r="1.5" fill="#8a5aa0"/><circle cx="3.2"  cy="-1" r="1.5" fill="#5fa896"/>
+              </g>
+              <g transform="translate(80, 160)">
+                <circle cx="0" cy="-4" r="11" fill="rgba(138,90,160,0.18)" stroke="#8a5aa0" stroke-width="1.4"/>
+                <path d="M -11 16 Q -11 6 0 5 Q 11 6 11 16" fill="rgba(138,90,160,0.10)" stroke="#8a5aa0" stroke-width="1.4" stroke-linejoin="round"/>
+                <circle cx="-3.2" cy="-7" r="1.5" fill="#5B8FD4"/><circle cx="3.2"  cy="-7" r="1.5" fill="#b8954a"/>
+                <circle cx="-3.2" cy="-1" r="1.5" fill="#c8556a"/><circle cx="3.2"  cy="-1" r="1.5" fill="#5fa896"/>
+              </g>
+              <g transform="translate(160, 160)">
+                <circle cx="0" cy="-4" r="11" fill="rgba(95,168,150,0.18)" stroke="#5fa896" stroke-width="1.4"/>
+                <path d="M -11 16 Q -11 6 0 5 Q 11 6 11 16" fill="rgba(95,168,150,0.10)" stroke="#5fa896" stroke-width="1.4" stroke-linejoin="round"/>
+                <circle cx="-3.2" cy="-7" r="1.5" fill="#5B8FD4"/><circle cx="3.2"  cy="-7" r="1.5" fill="#b8954a"/>
+                <circle cx="-3.2" cy="-1" r="1.5" fill="#c8556a"/><circle cx="3.2"  cy="-1" r="1.5" fill="#8a5aa0"/>
+              </g>
+              <g transform="translate(120, 100)">
+                <circle cx="0" cy="-5" r="14" fill="rgba(42,138,79,0.22)" stroke="#2a8a4f" stroke-width="1.8"/>
+                <path d="M -14 20 Q -14 7 0 6 Q 14 7 14 20" fill="rgba(42,138,79,0.14)" stroke="#2a8a4f" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="-4" cy="-9" r="2" fill="#b8954a"/><circle cx="4"  cy="-9" r="2" fill="#5B8FD4"/>
+                <circle cx="-4" cy="-1" r="2" fill="#c8556a"/><circle cx="4"  cy="-1" r="2" fill="#8a5aa0"/>
+              </g>
             </g>
           </svg>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
@@ -6508,8 +6458,13 @@ html, body, html body{
         <!-- BACK: headline + complementary network graphic [Dave 2026-05-03 PM v2: graphic added back].
              FRONT visual = ONE head with 4 thoughts inside. BACK visual = the NETWORK (you + others, each with private feelings about each other). -->
         <div class="cs4-flip-back" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1px solid rgba(61,255,122,0.36);border-radius:18px;padding:32px 36px;text-align:center;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12);transform:rotateY(180deg)">
-        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2.4rem);color:#1a1612;line-height:1.22;font-weight:700;letter-spacing:-0.018em;padding:0 16px;user-select:text;-webkit-user-select:text;cursor:text">
-          Your <em style="font-style:italic;color:#2a8a4f;font-weight:600">private thoughts &amp; feelings</em><br>about others you interact with.
+        <div style="display:flex;flex-direction:column;gap:10px;padding:0 16px;user-select:text;-webkit-user-select:text">
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.6rem);color:#1a1612;line-height:1.18;font-weight:700;letter-spacing:-0.02em;cursor:text">
+            The <em style="font-style:italic;color:#2a8a4f;font-weight:600">graph</em> in everyone's head.
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.95rem,1.4vw,1.15rem);color:rgba(26,22,18,0.62);line-height:1.4;cursor:text">
+            Who you give to. Who lifts you up. Who matters.
+          </div>
         </div>
 
         <!-- Network graphic: 5 heads (you in center, 4 around), each connected by dashed gold lines = the private-feelings dataset across a community -->
