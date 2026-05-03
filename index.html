@@ -6579,7 +6579,7 @@ html, body, html body{
         </svg>
         <!-- BOTTOM slot: descriptor (swapped from top per Dave 2026-05-03 PM). Same font + size as top label. -->
         <div class="cs4-network-label" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2.4rem);color:#1a1612;line-height:1.22;font-weight:700;letter-spacing:-0.018em;padding:0 16px;text-align:center;user-select:text;-webkit-user-select:text;cursor:text">
-          Our <em style="font-style:italic;color:#2a8a4f;font-weight:600">private thoughts &amp;<br>feelings</em> about each other.
+          Our <em style="font-style:italic;color:#2a8a4f;font-weight:600">private thoughts &amp; feelings</em><br>about each other stay trapped in our heads.
         </div>
 
         <!-- cs4CourtSvg + JS-rendered head DELETED 2026-05-03 PM per Dave: BACK card is text-only.
@@ -7024,9 +7024,9 @@ html, body, html body{
 
       <!-- BOTTOM: RED — FLIP CARD [Dave 2026-05-02 PM v2: front = simple graphic NO TEXT, back = existing rich content] -->
       <div class="cs4-anim cs4-red cs4-flip-wrap cs4-red-wrap" onclick="cs4ToggleBottom();event.stopPropagation()">
-       <div class="cs4-flip-inner cs4-flip-bottom" style="min-height:200px">
+       <div class="cs4-flip-inner cs4-flip-bottom" style="min-height:260px">
         <!-- FRONT: giant "3.0" struck through — universally reads as "skill rating, killed" — Dave 2026-05-02 PM v2 -->
-        <div class="cs4-flip-front" style="width:100%;background:rgba(224,64,64,0.04);border:1.5px solid rgba(224,64,64,0.32);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:center;gap:36px;min-height:200px;position:relative;overflow:hidden">
+        <div class="cs4-flip-front" style="width:100%;background:rgba(224,64,64,0.04);border:1.5px solid rgba(224,64,64,0.32);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:center;gap:36px;min-height:260px;position:relative;overflow:hidden">
           <!-- FRONT: row of community-type emojis (mirrors cs-2c grid: ALL 8 categories) with single red strike — says "today's data fails ALL these communities" [Dave 2026-05-03 PM v6] -->
           <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;padding:6px 16px;width:100%">
             <!-- Community-type icon row (desaturated to convey "running on old broken infrastructure") -->
@@ -7133,30 +7133,15 @@ html, body, html body{
   #cs-bh .bh-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(1rem,1.55vw,1.3rem); color:rgba(26,22,18,0.72); line-height:1.45; max-width:920px; margin-top:6px; }
   #cs-bh .bh-foot em { font-style:italic; color:#c8462c; font-weight:600; }
   #cs-bh .bh-svg-wrap { width:min(900px,94%); margin:6px auto 0; }
-  /* Animation timing — runs once per entry */
-  @keyframes bhThoughtFall {
-    0%   { transform: translate(0, 0) scale(1); opacity: 0.9; }
-    35%  { transform: translate(0, 0) scale(1); opacity: 0.9; }
-    70%  { transform: translate(-58px, 105px) scale(0.4); opacity: 1; }
-    100% { transform: translate(-58px, 105px) scale(0); opacity: 0; }
-  }
-  @keyframes bhEnvelopeFly {
-    0%, 60%   { transform: translate(0, 0); opacity: 0; }
-    72%       { transform: translate(0, 0); opacity: 1; }
-    100%      { transform: translate(180px, -10px); opacity: 1; }
-  }
-  @keyframes bhLineDraw { 0%,68% { stroke-dashoffset:160; } 100% { stroke-dashoffset:0; } }
-  @keyframes bhRecipientPulse { 0%,75% { opacity:0.32; transform:scale(1); } 88% { opacity:1; transform:scale(1.12); } 100% { opacity:1; transform:scale(1); } }
-  #cs-bh.active .bh-thought-anim { animation: bhThoughtFall 3.8s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
-  #cs-bh.active .bh-envelope-anim { animation: bhEnvelopeFly 3.8s cubic-bezier(.55,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
-  #cs-bh.active .bh-conn-line { stroke-dasharray:160; stroke-dashoffset:160; animation: bhLineDraw 3.8s cubic-bezier(.45,.05,.18,1) forwards; }
-  #cs-bh.active .bh-recipient { animation: bhRecipientPulse 4.2s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
-  html[data-export="1"] #cs-bh .bh-thought-anim,
-  html[data-export="1"] #cs-bh .bh-envelope-anim,
-  html[data-export="1"] #cs-bh .bh-conn-line,
-  html[data-export="1"] #cs-bh .bh-recipient { animation: none !important; }
-  html[data-export="1"] #cs-bh .bh-conn-line { stroke-dashoffset: 0 !important; }
-  html[data-export="1"] #cs-bh .bh-recipient { opacity: 1 !important; }
+  /* Sparse manual lines drawn slowly, one at a time — communicates "manual coordination is slow" */
+  @keyframes bhLineDraw { 0% { stroke-dashoffset:200; } 100% { stroke-dashoffset:0; } }
+  #cs-bh .bh-line-1, #cs-bh .bh-line-2, #cs-bh .bh-line-3 { stroke-dasharray:200; stroke-dashoffset:200; }
+  #cs-bh.active .bh-line-1 { animation: bhLineDraw 1.4s 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-bh.active .bh-line-2 { animation: bhLineDraw 1.6s 1.8s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-bh.active .bh-line-3 { animation: bhLineDraw 1.5s 3.0s cubic-bezier(.45,.05,.18,1) forwards; }
+  html[data-export="1"] #cs-bh .bh-line-1,
+  html[data-export="1"] #cs-bh .bh-line-2,
+  html[data-export="1"] #cs-bh .bh-line-3 { stroke-dashoffset: 0 !important; animation: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-bh">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Today &middot; The manual pipeline</div>
@@ -7168,64 +7153,81 @@ html, body, html body{
       </div>
 
       <div class="bh-svg-wrap">
-        <svg viewBox="0 0 900 360" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
-          <!-- LEFT: the giver — head with private impressions inside, arm extended -->
+        <svg viewBox="0 0 1080 460" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+          <!-- 8 community members. Each has their OWN private impressions (thought-dots inside head).
+               A few sparse RED dashed manual-reach lines connect some pairs — most never connect.
+               Visual: rich data trapped in heads + slow, manual, terrible coordination. -->
+
+          <!-- ============== SPARSE MANUAL CONNECTION LINES (drawn slowly, one at a time) ============== -->
+          <g stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 5" fill="none" opacity="0.55">
+            <line class="bh-line-1" x1="155" y1="135" x2="200" y2="280"/>
+            <line class="bh-line-2" x1="380" y1="115" x2="685" y2="125"/>
+            <line class="bh-line-3" x1="540" y1="145" x2="600" y2="290"/>
+          </g>
+
+          <!-- ============== 8 COMMUNITY FIGURES — each with their own private impressions inside head ============== -->
+          <!-- Figure 1: top-left -->
           <g>
-            <!-- Body silhouette -->
-            <ellipse cx="200" cy="285" rx="90" ry="14" fill="rgba(26,22,18,0.04)"/>
-            <!-- Head -->
-            <circle cx="200" cy="110" r="62" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2.2"/>
-            <!-- Body shoulders -->
-            <path d="M 130 280 Q 130 200 165 175 L 235 175 Q 270 200 270 280 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.8"/>
-            <!-- Arm extending RIGHT toward connection -->
-            <path d="M 270 195 Q 320 200 358 215" fill="none" stroke="#5B8FD4" stroke-width="6" stroke-linecap="round"/>
-            <!-- Hand at end of arm -->
-            <circle cx="372" cy="218" r="11" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/>
-
-            <!-- THOUGHT-DOTS inside head (private impressions about others) -->
-            <g class="bh-thoughts-static">
-              <circle cx="178" cy="92"  r="6" fill="#b8954a"/>
-              <circle cx="208" cy="86"  r="5" fill="#5fa896"/>
-              <circle cx="232" cy="105" r="6" fill="#c8556a"/>
-              <circle cx="186" cy="125" r="5" fill="#8a5aa0"/>
-              <circle cx="218" cy="132" r="5" fill="#3a7da3"/>
-            </g>
-
-            <!-- ANIMATED: one thought "falls" from head down through body to hand -->
-            <circle class="bh-thought-anim" cx="208" cy="105" r="7" fill="#b8954a" opacity="0.9"/>
-
-            <!-- Label under person -->
-            <text x="200" y="320" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.6)">YOU</text>
+            <circle cx="155" cy="100" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 113 200 Q 113 150 138 138 L 172 138 Q 197 150 197 200 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="143" cy="88" r="3.5" fill="#b8954a"/><circle cx="161" cy="86" r="3" fill="#5fa896"/><circle cx="170" cy="100" r="3.5" fill="#c8556a"/><circle cx="148" cy="110" r="3" fill="#8a5aa0"/></g>
+          </g>
+          <!-- Figure 2 -->
+          <g>
+            <circle cx="345" cy="80" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 303 180 Q 303 130 328 118 L 362 118 Q 387 130 387 180 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="333" cy="68" r="3.5" fill="#5fa896"/><circle cx="351" cy="66" r="3" fill="#b8954a"/><circle cx="360" cy="80" r="3.5" fill="#3a7da3"/><circle cx="338" cy="90" r="3" fill="#c8556a"/></g>
+          </g>
+          <!-- Figure 3 -->
+          <g>
+            <circle cx="540" cy="110" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 498 210 Q 498 160 523 148 L 557 148 Q 582 160 582 210 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="528" cy="98" r="3.5" fill="#c8556a"/><circle cx="546" cy="96" r="3" fill="#8a5aa0"/><circle cx="555" cy="110" r="3.5" fill="#5fa896"/><circle cx="533" cy="120" r="3" fill="#b8954a"/></g>
+          </g>
+          <!-- Figure 4 -->
+          <g>
+            <circle cx="730" cy="90" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 688 190 Q 688 140 713 128 L 747 128 Q 772 140 772 190 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="718" cy="78" r="3.5" fill="#8a5aa0"/><circle cx="736" cy="76" r="3" fill="#3a7da3"/><circle cx="745" cy="90" r="3.5" fill="#b8954a"/><circle cx="723" cy="100" r="3" fill="#5fa896"/></g>
+          </g>
+          <!-- Figure 5 -->
+          <g>
+            <circle cx="920" cy="105" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 878 205 Q 878 155 903 143 L 937 143 Q 962 155 962 205 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="908" cy="93" r="3.5" fill="#3a7da3"/><circle cx="926" cy="91" r="3" fill="#c8556a"/><circle cx="935" cy="105" r="3.5" fill="#8a5aa0"/><circle cx="913" cy="115" r="3" fill="#5fa896"/></g>
+          </g>
+          <!-- Figure 6 -->
+          <g>
+            <circle cx="200" cy="310" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 158 410 Q 158 360 183 348 L 217 348 Q 242 360 242 410 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="188" cy="298" r="3.5" fill="#b8954a"/><circle cx="206" cy="296" r="3" fill="#5fa896"/><circle cx="215" cy="310" r="3.5" fill="#c8556a"/><circle cx="193" cy="320" r="3" fill="#3a7da3"/></g>
+          </g>
+          <!-- Figure 7 -->
+          <g>
+            <circle cx="430" cy="320" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 388 420 Q 388 370 413 358 L 447 358 Q 472 370 472 420 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="418" cy="308" r="3.5" fill="#5fa896"/><circle cx="436" cy="306" r="3" fill="#8a5aa0"/><circle cx="445" cy="320" r="3.5" fill="#b8954a"/><circle cx="423" cy="330" r="3" fill="#c8556a"/></g>
+          </g>
+          <!-- Figure 8 -->
+          <g>
+            <circle cx="620" cy="320" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 578 420 Q 578 370 603 358 L 637 358 Q 662 370 662 420 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="608" cy="308" r="3.5" fill="#c8556a"/><circle cx="626" cy="306" r="3" fill="#b8954a"/><circle cx="635" cy="320" r="3.5" fill="#5fa896"/><circle cx="613" cy="330" r="3" fill="#8a5aa0"/></g>
+          </g>
+          <!-- Figure 9 -->
+          <g>
+            <circle cx="830" cy="310" r="36" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 788 410 Q 788 360 813 348 L 847 348 Q 872 360 872 410 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.5"/>
+            <g><circle cx="818" cy="298" r="3.5" fill="#3a7da3"/><circle cx="836" cy="296" r="3" fill="#c8556a"/><circle cx="845" cy="310" r="3.5" fill="#8a5aa0"/><circle cx="823" cy="320" r="3" fill="#b8954a"/></g>
           </g>
 
-          <!-- MIDDLE: the manual connection line + animated envelope -->
-          <line class="bh-conn-line" x1="386" y1="220" x2="546" y2="220" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 5"/>
-          <!-- Envelope flying along the line -->
-          <g class="bh-envelope-anim" transform="translate(386 220)">
-            <rect x="-14" y="-9" width="28" height="18" rx="1.5" fill="#fbf6ec" stroke="#c8462c" stroke-width="1.6"/>
-            <path d="M -14 -9 L 0 0 L 14 -9" fill="none" stroke="#c8462c" stroke-width="1.6"/>
-          </g>
-          <!-- "BY HAND" label centered above the line -->
-          <text x="466" y="200" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="3" fill="#c8462c">BY HAND</text>
+          <!-- "BY HAND" labels along the connection lines (small, red) -->
+          <text x="155" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#c8462c" transform="rotate(73 178 218)">BY HAND</text>
+          <text x="525" y="105" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#c8462c">BY HAND</text>
+          <text x="540" y="225" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#c8462c" transform="rotate(68 570 215)">BY HAND</text>
 
-          <!-- RIGHT: ONE recipient (lit), 5 OTHERS (greyed out) — the rest of the community waits -->
-          <!-- Lit recipient (animated pulse on receive) -->
-          <g class="bh-recipient" opacity="0.32">
-            <circle cx="600" cy="180" r="32" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="2.2"/>
-            <circle cx="600" cy="170" r="11" fill="rgba(184,149,74,0.32)"/>
-            <path d="M 580 200 Q 600 188 620 200" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/>
-            <text x="600" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#b8954a">INVITED</text>
-          </g>
-
-          <!-- 5 GREYED OUT bystanders (still waiting) -->
-          <g opacity="0.30">
-            <g><circle cx="700" cy="80"  r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="700" cy="74"  r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 686 96 Q 700 86 714 96" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-            <g><circle cx="800" cy="160" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="800" cy="154" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 786 176 Q 800 166 814 176" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-            <g><circle cx="820" cy="280" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="820" cy="274" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 806 296 Q 820 286 834 296" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-            <g><circle cx="700" cy="300" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="700" cy="294" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 686 316 Q 700 306 714 316" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-            <g><circle cx="600" cy="320" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="600" cy="314" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 586 336 Q 600 326 614 336" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-          </g>
-          <text x="760" y="346" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="700" letter-spacing="2.2" fill="rgba(26,22,18,0.45)">NEVER GET AN INVITATION</text>
+          <!-- Bottom caption strip -->
+          <text x="540" y="450" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.55)">EVERY HEAD FULL OF IMPRESSIONS · SLOW MANUAL COORDINATION · MOST NEVER CONNECT</text>
         </svg>
       </div>
 
