@@ -6569,9 +6569,9 @@ html, body, html body{
             </g>
           </g>
         </svg>
-        <!-- Caption label below the graphic — mirrors FRONT [Dave 2026-05-03 PM]. Sync with FRONT 'cs4-network-label'. -->
-        <div class="cs4-network-label" style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.55);text-align:center;margin-top:-6px">
-          <span style="font-family:'Playfair Display',serif;text-transform:none;letter-spacing:0;font-weight:700"><span style="color:#4d82c6">Give</span> <span style="color:#1a1612;font-style:italic;font-size:0.84em;font-weight:500;padding:0 0.04em">n</span> <span style="color:#c94d32">Receive</span></span> &nbsp;community data
+        <!-- Caption label below the graphic [Dave 2026-05-03 PM]. -->
+        <div class="cs4-network-label" style="font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.62);text-align:center;margin-top:-6px;display:flex;align-items:baseline;justify-content:center;gap:10px">
+          <span style="font-family:'Playfair Display',serif;text-transform:none;letter-spacing:0;font-weight:700;font-size:1.4em"><span style="color:#4d82c6">Give</span> <span style="color:#1a1612;font-style:italic;font-size:0.78em;font-weight:500;padding:0 0.04em">n</span> <span style="color:#c94d32">Receive</span></span> <span>community data</span>
         </div>
 
         <!-- cs4CourtSvg + JS-rendered head DELETED 2026-05-03 PM per Dave: BACK card is text-only.
@@ -7019,36 +7019,96 @@ html, body, html body{
        <div class="cs4-flip-inner cs4-flip-bottom" style="min-height:200px">
         <!-- FRONT: giant "3.0" struck through — universally reads as "skill rating, killed" — Dave 2026-05-02 PM v2 -->
         <div class="cs4-flip-front" style="width:100%;background:rgba(224,64,64,0.04);border:1.5px solid rgba(224,64,64,0.32);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:center;gap:36px;min-height:200px;position:relative;overflow:hidden">
-          <!-- OLD PARADIGM visualized as a SOLO STAIRSTEP CLIMB — covers the whole paradigm
-               (skill rating + ego + status + achievement) better than just "3.0" alone.
-               Lone figure at the top step, ascending rating tiers, struck through. [Dave 2026-05-03 PM v3] -->
-          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;padding:6px 24px">
+          <!-- 3 VARIANT VISUALS for the OLD PARADIGM card [Dave 2026-05-03 PM iteration] —
+               each shows a different way to say "real community work happens BY HAND because the right data isn't digitized."
+               Dave picks favorite, the others get removed. -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;padding:6px 16px;width:100%">
             <div style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(200,70,44,0.85);text-align:center;line-height:1.4">Replaces non-existing<br>&amp; failing community data</div>
-            <svg width="320" height="140" viewBox="0 0 320 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;max-width:100%;height:auto">
-              <!-- 5 ascending step blocks -->
-              <g>
-                <rect x="20"  y="98" width="48" height="22" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.35)" stroke-width="1.2"/>
-                <rect x="68"  y="78" width="48" height="42" fill="rgba(26,22,18,0.08)" stroke="rgba(26,22,18,0.40)" stroke-width="1.2"/>
-                <rect x="116" y="58" width="48" height="62" fill="rgba(26,22,18,0.10)" stroke="rgba(26,22,18,0.45)" stroke-width="1.2"/>
-                <rect x="164" y="38" width="48" height="82" fill="rgba(26,22,18,0.12)" stroke="rgba(26,22,18,0.50)" stroke-width="1.2"/>
-                <rect x="212" y="18" width="48" height="102" fill="rgba(26,22,18,0.14)" stroke="rgba(26,22,18,0.55)" stroke-width="1.2"/>
-              </g>
-              <!-- Skill-rating tier labels under each step -->
-              <g font-family="Manrope,sans-serif" font-size="9" font-weight="700" fill="rgba(26,22,18,0.45)" letter-spacing="0.05em" text-anchor="middle">
-                <text x="44"  y="134">2.0</text>
-                <text x="92"  y="134">3.0</text>
-                <text x="140" y="134">4.0</text>
-                <text x="188" y="134">5.0</text>
-                <text x="236" y="134">6.0</text>
-              </g>
-              <!-- Tiny lone climber on the top step (head + torso, alone) -->
-              <g>
-                <circle cx="236" cy="9" r="4.5" fill="rgba(26,22,18,0.55)"/>
-                <line x1="236" y1="13.5" x2="236" y2="18" stroke="rgba(26,22,18,0.55)" stroke-width="2" stroke-linecap="round"/>
-              </g>
-              <!-- Diagonal red strike-through across the whole climb -->
-              <line x1="14" y1="116" x2="278" y2="6" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
-            </svg>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;width:100%;max-width:920px">
+
+              <!-- VARIANT A: "BY HAND" stamp over coordination tools (texts, sticky notes, group chats) -->
+              <div style="background:rgba(255,255,255,0.4);border:1.5px solid rgba(200,70,44,0.30);border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;overflow:hidden">
+                <div style="font-family:'Manrope',sans-serif;font-size:.46rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.4)">Option A</div>
+                <svg width="100%" height="72" viewBox="0 0 160 72" preserveAspectRatio="xMidYMid meet">
+                  <!-- Group chat bubble -->
+                  <rect x="6" y="14" width="44" height="22" rx="11" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.2"/>
+                  <line x1="14" y1="22" x2="42" y2="22" stroke="#5B8FD4" stroke-width="1" opacity="0.6"/>
+                  <line x1="14" y1="28" x2="36" y2="28" stroke="#5B8FD4" stroke-width="1" opacity="0.5"/>
+                  <!-- Sticky note -->
+                  <rect x="58" y="8" width="36" height="36" fill="rgba(212,168,83,0.20)" stroke="rgba(184,149,74,0.6)" stroke-width="1" transform="rotate(-6 76 26)"/>
+                  <line x1="62" y1="18" x2="86" y2="18" stroke="rgba(184,149,74,0.8)" stroke-width="0.8" transform="rotate(-6 76 26)"/>
+                  <line x1="62" y1="24" x2="84" y2="24" stroke="rgba(184,149,74,0.8)" stroke-width="0.8" transform="rotate(-6 76 26)"/>
+                  <line x1="62" y1="30" x2="80" y2="30" stroke="rgba(184,149,74,0.8)" stroke-width="0.8" transform="rotate(-6 76 26)"/>
+                  <!-- Phone -->
+                  <rect x="106" y="12" width="20" height="32" rx="3" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.4)" stroke-width="1"/>
+                  <rect x="109" y="16" width="14" height="22" fill="rgba(91,143,212,0.10)"/>
+                  <circle cx="116" cy="42" r="0.8" fill="rgba(26,22,18,0.4)"/>
+                  <!-- BY HAND stamp overlay -->
+                  <g transform="translate(80, 56)">
+                    <rect x="-32" y="-8" width="64" height="16" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4" stroke-dasharray="3 2" transform="rotate(-4)"/>
+                    <text x="0" y="3" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" font-weight="800" letter-spacing="2.4" fill="#c8462c" transform="rotate(-4)">BY HAND</text>
+                  </g>
+                  <!-- diagonal strike -->
+                  <line x1="6" y1="56" x2="148" y2="14" stroke="#c8462c" stroke-width="1.6" opacity="0.7"/>
+                </svg>
+                <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.72rem;color:rgba(26,22,18,0.7);line-height:1.3;text-align:center">
+                  Texts. Sticky notes. Group chats. <strong style="font-style:normal;color:#c8462c">By hand.</strong>
+                </div>
+              </div>
+
+              <!-- VARIANT B: Database split — "Skill rating: digitized" vs "Who matters: empty rows" -->
+              <div style="background:rgba(255,255,255,0.4);border:1.5px solid rgba(200,70,44,0.30);border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;overflow:hidden">
+                <div style="font-family:'Manrope',sans-serif;font-size:.46rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.4)">Option B</div>
+                <div style="display:flex;gap:4px;width:100%;justify-content:center;align-items:flex-start">
+                  <!-- LEFT: digitized skill rating -->
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex:1">
+                    <div style="font-family:'Manrope',sans-serif;font-size:.42rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#2a8a4f">Digitized</div>
+                    <div style="background:rgba(42,138,79,0.06);border:1px solid rgba(42,138,79,0.4);border-radius:4px;padding:5px 8px;width:100%;text-align:left;font-family:'JetBrains Mono',monospace;font-size:.55rem;color:rgba(26,22,18,0.78);line-height:1.6">
+                      3.0<br>4.5<br>5.25<br>6.0
+                    </div>
+                    <div style="font-family:'DM Sans',sans-serif;font-size:.55rem;color:rgba(26,22,18,0.55);font-style:italic">skill rating</div>
+                  </div>
+                  <!-- RIGHT: empty rows = who matters -->
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;position:relative">
+                    <div style="font-family:'Manrope',sans-serif;font-size:.42rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#c8462c">By hand</div>
+                    <div style="background:rgba(200,70,44,0.04);border:1px dashed rgba(200,70,44,0.5);border-radius:4px;padding:5px 8px;width:100%;text-align:left;font-family:'JetBrains Mono',monospace;font-size:.55rem;color:rgba(200,70,44,0.6);line-height:1.6">
+                      ?<br>?<br>?<br>?
+                    </div>
+                    <div style="font-family:'DM Sans',sans-serif;font-size:.55rem;color:rgba(26,22,18,0.55);font-style:italic">who matters</div>
+                  </div>
+                </div>
+                <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.72rem;color:rgba(26,22,18,0.7);line-height:1.3;text-align:center;margin-top:2px">
+                  Numbers exist. <strong style="font-style:normal;color:#c8462c">The fabric doesn't.</strong>
+                </div>
+              </div>
+
+              <!-- VARIANT C: Manual web — people connected by hand-drawn dotted lines, "by hand" overlay -->
+              <div style="background:rgba(255,255,255,0.4);border:1.5px solid rgba(200,70,44,0.30);border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;overflow:hidden">
+                <div style="font-family:'Manrope',sans-serif;font-size:.46rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.4)">Option C</div>
+                <svg width="100%" height="72" viewBox="0 0 160 72" preserveAspectRatio="xMidYMid meet">
+                  <!-- Hand-drawn squiggly dotted lines connecting people (chaotic / by hand) -->
+                  <g stroke="rgba(26,22,18,0.4)" stroke-width="1" fill="none" stroke-dasharray="2 2" opacity="0.55">
+                    <path d="M 24 18 Q 50 36 84 22 Q 110 14 138 30"/>
+                    <path d="M 84 22 Q 60 50 30 50"/>
+                    <path d="M 84 22 Q 110 50 130 56"/>
+                    <path d="M 30 50 Q 80 64 130 56"/>
+                  </g>
+                  <!-- People dots, varied colors -->
+                  <circle cx="24" cy="18" r="5" fill="rgba(91,143,212,0.7)" stroke="#fff" stroke-width="1.2"/>
+                  <circle cx="84" cy="22" r="5" fill="rgba(184,149,74,0.7)" stroke="#fff" stroke-width="1.2"/>
+                  <circle cx="138" cy="30" r="5" fill="rgba(200,85,106,0.7)" stroke="#fff" stroke-width="1.2"/>
+                  <circle cx="30" cy="50" r="5" fill="rgba(138,90,160,0.7)" stroke="#fff" stroke-width="1.2"/>
+                  <circle cx="130" cy="56" r="5" fill="rgba(95,168,150,0.7)" stroke="#fff" stroke-width="1.2"/>
+                  <!-- diagonal strike -->
+                  <line x1="6" y1="62" x2="148" y2="10" stroke="#c8462c" stroke-width="1.6" opacity="0.7"/>
+                </svg>
+                <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.72rem;color:rgba(26,22,18,0.7);line-height:1.3;text-align:center">
+                  Matchmaking. Cliques. Group formation. <strong style="font-style:normal;color:#c8462c">All by hand.</strong>
+                </div>
+              </div>
+
+            </div>
           </div>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
         </div>
@@ -7952,7 +8012,7 @@ html, body, html body{
 <div class="inner" style="padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:0 auto">
-    <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> is <em style="font-style:italic;font-weight:500;color:#b8954a">invitation-based matchmaking<br>for real communities.</em>
+    <em style="font-style:italic;font-weight:500;color:#b8954a">Invitation-based matchmaking<br>for real communities.</em>
   </div>
 
   <!-- ===== Center stage: ENVELOPE IS THE HERO [Dave 2026-05-02 PM v3]
@@ -8014,7 +8074,7 @@ html, body, html body{
             <path d="M -10 1 L -3 9 L 11 -7" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
         </svg>
-        <div class="gnr-env-text"><em>Invitation-feed,</em> not calendars.</div>
+        <div class="gnr-env-text"><em>Invitation-feed,</em><br>not calendars.</div>
       </div>
     </div>
     <div class="gnr-callout gnr-callout-2">
