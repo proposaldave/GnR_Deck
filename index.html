@@ -10393,7 +10393,20 @@ html, body, html body{
     <div class="ft-verbs-row">
       <div class="ft-verb ft-verb-1">
         <div class="ft-verb-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3a7da3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><line x1="6" y1="6" x2="18" y2="6"/><line x1="6" y1="6" x2="12" y2="18"/><line x1="18" y1="6" x2="12" y2="18"/></svg>
+          <!-- Fuller 5-node knowledge graph [Dave 2026-05-03 PM] -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3a7da3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="12" x2="5" y2="5"/>
+            <line x1="12" y1="12" x2="19" y2="5"/>
+            <line x1="12" y1="12" x2="5" y2="19"/>
+            <line x1="12" y1="12" x2="19" y2="19"/>
+            <line x1="5" y1="5" x2="19" y2="5" opacity="0.55"/>
+            <line x1="5" y1="19" x2="19" y2="19" opacity="0.55"/>
+            <circle cx="12" cy="12" r="2.4" fill="rgba(91,143,212,0.30)"/>
+            <circle cx="5" cy="5" r="1.8" fill="rgba(91,143,212,0.18)"/>
+            <circle cx="19" cy="5" r="1.8" fill="rgba(91,143,212,0.18)"/>
+            <circle cx="5" cy="19" r="1.8" fill="rgba(91,143,212,0.18)"/>
+            <circle cx="19" cy="19" r="1.8" fill="rgba(91,143,212,0.18)"/>
+          </svg>
         </div>
         <div class="ft-verb-label">Graph it.</div>
       </div>
@@ -10418,14 +10431,27 @@ html, body, html body{
       <span class="ft-arrow">&rarr;</span>
       <div class="ft-verb ft-verb-4">
         <div class="ft-verb-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5fa896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2 L12 5 M12 19 L12 22 M2 12 L5 12 M19 12 L22 12 M5 5 L7 7 M17 17 L19 19 M5 19 L7 17 M17 7 L19 5"/></svg>
+          <!-- Self-running cycle / circular arrows = automation [Dave 2026-05-03 PM] -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5fa896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12 A9 9 0 0 1 5.5 18.4"/>
+            <path d="M3 12 A9 9 0 0 1 18.5 5.6"/>
+            <polyline points="21,7 21,12 16,12"/>
+            <polyline points="3,17 3,12 8,12"/>
+          </svg>
         </div>
         <div class="ft-verb-label">Automate it.</div>
       </div>
       <span class="ft-arrow">&rarr;</span>
       <div class="ft-verb ft-verb-5">
         <div class="ft-verb-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2a8a4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 L10 17 L20 7"/><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/></svg>
+          <!-- Gift / reward box with bow = incentive [Dave 2026-05-03 PM] -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2a8a4f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="9" width="18" height="12" rx="1.5" fill="rgba(42,138,79,0.10)"/>
+            <line x1="12" y1="9" x2="12" y2="21"/>
+            <line x1="3" y1="13" x2="21" y2="13"/>
+            <path d="M12 9 C9 9 7 7 7 5 C7 3.5 8.5 3 9.5 3.5 C11 4.5 12 7 12 9"/>
+            <path d="M12 9 C15 9 17 7 17 5 C17 3.5 15.5 3 14.5 3.5 C13 4.5 12 7 12 9"/>
+          </svg>
         </div>
         <div class="ft-verb-label">Incentivize it.</div>
       </div>
@@ -10433,7 +10459,15 @@ html, body, html body{
       <!-- "Sell it." DELETED 2026-05-03 PM per Dave -->
       <div class="ft-verb ft-verb-7">
         <div class="ft-verb-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8462c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14 Q8 4 12 12 Q16 20 21 10"/><circle cx="3" cy="14" r="1.6" fill="#c8462c"/><circle cx="21" cy="10" r="1.6" fill="#c8462c"/></svg>
+          <!-- Cluster of stars/sparkles = abundance [Dave 2026-05-03 PM] -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8462c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Big star -->
+            <path d="M12 4 L13.4 8 L17.5 8.5 L14.4 11.3 L15.5 15.5 L12 13.2 L8.5 15.5 L9.6 11.3 L6.5 8.5 L10.6 8 Z" fill="rgba(200,70,44,0.22)"/>
+            <!-- Small star upper-right -->
+            <path d="M19 5 L19.6 6.7 L21.4 7 L20 8.2 L20.5 10 L19 9 L17.5 10 L18 8.2 L16.6 7 L18.4 6.7 Z" fill="rgba(200,70,44,0.18)" stroke-width="1"/>
+            <!-- Small star lower-left -->
+            <path d="M5 17 L5.6 18.7 L7.4 19 L6 20.2 L6.5 22 L5 21 L3.5 22 L4 20.2 L2.6 19 L4.4 18.7 Z" fill="rgba(200,70,44,0.18)" stroke-width="1"/>
+          </svg>
         </div>
         <div class="ft-verb-label">Make it abundant.</div>
       </div>
