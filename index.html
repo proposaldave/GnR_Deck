@@ -5348,18 +5348,17 @@ html, body, html body{
       <!-- Wordmark — original GnR colors. Blue Give (exact #5B8FD4) + ink italic n + red Receive (exact #e04040).
            The n flips from cream→ink for legibility on light bg; brand identity preserved. -->
       <svg viewBox="-30 0 1140 220" width="820" height="158" preserveAspectRatio="xMidYMid meet" style="display:block;margin:0 auto 38px auto;max-width:90%;height:auto" xmlns="http://www.w3.org/2000/svg">
-        <!-- Wordmark layout [Dave 2026-05-03 PM v3]: explicit anchored placement for Give and Receive,
-             then n with text-anchor=middle at the precise midpoint between the END of "Give" and the START of "Receive".
-             Give=text-anchor=end at x=410 → Give's "e" right edge lands at x=410.
-             Receive=text-anchor=start at x=510 → Receive's "R" left edge lands at x=510.
-             n centered at x=460 → equal 50px optical gap on both sides. -->
-        <text x="410" y="180" text-anchor="end" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#5B8FD4" letter-spacing="-3">Give</text>
+        <!-- Wordmark layout [Dave 2026-05-03 PM v4]: WIDER GAP for breathing room around the n.
+             Give=text-anchor=end at x=395 → Give's "e" right edge lands at x=395.
+             Receive=text-anchor=start at x=525 → Receive's "R" left edge lands at x=525.
+             n centered at x=460 → ~37px optical gap on each side (was 22px, too tight). -->
+        <text x="395" y="180" text-anchor="end" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#5B8FD4" letter-spacing="-3">Give</text>
         <text x="460" y="180" text-anchor="middle" font-family="Fraunces, Playfair Display, Georgia, serif" font-style="italic" font-size="128" font-weight="400" fill="#1a1612">n</text>
-        <text x="510" y="180" text-anchor="start" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#c8462c" letter-spacing="-3">Receive</text>
-        <!-- Gold leaf arc above the n — brackets the new n position (centered at x=460) -->
-        <path d="M 435 52 Q 460 -2 485 52" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/>
-        <circle cx="435" cy="52" r="3.6" fill="#5B8FD4"/>
-        <circle cx="485" cy="52" r="3.6" fill="#c8462c"/>
+        <text x="525" y="180" text-anchor="start" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#c8462c" letter-spacing="-3">Receive</text>
+        <!-- Gold leaf arc above the n — brackets the n at x=460 -->
+        <path d="M 432 52 Q 460 -2 488 52" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/>
+        <circle cx="432" cy="52" r="3.6" fill="#5B8FD4"/>
+        <circle cx="488" cy="52" r="3.6" fill="#c8462c"/>
       </svg>
       <!-- Primary descriptor (header) -->
       <div style="font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3vw,46px);font-weight:600;color:#1a1612;line-height:1.15;letter-spacing:-0.012em;margin:0 auto 14px;text-align:center">
