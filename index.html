@@ -9158,9 +9158,24 @@ html, body, html body{
     html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:translate(-50%,-50%) !important; animation:none !important; }
   </style>
 
-  <!-- Headline below large envelope: "Everyone in your community gets" [Dave 2026-05-04] -->
+  <!-- Headline below large envelope: "Everyone in your community gets" + 3-fan arrow to envelopes [Dave 2026-05-04] -->
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2.2rem);font-weight:600;color:#1a1612;line-height:1.2;letter-spacing:-0.014em;max-width:1080px;margin:14px auto 0;text-align:center">
-    Everyone in your community gets <em style="font-style:italic;font-weight:500;color:#b8954a">&hellip;</em>
+    Everyone in your community gets
+  </div>
+  <!-- Three diverging arrows pointing down to the 3 envelopes -->
+  <div style="width:100%;max-width:760px;margin:6px auto 0">
+    <svg viewBox="0 0 760 50" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" fill="none" stroke-dasharray="4 5">
+        <path d="M 380 4 L 130 38"/>
+        <path d="M 380 4 L 380 38"/>
+        <path d="M 380 4 L 630 38"/>
+      </g>
+      <g fill="#b8954a">
+        <polygon points="130,42 122,30 138,32"/>
+        <polygon points="380,42 372,32 388,32"/>
+        <polygon points="630,42 622,32 638,30"/>
+      </g>
+    </svg>
   </div>
 
   <!-- 3 PROPER ENVELOPES — click to open the flap [Dave 2026-05-04 v3]
@@ -9298,7 +9313,7 @@ html, body, html body{
           <text x="120" y="100" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#b8954a">gives?</tspan></text>
         </g>
         <g class="env-front-text">
-          <text x="120" y="135" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Recognize</text>
+          <text x="120" y="135" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" font-style="italic" fill="#b8954a">Recognize others</text>
         </g>
         <g class="env-flap">
           <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
