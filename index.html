@@ -7121,27 +7121,40 @@ html, body, html body{
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════════════════
-     cs-thegap · THE PROBLEM TODAY · MERGED [Dave 2026-05-04, ChatGPT-ref styled]
-     ONE slide replacing cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 in the main flow.
-     3 figures + rich network-graph thought bubbles + by-hand texting + clean bottom strip.
+     cs-thegap · THE PROBLEM TODAY · BEST [Dave 2026-05-04 v3]
+     Inspired by ChatGPT reference: dark filled silhouettes (photo-feel) + glowing bubbles +
+     "WHAT ACTUALLY HAPPENS" label + timestamped phone bubble + 4-icon consequence strip +
+     hierarchical closing line.
 ═══════════════════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-thegap .tg-stage { display:flex; flex-direction:column; align-items:stretch; justify-content:center; min-height:100%; padding:36px 48px 28px; gap:6px; text-align:center; }
-  #cs-thegap .tg-eye { font-family:'Manrope',sans-serif; font-size:.95rem; font-weight:700; letter-spacing:.42em; text-transform:uppercase; color:rgba(26,22,18,0.85); }
-  #cs-thegap .tg-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,3.4vw,2.8rem); font-weight:700; color:#1a1612; line-height:1.06; letter-spacing:-0.018em; }
+  #cs-thegap .tg-stage { display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start; min-height:100%; padding:32px 56px 24px; gap:4px; text-align:center; }
+  #cs-thegap .tg-eye { font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:800; letter-spacing:.42em; text-transform:uppercase; color:#c8462c; margin-bottom:6px; }
+  #cs-thegap .tg-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,3.4vw,3rem); font-weight:700; color:#1a1612; line-height:1.05; letter-spacing:-0.02em; }
   #cs-thegap .tg-head em { font-style:italic; font-weight:600; color:#c8462c; }
-  #cs-thegap .tg-svg-wrap { width:100%; max-width:1200px; margin:6px auto 0; }
-  #cs-thegap .tg-foot { margin-top:10px; }
-  #cs-thegap .tg-foot .top-strip { font-family:'Manrope',sans-serif; font-size:clamp(.95rem,1.3vw,1.2rem); font-weight:700; letter-spacing:.32em; text-transform:uppercase; color:rgba(26,22,18,0.85); margin-bottom:8px; }
-  #cs-thegap .tg-foot .bot-strip { font-family:'Manrope',sans-serif; font-size:clamp(.95rem,1.3vw,1.2rem); font-weight:700; letter-spacing:.32em; text-transform:uppercase; color:#c8462c; }
+  #cs-thegap .tg-sub { font-family:'Playfair Display',serif; font-size:clamp(.95rem,1.4vw,1.18rem); color:rgba(26,22,18,0.75); line-height:1.4; max-width:1100px; margin:8px auto 0; }
+  #cs-thegap .tg-sub em { font-style:italic; color:#c8462c; font-weight:600; }
+  #cs-thegap .tg-svg-wrap { width:100%; max-width:1300px; margin:10px auto 0; }
 
-  @keyframes tgBubbleFloat { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-4px) } }
-  @keyframes tgCheck1 { 0%,30% { opacity:0; transform:scale(0.4) } 40%,96% { opacity:1; transform:scale(1) } 100% { opacity:1; transform:scale(1) } }
-  @keyframes tgCheck2 { 0%,55% { opacity:0; transform:scale(0.4) } 65%,96% { opacity:1; transform:scale(1) } 100% { opacity:1; transform:scale(1) } }
-  @keyframes tgArrowPulse { 0%,100% { opacity:0.55 } 50% { opacity:1 } }
+  /* 4-icon consequence strip */
+  #cs-thegap .tg-icons { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; max-width:1300px; margin:10px auto 0; padding:14px 24px; border-top:1px solid rgba(26,22,18,0.14); border-bottom:1px solid rgba(26,22,18,0.14); }
+  #cs-thegap .tg-icon-cell { display:flex; align-items:center; gap:14px; }
+  #cs-thegap .tg-icon-circle { width:46px; height:46px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+  #cs-thegap .tg-icon-text { text-align:left; }
+  #cs-thegap .tg-icon-label { font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:#1a1612; line-height:1.1; }
+  #cs-thegap .tg-icon-desc { font-family:'Playfair Display',serif; font-style:italic; font-size:.85rem; color:rgba(26,22,18,0.62); margin-top:3px; line-height:1.18; }
 
-  #cs-thegap .tg-bubble  { animation: tgBubbleFloat 4s ease-in-out infinite; }
-  #cs-thegap .tg-arrows  { animation: tgArrowPulse 3s ease-in-out infinite; }
+  /* Closing line hierarchy */
+  #cs-thegap .tg-close { margin-top:14px; }
+  #cs-thegap .tg-close-1 { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1rem,1.5vw,1.3rem); font-weight:700; color:#1a1612; line-height:1.2; }
+  #cs-thegap .tg-close-2 { font-family:'Manrope',sans-serif; font-size:clamp(.85rem,1.2vw,1.05rem); font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:#c8462c; margin-top:8px; }
+
+  /* Animations */
+  @keyframes tgBubbleFloat { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-3px) } }
+  @keyframes tgGhostPulse { 0%,100% { opacity:0.85 } 50% { opacity:1 } }
+  @keyframes tgCheck1 { 0%,30% { opacity:0; transform:scale(0.4) } 40%,96% { opacity:1; transform:scale(1) } 100% { opacity:1 } }
+  @keyframes tgCheck2 { 0%,55% { opacity:0; transform:scale(0.4) } 65%,96% { opacity:1; transform:scale(1) } 100% { opacity:1 } }
+  #cs-thegap .tg-bubble { animation: tgBubbleFloat 4s ease-in-out infinite; }
+  #cs-thegap .tg-ghost-glow { animation: tgGhostPulse 4s ease-in-out infinite; }
   #cs-thegap .tg-check-1 { transform-origin:center; transform-box:fill-box; animation: tgCheck1 4s ease-in-out infinite; }
   #cs-thegap .tg-check-2 { transform-origin:center; transform-box:fill-box; animation: tgCheck2 4s ease-in-out infinite; }
 </style>
@@ -7149,109 +7162,213 @@ html, body, html body{
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Problem &middot; Communities Today</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
+      <div class="tg-eye">The Problem Today</div>
       <div class="tg-head" style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
         <span>Our communities don&rsquo;t have a <em>like button</em>.</span>
-        <!-- Facebook-style like button (thumbs-up in blue circle) -->
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#1877F2;box-shadow:0 3px 10px rgba(24,119,242,0.32);flex-shrink:0">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
-          </svg>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#1877F2;box-shadow:0 3px 8px rgba(24,119,242,0.3);flex-shrink:0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
         </span>
       </div>
-      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.95vw,1.7rem);font-weight:500;color:rgba(26,22,18,0.78);line-height:1.3;max-width:1200px;margin:6px auto 0;font-style:italic">
-        Our private thoughts and feelings about each other stay <em style="color:#c8462c;font-weight:600">trapped in our heads</em>.
-      </div>
+      <div class="tg-sub">Our private thoughts and feelings about each other stay <em>trapped in our heads</em>.</div>
 
       <div class="tg-svg-wrap">
-        <svg viewBox="0 0 1400 720" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 1300 480" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="tgBubbleGlow" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="#f0c040" stop-opacity="0.55"/>
+              <stop offset="60%" stop-color="#b8954a" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
 
-          <!-- ═══ TOP: 3 rich thought bubbles with internal network graphs ═══ -->
-          <g transform="translate(350, 220)"><path d="M -130 18 Q -154 18 -154 -10 Q -168 -36 -142 -50 Q -142 -78 -104 -82 Q -78 -100 -42 -88 Q -8 -106 28 -90 Q 64 -104 92 -86 Q 124 -82 128 -56 Q 154 -42 142 -16 Q 144 18 118 18 Z" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.8"/><g><line x1="-100" y1="-30" x2="-70" y2="-55" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-70" y1="-55" x2="-40" y2="-30" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-40" y1="-30" x2="-20" y2="-60" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-20" y1="-60" x2="10" y2="-40" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="10" y1="-40" x2="40" y2="-65" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="40" y1="-65" x2="70" y2="-38" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="70" y1="-38" x2="95" y2="-55" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-90" y1="-8" x2="-40" y2="-30" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-30" y1="-8" x2="10" y2="-40" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="30" y1="-10" x2="40" y2="-65" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="80" y1="-8" x2="70" y2="-38" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-100" y1="-30" x2="-30" y2="-8" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-20" y1="-60" x2="-90" y2="-8" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="10" y1="-40" x2="80" y2="-8" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/></g><g><circle cx="-100" cy="-30" r="4" fill="#b8954a"/><circle cx="-70" cy="-55" r="4" fill="#3a7da3"/><circle cx="-40" cy="-30" r="4" fill="#c8462c"/><circle cx="-20" cy="-60" r="4" fill="#5fa896"/><circle cx="10" cy="-40" r="4" fill="#7a4a8c"/><circle cx="40" cy="-65" r="4" fill="#1a1612"/><circle cx="70" cy="-38" r="4" fill="#b8954a"/><circle cx="95" cy="-55" r="4" fill="#3a7da3"/><circle cx="-90" cy="-8" r="4" fill="#c8462c"/><circle cx="-30" cy="-8" r="4" fill="#5fa896"/><circle cx="30" cy="-10" r="4" fill="#7a4a8c"/><circle cx="80" cy="-8" r="4" fill="#1a1612"/></g><circle cx="-44" cy="40" r="6" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.4"/><circle cx="-58" cy="58" r="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.2"/></g><g transform="translate(700, 220)"><path d="M -130 18 Q -154 18 -154 -10 Q -168 -36 -142 -50 Q -142 -78 -104 -82 Q -78 -100 -42 -88 Q -8 -106 28 -90 Q 64 -104 92 -86 Q 124 -82 128 -56 Q 154 -42 142 -16 Q 144 18 118 18 Z" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.8"/><g><line x1="-90" y1="-50" x2="-60" y2="-30" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-60" y1="-30" x2="-30" y2="-58" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-30" y1="-58" x2="0" y2="-32" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="0" y1="-32" x2="30" y2="-62" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="30" y1="-62" x2="60" y2="-30" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="60" y1="-30" x2="90" y2="-52" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-70" y1="-8" x2="-60" y2="-30" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-30" y1="-12" x2="0" y2="-32" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="10" y1="-8" x2="30" y2="-62" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="50" y1="-12" x2="60" y2="-30" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="85" y1="-10" x2="90" y2="-52" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-90" y1="-50" x2="-30" y2="-12" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="0" y1="-32" x2="85" y2="-10" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-60" y1="-30" x2="30" y2="-62" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/></g><g><circle cx="-90" cy="-50" r="4" fill="#c8462c"/><circle cx="-60" cy="-30" r="4" fill="#b8954a"/><circle cx="-30" cy="-58" r="4" fill="#5fa896"/><circle cx="0" cy="-32" r="4" fill="#1a1612"/><circle cx="30" cy="-62" r="4" fill="#3a7da3"/><circle cx="60" cy="-30" r="4" fill="#c8462c"/><circle cx="90" cy="-52" r="4" fill="#7a4a8c"/><circle cx="-70" cy="-8" r="4" fill="#b8954a"/><circle cx="-30" cy="-12" r="4" fill="#3a7da3"/><circle cx="10" cy="-8" r="4" fill="#5fa896"/><circle cx="50" cy="-12" r="4" fill="#1a1612"/><circle cx="85" cy="-10" r="4" fill="#b8954a"/></g><circle cx="-44" cy="40" r="6" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.4"/><circle cx="-58" cy="58" r="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.2"/></g><g transform="translate(1050, 220)"><path d="M -130 18 Q -154 18 -154 -10 Q -168 -36 -142 -50 Q -142 -78 -104 -82 Q -78 -100 -42 -88 Q -8 -106 28 -90 Q 64 -104 92 -86 Q 124 -82 128 -56 Q 154 -42 142 -16 Q 144 18 118 18 Z" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.8"/><g><line x1="-95" y1="-40" x2="-65" y2="-58" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-65" y1="-58" x2="-35" y2="-32" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-35" y1="-32" x2="-5" y2="-58" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-5" y1="-58" x2="25" y2="-30" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="25" y1="-30" x2="55" y2="-58" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="55" y1="-58" x2="88" y2="-32" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-80" y1="-8" x2="-35" y2="-32" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-40" y1="-10" x2="-5" y2="-58" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="5" y1="-12" x2="25" y2="-30" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="45" y1="-8" x2="55" y2="-58" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="80" y1="-10" x2="88" y2="-32" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-95" y1="-40" x2="-40" y2="-10" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="25" y1="-30" x2="80" y2="-10" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/><line x1="-65" y1="-58" x2="5" y2="-12" stroke="rgba(26,22,18,0.28)" stroke-width="0.8"/></g><g><circle cx="-95" cy="-40" r="4" fill="#7a4a8c"/><circle cx="-65" cy="-58" r="4" fill="#c8462c"/><circle cx="-35" cy="-32" r="4" fill="#b8954a"/><circle cx="-5" cy="-58" r="4" fill="#3a7da3"/><circle cx="25" cy="-30" r="4" fill="#1a1612"/><circle cx="55" cy="-58" r="4" fill="#5fa896"/><circle cx="88" cy="-32" r="4" fill="#c8462c"/><circle cx="-80" cy="-8" r="4" fill="#3a7da3"/><circle cx="-40" cy="-10" r="4" fill="#1a1612"/><circle cx="5" cy="-12" r="4" fill="#b8954a"/><circle cx="45" cy="-8" r="4" fill="#c8462c"/><circle cx="80" cy="-10" r="4" fill="#7a4a8c"/></g><circle cx="-44" cy="40" r="6" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.4"/><circle cx="-58" cy="58" r="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.2"/></g>
-
-          <!-- ═══ MIDDLE: 3 figures ═══ -->
-          <g>
-            <g transform="translate(350, 380)">
-              <circle cx="0" cy="0" r="32" fill="none" stroke="#1a1612" stroke-width="2.6"/>
-              <path d="M -52 130 Q -52 60 -10 48 L 10 48 Q 52 60 52 130 Z" fill="none" stroke="#1a1612" stroke-width="2.6"/>
-            </g>
-            <g transform="translate(700, 380)">
-              <circle cx="0" cy="0" r="32" fill="none" stroke="#1a1612" stroke-width="2.6"/>
-              <path d="M -52 130 Q -52 60 -10 48 L 10 48 Q 52 60 52 130 Z" fill="none" stroke="#1a1612" stroke-width="2.6"/>
-            </g>
-            <g transform="translate(1050, 380)">
-              <circle cx="0" cy="0" r="32" fill="none" stroke="#1a1612" stroke-width="2.6"/>
-              <path d="M -52 130 Q -52 60 -10 48 L 10 48 Q 52 60 52 130 Z" fill="none" stroke="#1a1612" stroke-width="2.6"/>
-            </g>
+          <!-- ═══ ROW 1: 3 dark silhouette figures with glowing thought bubbles ═══ -->
+          <g class="tg-ghost-glow">
+            <!-- Glow halos behind bubbles -->
+            <ellipse cx="280" cy="80" rx="150" ry="65" fill="url(#tgBubbleGlow)"/>
+            <ellipse cx="650" cy="80" rx="150" ry="65" fill="url(#tgBubbleGlow)"/>
+            <ellipse cx="1020" cy="80" rx="150" ry="65" fill="url(#tgBubbleGlow)"/>
           </g>
 
-          <!-- Dashed connection lines + Xs between figures -->
+          <!-- Bubble 1: network graph -->
+          <g transform="translate(280, 80)">
+            <path d="M -120 22 Q -142 22 -142 -2 Q -158 -28 -134 -42 Q -134 -68 -98 -72 Q -72 -88 -36 -76 Q -2 -92 32 -76 Q 68 -90 96 -72 Q 124 -68 124 -42 Q 148 -28 132 -2 Q 132 22 110 22 Z" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.6"/>
+            <g stroke="rgba(26,22,18,0.32)" stroke-width="0.8">
+              <line x1="-90" y1="-30" x2="-60" y2="-50"/><line x1="-60" y1="-50" x2="-30" y2="-22"/><line x1="-30" y1="-22" x2="0" y2="-50"/><line x1="0" y1="-50" x2="30" y2="-26"/><line x1="30" y1="-26" x2="60" y2="-50"/><line x1="60" y1="-50" x2="90" y2="-30"/>
+              <line x1="-70" y1="-2" x2="-30" y2="-22"/><line x1="-20" y1="-2" x2="0" y2="-50"/><line x1="20" y1="-2" x2="30" y2="-26"/><line x1="60" y1="-2" x2="60" y2="-50"/>
+              <line x1="-90" y1="-30" x2="-20" y2="-2"/><line x1="0" y1="-50" x2="60" y2="-2"/>
+            </g>
+            <g><circle cx="-90" cy="-30" r="3.8" fill="#b8954a"/><circle cx="-60" cy="-50" r="3.8" fill="#3a7da3"/><circle cx="-30" cy="-22" r="3.8" fill="#c8462c"/><circle cx="0" cy="-50" r="3.8" fill="#5fa896"/><circle cx="30" cy="-26" r="3.8" fill="#7a4a8c"/><circle cx="60" cy="-50" r="3.8" fill="#1a1612"/><circle cx="90" cy="-30" r="3.8" fill="#b8954a"/><circle cx="-70" cy="-2" r="3.8" fill="#c8462c"/><circle cx="-20" cy="-2" r="3.8" fill="#3a7da3"/><circle cx="20" cy="-2" r="3.8" fill="#5fa896"/><circle cx="60" cy="-2" r="3.8" fill="#7a4a8c"/></g>
+            <circle cx="-44" cy="40" r="5" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.4"/>
+            <circle cx="-58" cy="56" r="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.2"/>
+          </g>
+          <!-- Bubble 2 -->
+          <g transform="translate(650, 80)">
+            <path d="M -120 22 Q -142 22 -142 -2 Q -158 -28 -134 -42 Q -134 -68 -98 -72 Q -72 -88 -36 -76 Q -2 -92 32 -76 Q 68 -90 96 -72 Q 124 -68 124 -42 Q 148 -28 132 -2 Q 132 22 110 22 Z" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.6"/>
+            <g stroke="rgba(26,22,18,0.32)" stroke-width="0.8">
+              <line x1="-80" y1="-46" x2="-50" y2="-22"/><line x1="-50" y1="-22" x2="-20" y2="-50"/><line x1="-20" y1="-50" x2="10" y2="-24"/><line x1="10" y1="-24" x2="40" y2="-52"/><line x1="40" y1="-52" x2="70" y2="-22"/>
+              <line x1="-60" y1="-2" x2="-50" y2="-22"/><line x1="-20" y1="-2" x2="10" y2="-24"/><line x1="20" y1="-2" x2="40" y2="-52"/><line x1="60" y1="-2" x2="70" y2="-22"/><line x1="90" y1="-22" x2="40" y2="-52"/>
+              <line x1="-80" y1="-46" x2="-20" y2="-2"/><line x1="10" y1="-24" x2="60" y2="-2"/>
+            </g>
+            <g><circle cx="-80" cy="-46" r="3.8" fill="#c8462c"/><circle cx="-50" cy="-22" r="3.8" fill="#b8954a"/><circle cx="-20" cy="-50" r="3.8" fill="#5fa896"/><circle cx="10" cy="-24" r="3.8" fill="#1a1612"/><circle cx="40" cy="-52" r="3.8" fill="#3a7da3"/><circle cx="70" cy="-22" r="3.8" fill="#c8462c"/><circle cx="90" cy="-22" r="3.8" fill="#7a4a8c"/><circle cx="-60" cy="-2" r="3.8" fill="#b8954a"/><circle cx="-20" cy="-2" r="3.8" fill="#3a7da3"/><circle cx="20" cy="-2" r="3.8" fill="#5fa896"/><circle cx="60" cy="-2" r="3.8" fill="#1a1612"/></g>
+            <circle cx="-44" cy="40" r="5" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.4"/>
+            <circle cx="-58" cy="56" r="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.2"/>
+          </g>
+          <!-- Bubble 3 -->
+          <g transform="translate(1020, 80)">
+            <path d="M -120 22 Q -142 22 -142 -2 Q -158 -28 -134 -42 Q -134 -68 -98 -72 Q -72 -88 -36 -76 Q -2 -92 32 -76 Q 68 -90 96 -72 Q 124 -68 124 -42 Q 148 -28 132 -2 Q 132 22 110 22 Z" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.6"/>
+            <g stroke="rgba(26,22,18,0.32)" stroke-width="0.8">
+              <line x1="-90" y1="-32" x2="-60" y2="-52"/><line x1="-60" y1="-52" x2="-30" y2="-26"/><line x1="-30" y1="-26" x2="0" y2="-52"/><line x1="0" y1="-52" x2="30" y2="-22"/><line x1="30" y1="-22" x2="60" y2="-52"/><line x1="60" y1="-52" x2="88" y2="-26"/>
+              <line x1="-70" y1="-2" x2="-30" y2="-26"/><line x1="-20" y1="-2" x2="0" y2="-52"/><line x1="20" y1="-2" x2="30" y2="-22"/><line x1="60" y1="-2" x2="60" y2="-52"/>
+              <line x1="-90" y1="-32" x2="-20" y2="-2"/><line x1="30" y1="-22" x2="60" y2="-2"/>
+            </g>
+            <g><circle cx="-90" cy="-32" r="3.8" fill="#7a4a8c"/><circle cx="-60" cy="-52" r="3.8" fill="#c8462c"/><circle cx="-30" cy="-26" r="3.8" fill="#b8954a"/><circle cx="0" cy="-52" r="3.8" fill="#3a7da3"/><circle cx="30" cy="-22" r="3.8" fill="#1a1612"/><circle cx="60" cy="-52" r="3.8" fill="#5fa896"/><circle cx="88" cy="-26" r="3.8" fill="#c8462c"/><circle cx="-70" cy="-2" r="3.8" fill="#3a7da3"/><circle cx="-20" cy="-2" r="3.8" fill="#1a1612"/><circle cx="20" cy="-2" r="3.8" fill="#b8954a"/><circle cx="60" cy="-2" r="3.8" fill="#c8462c"/></g>
+            <circle cx="-44" cy="40" r="5" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.4"/>
+            <circle cx="-58" cy="56" r="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.2"/>
+          </g>
+
+          <!-- ═══ ROW 2: 3 DARK silhouettes (mimicking B&W photo aesthetic) ═══ -->
+          <!-- Person 1: profile facing right -->
+          <g transform="translate(280, 220)">
+            <ellipse cx="0" cy="0" rx="32" ry="36" fill="#1a1612"/>
+            <path d="M -38 110 Q -38 50 -10 38 L 10 38 Q 38 50 38 110 Z" fill="#1a1612"/>
+            <!-- subtle hair detail -->
+            <ellipse cx="-12" cy="-20" rx="10" ry="14" fill="#0a0806"/>
+          </g>
+          <!-- Person 2: facing forward -->
+          <g transform="translate(650, 220)">
+            <ellipse cx="0" cy="0" rx="34" ry="36" fill="#1a1612"/>
+            <path d="M -42 110 Q -42 52 -10 40 L 10 40 Q 42 52 42 110 Z" fill="#1a1612"/>
+            <ellipse cx="0" cy="-22" rx="22" ry="10" fill="#0a0806"/>
+          </g>
+          <!-- Person 3: profile facing left -->
+          <g transform="translate(1020, 220)">
+            <ellipse cx="0" cy="0" rx="32" ry="36" fill="#1a1612"/>
+            <path d="M -38 110 Q -38 50 -10 38 L 10 38 Q 38 50 38 110 Z" fill="#1a1612"/>
+            <ellipse cx="12" cy="-18" rx="10" ry="16" fill="#0a0806"/>
+          </g>
+
+          <!-- Tether dots (head -> bubble) -->
+          <g fill="rgba(26,22,18,0.32)">
+            <circle cx="280" cy="186" r="2"/><circle cx="280" cy="170" r="1.6"/><circle cx="280" cy="156" r="1.2"/>
+            <circle cx="650" cy="186" r="2"/><circle cx="650" cy="170" r="1.6"/><circle cx="650" cy="156" r="1.2"/>
+            <circle cx="1020" cy="186" r="2"/><circle cx="1020" cy="170" r="1.6"/><circle cx="1020" cy="156" r="1.2"/>
+          </g>
+
+          <!-- Dashed lines + Xs between people -->
           <g stroke="rgba(26,22,18,0.55)" stroke-width="1.6" stroke-dasharray="6 6" fill="none" stroke-linecap="round">
-            <line x1="395" y1="380" x2="650" y2="380"/>
-            <line x1="745" y1="380" x2="1000" y2="380"/>
+            <line x1="320" y1="220" x2="610" y2="220"/>
+            <line x1="690" y1="220" x2="980" y2="220"/>
           </g>
           <g stroke="#1a1612" stroke-width="2.4" stroke-linecap="round">
-            <g transform="translate(525, 380)"><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="9" y1="-9" x2="-9" y2="9"/></g>
-            <g transform="translate(875, 380)"><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="9" y1="-9" x2="-9" y2="9"/></g>
+            <g transform="translate(465, 220)"><line x1="-10" y1="-10" x2="10" y2="10"/><line x1="10" y1="-10" x2="-10" y2="10"/></g>
+            <g transform="translate(835, 220)"><line x1="-10" y1="-10" x2="10" y2="10"/><line x1="10" y1="-10" x2="-10" y2="10"/></g>
           </g>
 
-          <!-- ═══ BOTTOM: by-hand texting visualization ═══ -->
-          <!-- Texting person -->
-          <g transform="translate(490, 615)">
-            <circle cx="0" cy="-30" r="20" fill="none" stroke="#1a1612" stroke-width="2.4"/>
-            <path d="M -34 70 Q -34 14 -10 6 L 10 6 Q 34 14 34 70 Z" fill="none" stroke="#1a1612" stroke-width="2.4"/>
-            <path d="M 14 18 Q 26 16 34 24 L 42 28" fill="none" stroke="#1a1612" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M -12 18 Q -2 18 8 24 L 14 28" fill="none" stroke="#1a1612" stroke-width="2.4" stroke-linecap="round"/>
-            <rect x="24" y="14" width="22" height="32" rx="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.6"/>
+          <!-- Divider above "what actually happens" row -->
+          <line x1="80" y1="350" x2="1220" y2="350" stroke="rgba(26,22,18,0.18)" stroke-width="1"/>
+
+          <!-- ═══ ROW 3: "WHAT ACTUALLY HAPPENS" — texting visualization ═══ -->
+          <!-- Label box -->
+          <g transform="translate(80, 400)">
+            <rect x="0" y="-22" width="220" height="44" rx="22" fill="none" stroke="rgba(26,22,18,0.35)" stroke-width="1.2"/>
+            <text x="110" y="6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="3" fill="#1a1612">WHAT ACTUALLY HAPPENS</text>
           </g>
 
-          <!-- Speech bubble (shorter text) -->
+          <!-- Texting person (dark filled silhouette) -->
+          <g transform="translate(390, 410)">
+            <circle cx="0" cy="-18" r="22" fill="#1a1612"/>
+            <path d="M -32 56 Q -32 6 -10 -2 L 10 -2 Q 32 6 32 56 Z" fill="#1a1612"/>
+            <!-- arms holding phone -->
+            <path d="M 10 14 Q 22 12 30 22 L 38 26" fill="none" stroke="#1a1612" stroke-width="3" stroke-linecap="round"/>
+            <!-- phone -->
+            <rect x="22" y="10" width="22" height="32" rx="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.6"/>
+            <rect x="25" y="14" width="16" height="22" fill="rgba(91,143,212,0.18)"/>
+          </g>
+
+          <!-- Speech bubble with timestamp + read receipts -->
           <g class="tg-bubble">
-            <rect x="568" y="585" width="232" height="64" rx="8" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/>
-            <text x="585" y="615" font-family="Manrope,sans-serif" font-size="20" fill="#1a1612">Anyone free</text>
-            <text x="585" y="640" font-family="Manrope,sans-serif" font-size="20" fill="#1a1612">for coffee at 7?</text>
-            <circle cx="780" cy="617" r="14" fill="#3a7da3"/>
-            <path d="M 780 610 L 780 624 M 774 616 L 780 610 L 786 616" stroke="#fbf7ee" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="470" y="378" width="260" height="74" rx="10" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/>
+            <text x="490" y="406" font-family="Manrope,sans-serif" font-size="18" fill="#1a1612">Anyone free</text>
+            <text x="490" y="430" font-family="Manrope,sans-serif" font-size="18" fill="#1a1612">for coffee at 7?</text>
+            <text x="630" y="448" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.55)">9:41 AM</text>
+            <!-- Double-check read receipt -->
+            <g transform="translate(686, 444)" stroke="#3a7da3" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M -8 0 L -3 5 L 5 -5"/>
+              <path d="M -2 0 L 3 5 L 11 -5"/>
+            </g>
           </g>
 
-          <!-- Arrows fanning out from bubble to 3 avatars -->
-          <g class="tg-arrows" stroke="#5B8FD4" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-dasharray="6 5">
-            <line x1="810" y1="600" x2="930" y2="585"/>
-            <line x1="810" y1="617" x2="930" y2="617"/>
-            <line x1="810" y1="634" x2="930" y2="650"/>
+          <!-- Arrows fanning to 3 avatars -->
+          <g stroke="#c8462c" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-dasharray="6 5">
+            <line x1="740" y1="395" x2="860" y2="375"/>
+            <line x1="740" y1="415" x2="860" y2="425"/>
+            <line x1="740" y1="435" x2="860" y2="475"/>
           </g>
 
-          <!-- 3 avatars -->
+          <!-- 3 dark filled avatar circles (mimicking B&W photo headshots) -->
           <g>
-            <g transform="translate(950, 575)">
-              <circle cx="0" cy="0" r="16" fill="none" stroke="#1a1612" stroke-width="2"/>
-              <path d="M -13 32 Q -13 14 0 10 Q 13 14 13 32 Z" fill="none" stroke="#1a1612" stroke-width="2"/>
-            </g>
-            <g class="tg-check-1" transform="translate(1010, 595)">
+            <!-- Avatar 1: yes -->
+            <circle cx="880" cy="375" r="20" fill="#1a1612"/>
+            <ellipse cx="880" cy="370" rx="11" ry="9" fill="#0a0806"/>
+            <g class="tg-check-1" transform="translate(940, 375)">
               <circle r="18" fill="#5fa896"/>
-              <path d="M -8 0 L -2 8 L 10 -7" stroke="#fbf7ee" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M -8 0 L -1 8 L 10 -7" stroke="#fbf7ee" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </g>
-            <g transform="translate(950, 615)">
-              <circle cx="0" cy="0" r="16" fill="none" stroke="#1a1612" stroke-width="2"/>
-              <path d="M -13 32 Q -13 14 0 10 Q 13 14 13 32 Z" fill="none" stroke="#1a1612" stroke-width="2"/>
-            </g>
-            <g class="tg-check-2" transform="translate(1010, 635)">
+            <!-- Avatar 2: yes -->
+            <circle cx="880" cy="425" r="20" fill="#1a1612"/>
+            <ellipse cx="880" cy="420" rx="11" ry="9" fill="#0a0806"/>
+            <g class="tg-check-2" transform="translate(940, 425)">
               <circle r="18" fill="#5fa896"/>
-              <path d="M -8 0 L -2 8 L 10 -7" stroke="#fbf7ee" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M -8 0 L -1 8 L 10 -7" stroke="#fbf7ee" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </g>
-            <g transform="translate(950, 660)" opacity="0.4">
-              <circle cx="0" cy="0" r="16" fill="none" stroke="#1a1612" stroke-width="2"/>
-              <path d="M -13 32 Q -13 14 0 10 Q 13 14 13 32 Z" fill="none" stroke="#1a1612" stroke-width="2"/>
-            </g>
-            <g transform="translate(1010, 680)" opacity="0.45">
-              <circle r="18" fill="none" stroke="rgba(26,22,18,0.5)" stroke-width="2"/>
-            </g>
+            <!-- Avatar 3: no answer (faded) -->
+            <circle cx="880" cy="475" r="20" fill="rgba(26,22,18,0.35)"/>
+            <circle cx="940" cy="475" r="18" fill="none" stroke="rgba(26,22,18,0.45)" stroke-width="2"/>
           </g>
         </svg>
       </div>
 
-      <div class="tg-foot">
-        <div class="top-strip">Felt by every member. Captured by no system.</div>
-        <div class="bot-strip">So community still happens one text at a time.</div>
+      <!-- 4-icon consequence strip -->
+      <div class="tg-icons">
+        <div class="tg-icon-cell">
+          <div class="tg-icon-circle" style="background:rgba(184,149,74,0.14)">
+            <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
+              <circle cx="9" cy="10" r="2.4" fill="#b8954a"/><circle cx="21" cy="9" r="2.4" fill="#b8954a"/><circle cx="15" cy="17" r="2.4" fill="#b8954a"/><circle cx="9" cy="22" r="2.4" fill="#b8954a"/><circle cx="22" cy="22" r="2.4" fill="#b8954a"/>
+              <line x1="9" y1="10" x2="21" y2="9" stroke="#b8954a" stroke-width="1"/><line x1="9" y1="10" x2="15" y2="17" stroke="#b8954a" stroke-width="1"/><line x1="21" y1="9" x2="15" y2="17" stroke="#b8954a" stroke-width="1"/><line x1="15" y1="17" x2="9" y2="22" stroke="#b8954a" stroke-width="1"/><line x1="15" y1="17" x2="22" y2="22" stroke="#b8954a" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="tg-icon-text"><div class="tg-icon-label">Rich Insight</div><div class="tg-icon-desc">Exists in our heads</div></div>
+        </div>
+        <div class="tg-icon-cell">
+          <div class="tg-icon-circle" style="background:rgba(184,149,74,0.10)">
+            <svg width="26" height="26" viewBox="0 0 30 30" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round">
+              <path d="M3 15 Q 15 6 27 15 Q 15 24 3 15"/><circle cx="15" cy="15" r="3.2" fill="none"/><line x1="5" y1="5" x2="25" y2="25"/>
+            </svg>
+          </div>
+          <div class="tg-icon-text"><div class="tg-icon-label">Zero Sharing</div><div class="tg-icon-desc">No system of record</div></div>
+        </div>
+        <div class="tg-icon-cell">
+          <div class="tg-icon-circle" style="background:rgba(91,143,212,0.14)">
+            <svg width="26" height="26" viewBox="0 0 30 30" fill="none" stroke="#5B8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="15" cy="11" r="4"/><path d="M5 25 Q 15 18 25 25"/>
+            </svg>
+          </div>
+          <div class="tg-icon-text"><div class="tg-icon-label">Weak Connections</div><div class="tg-icon-desc">Manual and inconsistent</div></div>
+        </div>
+        <div class="tg-icon-cell">
+          <div class="tg-icon-circle" style="background:rgba(200,70,44,0.14)">
+            <svg width="26" height="26" viewBox="0 0 30 30" fill="none" stroke="#c8462c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="14" width="12" height="10" rx="1.4"/><path d="M11 14 V 10 Q 11 6 15 6 Q 19 6 19 10 V 14"/><circle cx="15" cy="19" r="1.2" fill="#c8462c" stroke="none"/>
+            </svg>
+          </div>
+          <div class="tg-icon-text"><div class="tg-icon-label">Poor Outcomes</div><div class="tg-icon-desc">Potential left on the table</div></div>
+        </div>
+      </div>
+
+      <!-- Closing line hierarchy -->
+      <div class="tg-close">
+        <div class="tg-close-1">Felt by every member. Captured by no system.</div>
+        <div class="tg-close-2">So community still happens one text at a time.</div>
       </div>
     </div>
   </section>
@@ -9071,9 +9188,6 @@ html, body, html body{
     @keyframes envClickHint { 0%,100% { filter:drop-shadow(0 6px 16px rgba(184,149,74,0.18)); } 50% { filter:drop-shadow(0 6px 22px rgba(184,149,74,0.55)); } }
     #cs-gnr .env-card:not([data-open="1"]) .env-svg { animation:envClickHint 2.6s ease-in-out infinite; }
 
-    /* Click hint label */
-    #cs-gnr .env-card .env-hint { font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:rgba(184,149,74,0.85); margin-top:8px; transition:opacity 0.3s; }
-    #cs-gnr .env-card[data-open="1"] .env-hint { opacity:0; }
 
     /* Export mode: hold OPEN */
     html[data-export="1"] #cs-gnr .env-flap       { transform:scaleY(0) !important; transition:none !important; animation:none !important; }
@@ -9091,8 +9205,15 @@ html, body, html body{
         <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
         <!-- Letter content (revealed on open) -->
         <g class="env-letter">
-          <text x="120" y="55" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="16" font-weight="700" fill="#1a1612">An <tspan font-style="italic" font-weight="500" fill="#b8954a">invitation-feed,</tspan></text>
-          <text x="120" y="78" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="16" font-weight="700" fill="#1a1612">not a public calendar.</text>
+          <!-- Icon: stack of 3 mini-envelopes (personal feed) -->
+          <g transform="translate(120, 38)">
+            <rect x="-26" y="-8" width="44" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.45"/>
+            <rect x="-22" y="-4" width="44" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.7"/>
+            <rect x="-18" y="0" width="44" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.4"/>
+            <path d="M -18 0 L 4 12 L 26 0" fill="none" stroke="#b8954a" stroke-width="1.2"/>
+          </g>
+          <text x="120" y="92" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">An <tspan font-style="italic" font-weight="500" fill="#b8954a">invitation-feed,</tspan></text>
+          <text x="120" y="112" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">not a public calendar.</text>
         </g>
         <!-- Front teaser (visible when closed, lower half) -->
         <g class="env-front-text">
@@ -9101,11 +9222,13 @@ html, body, html body{
         <!-- Flap (triangle covering top half when closed, rotates open) -->
         <g class="env-flap">
           <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
-          <circle cx="120" cy="80" r="14" fill="#2a8a4f" stroke="#fbf7ef" stroke-width="2"/>
-          <path d="M 113 80 L 118 86 L 128 75" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="120" cy="80" r="18" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
+          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="0.7"/>
+          <text x="120" y="85" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="700" font-size="13" letter-spacing="-0.5">
+            <tspan fill="#4d82c6">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="10" dy="0.5">n</tspan><tspan fill="#c94d32" dy="-0.5">R</tspan>
+          </text>
         </g>
       </svg>
-      <div class="env-hint">&#9655; Click to open</div>
     </div>
 
     <!-- ENVELOPE 2: Feel it, every time -> You belong -->
@@ -9113,19 +9236,26 @@ html, body, html body{
       <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
         <g class="env-letter">
-          <text x="120" y="68" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">You <tspan font-style="italic" font-weight="500" fill="#b8954a">belong.</tspan></text>
+          <!-- Icon: concentric circles (you at center of community) -->
+          <g transform="translate(120, 42)">
+            <circle r="22" fill="none" stroke="#b8954a" stroke-width="1.2" opacity="0.35"/>
+            <circle r="14" fill="none" stroke="#b8954a" stroke-width="1.2" opacity="0.6"/>
+            <circle r="6" fill="#c8462c"/>
+          </g>
+          <text x="120" y="100" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">You <tspan font-style="italic" font-weight="500" fill="#b8954a">belong.</tspan></text>
         </g>
         <g class="env-front-text">
-          <text x="120" y="128" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" fill="#1a1612">Feel it,</text>
-          <text x="120" y="148" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="500" font-style="italic" fill="#b8954a">every time</text>
+          <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Feel it</text>
         </g>
         <g class="env-flap">
           <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
-          <circle cx="120" cy="80" r="14" fill="#2a8a4f" stroke="#fbf7ef" stroke-width="2"/>
-          <path d="M 113 80 L 118 86 L 128 75" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="120" cy="80" r="18" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
+          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="0.7"/>
+          <text x="120" y="85" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="700" font-size="13" letter-spacing="-0.5">
+            <tspan fill="#4d82c6">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="10" dy="0.5">n</tspan><tspan fill="#c94d32" dy="-0.5">R</tspan>
+          </text>
         </g>
       </svg>
-      <div class="env-hint">&#9655; Click to open</div>
     </div>
 
     <!-- ENVELOPE 3: Honor the giving -> Who gives? -->
@@ -9133,18 +9263,34 @@ html, body, html body{
       <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
         <g class="env-letter">
-          <text x="120" y="68" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#b8954a">gives?</tspan></text>
+          <!-- Icon: heart with radiating spotlight rays (celebrate the giver) -->
+          <g transform="translate(120, 42)">
+            <g stroke="#b8954a" stroke-width="1.4" stroke-linecap="round" opacity="0.75">
+              <line x1="-22" y1="0" x2="-14" y2="0"/>
+              <line x1="22" y1="0" x2="14" y2="0"/>
+              <line x1="-16" y1="-14" x2="-10" y2="-9"/>
+              <line x1="16" y1="-14" x2="10" y2="-9"/>
+              <line x1="-16" y1="14" x2="-10" y2="9"/>
+              <line x1="16" y1="14" x2="10" y2="9"/>
+              <line x1="0" y1="-20" x2="0" y2="-14"/>
+              <line x1="0" y1="20" x2="0" y2="14"/>
+            </g>
+            <path d="M 0 7 C -8 -1 -11 -6 -8 -10 C -5 -13 0 -10 0 -6 C 0 -10 5 -13 8 -10 C 11 -6 8 -1 0 7 Z" fill="#c8462c"/>
+          </g>
+          <text x="120" y="100" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#b8954a">gives?</tspan></text>
         </g>
         <g class="env-front-text">
-          <text x="120" y="135" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="500" font-style="italic" fill="#b8954a">Honor the giving</text>
+          <text x="120" y="135" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Recognize</text>
         </g>
         <g class="env-flap">
           <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
-          <circle cx="120" cy="80" r="14" fill="#2a8a4f" stroke="#fbf7ef" stroke-width="2"/>
-          <path d="M 113 80 L 118 86 L 128 75" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="120" cy="80" r="18" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
+          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="0.7"/>
+          <text x="120" y="85" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="700" font-size="13" letter-spacing="-0.5">
+            <tspan fill="#4d82c6">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="10" dy="0.5">n</tspan><tspan fill="#c94d32" dy="-0.5">R</tspan>
+          </text>
         </g>
       </svg>
-      <div class="env-hint">&#9655; Click to open</div>
     </div>
 
   </div></div>
