@@ -9162,19 +9162,11 @@ html, body, html body{
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2.2rem);font-weight:600;color:#1a1612;line-height:1.2;letter-spacing:-0.014em;max-width:1080px;margin:14px auto 0;text-align:center">
     Everyone in your community gets
   </div>
-  <!-- Three diverging arrows pointing down to the 3 envelopes -->
-  <div style="width:100%;max-width:760px;margin:6px auto 0">
-    <svg viewBox="0 0 760 50" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" fill="none" stroke-dasharray="4 5">
-        <path d="M 380 4 L 130 38"/>
-        <path d="M 380 4 L 380 38"/>
-        <path d="M 380 4 L 630 38"/>
-      </g>
-      <g fill="#b8954a">
-        <polygon points="130,42 122,30 138,32"/>
-        <polygon points="380,42 372,32 388,32"/>
-        <polygon points="630,42 622,32 638,30"/>
-      </g>
+  <!-- Single down arrow (clean) pointing to the 3 envelopes below -->
+  <div style="width:100%;max-width:120px;margin:6px auto 0">
+    <svg viewBox="0 0 80 50" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+      <line x1="40" y1="4" x2="40" y2="34" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 5"/>
+      <polygon points="40,46 30,32 50,32" fill="#b8954a"/>
     </svg>
   </div>
 
@@ -9220,15 +9212,15 @@ html, body, html body{
         <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
         <!-- Letter content (revealed on open) -->
         <g class="env-letter">
-          <!-- Icon: stack of 3 mini-envelopes (personal feed) -->
-          <g transform="translate(120, 38)">
-            <rect x="-26" y="-8" width="44" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.45"/>
-            <rect x="-22" y="-4" width="44" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.7"/>
-            <rect x="-18" y="0" width="44" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.4"/>
-            <path d="M -18 0 L 4 12 L 26 0" fill="none" stroke="#b8954a" stroke-width="1.2"/>
+          <!-- Icon: stack of 3 mini-envelopes — all centered on x=120, fanned vertically -->
+          <g transform="translate(120, 42)">
+            <rect x="-24" y="-14" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.45"/>
+            <rect x="-24" y="-8" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.7"/>
+            <rect x="-24" y="-2" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.4"/>
+            <path d="M -24 -2 L 0 12 L 24 -2" fill="none" stroke="#b8954a" stroke-width="1.2"/>
           </g>
-          <text x="120" y="92" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">An <tspan font-style="italic" font-weight="500" fill="#b8954a">invitation-feed,</tspan></text>
-          <text x="120" y="112" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">not a public calendar.</text>
+          <text x="120" y="98" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">An <tspan font-style="italic" font-weight="500" fill="#b8954a">invitation-feed,</tspan></text>
+          <text x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">not a public calendar.</text>
         </g>
         <!-- Front teaser (visible when closed, lower half) -->
         <g class="env-front-text">
@@ -9251,30 +9243,18 @@ html, body, html body{
       <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
         <g class="env-letter">
-          <!-- Icon: 5 small figures gathered in a circle (community embrace) -->
-          <g transform="translate(120, 42)">
-            <!-- 5 small figures arranged in a pentagon -->
+          <!-- Icon: 5 small figures in a pentagon (community embrace) — centered on (120, 50) -->
+          <g transform="translate(120, 50)">
+            <circle r="22" fill="none" stroke="#c8462c" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.6"/>
             <g fill="#b8954a">
-              <!-- top -->
-              <circle cx="0" cy="-18" r="3.6"/>
-              <path d="M -7 -2 Q -7 -10 0 -12 Q 7 -10 7 -2 Z" />
-              <!-- top-right -->
-              <circle cx="17" cy="-6" r="3.6"/>
-              <path d="M 10 10 Q 10 2 17 0 Q 24 2 24 10 Z" />
-              <!-- bottom-right -->
-              <circle cx="11" cy="14" r="3.6"/>
-              <path d="M 4 30 Q 4 22 11 20 Q 18 22 18 30 Z" />
-              <!-- bottom-left -->
-              <circle cx="-11" cy="14" r="3.6"/>
-              <path d="M -18 30 Q -18 22 -11 20 Q -4 22 -4 30 Z" />
-              <!-- top-left -->
-              <circle cx="-17" cy="-6" r="3.6"/>
-              <path d="M -24 10 Q -24 2 -17 0 Q -10 2 -10 10 Z" />
+              <circle cx="0" cy="-18" r="3.6"/><path d="M -7 -2 Q -7 -10 0 -12 Q 7 -10 7 -2 Z"/>
+              <circle cx="17" cy="-6" r="3.6"/><path d="M 10 10 Q 10 2 17 0 Q 24 2 24 10 Z"/>
+              <circle cx="11" cy="14" r="3.6"/><path d="M 4 28 Q 4 20 11 18 Q 18 20 18 28 Z"/>
+              <circle cx="-11" cy="14" r="3.6"/><path d="M -18 28 Q -18 20 -11 18 Q -4 20 -4 28 Z"/>
+              <circle cx="-17" cy="-6" r="3.6"/><path d="M -24 10 Q -24 2 -17 0 Q -10 2 -10 10 Z"/>
             </g>
-            <!-- Connecting circle (the bond) -->
-            <circle r="20" fill="none" stroke="#c8462c" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.6"/>
           </g>
-          <text x="120" y="100" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">You <tspan font-style="italic" font-weight="500" fill="#b8954a">belong.</tspan></text>
+          <text x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">You <tspan font-style="italic" font-weight="500" fill="#b8954a">belong.</tspan></text>
         </g>
         <g class="env-front-text">
           <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Feel it</text>
@@ -9295,21 +9275,16 @@ html, body, html body{
       <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
         <g class="env-letter">
-          <!-- Icon: clean gift box with bow (literal "gift / who gives") -->
-          <g transform="translate(120, 44)">
-            <!-- Box body -->
-            <rect x="-22" y="0" width="44" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
-            <!-- Lid seam -->
-            <line x1="-22" y1="7" x2="22" y2="7" stroke="#b8954a" stroke-width="1.6"/>
-            <!-- Vertical ribbon -->
-            <rect x="-2.5" y="0" width="5" height="22" fill="#c8462c"/>
-            <!-- Bow loops on top -->
-            <ellipse cx="-8" cy="-4" rx="7" ry="5" fill="#c8462c"/>
-            <ellipse cx="8" cy="-4" rx="7" ry="5" fill="#c8462c"/>
-            <!-- Bow knot -->
-            <circle cx="0" cy="-4" r="2.6" fill="#b8954a"/>
+          <!-- Icon: clean gift box with bow — centered on (120, 50) -->
+          <g transform="translate(120, 50)">
+            <rect x="-22" y="-2" width="44" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
+            <line x1="-22" y1="5" x2="22" y2="5" stroke="#b8954a" stroke-width="1.6"/>
+            <rect x="-2.5" y="-2" width="5" height="22" fill="#c8462c"/>
+            <ellipse cx="-8" cy="-7" rx="7" ry="5" fill="#c8462c"/>
+            <ellipse cx="8" cy="-7" rx="7" ry="5" fill="#c8462c"/>
+            <circle cx="0" cy="-7" r="2.6" fill="#b8954a"/>
           </g>
-          <text x="120" y="100" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#b8954a">gives?</tspan></text>
+          <text x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#b8954a">gives?</tspan></text>
         </g>
         <g class="env-front-text">
           <text x="120" y="135" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" font-style="italic" fill="#b8954a">Recognize others</text>
@@ -10187,7 +10162,7 @@ html, body, html body{
 
     <!-- HEADLINE -->
     <div style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;line-height:1.22;color:#1a1612;margin-bottom:24px;letter-spacing:-0.01em;max-width:1180px;margin-left:auto;margin-right:auto">
-      The future of <em style="font-style:italic;color:#b8954a">human connection and community technology</em> is being solved at 500-member, founder-owned <em style="font-style:italic;color:#b8954a">New England Pickleball Club</em>.
+      <em style="font-style:italic;color:#b8954a">Autonomous human connection technology</em> for our communities is being solved at 500-member, founder-owned <em style="font-style:italic;color:#b8954a">New England Pickleball Club</em>.
     </div>
 
     <!-- TIMELINE — horizontal, with connector line, readable labels -->
@@ -10433,7 +10408,7 @@ html, body, html body{
 <div class="inner" style="padding:80px 56px 48px;max-width:1200px;margin:0 auto">
 
   <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.2vw,2.7rem);font-weight:800;line-height:1.18;color:#1a1612;letter-spacing:-0.01em;margin-bottom:14px;max-width:1080px">
-    Pickleball is the clearest path to the first global <em style="font-style:italic;color:#b8954a">autonomous <span style="font-family:'Playfair Display',serif;font-style:normal;font-weight:500"><span style="color:#4d82c6">Give</span> <span style="color:#1a1612;font-style:italic;font-size:0.82em;padding:0 0.04em">n</span> <span style="color:#c94d32">Receive</span></span> network.</em>
+    Pickleball is the clearest path to the first global <em style="font-style:italic;color:#b8954a">autonomous human connection network.</em>
   </div>
 
   <!-- Kicker line moved BELOW the four boxes per Dave 2026-05-03 PM (see below grid) -->
@@ -10607,7 +10582,7 @@ html, body, html body{
 
   <!-- Kicker line BELOW the four cards [Dave 2026-05-03 PM] -->
   <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.05rem,1.7vw,1.4rem);color:rgba(26,22,18,0.78);line-height:1.4;margin-top:30px;max-width:1080px;text-align:center">
-    Pickleball is the <em style="font-style:italic;color:#b8954a;font-weight:600">most community-oriented sport ever invented.</em>
+    Pickleball is the <em style="font-style:italic;color:#b8954a;font-weight:600">most community-oriented sport ever invented.</em>  It desperately needs this new paradigm.
   </div>
 
 </div>
@@ -11407,77 +11382,6 @@ html, body, html body{
 </section>
 </div>
 
-<!-- ===== cs-tnf · THE NEXT FRONTIER · NUKED & SIMPLIFIED [Dave 2026-05-03 PM v3]
-     Stripped to FOUR elements only: eyebrow, ONE statement, era strip with GnR
-     highlighted as the answer, giant ABUNDANCE coda. Verbs deleted (live on cs-future).
-     Goal: jaw-droppingly clear, big breathing room, hero ending. ===== -->
-<style>
-  #cs-tnf .tnf-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:88px 56px 64px; gap:48px; text-align:center; }
-  #cs-tnf .tnf-eye { font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:rgba(184,149,74,0.85); }
-  #cs-tnf .tnf-statement { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,3.6vw,3rem); font-weight:600; font-style:italic; color:#1a1612; line-height:1.18; max-width:1080px; letter-spacing:-0.018em; }
-  #cs-tnf .tnf-statement em { font-style:italic; color:#b8954a; font-weight:700; }
-
-  /* Era strip — equal cells, only the LAST has the GnR highlight */
-  #cs-tnf .tnf-eras { display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; max-width:1080px; width:100%; align-items:stretch; }
-  #cs-tnf .tnf-era { display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:14px; padding:24px 14px 22px; border-radius:12px; position:relative; }
-  #cs-tnf .tnf-era + .tnf-era::before { content:'\2192'; position:absolute; top:50%; left:-12px; transform:translateY(-50%); font-family:'Playfair Display',serif; font-size:1.3rem; color:rgba(184,149,74,0.55); }
-  #cs-tnf .tnf-era-logo { display:flex; align-items:center; justify-content:center; min-height:44px; }
-  #cs-tnf .tnf-era-resource { font-family:'Fraunces','Playfair Display',Georgia,serif; font-style:italic; font-size:1rem; font-weight:600; color:rgba(26,22,18,0.62); line-height:1; letter-spacing:-0.005em; }
-  #cs-tnf .tnf-era-gnr { background:linear-gradient(180deg,rgba(212,168,83,0.16),rgba(212,168,83,0.05)); border:1.5px solid rgba(212,168,83,0.55); box-shadow:0 0 36px rgba(212,168,83,0.20); }
-  #cs-tnf .tnf-era-gnr .tnf-era-resource { color:#b8954a; font-weight:800; font-style:normal; font-size:1.05rem; }
-
-  /* Coda — hero word ABUNDANCE */
-  #cs-tnf .tnf-coda { font-family:'Playfair Display',serif; font-size:clamp(3.4rem,7.2vw,5.6rem); font-weight:900; line-height:1; letter-spacing:-0.035em; background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
-</style>
-<div class="casey-slide ds-focus" id="cs-tnf">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The Next Frontier</div>
-<section style="position:relative;min-height:100%;width:100%">
-  <div class="tnf-stage">
-
-    <div class="tnf-eye">The Next Frontier</div>
-
-    <div class="tnf-statement">
-      The internet captured every human signal but&nbsp;one.
-    </div>
-
-    <!-- ERA STRIP: info → sharing → intelligence → HUMAN CONNECTION (highlighted) -->
-    <div class="tnf-eras">
-      <div class="tnf-era">
-        <div class="tnf-era-logo">
-          <svg width="36" height="36" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        </div>
-        <div class="tnf-era-resource">information</div>
-      </div>
-      <div class="tnf-era">
-        <div class="tnf-era-logo">
-          <svg width="36" height="26" viewBox="0 0 200 100"><path d="M30 50 C 30 22, 70 22, 100 52 C 130 82, 170 82, 170 50 C 170 22, 130 22, 100 50 C 70 78, 30 78, 30 50 Z" fill="none" stroke="#0668E1" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="tnf-era-resource">sharing</div>
-      </div>
-      <div class="tnf-era">
-        <div class="tnf-era-logo" style="display:flex;gap:6px">
-          <svg viewBox="0 0 36 36" width="22" height="22"><g fill="none" stroke="#1a1612" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="6"/><ellipse cx="18" cy="18" rx="14" ry="6" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="6" transform="rotate(120 18 18)"/></g></svg>
-          <svg viewBox="0 0 64 64" width="22" height="22"><g fill="#cc785c"><path d="M27.4 13.6h9.2L52 50.4h-9.2l-3.1-7.6H22.3l-3.1 7.6H10z"/><path d="M32 23.2 25.4 39h13.2z" fill="#f4ead8"/></g></svg>
-        </div>
-        <div class="tnf-era-resource">intelligence</div>
-      </div>
-      <div class="tnf-era tnf-era-gnr">
-        <div class="tnf-era-logo">
-          <span style="font-family:'Playfair Display',serif;font-size:1.7rem;letter-spacing:-0.01em;line-height:1;display:inline-flex;align-items:baseline">
-            <span style="color:#5B8FD4;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-weight:500;font-size:0.78em;padding:0 0.04em">n</span><span style="color:#c8462c;font-weight:700">R</span>
-          </span>
-        </div>
-        <div class="tnf-era-resource">human connection</div>
-      </div>
-    </div>
-
-    <!-- Coda: GIANT gold ABUNDANCE word — the result of unlocking the last layer -->
-    <div class="tnf-coda">Abundance.</div>
-
-  </div>
-</section>
-</div>
-
 <!-- ===== cs-future · FUTURE OF OUR COMMUNITIES [NEW Dave 2026-05-02]
      Five verbs: graph it · schedule it · orchestrate it · sell it · make it abundant.
      Lands between Mission (cs-mv6) and Promise (cs-prom). ===== -->
@@ -11705,17 +11609,17 @@ html, body, html body{
 
   <!-- TAM panel removed — integrated into the orbital SVG itself [Dave 2026-05-03 PM v5] -->
 
-  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 48px 24px">
+  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 48px 80px">
 
     <!-- Headline -->
-    <div style="text-align:center;max-width:1240px;margin-bottom:14px">
-      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.02em">
+    <div style="text-align:center;max-width:1240px;margin-bottom:8px">
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.6vw,2.2rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em">
         We're building the map of <em style="font-style:italic;color:#b8954a">human connection</em><br>&mdash; one invitation at a time.
       </div>
     </div>
 
-    <!-- Orbital map — viewBox extended UP to fit YEAR 8 pill (was cut off) + extra room for TAM annotation [Dave 2026-05-03 PM v5] -->
-    <svg viewBox="0 -60 1400 835" style="width:min(1400px,98%);height:auto;display:block" fill="none">
+    <!-- Orbital map — sized down so it fits above the slide-nav dots [Dave 2026-05-04] -->
+    <svg viewBox="0 -60 1400 835" style="width:min(1100px,82%);height:auto;display:block;max-height:calc(100vh - 240px)" fill="none" preserveAspectRatio="xMidYMid meet">
             <defs>
               <radialGradient id="tvCenterGlow2" cx="50%" cy="50%" r="50%">
                 <stop offset="0%"  stop-color="#2a8a4f" stop-opacity="0.32"/>
@@ -13093,7 +12997,7 @@ html, body, html body{
     <g class="fw1-anim fw1-n1" transform="translate(360, 70)">
       <rect x="-145" y="-30" width="290" height="60" rx="30" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.7"/>
       <text x="0" y="-3" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#3a7da3">PERSONALIZED INVITATION FEED</text>
-      <text x="0" y="18" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">sequential · curated</text>
+      <text x="0" y="18" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">sequential · referrals · curated</text>
       <!-- Envelope icon ABOVE the rect -->
       <g transform="translate(0, -52)">
         <circle cx="0" cy="0" r="14" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.5"/>
@@ -15105,7 +15009,6 @@ const SLIDE_ORDER = [
   // cs-4 (Moat — data in our heads) → MOVED to slot 4 (after cs-2c) per Dave 2026-05-01 — tightens front-half problem-arc
   'cs-25',    // 13 Why pickleball first ("Pickleball is the clearest path...")
   'cs-future',// 14 Future of our communities · 5 verbs ("When you digitize human connection, you can")
-  'cs-tnf',   // 15 NEW MERGED · The Next Frontier (eras → human connection → 5 verbs → Abundance) [Dave 2026-05-03 PM — sandwiched between cs-future + cs-8b for comparison]
   'cs-8b',    // 16 The Next Frontier · Abundance [original — kept as backup for now]
   'cs-tv',    // 16 MERGED Vision + Pickleball TAM ("We're building the map of human connection — one invitation at a time" + $2.55B inner-rings TAM) [Dave 2026-05-03 PM — comes right after the Abundance slide]
   // cs-a7 ("Social media is a very narrow view of human connection technology") MOVED BACK to APPENDIX 2026-05-03 PM per Dave
