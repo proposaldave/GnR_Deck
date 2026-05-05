@@ -65,6 +65,32 @@ html[data-export="1"] .casey-slide:not(.active) {
 }
 
 /* ============================================================================
+   PDF-EXPORT-ONLY OVERRIDES — Dave 2026-05-04
+   Fixes that should ONLY apply when the deck is rendered for PDF capture
+   (?export=1 mode). The live deck stays untouched. Add new PDF fixes here.
+   ============================================================================ */
+/* env letter alt-text toggle: live shows "You belong." / "Who gives?";
+   PDF shows the longer 2-line versions Dave requested. */
+.env-letter-print { display: none; }
+html[data-export="1"] .env-letter-live { display: none !important; }
+html[data-export="1"] .env-letter-print { display: inline !important; }
+
+/* cs-2c: force 8-column grid in PDF so all 8 cards (incl. Country Clubs) sit on one row.
+   Live deck wraps responsively; PDF needs them in a single tidy row at 1920px width. */
+html[data-export="1"] #cs-2c .c2c-grid {
+  grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+  max-width: 1740px !important;
+  gap: 12px !important;
+}
+html[data-export="1"] #cs-2c .c2c-card {
+  padding: 28px 14px !important;
+  gap: 14px !important;
+}
+html[data-export="1"] #cs-2c .c2c-icon { font-size: 56px !important; }
+html[data-export="1"] #cs-2c .c2c-icon svg { width: 56px !important; height: 56px !important; }
+html[data-export="1"] #cs-2c .c2c-label { font-size: 0.95rem !important; }
+
+/* ============================================================================
    UNIVERSAL SLIDE ENTRANCE — Dave 2026-04-29 + 2026-04-30 PM CASCADE UPGRADE
    Every main-deck slide gets a staggered cascading reveal of its content blocks
    (kicker → headline → cards → footer). Universal animation consistency across
@@ -8267,7 +8293,8 @@ html, body, html body{
     0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.85; }
     50%      { transform: translateY(-50%) translateX(8px); opacity: 1; }
   }
-  html[data-export="1"] #cs-11 .cs11-next-arrow { opacity: 0 !important; animation: none !important; }
+  /* PDF-export: show the next-slide arrow as static (no pulse) — indicates we're moving to the next slide */
+  html[data-export="1"] #cs-11 .cs11-next-arrow { opacity: 1 !important; animation: none !important; transform: translateY(-50%) !important; }
   #cs-11 .cs11-flip-inner { position: relative; width: 100%; min-height: 280px; transition: transform 0.95s cubic-bezier(.45,.05,.18,1); transform-style: preserve-3d; cursor: pointer; }
   #cs-11 .cs11-flip-front,
   #cs-11 .cs11-flip-back  { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
@@ -9194,7 +9221,10 @@ html, body, html body{
               <circle cx="-17" cy="-6" r="3.6"/><path d="M -24 10 Q -24 2 -17 0 Q -10 2 -10 10 Z"/>
             </g>
           </g>
-          <text x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">You <tspan font-style="italic" font-weight="500" fill="#b8954a">belong.</tspan></text>
+          <text class="env-letter-live" x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">You <tspan font-style="italic" font-weight="500" fill="#b8954a">belong.</tspan></text>
+          <!-- PDF-export-only text: 2-line so longer phrase fits in 240-wide viewBox -->
+          <text class="env-letter-print" x="120" y="108" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" fill="#1a1612">Feeling of</text>
+          <text class="env-letter-print" x="120" y="130" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" font-style="italic" fill="#b8954a">belonging.</text>
         </g>
         <g class="env-front-text">
           <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">The feeling</text>
@@ -9225,7 +9255,10 @@ html, body, html body{
             <circle cx="0" cy="-5" r="6" fill="#c8462c"/>
             <path d="M -10 14 Q -10 2 0 -1 Q 10 2 10 14 Z" fill="#c8462c"/>
           </g>
-          <text x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#b8954a">gives?</tspan></text>
+          <text class="env-letter-live" x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#b8954a">gives?</tspan></text>
+          <!-- PDF-export-only text: 2-line so longer phrase fits in 240-wide viewBox -->
+          <text class="env-letter-print" x="120" y="108" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" fill="#1a1612">Recognize</text>
+          <text class="env-letter-print" x="120" y="130" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" font-style="italic" fill="#b8954a">who gives?</text>
         </g>
         <g class="env-front-text">
           <text x="120" y="135" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Recognize</text>
@@ -9330,7 +9363,7 @@ html, body, html body{
 </style>
 <div class="casey-slide ds-focus" id="cs-11e">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;z-index:10;">Proving Ground</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;z-index:10;">Founder-Owned Proving Ground</div>
   <div style="padding:42px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <!-- Big NEPC logo so the audience knows we're talking about New England Pickleball Club -->
     <img class="c11e-anim c11e-logo" src="nepc-logo.png" alt="New England Pickleball Club" style="display:block;margin:0 auto 18px;width:clamp(220px,26vw,320px);height:auto;mix-blend-mode:multiply"/>
