@@ -12032,6 +12032,8 @@ html, body, html body{
   #cs-merge3 .m3-krista-close:hover { color:#fff; }
   /* Pink-dot alt color for cs-merge3's review marker */
   .casey-dot.alt.pink-alt { background:#ff4d8f !important; border:1px solid #ff4d8f !important; box-shadow:0 0 8px rgba(255,77,143,0.85) !important; animation:reviewPulse 1.6s ease-in-out infinite; }
+  /* [Dave 2026-05-08] Blue-dot alts for slot 17 (cs-quadrant1, cs-arch1, cs-cat1) */
+  .casey-dot.alt.blue-alt { background:#5B8FD4 !important; border:1px solid #5B8FD4 !important; box-shadow:0 0 8px rgba(91,143,212,0.85) !important; animation:reviewPulse 1.6s ease-in-out infinite; }
 </style>
 <div class="casey-slide ds-focus" id="cs-merge3" data-krista="0">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Real-world social networking</div>
@@ -12249,6 +12251,210 @@ html, body, html body{
 </div>
 
 <!-- ===== END MERGE CANDIDATES ===== -->
+
+<!-- ============================================================================
+     SLOT 17 BLUE-DOT ALTS (Dave 2026-05-08)
+     Brief: combine cs-tv thesis ('biggest network opportunity ever / digitizes us
+     / connects us / for real') + cs-position thesis (NOT a sports investment) +
+     deep source material from gnr-deck-source-material.md (quadrant map, missing
+     layer, third-category derivative).
+     Three new BLUE-DOT alts for review:
+       cs-quadrant1 = THE EMPTY QUADRANT (upper-right is empty; GnR alone)
+       cs-arch1     = THE MISSING LAYER (architectural stack diagram)
+       cs-cat1      = THE THIRD CATEGORY (attention / coordination / reciprocity)
+============================================================================ -->
+
+<!-- ===== cs-quadrant1 — THE EMPTY QUADRANT ===== -->
+<style>
+  #cs-quadrant1 .qm-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 56px 36px;text-align:center;gap:14px; }
+  #cs-quadrant1 .qm-headline { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.4vw,2.15rem);font-weight:700;line-height:1.18;letter-spacing:-0.02em;color:#1a1612;max-width:1180px; }
+  #cs-quadrant1 .qm-headline em { font-style:italic;font-weight:800;color:#b8954a; }
+  #cs-quadrant1 .qm-headline .red { color:#c8462c;font-weight:800; }
+  #cs-quadrant1 .qm-chart-wrap { width:100%;max-width:880px;position:relative;margin:8px auto; }
+  #cs-quadrant1 .qm-chart-wrap svg { width:100%;height:auto;display:block; }
+  #cs-quadrant1 .qm-closer { border-top:1px solid rgba(184,149,74,0.32);padding-top:14px;max-width:1080px;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.4vw,1.3rem);color:rgba(26,22,18,0.78);font-weight:600;line-height:1.4; }
+  #cs-quadrant1 .qm-closer strong { color:#c8462c;font-style:normal;font-weight:800; }
+</style>
+<div class="casey-slide ds-focus" id="cs-quadrant1">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Map of Connection Technology</div>
+  <section style="position:relative;width:100%;min-height:100%">
+    <div class="qm-stage">
+      <div class="qm-headline">
+        The <em>upper-right quadrant</em> is <span class="red">empty.</span>
+      </div>
+      <div class="qm-chart-wrap">
+        <svg viewBox="0 0 880 460" preserveAspectRatio="xMidYMid meet">
+          <!-- Grid -->
+          <line x1="100" y1="40" x2="100" y2="400" stroke="rgba(26,22,18,0.25)" stroke-width="1"/>
+          <line x1="100" y1="400" x2="820" y2="400" stroke="rgba(26,22,18,0.25)" stroke-width="1"/>
+          <line x1="460" y1="40" x2="460" y2="400" stroke="rgba(26,22,18,0.18)" stroke-width="1" stroke-dasharray="3 4"/>
+          <line x1="100" y1="220" x2="820" y2="220" stroke="rgba(26,22,18,0.18)" stroke-width="1" stroke-dasharray="3 4"/>
+          <!-- Axis labels -->
+          <text x="460" y="430" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="rgba(26,22,18,0.6)">Tech captures behavioral fit  →</text>
+          <text x="60" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="rgba(26,22,18,0.6)" transform="rotate(-90 60 220)">Real connection happens here  →</text>
+          <!-- EMPTY upper-right quadrant — gold dashed outline + faint wash -->
+          <rect x="460" y="40" width="360" height="180" fill="rgba(184,149,74,0.08)" stroke="#b8954a" stroke-width="1.6" stroke-dasharray="6 4"/>
+          <text x="640" y="70" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="3" fill="#8a6d2e">EMPTY</text>
+          <!-- Slate dots (competitors) — high-connection / low-fit -->
+          <circle cx="160" cy="80" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="172" y="84" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">Family chats</text>
+          <circle cx="220" cy="110" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="232" y="114" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">Dating apps</text>
+          <circle cx="180" cy="150" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="192" y="154" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">Rating-led clubs</text>
+          <circle cx="280" cy="180" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="292" y="184" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">Meetup · Eventbrite</text>
+          <!-- Mid-left: LinkedIn -->
+          <circle cx="240" cy="270" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="252" y="274" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">LinkedIn</text>
+          <!-- Bottom-left: NextDoor -->
+          <circle cx="180" cy="350" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="192" y="354" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">NextDoor</text>
+          <!-- Bottom-right: behavioral data, low-connection -->
+          <circle cx="540" cy="340" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="552" y="344" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">Strava</text>
+          <circle cx="630" cy="320" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="642" y="324" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">Uber</text>
+          <circle cx="700" cy="360" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="712" y="364" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">Yelp</text>
+          <circle cx="760" cy="335" r="5" fill="rgba(26,22,18,0.35)"/>
+          <text x="772" y="339" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)">Airbnb</text>
+          <!-- GnR — alone in upper-right, glowing gold -->
+          <circle cx="660" cy="125" r="20" fill="rgba(184,149,74,0.18)"/>
+          <circle cx="660" cy="125" r="13" fill="rgba(184,149,74,0.32)"/>
+          <circle cx="660" cy="125" r="7" fill="#b8954a"/>
+          <text x="660" y="105" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" font-weight="900"><tspan fill="#5B8FD4">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="11">n</tspan><tspan fill="#c8462c">R</tspan></text>
+          <text x="660" y="158" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="1.5" fill="#8a6d2e">alone in the upper-right</text>
+        </svg>
+      </div>
+      <div class="qm-closer">
+        Wherever real connection happens, the tech captures intent, identity, or logistics.<br>
+        <strong>The behavioral-fit substrate is unclaimed.</strong>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== cs-arch1 — THE MISSING LAYER (architectural stack) ===== -->
+<style>
+  #cs-arch1 .ar-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 40px;text-align:center;gap:18px; }
+  #cs-arch1 .ar-headline { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:700;line-height:1.18;letter-spacing:-0.02em;color:#1a1612;max-width:1180px; }
+  #cs-arch1 .ar-stack { display:flex;flex-direction:column;align-items:stretch;gap:0;width:100%;max-width:1100px; }
+  #cs-arch1 .ar-tier { padding:18px 24px;border-radius:8px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px; }
+  #cs-arch1 .ar-tier.bordered { border:1.4px solid rgba(26,22,18,0.18);background:rgba(26,22,18,0.025); }
+  #cs-arch1 .ar-tier.gap { background:rgba(184,149,74,0.10);border:2px solid #b8954a;box-shadow:0 0 0 4px rgba(184,149,74,0.06),0 0 24px rgba(184,149,74,0.18); position:relative; padding:22px 24px; }
+  #cs-arch1 .ar-tier.gap::before, #cs-arch1 .ar-tier.gap::after { content:'';position:absolute;top:50%;width:60px;height:1.5px;background:linear-gradient(90deg,rgba(184,149,74,0.6),rgba(184,149,74,0)); }
+  #cs-arch1 .ar-tier.gap::before { right:100%;background:linear-gradient(270deg,rgba(184,149,74,0.6),rgba(184,149,74,0)); }
+  #cs-arch1 .ar-tier.gap::after { left:100%; }
+  #cs-arch1 .ar-eye { font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,22,18,0.5); }
+  #cs-arch1 .ar-tier.gap .ar-eye { color:#8a6d2e; }
+  #cs-arch1 .ar-name { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.55vw,1.45rem);font-weight:800;color:#1a1612;line-height:1.2;letter-spacing:-0.012em; }
+  #cs-arch1 .ar-tier.gap .ar-name em { font-style:italic;color:#b8954a; }
+  #cs-arch1 .ar-detail { font-family:'Playfair Display',serif;font-size:0.84rem;font-style:italic;color:rgba(26,22,18,0.7);font-weight:600;line-height:1.4;max-width:760px; }
+  #cs-arch1 .ar-tier.gap .ar-detail { color:#1a1612; }
+  #cs-arch1 .ar-arrow { font-family:'Manrope',sans-serif;font-size:1.2rem;color:rgba(26,22,18,0.3);font-weight:600;padding:4px 0; }
+  #cs-arch1 .ar-closer { border-top:1px solid rgba(184,149,74,0.32);padding-top:14px;max-width:1080px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.15rem,1.6vw,1.5rem);font-weight:700;font-style:italic;color:#1a1612;line-height:1.35; }
+  #cs-arch1 .ar-closer strong { color:#b8954a;font-style:normal;font-weight:800; }
+</style>
+<div class="casey-slide ds-focus" id="cs-arch1">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Architecture of Human Connection Technology</div>
+  <section style="position:relative;width:100%;min-height:100%">
+    <div class="ar-stage">
+      <div class="ar-headline">
+        Where humans live their social lives <em style="color:#b8954a;font-style:italic;font-weight:800">has no infrastructure layer.</em>
+      </div>
+      <div class="ar-stack">
+        <div class="ar-tier bordered">
+          <div class="ar-eye">Top of the stack</div>
+          <div class="ar-name">Real-world human connection</div>
+          <div class="ar-detail">Where people actually live their social lives.</div>
+        </div>
+        <div class="ar-arrow">↕</div>
+        <div class="ar-tier gap">
+          <div class="ar-eye">★ The missing layer</div>
+          <div class="ar-name">Behavioral signal of <em>social fit</em></div>
+          <div class="ar-detail">Repeated, voluntary, low-stakes social choice. <strong style="color:#c8462c;font-style:normal;font-weight:800">Currently uncollected by anyone.</strong></div>
+        </div>
+        <div class="ar-arrow">↕</div>
+        <div class="ar-tier bordered">
+          <div class="ar-eye">Bottom of the stack</div>
+          <div class="ar-name">Digital systems</div>
+          <div class="ar-detail">CourtReserve · DUPR · Tinder · Meetup · Slack · NextDoor · LinkedIn · Strava · Uber</div>
+        </div>
+      </div>
+      <div class="ar-closer">
+        <strong>GnR</strong> is the missing layer.
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== cs-cat1 — THE THIRD CATEGORY ===== -->
+<style>
+  #cs-cat1 .ct-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 56px 40px;text-align:center;gap:18px; }
+  #cs-cat1 .ct-headline { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.5vw,2.2rem);font-weight:700;line-height:1.18;letter-spacing:-0.02em;color:#1a1612;max-width:1180px; }
+  #cs-cat1 .ct-headline em { font-style:italic;font-weight:800;color:#b8954a; }
+  #cs-cat1 .ct-grid { display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:14px;width:100%;max-width:1240px; }
+  #cs-cat1 .ct-col { padding:20px 18px 22px;border-radius:12px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:8px;position:relative; }
+  #cs-cat1 .ct-col.muted { background:rgba(26,22,18,0.04);border:1.4px solid rgba(26,22,18,0.18); }
+  #cs-cat1 .ct-col.prize { background:rgba(184,149,74,0.10);border:1.8px solid #b8954a;box-shadow:0 0 0 3px rgba(184,149,74,0.06); }
+  #cs-cat1 .ct-num { font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;line-height:1;color:rgba(26,22,18,0.45);letter-spacing:-0.02em; }
+  #cs-cat1 .ct-col.prize .ct-num { color:#b8954a; }
+  #cs-cat1 .ct-eye { font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.55); }
+  #cs-cat1 .ct-col.prize .ct-eye { color:#8a6d2e; }
+  #cs-cat1 .ct-name { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.1rem,1.55vw,1.45rem);font-weight:800;color:rgba(26,22,18,0.7);line-height:1.18;letter-spacing:-0.014em; }
+  #cs-cat1 .ct-col.prize .ct-name { color:#1a1612; }
+  #cs-cat1 .ct-col.prize .ct-name em { font-style:italic;color:#b8954a; }
+  #cs-cat1 .ct-verb { font-family:'Playfair Display',serif;font-size:0.86rem;font-style:italic;color:rgba(26,22,18,0.65);font-weight:600;line-height:1.4; }
+  #cs-cat1 .ct-col.prize .ct-verb { color:#1a1612;font-weight:700; }
+  #cs-cat1 .ct-examples { font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.04em;color:rgba(26,22,18,0.5);line-height:1.5;margin-top:auto;padding-top:6px; }
+  #cs-cat1 .ct-col.prize .ct-examples { color:#8a6d2e; }
+  #cs-cat1 .ct-closer { border-top:1px solid rgba(184,149,74,0.32);padding-top:14px;max-width:1180px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.4vw,1.3rem);font-style:italic;font-weight:600;color:rgba(26,22,18,0.78);line-height:1.42; }
+  #cs-cat1 .ct-closer strong { color:#c8462c;font-style:normal;font-weight:800; }
+  #cs-cat1 .ct-closer .gnr { font-style:normal;font-weight:800; }
+  #cs-cat1 .ct-closer .gnr .g { color:#5B8FD4; } #cs-cat1 .ct-closer .gnr .n { color:#1a1612;font-style:italic; } #cs-cat1 .ct-closer .gnr .r { color:#c8462c; }
+</style>
+<div class="casey-slide ds-focus" id="cs-cat1">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Third Derivative · Category of One</div>
+  <section style="position:relative;width:100%;min-height:100%">
+    <div class="ct-stage">
+      <div class="ct-headline">
+        Three kinds of tech companies. <em>One category</em> nobody else is in.
+      </div>
+      <div class="ct-grid">
+
+        <div class="ct-col muted">
+          <div class="ct-num">01</div>
+          <div class="ct-eye">Attention</div>
+          <div class="ct-name">Keep you on the screen.</div>
+          <div class="ct-verb">The screen is the destination.</div>
+          <div class="ct-examples">Instagram &middot; TikTok &middot; X &middot; YouTube</div>
+        </div>
+
+        <div class="ct-col muted">
+          <div class="ct-num">02</div>
+          <div class="ct-eye">Coordination</div>
+          <div class="ct-name">Send you into the world for what <em style="font-style:italic;font-weight:600">you</em> want.</div>
+          <div class="ct-verb">The screen is a portal. You're still the receiver.</div>
+          <div class="ct-examples">Tinder &middot; Airbnb &middot; Uber &middot; DoorDash</div>
+        </div>
+
+        <div class="ct-col prize">
+          <div class="ct-num">03</div>
+          <div class="ct-eye">★ Reciprocity</div>
+          <div class="ct-name">Translate <em>your thought</em> about somebody else into a moment for them.</div>
+          <div class="ct-verb">The screen disappears. The other person becomes the whole point.</div>
+          <div class="ct-examples"><strong style="color:#1a1612">Give n Receive</strong> &middot; the only one</div>
+        </div>
+
+      </div>
+      <div class="ct-closer">
+        Most platforms keep you on the screen. Some send you into the world.<br>
+        <span class="gnr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span> uses the screen to translate <strong>one thought about somebody else into a real moment for them.</strong>
+      </div>
+    </div>
+  </section>
+</div>
 
 <!-- ===== cs-pn1 — PICKLEBALL NEEDS GNR MOST [Dave 2026-05-08, alt for slot 14 cs-25] =====
      Brief: 'pickleball communities need the GNR paradigm more than any other type of
@@ -20542,8 +20748,11 @@ const SLIDE_ALTS = {
   //   cs-18-alt2 = FINALLY · emotional / 4-loves manifesto
   // [Dave 2026-05-08] cs-18-alt2 ('Finally · 4-loves manifesto') DELETED per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   16: ['cs-18-alt1', 'cs-18-alt3'],
-  // [Dave 2026-05-08] cs-position2 ('Three Places · dating/family/community') DELETED per Dave: 'delete this'. HTML retained as silent backup. Slot 17 alts now: cs-funnel1 + cs-position1.
-  17: ['cs-funnel1', 'cs-position1'],
+  // [Dave 2026-05-08 v2] Slot 17 alts. cs-tv primary (Opportunity Size). Existing alts: cs-funnel1 (sales-funnel) + cs-position1 (Not a sports investment). NEW BLUE-DOT alts combining Dave's thesis with source material:
+  //   cs-quadrant1 = THE EMPTY QUADRANT (upper-right is empty; GnR alone)
+  //   cs-arch1     = THE MISSING LAYER (architectural stack)
+  //   cs-cat1      = THE THIRD CATEGORY (attention/coordination/reciprocity)
+  17: ['cs-funnel1', 'cs-position1', 'cs-quadrant1', 'cs-arch1', 'cs-cat1'],
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V2 ('When you show up fully... / What matters most comes back to you. + Networked stacked above n + n is the engine tagline') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
@@ -21565,9 +21774,12 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
   const isReviewSlot = (pos === REVIEW_POSITION);
   SLIDE_ALTS[posKey].forEach((altId, i) => {
     const altDot = document.createElement('button');
-    // [Dave 2026-05-08] cs-merge3 specifically uses pink-alt class (vs red review). Per Dave: 'make it a pink dot next to the red dots'.
+    // [Dave 2026-05-08] Color overrides per altId:
+    //   cs-merge3 = pink (newer candidate at slot 13)
+    //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     const isPinkAlt = (altId === 'cs-merge3');
-    altDot.className = 'casey-dot alt' + (isPinkAlt ? ' pink-alt' : (isReviewSlot ? ' review' : ''));
+    const isBlueAlt = (altId === 'cs-quadrant1' || altId === 'cs-arch1' || altId === 'cs-cat1');
+    altDot.className = 'casey-dot alt' + (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : (isReviewSlot ? ' review' : '')));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
