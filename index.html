@@ -9926,15 +9926,16 @@ html, body, html body{
   #cs-16 .c16-section-title .c16-tdot { position:absolute; top:1.5em; left:50%; width:8px; height:8px; margin-left:-4px; background:#b8954a; border-radius:50%; }
   #cs-16 .c16-signals-title { left:13%; }
   #cs-16 .c16-actions-title { right:13%; }
-  #cs-16 .c16-signals { position:absolute; top:26%; left:3.5%; width:30%; z-index:3; }
-  #cs-16 .c16-row { position:relative; display:grid; grid-template-columns:60px 110px 1px 1fr; gap:14px; min-height:88px; padding:7px 0 11px; border-top:1px solid rgba(184,149,74,.28); }
+  #cs-16 .c16-signals { position:absolute; top:23%; left:3.5%; width:30%; z-index:3; }
+  /* [Dave 2026-05-08] tightened min-height 88→72 to fit 5 signal rows (added Concierge for phone calls + text replies) */
+  #cs-16 .c16-row { position:relative; display:grid; grid-template-columns:54px 102px 1px 1fr; gap:12px; min-height:72px; padding:6px 0 9px; border-top:1px solid rgba(184,149,74,.28); }
   #cs-16 .c16-row:first-child { border-top-color: rgba(184,149,74,.42); }
   #cs-16 .c16-row:last-child  { border-bottom: 1px solid rgba(184,149,74,.22); }
-  #cs-16 .c16-icon { width:44px; height:44px; margin-top:5px; margin-left:4px; border:1.6px solid currentColor; border-radius:50%; display:grid; place-items:center; }
-  #cs-16 .c16-icon svg { width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-  #cs-16 .c16-label { align-self:center; font-size:.62rem; line-height:1.5; letter-spacing:.22em; font-weight:800; text-transform:uppercase; color:currentColor; }
-  #cs-16 .c16-divider { width:1px; height:54px; margin-top:7px; background:rgba(184,149,74,.38); }
-  #cs-16 .c16-row ul { margin:2px 0 0; padding:0; list-style:none; font-size:.62rem; line-height:1.5; color:rgba(26,22,18,.86); font-weight:600; }
+  #cs-16 .c16-icon { width:40px; height:40px; margin-top:4px; margin-left:4px; border:1.6px solid currentColor; border-radius:50%; display:grid; place-items:center; }
+  #cs-16 .c16-icon svg { width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  #cs-16 .c16-label { align-self:center; font-size:.58rem; line-height:1.4; letter-spacing:.2em; font-weight:800; text-transform:uppercase; color:currentColor; }
+  #cs-16 .c16-divider { width:1px; height:42px; margin-top:7px; background:rgba(184,149,74,.38); }
+  #cs-16 .c16-row ul { margin:2px 0 0; padding:0; list-style:none; font-size:.58rem; line-height:1.45; color:rgba(26,22,18,.86); font-weight:600; }
   #cs-16 .c16-row li { position:relative; padding-left:14px; white-space:nowrap; }
   #cs-16 .c16-row li:before { content:""; position:absolute; left:0; top:.72em; width:5px; height:5px; margin-top:-3px; border-radius:50%; background:currentColor; }
   #cs-16 .c16-blue   { color:#2f7bd0; }
@@ -9950,27 +9951,30 @@ html, body, html body{
   #cs-16 .c16-curve { fill:none; stroke-width:1.65; stroke-linecap:round; opacity:.95; }
   #cs-16 .c16-cdot  { stroke:#fbf7ef; stroke-width:2; }
 </style>
-<div class="casey-slide ds-focus appendix-slide" id="cs-16" style="display:none">
+<!-- [Dave 2026-05-08] cs-16 REVIVED to main flow per Dave: 'bring this slide back ... bring it into the main deck'. Reframe: the natural touchpoints of a real-world community (invitations, texts, phone calls, rounds, club ops, diary, concierge) ALL train GnR. Added 5th signal row (Concierge) for phone calls + text replies + auto-scheduler accepts. -->
+<div class="casey-slide ds-focus" id="cs-16">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Autonomous Community Intelligence</div>
 
 <div class="c16-slide">
-  <div class="c16-headline">Every signal trains <span class="g">G</span><em>n</em><span class="r">R</span>.</div>
-  <div class="c16-subhead">It never stops getting smarter.</div>
+  <div class="c16-headline">Every natural touchpoint trains <span class="g">G</span><em>n</em><span class="r">R</span>.</div>
+  <div class="c16-subhead">Invitations &middot; texts &middot; phone calls &middot; rounds &middot; feedback. It never stops getting smarter.</div>
 
   <div class="c16-section-title c16-signals-title">SIGNALS<span class="c16-tdot"></span></div>
   <div class="c16-section-title c16-actions-title">SMARTER ACTIONS<span class="c16-tdot"></span></div>
 
   <svg class="c16-connections" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-    <!-- LEFT: signals -> core -->
-    <path class="c16-curve" stroke="#2f7bd0" d="M575 315 C675 312 675 417 828 418"/>
-    <path class="c16-curve" stroke="#2f7bd0" d="M615 434 C705 434 706 500 805 505"/>
-    <path class="c16-curve" stroke="#b8954a" d="M618 560 C704 558 716 580 803 564"/>
-    <path class="c16-curve" stroke="#168651" d="M620 810 C727 812 727 703 838 700"/>
-    <circle class="c16-cdot" fill="#2f7bd0" cx="575" cy="315" r="6"/><circle class="c16-cdot" fill="#2f7bd0" cx="828" cy="418" r="7"/>
-    <circle class="c16-cdot" fill="#2f7bd0" cx="615" cy="434" r="6"/><circle class="c16-cdot" fill="#2f7bd0" cx="805" cy="505" r="7"/>
-    <circle class="c16-cdot" fill="#b8954a" cx="618" cy="560" r="6"/><circle class="c16-cdot" fill="#b8954a" cx="803" cy="564" r="7"/>
-    <circle class="c16-cdot" fill="#168651" cx="620" cy="810" r="6"/><circle class="c16-cdot" fill="#168651" cx="838" cy="700" r="7"/>
+    <!-- LEFT: signals -> core (5 rows: Invitations, Rounds, Club Ops, Diary, Concierge — Concierge added 2026-05-08 for phone calls + text replies per Dave) -->
+    <path class="c16-curve" stroke="#2f7bd0" d="M575 280 C675 278 675 405 828 412"/>
+    <path class="c16-curve" stroke="#2f7bd0" d="M615 410 C705 410 706 478 805 488"/>
+    <path class="c16-curve" stroke="#b8954a" d="M618 540 C704 538 716 562 803 552"/>
+    <path class="c16-curve" stroke="#168651" d="M620 670 C720 670 720 615 838 612"/>
+    <path class="c16-curve" stroke="#c8462c" d="M620 800 C730 800 730 700 845 690"/>
+    <circle class="c16-cdot" fill="#2f7bd0" cx="575" cy="280" r="6"/><circle class="c16-cdot" fill="#2f7bd0" cx="828" cy="412" r="7"/>
+    <circle class="c16-cdot" fill="#2f7bd0" cx="615" cy="410" r="6"/><circle class="c16-cdot" fill="#2f7bd0" cx="805" cy="488" r="7"/>
+    <circle class="c16-cdot" fill="#b8954a" cx="618" cy="540" r="6"/><circle class="c16-cdot" fill="#b8954a" cx="803" cy="552" r="7"/>
+    <circle class="c16-cdot" fill="#168651" cx="620" cy="670" r="6"/><circle class="c16-cdot" fill="#168651" cx="838" cy="612" r="7"/>
+    <circle class="c16-cdot" fill="#c8462c" cx="620" cy="800" r="6"/><circle class="c16-cdot" fill="#c8462c" cx="845" cy="690" r="7"/>
 
     <!-- RIGHT: core -> actions -->
     <path class="c16-curve" stroke="#168651" d="M1092 423 C1215 388 1222 323 1378 323"/>
@@ -10005,6 +10009,12 @@ html, body, html body{
       <div class="c16-icon"><svg viewBox="0 0 32 32"><rect x="9" y="5" width="15" height="22" rx="2"/><path d="M13 5v22M7 10h4M7 15h4M7 20h4"/></svg></div>
       <div class="c16-label">Diary</div><div class="c16-divider"></div>
       <ul><li>wishlist</li><li>brain dump</li><li>who gives?</li><li>personality quiz</li><li>Relationship-AI</li></ul>
+    </div>
+    <!-- [Dave 2026-05-08] NEW Concierge signal row — phone calls + text replies + auto-scheduler accepts. The natural-touchpoint inputs that come back from real community communication. -->
+    <div class="c16-row c16-red">
+      <div class="c16-icon"><svg viewBox="0 0 32 32"><path d="M7 5h6l3 6-3 2c1.4 3 3.6 5.2 6.6 6.6l2-3 6 3v6c0 1.7-1.3 3-3 3C13 28.6 3.4 19 3 6c0-.6.4-1 1-1z"/></svg></div>
+      <div class="c16-label">Concierge</div><div class="c16-divider"></div>
+      <ul><li>phone calls</li><li>text replies</li><li>auto-scheduler accepts</li><li>last-minute confirms</li><li>known-4 nudges</li></ul>
     </div>
   </div>
 
@@ -18784,7 +18794,9 @@ const SLIDE_ORDER = [
   'cs-measure', // 13 PRIMARY · The Measurement Reframe ('We don't build a social network. We measure who shows up for whom. That measurement IS the network.')
   'cs-25',    // 14 Why pickleball first ("Pickleball is the clearest path...")
   'cs-fw1',   // 15 Autonomous social coordination ('Drop GnR into any pickleball club. It just works. And compounds forever — at AI speed.') — flywheel diagram. MOVED from appendix to main per Dave 2026-05-07 PM.
-  'cs-hc8',   // 16 The AI Inversion ('Most things AI makes abundant get cheaper. Connection gets more valuable.') — MOVED from appendix to main per Dave 2026-05-07 PM.
+  // [Dave 2026-05-08] cs-16 REVIVED to main flow per Dave: 'bring this slide back ... bring it into the main deck'. Reframe = natural community touchpoints all train GnR. Added Concierge signal row (phone + text + auto-scheduler). Sits between flywheel CLAIM (cs-fw1) and AI inversion (cs-hc8) as the engine PROOF.
+  'cs-16',    // 16 Every natural touchpoint trains GnR · the compounding engine
+  'cs-hc8',   // 17 The AI Inversion ('Most things AI makes abundant get cheaper. Connection gets more valuable.') — MOVED from appendix to main per Dave 2026-05-07 PM.
   'cs-tv',    // 17 MERGED Vision + Pickleball TAM ("We're mapping human connection — one invitation at a time" + $2.55B inner-rings TAM)
   'cs-future',// 18 Future of our communities · 5 verbs ("When you digitize human connection, you can") — verb 5 lands "Make it abundant"
   // cs-8b (Abundance hero) → APPENDIX 2026-05-04 per Dave: too many "abundance" beats in back half (cs-future verb 5 + cs-8b + cs-mv6 mission). Setup-and-payoff structure works better with just 2: cs-future (outcome) + cs-mv6 (mission).
@@ -18907,7 +18919,7 @@ const APPENDIX_ORDER = [
   // cs-0a ("Two imbalances rule modern life") → DELETED from appendix per Dave 2026-05-02
   'cs-34',   // 6: Flywheel · network effects [moved BACK to appendix 2026-05-01 — cs-fw1 won the head-to-head]
   // cs-4 (Moat — data in our heads) → MAIN FLOW 2026-04-30 PM evening (later — Dave realized it's the PRIZE setup before cs-25 WEDGE)
-  // cs-16 ('Every signal trains GnR' mindmap) DELETED from appendix 2026-05-07 PM per Dave: 'Delete this slide'. HTML retained as silent backup.
+  // cs-16 was DELETED from appendix 2026-05-07 PM, then REVIVED to MAIN flow (slot 16, between cs-fw1 and cs-hc8) on 2026-05-08 per Dave: 'bring this slide back ... bring it into the main deck'. New framing = 'Every natural touchpoint trains GnR' + Concierge signal row added (phone calls + text replies + auto-scheduler accepts).
   // cs-11b ("Running at NEPC" — 350 MAP, 60 courts/wk, $215K ARR, +6% util) → DELETED 2026-05-02 per Dave (data folded into cs-rcp; +6% lift already on cs-11e Proving Ground in main deck)
   // cs-36 (10-Year North Star "Every social community in the world runs on the Give n Receive graph") → DELETED 2026-05-06 PM per Dave
   // cs-33 promoted to position 2 — removed from old position 11 per Dave 2026-05-02
@@ -19777,7 +19789,8 @@ const slideLabels = [
   'Measurement Reframe · who shows up for whom',     // 13 cs-measure [NEW 2026-05-08]
   'Why pickleball first',                            // 14 cs-25
   'Autonomous social coordination',                  // 14 cs-fw1 (moved from appendix to main slot 14 per Dave 2026-05-07 PM)
-  'The AI Inversion',                                // 15 cs-hc8 (moved from appendix to main slot 15 per Dave 2026-05-07 PM)
+  'Every natural touchpoint trains GnR',             // 15 cs-16 [REVIVED to main flow per Dave 2026-05-08 — natural-touchpoint reframe + Concierge signal row]
+  'The AI Inversion',                                // 16 cs-hc8 (moved from appendix to main slot 15 per Dave 2026-05-07 PM)
   'Mapping human connection · Pickleball TAM',       // 16 cs-tv
   'Future of our communities',                       // 17 cs-future
   'Started → love for the problem · Dave Velardo',   // 16 cs-18
