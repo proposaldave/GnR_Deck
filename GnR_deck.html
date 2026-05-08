@@ -408,8 +408,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-slide.active canvas, .casey-slide.active .orb, .casey-slide.active .orb-g, .casey-slide.active .orb-b, .casey-slide.active .orb-m, .casey-slide.active .orb-1, .casey-slide.active .orb-2, .casey-slide.active .magic-bg, .casey-slide.active .magic-glow, .casey-slide.active .magic-ring, .casey-slide.active .pulse, .casey-slide.active .ring-1, .casey-slide.active .ring-2, .casey-slide.active .hv-svg, .casey-slide.active .human-visual, .casey-slide.active svg.hv-svg { pointer-events: none !important; }
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
-/* [Dave 2026-05-08 v2] Vertical nav slimmed: smaller dots, tighter gap, narrower pill. Was visually dominant; now compact. */
-.casey-nav{position:fixed;top:90px;right:18px;display:flex;flex-direction:column;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:10px 6px;border-radius:14px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 130px)}
+/* [Dave 2026-05-08 v3] THIN vertical nav: pill width now driven only by dot column. APPENDIX button moved OUT of .casey-nav (pulled to a separate fixed position below the strip) so it can't force the pill wider. */
+.casey-nav{position:fixed;top:90px;right:14px;display:flex;flex-direction:column;align-items:center;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:8px 4px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 160px);width:fit-content}
 .casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
 /* [Dave 2026-05-08] Active dot is a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
@@ -10019,17 +10019,17 @@ html, body, html body{
     <div class="c16-row c16-blue">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><path d="M5 15L27 5l-8 22-4-9-10-3z"/><path d="M15 18l5-5"/></svg></div>
       <div class="c16-label">Text<br>Invitations</div><div class="c16-divider"></div>
-      <ul><li>RSVPs</li><li>cancellations</li><li>referrals</li></ul>
+      <ul><li>RSVPs</li><li>cancellations</li><li>referrals</li><li>known-4 auto-scheduler</li></ul>
     </div>
     <div class="c16-row c16-red">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><path d="M7 5h6l3 6-3 2c1.4 3 3.6 5.2 6.6 6.6l2-3 6 3v6c0 1.7-1.3 3-3 3C13 28.6 3.4 19 3 6c0-.6.4-1 1-1z"/></svg></div>
       <div class="c16-label">Phone Calls</div><div class="c16-divider"></div>
-      <ul><li>text replies</li><li>known-4 nudges</li></ul>
+      <ul><li>known-4 nudges</li></ul>
     </div>
     <div class="c16-row c16-blue">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><circle cx="10" cy="10" r="4"/><circle cx="22" cy="10" r="4"/><path d="M7 25l18-18M7 7l18 18"/><path d="M8 25h5M19 25h5"/></svg></div>
       <div class="c16-label">Rounds</div><div class="c16-divider"></div>
-      <ul><li>rounds feedback</li><li>choose your round</li><li>favorite partner</li><li>favorite opponent</li><li>competitive scores</li></ul>
+      <ul><li>rounds feedback</li><li>favorite rounds</li><li>favorite partner + opponent</li><li>competitive scores</li></ul>
     </div>
     <div class="c16-row c16-gold">
       <div class="c16-icon"><svg viewBox="0 0 32 32"><rect x="6" y="8" width="20" height="18" rx="2"/><path d="M10 5v6M22 5v6M6 14h20"/><path d="M11 18h2M16 18h2M21 18h2M11 22h2M16 22h2"/></svg></div>
@@ -20610,11 +20610,13 @@ if (typeof REVIEW_POSITION === 'number' && REVIEW_POSITION > 0) {
 const abtn = document.createElement('button');
 abtn.id = 'appendixBtn';
 abtn.innerHTML = 'Appendix <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 10px rgba(255,77,143,0.85);margin-left:6px;vertical-align:middle;animation:pinkPulse 2.2s ease-in-out infinite" title="5 bonus slides to review (Name Validated · Mechanism · Keep Going · Bottleneck · Measurement Leap)"></span>';
-abtn.style.cssText = 'font-family:var(--ui,"Manrope",sans-serif);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.35);background:rgba(26,22,18,0.05);border:1px solid rgba(26,22,18,0.14);border-radius:10px;padding:5px 8px;cursor:pointer;margin-top:8px;transition:all 0.3s;white-space:nowrap';
-abtn.onmouseenter = () => { abtn.style.color = 'rgba(255,255,255,0.6)'; abtn.style.borderColor = 'rgba(26,22,18,0.18)'; };
-abtn.onmouseleave = () => { abtn.style.color = 'rgba(255,255,255,0.35)'; abtn.style.borderColor = 'rgba(255,255,255,0.08)'; };
+// [Dave 2026-05-08 v3] APPENDIX button pulled OUT of .casey-nav and positioned as a separate fixed element below the strip — keeps the dot pill truly thin (was getting widened to fit 'APPENDIX' word).
+abtn.style.cssText = 'position:fixed;top:calc(100vh - 60px);right:8px;font-family:var(--ui,"Manrope",sans-serif);font-size:8px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.45);background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);border:1px solid rgba(26,22,18,0.10);border-radius:10px;padding:5px 8px;cursor:pointer;transition:all 0.3s;white-space:nowrap;z-index:999';
+abtn.onmouseenter = () => { abtn.style.color = 'rgba(255,255,255,0.7)'; abtn.style.borderColor = 'rgba(26,22,18,0.22)'; };
+abtn.onmouseleave = () => { abtn.style.color = 'rgba(255,255,255,0.45)'; abtn.style.borderColor = 'rgba(26,22,18,0.10)'; };
 abtn.onclick = enterAppendix;
-nav.appendChild(abtn);
+// Append directly to body, NOT inside nav, so it doesn't affect pill width
+document.body.appendChild(abtn);
 
 document.getElementById('cbar').style.width = ((1/TOTAL)*100) + '%';
 document.getElementById('ccount').textContent = '1 / ' + TOTAL;
