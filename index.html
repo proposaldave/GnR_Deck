@@ -410,8 +410,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
 /* [Dave 2026-05-08 v5] THIN vertical nav, centered under GnR wordmark. GnR mark is at right:24px width ~52px → center at right:50px. Nav width ~15px → right:42px puts its center at right:50 (lined up with GnR center). */
 .casey-nav{position:fixed;top:90px;right:42px;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:6px 3px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 200px);width:fit-content}
-.casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0}
+.casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0;position:relative}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
+/* [Dave 2026-05-08] Custom tooltip — opens to the LEFT of the dot (away from viewport edge) since the nav strip lives at the right edge. Fixes 'Autonomous Community In...' cutoff issue Dave caught. */
+.casey-dot[data-tooltip]:hover::after{content:attr(data-tooltip);position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.88);color:#fff;font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;padding:6px 10px;border-radius:5px;white-space:nowrap;z-index:1001;pointer-events:none}
 /* [Dave 2026-05-08] Active dot is a VERTICAL pill (was horizontal) since the strip runs top-to-bottom */
 .casey-dot.on{background:#d4a853;box-shadow:0 0 10px rgba(212,168,83,0.6);height:18px;border-radius:4px}
 .casey-dot.review{background:#e04040 !important;box-shadow:0 0 14px rgba(224,64,64,0.85) !important;animation:reviewPulse 1.6s ease-in-out infinite}
@@ -10494,7 +10496,8 @@ html, body, html body{
      Eyebrow "All In", sub-eyebrow "Dave Velardo · Founder · CEO", new manifesto wording, DUPR logo, timeline kept.
      Closing italic line removed per Dave. -->
 <div class="casey-slide ds-focus" id="cs-18">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.62rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#c8462c;z-index:10;">Started &rarr; love for the problem</div>
+<!-- [Dave 2026-05-08] eyebrow updated 'Started → love for the problem' → 'My Wheelhouse' per Dave: 'definitely top left label text for dave velardo slide is going to be my wheelhouse'. -->
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">My Wheelhouse</div>
 <section style="position:relative;width:100%;min-height:100%;display:flex;align-items:center;justify-content:center;padding:60px 40px 48px">
   <div style="text-align:center;max-width:1180px;width:100%">
 
@@ -10710,6 +10713,86 @@ html, body, html body{
       <!-- [Dave 2026-05-08] closer rewritten — 'I'm the founder this problem needed. NEPC is the lab that proves it.' rejected by Dave: 'i dont like'. New closer: punchy commitment statement. -->
       <div class="fy-closer">
         <span>All in.</span> For decades.
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== cs-18-alt3 — STRATEGY · 'I figure out the next frontier + I have my lab' [Dave 2026-05-08, GOLD DOT] =====
+     Brief: 'i know i can i know i am figuring out the next frontier of human connection
+     technology - that's what i'm super good at, and, i have my NEPCs with 500 members
+     and 20+ domain expert employees to leverage, test, figure it out with, and implement.
+     AND THAT IS MY STRATEGY'
+     Frame: founder-method + NEPC-as-lab as the explicit STRATEGY. Closing punch: 'AND
+     THAT IS MY STRATEGY.'
+-->
+<style>
+  #cs-18-alt3 .s3-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 48px;text-align:center; }
+  #cs-18-alt3 .s3-eye { font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:18px; }
+  #cs-18-alt3 .s3-hero { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,2.85vw,2.5rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612;max-width:1240px; }
+  #cs-18-alt3 .s3-hero em { font-style:italic;font-weight:800;color:#b8954a; }
+  #cs-18-alt3 .s3-sub { margin-top:14px;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.05rem,1.4vw,1.35rem);color:rgba(26,22,18,0.7);font-weight:600; }
+  #cs-18-alt3 .s3-sub strong { color:#c8462c;font-style:normal;font-weight:800; }
+  #cs-18-alt3 .s3-name { font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:rgba(26,22,18,0.5);margin-top:14px; }
+  #cs-18-alt3 .s3-flow { display:flex;align-items:center;justify-content:center;gap:14px;margin:38px auto 28px;max-width:1280px;flex-wrap:nowrap; }
+  #cs-18-alt3 .s3-block { padding:20px 22px;border-radius:12px;background:rgba(91,143,212,0.04);border:1px solid rgba(91,143,212,0.28);display:flex;flex-direction:column;align-items:center;gap:8px;min-width:200px; }
+  #cs-18-alt3 .s3-block.gold { background:rgba(184,149,74,0.10);border:1.5px solid #b8954a;box-shadow:0 0 0 3px rgba(184,149,74,0.06); }
+  #cs-18-alt3 .s3-block .head { font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,22,18,0.55); }
+  #cs-18-alt3 .s3-block.gold .head { color:#8a6d2e; }
+  #cs-18-alt3 .s3-block .text { font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#1a1612;line-height:1.32;text-align:center; }
+  #cs-18-alt3 .s3-block .text em { font-style:italic;color:#b8954a;font-weight:700; }
+  #cs-18-alt3 .s3-block .stat-row { display:flex;gap:14px;font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:800;color:#1a1612;line-height:1.2; }
+  #cs-18-alt3 .s3-block .stat-row .stat { display:flex;flex-direction:column;align-items:center; }
+  #cs-18-alt3 .s3-block .stat-row .num { color:#b8954a;font-size:1.45rem;line-height:1; }
+  #cs-18-alt3 .s3-block .stat-row .label { font-size:.55rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,0.6);margin-top:3px; }
+  #cs-18-alt3 .s3-arrow { font-family:'Playfair Display',serif;font-size:1.4rem;color:#b8954a;font-weight:700; }
+  #cs-18-alt3 .s3-verbs { display:flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:left; }
+  #cs-18-alt3 .s3-verbs .v { font-family:'Playfair Display',serif;font-size:0.86rem;font-weight:700;color:#1a1612;line-height:1.3; }
+  #cs-18-alt3 .s3-verbs .v em { font-style:italic;color:#b8954a;font-weight:800; }
+  #cs-18-alt3 .s3-closer { border-top:1px solid rgba(184,149,74,0.32);padding-top:18px;max-width:1080px;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.85vw,1.7rem);font-weight:700;color:#1a1612;line-height:1.32; }
+  #cs-18-alt3 .s3-closer span { color:#c8462c;font-weight:800; }
+</style>
+<div class="casey-slide ds-focus" id="cs-18-alt3">
+  <!-- Eyebrow same as cs-18 (canonical Manrope uppercase) -->
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">My Wheelhouse &middot; The Strategy</div>
+  <section style="position:relative;width:100%;min-height:100%">
+    <div class="s3-stage">
+      <div class="s3-eye">Why me &middot; how I do it &middot; why it scales</div>
+      <div class="s3-hero">
+        I figure out the next frontier of <em>human connection technology.</em><br>
+        That's what I'm <em>super good at.</em>
+      </div>
+      <div class="s3-name">Dave Velardo &middot; Founder &middot; CEO</div>
+
+      <!-- Strategy flow: ME → NEPC LAB → VERBS -->
+      <div class="s3-flow">
+        <div class="s3-block">
+          <div class="head">Me</div>
+          <div class="text">Frontier intuition,<br>weekly iteration.</div>
+        </div>
+        <span class="s3-arrow">&rarr;</span>
+        <div class="s3-block gold">
+          <div class="head">My Lab &middot; NEPC</div>
+          <div class="stat-row">
+            <div class="stat"><span class="num">500+</span><span class="label">Members</span></div>
+            <div class="stat"><span class="num">20+</span><span class="label">Domain Experts</span></div>
+          </div>
+          <div class="text" style="font-size:0.78rem;color:rgba(26,22,18,0.7);font-style:italic;font-weight:600">My living laboratory.</div>
+        </div>
+        <span class="s3-arrow">&rarr;</span>
+        <div class="s3-block">
+          <div class="head">What I do with it</div>
+          <div class="s3-verbs">
+            <div class="v"><em>Leverage.</em></div>
+            <div class="v"><em>Test.</em></div>
+            <div class="v"><em>Figure it out.</em></div>
+            <div class="v"><em>Implement.</em></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s3-closer">
+        And that is <span>my strategy.</span>
       </div>
     </div>
   </section>
@@ -20017,7 +20100,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-08] Founder slide alts. cs-18 moved to slot 16 (after cs-fw1) per Dave 2026-05-08, so alts now live at slot 16.
   //   cs-18-alt1 = MY WHEELHOUSE
   //   cs-18-alt2 = FINALLY · emotional / 4-loves manifesto
-  16: ['cs-18-alt1', 'cs-18-alt2'],
+  // [Dave 2026-05-08] cs-18-alt3 ADDED. Brief: 'i know i can / i know i am figuring out the next frontier of human connection technology - that's what i'm super good at, and, i have my NEPCs with 500 members and 20+ domain expert employees to leverage, test, figure it out with, and implement. AND THAT IS MY STRATEGY'. Renders as default GOLD alt dot (REVIEW_POSITION=13 still, so slot-16 alts are not red).
+  16: ['cs-18-alt1', 'cs-18-alt2', 'cs-18-alt3'],
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V2 ('When you show up fully... / What matters most comes back to you. + Networked stacked above n + n is the engine tagline') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
@@ -20974,7 +21058,7 @@ const slideLabels = [
   'The AI Inversion',                                // 16 cs-hc8 (moved from appendix to main slot 15 per Dave 2026-05-07 PM)
   'Mapping human connection · Pickleball TAM',       // 16 cs-tv
   'Future of our communities',                       // 17 cs-future
-  'Started → love for the problem · Dave Velardo',   // 16 cs-18
+  'My Wheelhouse · Dave Velardo',                    // 16 cs-18 [eyebrow renamed 2026-05-08]
   'The Founder Method · The Living Lab',             // 17 cs-lab [NEW Dave 2026-05-08 — Dave\'s iteration method + NEPC domain-expert team]
   'CTO · Steve Callan',                              // 18 cs-27
   // 'Mission · variant A' label removed — cs-mv6-altA deleted from main flow 2026-05-06 PM (10x version moved to appendix as cs-mv6-app)
@@ -21021,7 +21105,8 @@ for (let i = 1; i <= TOTAL; i++) {
   const tip = document.createElement('div');
   const dynamicLabel = getSlideEyebrowText(SLIDE_ORDER[i - 1]);
   tip.textContent = dynamicLabel || slideLabels[i] || ('Slide ' + i);
-  tip.style.cssText = 'position:absolute;bottom:28px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:Manrope,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.5px;color:#f3ead8;background:rgba(20,20,30,0.92);border:1px solid rgba(212,168,83,0.32);padding:5px 11px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity 0.2s;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.18)';
+  // [Dave 2026-05-08] Tooltip now opens LEFTWARD (to the left of the dot, away from the right viewport edge). Was 'bottom:28px;left:50%;transform:translateX(-50%)' which centered above the dot — with vertical nav at right edge, that clipped the tooltip text.
+  tip.style.cssText = 'position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);white-space:nowrap;font-family:Manrope,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.5px;color:#f3ead8;background:rgba(20,20,30,0.92);border:1px solid rgba(212,168,83,0.32);padding:5px 11px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity 0.2s;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.18)';
   wrap.onmouseenter = () => { tip.style.opacity = '1'; };
   wrap.onmouseleave = () => { tip.style.opacity = '0'; };
   wrap.appendChild(d);
