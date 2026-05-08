@@ -11533,10 +11533,10 @@ html, body, html body{
      The visualization is the headline made literal: 'same graph, wider room.' -->
 <style>
   /* Stage 1 reveal: SVG + panels.
-     [Dave 2026-05-08] Added max-height collapse when hidden, so the inner div doesn't reserve space for the unrendered content. Without this, the visible headline gets pushed too high because the inner div is sized for the FULL content (revealed + hidden). Now stage 0 = compact (headline only); stage 1+ expands.  */
-  #cs-onandoff .oo-rest { opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.7s cubic-bezier(.22,1,.36,1), max-height 0.7s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+     [Dave 2026-05-08 v2] Smoothed reveal timing — max-height jump 0→2200 in a single 0.7s transition felt jarring. Now: max-height expands quickly with ease-out, opacity follows with longer fade so content doesn't slam in. Plus subtle translateY for soft entry. */
+  #cs-onandoff .oo-rest { opacity: 0; max-height: 0; overflow: hidden; transform: translateY(8px); transition: opacity 0.55s ease 0.15s, max-height 0.5s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.22,1,.36,1) 0.15s; pointer-events: none; }
   #cs-onandoff[data-shown="1"] .oo-rest,
-  #cs-onandoff[data-shown="2"] .oo-rest { opacity: 1; max-height: 2200px; pointer-events: auto; transition-delay: 0.05s; }
+  #cs-onandoff[data-shown="2"] .oo-rest { opacity: 1; max-height: 2200px; transform: translateY(0); pointer-events: auto; }
   /* Stage 2 reveal: Krista Slack proof block. [v6 2026-05-08] Added max-height collapse so the block reserves no layout space at stages 0 and 1 — keeps the chevron snug below the SVG, not floating below an invisible Krista space. */
   #cs-onandoff .oo-slack { opacity: 0; max-height: 0; overflow: hidden; transform: translateY(8px); transition: opacity 0.7s cubic-bezier(.22,1,.36,1), max-height 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); pointer-events: none; }
   #cs-onandoff[data-shown="2"] .oo-slack { opacity: 1; max-height: 800px; transform: translateY(0); pointer-events: auto; transition-delay: 0.1s; }
@@ -11636,12 +11636,28 @@ html, body, html body{
         <g>
           <!-- ['OFF THE COURT' label DELETED 2026-05-08 per Dave] -->
 
-          <!-- Connection lines (drawn on stage 1 reveal) — gathering connections (700→900,60 and 980,120→900,60) DELETED 2026-05-08 per Dave -->
+          <!-- [Dave 2026-05-08 v3] Densely-connected graph per Dave: 'everything here needs to be connected'. Every player node connects to multiple icons, and icons connect to each other. The visual point: in the off-court world, the graph is alive. -->
           <line class="oo-line oo-real-line" x1="540" y1="100" x2="700" y2="80" stroke="#b8954a" stroke-width="1.5" opacity="0.65"/>
+          <!-- gold → home -->
+          <line class="oo-line oo-real-line" x1="540" y1="100" x2="850" y2="220" stroke="#b8954a" stroke-width="1.2" opacity="0.45"/>
+          <!-- gold → blue (player to player) -->
+          <line class="oo-line oo-real-line" x1="540" y1="100" x2="980" y2="120" stroke="rgba(184,149,74,0.45)" stroke-width="1" opacity="0.45"/>
           <line class="oo-line oo-real-line" x1="980" y1="120" x2="850" y2="220" stroke="#5B8FD4" stroke-width="1.5" opacity="0.55"/>
+          <!-- blue → coffee -->
+          <line class="oo-line oo-real-line" x1="980" y1="120" x2="700" y2="80" stroke="#5B8FD4" stroke-width="1.2" opacity="0.45"/>
+          <!-- blue → party -->
+          <line class="oo-line oo-real-line" x1="980" y1="120" x2="1010" y2="245" stroke="#5B8FD4" stroke-width="1.2" opacity="0.45"/>
           <line class="oo-line oo-real-line" x1="600" y1="220" x2="700" y2="180" stroke="#c8462c" stroke-width="1.5" opacity="0.65"/>
           <line class="oo-line oo-real-line" x1="600" y1="220" x2="850" y2="220" stroke="#c8462c" stroke-width="1.5" opacity="0.55"/>
+          <!-- red → coffee (cross connection) -->
+          <line class="oo-line oo-real-line" x1="600" y1="220" x2="700" y2="80" stroke="rgba(200,70,44,0.4)" stroke-width="1" opacity="0.4"/>
           <line class="oo-line oo-real-line" x1="1090" y1="190" x2="850" y2="220" stroke="rgba(26,22,18,0.4)" stroke-width="1.3" opacity="0.55"/>
+          <!-- ink → gift (cross) -->
+          <line class="oo-line oo-real-line" x1="1090" y1="190" x2="700" y2="180" stroke="rgba(26,22,18,0.32)" stroke-width="1" opacity="0.4"/>
+          <!-- icon-to-icon: coffee → gift, gift → home, home → coffee (icons feel like a network too) -->
+          <line class="oo-line oo-real-line" x1="700" y1="80" x2="700" y2="180" stroke="rgba(184,149,74,0.4)" stroke-width="1" opacity="0.4"/>
+          <line class="oo-line oo-real-line" x1="700" y1="180" x2="850" y2="220" stroke="rgba(184,149,74,0.4)" stroke-width="1" opacity="0.4"/>
+          <line class="oo-line oo-real-line" x1="700" y1="80" x2="850" y2="220" stroke="rgba(184,149,74,0.32)" stroke-width="0.9" opacity="0.35"/>
 
           <!-- Same 4 player nodes, repositioned in wider canvas -->
           <circle class="oo-pulse" cx="540" cy="100" r="9" fill="#b8954a"/>
@@ -20520,13 +20536,12 @@ const SLIDE_ALTS = {
   12: [],
   // [Dave 2026-05-08 v6] cs-merge3 ADDED as 3rd candidate at slot 13. Dave: 'try a new slide, make it a pink dot next to the red dots, where the krista steve graphic is clickable into if we click on party and where under the court and coffee gift home party graphic, you add the five cards (identical to as you have them now) from the why pickleball first slide.' cs-merge3 = pink-dot variant (vs red for merge1+merge2).
   13: ['cs-merge1', 'cs-merge2', 'cs-merge3'],
-  // [Dave 2026-05-08] cs-pn1 ADDED at slot 14 (cs-25's slot). Brief: 'pickleball communities need the GNR paradigm more than any other type of community on the planet ... tips of all communities are forming faster than they can be held together.' Frame: formation-rate vs holding-capacity gap.
-  14: ['cs-pn1'],
+  // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-08] Founder slide alts. cs-18 moved to slot 16 (after cs-fw1) per Dave 2026-05-08, so alts now live at slot 16.
   //   cs-18-alt1 = MY WHEELHOUSE
   //   cs-18-alt2 = FINALLY · emotional / 4-loves manifesto
-  // [Dave 2026-05-08] cs-18-alt3 ADDED. Brief: 'i know i can / i know i am figuring out the next frontier of human connection technology - that's what i'm super good at, and, i have my NEPCs with 500 members and 20+ domain expert employees to leverage, test, figure it out with, and implement. AND THAT IS MY STRATEGY'. Renders as default GOLD alt dot (REVIEW_POSITION=13 still, so slot-16 alts are not red).
-  16: ['cs-18-alt1', 'cs-18-alt2', 'cs-18-alt3'],
+  // [Dave 2026-05-08] cs-18-alt2 ('Finally · 4-loves manifesto') DELETED per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
+  16: ['cs-18-alt1', 'cs-18-alt3'],
   // [Dave 2026-05-08] Slot 17 alts. cs-tv is primary (Opportunity Size). Alts:
   //   cs-funnel1 = sales-funnel reframe of cs-16
   //   cs-position1 = NOT A SPORTS INVESTMENT (category negation)
