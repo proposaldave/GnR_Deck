@@ -5917,7 +5917,8 @@ window.cs1m5Reverse = function() {
   #cs-1m7 .wm-letter { display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition: transform 1.4s cubic-bezier(.22,1,.36,1), opacity 0.7s ease }
   #cs-1m7 .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
   #cs-1m7 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
-  #cs-1m7 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 12px;transform-origin:center bottom;transition:transform 1.4s cubic-bezier(.22,1,.36,1) }
+  /* [Dave 2026-05-09] padding bumped 12px → 40px each side so the italic n has more breathing room from the 'e' of Give and the 'R' of Receive at large display sizes */
+  #cs-1m7 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform 1.4s cubic-bezier(.22,1,.36,1) }
   #cs-1m7 .wm-n { font-size:128px;font-weight:400;font-style:italic;color:#1a1612;padding:0;transform-origin:center bottom }
   #cs-1m7 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   #cs-1m7 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
