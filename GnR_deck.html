@@ -22488,9 +22488,11 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
     // [Dave 2026-05-08 v2] Alt dots stack horizontally to the LEFT of the parent, but CENTERED around a fixed column so rows with 1/2/3 alts all align visually. Center column = right:31px (the midpoint of where a 3-alt row spans, 18→44). For N alts each offset by 13px, we center the group on column 31.
+    // [Dave 2026-05-09] Bug fix: with 4+ alts the centering math pushed the first alt to right:11.5 — too close to primary's 7px-wide dot (only 4.5px clearance). Added MIN_FIRST_RIGHT clamp so first alt is never closer than 18px to wrap right edge (preserves the original 18px alt-dot default + ensures visual separation from primary, especially when both are pulsing red).
     const numAlts = SLIDE_ALTS[posKey].length;
     const span = (numAlts - 1) * 13;
-    const startRight = 31 - span / 2;
+    const MIN_FIRST_RIGHT = 18;
+    const startRight = Math.max(MIN_FIRST_RIGHT, 31 - span / 2);
     altDot.style.right = (startRight + i * 13) + 'px';
     altDot.onclick = (e) => {
       e.stopPropagation();
