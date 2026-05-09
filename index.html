@@ -21633,12 +21633,12 @@ const SLIDE_ALTS = {
   // Slot 18 alts (cs-tv Opportunity Size):
   //   cs-funnel1   = sales-funnel
   //   cs-position1 = 'Not a sports investment'
-  //   cs-quadrant1 = THE EMPTY QUADRANT (upper-right is empty; GnR alone)
-  //   cs-arch1     = THE MISSING LAYER (architectural stack) [DELETED 2026-05-09, HTML retained]
-  //   cs-cat1      = THE THIRD CATEGORY (attention/coordination/reciprocity)
-  //   cs-wedge1    = NOT A SPORTS BET · WEDGE INTO HUMAN CONNECTION
-  //   cs-frontier1 = NEW FRONTIER · HUMAN VALUE [DELETED 2026-05-09 per Dave: 'delete this slide'. HTML retained]
-  18: ['cs-funnel1', 'cs-position1', 'cs-quadrant1', 'cs-cat1', 'cs-wedge1'],
+  //   cs-quadrant1 = THE EMPTY QUADRANT [DELETED 2026-05-09 per Dave: 'delete this slide'. HTML retained]
+  //   cs-arch1     = THE MISSING LAYER [DELETED 2026-05-09, HTML retained]
+  //   cs-cat1      = THE THIRD DERIVATIVE · CATEGORY OF ONE [DELETED 2026-05-09 per Dave: 'delete this slide'. HTML retained]
+  //   cs-wedge1    = THE WEDGE INTO REAL-WORLD SOCIAL COMMUNITIES [refocused 2026-05-09]
+  //   cs-frontier1 = NEW FRONTIER · HUMAN VALUE [DELETED 2026-05-09, HTML retained]
+  18: ['cs-funnel1', 'cs-position1', 'cs-wedge1'],
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V2 ('When you show up fully... / What matters most comes back to you. + Networked stacked above n + n is the engine tagline') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
@@ -22670,7 +22670,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-merge3 = pink (newer candidate at slot 13)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     const isPinkAlt = (altId === 'cs-merge3');
-    const isBlueAlt = (altId === 'cs-quadrant1' || altId === 'cs-cat1' || altId === 'cs-wedge1' || altId === 'cs-frontier1');
+    const isBlueAlt = (altId === 'cs-wedge1');
     altDot.className = 'casey-dot alt' + (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : (isReviewSlot ? ' review' : '')));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
