@@ -5780,7 +5780,8 @@ html, body, html body{
   #cs-1m5 .m5-cap-row { position:absolute;left:50%;top:calc(50% + 128px);display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start;opacity:0;visibility:hidden;transform:translate(-50%,18px);transition:opacity 720ms ease 300ms, transform 920ms var(--m5-ease) 300ms, visibility 0s linear 1050ms;will-change:opacity,transform }
   /* LEFT caption — reveals at stage 1+ */
   #cs-1m5[data-stage="1"] .m5-cap-row { opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity 720ms ease 300ms, transform 920ms var(--m5-ease) 300ms, visibility 0s linear 0s }
-  #cs-1m5 .m5-cap-left, #cs-1m5 .m5-cap-right { opacity:1;visibility:visible;transform:none;transition:none }
+  /* [Dave 2026-05-10 PM] FIX: scoped children-visible rule to stage 1+ only. Was unscoped → forced 'What you give / fuels the network' + 'Reciprocated back to you' captions visible on page load, overriding parent's stage-0 hidden state. Now children inherit parent's hidden state at stage 0. */
+  #cs-1m5[data-stage="1"] .m5-cap-left, #cs-1m5[data-stage="1"] .m5-cap-right { opacity:1;visibility:visible;transform:none;transition:none }
   /* NETWORK line — reveals at stage 2+ */
   #cs-1m5 .m5-stage2-network { position:absolute;left:0;right:0;top:calc(50% + 26px);opacity:0;visibility:hidden;transform:translateY(16px) scale(.985);overflow:visible;max-height:none;transition:opacity 700ms ease 190ms, transform 900ms var(--m5-ease) 190ms, visibility 0s linear 990ms;will-change:opacity,transform }
   #cs-1m5[data-stage="1"] .m5-stage2-network { opacity:1;visibility:visible;transform:translateY(0) scale(1);transition:opacity 700ms ease 190ms, transform 900ms var(--m5-ease) 190ms, visibility 0s linear 0s }
