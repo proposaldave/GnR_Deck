@@ -5780,8 +5780,8 @@ html, body, html body{
   /* [Dave 2026-05-09] Network line now reveals at stage 1 SIMULTANEOUSLY with the caption row (same 1.1s delay after split). Was stage 2 only — Dave: 'should animate in at the same time as What you give fuels the network'. The slide is now effectively 2-stage (0 = wordmark; 1 = split + both reveals together). */
   #cs-1m5 .m5-stage2-network { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
   #cs-1m5[data-stage="1"] .m5-stage2-network, #cs-1m5[data-stage="2"] .m5-stage2-network { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.75s ease 1.1s, transform 0.75s ease 1.1s, max-height 0.75s cubic-bezier(.22,1,.36,1) 1.1s, visibility 0s linear 1.1s }
-  /* Click hint — pulsing down arrow visible only at stage 0 */
-  #cs-1m5 .m5-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transition:opacity 0.4s ease, visibility 0s linear 0s }
+  /* Click hint — pulsing down arrow visible only at stage 0. [Dave 2026-05-09: translateX(-92px) shifts the hint left to align under the n. The wordmark is centered on slide-center, but n sits ~92px LEFT of wordmark-midpoint because 'Give' (G+ive) is narrower than 'Receive' (R+eceive). So the n's slide-x ≈ slide_center - 92, and the arrow now matches.] */
+  #cs-1m5 .m5-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transform:translateX(-92px);transition:opacity 0.4s ease, visibility 0s linear 0s }
   #cs-1m5[data-stage="1"] .m5-hint, #cs-1m5[data-stage="2"] .m5-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
   @keyframes m5HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m5 .m5-hint svg { animation:m5HintBob 2.2s ease-in-out infinite }
@@ -5800,8 +5800,8 @@ html, body, html body{
 <div class="casey-slide ds-measure active" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(2, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
-  <!-- Eyebrow [Dave 2026-05-09: 'in real-world social communities' → 'for real communities'] -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The future of human connection for real communities</div>
+  <!-- Eyebrow [Dave 2026-05-09 LATEST: 'The future of human connection for real communities' → 'Brand'. Slide 2 (cs-1) now carries the longer eyebrow.] -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand</div>
   <div class="s on" style="background:transparent">
     <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
       <!-- Wordmark with splittable letters. Span order: G/ive/n/R/eceive renders 'Give n Receive'. [Dave 2026-05-09: arc moved INSIDE wm-n-wrap so it tracks the n's position exactly — was offset because m5-wordmark's geometric center isn't where n sits in flex layout (Receive is wider than Give).] -->
