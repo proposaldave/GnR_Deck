@@ -5767,46 +5767,42 @@ html, body, html body{
   #cs-1m5 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   /* Gold arc above n — now positioned inside wm-n-wrap so it tracks the n exactly. Dave: 'the graphic above the black n should be perfectly centered above the black n'. wm-n-wrap is position:relative, so absolute children align to its box. left:50% of n_wrap puts arc at the n's center (n is centered in n_wrap by padding 0 40px). top:8% puts it above the n's top stem. */
   #cs-1m5 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
-  /* Stage 1+: split layout via CSS GRID matching the caption row's 1fr/1fr/140-gap/1300-max-width grid. This GUARANTEES alignment: G lands in left column (centered above 'WHAT YOU GIVE'), R lands in right column (centered above 'YOUR PEOPLE · YOUR MOMENTS'), n_wrap absolutely positioned at horizontal slide center. ive + eceive get display:none (instant collapse, no width-estimation math). Trade-off: the smooth letter-by-letter split animation is replaced by a snap to grid positions. Dave's priority was 'all content perfectly centered' — alignment correctness > smoothness. */
-  #cs-1m5[data-stage="1"] .m5-wordmark, #cs-1m5[data-stage="2"] .m5-wordmark {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 140px !important;
-    width: min(1300px, 92%) !important;
-    margin: 0 auto 32px auto !important;
-    position: relative !important;
-  }
-  #cs-1m5[data-stage="1"] .wm-ive, #cs-1m5[data-stage="2"] .wm-ive { display: none !important }
-  #cs-1m5[data-stage="1"] .wm-eceive, #cs-1m5[data-stage="2"] .wm-eceive { display: none !important }
-  #cs-1m5[data-stage="1"] .wm-G, #cs-1m5[data-stage="2"] .wm-G { grid-column: 1; justify-self: center; transform: scale(1.4); transform-origin: center bottom }
-  #cs-1m5[data-stage="1"] .wm-R, #cs-1m5[data-stage="2"] .wm-R { grid-column: 2; justify-self: center; transform: scale(1.4); transform-origin: center bottom }
-  #cs-1m5[data-stage="1"] .wm-n-wrap, #cs-1m5[data-stage="2"] .wm-n-wrap { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%) scale(1.3); transform-origin: center bottom; z-index: 2 }
-  #cs-1m5[data-stage="1"] .wm-arc, #cs-1m5[data-stage="2"] .wm-arc { transform: translateX(-50%) translateY(-12px) scale(1.3) }
-  /* Stage 1 reveal: caption row reveals FIRST (delayed 1.1s for split to land first). Persists into stage 2. */
-  #cs-1m5 .m5-stage1-caption { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
-  #cs-1m5[data-stage="1"] .m5-stage1-caption, #cs-1m5[data-stage="2"] .m5-stage1-caption { opacity:1;visibility:visible;transform:none;max-height:300px;transition:opacity 0.75s ease 1.1s, transform 0.75s ease 1.1s, max-height 0.75s cubic-bezier(.22,1,.36,1) 1.1s, visibility 0s linear 1.1s }
-  /* [Dave 2026-05-09] Network line now reveals at stage 1 SIMULTANEOUSLY with the caption row (same 1.1s delay after split). Was stage 2 only — Dave: 'should animate in at the same time as What you give fuels the network'. The slide is now effectively 2-stage (0 = wordmark; 1 = split + both reveals together). */
+  /* Stage 1+ split layout — switched from CSS grid (which snapped) BACK to flex + translateX so the wordmark transformations animate SMOOTHLY (Dave: 'the animations that come in here are not smooth'). The translateX values are computed to land G at slide_x 600 (left caption column center), R at slide_x 1320 (right caption column center), and n at slide_x 960 (slide center). All values transition smoothly via the .wm-letter / .wm-n-wrap transition rules. */
+  #cs-1m5[data-stage="1"] .wm-ive, #cs-1m5[data-stage="2"] .wm-ive, #cs-1m5[data-stage="3"] .wm-ive { opacity:0;transform:scaleX(0) }
+  #cs-1m5[data-stage="1"] .wm-eceive, #cs-1m5[data-stage="2"] .wm-eceive, #cs-1m5[data-stage="3"] .wm-eceive { opacity:0;transform:scaleX(0) }
+  #cs-1m5[data-stage="1"] .wm-G, #cs-1m5[data-stage="2"] .wm-G, #cs-1m5[data-stage="3"] .wm-G { transform:translateX(160px) scale(1.4) }
+  #cs-1m5[data-stage="1"] .wm-R, #cs-1m5[data-stage="2"] .wm-R, #cs-1m5[data-stage="3"] .wm-R { transform:translateX(325px) scale(1.4) }
+  #cs-1m5[data-stage="1"] .wm-n-wrap, #cs-1m5[data-stage="2"] .wm-n-wrap, #cs-1m5[data-stage="3"] .wm-n-wrap { transform:translateX(118px) scale(1.3) }
+  #cs-1m5[data-stage="1"] .wm-arc, #cs-1m5[data-stage="2"] .wm-arc, #cs-1m5[data-stage="3"] .wm-arc { transform:translateX(-50%) translateY(-12px) scale(1.3) }
+  /* CAPTION ROW — display grid 1fr/1fr stays, but LEFT and RIGHT children reveal independently per stage [Dave 2026-05-10: 4-stage breakdown, 'one more to reveal' each scroll]. */
+  #cs-1m5 .m5-cap-row { display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start }
+  /* LEFT caption — reveals at stage 1+ */
+  #cs-1m5 .m5-cap-left { opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 0.6s ease, transform 0.6s ease, visibility 0s linear 0.6s }
+  #cs-1m5[data-stage="1"] .m5-cap-left, #cs-1m5[data-stage="2"] .m5-cap-left, #cs-1m5[data-stage="3"] .m5-cap-left { opacity:1;visibility:visible;transform:none;transition:opacity 0.7s ease 0.9s, transform 0.7s ease 0.9s, visibility 0s linear 0s }
+  /* NETWORK line — reveals at stage 2+ */
   #cs-1m5 .m5-stage2-network { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
-  #cs-1m5[data-stage="1"] .m5-stage2-network, #cs-1m5[data-stage="2"] .m5-stage2-network { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.75s ease 1.1s, transform 0.75s ease 1.1s, max-height 0.75s cubic-bezier(.22,1,.36,1) 1.1s, visibility 0s linear 1.1s }
-  /* Click hint — pulsing down arrow visible only at stage 0. [Dave 2026-05-09: translateX(-92px) shifts the hint left to align under the n. The wordmark is centered on slide-center, but n sits ~92px LEFT of wordmark-midpoint because 'Give' (G+ive) is narrower than 'Receive' (R+eceive). So the n's slide-x ≈ slide_center - 92, and the arrow now matches.] */
+  #cs-1m5[data-stage="2"] .m5-stage2-network, #cs-1m5[data-stage="3"] .m5-stage2-network { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s, max-height 0.7s cubic-bezier(.22,1,.36,1) 0.15s, visibility 0s linear 0s }
+  /* RIGHT caption — reveals at stage 3 only */
+  #cs-1m5 .m5-cap-right { opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 0.6s ease, transform 0.6s ease, visibility 0s linear 0.6s }
+  #cs-1m5[data-stage="3"] .m5-cap-right { opacity:1;visibility:visible;transform:none;transition:opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s, visibility 0s linear 0s }
+  /* Click hint — pulsing arrow stays visible at stages 0/1/2 (more reveals), hides at stage 3. [Dave 2026-05-09: translateX(-92px) shifts the hint left to align under the n at stage 0.] */
   #cs-1m5 .m5-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transform:translateX(-92px);transition:opacity 0.4s ease, visibility 0s linear 0s }
-  #cs-1m5[data-stage="1"] .m5-hint, #cs-1m5[data-stage="2"] .m5-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
+  #cs-1m5[data-stage="3"] .m5-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
   @keyframes m5HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m5 .m5-hint svg { animation:m5HintBob 2.2s ease-in-out infinite }
-  #cs-1m5[data-stage="1"] .m5-hint svg, #cs-1m5[data-stage="2"] .m5-hint svg { animation:none }
-  /* Export mode: jump to final state, no animation */
-  html[data-export="1"] #cs-1m5 .m5-wordmark { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 140px !important; width: min(1300px, 92%) !important; margin: 0 auto 32px auto !important; position: relative !important; }
-  html[data-export="1"] #cs-1m5 .wm-ive,
-  html[data-export="1"] #cs-1m5 .wm-eceive { display: none !important }
-  html[data-export="1"] #cs-1m5 .wm-G { grid-column: 1 !important; justify-self: center !important; transform: scale(1.4) !important; transform-origin: center bottom !important }
-  html[data-export="1"] #cs-1m5 .wm-R { grid-column: 2 !important; justify-self: center !important; transform: scale(1.4) !important; transform-origin: center bottom !important }
-  html[data-export="1"] #cs-1m5 .wm-n-wrap { position: absolute !important; left: 50% !important; bottom: 0 !important; transform: translateX(-50%) scale(1.3) !important; transform-origin: center bottom !important; z-index: 2 !important; }
+  #cs-1m5[data-stage="3"] .m5-hint svg { animation:none }
+  /* Export mode: jump to final state */
+  html[data-export="1"] #cs-1m5 .wm-ive { opacity:0 !important;transform:scaleX(0) !important }
+  html[data-export="1"] #cs-1m5 .wm-eceive { opacity:0 !important;transform:scaleX(0) !important }
+  html[data-export="1"] #cs-1m5 .wm-G { transform:translateX(160px) scale(1.4) !important }
+  html[data-export="1"] #cs-1m5 .wm-R { transform:translateX(325px) scale(1.4) !important }
+  html[data-export="1"] #cs-1m5 .wm-n-wrap { transform:translateX(118px) scale(1.3) !important }
   html[data-export="1"] #cs-1m5 .wm-arc { transform:translateX(-50%) translateY(-12px) scale(1.3) !important }
-  html[data-export="1"] #cs-1m5 .m5-stage1-caption, html[data-export="1"] #cs-1m5 .m5-stage2-network { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
+  html[data-export="1"] #cs-1m5 .m5-cap-left, html[data-export="1"] #cs-1m5 .m5-cap-right, html[data-export="1"] #cs-1m5 .m5-stage2-network { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
   html[data-export="1"] #cs-1m5 .m5-hint { display:none !important }
 </style>
 <!-- [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide. Active class so it shows on initial load. -->
-<div class="casey-slide ds-measure active" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(2, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<div class="casey-slide ds-measure active" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <!-- Eyebrow [Dave 2026-05-09 LATEST: 'The future of human connection for real communities' → 'Brand'. Slide 2 (cs-1) now carries the longer eyebrow.] -->
@@ -5822,13 +5818,15 @@ html, body, html body{
         <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The Network</div>
         <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Measures.</div>
       </div>
-      <!-- STAGE 1 reveal: V8 caption row (give-side + receive-side). Reveals FIRST per Dave order. -->
-      <div class="m5-stage1-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
-        <div style="text-align:center">
+      <!-- 4-stage breakdown [Dave 2026-05-10]: caption row split into LEFT (stage 1) and RIGHT (stage 3). Network line stays at stage 2. Both captions live in the same 2-column grid for layout consistency; each child fades in independently per stage. -->
+      <div class="m5-cap-row">
+        <!-- STAGE 1 reveal: LEFT caption (What you give / fuels) -->
+        <div class="m5-cap-left" style="text-align:center">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What you give</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#5B8FD4">fuels</em> the network.</div>
         </div>
-        <div style="text-align:center">
+        <!-- STAGE 3 reveal: RIGHT caption (Your People / Reciprocated back to you) -->
+        <div class="m5-cap-right" style="text-align:center">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back to you.</div>
         </div>
@@ -5848,12 +5846,12 @@ html, body, html body{
   </div>
 </div>
 <script>
-// [Dave 2026-05-09] cs-1m5 wheel hooks — scroll-down advances stage 0→1→2 instead of jumping to next slide; scroll-up reverses 2→1→0 instead of going to prev slide. Returns false at terminal stages so the deck-level wheel handler can take over.
+// [Dave 2026-05-10] cs-1m5 wheel hooks — 4 stages (0 → 1 → 2 → 3) per Dave's 'one more to reveal' request. Stage 1 = LEFT caption, Stage 2 = Network line, Stage 3 = RIGHT caption. Returns false at terminal stage so deck nav advances to slide 2.
 window.cs1m5Advance = function() {
   const m5 = document.getElementById('cs-1m5');
   if (!m5) return false;
   const stage = parseInt(m5.dataset.stage) || 0;
-  if (stage >= 2) return false; // at terminal — let event propagate to deck nav
+  if (stage >= 3) return false; // at terminal — let event propagate to deck nav
   m5.dataset.stage = String(stage + 1);
   return true;
 };
