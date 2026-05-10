@@ -5813,8 +5813,147 @@ html, body, html body{
   html[data-export="1"] #cs-1m5 .m5-cap-row { transform:translateY(0) !important }
   html[data-export="1"] #cs-1m5 .m5-hint { display:none !important }
 </style>
-<!-- [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide. Active class so it shows on initial load. -->
-<div class="casey-slide ds-measure active" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(1, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<!-- ───── cs-1m9 · NEW 3-STAGE TITLE SLIDE [Dave 2026-05-10 PM] ───────────────────────────────
+     Brief: page-load shows ONLY the 'Give n Receive' wordmark. First click reveals
+     'Who Gives' (Dave talks about giving / Twitter example: who gives in the community,
+     who gives to you, who's giving). Second click splits the wordmark to G/n/R and
+     reveals the three captions under each letter (same final layout as cs-1m5 stage 1).
+
+     Stage 0: wordmark only (+ subtle bouncing arrow click-hint)
+     Stage 1: 'Who Gives' fades in below the wordmark (italic Fraunces, gold)
+     Stage 2: 'Who Gives' fades up/out → wordmark splits → THE NETWORK / Sees. Measures.
+              under n + WHAT YOU GIVE / fuels the network. under G + YOUR PEOPLE /
+              Reciprocated back to you. under R
+
+     cs-1m9 = NEW PRIMARY at SLOT 1. cs-1m5 demoted to gold-dot alt for comparison.
+     ──────────────────────────────────────────────────────────────────────────────────────── -->
+<style>
+  #cs-1m9 { cursor:pointer;--m9-dur:1120ms;--m9-ease:cubic-bezier(.16,1,.3,1) }
+  #cs-1m9 .stg { position:relative;overflow:hidden }
+  /* Wordmark — same letters/sizes as cs-1m5 */
+  #cs-1m9 .m9-wordmark { position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto;line-height:1;z-index:2;transition:transform var(--m9-dur) var(--m9-ease);will-change:transform }
+  #cs-1m9 .wm-letter { display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition:transform var(--m9-dur) var(--m9-ease), opacity 520ms ease;will-change:transform,opacity }
+  #cs-1m9 .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
+  #cs-1m9 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
+  #cs-1m9 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform var(--m9-dur) var(--m9-ease);will-change:transform }
+  #cs-1m9 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1 }
+  #cs-1m9 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
+  #cs-1m9 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
+  #cs-1m9 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition:transform var(--m9-dur) var(--m9-ease);will-change:transform }
+
+  /* STAGE 2 — wordmark splits (same transforms as cs-1m5 stage 1) */
+  #cs-1m9[data-stage="2"] .m9-wordmark { transform:translateY(-210px) translateX(-40px) scale(.92) !important }
+  #cs-1m9[data-stage="2"] .wm-ive { opacity:0;transform:translateX(-24px) scaleX(.05) }
+  #cs-1m9[data-stage="2"] .wm-eceive { opacity:0;transform:translateX(24px) scaleX(.05) }
+  #cs-1m9[data-stage="2"] .wm-G { transform:translateX(60px) scale(1.28) }
+  #cs-1m9[data-stage="2"] .wm-R { transform:translateX(272px) scale(1.28) }
+  #cs-1m9[data-stage="2"] .wm-n-wrap { transform:translateX(90px) scale(1.18) }
+  #cs-1m9[data-stage="2"] .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.18) }
+
+  /* WHO GIVES — appears at stage 1 only, fades out at stage 2 */
+  #cs-1m9 .m9-whogives { position:absolute;left:0;right:0;top:calc(50% + 130px);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,2.7vw,2.4rem);font-style:italic;font-weight:500;color:#1a1612;text-align:center;letter-spacing:-0.012em;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity 720ms ease, transform 720ms var(--m9-ease), visibility 0s linear 720ms }
+  #cs-1m9 .m9-whogives .gives { color:#b8954a;font-weight:700;font-style:italic }
+  #cs-1m9[data-stage="1"] .m9-whogives { opacity:1;visibility:visible;transform:translateY(0);transition:opacity 720ms ease 200ms, transform 720ms var(--m9-ease) 200ms, visibility 0s linear 0s }
+  #cs-1m9[data-stage="2"] .m9-whogives { opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity 360ms ease, transform 360ms var(--m9-ease), visibility 0s linear 360ms }
+
+  /* CAP ROW — bulletproof centering (margin-auto on absolute) — appears at stage 2 only */
+  #cs-1m9 .m9-cap-row { position:absolute;left:0;right:0;margin-left:auto;margin-right:auto;top:calc(50% + 180px);display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1180px,90%);align-items:start;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity 720ms ease, transform 920ms var(--m9-ease), visibility 0s linear 1050ms;will-change:opacity,transform }
+  #cs-1m9[data-stage="2"] .m9-cap-row { opacity:1;visibility:visible;transform:translateY(0);transition:opacity 720ms ease 300ms, transform 920ms var(--m9-ease) 300ms, visibility 0s linear 0s }
+
+  /* NETWORK line under n — appears at stage 2 only */
+  #cs-1m9 .m9-stage-network { position:absolute;left:0;right:0;top:calc(50% + 90px);opacity:0;visibility:hidden;transform:translateY(16px) scale(.985);overflow:visible;max-height:none;transition:opacity 700ms ease, transform 900ms var(--m9-ease), visibility 0s linear 990ms;will-change:opacity,transform }
+  #cs-1m9[data-stage="2"] .m9-stage-network { opacity:1;visibility:visible;transform:translateY(0) scale(1);transition:opacity 700ms ease 190ms, transform 900ms var(--m9-ease) 190ms, visibility 0s linear 0s }
+
+  /* CLICK HINT — visible at stage 0 only */
+  #cs-1m9 .m9-hint { position:absolute;left:50%;top:calc(50% + 118px);display:flex;align-items:center;justify-content:center;margin-top:0;opacity:1;visibility:visible;transform:translateX(-50%);transition:opacity 420ms ease, transform 520ms var(--m9-ease), visibility 0s linear 0s }
+  #cs-1m9[data-stage="1"] .m9-hint, #cs-1m9[data-stage="2"] .m9-hint { opacity:0;visibility:hidden;transform:translateX(-50%) translateY(10px);transition:opacity 360ms ease, transform 520ms var(--m9-ease), visibility 0s linear 360ms }
+  @keyframes m9HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
+  #cs-1m9 .m9-hint svg { animation:m9HintBob 2.2s ease-in-out infinite }
+  #cs-1m9[data-stage="1"] .m9-hint svg, #cs-1m9[data-stage="2"] .m9-hint svg { animation:none }
+
+  /* Export mode — jump to final stage 2 layout */
+  html[data-export="1"] #cs-1m9 .wm-ive,
+  html[data-export="1"] #cs-1m9 .wm-eceive { opacity:0 !important;transform:scaleX(0) !important }
+  html[data-export="1"] #cs-1m9 .m9-wordmark { transform:translateY(-210px) translateX(-40px) scale(.92) !important }
+  html[data-export="1"] #cs-1m9 .wm-G { transform:translateX(60px) scale(1.28) !important }
+  html[data-export="1"] #cs-1m9 .wm-R { transform:translateX(272px) scale(1.28) !important }
+  html[data-export="1"] #cs-1m9 .wm-n-wrap { transform:translateX(90px) scale(1.18) !important }
+  html[data-export="1"] #cs-1m9 .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.18) !important }
+  html[data-export="1"] #cs-1m9 .m9-cap-row, html[data-export="1"] #cs-1m9 .m9-stage-network { opacity:1 !important;visibility:visible !important;max-height:none !important }
+  html[data-export="1"] #cs-1m9 .m9-stage-network { transform:translateY(0) scale(1) !important }
+  html[data-export="1"] #cs-1m9 .m9-cap-row { transform:translateY(0) !important }
+  html[data-export="1"] #cs-1m9 .m9-hint { display:none !important }
+  html[data-export="1"] #cs-1m9 .m9-whogives { display:none !important }
+</style>
+<div class="casey-slide ds-measure active" id="cs-1m9" data-stage="0" onclick="this.dataset.stage = Math.min(2, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand</div>
+  <div class="s on" style="background:transparent">
+    <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
+      <!-- WORDMARK -->
+      <div class="m9-wordmark">
+        <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
+      </div>
+
+      <!-- STAGE 1 — Who Gives -->
+      <div class="m9-whogives">Who <span class="gives">Gives</span></div>
+
+      <!-- STAGE 2 — Network line under n -->
+      <div class="m9-stage-network">
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The Network</div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Measures.</div>
+      </div>
+
+      <!-- STAGE 2 — Cap row (under G and R) -->
+      <div class="m9-cap-row">
+        <div class="m9-cap-left" style="text-align:center">
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What you give</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#5B8FD4">fuels</em> the network.</div>
+        </div>
+        <div class="m9-cap-right" style="text-align:center">
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back to you.</div>
+        </div>
+      </div>
+
+      <!-- CLICK HINT (stage 0 only) -->
+      <div class="m9-hint">
+        <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 14 4 L 14 22 M 14 22 L 6 14 M 14 22 L 22 14" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:30px;left:36px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,22,18,0.65);font-weight:500;line-height:1.85;z-index:10">
+    <div style="color:#1a1612;font-weight:700">Dave Velardo</div>
+    <div style="color:rgba(26,22,18,0.55)">Founder &amp; CEO</div>
+    <div><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.7);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.4)">dave@givenreceive.com</a></div>
+    <div>978-604-0223</div>
+  </div>
+</div>
+<script>
+// [Dave 2026-05-10 PM] cs-1m9 wheel hooks: 3-stage reveal. Returns false at terminal stage so deck nav advances to next slide.
+window.cs1m9Advance = function() {
+  const m9 = document.getElementById('cs-1m9');
+  if (!m9) return false;
+  const stage = parseInt(m9.dataset.stage) || 0;
+  if (stage >= 2) return false; // at terminal — let event propagate to deck nav
+  m9.dataset.stage = String(stage + 1);
+  return true;
+};
+window.cs1m9Reverse = function() {
+  const m9 = document.getElementById('cs-1m9');
+  if (!m9) return false;
+  const stage = parseInt(m9.dataset.stage) || 0;
+  if (stage <= 0) return false;
+  m9.dataset.stage = String(stage - 1);
+  return true;
+};
+</script>
+
+<!-- [Dave 2026-05-10 PM] cs-1m5 DEMOTED to gold-dot alt at slot 1. cs-1m9 (above) is the new primary. cs-1m5's `active` class removed below so the new one shows on initial paint. -->
+<div class="casey-slide ds-measure" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(1, (parseInt(this.dataset.stage)||0) + 1)" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <!-- Eyebrow [Dave 2026-05-09 LATEST: 'The future of human connection for real communities' → 'Brand'. Slide 2 (cs-1) now carries the longer eyebrow.] -->
@@ -21138,7 +21277,9 @@ const SLIDE_ORDER = [
   // Slides moved to appendix: cs-7, cs-8, cs-14, cs-16, cs-17, cs-20, cs-21, cs-1a.
   // [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide ('this is our new title slide').
   // [Dave 2026-05-09 LATER] cs-1 RESTORED to main flow as SLOT 2 — 'this slide is going to be our new slide #2, a second title slide'. Was briefly moved to appendix end; pulled back. cs-a7 + everything below shift +1.
-  'cs-1m5',   //  1 NEW TITLE · The future of human connection for real communities · wordmark + click-to-reveal stages (Network line + caption row)
+  // [Dave 2026-05-10 PM] cs-1m9 PROMOTED to slot 1 PRIMARY · 3-stage version: page-load=wordmark only → stage 1='Who Gives' (Twitter-style talk setup) → stage 2=split + 3 captions. cs-1m5 demoted to gold-dot alt for comparison.
+  'cs-1m9',   //  1 NEW PRIMARY TITLE · 3-stage 'Who Gives' build → wordmark split → captions
+  // 'cs-1m5' demoted to alt (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
   'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
   // [Dave 2026-05-09] cs-a7 + cs-1bm1 SWAPPED — Dave wants 'Two imbalances rule our lives' as slot 3, then 'Social media is a very narrow view' as slot 4. The values/tech imbalance frames modern life FIRST, then social-media-as-narrow-view drops in as the consequence.
@@ -21263,7 +21404,8 @@ const SLIDE_ALTS = {
   //   cs-1m6 = G·n·R Equation [MOVED to last appendix slide 2026-05-09 per Dave: 'move this to be the last slide in the appendix']
   //   cs-1m7 = split-wordmark animation alt [DELETED 2026-05-09 per Dave]
   //   cs-1m8 = NEW [Dave 2026-05-09 EVENING] · adds a HUMAN-TRUTH opening beat before the product reveal. Per Dave: 'we feel our best when we're generous to others... incredible truth that we feel our best when we have an open heart, being generous, giving'. Stage 1 reveals 'We feel our best when we give. Science says so.' before stage 2 splits the wordmark. RED DOT review — easy to revert by removing from this array (cs-1m5 stays primary).
-  1: ['cs-1m8'],
+  // [Dave 2026-05-10 PM] cs-1m5 added as gold-alt (was main flow primary; demoted when cs-1m9 took over slot 1). cs-1m8 retained as red-dot review candidate.
+  1: ['cs-1m5', 'cs-1m8'],
   // [Dave 2026-05-10 PM] Slot 2 alts updated:
   //   - cs-1 added as RED-DOT alt (was main-flow slot 2; demoted to red-dot review per Dave)
   //   - cs-1s2a REMOVED — moved to APPENDIX_ORDER per Dave ('move this to appendix')
@@ -22415,6 +22557,7 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'ArrowRight' || e.key === ' ') {
     e.preventDefault();
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m9' && window.cs1m9Advance && window.cs1m9Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) return;
@@ -22438,6 +22581,7 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'ArrowLeft') {
     e.preventDefault();
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m9' && window.cs1m9Reverse && window.cs1m9Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) return;
@@ -22485,6 +22629,11 @@ document.addEventListener('wheel', e => {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
+    }
+    // [Dave 2026-05-10 PM] cs-1m9 advance — slot 1 primary 3-stage title slide
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m9' && window.cs1m9Advance && window.cs1m9Advance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
     }
     // cs-1 / cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-down advances reveal step before navigating to next slide
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance()) {
@@ -22578,6 +22727,11 @@ document.addEventListener('wheel', e => {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
+    }
+    // [Dave 2026-05-10 PM] cs-1m9 reverse — slot 1 primary 3-stage title slide
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m9' && window.cs1m9Reverse && window.cs1m9Reverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
     }
     // cs-1 / cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-up un-flips before navigating to prev slide
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse()) {
