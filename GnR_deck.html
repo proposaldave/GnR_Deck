@@ -5755,54 +5755,58 @@ html, body, html body{
      Per Dave's order: caption-row appears BEFORE the Network line.
      ───────────────────────────────────────────── -->
 <style>
-  #cs-1m5 { cursor:pointer }
-  /* Wordmark: each letter is an inline-block span. Transforms don't affect document flow, so siblings stay in place when ive/eceive collapse via scaleX(0). */
-  #cs-1m5 .m5-wordmark { position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto 32px auto;line-height:1 }
-  #cs-1m5 .wm-letter { display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition: transform 1.4s cubic-bezier(.22,1,.36,1), opacity 0.7s ease, padding 1.4s cubic-bezier(.22,1,.36,1) }
+  #cs-1m5 { cursor:pointer;--m5-dur:1120ms;--m5-ease:cubic-bezier(.16,1,.3,1) }
+  #cs-1m5 .stg { position:relative;overflow:hidden }
+  /* Single composed reveal: the wordmark glides up and resolves to G n R while the proof line and captions fade in as one calm final state. */
+  #cs-1m5 .m5-wordmark { position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto;line-height:1;z-index:2;transition:transform var(--m5-dur) var(--m5-ease);will-change:transform }
+  #cs-1m5 .wm-letter { display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition:transform var(--m5-dur) var(--m5-ease), opacity 520ms ease;will-change:transform,opacity }
   #cs-1m5 .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
   #cs-1m5 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
-  #cs-1m5 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform 1.4s cubic-bezier(.22,1,.36,1) }
+  #cs-1m5 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform var(--m5-dur) var(--m5-ease);will-change:transform }
   #cs-1m5 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1 }
   #cs-1m5 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
   #cs-1m5 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   /* Gold arc above n — now positioned inside wm-n-wrap so it tracks the n exactly. Dave: 'the graphic above the black n should be perfectly centered above the black n'. wm-n-wrap is position:relative, so absolute children align to its box. left:50% of n_wrap puts arc at the n's center (n is centered in n_wrap by padding 0 40px). top:8% puts it above the n's top stem. */
-  #cs-1m5 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
+  #cs-1m5 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition:transform var(--m5-dur) var(--m5-ease);will-change:transform }
   /* Stage 1+ split layout — switched from CSS grid (which snapped) BACK to flex + translateX so the wordmark transformations animate SMOOTHLY (Dave: 'the animations that come in here are not smooth'). The translateX values are computed to land G at slide_x 600 (left caption column center), R at slide_x 1320 (right caption column center), and n at slide_x 960 (slide center). All values transition smoothly via the .wm-letter / .wm-n-wrap transition rules. */
-  #cs-1m5[data-stage="1"] .wm-ive, #cs-1m5[data-stage="2"] .wm-ive, #cs-1m5[data-stage="3"] .wm-ive { opacity:0;transform:scaleX(0) }
-  #cs-1m5[data-stage="1"] .wm-eceive, #cs-1m5[data-stage="2"] .wm-eceive, #cs-1m5[data-stage="3"] .wm-eceive { opacity:0;transform:scaleX(0) }
-  #cs-1m5[data-stage="1"] .wm-G, #cs-1m5[data-stage="2"] .wm-G, #cs-1m5[data-stage="3"] .wm-G { transform:translateX(160px) scale(1.4) }
-  #cs-1m5[data-stage="1"] .wm-R, #cs-1m5[data-stage="2"] .wm-R, #cs-1m5[data-stage="3"] .wm-R { transform:translateX(325px) scale(1.4) }
-  #cs-1m5[data-stage="1"] .wm-n-wrap, #cs-1m5[data-stage="2"] .wm-n-wrap, #cs-1m5[data-stage="3"] .wm-n-wrap { transform:translateX(118px) scale(1.3) }
-  #cs-1m5[data-stage="1"] .wm-arc, #cs-1m5[data-stage="2"] .wm-arc, #cs-1m5[data-stage="3"] .wm-arc { transform:translateX(-50%) translateY(-12px) scale(1.3) }
+  #cs-1m5[data-stage="1"] .m5-wordmark { transform:translateY(-118px) translateX(-46px) scale(.94) }
+  #cs-1m5[data-stage="1"] .wm-ive { opacity:0;transform:translateX(-24px) scaleX(.05) }
+  #cs-1m5[data-stage="1"] .wm-eceive { opacity:0;transform:translateX(24px) scaleX(.05) }
+  #cs-1m5[data-stage="1"] .wm-G { transform:translateX(81px) scale(1.36) }
+  #cs-1m5[data-stage="1"] .wm-R { transform:translateX(316px) scale(1.36) }
+  #cs-1m5[data-stage="1"] .wm-n-wrap { transform:translateX(105px) scale(1.2) }
+  #cs-1m5[data-stage="1"] .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.2) }
   /* CAPTION ROW — display grid 1fr/1fr stays, but LEFT and RIGHT children reveal independently per stage [Dave 2026-05-10: 4-stage breakdown, 'one more to reveal' each scroll]. */
-  #cs-1m5 .m5-cap-row { display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start }
+  #cs-1m5 .m5-cap-row { position:absolute;left:50%;top:calc(50% + 128px);display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start;opacity:0;visibility:hidden;transform:translate(-50%,18px);transition:opacity 720ms ease 300ms, transform 920ms var(--m5-ease) 300ms, visibility 0s linear 1050ms;will-change:opacity,transform }
   /* LEFT caption — reveals at stage 1+ */
-  #cs-1m5 .m5-cap-left { opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 0.6s ease, transform 0.6s ease, visibility 0s linear 0.6s }
-  #cs-1m5[data-stage="1"] .m5-cap-left, #cs-1m5[data-stage="2"] .m5-cap-left, #cs-1m5[data-stage="3"] .m5-cap-left { opacity:1;visibility:visible;transform:none;transition:opacity 0.7s ease 0.9s, transform 0.7s ease 0.9s, visibility 0s linear 0s }
+  #cs-1m5[data-stage="1"] .m5-cap-row { opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity 720ms ease 300ms, transform 920ms var(--m5-ease) 300ms, visibility 0s linear 0s }
+  #cs-1m5 .m5-cap-left, #cs-1m5 .m5-cap-right { opacity:1;visibility:visible;transform:none;transition:none }
   /* NETWORK line — reveals at stage 2+ */
-  #cs-1m5 .m5-stage2-network { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
-  #cs-1m5[data-stage="2"] .m5-stage2-network, #cs-1m5[data-stage="3"] .m5-stage2-network { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s, max-height 0.7s cubic-bezier(.22,1,.36,1) 0.15s, visibility 0s linear 0s }
+  #cs-1m5 .m5-stage2-network { position:absolute;left:0;right:0;top:calc(50% + 26px);opacity:0;visibility:hidden;transform:translateY(16px) scale(.985);overflow:visible;max-height:none;transition:opacity 700ms ease 190ms, transform 900ms var(--m5-ease) 190ms, visibility 0s linear 990ms;will-change:opacity,transform }
+  #cs-1m5[data-stage="1"] .m5-stage2-network { opacity:1;visibility:visible;transform:translateY(0) scale(1);transition:opacity 700ms ease 190ms, transform 900ms var(--m5-ease) 190ms, visibility 0s linear 0s }
   /* RIGHT caption — reveals at stage 3 only */
-  #cs-1m5 .m5-cap-right { opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 0.6s ease, transform 0.6s ease, visibility 0s linear 0.6s }
-  #cs-1m5[data-stage="3"] .m5-cap-right { opacity:1;visibility:visible;transform:none;transition:opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s, visibility 0s linear 0s }
+  
   /* Click hint — pulsing arrow stays visible at stages 0/1/2 (more reveals), hides at stage 3. [Dave 2026-05-09: translateX(-92px) shifts the hint left to align under the n at stage 0.] */
-  #cs-1m5 .m5-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transform:translateX(-92px);transition:opacity 0.4s ease, visibility 0s linear 0s }
-  #cs-1m5[data-stage="3"] .m5-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
+  #cs-1m5 .m5-hint { position:absolute;left:50%;top:calc(50% + 118px);display:flex;align-items:center;justify-content:center;margin-top:0;opacity:1;visibility:visible;transform:translateX(-50%);transition:opacity 420ms ease, transform 520ms var(--m5-ease), visibility 0s linear 0s }
+  #cs-1m5[data-stage="1"] .m5-hint { opacity:0;visibility:hidden;transform:translateX(-50%) translateY(10px);transition:opacity 360ms ease, transform 520ms var(--m5-ease), visibility 0s linear 360ms }
   @keyframes m5HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m5 .m5-hint svg { animation:m5HintBob 2.2s ease-in-out infinite }
-  #cs-1m5[data-stage="3"] .m5-hint svg { animation:none }
+  #cs-1m5[data-stage="1"] .m5-hint svg { animation:none }
   /* Export mode: jump to final state */
   html[data-export="1"] #cs-1m5 .wm-ive { opacity:0 !important;transform:scaleX(0) !important }
   html[data-export="1"] #cs-1m5 .wm-eceive { opacity:0 !important;transform:scaleX(0) !important }
-  html[data-export="1"] #cs-1m5 .wm-G { transform:translateX(160px) scale(1.4) !important }
-  html[data-export="1"] #cs-1m5 .wm-R { transform:translateX(325px) scale(1.4) !important }
-  html[data-export="1"] #cs-1m5 .wm-n-wrap { transform:translateX(118px) scale(1.3) !important }
-  html[data-export="1"] #cs-1m5 .wm-arc { transform:translateX(-50%) translateY(-12px) scale(1.3) !important }
-  html[data-export="1"] #cs-1m5 .m5-cap-left, html[data-export="1"] #cs-1m5 .m5-cap-right, html[data-export="1"] #cs-1m5 .m5-stage2-network { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
+  html[data-export="1"] #cs-1m5 .m5-wordmark { transform:translateY(-118px) translateX(-46px) scale(.94) !important }
+  html[data-export="1"] #cs-1m5 .wm-G { transform:translateX(81px) scale(1.36) !important }
+  html[data-export="1"] #cs-1m5 .wm-R { transform:translateX(316px) scale(1.36) !important }
+  html[data-export="1"] #cs-1m5 .wm-n-wrap { transform:translateX(105px) scale(1.2) !important }
+  html[data-export="1"] #cs-1m5 .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.2) !important }
+  html[data-export="1"] #cs-1m5 .m5-cap-row, html[data-export="1"] #cs-1m5 .m5-stage2-network { opacity:1 !important;visibility:visible !important;max-height:none !important }
+  html[data-export="1"] #cs-1m5 .m5-stage2-network { transform:translateY(0) scale(1) !important }
+  html[data-export="1"] #cs-1m5 .m5-cap-row { transform:translate(-50%,0) !important }
   html[data-export="1"] #cs-1m5 .m5-hint { display:none !important }
 </style>
 <!-- [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide. Active class so it shows on initial load. -->
-<div class="casey-slide ds-measure active" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<div class="casey-slide ds-measure active" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(1, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <!-- Eyebrow [Dave 2026-05-09 LATEST: 'The future of human connection for real communities' → 'Brand'. Slide 2 (cs-1) now carries the longer eyebrow.] -->
@@ -5846,12 +5850,12 @@ html, body, html body{
   </div>
 </div>
 <script>
-// [Dave 2026-05-10] cs-1m5 wheel hooks — 4 stages (0 → 1 → 2 → 3) per Dave's 'one more to reveal' request. Stage 1 = LEFT caption, Stage 2 = Network line, Stage 3 = RIGHT caption. Returns false at terminal stage so deck nav advances to slide 2.
+// [Dave 2026-05-10] cs-1m5 wheel hooks: one composed reveal. Returns false at terminal stage so deck nav advances to slide 2.
 window.cs1m5Advance = function() {
   const m5 = document.getElementById('cs-1m5');
   if (!m5) return false;
   const stage = parseInt(m5.dataset.stage) || 0;
-  if (stage >= 3) return false; // at terminal — let event propagate to deck nav
+  if (stage >= 1) return false; // at terminal — let event propagate to deck nav
   m5.dataset.stage = String(stage + 1);
   return true;
 };
