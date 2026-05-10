@@ -16503,6 +16503,153 @@ window.cs1m7Reverse = function() {
   </section>
 </div>
 
+<!-- ───── cs-lastgraph · 'COMMUNITY IS THE LAST UNTOUCHED SOCIAL GRAPH' [Dave 2026-05-10] ─────
+     Jaw-droppingly clear visual: 6-card lineup. 5 claimed graphs (grayscale, by year)
+     + 1 glowing gold "Community" card unclaimed in 2026. Every decade gets a new graph.
+     Community is 20+ years overdue and still empty. ──────────────────────────────────────── -->
+<style>
+  #cs-lastgraph { position:relative;overflow:hidden }
+  #cs-lastgraph .lg-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:54px 56px 44px;gap:18px;text-align:center }
+  /* Ambient + subtle dot grid */
+  #cs-lastgraph .lg-amb { position:absolute;inset:0;pointer-events:none;background:
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(184,149,74,0.10), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(91,143,212,0.05), transparent 60%) }
+  #cs-lastgraph .lg-dots { position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:5px 5px;opacity:0.4;mix-blend-mode:multiply }
+  /* Headline */
+  #cs-lastgraph .lg-head { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,3.6vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-0.022em;color:#1a1612;max-width:1180px }
+  #cs-lastgraph .lg-head em { font-style:italic;font-weight:700;color:#b8954a }
+  #cs-lastgraph .lg-sub { font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(0.95rem,1.4vw,1.15rem);color:rgba(26,22,18,0.55);max-width:760px;line-height:1.5;margin-top:-2px }
+  /* The card row — 6 graphs across */
+  #cs-lastgraph .lg-row { display:grid;grid-template-columns:repeat(6,1fr);gap:14px;width:min(1380px,98%);margin-top:14px;align-items:stretch }
+  #cs-lastgraph .lg-card { padding:22px 14px 18px;border-radius:12px;background:rgba(26,22,18,0.03);border:1.4px solid rgba(26,22,18,0.10);display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;position:relative;opacity:0;transform:translateY(12px);transition:opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1) }
+  #cs-lastgraph.casey-entered .lg-card { opacity:1;transform:none }
+  /* Stagger: 5 grey cards left-to-right */
+  #cs-lastgraph.casey-entered .lg-card:nth-of-type(1) { transition-delay:0.20s }
+  #cs-lastgraph.casey-entered .lg-card:nth-of-type(2) { transition-delay:0.32s }
+  #cs-lastgraph.casey-entered .lg-card:nth-of-type(3) { transition-delay:0.44s }
+  #cs-lastgraph.casey-entered .lg-card:nth-of-type(4) { transition-delay:0.56s }
+  #cs-lastgraph.casey-entered .lg-card:nth-of-type(5) { transition-delay:0.68s }
+  /* Card content */
+  #cs-lastgraph .lg-year { font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,22,18,0.42) }
+  #cs-lastgraph .lg-co { font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.04em;color:rgba(26,22,18,0.62);margin-top:2px }
+  #cs-lastgraph .lg-graph { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.5vw,1.35rem);font-weight:800;font-style:italic;color:rgba(26,22,18,0.55);line-height:1.1;letter-spacing:-0.012em;margin-top:4px }
+  #cs-lastgraph .lg-scale { font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:600;color:rgba(26,22,18,0.42);margin-top:auto;padding-top:10px }
+  /* CLAIMED stamp — the diagonal mark on each grey card */
+  #cs-lastgraph .lg-card .lg-stamp { position:absolute;top:10px;right:10px;font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,0.32);background:rgba(26,22,18,0.05);padding:3px 7px;border-radius:3px;opacity:0;animation:lgStampFlash 1.2s ease-out 1.0s forwards }
+  @keyframes lgStampFlash { 0% { opacity:0;transform:scale(.85) } 60% { opacity:1;transform:scale(1) } 100% { opacity:1;transform:scale(1) } }
+  /* THE PRIZE — Community card (#6) */
+  #cs-lastgraph .lg-card.lg-prize { background:linear-gradient(180deg, rgba(184,149,74,0.14), rgba(184,149,74,0.06));border:1.8px solid #b8954a;box-shadow:0 0 0 4px rgba(184,149,74,0.10), 0 14px 38px rgba(184,149,74,0.18);transform:translateY(12px) scale(1.02);opacity:0;transition:opacity 0.85s cubic-bezier(.22,1,.36,1) 0.95s, transform 0.85s cubic-bezier(.22,1,.36,1) 0.95s }
+  #cs-lastgraph.casey-entered .lg-card.lg-prize { opacity:1;transform:translateY(0) scale(1.05);animation:lgPrizePulse 3.2s ease-in-out 2.2s infinite }
+  @keyframes lgPrizePulse { 0%,100% { box-shadow:0 0 0 4px rgba(184,149,74,0.10), 0 14px 38px rgba(184,149,74,0.18) } 50% { box-shadow:0 0 0 6px rgba(184,149,74,0.18), 0 16px 46px rgba(184,149,74,0.32) } }
+  #cs-lastgraph .lg-card.lg-prize .lg-year { color:#b8954a }
+  #cs-lastgraph .lg-card.lg-prize .lg-co { color:#1a1612;font-weight:900 }
+  #cs-lastgraph .lg-card.lg-prize .lg-graph { color:#1a1612;font-style:italic;font-size:clamp(1.2rem,1.7vw,1.55rem) }
+  #cs-lastgraph .lg-card.lg-prize .lg-graph .gd { color:#b8954a;font-weight:900 }
+  #cs-lastgraph .lg-card.lg-prize .lg-scale { color:rgba(184,149,74,0.85);font-weight:700 }
+  #cs-lastgraph .lg-card.lg-prize .lg-stamp { color:#b8954a;background:rgba(184,149,74,0.16);border:1px solid rgba(184,149,74,0.36);font-weight:900;letter-spacing:.22em;animation:lgOpenFlash 1.4s ease-out 1.6s forwards }
+  @keyframes lgOpenFlash { 0% { opacity:0;transform:scale(.7) } 60% { opacity:1;transform:scale(1.05) } 100% { opacity:1;transform:scale(1) } }
+  /* Compass icon inside prize */
+  #cs-lastgraph .lg-card.lg-prize .lg-icon { width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(184,149,74,0.16);margin:2px auto 4px }
+  #cs-lastgraph .lg-card.lg-prize .lg-icon svg { width:22px;height:22px;stroke:#b8954a;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round }
+  /* Closer beat */
+  #cs-lastgraph .lg-closer { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.55vw,1.3rem);font-weight:600;color:rgba(26,22,18,0.7);max-width:1040px;line-height:1.45;margin-top:14px;opacity:0;transform:translateY(8px);transition:opacity 0.7s cubic-bezier(.22,1,.36,1) 1.7s, transform 0.7s cubic-bezier(.22,1,.36,1) 1.7s }
+  #cs-lastgraph.casey-entered .lg-closer { opacity:1;transform:none }
+  #cs-lastgraph .lg-closer em { font-style:italic;color:#1a1612;font-weight:700 }
+  #cs-lastgraph .lg-closer strong { color:#b8954a;font-weight:900;font-style:italic;letter-spacing:.005em }
+  #cs-lastgraph .lg-untilnow { display:block;margin-top:10px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:900;font-style:italic;color:#b8954a;letter-spacing:-0.01em;opacity:0;transform:translateY(8px);transition:opacity 0.85s cubic-bezier(.22,1,.36,1) 2.2s, transform 0.85s cubic-bezier(.22,1,.36,1) 2.2s }
+  #cs-lastgraph.casey-entered .lg-untilnow { opacity:1;transform:none }
+  /* Export mode — show all instantly, kill animations */
+  html[data-export="1"] #cs-lastgraph .lg-card,
+  html[data-export="1"] #cs-lastgraph .lg-card.lg-prize,
+  html[data-export="1"] #cs-lastgraph .lg-closer,
+  html[data-export="1"] #cs-lastgraph .lg-untilnow { opacity:1 !important;transform:none !important;animation:none !important }
+  html[data-export="1"] #cs-lastgraph .lg-stamp { opacity:1 !important;animation:none !important }
+</style>
+<div class="casey-slide ds-focus appendix-slide" id="cs-lastgraph" style="display:none">
+  <div class="lg-amb"></div>
+  <div class="lg-dots"></div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">The Last Frontier</div>
+  <section style="position:relative;width:100%;min-height:100%">
+    <div class="lg-stage">
+      <!-- HEADLINE -->
+      <div class="lg-head">
+        Community is the last <em>untouched</em> social graph.
+      </div>
+      <div class="lg-sub">
+        Every decade gives us a new social graph. Community is twenty years overdue &mdash; and still empty.
+      </div>
+
+      <!-- THE LINEUP — 5 claimed + 1 unclaimed -->
+      <div class="lg-row">
+
+        <!-- 1. LinkedIn · Professional · 2002 -->
+        <div class="lg-card">
+          <div class="lg-stamp">Claimed</div>
+          <div class="lg-year">2002</div>
+          <div class="lg-co">LinkedIn</div>
+          <div class="lg-graph">Professional</div>
+          <div class="lg-scale">1B users</div>
+        </div>
+
+        <!-- 2. Facebook · Friends · 2004 -->
+        <div class="lg-card">
+          <div class="lg-stamp">Claimed</div>
+          <div class="lg-year">2004</div>
+          <div class="lg-co">Facebook</div>
+          <div class="lg-graph">Friends</div>
+          <div class="lg-scale">3B users</div>
+        </div>
+
+        <!-- 3. Twitter / X · Interest · 2006 -->
+        <div class="lg-card">
+          <div class="lg-stamp">Claimed</div>
+          <div class="lg-year">2006</div>
+          <div class="lg-co">Twitter / X</div>
+          <div class="lg-graph">Interest</div>
+          <div class="lg-scale">500M users</div>
+        </div>
+
+        <!-- 4. Instagram · Visual · 2010 -->
+        <div class="lg-card">
+          <div class="lg-stamp">Claimed</div>
+          <div class="lg-year">2010</div>
+          <div class="lg-co">Instagram</div>
+          <div class="lg-graph">Visual</div>
+          <div class="lg-scale">2B users</div>
+        </div>
+
+        <!-- 5. TikTok · Entertainment · 2016 -->
+        <div class="lg-card">
+          <div class="lg-stamp">Claimed</div>
+          <div class="lg-year">2016</div>
+          <div class="lg-co">TikTok</div>
+          <div class="lg-graph">Entertainment</div>
+          <div class="lg-scale">1.5B users</div>
+        </div>
+
+        <!-- 6. GnR · COMMUNITY · 2026 — THE PRIZE -->
+        <div class="lg-card lg-prize">
+          <div class="lg-stamp">Open</div>
+          <div class="lg-year">2026</div>
+          <div class="lg-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="12,5.5 14.2,11.8 12,18.5 9.8,11.8" fill="rgba(184,149,74,0.25)" stroke="#b8954a"/><circle cx="12" cy="12" r="1" fill="#b8954a"/></svg>
+          </div>
+          <div class="lg-co">Give n Receive</div>
+          <div class="lg-graph"><span class="gd">Community</span></div>
+          <div class="lg-scale">8B humans</div>
+        </div>
+
+      </div>
+
+      <!-- CLOSER -->
+      <div class="lg-closer">
+        Every other graph was built. The one that matters most &mdash; <em>who you actually trust</em> &mdash; never was.
+      </div>
+      <span class="lg-untilnow">Until now.</span>
+    </div>
+  </section>
+</div>
+
 <!-- =============================================================================
      NEW MAIN-DECK SLIDES — a16z partner-conviction beats. Dave 2026-04-30.
      Inserted as cs-30, cs-31, cs-32. Order placement controlled by SLIDE_ORDER below.
@@ -20899,7 +21046,8 @@ const LOCKED_POSITIONS = [];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
-  'cs-connfit',   // [Dave 2026-05-10] FIRST appendix slide · 10x 'old stack measures the wrong thing' / Connection Fit — Rating/Calendar/Social Feed all measure ~3-5% of fit; Connection Fit is the prize ('jaw droppingly 10x better'). Newest always first per standing rule.
+  'cs-lastgraph', // [Dave 2026-05-10 PM] FIRST appendix slide · 'Community is the last untouched social graph' — 6-card lineup: LinkedIn/FB/X/IG/TikTok all CLAIMED by year, Community 2026 OPEN (gold glow + pulse). Every decade gets a new social graph; Community 20+ yrs overdue. Closer: 'Until now.' Newest always first per standing rule.
+  'cs-connfit',   // [Dave 2026-05-10] 10x 'old stack measures the wrong thing' / Connection Fit — Rating/Calendar/Social Feed all measure ~3-5% of fit; Connection Fit is the prize ('jaw droppingly 10x better').
   'cs-hc11',      // ECONOMY · 'Attention concentrates / Connection distributes' creator-economy power-law vs flat [moved from main slot 23 to appendix per Dave 2026-05-07 PM: 'move this to be the first appendix slide']
   // ===== PINK REVIEW BLOCK · GnR Intelligence I/O · Phone calls + every other input feeding the graph (Dave 2026-05-08) =====
   // 4 candidate visualizations of "all inputs → GnR Intelligence → all outputs" with phone calls clickable.
