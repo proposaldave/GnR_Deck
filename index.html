@@ -6088,8 +6088,8 @@ window.cs1m5Reverse = function() {
 <div class="casey-slide ds-measure active" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(1, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
-  <!-- Eyebrow same as cs-1m5: 'Brand' (slot 1 has been simplified to one-word eyebrow) -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand</div>
+  <!-- Eyebrow [Dave 2026-05-11]: 'Brand' → 'Brand Promise' -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand Promise</div>
   <div class="s on" style="background:transparent">
     <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
       <!-- Wordmark — same span structure as cs-1m5: G/ive/n/R/eceive renders 'Give n Receive' -->
@@ -16285,6 +16285,74 @@ window.cs1m7Reverse = function() {
   </section>
 </div>
 
+<!-- ═══ cs-prom · THE PROMISE [Dave 2026-05-11] ═══
+     CLOSING SLIDE before appendix. Brand-mark-exploded diptych.
+     G (blue) slides UP from below · n (italic) center · R (red) slides DOWN from above.
+     Left half: "You give. Your community gets the most out of you."
+     Right half: "You receive. You get the most out of your community." -->
+<style>
+  #cs-prom { background: radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; }
+  #cs-prom .prom-stage { position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:78px 56px 60px;text-align:center;overflow:hidden; }
+  #cs-prom .prom-stage:before { content:"";position:absolute;inset:0;background:radial-gradient(circle at 25% 50%, rgba(91,143,212,0.10), transparent 38%),radial-gradient(circle at 75% 50%, rgba(200,70,44,0.10), transparent 38%);pointer-events:none; }
+  #cs-prom .prom-wrap { position:relative;z-index:1;width:min(1480px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:48px; }
+  /* Exploded wordmark — G on left, italic n center, R on right */
+  #cs-prom .prom-mark { display:grid;grid-template-columns:1fr auto 1fr;align-items:center;justify-items:center;width:min(1280px,92%);gap:24px;line-height:1; }
+  #cs-prom .prom-G { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(7rem,16vw,15rem);font-weight:600;color:#5B8FD4;letter-spacing:-0.04em;animation:promGiveUp 1.4s cubic-bezier(.22,1,.36,1) both 0.2s; }
+  #cs-prom .prom-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.6rem,10vw,9.6rem);font-weight:400;font-style:italic;color:#1a1612;letter-spacing:-0.02em;opacity:0;animation:promFadeIn 0.7s ease-out both 0.95s; }
+  #cs-prom .prom-R { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(7rem,16vw,15rem);font-weight:600;color:#c8462c;letter-spacing:-0.04em;animation:promReceiveDown 1.4s cubic-bezier(.22,1,.36,1) both 0.2s; }
+  @keyframes promGiveUp   { 0% { transform:translateY(70px);opacity:0 } 100% { transform:translateY(0);opacity:1 } }
+  @keyframes promReceiveDown { 0% { transform:translateY(-70px);opacity:0 } 100% { transform:translateY(0);opacity:1 } }
+  @keyframes promFadeIn   { 0% { opacity:0;transform:scale(.86) } 100% { opacity:1;transform:scale(1) } }
+  /* Two-halves text diptych */
+  #cs-prom .prom-diptych { display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:center;width:min(1280px,94%);margin:0 auto; }
+  #cs-prom .prom-rule { width:1px;height:140px;background:linear-gradient(180deg,transparent 0%,rgba(184,149,74,0.45) 20%,rgba(184,149,74,0.45) 80%,transparent 100%); }
+  #cs-prom .prom-half { padding:18px 36px;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0;animation:promHalfIn 0.9s ease-out both 1.5s; }
+  #cs-prom .prom-half.right { animation-delay:1.75s; }
+  @keyframes promHalfIn { 0% { opacity:0;transform:translateY(14px) } 100% { opacity:1;transform:translateY(0) } }
+  #cs-prom .prom-eye { font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase; }
+  #cs-prom .prom-half.left .prom-eye { color:#3a73b8; }
+  #cs-prom .prom-half.right .prom-eye { color:#c8462c; }
+  #cs-prom .prom-line { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2vw,1.85rem);font-weight:600;line-height:1.28;color:#1a1612;letter-spacing:-0.012em;max-width:480px;text-align:center; }
+  #cs-prom .prom-line em { font-style:italic;font-weight:700; }
+  #cs-prom .prom-half.left .prom-line em { color:#3a73b8; }
+  #cs-prom .prom-half.right .prom-line em { color:#c8462c; }
+  /* Closer line under the diptych */
+  #cs-prom .prom-closer { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.45vw,1.32rem);font-style:italic;font-weight:600;line-height:1.36;color:rgba(26,22,18,0.78);max-width:920px;border-top:1px solid rgba(184,149,74,0.32);padding-top:18px;margin-top:8px;text-align:center;opacity:0;animation:promHalfIn 0.9s ease-out both 2.4s; }
+  #cs-prom .prom-closer strong { color:#1a1612;font-style:normal;font-weight:800; }
+  /* Export mode: skip animations, show terminal state */
+  html[data-export="1"] #cs-prom .prom-G,
+  html[data-export="1"] #cs-prom .prom-R,
+  html[data-export="1"] #cs-prom .prom-n,
+  html[data-export="1"] #cs-prom .prom-half,
+  html[data-export="1"] #cs-prom .prom-closer { animation:none !important;opacity:1 !important;transform:none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-prom">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Promise</div>
+  <section class="prom-stage">
+    <div class="prom-wrap">
+      <!-- EXPLODED WORDMARK · G slides up · n fades in · R slides down -->
+      <div class="prom-mark" aria-label="Give n Receive — the promise, exploded">
+        <span class="prom-G">G</span>
+        <span class="prom-n">n</span>
+        <span class="prom-R">R</span>
+      </div>
+      <!-- TWO HALVES -->
+      <div class="prom-diptych">
+        <div class="prom-half left">
+          <div class="prom-eye">You give</div>
+          <div class="prom-line">Your <em>community</em> gets the most out of you.</div>
+        </div>
+        <div class="prom-rule"></div>
+        <div class="prom-half right">
+          <div class="prom-eye">You receive</div>
+          <div class="prom-line">You get the most out of <em>your community</em>.</div>
+        </div>
+      </div>
+      <div class="prom-closer">The brand is the promise. <strong>Give n Receive</strong> &mdash; one continuous flow.</div>
+    </div>
+  </section>
+</div>
+
 <!-- ═══ SECTION 4b — ECONOMY OF HUMAN VALUE (2 NEW slides — Dave 2026-05-06) ═══
      The thesis: social media's creator economy concentrated wealth to the top 1%.
      GnR's connection economy distributes it across everyone — because human value to
@@ -21727,7 +21795,9 @@ const SLIDE_ORDER = [
   'cs-mv6',      // · MISSION · era cards "for all our lives to run on abundant human connection" [Dave 2026-05-07: restored from appendix]
   // cs-mv6-altC (two divergent lines) DELETED 2026-05-06 PM per Dave
   // [Dave 2026-05-10 PM] cs-prom REMOVED from main flow — its <div id="cs-prom"> HTML doesn't exist (was deleted earlier without removing from SLIDE_ORDER) → was rendering as a blank slide. Removed entry to fix the blank-slide bug.
+  // [Dave 2026-05-11 LATE] cs-prom REBUILT + RESTORED as CLOSING slide before appendix per Dave: 'bring whatever amazing closing slide back. i think before we had the one with the "your community gets the most out of you" text'. Brand-mark-exploded diptych: G slides up (give), italic n center, R slides down (receive); left half = 'You give · Your community gets the most out of you', right half = 'You receive · You get the most out of your community'.
   'cs-hc8',   // The AI Inversion ('Most things AI makes abundant get cheaper. Connection gets more valuable.') — MOVED to END of main deck per Dave 2026-05-08: 'move this slide after the last slide'.
+  'cs-prom',  // THE PROMISE · closing diptych before appendix [Dave 2026-05-11 LATE]
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
   // 10 candidate slides drafting the Human Connection paradigm reframe. Status = REVIEW
   // (orange top border + orange eyebrow). Sit at the end of main flow before APPENDIX.
@@ -21842,7 +21912,7 @@ const LOCKED_POSITIONS = [];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
-  'cs-a7',        // [Dave 2026-05-11] MOVED from main flow slot 4 to appendix per Dave: 'move this slide to the appendix'. 'THE LAST FRONTIER · Social media is an extremely narrow view of human connection technology.' The beat now lives only in cs-a7m1's left card at slot 2. Standalone version preserved here as backup. Newest always first per standing rule.
+  // [Dave 2026-05-11 LATE] cs-a7 REMOVED from appendix — was rendering blank at A1. Content already lives in slot 2 (cs-a7m1 left card). HTML retained as silent backup.
   'cs-1s2a',      // [Dave 2026-05-10 PM] MOVED to appendix per Dave: 'move this to appendix'. 'Every community already has a hidden invitation graph' / The product definition. Was gold-alt at slot 2; preserved here for reference.
   'cs-lastgraph', // [Dave 2026-05-10 PM] 'Community is the last untouched social graph' — 6-card lineup: LinkedIn/FB/X/IG/TikTok all CLAIMED by year, Community 2026 OPEN (gold glow + pulse). Every decade gets a new social graph; Community 20+ yrs overdue. Closer: 'Until now.'
   'cs-connfit',   // [Dave 2026-05-10] 10x 'old stack measures the wrong thing' / Connection Fit — Rating/Calendar/Social Feed all measure ~3-5% of fit; Connection Fit is the prize ('jaw droppingly 10x better').
