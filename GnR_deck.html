@@ -11724,6 +11724,221 @@ window.cs1m7Reverse = function() {
   </section>
 </div>
 
+<!-- ===== cs-18-vd1 / vd2 / vd3 - WHEELHOUSE "VERY DOABLE" CANDIDATES [Dave 2026-05-11] =====
+     New founder-slot orange-dot candidates.
+     Frame from Dave: the vision is almost too large to see, and the starting point is intentionally tiny/perfect.
+     Each candidate preserves the existing proof beats: pro tour, computer vision, DUPR declined, NEPC, Steve, Racketeer.
+-->
+<style>
+  .vd-stage { position:relative;width:100%;min-height:100%;display:flex;align-items:center;justify-content:center;padding:72px 56px 44px;text-align:center;overflow:hidden; }
+  .vd-stage:before { content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 52%, rgba(184,149,74,0.13), transparent 40%),radial-gradient(circle at 82% 18%, rgba(91,143,212,0.08), transparent 26%),radial-gradient(circle at 15% 82%, rgba(200,70,44,0.06), transparent 28%);pointer-events:none; }
+  .vd-wrap { position:relative;z-index:1;width:min(1440px,100%);margin:0 auto; }
+  .vd-name { font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,.52);margin-bottom:12px; }
+  .vd-hero { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,3.65vw,3.45rem);font-weight:850;line-height:1.05;letter-spacing:-.034em;color:#1a1612;margin:0 auto 26px;max-width:1180px; }
+  .vd-hero em { font-style:italic;color:#b8954a;font-weight:850; }
+  .vd-hero .red { color:#c8462c;font-weight:900; }
+  .vd-proof-row { display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:24px auto 0;max-width:1320px; }
+  .vd-proof { min-height:82px;padding:10px 8px 9px;border-radius:8px;background:rgba(251,247,239,.68);border:1px solid rgba(184,149,74,.24);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-shadow:0 10px 28px rgba(26,22,18,.035); }
+  .vd-proof.hot { border-color:rgba(200,70,44,.42);background:rgba(200,70,44,.045); }
+  .vd-proof.now { border-color:rgba(73,180,160,.45);background:rgba(73,180,160,.055); }
+  .vd-proof.trial { border-color:rgba(184,149,74,.56);background:rgba(184,149,74,.09); }
+  .vd-proof .yr { font-family:'Playfair Display',serif;font-size:.76rem;font-weight:900;color:#b8954a;line-height:1; }
+  .vd-proof.hot .yr { color:#c8462c; }
+  .vd-proof.now .yr { color:#168651; }
+  .vd-proof .txt { font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:850;line-height:1.2;color:rgba(26,22,18,.82); }
+  .vd-proof .ico { width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1.2px solid currentColor;color:#b8954a;background:rgba(251,247,239,.72); }
+  .vd-proof.hot .ico { color:#c8462c; }
+  .vd-proof.now .ico { color:#168651; }
+  .vd-proof.trial .ico { width:auto;min-width:70px;border-radius:999px;padding:0 8px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.68rem;font-weight:900;color:#1a1612; }
+  .vd-proof svg { width:15px;height:15px;display:block;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
+  .vd-close { border-top:1px solid rgba(184,149,74,.30);padding-top:16px;margin:22px auto 0;max-width:1040px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.45vw,1.32rem);font-style:italic;font-weight:650;line-height:1.34;color:#1a1612; }
+  .vd-close strong { color:#c8462c;font-style:normal;font-weight:900; }
+
+  #cs-18-vd1 .vd-dual { display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;margin:0 auto;max-width:1280px; }
+  #cs-18-vd1 .vd-card { position:relative;min-height:330px;padding:22px 22px 20px;border-radius:10px;background:rgba(251,247,239,.62);border:1.2px solid rgba(184,149,74,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden; }
+  #cs-18-vd1 .vd-card.vision { border-color:rgba(91,143,212,.34);background:rgba(91,143,212,.04); }
+  #cs-18-vd1 .vd-card.lab { border-color:rgba(184,149,74,.50);background:rgba(184,149,74,.085);box-shadow:0 0 0 4px rgba(184,149,74,.045); }
+  #cs-18-vd1 .vd-card-eye { position:absolute;top:18px;left:20px;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,22,18,.48); }
+  #cs-18-vd1 .vd-card-title { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,2vw,1.85rem);font-weight:850;line-height:1.08;color:#1a1612;max-width:440px;z-index:2; }
+  #cs-18-vd1 .vd-card-title em { font-style:italic;color:#b8954a; }
+  #cs-18-vd1 .vd-big-map { position:absolute;inset:38px;opacity:.82; }
+  #cs-18-vd1 .vd-big-map circle { fill:none;stroke:#5B8FD4;stroke-width:1;stroke-opacity:.22; }
+  #cs-18-vd1 .vd-big-map path { fill:none;stroke:#b8954a;stroke-width:1.4;stroke-opacity:.50;stroke-linecap:round;stroke-dasharray:5 6; }
+  #cs-18-vd1 .vd-lab-visual { position:relative;width:310px;height:220px;margin-bottom:16px; }
+  #cs-18-vd1 .vd-platform { position:absolute;left:38px;right:38px;bottom:36px;height:74px;border-radius:8px;background:rgba(251,247,239,.82);border:1.5px solid rgba(184,149,74,.54);box-shadow:0 16px 40px rgba(184,149,74,.16);display:grid;place-items:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.18rem;font-weight:900;color:#1a1612; }
+  #cs-18-vd1 .vd-tiny { position:absolute;width:28px;height:28px;border-radius:50%;background:#fbf7ef;border:1.4px solid #b8954a;box-shadow:0 0 0 5px rgba(184,149,74,.08); }
+  #cs-18-vd1 .vd-tiny.t1 { left:70px;top:62px; } #cs-18-vd1 .vd-tiny.t2 { left:140px;top:34px; } #cs-18-vd1 .vd-tiny.t3 { right:70px;top:62px; }
+  #cs-18-vd1 .vd-thread { position:absolute;left:82px;top:77px;width:146px;height:48px;border-top:1.3px dashed rgba(184,149,74,.6);border-radius:50%; }
+
+  #cs-18-vd2 .maze-grid { display:grid;grid-template-columns:1.12fr .88fr;gap:32px;align-items:center;max-width:1320px;margin:0 auto; }
+  #cs-18-vd2 .maze-visual { position:relative;min-height:430px;border-radius:10px;border:1.2px solid rgba(184,149,74,.30);background:rgba(251,247,239,.58);overflow:hidden;box-shadow:0 16px 44px rgba(26,22,18,.04); }
+  #cs-18-vd2 .maze-visual svg { position:absolute;inset:0;width:100%;height:100%; }
+  #cs-18-vd2 .maze-label { position:absolute;left:28px;top:24px;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#5B8FD4; }
+  #cs-18-vd2 .maze-stamp { position:absolute;right:28px;bottom:24px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:900;font-style:italic;color:#c8462c;line-height:.9; }
+  #cs-18-vd2 .maze-side { display:grid;gap:14px; }
+  #cs-18-vd2 .maze-card { padding:18px 20px;border-radius:9px;background:rgba(251,247,239,.66);border:1.2px solid rgba(184,149,74,.30);text-align:left; }
+  #cs-18-vd2 .maze-card.gold { background:rgba(184,149,74,.09);border-color:rgba(184,149,74,.55); }
+  #cs-18-vd2 .maze-card .k { font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,22,18,.48);margin-bottom:7px; }
+  #cs-18-vd2 .maze-card .v { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.55vw,1.42rem);font-weight:800;line-height:1.18;color:#1a1612; }
+  #cs-18-vd2 .maze-card .v em { color:#b8954a;font-style:italic; }
+  #cs-18-vd2 .maze-card .s { margin-top:7px;font-family:'Playfair Display',serif;font-size:.82rem;font-style:italic;font-weight:600;line-height:1.32;color:rgba(26,22,18,.62); }
+
+  #cs-18-vd3 .strength-grid { display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch;max-width:1320px;margin:0 auto; }
+  #cs-18-vd3 .strength { position:relative;min-height:394px;border-radius:10px;background:rgba(251,247,239,.62);border:1.2px solid rgba(184,149,74,.30);padding:24px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between; }
+  #cs-18-vd3 .strength.vision { border-color:rgba(91,143,212,.36);background:rgba(91,143,212,.04); }
+  #cs-18-vd3 .strength.foundation { border-color:rgba(184,149,74,.55);background:rgba(184,149,74,.085); }
+  #cs-18-vd3 .strength .num { font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,22,18,.48);text-align:left; }
+  #cs-18-vd3 .strength .title { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2.05vw,1.95rem);font-weight:850;line-height:1.08;color:#1a1612;text-align:left;max-width:510px; }
+  #cs-18-vd3 .strength .title em { font-style:italic;color:#b8954a; }
+  #cs-18-vd3 .strength .sub { font-family:'Playfair Display',serif;font-size:.92rem;font-style:italic;font-weight:600;color:rgba(26,22,18,.66);line-height:1.34;text-align:left;max-width:460px; }
+  #cs-18-vd3 .skyline { height:190px;position:relative;margin:16px 0 12px; }
+  #cs-18-vd3 .skyline .arc { position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);border-radius:50%;border:1px dashed rgba(91,143,212,.30); }
+  #cs-18-vd3 .skyline .a1 { width:420px;height:250px; } #cs-18-vd3 .skyline .a2 { width:290px;height:172px;border-color:rgba(184,149,74,.38); } #cs-18-vd3 .skyline .a3 { width:150px;height:90px;border-color:rgba(200,70,44,.28); }
+  #cs-18-vd3 .future-web { position:absolute;left:50%;top:52%;width:520px;height:170px;transform:translate(-50%,-50%);overflow:visible; }
+  #cs-18-vd3 .future-web path { fill:none;stroke:#b8954a;stroke-width:1.2;stroke-dasharray:4 5;opacity:.55; }
+  #cs-18-vd3 .future-web circle { fill:#fbf7ef;stroke-width:2; }
+  #cs-18-vd3 .future-web .blue { stroke:#5B8FD4; } #cs-18-vd3 .future-web .gold { stroke:#b8954a; } #cs-18-vd3 .future-web .red { stroke:#c8462c; }
+  #cs-18-vd3 .future-label { position:absolute;font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.48); }
+  #cs-18-vd3 .fl1 { left:76px;top:64px; } #cs-18-vd3 .fl2 { left:218px;top:22px;color:#5B8FD4; } #cs-18-vd3 .fl3 { right:80px;top:68px;color:#c8462c; } #cs-18-vd3 .fl4 { left:50%;bottom:18px;transform:translateX(-50%);color:#b8954a; }
+  #cs-18-vd3 .labbench { height:190px;position:relative;margin:16px 0 12px; }
+  #cs-18-vd3 .bench { position:absolute;left:70px;right:70px;bottom:28px;height:40px;background:#fbf7ef;border:1.6px solid rgba(184,149,74,.58);border-radius:7px;box-shadow:0 14px 34px rgba(184,149,74,.13); }
+  #cs-18-vd3 .club { position:absolute;bottom:78px;width:62px;height:76px;border-radius:7px;background:rgba(251,247,239,.9);border:1.4px solid rgba(26,22,18,.18);display:grid;place-items:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.92rem;font-weight:900;color:#1a1612; }
+  #cs-18-vd3 .c1 { left:116px; } #cs-18-vd3 .c2 { right:116px; }
+  #cs-18-vd3 .people-dot { position:absolute;width:14px;height:14px;border-radius:50%;background:#b8954a;box-shadow:0 0 0 5px rgba(184,149,74,.10); }
+  #cs-18-vd3 .p1 { left:220px;top:52px; } #cs-18-vd3 .p2 { left:278px;top:36px;background:#5B8FD4; } #cs-18-vd3 .p3 { right:220px;top:52px;background:#c8462c; }
+  #cs-18-vd3 .bridge-line { position:absolute;left:228px;right:228px;top:59px;border-top:1.2px dashed rgba(184,149,74,.58); }
+</style>
+
+<div class="casey-slide ds-focus" id="cs-18-vd1">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">My Wheelhouse</div>
+  <section class="vd-stage">
+    <div class="vd-wrap">
+      <div class="vd-name">Dave Velardo &middot; Founder &middot; CEO</div>
+      <div class="vd-hero"><span class="red">Very doable.</span> The vision is enormous. The lab is tiny on purpose.</div>
+      <div class="vd-dual">
+        <div class="vd-card vision">
+          <div class="vd-card-eye">Strength 01 &middot; The Vision</div>
+          <svg class="vd-big-map" viewBox="0 0 520 300" aria-hidden="true">
+            <circle cx="260" cy="150" r="48"/><circle cx="260" cy="150" r="88"/><circle cx="260" cy="150" r="130"/><circle cx="260" cy="150" r="174"/><circle cx="260" cy="150" r="218"/>
+            <path d="M84 214 C145 80 270 238 332 94 C365 20 432 64 458 134"/>
+            <path d="M86 112 C164 178 202 70 284 126 C348 170 406 136 470 78"/>
+          </svg>
+          <div class="vd-card-title">The idea maze is <em>so big</em> most people cannot see the whole thing.</div>
+        </div>
+        <div class="vd-card lab">
+          <div class="vd-card-eye">Strength 02 &middot; The Foundation</div>
+          <div class="vd-lab-visual">
+            <div class="vd-thread"></div><div class="vd-tiny t1"></div><div class="vd-tiny t2"></div><div class="vd-tiny t3"></div>
+            <div class="vd-platform">NEPC</div>
+          </div>
+          <div class="vd-card-title">The starting point is <em>intentionally perfect</em>: real members, real staff, real community.</div>
+        </div>
+      </div>
+      <div class="vd-proof-row">
+        <div class="vd-proof"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6 17l4-10 4 10"/><path d="M8 13h4"/></svg></div><div class="yr">2020</div><div class="txt">#27 pro tour</div></div>
+        <div class="vd-proof"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 10h8"/></svg></div><div class="yr">2020</div><div class="txt">Computer vision founder</div></div>
+        <div class="vd-proof hot"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></div><div class="yr">2021</div><div class="txt">DUPR offer declined</div></div>
+        <div class="vd-proof"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 19V9l8-5 8 5v10"/><path d="M4 19h16"/></svg></div><div class="yr">2022-24</div><div class="txt">$2M ARR NEPC</div></div>
+        <div class="vd-proof now"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M7 8h10"/><path d="M7 16h10"/></svg></div><div class="yr">2025</div><div class="txt">Steve joins CTO</div></div>
+        <div class="vd-proof trial"><div class="ico">Racketeer</div><div class="yr">2026</div><div class="txt">Wants GnR trial</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-18-vd2">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">My Wheelhouse</div>
+  <section class="vd-stage">
+    <div class="vd-wrap">
+      <div class="vd-name">Dave Velardo &middot; Founder &middot; CEO</div>
+      <div class="vd-hero">I can see the maze. I built the lab. <em>Very doable.</em></div>
+      <div class="maze-grid">
+        <div class="maze-visual">
+          <div class="maze-label">The idea maze</div>
+          <svg viewBox="0 0 760 430" aria-hidden="true">
+            <rect x="42" y="42" width="676" height="346" rx="12" fill="none" stroke="rgba(184,149,74,.28)" stroke-width="2"/>
+            <path d="M82 330 H198 V98 H330 V250 H476 V116 H626 V334" fill="none" stroke="rgba(26,22,18,.24)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M130 214 H270 V334 H394 V182 H552" fill="none" stroke="rgba(91,143,212,.22)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M76 330 C190 302 214 108 330 124 C452 142 408 326 626 334" fill="none" stroke="#c8462c" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="76" cy="330" r="10" fill="#5B8FD4"/><circle cx="626" cy="334" r="12" fill="#b8954a"/><circle cx="330" cy="124" r="8" fill="#c8462c"/>
+            <g opacity=".42">
+              <circle cx="210" cy="84" r="3" fill="#b8954a"/><circle cx="516" cy="92" r="3" fill="#5B8FD4"/><circle cx="590" cy="236" r="3" fill="#b8954a"/><circle cx="288" cy="296" r="3" fill="#c8462c"/>
+            </g>
+          </svg>
+          <div class="maze-stamp">Very<br>doable</div>
+        </div>
+        <div class="maze-side">
+          <div class="maze-card">
+            <div class="k">Vision strength</div>
+            <div class="v">The future is gigantic. <em>That is the strength.</em></div>
+            <div class="s">Most people need a smaller idea. This category needs someone who can hold the whole map.</div>
+          </div>
+          <div class="maze-card gold">
+            <div class="k">Foundation strength</div>
+            <div class="v">NEPC is tiny, real, and <em>perfectly instrumented.</em></div>
+            <div class="s">500 members, 20+ domain experts, two clubs, and live communities where the truth shows up every week.</div>
+          </div>
+          <div class="maze-card">
+            <div class="k">Proof path</div>
+            <div class="v">DUPR declined. NEPC built. Steve joined. Racketeer wants the trial.</div>
+          </div>
+        </div>
+      </div>
+      <div class="vd-close">The idea is enormous. The proving ground is deliberately small. <strong>That is the strategy.</strong></div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-18-vd3">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">My Wheelhouse</div>
+  <section class="vd-stage">
+    <div class="vd-wrap">
+      <div class="vd-name">Dave Velardo &middot; Founder &middot; CEO</div>
+      <div class="vd-hero">The reason this is doable is <em>two maximum strengths.</em></div>
+      <div class="strength-grid">
+        <div class="strength vision">
+          <div class="num">01 &middot; The Vision</div>
+          <div class="skyline">
+            <div class="arc a1"></div><div class="arc a2"></div><div class="arc a3"></div>
+            <svg class="future-web" viewBox="0 0 520 170" aria-hidden="true">
+              <path d="M62 116 C142 22 248 148 318 50 C370 -20 446 34 470 112"/>
+              <path d="M88 82 C164 126 214 36 300 84 C364 120 414 98 462 52"/>
+              <circle class="blue" cx="62" cy="116" r="12"/>
+              <circle class="gold" cx="180" cy="58" r="8"/>
+              <circle class="red" cx="318" cy="50" r="10"/>
+              <circle class="blue" cx="436" cy="86" r="8"/>
+              <circle class="gold" cx="470" cy="112" r="12"/>
+            </svg>
+            <div class="future-label fl1">Human connection</div>
+            <div class="future-label fl2">Social graph</div>
+            <div class="future-label fl3">AI coordination</div>
+            <div class="future-label fl4">GnR</div>
+          </div>
+          <div class="title">A gigantic future most people cannot see yet.</div>
+          <div class="sub">Human connection technology, real-world social networking, and the Give n Receive Graph are one enormous idea maze.</div>
+        </div>
+        <div class="strength foundation">
+          <div class="num">02 &middot; The Foundation</div>
+          <div class="labbench">
+            <div class="bridge-line"></div><div class="people-dot p1"></div><div class="people-dot p2"></div><div class="people-dot p3"></div>
+            <div class="club c1">Rye</div><div class="club c2">Middleton</div><div class="bench"></div>
+          </div>
+          <div class="title">A tiny perfect lab nobody else has.</div>
+          <div class="sub">$2M ARR NEPC, 500 members, 20+ domain-expert employees, two real communities, and Racketeer asking for GnR.</div>
+        </div>
+      </div>
+      <div class="vd-proof-row">
+        <div class="vd-proof"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6 17l4-10 4 10"/><path d="M8 13h4"/></svg></div><div class="yr">2020</div><div class="txt">#27 pro tour</div></div>
+        <div class="vd-proof"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 10h8"/></svg></div><div class="yr">2020</div><div class="txt">Computer vision founder</div></div>
+        <div class="vd-proof hot"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></div><div class="yr">2021</div><div class="txt">DUPR offer declined</div></div>
+        <div class="vd-proof"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 19V9l8-5 8 5v10"/><path d="M4 19h16"/></svg></div><div class="yr">2022-24</div><div class="txt">Built NEPC</div></div>
+        <div class="vd-proof now"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M7 8h10"/><path d="M7 16h10"/></svg></div><div class="yr">2025</div><div class="txt">Steve joins CTO</div></div>
+        <div class="vd-proof trial"><div class="ico">Racketeer</div><div class="yr">2026</div><div class="txt">Wants GnR trial</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <!-- ===== END SLOT 17 REVIEW ALTS ===== -->
 
 <!-- ===== cs-funnel1 — SALES FUNNEL REFRAME of cs-16 [Dave 2026-05-08] =====
@@ -21458,7 +21673,9 @@ const SLIDE_ALTS = {
   //   cs-18-alt2 = FINALLY · emotional / 4-loves manifesto [DELETED 2026-05-08, HTML retained]
   //   cs-18-alt3 = STRATEGY · 'I figure out the next frontier + I have my lab'
   // [Dave 2026-05-10 PM] cs-lab MOVED FROM main flow TO red-dot alt here. Per Dave: 'we either need to merge the slides or pick one of them to be the dave velardo founder slide'. Both cs-18 (My Wheelhouse) and cs-lab (Founder Method · Living Lab) are candidates for the founder slot. [Dave 2026-05-11] Key shifted 17→16 after cs-a7 moved to appendix.
-  16: ['cs-lab'],
+  // [Dave 2026-05-11] Added orange-dot candidates cs-18-vd1/vd2/vd3 for the "very doable" reframe: maximum vision + tiny perfect NEPC foundation.
+  // [Dave 2026-05-11] cs-18-vd2 deleted from nav per Dave. HTML retained as silent backup.
+  16: ['cs-lab', 'cs-18-vd1', 'cs-18-vd3'],
   // Slot 17 (was 18) positioning alts CLEARED 2026-05-10 after cs-wedge1 promotion and Dave deletes.
   17: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference. [Dave 2026-05-11] Key shifted 20→19 after cs-a7 moved to appendix.
@@ -21479,7 +21696,7 @@ const SLIDE_ALTS = {
 };
 const REVIEW_POSITION = 0; // Red no longer means "review"; red means rejected/not-main. Use ORANGE_REVIEW_* for consideration candidates.
 const ORANGE_REVIEW_POSITIONS = [];
-const ORANGE_REVIEW_ALTS = ['cs-1m8', 'cs-merge1', 'cs-merge3'];
+const ORANGE_REVIEW_ALTS = ['cs-1m8', 'cs-merge1', 'cs-merge3', 'cs-18-vd1', 'cs-18-vd3'];
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
