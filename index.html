@@ -15275,47 +15275,52 @@ window.cs1m7Reverse = function() {
             </div>
             <!-- BACK FACE — current GnR vision (4-figure network + caption) -->
             <div class="a7m1-flip-back">
+              <!-- [Dave 2026-05-11 LATE] Orb graphic replaced with iconic invitation envelope + GnR wax seal.
+                   Previous orbital diagram (4 phone-figures + dashed cross-paths + GnR center) was too busy.
+                   New graphic: one clean envelope, gold arc, red wax seal with G·n·R. Says 'invitation' in one image. -->
               <div class="a7m1-orb">
-                <svg width="76%" height="76%" viewBox="0 0 100 100" fill="none">
-                  <circle cx="50" cy="50" r="46" fill="rgba(212,168,83,0.05)"/>
-                  <g stroke="#b8954a" stroke-width="0.8" fill="none" opacity="0.75" stroke-linecap="round">
-                    <path d="M 22 34 Q 50 20 78 34" />
-                    <path d="M 22 66 Q 50 80 78 66" />
-                    <path d="M 22 34 Q 14 50 22 66" />
-                    <path d="M 78 34 Q 86 50 78 66" />
-                    <path d="M 22 34 Q 50 50 78 66" stroke-dasharray="2 2" opacity="0.45" />
-                    <path d="M 78 34 Q 50 50 22 66" stroke-dasharray="2 2" opacity="0.45" />
+                <svg width="78%" height="78%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Invitation envelope with GnR seal">
+                  <!-- Soft outer glow ring (already provided by .a7m1-orb wrapper, but adds depth) -->
+                  <circle cx="50" cy="50" r="44" fill="rgba(184,149,74,0.04)"/>
+                  <!-- Sparkle/abundance dots — two pairs, brand colors, suggesting 'measured, multiplied, made abundant' -->
+                  <g opacity="0.55">
+                    <circle cx="20" cy="26" r="1.1" fill="#5B8FD4"/>
+                    <circle cx="14" cy="38" r="0.7" fill="#b8954a"/>
+                    <circle cx="80" cy="26" r="1.1" fill="#c8462c"/>
+                    <circle cx="86" cy="38" r="0.7" fill="#b8954a"/>
+                    <circle cx="22" cy="76" r="0.7" fill="#b8954a"/>
+                    <circle cx="78" cy="76" r="0.7" fill="#b8954a"/>
                   </g>
-                  <g fill="#b8954a">
-                    <circle cx="50" cy="22" r="1.4"/>
-                    <circle cx="50" cy="78" r="1.4"/>
-                    <circle cx="13" cy="50" r="1.4"/>
-                    <circle cx="87" cy="50" r="1.4"/>
+                  <!-- ENVELOPE body — cream paper with gold border, slight tilt for personality -->
+                  <g transform="translate(50 52) rotate(-2.5) translate(-50 -52)">
+                    <!-- Subtle drop-shadow for the envelope -->
+                    <rect x="22.6" y="36.6" width="55" height="32" rx="2.2" fill="rgba(26,22,18,0.06)"/>
+                    <!-- Envelope back -->
+                    <rect x="22" y="36" width="55" height="32" rx="2.2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.1"/>
+                    <!-- Envelope flap (open / inviting) -->
+                    <path d="M 22 36 L 49.5 56 L 77 36" fill="none" stroke="#b8954a" stroke-width="1.1" stroke-linejoin="round"/>
+                    <!-- Subtle inner fold lines -->
+                    <path d="M 22 68 L 41 52 M 77 68 L 58 52" stroke="rgba(184,149,74,0.4)" stroke-width="0.6" fill="none"/>
                   </g>
-                  <g transform="translate(22,34)">
-                    <circle r="6.5" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1"/>
-                    <circle cx="0" cy="-1.6" r="1.6" fill="#5B8FD4"/>
-                    <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#5B8FD4" stroke-width="0.7" stroke-linecap="round"/>
+                  <!-- WAX SEAL — red disc with G n R letters, sits over the envelope flap meeting point -->
+                  <g transform="translate(50 56)">
+                    <!-- Outer seal halo -->
+                    <circle r="9.8" fill="rgba(200,70,44,0.10)"/>
+                    <!-- Seal body -->
+                    <circle r="7.4" fill="#c8462c" stroke="#a03520" stroke-width="0.6"/>
+                    <!-- Inner highlight (gives wax texture) -->
+                    <ellipse cx="-1.6" cy="-2.2" rx="3.2" ry="1.8" fill="rgba(255,250,240,0.18)"/>
+                    <!-- G · n · R letters embossed on the seal -->
+                    <text x="-4" y="2.2" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="4.6" font-weight="800" fill="#fbf7ef">G</text>
+                    <text x="-0.6" y="2.4" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="3.4" font-weight="500" font-style="italic" fill="#fbf7ef">n</text>
+                    <text x="1.6" y="2.2" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="4.6" font-weight="800" fill="#fbf7ef">R</text>
                   </g>
-                  <g transform="translate(78,34)">
-                    <circle r="6.5" fill="rgba(200,70,44,0.18)" stroke="#c8462c" stroke-width="1"/>
-                    <circle cx="0" cy="-1.6" r="1.6" fill="#c8462c"/>
-                    <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#c8462c" stroke-width="0.7" stroke-linecap="round"/>
+                  <!-- Connection arc above the envelope (the "matchmaking" gesture) — blue dot → arc → red dot, gold curve -->
+                  <g>
+                    <path d="M 30 24 Q 50 8 70 24" stroke="#b8954a" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-dasharray="2.5 2.5" opacity="0.85"/>
+                    <circle cx="30" cy="24" r="2.2" fill="#5B8FD4"/>
+                    <circle cx="70" cy="24" r="2.2" fill="#c8462c"/>
                   </g>
-                  <g transform="translate(22,66)">
-                    <circle r="6.5" fill="rgba(122,74,140,0.18)" stroke="#7d529f" stroke-width="1"/>
-                    <circle cx="0" cy="-1.6" r="1.6" fill="#7d529f"/>
-                    <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#7d529f" stroke-width="0.7" stroke-linecap="round"/>
-                  </g>
-                  <g transform="translate(78,66)">
-                    <circle r="6.5" fill="rgba(22,134,81,0.18)" stroke="#168651" stroke-width="1"/>
-                    <circle cx="0" cy="-1.6" r="1.6" fill="#168651"/>
-                    <path d="M -2.4 0.5 L -2.4 3 M 2.4 0.5 L 2.4 3 M 0 0.5 L 0 3" stroke="#168651" stroke-width="0.7" stroke-linecap="round"/>
-                  </g>
-                  <circle cx="50" cy="50" r="11" fill="rgba(255,245,216,0.85)" stroke="rgba(184,149,74,0.6)" stroke-width="0.8"/>
-                  <text x="44" y="53.5" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="7" font-weight="700" fill="#5B8FD4">G</text>
-                  <text x="49" y="54" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="5.5" font-weight="500" font-style="italic" fill="#1a1612">n</text>
-                  <text x="52.5" y="53.5" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="7" font-weight="700" fill="#c8462c">R</text>
                 </svg>
               </div>
               <div class="a7m1-cap" style="max-width:none;width:100%">
