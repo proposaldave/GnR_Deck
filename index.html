@@ -6089,7 +6089,7 @@ window.cs1m5Reverse = function() {
   #i5-modal .i5-mbody { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.98rem,1.15vw,1.1rem);font-style:italic;font-weight:500;line-height:1.42;color:rgba(26,22,18,0.78);margin-bottom:14px; }
   #i5-modal .i5-msource { font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,22,18,0.5);padding-top:14px;border-top:1px solid rgba(184,149,74,0.22);line-height:1.6; }
 </style>
-<div class="casey-slide ds-focus active" id="cs-intro5" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<div class="casey-slide ds-focus" id="cs-intro5" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div class="intro-eye-tl">An incredible truth</div>
   <section class="intro-stage">
     <div class="intro-wrap" style="gap:24px">
@@ -16832,6 +16832,8 @@ window.cs1m7Reverse = function() {
   #cs-1bm1 .ti-bar-row { display: grid; align-items: center; gap: 12px; margin-bottom: 6px; }
   #cs-1bm1 .ti-bar-row.ti-tech-row { grid-template-columns: 110px 1fr 130px; }
   #cs-1bm1 .ti-bar-row.ti-val-row  { grid-template-columns: 110px 1fr 130px; }
+  /* [Dave 2026-05-12 LATEST] Science chips for the restored Values-card sources strip. */
+  #cs-1bm1 .ti-sci-chip{font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.05em;color:rgba(200,70,44,0.92);background:rgba(255,255,255,0.7);border:1px solid rgba(200,70,44,0.28);border-radius:99px;padding:3px 9px;white-space:nowrap}
   #cs-1bm1 .ti-bar-track { position: relative; height: 10px; background: transparent; border-radius: 2px; }
   #cs-1bm1 .ti-bar-fill  { height: 100%; background: rgba(26,22,18,0.5); border-radius: 2px; }
   /* Hero row (Connection #1 in Values) — gold gradient pulse, bigger */
@@ -17029,6 +17031,16 @@ window.cs1m7Reverse = function() {
             <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.92rem;color:#b8954a;text-align:right;font-weight:700;line-height:1.18">real human<br>connection</div>
             <div class="ti-bar-track"></div>
             <div></div>
+          </div>
+        </div>
+        <!-- [Dave 2026-05-12 LATEST] SCIENCE STRIP restored to Values card per Dave: 'revert/bring the science elements back'. 4 independent fields agree that real human connection is the #1 predictor of a fulfilling life — yet none of the cultural bars above measure it. Replaces the proof previously carried by cs-intro5 (which is now moving to the first appendix slot). -->
+        <div class="ti-val-science" style="width:100%;max-width:560px;display:flex;flex-direction:column;align-items:center;gap:7px;margin-top:10px;padding:9px 14px 11px;background:rgba(184,149,74,0.06);border:1px solid rgba(184,149,74,0.28);border-radius:8px">
+          <div style="font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3">4 sciences agree &middot; <span style="color:#c8462c">#1 predictor of a fulfilling life</span></div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+            <span class="ti-sci-chip">Longitudinal</span>
+            <span class="ti-sci-chip">Public Health</span>
+            <span class="ti-sci-chip">Neuroscience</span>
+            <span class="ti-sci-chip">Epidemiology</span>
           </div>
         </div>
         <!-- BOTTOM SECTION — fades in AFTER right card flip [Dave 2026-04-30 PM] -->
@@ -17552,10 +17564,8 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-10 PM] cs-1m9 PROMOTED to slot 1 PRIMARY · 3-stage version: page-load=wordmark only → stage 1='Who Gives' (Twitter-style talk setup) → stage 2=split + 3 captions. cs-1m5 demoted to gold-dot alt for comparison.
   // [Dave 2026-05-11] cs-1m8 PROMOTED to slot 1 PRIMARY (replacing cs-1m9). Opens with HUMAN-TRUTH beat: 'We feel our best when we have an open heart toward others — free, generous, spontaneous.' Stage 1 reveals truth → stage 2 splits wordmark + caption row + Network line. cs-1m9 demoted to RED-DOT alt for review.
   // [Dave 2026-05-11 LATE] cs-intro1 INSERTED at slot 1 as new PRIMARY — 4 intro variants built (cs-intro1/2/3/4) for the '#1 predictor of fulfilling life is OPEN giving + receiving' science-proven premise. cs-1m8 (title slide) demoted to slot 2. All other slots +1. cs-intro2/3/4 are orange-dot review alts so Dave can pick the winner.
-  // [Dave 2026-05-11 LATEST] cs-intro5 (COMBO of intro2 + intro4) promoted to primary slot 1. cs-intro2 + cs-intro4 demoted to orange-dot review alts.
-  'cs-intro5',  //  1 INTRO PRIMARY · Combo: 'We're wired to openly give and receive' headline + 4-card science proof
-  // cs-intro2 + cs-intro4 are orange-dot review alts at SLIDE_ALTS[1]
-  'cs-1m8',   //  1 NEW PRIMARY TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
+  // [Dave 2026-05-12 LATEST] cs-intro5 MOVED to first appendix slot per Dave: 'current slide 1, move it to be the first appendix slide'. Science proof relocated to Values-imbalance card on cs-1bm1. cs-1m8 (former slot 2) is now the primary slot-1 title slide.
+  'cs-1m8',   //  1 PRIMARY TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
   'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
@@ -17684,18 +17694,17 @@ const SLIDE_ALTS = {
   //   cs-1m7 = split-wordmark animation alt [DELETED 2026-05-09 per Dave]
   //   cs-1m8 = NEW [Dave 2026-05-09 EVENING] · adds a HUMAN-TRUTH opening beat before the product reveal. Per Dave: 'we feel our best when we're generous to others... incredible truth that we feel our best when we have an open heart, being generous, giving'. Stage 1 reveals 'We feel our best when we give. Science says so.' before stage 2 splits the wordmark. RED DOT review — easy to revert by removing from this array (cs-1m5 stays primary).
   // [Dave 2026-05-10 PM] cs-1m5 added as gold-alt (was main flow primary; demoted when cs-1m9 took over slot 1). cs-1m8 retained as red-dot review candidate.
-  // [Dave 2026-05-11 LATEST] cs-intro5 (COMBO) is primary. cs-intro2 + cs-intro4 both DELETED. Slot 1 has no alts.
+  // [Dave 2026-05-12 LATEST] cs-intro5 moved to first appendix slot → all alt keys shifted -1 (every main slot dropped by 1 when cs-intro5 left).
+  // [Dave 2026-05-11] cs-1m8 (title) is now slot 1 (was 2). cs-1m5 + cs-1m9 both DELETED 2026-05-11 LATE. No alts.
   1: [],
-  // [Dave 2026-05-11] cs-1m8 (title) is slot 2. cs-1m5 + cs-1m9 both DELETED 2026-05-11 LATE. No alts.
-  2: [],
-  // [Dave 2026-05-12 LATEST] cs-2c-old DELETED per Dave: 'delete this slide'. Old text-based community design removed from alt slot.
-  5: [],
-  // Slot 3 alts (cs-a7m1 primary) — keys shifted 2 → 3.
-  3: ['cs-1'],
-  // Slot 12 (cs-19) — was 11.
-  12: [],
-  // [Dave 2026-05-12] cs-merge1 REMOVED (deleted per Dave: 'delete this slide'). cs-merge3 retained as historical drift alt.
-  13: ['cs-merge3'],
+  // Slot 2 alts (cs-a7m1 primary; was slot 3) — keys shifted 3 → 2.
+  2: ['cs-1'],
+  // [Dave 2026-05-12 LATEST] cs-2c-old DELETED per Dave: 'delete this slide'. Old text-based community design removed from alt slot. (Was slot 5; now slot 4.)
+  4: [],
+  // Slot 11 (cs-19; was slot 12).
+  11: [],
+  // [Dave 2026-05-12] cs-merge1 REMOVED. cs-merge3 retained as historical drift alt. (Was slot 13; now slot 12.)
+  12: ['cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -17713,13 +17722,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-11 LATE] Wheelhouse alts. Key shifted 13 → 14 after cs-intro1 inserted at slot 1.
   // [Dave 2026-05-12] cs-18-vd4 promoted to PRIMARY → removed from alts. cs-18 (former primary), cs-lab, cs-18-vd1, cs-18-vd3 are all RED-DOT alts per Dave: 'put the dots to the left of it as red text'.
   // [Dave 2026-05-12 LATEST] cs-18-vd3 DELETED per Dave: 'delete this' (the 'Two strengths' alt). cs-18-vd1 retained as red-dot alt.
-  // [Dave 2026-05-12 LATEST] cs-18-vd5 added as red-dot alt — preserves the previous wheelhouse design (full 3-pillar cards) in case Dave wants to revert from the new ChatGPT-style v4.
-  14: ['cs-18-vd5', 'cs-18', 'cs-lab', 'cs-18-vd1'],
-  // Slot 18 (was 17).
-  18: [],
+  // [Dave 2026-05-12 LATEST] cs-18-vd5 added as red-dot alt — preserves the previous wheelhouse design (full 3-pillar cards) in case Dave wants to revert from the new ChatGPT-style v4. (Was slot 14; now slot 13 after cs-intro5 moved out.)
+  13: ['cs-18-vd5', 'cs-18', 'cs-lab', 'cs-18-vd1'],
+  // Slot 17 (was 18).
+  17: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference. [Dave 2026-05-11] Key shifted 20→19 after cs-a7 moved to appendix.
-  // Slot 20 (was 19) — cs-16old alt.
-  20: ['cs-16old'],
+  // Slot 19 (cs-16) — cs-16old alt. (Was slot 20.)
+  19: ['cs-16old'],
   // [Dave 2026-05-12 LATEST] cs-prom-merge DELETED + cs-prom DELETED per Dave (consecutive 'delete this slide' on both). The promise content now lives inside cs-brand-V8 captions, so cs-prom and cs-prom-merge are both redundant.
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
@@ -17761,6 +17770,8 @@ const LOCKED_POSITIONS = [];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
+  // [Dave 2026-05-12 LATEST] cs-intro5 PREPENDED as FIRST appendix slide per Dave: 'current slide 1, move it to be the first appendix slide'. Originally slot 1 of main flow (science-proof intro with 4 clickable field cards). Science strip now also lives on the Values card of cs-1bm1 for the main-flow argument.
+  'cs-intro5',
   // [Dave 2026-05-11 LATE] cs-a7 REMOVED from appendix — was rendering blank at A1. Content already lives in slot 2 (cs-a7m1 left card). HTML retained as silent backup.
   'cs-twoops',    // [Dave 2026-05-12] Convergent Evolution · 'Two operators. Same insight.' (NEPC + Racketeer) — moved from main slot 19 to appendix per Dave.
   'cs-incentive', // [Dave 2026-05-12 LATER] Give n Receive · the incentive (paradigm-shift wordmark) — moved to appendix per Dave: 'move this slide to the appendix'.
