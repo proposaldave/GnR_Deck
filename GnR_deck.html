@@ -464,6 +464,16 @@ body.presenter-mode .casey-nav{display:none !important}
 #presenterToggle svg{width:16px;height:16px;display:block}
 body.presenter-mode #presenterToggle{opacity:0.18}
 body.presenter-mode #presenterToggle:hover{opacity:1}
+/* [Dave 2026-05-12] SLIDE HISTORY — press [ / ] to cycle through prior versions of the active slide.
+   Overlay covers the slide with the historical innerHTML, shows a badge at the bottom, Esc returns to live. */
+#slideHistoryOverlay{position:fixed;inset:0;z-index:2000;display:none;background:#fbf7ef;overflow:auto}
+#slideHistoryOverlay.on{display:block}
+#slideHistoryOverlay .shv-inner{position:relative;width:100vw;min-height:100vh;box-sizing:border-box}
+#slideHistoryOverlay .shv-badge{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(26,22,18,0.88);color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.04em;padding:9px 18px;border-radius:22px;z-index:2002;border:1px solid rgba(184,149,74,0.45);display:flex;gap:10px;align-items:center;box-shadow:0 12px 32px rgba(26,22,18,0.35)}
+#slideHistoryOverlay .shv-badge .shv-tag{color:#d4a853;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;font-size:10px}
+#slideHistoryOverlay .shv-badge .shv-label{font-style:italic;font-weight:500;color:rgba(251,247,239,0.82)}
+#slideHistoryOverlay .shv-badge kbd{background:rgba(251,247,239,0.16);border:1px solid rgba(251,247,239,0.32);border-radius:4px;padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:#fbf7ef}
+#slideHistoryOverlay .shv-badge .shv-sep{opacity:0.32}
 .casey-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0;position:relative}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
 /* [Dave 2026-05-08] Custom tooltip — opens to the LEFT of the dot (away from viewport edge) since the nav strip lives at the right edge. Fixes 'Autonomous Community In...' cutoff issue Dave caught. */
@@ -6020,7 +6030,7 @@ window.cs1m5Reverse = function() {
         <div class="i5-col card-long" onclick="i5Show('long');event.stopPropagation()">
           <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
           <div class="field">Longitudinal</div>
-          <div class="stat">Connection is #1 predictor<br>of a fulfilling life<br><span style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,0.55);display:inline-block;margin-top:6px">85-year Harvard study</span></div>
+          <div class="stat">Human connection is #1 predictor<br>of a fulfilling life<br><span style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,0.55);display:inline-block;margin-top:6px">85-year Harvard study</span></div>
         </div>
         <div class="i5-col card-public" onclick="i5Show('public');event.stopPropagation()">
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-7 11-7 11"/><path d="M12 11v6"/></svg></div>
@@ -22046,6 +22056,163 @@ document.addEventListener('keydown', function(e){
   };
   window.closeStudyModal = function(){ document.getElementById('studyModal').classList.remove('open'); };
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeStudyModal(); });
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     SLIDE HISTORY ARCHIVE  ·  added 2026-05-12 (Dave)
+     Press [ to step back through prior versions of the active slide, ] to step forward, Esc to return live.
+     PROTOCOL for future Claude sessions: whenever you make a SIGNIFICANT edit to a slide, BEFORE editing
+     append a new <template class="slide-history-entry"> for that slide here, with:
+        data-slide-id  = the slide's <div id="...">  (e.g. cs-intro5)
+        data-ts        = ISO timestamp  (e.g. 2026-05-12T15:00)
+        data-label     = short description of what's about to change  (e.g. "Pre-'hardwired' line")
+     The template's innerHTML should be the FULL inner HTML of the slide div as it existed before the edit.
+     Snapshots stack newest-first within each slide-id; runtime walks them in DOM order.
+     Skip for tiny edits (typo fixes, single-word swaps) — only snapshot when content shifts meaningfully.
+     ═══════════════════════════════════════════════════════════════════ -->
+<div id="slideHistoryArchive" hidden aria-hidden="true">
+  <template class="slide-history-entry" data-slide-id="cs-intro5" data-ts="2026-05-12T15:30" data-label="Pre-'hardwired' headline + 'Connection' (vs 'Human connection') Harvard card">
+  <div class="intro-eye-tl">An incredible truth</div>
+  <section class="intro-stage">
+    <div class="intro-wrap" style="gap:24px">
+      <div class="i5-headline">
+        Science proves we&rsquo;re all <em>wired</em> for <span style="color:#5B8FD4;font-weight:800">open</span> <span style="color:#c8462c;font-weight:800">human connection</span>.
+      </div>
+      <div class="i5-grid">
+        <div class="i5-col card-long">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div class="field">Longitudinal</div>
+          <div class="stat">Connection is #1 predictor<br>of a fulfilling life<br><span style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,0.55);display:inline-block;margin-top:6px">85-year Harvard study</span></div>
+        </div>
+        <div class="i5-col card-public">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-7 11-7 11"/><path d="M12 11v6"/></svg></div>
+          <div class="field">Public Health</div>
+          <div class="stat">Isolation equivalent to<br>15 cigarettes / day</div>
+        </div>
+        <div class="i5-col card-neuro">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2C7 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-3-8-8-8z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+          <div class="field">Neuroscience</div>
+          <div class="stat">Generosity activates<br>brain reward + oxytocin</div>
+        </div>
+        <div class="i5-col card-epi">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+          <div class="field">Epidemiology</div>
+          <div class="stat">Strong social ties =<br>+50% odds of survival</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </template>
+</div>
+
+<!-- Slide history overlay — populated on demand -->
+<div id="slideHistoryOverlay" aria-hidden="true">
+  <div class="shv-inner" id="shvInner"></div>
+  <div class="shv-badge" id="shvBadge"></div>
+</div>
+
+<script>
+// === Slide History System ===  Dave 2026-05-12
+// Registry of prior slide versions; populated from <template class="slide-history-entry"> blocks above.
+// Runtime exposes [ / ] keybindings to step through history without ever mutating the live DOM.
+(function(){
+  window.SLIDE_HISTORY = {};
+  document.querySelectorAll('#slideHistoryArchive template.slide-history-entry').forEach(function(t){
+    var sid = t.dataset.slideId;
+    if (!sid) return;
+    (window.SLIDE_HISTORY[sid] = window.SLIDE_HISTORY[sid] || []).push({
+      ts:    t.dataset.ts    || '',
+      label: t.dataset.label || '',
+      html:  t.innerHTML
+    });
+  });
+  window.historyIndex = 0;          // 0 = live; 1+ = older versions (1 = most recent prior)
+  window.historyCurrentSlide = null;
+
+  function activeSlideId(){
+    var el = document.querySelector('.casey-slide.active, .appendix-slide.active');
+    return el ? el.id : null;
+  }
+  function hide(){
+    var ov = document.getElementById('slideHistoryOverlay');
+    if (ov){ ov.classList.remove('on'); ov.setAttribute('aria-hidden','true'); }
+    window.historyIndex = 0;
+  }
+  function render(){
+    var sid = window.historyCurrentSlide;
+    if (!sid || window.historyIndex === 0) return hide();
+    var versions = window.SLIDE_HISTORY[sid] || [];
+    if (versions.length === 0) return hide();
+    var ix = Math.min(window.historyIndex - 1, versions.length - 1);
+    var v  = versions[ix];
+    var ov = document.getElementById('slideHistoryOverlay');
+    var inner = document.getElementById('shvInner');
+    var badge = document.getElementById('shvBadge');
+    if (!ov || !inner || !badge) return;
+    // Wrap historical innerHTML in a clone of the original slide's container styles so the rendered
+    // content matches its native slide context (background, layout, fonts, etc.).
+    var live = document.getElementById(sid);
+    var bg   = live ? (live.getAttribute('style') || '') : '';
+    var cls  = live ? live.className.replace(/\bactive\b/, '').trim() : 'casey-slide';
+    inner.innerHTML = '<div class="' + cls + ' active" style="' + bg + ';position:relative;display:flex;align-items:center;justify-content:center;min-height:100vh;width:100vw">' + v.html + '</div>';
+    badge.innerHTML =
+      '<span class="shv-tag">Slide history</span>' +
+      '<span class="shv-sep">·</span>' +
+      '<span>' + sid + '</span>' +
+      '<span class="shv-sep">·</span>' +
+      '<span>v&minus;' + (ix + 1) + ' of ' + versions.length + '</span>' +
+      (v.ts    ? '<span class="shv-sep">·</span><span>' + v.ts + '</span>' : '') +
+      (v.label ? '<span class="shv-sep">·</span><span class="shv-label">' + v.label + '</span>' : '') +
+      '<span class="shv-sep">·</span><kbd>[</kbd> older <kbd>]</kbd> newer <kbd>Esc</kbd> live';
+    ov.classList.add('on');
+    ov.setAttribute('aria-hidden','false');
+  }
+
+  window.cycleSlideHistory = function(direction){
+    // direction -1 → older (press [) ; +1 → newer (press ])
+    var sid = activeSlideId();
+    if (!sid) return;
+    if (sid !== window.historyCurrentSlide){
+      window.historyCurrentSlide = sid;
+      window.historyIndex = 0;
+    }
+    var versions = window.SLIDE_HISTORY[sid] || [];
+    if (versions.length === 0){
+      // Brief toast so Dave knows the system saw the keypress but has no history yet.
+      var badge = document.getElementById('shvBadge');
+      var ov    = document.getElementById('slideHistoryOverlay');
+      if (badge && ov){
+        badge.innerHTML = '<span class="shv-tag">Slide history</span><span class="shv-sep">·</span><span>' + sid + '</span><span class="shv-sep">·</span><span class="shv-label">no prior versions saved</span>';
+        ov.classList.add('on');
+        ov.setAttribute('aria-hidden','false');
+        document.getElementById('shvInner').innerHTML = '';
+        setTimeout(hide, 1400);
+      }
+      return;
+    }
+    var next = window.historyIndex + (direction < 0 ? 1 : -1);
+    if (next < 0 || next > versions.length) return;
+    window.historyIndex = next;
+    render();
+  };
+  window.hideSlideHistory = hide;
+
+  // [ and ] keys + Esc → close. Bound in capture phase so it works before slide-level handlers eat the key.
+  document.addEventListener('keydown', function(e){
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === '[') { e.preventDefault(); window.cycleSlideHistory(-1); return; }
+    if (e.key === ']') { e.preventDefault(); window.cycleSlideHistory(+1); return; }
+    if (e.key === 'Escape'){
+      var ov = document.getElementById('slideHistoryOverlay');
+      if (ov && ov.classList.contains('on')){ hide(); }
+    }
+    // Any main-nav key auto-closes the overlay so it doesn't shadow the new live slide
+    if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','d','D','a','A','s','S',' '].indexOf(e.key) !== -1){
+      var ov = document.getElementById('slideHistoryOverlay');
+      if (ov && ov.classList.contains('on')) hide();
+    }
+  }, true);
+})();
 </script>
 
 </body>
