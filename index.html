@@ -9622,7 +9622,7 @@ window.cs1m7Reverse = function() {
         <div class="dv-step trial"><div class="dv-icon">Racketeer</div><div class="dv-year">2026</div><div class="dv-step-text">GnR trial</div></div>
       </div>
 
-      <div class="dv-closer">The founder, the lab, the domain, and the CTO are already in one place. <strong>Now the graph scales.</strong></div>
+      <!-- [Dave 2026-05-12] Closer 'The founder, the lab, the domain, and the CTO are already in one place. Now the graph scales.' DELETED per Dave. -->
     </div>
   </section>
 </div>
@@ -9993,7 +9993,7 @@ window.cs1m7Reverse = function() {
             </svg>
             <div class="word">The pickleball world</div>
           </div>
-          <div class="title">I am the <em>face</em>.</div>
+          <div class="title">The <em>face</em>.</div>
           <div class="sub">Top-tier pickleball reputation. Trusted by pros, partners, and players. All-in for decades.</div>
         </div>
       </div>
@@ -10148,18 +10148,7 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <!-- BLOCK 3: THE TEAM -->
-        <div class="lb-block">
-          <div class="lb-block-eyebrow">The Team</div>
-          <div class="lb-block-head">Domain experts hired to test, iterate, <em style="font-style:italic;color:#b8954a">prove</em>.</div>
-          <ul class="lb-list">
-            <li><strong style="color:#1a1612;font-weight:800">Krista</strong> &middot; GM, coordination judgment</li>
-            <li><strong style="color:#1a1612;font-weight:800">Casey</strong> &middot; Teaching pro + product</li>
-            <li><strong style="color:#1a1612;font-weight:800">Ryann</strong> &middot; Operations + academy</li>
-            <li><strong style="color:#1a1612;font-weight:800">Samara</strong> &middot; Middleton community</li>
-            <li><strong style="color:#1a1612;font-weight:800">Steve</strong> &middot; CTO &middot; <span style="color:rgba(26,22,18,0.5);font-style:italic;font-weight:500">next slide</span></li>
-          </ul>
-        </div>
+        <!-- [Dave 2026-05-12] BLOCK 3 'The Team' (Krista / Casey / Ryann / Samara / Steve list) DELETED per Dave. -->
 
       </div>
 
@@ -10804,7 +10793,8 @@ window.cs1m7Reverse = function() {
   #cs-merge1 .m1-card .text { font-family:'Playfair Display',serif;font-size:0.78rem;font-weight:700;color:#1a1612;line-height:1.28; }
   #cs-merge1 .m1-card .text em { font-style:italic;color:#b8954a; }
 </style>
-<div class="casey-slide ds-focus" id="cs-merge1">
+<div class="casey-slide ds-focus" id="cs-merge1" style="display:none !important">
+  <!-- [Dave 2026-05-12] cs-merge1 DELETED per Dave: 'delete this slide'. Removed from SLIDE_ALTS[13] and ORANGE_REVIEW_ALTS. HTML hidden but retained as silent backup in case Dave wants to restore. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#c8462c;z-index:10">Why Pickleball First &middot; Already a Social Network</div>
   <section style="position:relative;width:100%;min-height:100%">
     <div class="m1-stage">
@@ -17134,8 +17124,8 @@ const SLIDE_ALTS = {
   3: ['cs-1'],
   // Slot 12 (cs-19) — was 11.
   12: [],
-  // Slot 13 (cs-brand-V8) — was 12. cs-merge1/3 are historical drift alts (originally for cs-onandoff coordination-stack slide).
-  13: ['cs-merge1', 'cs-merge3'],
+  // [Dave 2026-05-12] cs-merge1 REMOVED (deleted per Dave: 'delete this slide'). cs-merge3 retained as historical drift alt.
+  13: ['cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -17173,7 +17163,7 @@ const SLIDE_ALTS = {
 };
 const REVIEW_POSITION = 0; // Red no longer means "review"; red means rejected/not-main. Use ORANGE_REVIEW_* for consideration candidates.
 const ORANGE_REVIEW_POSITIONS = [];
-const ORANGE_REVIEW_ALTS = ['cs-merge1', 'cs-merge3', 'cs-18-vd1', 'cs-18-vd3'];
+const ORANGE_REVIEW_ALTS = ['cs-merge3', 'cs-18-vd1', 'cs-18-vd3'];
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
