@@ -9719,8 +9719,9 @@ window.cs1m7Reverse = function() {
   .vd-hero { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,3.65vw,3.45rem);font-weight:850;line-height:1.05;letter-spacing:-.034em;color:#1a1612;margin:0 auto 26px;max-width:1180px; }
   .vd-hero em { font-style:italic;color:#b8954a;font-weight:850; }
   .vd-hero .red { color:#c8462c;font-weight:900; }
-  .vd-proof-row { display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:24px auto 0;max-width:1320px; }
-  .vd-proof { min-height:82px;padding:10px 8px 9px;border-radius:8px;background:rgba(251,247,239,.68);border:1px solid rgba(184,149,74,.24);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-shadow:0 10px 28px rgba(26,22,18,.035); }
+  /* [Dave 2026-05-12 LATER] proof-row aligned to match the 3-pillar grid above (same max-width + gap). 5 equal-width columns now that Racketeer card was deleted. */
+  .vd-proof-row { display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin:24px auto 0;max-width:1380px; }
+  .vd-proof { min-height:88px;padding:12px 10px 11px;border-radius:8px;background:rgba(251,247,239,.68);border:1px solid rgba(184,149,74,.24);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:0 10px 28px rgba(26,22,18,.035); }
   .vd-proof.hot { border-color:rgba(200,70,44,.42);background:rgba(200,70,44,.045); }
   .vd-proof.now { border-color:rgba(73,180,160,.45);background:rgba(73,180,160,.055); }
   .vd-proof.trial { border-color:rgba(184,149,74,.56);background:rgba(184,149,74,.09); }
@@ -9988,7 +9989,7 @@ window.cs1m7Reverse = function() {
             <div class="plate">NEPC operating lab</div>
           </div>
           <div class="title">I built a <em>tiny, perfect lab</em>.</div>
-          <div class="sub">$2M ARR. 500 members. 20+ domain experts. The loop runs live every day.</div>
+          <div class="sub">$2M ARR. 500 members. 20+ employees led by GM and GnR implementor Krista.</div>
         </div>
         <!-- PILLAR 3 · THE NETWORK -->
         <div class="strength network">
