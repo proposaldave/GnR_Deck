@@ -11271,7 +11271,7 @@ window.cs1m7Reverse = function() {
 
           <ellipse cx="600" cy="220" rx="320" ry="200" class="wd-orb-bg"/>
 
-          <!-- Streams (9 — Workplaces, Dating, Family removed per Dave 2026-05-09) -->
+          <!-- Streams (9 community + 4 sport siblings · Padel/Tennis/Golf/Social Sports added 2026-05-12) -->
           <path class="wd-stream" stroke="#5B8FD4" d="M 600 500 C 540 400 380 280 220 200"/>
           <path class="wd-stream" stroke="#7d529f" d="M 600 500 C 580 380 470 220 350 130"/>
           <path class="wd-stream" stroke="#168651" d="M 600 500 C 580 360 530 200 480 90"/>
@@ -11281,6 +11281,11 @@ window.cs1m7Reverse = function() {
           <path class="wd-stream" stroke="#c8462c" d="M 600 500 C 470 460 290 410 130 380"/>
           <path class="wd-stream" stroke="#7d529f" d="M 600 500 C 540 470 410 460 280 460"/>
           <path class="wd-stream" stroke="#168651" d="M 600 500 C 700 480 870 460 1050 440"/>
+          <!-- Sport siblings -->
+          <path class="wd-stream" stroke="#5B8FD4" d="M 600 500 C 600 400 680 250 820 145"/>
+          <path class="wd-stream" stroke="#168651" d="M 600 500 C 620 380 730 200 880 65"/>
+          <path class="wd-stream" stroke="#b8954a" d="M 600 500 C 720 460 980 380 1100 300"/>
+          <path class="wd-stream" stroke="#7d529f" d="M 600 500 C 720 470 870 430 970 400"/>
 
           <!-- 1. Schools (top-left) -->
           <g transform="translate(220, 200)">
@@ -11389,6 +11394,55 @@ window.cs1m7Reverse = function() {
           </g>
           <text x="130" y="420" class="wd-icon-label">Book Clubs</text>
 
+          <!-- 10. Padel (sport sibling, top-right gap between City Squares & Gyms) -->
+          <g transform="translate(820, 145)">
+            <circle r="22" class="wd-icon-circle" stroke="#5B8FD4"/>
+            <g stroke="#5B8FD4" stroke-width="1.4" fill="rgba(91,143,212,0.12)" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="-2" cy="-4" rx="8" ry="10"/>
+              <line x1="3" y1="5" x2="7" y2="11" stroke-width="1.6"/>
+              <circle cx="-2" cy="-4" r="1.5" fill="rgba(91,143,212,0.45)" stroke="none"/>
+            </g>
+          </g>
+          <text x="820" y="185" class="wd-icon-label">Padel</text>
+
+          <!-- 11. Tennis (sport sibling, top-right far corner) -->
+          <g transform="translate(880, 65)">
+            <circle r="22" class="wd-icon-circle" stroke="#168651"/>
+            <g stroke="#168651" stroke-width="1.3" fill="rgba(22,134,81,0.10)" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="-3" cy="-3" r="8"/>
+              <line x1="-10" y1="-3" x2="4" y2="-3" stroke-width="0.7"/>
+              <line x1="-3" y1="-10" x2="-3" y2="4" stroke-width="0.7"/>
+              <line x1="3" y1="4" x2="8" y2="11" stroke-width="1.6"/>
+              <circle cx="9" cy="-5" r="2.6" fill="rgba(232,210,80,0.55)" stroke="#b8954a" stroke-width="0.8"/>
+            </g>
+          </g>
+          <text x="880" y="105" class="wd-icon-label">Tennis</text>
+
+          <!-- 12. Golf (sport sibling, right side below Gyms) -->
+          <g transform="translate(1100, 300)">
+            <circle r="22" class="wd-icon-circle" stroke="#b8954a"/>
+            <g stroke="#b8954a" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="-4" y1="10" x2="-4" y2="-10" stroke-width="1.5"/>
+              <path d="M -4 -10 L 6 -8 L -4 -6 Z" fill="rgba(200,70,44,0.30)" stroke="#c8462c" stroke-width="1.1"/>
+              <path d="M -10 10 Q 0 13 10 10" stroke-width="1.4"/>
+              <circle cx="7" cy="10" r="1.3" fill="rgba(255,255,255,0.95)" stroke="#1a1612" stroke-width="0.6"/>
+            </g>
+          </g>
+          <text x="1100" y="340" class="wd-icon-label">Golf</text>
+
+          <!-- 13. Social Sports (sport-sibling umbrella, between Gyms & Mentors) -->
+          <g transform="translate(970, 400)">
+            <circle r="22" class="wd-icon-circle" stroke="#7d529f"/>
+            <g stroke="#7d529f" stroke-width="1.3" fill="rgba(122,74,140,0.12)" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="-6" cy="-4" r="3"/>
+              <circle cx="6" cy="-4" r="3"/>
+              <path d="M -11 7 C -11 3 -8 1 -6 1 C -3 1 -1 3 -1 5" fill="none"/>
+              <path d="M 1 7 C 1 3 3 1 6 1 C 9 1 11 3 11 7" fill="none"/>
+              <circle cx="0" cy="6" r="2.4" fill="rgba(232,180,80,0.55)" stroke="#b8954a" stroke-width="0.8"/>
+            </g>
+          </g>
+          <text x="970" y="440" class="wd-icon-label">Social Sports</text>
+
           <!-- CENTER GOLD ORB — COMMUNITY ('★ The Network That Wins' subline DELETED 2026-05-09) -->
           <ellipse cx="600" cy="240" rx="180" ry="170" fill="url(#wdCenterOrb)" opacity="0.85"/>
           <circle cx="600" cy="240" r="18" fill="rgba(184,149,74,0.18)"/>
@@ -11415,8 +11469,7 @@ window.cs1m7Reverse = function() {
           <text x="600" y="588" class="wd-court-label">Pickleball</text>
           <!-- [Dave 2026-05-11] 'the wedge (within the wedge)' subtitle DELETED per Dave. -->
 
-          <!-- Other sports — expansion siblings [Dave 2026-05-09: 'add other sports like padel tennis golf social sports etc']. Font bumped 8.5 → 14 so it's actually visible. -->
-          <text x="600" y="640" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;fill:rgba(184,149,74,0.75);text-anchor:middle">→ Padel · Tennis · Golf · Social Sports</text>
+          <!-- [Dave 2026-05-12] Sport-sibling text deleted; Padel/Tennis/Golf/Social Sports promoted to icons in the constellation (see #10-13 above, top-right cluster near City Squares & Gyms · Wellness). -->
         </svg>
       </div>
 
