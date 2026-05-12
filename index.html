@@ -524,16 +524,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
 /* [Dave 2026-05-08 v5] THIN vertical nav, centered under GnR wordmark. GnR mark is at right:24px width ~52px → center at right:50px. Nav width ~15px → right:42px puts its center at right:50 (lined up with GnR center). */
 .casey-nav{position:fixed;top:90px;right:42px;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:6px 3px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 200px);width:fit-content}
-/* [Dave 2026-05-12] PRESENTER MODE — default ON. Hides nav dots for clean live investor pitch.
-   Toggle via Z key OR the cog button at bottom-right. Class lives on <body>. */
-body.presenter-mode .casey-nav{display:none !important}
-/* Presenter cog toggle — bottom-right, sized like speakerNotes/annotation buttons (38px) and offset to sit to their left */
-/* [Dave 2026-05-12 FIX] presenterToggle moved LEFT to right:148px so it no longer overlaps #annotationBtn (right:82-130px). Vertically centered at the same bottom-46 line as the other two 48px buttons (34px button → bottom:29 lands its center on bottom:46). All three buttons now sit in a clean row: cog (148-182) · pencil (82-130) · notes (22-70). */
-#presenterToggle{position:fixed;bottom:29px;right:148px;width:34px;height:34px;border-radius:50%;background:rgba(26,22,18,0.22);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:1000;transition:all 0.25s ease;padding:0;opacity:0.45}
+/* [Dave 2026-05-12 v3] PRESENTER MODE — default ON. Hides ALL chrome (nav dots + presenter cog + speaker-notes + annotation buttons) for a clean live investor pitch.
+   Z key toggles the entire set on/off together. Per Dave: 'dont have these visible when the html loads - only visible (like the dots) if i hit the z key'. */
+body.presenter-mode .casey-nav,
+body.presenter-mode #presenterToggle,
+body.presenter-mode #speakerNotesBtn,
+body.presenter-mode #annotationBtn { display: none !important; }
+/* Presenter cog toggle — bottom-right corner, sits left of pencil + notes when revealed. */
+#presenterToggle{position:fixed;bottom:29px;right:148px;width:34px;height:34px;border-radius:50%;background:rgba(26,22,18,0.22);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:1000;transition:all 0.25s ease;padding:0;opacity:0.85}
 #presenterToggle:hover{opacity:1;color:rgba(255,255,255,0.95);background:rgba(26,22,18,0.55);transform:scale(1.06)}
 #presenterToggle svg{width:16px;height:16px;display:block}
-body.presenter-mode #presenterToggle{opacity:0.18}
-body.presenter-mode #presenterToggle:hover{opacity:1}
 /* [Dave 2026-05-12] SLIDE HISTORY — press [ / ] to cycle through prior versions of the active slide.
    Overlay covers the slide with the historical innerHTML, shows a badge at the bottom, Esc returns to live. */
 #slideHistoryOverlay{position:fixed;inset:0;z-index:2000;display:none;background:#fbf7ef;overflow:auto}
@@ -12766,6 +12766,14 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-char .sc-bubble:after{content:'';position:absolute;left:-7px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-right:9px solid #fbf7ef}
   #cs-samecourt .sc-char .sc-bubble.red:before{border-right-color:rgba(200,70,44,0.55)}
   #cs-samecourt .sc-char .sc-bubble.blue:before{border-right-color:rgba(91,143,212,0.55)}
+  /* [Dave 2026-05-12] Swap-arrows glyph inside the center divider circle — visualizes the "flip" of incentives. Lifted from ChatGPT design reference. */
+  #cs-samecourt .sc-divider-icon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none}
+  #cs-samecourt .sc-divider-icon svg{width:22px;height:22px;display:block}
+  /* [Dave 2026-05-12] CLOSER — three-beat payoff lifted from ChatGPT design reference. Color-coded for the deck's ink → blue → gold rhythm. */
+  #cs-samecourt .sc-closer{align-self:center;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:32px;margin-top:50px;padding:14px 36px;border-top:1px solid rgba(184,149,74,0.34);border-bottom:1px solid rgba(184,149,74,0.34);max-width:860px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.35vw,1.25rem);font-weight:500;font-style:italic;letter-spacing:-0.005em}
+  #cs-samecourt .sc-closer .sc-c1{color:#1a1612}
+  #cs-samecourt .sc-closer .sc-c2{color:#5B8FD4;font-weight:600}
+  #cs-samecourt .sc-closer .sc-c3{color:#b8954a;font-weight:600}
 </style>
 <div class="casey-slide ds-focus" id="cs-samecourt">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Change the incentives</div>
@@ -12792,7 +12800,16 @@ window.cs1m7Reverse = function() {
           <div class="sc-item"><span class="dash">&mdash;</span><span>Skip helping out.</span></div>
         </div>
 
-        <div class="sc-divider" aria-hidden="true"></div>
+        <div class="sc-divider" aria-hidden="true">
+          <div class="sc-divider-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 3 20 7 16 11"/>
+              <path d="M4 7h16"/>
+              <polyline points="8 13 4 17 8 21"/>
+              <path d="M20 17H4"/>
+            </svg>
+          </div>
+        </div>
 
         <!-- RIGHT · GIVE N RECEIVE TRAINS — with handshake/community icon [Dave 2026-05-12 LATEST] -->
         <div class="sc-col blue">
@@ -12811,6 +12828,13 @@ window.cs1m7Reverse = function() {
           <div class="sc-item"><span class="dash">&mdash;</span><span>Play with the new face.</span></div>
           <div class="sc-item payoff"><span class="dash">&mdash;</span><span>Build the community.</span></div>
         </div>
+      </div>
+
+      <!-- [Dave 2026-05-12] CLOSER — three-beat payoff lifted from ChatGPT design reference. Lands the takeaway: same humans, flipped incentive ⇒ better for the individual, better for the people next to them, and better for the community as a whole. -->
+      <div class="sc-closer">
+        <span class="sc-c1">Better for you.</span>
+        <span class="sc-c2">Better for others.</span>
+        <span class="sc-c3">Better together.</span>
       </div>
     </div>
   </section>
