@@ -9935,13 +9935,43 @@ window.cs1m7Reverse = function() {
         <div class="strength vision">
           <div class="num">01 &middot; The Vision</div>
           <div class="v4-vis horizon">
+            <!-- [Dave 2026-05-12 LATER] Wavy-line graphic replaced. New: constellation of faint dots (unrealized possibilities) with one bold red path winding through specific ones from blue start → gold destination. Reads as 'I saw the path others missed' — clearer match to 'I see the idea maze.' title. -->
             <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
             <svg class="pathwrap" viewBox="0 0 300 120" aria-hidden="true">
-              <path d="M22 96 C82 22 168 102 224 38 C254 4 282 22 290 70"/>
-              <circle class="start" cx="22" cy="96" r="10"/>
-              <circle class="end" cx="290" cy="70" r="11"/>
+              <!-- Field of faint dots (paths-not-taken) -->
+              <g fill="rgba(26,22,18,0.22)">
+                <circle cx="60" cy="22" r="2.4"/>
+                <circle cx="110" cy="14" r="2.4"/>
+                <circle cx="160" cy="28" r="2.4"/>
+                <circle cx="200" cy="14" r="2.4"/>
+                <circle cx="245" cy="22" r="2.4"/>
+                <circle cx="80" cy="58" r="2.4"/>
+                <circle cx="220" cy="56" r="2.4"/>
+                <circle cx="90" cy="98" r="2.4"/>
+                <circle cx="140" cy="106" r="2.4"/>
+                <circle cx="190" cy="100" r="2.4"/>
+                <circle cx="250" cy="100" r="2.4"/>
+              </g>
+              <!-- Faint dashed possibilities (paths he could have taken but didn't) -->
+              <g stroke="rgba(26,22,18,0.14)" stroke-width="0.8" stroke-dasharray="2 3" fill="none">
+                <path d="M 22 60 Q 80 30 160 28"/>
+                <path d="M 22 60 Q 90 100 200 100"/>
+                <path d="M 160 28 Q 200 50 220 56"/>
+                <path d="M 140 106 Q 210 90 290 60"/>
+              </g>
+              <!-- The path Dave found — bold gold winding through specific dots, ending at the destination -->
+              <path d="M 22 60 Q 60 80 80 58 Q 100 32 110 14 Q 160 0 160 28 Q 210 30 220 56 Q 250 88 290 60" stroke="#c8462c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <!-- Path waypoints emphasized -->
+              <circle cx="80" cy="58" r="3.2" fill="#c8462c"/>
+              <circle cx="110" cy="14" r="3.2" fill="#c8462c"/>
+              <circle cx="160" cy="28" r="3.2" fill="#c8462c"/>
+              <circle cx="220" cy="56" r="3.2" fill="#c8462c"/>
+              <!-- Start (blue ring) + destination (gold filled with glow) -->
+              <circle class="start" cx="22" cy="60" r="9"/>
+              <circle class="end" cx="290" cy="60" r="10" fill="#b8954a" stroke="#8a6d2e" stroke-width="2"/>
+              <circle cx="290" cy="60" r="16" fill="none" stroke="#b8954a" stroke-width="1" stroke-dasharray="2 3" opacity="0.55"/>
             </svg>
-            <div class="word">Human connection technology</div>
+            <!-- [Dave 2026-05-12] 'Human connection technology' label DELETED — graphic now speaks for itself. -->
           </div>
           <div class="title">I see the <em>idea maze</em>.</div>
           <!-- [Dave 2026-05-12] Sub-line 'A category most can't even map yet. I walked the maze. I landed on the door.' DELETED per Dave. -->
@@ -12354,7 +12384,7 @@ window.cs1m7Reverse = function() {
           <div class="sc-col-eye">The rating trains</div>
           <div class="sc-item"><span class="dash">&mdash;</span><span>Protect your number.</span></div>
           <div class="sc-item"><span class="dash">&mdash;</span><span>Avoid weaker players.</span></div>
-          <div class="sc-item"><span class="dash">&mdash;</span><span>Skip the casual game.</span></div>
+          <div class="sc-item"><span class="dash">&mdash;</span><span>Game the bracket.</span></div>
         </div>
 
         <div class="sc-divider" aria-hidden="true"></div>
