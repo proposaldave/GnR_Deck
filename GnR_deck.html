@@ -8096,37 +8096,47 @@ window.cs1m7Reverse = function() {
   #cs-pbfirst .pb-head{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.85rem,3.05vw,2.7rem);font-weight:850;line-height:1.12;letter-spacing:-0.022em;color:#1a1612;max-width:1280px}
   #cs-pbfirst .pb-head em{font-style:italic;font-weight:850;color:#b8954a}
   #cs-pbfirst .pb-cards{display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr 1fr;gap:14px;width:100%}
-  #cs-pbfirst .pb-card{position:relative;padding:22px 16px 20px;border-radius:12px;background:rgba(251,247,239,.78);border:1.4px solid rgba(184,149,74,0.30);box-shadow:0 12px 30px rgba(26,22,18,.05);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;text-align:center;min-height:178px}
-  #cs-pbfirst .pb-ico{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(184,149,74,.10);flex-shrink:0}
-  #cs-pbfirst .pb-ico svg{width:22px;height:22px;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  /* Card outer = perspective wrapper (transparent). Visual styles live on .pb-face. */
+  #cs-pbfirst .pb-card{position:relative;perspective:1100px;min-height:200px;cursor:pointer}
+  #cs-pbfirst .pb-flip-inner{position:relative;width:100%;height:100%;min-height:200px;transform-style:preserve-3d;transition:transform 0.8s cubic-bezier(.22,1,.36,1)}
+  #cs-pbfirst .pb-card[data-flipped="1"] .pb-flip-inner{transform:rotateY(180deg)}
+  #cs-pbfirst .pb-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:22px 16px 20px;border-radius:12px;background:rgba(251,247,239,.78);border:1.4px solid rgba(184,149,74,0.30);box-shadow:0 12px 30px rgba(26,22,18,.05);text-align:center}
+  #cs-pbfirst .pb-face.pb-back{transform:rotateY(180deg)}
+  #cs-pbfirst .pb-ico{width:54px;height:54px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(184,149,74,.10);flex-shrink:0}
+  #cs-pbfirst .pb-ico svg{width:28px;height:28px;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  #cs-pbfirst .pb-flip-hint{font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,22,18,0.45);margin-top:4px}
   #cs-pbfirst .pb-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:800;font-size:clamp(.95rem,1.18vw,1.18rem);line-height:1.22;color:#1a1612;text-align:center}
   #cs-pbfirst .pb-sub{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(.85rem,1vw,1rem);line-height:1.35;color:rgba(26,22,18,0.72);text-align:center;margin-top:-2px}
-  /* Card 1 — RED (the desperate-need card, with arrow callout) */
-  #cs-pbfirst .pb-c1{background:rgba(200,70,44,.07);border-color:rgba(200,70,44,.55);box-shadow:0 14px 34px rgba(200,70,44,.10)}
+  /* Per-card color tints — applied to both faces */
+  /* Card 1 — RED */
+  #cs-pbfirst .pb-c1 .pb-face{background:rgba(200,70,44,.07);border-color:rgba(200,70,44,.55);box-shadow:0 14px 34px rgba(200,70,44,.10)}
   #cs-pbfirst .pb-c1 .pb-ico{background:rgba(200,70,44,.12)} #cs-pbfirst .pb-c1 .pb-ico svg{stroke:#c8462c}
   #cs-pbfirst .pb-c1 .pb-title{color:#c8462c}
-  #cs-pbfirst .pb-pill{font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:600;color:#1a1612;background:rgba(200,70,44,.08);border:1px solid rgba(200,70,44,.32);border-radius:6px;padding:5px 10px;line-height:1.3;width:100%}
+  #cs-pbfirst .pb-pill{font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:600;color:#1a1612;background:rgba(200,70,44,.08);border:1px solid rgba(200,70,44,.32);border-radius:6px;padding:5px 10px;line-height:1.3;width:100%}
   #cs-pbfirst .pb-pill em{font-style:italic;font-weight:700;color:#c8462c}
-  #cs-pbfirst .pb-pills{display:flex;flex-direction:column;gap:6px;width:100%;margin-top:2px}
+  #cs-pbfirst .pb-pills{display:flex;flex-direction:column;gap:6px;width:100%;margin-top:4px}
   /* Card 2 — GOLD */
   #cs-pbfirst .pb-c2 .pb-ico{background:rgba(184,149,74,.12)} #cs-pbfirst .pb-c2 .pb-ico svg{stroke:#b8954a}
   #cs-pbfirst .pb-c2 .pb-title{color:#b8954a}
   /* Card 3 — BLUE */
-  #cs-pbfirst .pb-c3{border-color:rgba(91,143,212,.42)}
+  #cs-pbfirst .pb-c3 .pb-face{border-color:rgba(91,143,212,.42)}
   #cs-pbfirst .pb-c3 .pb-ico{background:rgba(91,143,212,.12)} #cs-pbfirst .pb-c3 .pb-ico svg{stroke:#5B8FD4}
   #cs-pbfirst .pb-c3 .pb-title{color:#5B8FD4}
   /* Card 4 — GREEN */
-  #cs-pbfirst .pb-c4{border-color:rgba(22,134,81,.42)}
+  #cs-pbfirst .pb-c4 .pb-face{border-color:rgba(22,134,81,.42)}
   #cs-pbfirst .pb-c4 .pb-ico{background:rgba(22,134,81,.12)} #cs-pbfirst .pb-c4 .pb-ico svg{stroke:#168651}
   #cs-pbfirst .pb-c4 .pb-title{color:#168651}
   /* Card 5 — PURPLE */
-  #cs-pbfirst .pb-c5{border-color:rgba(125,82,159,.42)}
+  #cs-pbfirst .pb-c5 .pb-face{border-color:rgba(125,82,159,.42)}
   #cs-pbfirst .pb-c5 .pb-ico{background:rgba(125,82,159,.12)} #cs-pbfirst .pb-c5 .pb-ico svg{stroke:#7d529f}
   #cs-pbfirst .pb-c5 .pb-title{color:#7d529f}
   /* Callout arrow above Card 1 — 'it desperately needs this new paradigm' */
-  #cs-pbfirst .pb-callout{position:absolute;top:-44px;left:14px;font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:.78rem;line-height:1.25;color:#c8462c;text-align:left;width:160px}
-  #cs-pbfirst .pb-callout-arrow{position:absolute;top:-2px;left:34px;width:1.6px;height:38px;background:#c8462c}
+  #cs-pbfirst .pb-callout{position:absolute;top:-44px;left:14px;font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:.78rem;line-height:1.25;color:#c8462c;text-align:left;width:160px;z-index:5;pointer-events:none}
+  #cs-pbfirst .pb-callout-arrow{position:absolute;top:-2px;left:34px;width:1.6px;height:38px;background:#c8462c;z-index:5;pointer-events:none}
   #cs-pbfirst .pb-callout-arrow::after{content:"";position:absolute;bottom:-1px;left:-4px;width:9px;height:9px;border-right:1.6px solid #c8462c;border-bottom:1.6px solid #c8462c;transform:rotate(45deg)}
+  /* Tap hint pulses subtly on the front face to invite the flip */
+  #cs-pbfirst .pb-flip-hint{animation:pbHintPulse 2.4s ease-in-out infinite}
+  @keyframes pbHintPulse{0%,100%{opacity:.55}50%{opacity:1}}
   /* ── Intro cascade ── */
   #cs-pbfirst .pb-head, #cs-pbfirst .pb-card, #cs-pbfirst .pb-callout, #cs-pbfirst .pb-callout-arrow {opacity:0;transform:translateY(10px);will-change:opacity,transform;transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1)}
   #cs-pbfirst.casey-entered .pb-head,
@@ -8145,49 +8155,88 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-pbfirst .pb-card,
   html[data-export="1"] #cs-pbfirst .pb-callout,
   html[data-export="1"] #cs-pbfirst .pb-callout-arrow{opacity:1!important;transform:none!important;transition:none!important}
+  /* Export mode — force flipped state so PDF captures the text content */
+  html[data-export="1"] #cs-pbfirst .pb-flip-inner{transform:rotateY(180deg) !important;transition:none !important}
 </style>
 <div class="casey-slide ds-focus" id="cs-pbfirst">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">The #1 secret</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">GnR&rsquo;s #1 secret</div>
   <section class="pb-stage">
     <div class="pb-wrap">
-      <div class="pb-head">Pickleball is the clearest path to the first global, autonomous, <em>abundant human connection network</em>.</div>
+      <div class="pb-head">Pickleball is the clearest path to the world&rsquo;s first <em>autonomous human value exchange network</em>.</div>
 
       <div class="pb-cards">
+        <!-- [Dave 2026-05-12 LATEST] Cards now FLIP per Dave: 'let's make them cards that have to be flipped over to view the text'. Front face = colored icon + tap hint. Back face = title + body, centered. Each card has data-flipped="0" and click toggles to "1". -->
+
         <!-- Card 1 — RED · Coordination stack stuck in 2005 (with callout arrow) -->
-        <div class="pb-card pb-c1">
+        <div class="pb-card pb-c1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
           <div class="pb-callout">&rarr; it <em>desperately needs</em> this new paradigm.</div>
           <div class="pb-callout-arrow"></div>
-          <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
-          <div class="pb-title">Coordination stack<br>stuck in 2005</div>
-          <div class="pb-pills">
-            <div class="pb-pill">industry stuck in <em>ratings, ego</em></div>
-            <div class="pb-pill">doesn&rsquo;t measure <em>human connection</em></div>
+          <div class="pb-flip-inner">
+            <div class="pb-face pb-front">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
+              <div class="pb-flip-hint">Tap to reveal</div>
+            </div>
+            <div class="pb-face pb-back">
+              <div class="pb-title">Coordination stack<br>stuck in 2005</div>
+              <div class="pb-pills">
+                <div class="pb-pill">industry stuck in <em>ratings, ego</em></div>
+                <div class="pb-pill">doesn&rsquo;t measure <em>human connection</em></div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Card 2 — GOLD · Fastest-growing sport -->
-        <div class="pb-card pb-c2">
-          <div class="pb-ico"><svg viewBox="0 0 24 24"><polyline points="4 18, 9 12, 13 15, 20 6"/><polyline points="15 6, 20 6, 20 11"/></svg></div>
-          <div class="pb-title">Fastest-growing</div>
-          <div class="pb-sub">sport in U.S. history.</div>
+        <div class="pb-card pb-c2" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="pb-flip-inner">
+            <div class="pb-face pb-front">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><polyline points="4 18, 9 12, 13 15, 20 6"/><polyline points="15 6, 20 6, 20 11"/></svg></div>
+              <div class="pb-flip-hint">Tap to reveal</div>
+            </div>
+            <div class="pb-face pb-back">
+              <div class="pb-title">Fastest-growing</div>
+              <div class="pb-sub">sport in U.S. history.</div>
+            </div>
+          </div>
         </div>
 
         <!-- Card 3 — BLUE · Wildly social -->
-        <div class="pb-card pb-c3">
-          <div class="pb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.4"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="6.6" y1="7.2" x2="9.6" y2="10"/><line x1="17.4" y1="7.2" x2="14.4" y2="10"/><line x1="6.6" y1="16.8" x2="9.6" y2="14"/><line x1="17.4" y1="16.8" x2="14.4" y2="14"/></svg></div>
-          <div class="pb-title">Wildly social.<br>High velocity<br>experiences.</div>
+        <div class="pb-card pb-c3" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="pb-flip-inner">
+            <div class="pb-face pb-front">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.4"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="6.6" y1="7.2" x2="9.6" y2="10"/><line x1="17.4" y1="7.2" x2="14.4" y2="10"/><line x1="6.6" y1="16.8" x2="9.6" y2="14"/><line x1="17.4" y1="16.8" x2="14.4" y2="14"/></svg></div>
+              <div class="pb-flip-hint">Tap to reveal</div>
+            </div>
+            <div class="pb-face pb-back">
+              <div class="pb-title">Wildly social.<br>High velocity<br>experiences.</div>
+            </div>
+          </div>
         </div>
 
         <!-- Card 4 — GREEN · Cold-start data cracked -->
-        <div class="pb-card pb-c4">
-          <div class="pb-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6v6c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4V6"/><path d="M5 12v6c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-6"/><polyline points="9 15, 11 17, 15 13" stroke-width="1.4"/></svg></div>
-          <div class="pb-title">Cold-start<br>data cracked.</div>
+        <div class="pb-card pb-c4" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="pb-flip-inner">
+            <div class="pb-face pb-front">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6v6c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4V6"/><path d="M5 12v6c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-6"/><polyline points="9 15, 11 17, 15 13" stroke-width="1.4"/></svg></div>
+              <div class="pb-flip-hint">Tap to reveal</div>
+            </div>
+            <div class="pb-face pb-back">
+              <div class="pb-title">Cold-start<br>data cracked.</div>
+            </div>
+          </div>
         </div>
 
         <!-- Card 5 — PURPLE · Already a social network beyond the courts -->
-        <div class="pb-card pb-c5">
-          <div class="pb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
-          <div class="pb-title">Pickleball already<br>is a social network<br>beyond the courts.</div>
+        <div class="pb-card pb-c5" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="pb-flip-inner">
+            <div class="pb-face pb-front">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+              <div class="pb-flip-hint">Tap to reveal</div>
+            </div>
+            <div class="pb-face pb-back">
+              <div class="pb-title">Pickleball already<br>is a social network<br>beyond the courts.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
