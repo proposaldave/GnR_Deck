@@ -459,7 +459,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
    Toggle via Z key OR the cog button at bottom-right. Class lives on <body>. */
 body.presenter-mode .casey-nav{display:none !important}
 /* Presenter cog toggle — bottom-right, sized like speakerNotes/annotation buttons (38px) and offset to sit to their left */
-#presenterToggle{position:fixed;bottom:14px;right:102px;width:34px;height:34px;border-radius:50%;background:rgba(26,22,18,0.22);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:1000;transition:all 0.25s ease;padding:0;opacity:0.45}
+/* [Dave 2026-05-12 FIX] presenterToggle moved LEFT to right:148px so it no longer overlaps #annotationBtn (right:82-130px). Vertically centered at the same bottom-46 line as the other two 48px buttons (34px button → bottom:29 lands its center on bottom:46). All three buttons now sit in a clean row: cog (148-182) · pencil (82-130) · notes (22-70). */
+#presenterToggle{position:fixed;bottom:29px;right:148px;width:34px;height:34px;border-radius:50%;background:rgba(26,22,18,0.22);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:1000;transition:all 0.25s ease;padding:0;opacity:0.45}
 #presenterToggle:hover{opacity:1;color:rgba(255,255,255,0.95);background:rgba(26,22,18,0.55);transform:scale(1.06)}
 #presenterToggle svg{width:16px;height:16px;display:block}
 body.presenter-mode #presenterToggle{opacity:0.18}
@@ -14887,7 +14888,7 @@ window.cs1m7Reverse = function() {
     <!-- Mission line — big text under the boxes [Restored Dave 2026-05-02 PM; size bumped 2026-05-03 PM] -->
     <div class="mv6-mission" style="margin-top:42px;text-align:center;max-width:1180px">
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.3rem,4.5vw,3.85rem);font-weight:700;color:#1a1612;line-height:1.08;letter-spacing:-0.02em">
-        <span style="font-family:'Manrope',sans-serif;font-size:0.55em;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#b8954a">Mission:</span> For all our lives to run on what we&rsquo;re hardwired for:<br><em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.55em;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#b8954a">Mission:</span> Restore what we&rsquo;re hardwired for &mdash;<br><em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection</em> &mdash; to every community on Earth.
       </div>
     </div>
 
@@ -15016,7 +15017,7 @@ window.cs1m7Reverse = function() {
     <!-- BIG mission line -->
     <div style="margin-top:6px;text-align:center;max-width:1500px">
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,3.6vw,3.1rem);font-weight:700;color:#1a1612;line-height:1.14;letter-spacing:-0.02em">
-        <span style="font-family:'Manrope',sans-serif;font-size:0.5em;font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a">Mission:</span> For all our lives to run on what we&rsquo;re hardwired for: <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.5em;font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a">Mission:</span> Restore what we&rsquo;re hardwired for &mdash; <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection</em> &mdash; to every community on Earth.
       </div>
     </div>
 
@@ -15033,7 +15034,7 @@ window.cs1m7Reverse = function() {
     <!-- Mission line MOVED to TOP — above the chart [Dave 2026-05-06 PM v11; v12 bumped sizes] -->
     <div style="text-align:center;max-width:1500px;margin-bottom:10px">
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.1rem,3.7vw,3.25rem);font-weight:700;color:#1a1612;line-height:1.14;letter-spacing:-0.02em">
-        <span style="font-family:'Manrope',sans-serif;font-size:0.5em;font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a">Mission:</span> For all our lives to run on what we&rsquo;re hardwired for: <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.5em;font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a">Mission:</span> Restore what we&rsquo;re hardwired for &mdash; <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection</em> &mdash; to every community on Earth.
       </div>
     </div>
 
