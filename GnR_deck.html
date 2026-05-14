@@ -8594,8 +8594,9 @@ window.cs1m7Reverse = function() {
   #cs-pbfirst .pb-head em{font-style:italic;font-weight:850;color:#b8954a}
   #cs-pbfirst .pb-cards{display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr 1fr;gap:14px;width:100%}
   /* Card outer = perspective wrapper (transparent). Visual styles live on .pb-face. */
-  #cs-pbfirst .pb-card{position:relative;perspective:1100px;min-height:200px;cursor:pointer}
-  #cs-pbfirst .pb-flip-inner{position:relative;width:100%;height:100%;min-height:200px;transform-style:preserve-3d;transition:transform 0.8s cubic-bezier(.22,1,.36,1)}
+  /* [Dave 2026-05-14] Card height bumped 200 → 252 so Card 1's back face (title + 3 pills) fits cleanly without overflowing the card boundary. All 5 cards stay uniform height. */
+  #cs-pbfirst .pb-card{position:relative;perspective:1100px;min-height:252px;cursor:pointer}
+  #cs-pbfirst .pb-flip-inner{position:relative;width:100%;height:100%;min-height:252px;transform-style:preserve-3d;transition:transform 0.8s cubic-bezier(.22,1,.36,1)}
   #cs-pbfirst .pb-card[data-flipped="1"] .pb-flip-inner{transform:rotateY(180deg)}
   #cs-pbfirst .pb-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:22px 16px 20px;border-radius:12px;background:rgba(251,247,239,.78);border:1.4px solid rgba(184,149,74,0.30);box-shadow:0 12px 30px rgba(26,22,18,.05);text-align:center}
   #cs-pbfirst .pb-face.pb-back{transform:rotateY(180deg)}
@@ -15398,7 +15399,7 @@ window.cs1m7Reverse = function() {
     <!-- Mission line — big text under the boxes [Restored Dave 2026-05-02 PM; size bumped 2026-05-03 PM] -->
     <div class="mv6-mission" style="margin-top:42px;text-align:center;max-width:1180px">
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.3rem,4.5vw,3.85rem);font-weight:700;color:#1a1612;line-height:1.08;letter-spacing:-0.02em">
-        <span style="font-family:'Manrope',sans-serif;font-size:0.55em;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on<br><em style="font-style:italic;font-weight:500;color:#b8954a">autonomous, abundant human connection.</em>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.55em;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on<br><em style="font-style:italic;font-weight:500;color:#b8954a">autonomous, abundant connection.</em>
       </div>
     </div>
 
@@ -15527,7 +15528,7 @@ window.cs1m7Reverse = function() {
     <!-- BIG mission line -->
     <div style="margin-top:6px;text-align:center;max-width:1500px">
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,3.6vw,3.1rem);font-weight:700;color:#1a1612;line-height:1.14;letter-spacing:-0.02em">
-        <span style="font-family:'Manrope',sans-serif;font-size:0.5em;font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">autonomous, abundant human connection.</em>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.5em;font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">autonomous, abundant connection.</em>
       </div>
     </div>
 
@@ -15544,7 +15545,7 @@ window.cs1m7Reverse = function() {
     <!-- Mission line MOVED to TOP — above the chart [Dave 2026-05-06 PM v11; v12 bumped sizes] -->
     <div style="text-align:center;max-width:1500px;margin-bottom:10px">
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.1rem,3.7vw,3.25rem);font-weight:700;color:#1a1612;line-height:1.14;letter-spacing:-0.02em">
-        <span style="font-family:'Manrope',sans-serif;font-size:0.5em;font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">autonomous, abundant human connection.</em>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.5em;font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">autonomous, abundant connection.</em>
       </div>
     </div>
 
