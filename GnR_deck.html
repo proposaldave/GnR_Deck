@@ -10614,23 +10614,21 @@ window.cs1m7Reverse = function() {
         <!-- PILLAR 1 · IDEA MAZE (RED + STAIRCASE) -->
         <div class="v5-pillar p1">
           <div class="v5-badge red">
-            <!-- [Dave 2026-05-14] Staircase icon replaced with a maze — represents wayfinding through complexity (the path of least resistance). Outer frame + internal walls + a faded dashed trace line shows the route through. -->
+            <!-- [Dave 2026-05-14 v2] Maze rebuilt as a clean SQUARE SPIRAL — single bold corridor winding inward from the entry dot on the left to a sparkling 'idea' destination at the center. The earlier random-walls + dashed-trace version read as a circuit diagram (Dave: 'doesn't look like a maze at all'); the spiral is universally recognized as labyrinth/idea-maze and stays legible at small icon size. -->
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                <!-- Outer maze frame -->
-                <rect x="14" y="14" width="52" height="52" rx="2"/>
-                <!-- Internal walls forming maze structure -->
-                <line x1="26" y1="14" x2="26" y2="32"/>
-                <line x1="14" y1="44" x2="38" y2="44"/>
-                <line x1="50" y1="26" x2="50" y2="50"/>
-                <line x1="38" y1="56" x2="66" y2="56"/>
-                <line x1="38" y1="14" x2="38" y2="26"/>
+              <!-- 3-turn square spiral corridor: enters on the left edge, spirals into center. -->
+              <path d="M 6 40 L 14 40 L 14 14 L 66 14 L 66 66 L 22 66 L 22 26 L 58 26 L 58 54 L 32 54 L 32 40 L 44 40"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <!-- Entry marker (outside the maze) -->
+              <circle cx="6" cy="40" r="2.6" fill="white"/>
+              <!-- 'Idea' destination: filled dot + 4-point sparkle at the spiral's terminus -->
+              <circle cx="44" cy="40" r="3.0" fill="white"/>
+              <g stroke="white" stroke-width="1.4" stroke-linecap="round">
+                <line x1="44" y1="32" x2="44" y2="29"/>
+                <line x1="50" y1="34" x2="52" y2="32"/>
+                <line x1="50" y1="46" x2="52" y2="48"/>
+                <line x1="44" y1="48" x2="44" y2="51"/>
               </g>
-              <!-- Solution path threading through the maze -->
-              <path d="M 20 14 L 20 38 L 32 38 L 32 28 L 44 28 L 44 50 L 58 50 L 58 66" stroke="rgba(255,255,255,0.6)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2.5 2.5" fill="none"/>
-              <!-- Entry + exit dots -->
-              <circle cx="20" cy="14" r="2.4" fill="white"/>
-              <circle cx="58" cy="66" r="2.4" fill="white"/>
             </svg>
           </div>
           <div class="v5-num">01</div>
