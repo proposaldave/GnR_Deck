@@ -533,11 +533,12 @@ body.presenter-mode .casey-count,
 body.presenter-mode #slideSearch { display: none !important; }
 
 /* [Dave 2026-05-14 PM v4] SLIDE SEARCH — text box that appears when Z is pressed. Searches eyebrows + headlines + body text across BOTH main slides and appendix slides. Match list shows below the input; click or Enter to navigate. */
-#slideSearch{position:fixed;top:88px;right:24px;z-index:998;width:240px;font-family:'Manrope',sans-serif}
+/* [Dave 2026-05-14 PM v4] Slide-search position moved per Dave 'move search just above the gear/pencil/notes graphics'. Bottom-anchored (bottom:80px sits just above the bottom-right control cluster). flex-direction:column-reverse so the results dropdown expands UPWARD from the input instead of overflowing below the viewport. */
+#slideSearch{position:fixed;bottom:80px;right:24px;z-index:998;width:240px;font-family:'Manrope',sans-serif;display:flex;flex-direction:column-reverse}
 #slideSearch .ss-input{width:100%;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(26,22,18,0.78);color:#fbf7ef;border:1px solid rgba(184,149,74,0.45);border-radius:18px;outline:none;box-sizing:border-box;backdrop-filter:blur(6px);transition:border-color 0.2s, box-shadow 0.2s}
 #slideSearch .ss-input::placeholder{color:rgba(251,247,239,0.42);font-weight:500}
 #slideSearch .ss-input:focus{border-color:#d4a853;box-shadow:0 0 0 2px rgba(212,168,83,0.22)}
-#slideSearch .ss-results{display:flex;flex-direction:column;gap:3px;margin-top:6px;max-height:60vh;overflow-y:auto}
+#slideSearch .ss-results{display:flex;flex-direction:column;gap:3px;margin-bottom:6px;max-height:60vh;overflow-y:auto}
 #slideSearch .ss-results:empty{display:none}
 #slideSearch .ss-result{padding:8px 12px;background:rgba(26,22,18,0.82);color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:11px;font-weight:500;border-radius:8px;cursor:pointer;border:1px solid rgba(184,149,74,0.18);transition:background 0.18s,border-color 0.18s;line-height:1.32}
 #slideSearch .ss-result:hover, #slideSearch .ss-result.focused{background:rgba(184,149,74,0.55);border-color:rgba(212,168,83,0.78)}
