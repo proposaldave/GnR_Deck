@@ -8821,11 +8821,12 @@ window.cs1m7Reverse = function() {
   #cs-pbfirst .pb-head, #cs-pbfirst .pb-card, #cs-pbfirst .pb-callout, #cs-pbfirst .pb-callout-arrow {opacity:0;will-change:opacity,transform}
   @keyframes pbCardIn { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform: translateY(0); } }
   #cs-pbfirst.casey-entered .pb-head{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards 0s; opacity:1 }
-  #cs-pbfirst.casey-entered .pb-c1{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .30s; opacity:1 }
-  #cs-pbfirst.casey-entered .pb-c2{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .43s; opacity:1 }
-  #cs-pbfirst.casey-entered .pb-c3{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .56s; opacity:1 }
-  #cs-pbfirst.casey-entered .pb-c4{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .69s; opacity:1 }
-  #cs-pbfirst.casey-entered .pb-c5{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .82s; opacity:1 }
+  /* [Dave 2026-05-14 PM] Cascade delays remapped to match the current DOM order (pb-c5 was promoted to first position). Order in layout: pb-c5 → pb-c1 → pb-c2 → pb-c3 → pb-c4. Purple card fires before red as Dave requested. */
+  #cs-pbfirst.casey-entered .pb-c5{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .30s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c1{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .43s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c2{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .56s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c3{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .69s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c4{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .82s; opacity:1 }
   #cs-pbfirst.casey-entered .pb-callout{ animation: pbCardIn .55s cubic-bezier(.22,1,.36,1) backwards .50s; opacity:1 }
   #cs-pbfirst.casey-entered .pb-callout-arrow{ animation: pbCardIn .55s cubic-bezier(.22,1,.36,1) backwards .50s; opacity:1 }
   html[data-export="1"] #cs-pbfirst .pb-head,
