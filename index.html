@@ -8639,24 +8639,21 @@ window.cs1m7Reverse = function() {
   /* Tap hint pulses subtly on the front face to invite the flip */
   #cs-pbfirst .pb-flip-hint{animation:pbHintPulse 2.4s ease-in-out infinite}
   @keyframes pbHintPulse{0%,100%{opacity:.55}50%{opacity:1}}
-  /* ── Intro cascade ── */
-  #cs-pbfirst .pb-head, #cs-pbfirst .pb-card, #cs-pbfirst .pb-callout, #cs-pbfirst .pb-callout-arrow {opacity:0;transform:translateY(10px);will-change:opacity,transform;transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1)}
-  #cs-pbfirst.casey-entered .pb-head,
-  #cs-pbfirst.casey-entered .pb-card,
-  #cs-pbfirst.casey-entered .pb-callout,
-  #cs-pbfirst.casey-entered .pb-callout-arrow{opacity:1;transform:translateY(0)}
-  #cs-pbfirst.casey-entered .pb-head{transition-delay:0s}
-  #cs-pbfirst.casey-entered .pb-c1{transition-delay:.30s}
-  #cs-pbfirst.casey-entered .pb-callout{transition-delay:.45s}
-  #cs-pbfirst.casey-entered .pb-callout-arrow{transition-delay:.45s}
-  #cs-pbfirst.casey-entered .pb-c2{transition-delay:.42s}
-  #cs-pbfirst.casey-entered .pb-c3{transition-delay:.54s}
-  #cs-pbfirst.casey-entered .pb-c4{transition-delay:.66s}
-  #cs-pbfirst.casey-entered .pb-c5{transition-delay:.78s}
+  /* ── Intro cascade · [Dave 2026-05-14] converted from transition-based to @keyframes so the L→R card sweep reliably re-fires every time the slide becomes active (transitions don't always re-trigger on re-entry). Cards 1→5 stagger 130ms apart with a slight upward slide-in. ── */
+  #cs-pbfirst .pb-head, #cs-pbfirst .pb-card, #cs-pbfirst .pb-callout, #cs-pbfirst .pb-callout-arrow {opacity:0;will-change:opacity,transform}
+  @keyframes pbCardIn { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform: translateY(0); } }
+  #cs-pbfirst.casey-entered .pb-head{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards 0s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c1{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .30s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c2{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .43s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c3{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .56s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c4{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .69s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c5{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .82s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-callout{ animation: pbCardIn .55s cubic-bezier(.22,1,.36,1) backwards .50s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-callout-arrow{ animation: pbCardIn .55s cubic-bezier(.22,1,.36,1) backwards .50s; opacity:1 }
   html[data-export="1"] #cs-pbfirst .pb-head,
   html[data-export="1"] #cs-pbfirst .pb-card,
   html[data-export="1"] #cs-pbfirst .pb-callout,
-  html[data-export="1"] #cs-pbfirst .pb-callout-arrow{opacity:1!important;transform:none!important;transition:none!important}
+  html[data-export="1"] #cs-pbfirst .pb-callout-arrow{opacity:1!important;transform:none!important;animation:none!important}
   /* Export mode — force flipped state so PDF captures the text content */
   html[data-export="1"] #cs-pbfirst .pb-flip-inner{transform:rotateY(180deg) !important;transition:none !important}
 </style>
@@ -13256,7 +13253,7 @@ window.cs1m7Reverse = function() {
             <div class="sc-head blue">
               <svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 21 C5 16.5 8 14 12 14 C16 14 19 16.5 19 21"/></svg>
             </div>
-            <div class="sc-bubble blue" style="max-width:none;white-space:nowrap">I&rsquo;m part of building <strong style="font-style:normal;font-weight:800">my community</strong></div>
+            <div class="sc-bubble blue" style="max-width:none;white-space:nowrap">I help build <strong style="font-style:normal;font-weight:800">NEPC</strong></div>
           </div>
           <div class="sc-col-eye-row">
             <div class="sc-col-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20 C3 16 5 14 9 14 C13 14 15 16 15 20"/><path d="M14 19 C14 16.5 15.5 15 17 15 C19 15 21 16.5 21 19"/></svg></div>
