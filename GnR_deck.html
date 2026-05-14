@@ -6581,6 +6581,155 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-frontier .fr-curve-path{stroke-dashoffset:0 !important;transition:none !important}
   html[data-export="1"] #cs-frontier .fr-era-dot{opacity:1 !important}
 </style>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-magcover — RED-DOT ALT at slot 1 [Dave 2026-05-14]
+     Magazine-cover composition inspired by Dave's 4 reference screenshots:
+       (1) "A fulfilling life runs on giving and receiving connection."
+       (2) "Science agrees: real connection is the #1 predictor..."
+       (3) "Science proves we are built to give and receive connection."
+       (4) Split-screen "Stuck on Screen" vs "Life Runs on Human Connection"
+     The references all leaned on photography; this deck doesn't use photos
+     anywhere, so the right-side image is replaced with a line-art SVG of two
+     hands reaching toward each other (Sistine-Chapel echo) rendered in the
+     deck's gold/blue/red palette + a soft radial warm glow. That keeps the
+     editorial-poster feel without breaking deck consistency.
+     Hero leans into the screenshot-1 headline because it ties directly to the
+     deck's existing mission line ("for all our lives to run on autonomous,
+     abundant connection"). Eyebrow uses screenshot-1's "HARDWIRED FOR
+     CONNECTION" tag at bottom-left, magazine-style.
+     Sits as the leftmost RED dot under slot 1 (primary = cs-frontier).
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-magcover { background:radial-gradient(ellipse at 30% 50%, #fbf7ef 0%, #f3ead8 70%, #ebd9b7 100%) !important; }
+  #cs-magcover .mc-stage{position:relative;width:100%;min-height:100%;display:grid;grid-template-columns:1.18fr .82fr;align-items:center;gap:36px;padding:80px 60px 60px}
+  /* LEFT — editorial column */
+  #cs-magcover .mc-left{display:flex;flex-direction:column;justify-content:space-between;min-height:min(72vh,640px);gap:36px}
+  #cs-magcover .mc-hero{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4.6vw,4.8rem);font-weight:850;line-height:1.04;letter-spacing:-0.028em;color:#1a1612;max-width:920px}
+  #cs-magcover .mc-hero em{font-style:italic;font-weight:850;color:#b8954a}
+  #cs-magcover .mc-hero .ink{color:#1a1612}
+  /* Eyebrow at bottom-left (magazine kicker placement) */
+  #cs-magcover .mc-eye{font-family:'Manrope',sans-serif;font-size:clamp(.68rem,.85vw,.82rem);font-weight:800;letter-spacing:.46em;text-transform:uppercase;color:rgba(26,22,18,0.62);display:flex;align-items:center;gap:14px}
+  #cs-magcover .mc-eye::before{content:"";display:inline-block;width:34px;height:1.4px;background:rgba(26,22,18,0.55)}
+  /* RIGHT — hero visual */
+  #cs-magcover .mc-right{position:relative;height:100%;display:flex;align-items:center;justify-content:center;min-height:min(72vh,640px)}
+  #cs-magcover .mc-vis{width:100%;max-width:520px;aspect-ratio:1/1;position:relative}
+  #cs-magcover .mc-vis svg{width:100%;height:100%;display:block}
+  /* TIMESTAMP-style microcopy bottom-right (subtle nod to ref 4's "2:47 AM" — but tonally fitting: a publication date or an issue line) */
+  #cs-magcover .mc-issue{position:absolute;bottom:42px;right:60px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.42);line-height:1.6;text-align:right}
+  #cs-magcover .mc-issue strong{color:#b8954a;font-weight:800}
+  /* Intro animation — hero fades up, then visual draws in, then eyebrow */
+  #cs-magcover .mc-hero,#cs-magcover .mc-vis,#cs-magcover .mc-eye,#cs-magcover .mc-issue{opacity:0;transform:translateY(10px);will-change:opacity,transform}
+  @keyframes mcIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes mcHandDraw{from{stroke-dashoffset:520}to{stroke-dashoffset:0}}
+  @keyframes mcSpark{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
+  #cs-magcover.casey-entered .mc-hero{animation:mcIn .8s cubic-bezier(.22,1,.36,1) backwards .1s;opacity:1}
+  #cs-magcover.casey-entered .mc-vis{animation:mcIn .75s cubic-bezier(.22,1,.36,1) backwards .45s;opacity:1}
+  #cs-magcover.casey-entered .mc-eye{animation:mcIn .65s cubic-bezier(.22,1,.36,1) backwards .85s;opacity:1}
+  #cs-magcover.casey-entered .mc-issue{animation:mcIn .55s cubic-bezier(.22,1,.36,1) backwards 1.05s;opacity:1}
+  #cs-magcover.casey-entered .mc-hand-l,
+  #cs-magcover.casey-entered .mc-hand-r{stroke-dasharray:520;animation:mcHandDraw 1.6s cubic-bezier(.22,1,.36,1) backwards .55s}
+  #cs-magcover.casey-entered .mc-spark{animation:mcSpark 2.6s ease-in-out 1.8s infinite}
+  html[data-export="1"] #cs-magcover .mc-hero,
+  html[data-export="1"] #cs-magcover .mc-vis,
+  html[data-export="1"] #cs-magcover .mc-eye,
+  html[data-export="1"] #cs-magcover .mc-issue{opacity:1!important;transform:none!important;animation:none!important}
+  html[data-export="1"] #cs-magcover .mc-hand-l,
+  html[data-export="1"] #cs-magcover .mc-hand-r{stroke-dashoffset:0!important;animation:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-magcover">
+  <section class="mc-stage">
+
+    <!-- LEFT · headline column (editorial / magazine cover) -->
+    <div class="mc-left">
+      <h1 class="mc-hero">A <em>fulfilling life</em><br>runs on <span class="ink">giving</span> and <span class="ink">receiving</span><br>connection.</h1>
+      <div class="mc-eye">Hardwired for connection</div>
+    </div>
+
+    <!-- RIGHT · hero visual — two hands reaching, line-art rendition in brand palette -->
+    <div class="mc-right">
+      <div class="mc-vis">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Two hands reaching toward each other across a soft glow">
+          <defs>
+            <radialGradient id="mcGlowGrad" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="rgba(255,235,170,0.55)"/>
+              <stop offset="55%" stop-color="rgba(212,168,83,0.22)"/>
+              <stop offset="100%" stop-color="rgba(184,149,74,0)"/>
+            </radialGradient>
+            <linearGradient id="mcArcGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stop-color="#5B8FD4"/>
+              <stop offset="50%" stop-color="#b8954a"/>
+              <stop offset="100%" stop-color="#c8462c"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Background warm glow -->
+          <circle cx="200" cy="200" r="190" fill="url(#mcGlowGrad)"/>
+          <!-- Outer dashed ring (echoes deck's a7m1 orb dashed-border motif) -->
+          <circle cx="200" cy="200" r="172" fill="none" stroke="rgba(184,149,74,0.32)" stroke-width="1.1" stroke-dasharray="3 5"/>
+
+          <!-- Connection arc (the existing GnR brand mark idea, scaled large): blue anchor LEFT, gold arc, red anchor RIGHT -->
+          <path d="M 80 245 Q 200 130 320 245" stroke="url(#mcArcGrad)" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="4 4" opacity="0.55"/>
+
+          <!-- LEFT HAND — reaching from lower-left toward upper-right -->
+          <g class="mc-hand-l" stroke="#1a1612" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- forearm cuff suggestion -->
+            <path d="M 48 322 Q 70 308 92 296"/>
+            <path d="M 56 332 Q 78 320 104 308"/>
+            <!-- back of hand outline -->
+            <path d="M 92 296 Q 118 282 144 270 Q 168 260 188 254"/>
+            <!-- thumb -->
+            <path d="M 144 270 Q 155 252 162 232 Q 165 220 158 218 Q 150 218 144 232 Q 138 246 138 258"/>
+            <!-- index finger (reaching tip — gold accent on fingertip) -->
+            <path d="M 188 254 Q 198 240 202 226"/>
+            <!-- middle finger -->
+            <path d="M 178 260 Q 186 246 188 232"/>
+            <!-- ring finger -->
+            <path d="M 168 264 Q 174 252 174 240"/>
+            <!-- pinky -->
+            <path d="M 158 268 Q 162 258 162 248"/>
+          </g>
+          <!-- LEFT fingertip glow (blue anchor) -->
+          <circle class="mc-spark" cx="202" cy="226" r="5.5" fill="#5B8FD4"/>
+          <circle cx="202" cy="226" r="9" fill="none" stroke="#5B8FD4" stroke-width="1" opacity="0.45"/>
+
+          <!-- RIGHT HAND — reaching from upper-right toward lower-left, mirror posture -->
+          <g class="mc-hand-r" stroke="#1a1612" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- forearm cuff -->
+            <path d="M 352 78 Q 330 92 308 104"/>
+            <path d="M 344 68 Q 322 80 296 92"/>
+            <!-- back of hand -->
+            <path d="M 308 104 Q 282 118 256 130 Q 232 140 212 146"/>
+            <!-- thumb -->
+            <path d="M 256 130 Q 245 148 238 168 Q 235 180 242 182 Q 250 182 256 168 Q 262 154 262 142"/>
+            <!-- index finger (reaching tip — red accent at fingertip) -->
+            <path d="M 212 146 Q 202 160 198 174"/>
+            <!-- middle finger -->
+            <path d="M 222 140 Q 214 154 212 168"/>
+            <!-- ring finger -->
+            <path d="M 232 136 Q 226 148 226 160"/>
+            <!-- pinky -->
+            <path d="M 242 132 Q 238 142 238 152"/>
+          </g>
+          <!-- RIGHT fingertip glow (red anchor) -->
+          <circle class="mc-spark" cx="198" cy="174" r="5.5" fill="#c8462c"/>
+          <circle cx="198" cy="174" r="9" fill="none" stroke="#c8462c" stroke-width="1" opacity="0.45"/>
+
+          <!-- Tiny gold "n" between the fingertips — the missing piece, the connection itself -->
+          <text x="200" y="208" font-family="Playfair Display, serif" font-size="22" font-style="italic" font-weight="600" fill="#b8954a" text-anchor="middle">n</text>
+        </svg>
+      </div>
+
+      <!-- Issue line — magazine-cover micro-touch -->
+      <div class="mc-issue">
+        Issue 01<br>
+        <strong>Give n Receive</strong>
+      </div>
+    </div>
+
+  </section>
+</div>
+
 <div class="casey-slide ds-focus active casey-entered" id="cs-frontier" style="background:radial-gradient(ellipse at 50% 0%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important;">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">What are we wired for?</div>
   <section class="fr-stage">
@@ -18382,8 +18531,9 @@ const SLIDE_ALTS = {
   //   cs-1m8 = NEW [Dave 2026-05-09 EVENING] · adds a HUMAN-TRUTH opening beat before the product reveal. Per Dave: 'we feel our best when we're generous to others... incredible truth that we feel our best when we have an open heart, being generous, giving'. Stage 1 reveals 'We feel our best when we give. Science says so.' before stage 2 splits the wordmark. RED DOT review — easy to revert by removing from this array (cs-1m5 stays primary).
   // [Dave 2026-05-10 PM] cs-1m5 added as gold-alt (was main flow primary; demoted when cs-1m9 took over slot 1). cs-1m8 retained as red-dot review candidate.
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier merged into one slot-1 slide. cs-intro6 retained as red-dot alt at slot 1 so Dave can A/B vs the merged version. All slots past 1 shift -1.
-  // Slot 1 (cs-frontier — merged opener) has cs-intro6 as red-dot review alt.
-  1: ['cs-intro6'],
+  // Slot 1 (cs-frontier — merged opener) has cs-intro6 + cs-magcover as red-dot review alts.
+  // [Dave 2026-05-14] cs-magcover added — magazine-cover editorial layout (big serif headline + reaching-hands line-art) inspired by 4 reference screenshots Dave shared.
+  1: ['cs-magcover', 'cs-intro6'],
   // Slot 2 (cs-1m8 title) has no alts.
   2: [],
   // Slot 3 alts (cs-a7m1 primary; was slot 4) — keys shifted 4 → 3.
