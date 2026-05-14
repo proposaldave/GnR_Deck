@@ -8830,10 +8830,10 @@ window.cs1m7Reverse = function() {
   #cs-pbfirst .pb-head, #cs-pbfirst .pb-card, #cs-pbfirst .pb-callout, #cs-pbfirst .pb-callout-arrow {opacity:0;will-change:opacity,transform}
   @keyframes pbCardIn { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform: translateY(0); } }
   #cs-pbfirst.casey-entered .pb-head{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards 0s; opacity:1 }
-  /* [Dave 2026-05-14 PM] Cascade delays remapped to match the current DOM order (pb-c5 was promoted to first position). Order in layout: pb-c5 → pb-c1 → pb-c2 → pb-c3 → pb-c4. Purple card fires before red as Dave requested. */
+  /* [Dave 2026-05-14 PM v4] Cascade delays remapped AGAIN after Dave swapped Cards 2 ↔ 3 DOM positions. New layout order: pb-c5 → pb-c2 → pb-c1 → pb-c3 → pb-c4. Delays for pb-c2 and pb-c1 swapped (pb-c2 now fires .43s, pb-c1 now fires .56s) so L→R cascade follows visual position, not class name. */
   #cs-pbfirst.casey-entered .pb-c5{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .30s; opacity:1 }
-  #cs-pbfirst.casey-entered .pb-c1{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .43s; opacity:1 }
-  #cs-pbfirst.casey-entered .pb-c2{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .56s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c2{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .43s; opacity:1 }
+  #cs-pbfirst.casey-entered .pb-c1{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .56s; opacity:1 }
   #cs-pbfirst.casey-entered .pb-c3{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .69s; opacity:1 }
   #cs-pbfirst.casey-entered .pb-c4{ animation: pbCardIn .6s cubic-bezier(.22,1,.36,1) backwards .82s; opacity:1 }
   #cs-pbfirst.casey-entered .pb-callout{ animation: pbCardIn .55s cubic-bezier(.22,1,.36,1) backwards .50s; opacity:1 }
@@ -8868,26 +8868,8 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <!-- Card 2 (was Card 1) — RED · Coordination stack stuck in 2005 -->
-        <div class="pb-card pb-c1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
-          <div class="pb-flip-inner">
-            <div class="pb-face pb-front">
-              <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
-              <!-- [Dave 2026-05-14] 'Max coordination pain. Desperately needed.' front-face title DELETED per Dave. Card front is now icon-only again, matching the other 4 cards. -->
-            </div>
-            <div class="pb-face pb-back">
-              <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
-              <div class="pb-title">Coordination stack<br>stuck in 2005</div>
-              <div class="pb-pills">
-                <div class="pb-pill">industry stuck in <em>ratings, ego</em></div>
-                <div class="pb-pill">doesn&rsquo;t measure <em>human connection</em></div>
-                <div class="pb-pill">club calendar events still <em>manual</em></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 (was Card 2) — GOLD · Fastest-growing sport -->
+        <!-- [Dave 2026-05-14 PM v4] SWAPPED per Dave — Fastest-growing now sits at DOM position 2, Coordination stack at DOM position 3. Class names (pb-c1=red, pb-c2=gold) kept stable so colors/icons follow the card; animation delays for pb-c1 and pb-c2 swapped in CSS so L→R cascade still fires in visual order. -->
+        <!-- Card 2 (now in position 2) — GOLD · Fastest-growing sport -->
         <div class="pb-card pb-c2" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
           <div class="pb-flip-inner">
             <div class="pb-face pb-front">
@@ -8897,6 +8879,24 @@ window.cs1m7Reverse = function() {
               <div class="pb-ico"><svg viewBox="0 0 24 24"><polyline points="4 18, 9 12, 13 15, 20 6"/><polyline points="15 6, 20 6, 20 11"/></svg></div>
               <div class="pb-title">Fastest-growing</div>
               <div class="pb-sub">sport in U.S. history.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 (now in position 3) — RED · Coordination stack stuck in 2005 -->
+        <div class="pb-card pb-c1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="pb-flip-inner">
+            <div class="pb-face pb-front">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
+            </div>
+            <div class="pb-face pb-back">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
+              <div class="pb-title">Coordination stack<br>stuck in 2005</div>
+              <div class="pb-pills">
+                <div class="pb-pill">industry stuck in <em>ratings, ego</em></div>
+                <div class="pb-pill">doesn&rsquo;t measure <em>human connection</em></div>
+                <div class="pb-pill">club calendar events still <em>manual</em></div>
+              </div>
             </div>
           </div>
         </div>
@@ -10704,10 +10704,11 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-step .dot { width:13px;height:13px;border-radius:50%;background:#fbf7ef;border:2.2px solid #b8954a;box-shadow:0 0 0 4px rgba(184,149,74,0.08);position:relative;z-index:2; }
   #cs-18-vd4 .v5-step .txt { font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:600;color:rgba(26,22,18,0.78);line-height:1.3;margin-top:14px;max-width:170px; }
   /* NOW emphasis on 2025 CTO Steve joins */
-  #cs-18-vd4 .v5-step.now .yr { color:#168651;font-size:.92rem;font-weight:900; }
+  /* [Dave 2026-05-14 PM v3] Per Dave: all timeline text BLACK (was green for the .now state). Dot stays green so the 'we are here' marker still pops, but yr/txt/sub all switch to ink. */
+  #cs-18-vd4 .v5-step.now .yr { color:#1a1612;font-size:.92rem;font-weight:900; }
   #cs-18-vd4 .v5-step.now .dot { width:18px;height:18px;background:#168651;border-color:#168651;box-shadow:0 0 0 6px rgba(22,134,81,0.14), 0 0 18px rgba(22,134,81,0.45);animation:v5NowPulse 2.4s ease-in-out infinite; }
-  #cs-18-vd4 .v5-step.now .txt { color:#168651;font-weight:800; }
-  #cs-18-vd4 .v5-step.now .sub { font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;color:#168651;margin-top:4px;letter-spacing:.04em; }
+  #cs-18-vd4 .v5-step.now .txt { color:#1a1612;font-weight:800; }
+  #cs-18-vd4 .v5-step.now .sub { font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;color:#1a1612;margin-top:4px;letter-spacing:.04em; }
   #cs-18-vd4 .v5-step.now .now-tag { display:inline-block;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase;color:#168651;background:rgba(22,134,81,0.10);border:1px solid rgba(22,134,81,0.40);border-radius:99px;padding:2px 8px;margin-top:6px; }
   @keyframes v5NowPulse { 0%,100% { box-shadow:0 0 0 6px rgba(22,134,81,0.14), 0 0 18px rgba(22,134,81,0.45); } 50% { box-shadow:0 0 0 10px rgba(22,134,81,0.10), 0 0 26px rgba(22,134,81,0.62); } }
   html[data-export="1"] #cs-18-vd4 .v5-step.now .dot { animation:none !important; }
@@ -10878,7 +10879,7 @@ window.cs1m7Reverse = function() {
               </div>
               <div class="v5-num">01</div>
               <div class="v5-eye">Clarity</div>
-              <div class="v5-body"><em>Next frontier of the technology that connects us</em></div>
+              <div class="v5-body"><em>Next frontier of the technology<br>that connects us</em></div>
               <div class="v5-meta">Six years iterating path of least resistance</div>
             </div>
           </div>
@@ -10947,7 +10948,7 @@ window.cs1m7Reverse = function() {
         <div class="v5-step"><div class="yr">2020</div><div class="dot"></div><div class="txt">Pickleball computer vision</div></div>
         <div class="v5-step"><div class="yr">2021</div><div class="dot"></div><div class="txt">DUPR acquisition declined</div></div>
         <div class="v5-step"><div class="yr">2022</div><div class="dot"></div><div class="txt">Opened NEPC</div></div>
-        <div class="v5-step"><div class="yr">2024</div><div class="dot"></div><div class="txt"><strong style="font-weight:800;color:#c8462c">Pivot:</strong> invitation matchmaking</div></div>
+        <div class="v5-step"><div class="yr">2024</div><div class="dot"></div><div class="txt"><strong style="font-weight:800;color:#1a1612">Pivot:</strong> invitation matchmaking</div></div>
         <div class="v5-step now"><div class="yr">2025</div><div class="dot"></div><div class="txt">CTO Steve joins</div><div class="sub">60 GnR invitation courts / week</div></div>
       </div>
     </div>
@@ -16591,6 +16592,11 @@ window.cs1m7Reverse = function() {
   #cs-fw1[data-stage="5"] .fw1-anim { opacity:1; }
   html[data-export="1"] #cs-fw1 .fw1-anim { opacity:1 !important; transition:none !important; }
 
+  /* [Dave 2026-05-14 PM v3] Engine entry animation per Dave — currently the dial just opacity-fades in at stage 5 with no pop. Adding a scale + slight counter-rotation so the dial 'spins into place' (settles with a soft overshoot). transform-box:fill-box + transform-origin:center keeps origin at the engine bbox center, which equals the dial's visual center. Only applied to .fw1-engine (NOT .fw1-anim broadly) because other animated groups have their own translate() that a class-wide transform would clobber. */
+  #cs-fw1 .fw1-engine { transform-box: fill-box; transform-origin: center; transform: scale(0.72) rotate(-14deg); transition: opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.95s cubic-bezier(.34,1.36,.64,1); }
+  #cs-fw1[data-stage="5"] .fw1-engine { transform: scale(1) rotate(0deg); }
+  html[data-export="1"] #cs-fw1 .fw1-engine { transform: scale(1) rotate(0deg) !important; transition: none !important; }
+
   /* Click hint */
   #cs-fw1 .fw1-hint {
     margin: 12px auto 0;
@@ -16719,16 +16725,16 @@ window.cs1m7Reverse = function() {
         <circle cx="4" cy="4" r="1.9" fill="#2a8a4f"/>
       </g>
     </g>
-    <!-- LEFT: Compounding Community Value (coral) — [Dave 2026-05-14] rect widened 276→300 + eyebrow restored to 13/2.2 to match the other 3 nodes. [Dave 2026-05-14 PM] Translate shifted 100→70 so the oval's right edge doesn't touch the center engine circle (was only 2px clearance — now ~32px). -->
-    <g class="fw1-anim fw1-n4" transform="translate(70, 300)">
+    <!-- LEFT: Compounding Community Value (coral) — [Dave 2026-05-14] rect widened 276→300 + eyebrow restored to 13/2.2 to match the other 3 nodes. [Dave 2026-05-14 PM] Translate shifted 100→70 so the oval's right edge doesn't touch the center engine circle. [Dave 2026-05-14 PM v3] Translate shifted 70→92 + growth-arrow badge moved from -184 → -168 + badge radius 14 → 12 so the badge no longer overlaps the COLDSTART cylinder (was bleeding into the cylinder's right edge — now ~18px clear). Rect right edge: 92+150=242, engine core left edge: 252 (10px clearance). -->
+    <g class="fw1-anim fw1-n4" transform="translate(92, 300)">
       <rect x="-150" y="-30" width="300" height="60" rx="30" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.7"/>
       <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#c8462c">COMPOUNDING COMMUNITY VALUE</text>
       <text x="0" y="15" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">engagement · player growth · trusted reciprocity</text>
       <!-- Upward growth-curve badge to the LEFT of the rect -->
-      <g transform="translate(-184, 0)">
-        <circle cx="0" cy="0" r="14" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.5"/>
-        <path d="M -8 6 L -3 1 L 2 4 L 8 -5" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 -5 L 8 -5 L 8 0" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <g transform="translate(-168, 0)">
+        <circle cx="0" cy="0" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.5"/>
+        <path d="M -7 5 L -2.5 1 L 1.5 3.5 L 7 -4.5" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 2.5 -4.5 L 7 -4.5 L 7 0" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
     </g>
 
