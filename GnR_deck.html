@@ -6349,7 +6349,7 @@ window.cs1m5Reverse = function() {
     #cs-intro6 .i6-col + .i6-col::before{display:none}
   }
 </style>
-<div class="casey-slide ds-focus active casey-entered" id="cs-intro6">
+<div class="casey-slide ds-focus" id="cs-intro6" style="display:none">
   <section class="i6-stage">
 
     <!-- LEFT: editorial text pane -->
@@ -6555,12 +6555,13 @@ window.cs1m5Reverse = function() {
   #cs-frontier .fr-is-claim{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.05rem,1.45vw,1.35rem);font-weight:800;color:#1a1612;line-height:1.18;letter-spacing:-0.01em}
   #cs-frontier .fr-is-wedge{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(.85rem,1.05vw,1rem);color:#c8462c;font-weight:600}
   /* Entrance cascade */
-  #cs-frontier .fr-eye, #cs-frontier .fr-hero, #cs-frontier .fr-sub, #cs-frontier .fr-curve, #cs-frontier .fr-pos{opacity:0;transform:translateY(10px);transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1)}
+  #cs-frontier .fr-eye, #cs-frontier .fr-hero, #cs-frontier .fr-sub, #cs-frontier .fr-curve, #cs-frontier .fr-evidence, #cs-frontier .fr-pos{opacity:0;transform:translateY(10px);transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1)}
   #cs-frontier.casey-entered .fr-eye{opacity:1;transform:none;transition-delay:.05s}
   #cs-frontier.casey-entered .fr-hero{opacity:1;transform:none;transition-delay:.20s}
   #cs-frontier.casey-entered .fr-sub{opacity:1;transform:none;transition-delay:.35s}
   #cs-frontier.casey-entered .fr-curve{opacity:1;transform:none;transition-delay:.50s}
-  #cs-frontier.casey-entered .fr-pos{opacity:1;transform:none;transition-delay:.85s}
+  #cs-frontier.casey-entered .fr-evidence{opacity:1;transform:none;transition-delay:.80s}
+  #cs-frontier.casey-entered .fr-pos{opacity:1;transform:none;transition-delay:1.0s}
   /* Parabolic curve animation — stroke draws on entry */
   #cs-frontier .fr-curve-path{stroke-dasharray:2000;stroke-dashoffset:2000;transition:stroke-dashoffset 1.6s cubic-bezier(.22,1,.36,1) .6s}
   #cs-frontier.casey-entered .fr-curve-path{stroke-dashoffset:0}
@@ -6575,18 +6576,18 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-frontier .fr-hero,
   html[data-export="1"] #cs-frontier .fr-sub,
   html[data-export="1"] #cs-frontier .fr-curve,
+  html[data-export="1"] #cs-frontier .fr-evidence,
   html[data-export="1"] #cs-frontier .fr-pos{opacity:1 !important;transform:none !important;transition:none !important}
   html[data-export="1"] #cs-frontier .fr-curve-path{stroke-dashoffset:0 !important;transition:none !important}
   html[data-export="1"] #cs-frontier .fr-era-dot{opacity:1 !important}
 </style>
-<div class="casey-slide ds-focus" id="cs-frontier" style="background:radial-gradient(ellipse at 50% 0%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important;">
+<div class="casey-slide ds-focus active casey-entered" id="cs-frontier" style="background:radial-gradient(ellipse at 50% 0%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important;">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">The New Frontier</div>
   <section class="fr-stage">
 
-    <!-- [Dave 2026-05-14] 'Loneliness Epidemic · Demand for Connection · Age of AI' band DELETED — eyebrow at top-left + hero now carry the framing. -->
-
-    <h1 class="fr-hero">The unsolved category: <em>real-world social networking.</em></h1>
-    <div class="fr-sub">Demand for real human connection is going parabolic.</div>
+    <!-- [Dave 2026-05-14 MERGE] Hero rewritten to fuse cs-intro6's science truth + cs-frontier's parabolic/category positioning into a single editorial frame. Order of operations: science fact → demand reality → category claim. -->
+    <h1 class="fr-hero">Real human connection: the <em>#1 predictor</em> of a fulfilling life.</h1>
+    <div class="fr-sub">And demand for it is going <strong style="font-style:normal;font-weight:800;color:#c8462c">parabolic.</strong></div>
 
     <!-- Parabolic disconnection curve -->
     <div class="fr-curve">
@@ -6647,6 +6648,19 @@ window.cs1m5Reverse = function() {
 
         <!-- [Dave 2026-05-14] 'going parabolic' annotation DELETED — the curve speaks for itself. -->
       </svg>
+    </div>
+
+    <!-- [Dave 2026-05-14 MERGE] Science evidence strip — grounds the '#1 predictor' claim in 4 independent fields. Sits between the parabolic curve (the demand argument) and the positioning band (the category answer). -->
+    <div class="fr-evidence" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 18px;width:min(1340px,98%);font-family:'Manrope',sans-serif;font-size:clamp(.55rem,.72vw,.66rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,149,74,0.95)">
+      <span style="font-weight:800;color:#b8954a">4 sciences agree</span>
+      <span style="color:rgba(184,149,74,0.45)">·</span>
+      <span style="color:rgba(26,22,18,0.62)">Neuroscience</span>
+      <span style="color:rgba(184,149,74,0.45)">·</span>
+      <span style="color:rgba(26,22,18,0.62)">Public Health</span>
+      <span style="color:rgba(184,149,74,0.45)">·</span>
+      <span style="color:rgba(26,22,18,0.62)">Epidemiology</span>
+      <span style="color:rgba(184,149,74,0.45)">·</span>
+      <span style="color:rgba(26,22,18,0.62)">Longitudinal</span>
     </div>
 
     <!-- Positioning band: NOT X · IS Y · wedge -->
@@ -17968,10 +17982,9 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-11 LATE] cs-intro1 INSERTED at slot 1 as new PRIMARY — 4 intro variants built (cs-intro1/2/3/4) for the '#1 predictor of fulfilling life is OPEN giving + receiving' science-proven premise. cs-1m8 (title slide) demoted to slot 2. All other slots +1. cs-intro2/3/4 are orange-dot review alts so Dave can pick the winner.
   // [Dave 2026-05-12 LATEST] cs-intro5 MOVED to first appendix slot per Dave: 'current slide 1, move it to be the first appendix slide'.
   // [Dave 2026-05-14] cs-intro6 INSERTED as new slot 1 per Dave: 'take the attached image and figure out how to leverage it to create a new slide just before the title slide for our new slide 1'. Cinematic science-proof opener (4-field convergence) lands BEFORE the wordmark title slide. All other main-flow slots shift +1.
-  'cs-intro6',  //  1 NEW PRIMARY · Science-proof opener · #1 predictor + 4-field band (Neuroscience · Public Health · Epidemiology · Longitudinal)
-  // [Dave 2026-05-14] cs-frontier INSERTED at slot 2 per Dave: 'try creating a new powerful visual slide to go as a new slide #2 ... loneliness epidemic, demand for connection going parabolic, age of AI ... real-world social networking, starting in pickleball'. Category-carving beat: parabolic loneliness curve + 'NOT dating · NOT close-friends · NOT legacy social → Real-world social networking'.
-  'cs-frontier', //  2 NEW · The unsolved category: real-world social networking · parabolic loneliness curve + positioning band + pickleball wedge
-  'cs-1m8',   //  3 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
+  // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
+  'cs-frontier', //  1 MERGED PRIMARY · Real human connection: the #1 predictor of a fulfilling life. Demand parabolic. The category = real-world social networking. Starts in pickleball.
+  'cs-1m8',   //  2 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
   'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
@@ -18098,21 +18111,19 @@ const SLIDE_ALTS = {
   //   cs-1m7 = split-wordmark animation alt [DELETED 2026-05-09 per Dave]
   //   cs-1m8 = NEW [Dave 2026-05-09 EVENING] · adds a HUMAN-TRUTH opening beat before the product reveal. Per Dave: 'we feel our best when we're generous to others... incredible truth that we feel our best when we have an open heart, being generous, giving'. Stage 1 reveals 'We feel our best when we give. Science says so.' before stage 2 splits the wordmark. RED DOT review — easy to revert by removing from this array (cs-1m5 stays primary).
   // [Dave 2026-05-10 PM] cs-1m5 added as gold-alt (was main flow primary; demoted when cs-1m9 took over slot 1). cs-1m8 retained as red-dot review candidate.
-  // [Dave 2026-05-14] cs-frontier ADDED at slot 2 → all main-flow alt keys from 3+ shifted +1 (every slot past slot 2 bumped by 1).
-  // Slot 1 (cs-intro6 — science-proof opener) has no alts.
-  1: [],
-  // Slot 2 (cs-frontier — new category-carving slide) has no alts.
+  // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier merged into one slot-1 slide. cs-intro6 retained as red-dot alt at slot 1 so Dave can A/B vs the merged version. All slots past 1 shift -1.
+  // Slot 1 (cs-frontier — merged opener) has cs-intro6 as red-dot review alt.
+  1: ['cs-intro6'],
+  // Slot 2 (cs-1m8 title) has no alts.
   2: [],
-  // Slot 3 (cs-1m8 title) has no alts.
-  3: [],
-  // Slot 4 alts (cs-a7m1 primary; was slot 3) — keys shifted 3 → 4.
-  4: ['cs-1'],
-  // Slot 6 alts (cs-2c; was slot 5).
-  6: [],
-  // Slot 13 (cs-19; was slot 12).
-  13: [],
-  // cs-samecourt alts — cs-merge3 drift alt. (Was slot 13; now slot 14.)
-  14: ['cs-merge3'],
+  // Slot 3 alts (cs-a7m1 primary; was slot 4) — keys shifted 4 → 3.
+  3: ['cs-1'],
+  // Slot 5 alts (cs-2c; was slot 6).
+  5: [],
+  // Slot 12 (cs-19; was slot 13).
+  12: [],
+  // cs-samecourt alts — cs-merge3 drift alt. (Was slot 14; now slot 13.)
+  13: ['cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -18130,13 +18141,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-11 LATE] Wheelhouse alts. Key shifted 13 → 14 after cs-intro1 inserted at slot 1.
   // [Dave 2026-05-12] cs-18-vd4 promoted to PRIMARY → removed from alts. cs-18 (former primary), cs-lab, cs-18-vd1, cs-18-vd3 are all RED-DOT alts per Dave: 'put the dots to the left of it as red text'.
   // [Dave 2026-05-12 LATEST] cs-18-vd3 DELETED per Dave: 'delete this' (the 'Two strengths' alt). cs-18-vd1 retained as red-dot alt.
-  // [Dave 2026-05-14] Wheelhouse alts now at slot 17 (cs-18-vd4 was 16, now 17 after cs-frontier inserted at slot 2).
-  17: ['cs-18-vd5', 'cs-18', 'cs-lab', 'cs-18-vd1'],
-  // Slot 19 (cs-wedge1; was 18).
-  19: [],
+  // [Dave 2026-05-14 MERGE] Wheelhouse alts now at slot 16 (cs-18-vd4 was 17; -1 after intro6 + frontier merged into one slot-1).
+  16: ['cs-18-vd5', 'cs-18', 'cs-lab', 'cs-18-vd1'],
+  // Slot 18 (cs-wedge1; was 19).
+  18: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference. [Dave 2026-05-11] Key shifted 20→19 after cs-a7 moved to appendix.
-  // Slot 21 (cs-16) — cs-16old alt. (Was 20.)
-  21: ['cs-16old'],
+  // Slot 20 (cs-16) — cs-16old alt. (Was 21; -1 after merge.)
+  20: ['cs-16old'],
   // [Dave 2026-05-12 LATEST] cs-prom-merge DELETED + cs-prom DELETED per Dave (consecutive 'delete this slide' on both). The promise content now lives inside cs-brand-V8 captions, so cs-prom and cs-prom-merge are both redundant.
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
