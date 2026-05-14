@@ -16469,8 +16469,9 @@ window.cs1m7Reverse = function() {
   #cs-mv6 .mv6-head em { font-style:italic; font-weight:850; color:#b8954a; }
   #cs-mv6 .mv6-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.45vw,1.3rem); font-style:italic; font-weight:500; color:rgba(26,22,18,0.72); max-width:1100px; line-height:1.4; }
   #cs-mv6 .mv6-sub strong { font-style:normal; font-weight:800; color:#b8954a; }
-  #cs-mv6 .mv6-canvas { width:100%; max-width:1520px; margin:6px auto 4px; }
-  #cs-mv6 .mv6-canvas svg { width:100%; height:auto; display:block; max-height:56vh; }
+  #cs-mv6 .mv6-canvas { width:100%; max-width:1520px; margin:6px auto 4px; position:relative; }
+  #cs-mv6 .mv6-canvas svg { width:100%; height:auto; display:block; max-height:56vh; position:relative; z-index:2; }
+  #cs-mv6 .mv6-humans-img { position:absolute; top:50%; right:-1.5%; width:min(54%, 830px); aspect-ratio:1792/1024; height:auto; object-fit:contain; object-position:center; transform:translateY(-50%); opacity:0; pointer-events:none; z-index:1; }
   #cs-mv6 .mv6-mission { margin-top:14px; max-width:1180px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.45rem,2.3vw,2.05rem); font-weight:600; line-height:1.18; letter-spacing:-0.018em; color:#1a1612; }
   #cs-mv6 .mv6-mission .mv6-mission-eye { font-family:'Manrope',sans-serif; font-size:0.5em; font-weight:800; letter-spacing:0.26em; text-transform:uppercase; color:#b8954a; padding-right:8px; vertical-align:0.18em; }
   #cs-mv6 .mv6-mission em { font-style:italic; font-weight:600; color:#b8954a; }
@@ -16480,7 +16481,7 @@ window.cs1m7Reverse = function() {
   #cs-mv6 .mv6-block-tech { opacity:0; transform:translateY(14px); transform-box:fill-box; transform-origin:center; }
   #cs-mv6 .mv6-block-gnr { opacity:0; transform:scale(0.82); transform-box:fill-box; transform-origin:center; }
   #cs-mv6 .mv6-beam { opacity:0; stroke-dasharray:1400; stroke-dashoffset:1400; }
-  #cs-mv6 .mv6-humans { opacity:0; }
+  #cs-mv6 .mv6-humans-img { opacity:0; }
   @keyframes mv6FadeUp { to { opacity:1; transform:translateY(0); } }
   @keyframes mv6FadeIn { to { opacity:1; } }
   @keyframes mv6BlockPop { 0% { opacity:0; transform:scale(0.82); } 60% { opacity:1; transform:scale(1.06); } 100% { opacity:1; transform:scale(1); } }
@@ -16495,7 +16496,7 @@ window.cs1m7Reverse = function() {
   #cs-mv6.casey-entered .mv6-block-tech[data-i="5"] { animation: mv6FadeUp .55s cubic-bezier(.22,1,.36,1) 1.07s both; }
   #cs-mv6.casey-entered .mv6-block-gnr { animation: mv6BlockPop 1s cubic-bezier(.34,1.56,.64,1) 1.35s both; }
   #cs-mv6.casey-entered .mv6-beam { animation: mv6BeamDraw 1.3s cubic-bezier(.22,1,.36,1) 1.75s both, mv6FadeIn .3s ease 1.75s both; }
-  #cs-mv6.casey-entered .mv6-humans { animation: mv6FadeIn 1s ease 2.15s both; }
+  #cs-mv6.casey-entered .mv6-humans-img { animation: mv6FadeIn 1s ease 2.15s both; }
   #cs-mv6.casey-entered .mv6-mission { animation: mv6FadeUp .8s cubic-bezier(.22,1,.36,1) 2.55s both; }
 
   html[data-export="1"] #cs-mv6 .mv6-head,
@@ -16503,8 +16504,8 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-mv6 .mv6-block-tech,
   html[data-export="1"] #cs-mv6 .mv6-block-gnr,
   html[data-export="1"] #cs-mv6 .mv6-beam,
-  html[data-export="1"] #cs-mv6 .mv6-humans,
   html[data-export="1"] #cs-mv6 .mv6-mission { opacity:1 !important; transform:none !important; animation:none !important; stroke-dasharray:none !important; stroke-dashoffset:0 !important; }
+  html[data-export="1"] #cs-mv6 .mv6-humans-img { opacity:1 !important; animation:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-mv6">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Mission</div>
@@ -16600,99 +16601,8 @@ window.cs1m7Reverse = function() {
         <!-- Inner beam (sharp gold line) -->
         <path class="mv6-beam" d="M 475 145 C 720 70, 1020 100, 1200 340" stroke="url(#mv6BeamGrad)" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.9"/>
 
-        <!-- ═══ RIGHT: ORGANIC COMMUNITY SCENE [Dave 2026-05-14 PM v4 c — REBUILT] ═══════════
-             Per Dave: 'this looks like a cult!' Old ring-of-figures-around-empty-center was rigid,
-             ceremonial, dark. Replaced with an organic scattered scene: pairs in conversation, a small
-             trio mid-stage, plus a few lone figures connected by warm threads. Less symmetry, more
-             motion, asymmetric clustering = community rather than ritual. -->
-        <g class="mv6-humans">
-          <!-- Sun-glow background (softer than before) -->
-          <ellipse cx="1300" cy="380" rx="380" ry="320" fill="url(#mv6SunGlow)"/>
-
-          <!-- Sun icon (top-right) -->
-          <g transform="translate(1490, 140)" opacity="0.78">
-            <circle r="28" fill="#f8dc82" filter="url(#mv6BlockGlow)"/>
-            <g stroke="#f0c040" stroke-width="3" stroke-linecap="round">
-              <line x1="0" y1="-40" x2="0" y2="-52"/>
-              <line x1="28" y1="-28" x2="36" y2="-36"/>
-              <line x1="40" y1="0" x2="52" y2="0"/>
-              <line x1="28" y1="28" x2="36" y2="36"/>
-              <line x1="0" y1="40" x2="0" y2="52"/>
-              <line x1="-28" y1="28" x2="-36" y2="36"/>
-              <line x1="-40" y1="0" x2="-52" y2="0"/>
-              <line x1="-28" y1="-28" x2="-36" y2="-36"/>
-            </g>
-          </g>
-
-          <!-- Warm connection threads (the network between people) -->
-          <g stroke="rgba(212,168,83,0.45)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="3 4">
-            <!-- Pair A internal connection -->
-            <path d="M 1090 545 Q 1110 535 1130 548"/>
-            <!-- Pair A to Trio B bridge -->
-            <path d="M 1130 548 Q 1175 525 1230 510"/>
-            <!-- Trio B internal connections -->
-            <path d="M 1230 510 Q 1255 500 1280 515"/>
-            <path d="M 1280 515 Q 1300 525 1320 510"/>
-            <path d="M 1230 510 Q 1275 535 1320 510"/>
-            <!-- Trio B to Pair C bridge -->
-            <path d="M 1320 510 Q 1370 530 1420 555"/>
-            <!-- Pair C internal connection -->
-            <path d="M 1420 555 Q 1445 545 1470 558"/>
-            <!-- Lone figure D to trio bridge -->
-            <path d="M 1320 510 Q 1340 470 1370 440"/>
-            <!-- Lone figure E to pair A bridge -->
-            <path d="M 1090 545 Q 1070 490 1080 450"/>
-          </g>
-
-          <!-- Lone figure E (back-left, distant) — slightly smaller, faded -->
-          <g fill="rgba(26,22,18,0.75)" transform="translate(1080, 450)">
-            <circle cx="0" cy="0" r="10"/>
-            <path d="M -14 44 Q -14 12 -4 6 L 4 6 Q 14 12 14 44 Z"/>
-          </g>
-
-          <!-- Lone figure D (back, distant) — slightly smaller, faded -->
-          <g fill="rgba(26,22,18,0.78)" transform="translate(1370, 440)">
-            <circle cx="0" cy="0" r="10"/>
-            <path d="M -14 44 Q -14 12 -4 6 L 4 6 Q 14 12 14 44 Z"/>
-          </g>
-
-          <!-- Pair A (left foreground) — two figures facing inward toward each other -->
-          <g fill="#1a1612" transform="translate(1090, 545)">
-            <circle cx="0" cy="0" r="13"/>
-            <path d="M -18 60 Q -18 14 -4 8 L 4 8 Q 18 14 18 60 Z"/>
-          </g>
-          <g fill="#1a1612" transform="translate(1130, 548)">
-            <circle cx="0" cy="0" r="13"/>
-            <path d="M -18 60 Q -18 14 -4 8 L 4 8 Q 18 14 18 60 Z"/>
-          </g>
-
-          <!-- Trio B (center, raised slightly back) — 3 figures clustered, one with raised arm -->
-          <g fill="#1a1612" transform="translate(1230, 510)">
-            <circle cx="0" cy="0" r="12"/>
-            <path d="M -17 56 Q -17 13 -4 7 L 4 7 Q 17 13 17 56 Z"/>
-          </g>
-          <g fill="#1a1612" transform="translate(1280, 515)">
-            <circle cx="0" cy="-2" r="13"/>
-            <path d="M -18 58 Q -18 14 -4 8 L 4 8 Q 18 14 18 58 Z"/>
-            <!-- Raised arm gesture (animated/expressive) -->
-            <path d="M 6 6 L 16 -6 L 12 -16" stroke="#1a1612" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </g>
-          <g fill="#1a1612" transform="translate(1320, 510)">
-            <circle cx="0" cy="0" r="12"/>
-            <path d="M -17 56 Q -17 13 -4 7 L 4 7 Q 17 13 17 56 Z"/>
-          </g>
-
-          <!-- Pair C (right foreground) — two figures, second slightly behind/turned -->
-          <g fill="#1a1612" transform="translate(1420, 555)">
-            <circle cx="0" cy="0" r="13"/>
-            <path d="M -18 60 Q -18 14 -4 8 L 4 8 Q 18 14 18 60 Z"/>
-          </g>
-          <g fill="rgba(26,22,18,0.92)" transform="translate(1470, 558)">
-            <circle cx="0" cy="0" r="13"/>
-            <path d="M -18 60 Q -18 14 -4 8 L 4 8 Q 18 14 18 60 Z"/>
-          </g>
-        </g>
       </svg>
+      <img class="mv6-humans-img" src="assets/cs-mv6-humans.png" alt="Community gathering in warm golden-hour light">
     </div>
 
     <div class="mv6-mission">
