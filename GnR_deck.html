@@ -13496,49 +13496,65 @@ window.cs1m7Reverse = function() {
                   <stop offset="100%" stop-color="rgba(184,149,74,0)"/>
                 </radialGradient>
               </defs>
-              <ellipse cx="120" cy="65" rx="135" ry="70" fill="url(#scGlowGrad)"/>
-              <!-- Dense web of reciprocity edges -->
-              <g stroke="rgba(184,149,74,0.50)" stroke-width="0.7" stroke-dasharray="2 1.6" fill="none">
-                <line x1="30" y1="28" x2="55" y2="22"/>
-                <line x1="55" y1="22" x2="120" y2="40"/>
-                <line x1="30" y1="28" x2="120" y2="40"/>
-                <line x1="55" y1="22" x2="120" y2="65"/>
-                <line x1="30" y1="28" x2="120" y2="65"/>
-                <line x1="170" y1="24" x2="195" y2="32"/>
-                <line x1="195" y1="32" x2="215" y2="24"/>
-                <line x1="170" y1="24" x2="120" y2="40"/>
-                <line x1="215" y1="24" x2="120" y2="40"/>
-                <line x1="195" y1="32" x2="120" y2="65"/>
-                <line x1="120" y1="40" x2="120" y2="65"/>
-                <line x1="95" y1="92" x2="120" y2="65"/>
-                <line x1="120" y1="86" x2="120" y2="65"/>
-                <line x1="145" y1="92" x2="120" y2="65"/>
-                <line x1="95" y1="92" x2="120" y2="108"/>
-                <line x1="145" y1="92" x2="120" y2="108"/>
-                <line x1="95" y1="92" x2="45" y2="44"/>
-                <line x1="145" y1="92" x2="190" y2="48"/>
-                <line x1="45" y1="44" x2="120" y2="65"/>
-                <line x1="190" y1="48" x2="120" y2="65"/>
-                <line x1="20" y1="46" x2="45" y2="44"/>
-                <line x1="20" y1="46" x2="95" y2="92"/>
+              <ellipse cx="160" cy="55" rx="130" ry="70" fill="url(#scGlowGrad)"/>
+
+              <!-- [Dave 2026-05-14 PM v2] COMPOUNDING-VALUE CHART — nodes now ascend bottom-left → upper-right in a hockey-stick curve, behind a sweeping gold growth line w/ arrowhead. Signals 'compounding community value' on top of the networked-reciprocity metaphor. -->
+
+              <!-- Faint baseline axes (subtle, just to anchor the 'chart' frame) -->
+              <g stroke="rgba(184,149,74,0.25)" stroke-width="0.5" fill="none">
+                <line x1="18" y1="115" x2="222" y2="115"/>
+                <line x1="18" y1="115" x2="18" y2="20"/>
               </g>
-              <!-- Nodes — same positions as left side, now colored with the brand palette to show diversity -->
-              <circle cx="30" cy="28" r="3.4" fill="#5B8FD4"/>
-              <circle cx="55" cy="22" r="3.4" fill="#b8954a"/>
-              <circle cx="45" cy="44" r="3.4" fill="#168651"/>
-              <circle cx="20" cy="46" r="3.4" fill="#c8462c"/>
-              <circle cx="170" cy="24" r="3.4" fill="#b8954a"/>
-              <circle cx="195" cy="32" r="3.4" fill="#5B8FD4"/>
-              <circle cx="215" cy="24" r="3.4" fill="#168651"/>
-              <circle cx="190" cy="48" r="3.4" fill="#c8462c"/>
-              <circle cx="95" cy="92" r="3.4" fill="#b8954a"/>
-              <circle cx="120" cy="86" r="3.4" fill="#5B8FD4"/>
-              <circle cx="145" cy="92" r="3.4" fill="#c8462c"/>
-              <circle cx="120" cy="108" r="3.4" fill="#168651"/>
-              <!-- Formerly stray dot — now connected, gold to mark the central hub -->
-              <circle cx="120" cy="40" r="3.6" fill="#b8954a" stroke="#b8954a" stroke-width="0.8"/>
-              <!-- Center waypoint -->
-              <circle cx="120" cy="65" r="2.8" fill="rgba(184,149,74,0.55)" stroke="#b8954a" stroke-width="0.8"/>
+
+              <!-- COMPOUNDING GROWTH CURVE — sweeping hockey-stick from bottom-left to upper-right -->
+              <path d="M 20 110 Q 70 108 100 94 T 160 60 T 215 22" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="0" opacity="0.78"/>
+              <!-- Arrowhead at the up-right end of the curve -->
+              <g fill="#b8954a" stroke="#b8954a" stroke-width="0.6" stroke-linejoin="round">
+                <polygon points="215 22, 207 22, 211 18, 211 30"/>
+              </g>
+              <!-- Soft 'growth shading' under the curve -->
+              <path d="M 20 110 Q 70 108 100 94 T 160 60 T 215 22 L 215 115 L 20 115 Z" fill="rgba(184,149,74,0.07)" stroke="none"/>
+
+              <!-- Reciprocity-web edges — fewer, more ascending, threading the nodes -->
+              <g stroke="rgba(184,149,74,0.45)" stroke-width="0.6" stroke-dasharray="2 1.6" fill="none">
+                <line x1="30" y1="104" x2="60" y2="94"/>
+                <line x1="60" y1="94" x2="95" y2="82"/>
+                <line x1="95" y1="82" x2="130" y2="70"/>
+                <line x1="130" y1="70" x2="165" y2="56"/>
+                <line x1="165" y1="56" x2="200" y2="38"/>
+                <line x1="30" y1="104" x2="95" y2="82"/>
+                <line x1="60" y1="94" x2="130" y2="70"/>
+                <line x1="95" y1="82" x2="165" y2="56"/>
+                <line x1="130" y1="70" x2="200" y2="38"/>
+                <line x1="50" y1="76" x2="95" y2="82"/>
+                <line x1="80" y1="58" x2="130" y2="70"/>
+                <line x1="115" y1="42" x2="165" y2="56"/>
+                <line x1="50" y1="76" x2="80" y2="58"/>
+                <line x1="80" y1="58" x2="115" y2="42"/>
+                <line x1="115" y1="42" x2="155" y2="30"/>
+                <line x1="155" y1="30" x2="200" y2="38"/>
+                <line x1="60" y1="94" x2="50" y2="76"/>
+                <line x1="95" y1="82" x2="80" y2="58"/>
+                <line x1="130" y1="70" x2="115" y2="42"/>
+                <line x1="165" y1="56" x2="155" y2="30"/>
+              </g>
+
+              <!-- Nodes — ASCENDING positions, growing in size left-to-right (mass + density compounding). Brand-color mix. -->
+              <!-- Lower-left foothills (smaller, early growth) -->
+              <circle cx="30" cy="104" r="2.6" fill="#c8462c"/>
+              <circle cx="50" cy="76" r="2.6" fill="#168651"/>
+              <circle cx="60" cy="94" r="2.8" fill="#5B8FD4"/>
+              <!-- Mid slope -->
+              <circle cx="80" cy="58" r="3.0" fill="#b8954a"/>
+              <circle cx="95" cy="82" r="3.0" fill="#c8462c"/>
+              <circle cx="115" cy="42" r="3.2" fill="#5B8FD4"/>
+              <circle cx="130" cy="70" r="3.2" fill="#168651"/>
+              <!-- Upper ridge (bigger, denser — value compounds) -->
+              <circle cx="155" cy="30" r="3.6" fill="#c8462c"/>
+              <circle cx="165" cy="56" r="3.6" fill="#b8954a"/>
+              <circle cx="200" cy="38" r="3.8" fill="#5B8FD4"/>
+              <!-- Apex — largest, gold, the compounded value -->
+              <circle cx="200" cy="38" r="5.5" fill="none" stroke="#b8954a" stroke-width="0.8" stroke-dasharray="2 1.5"/>
             </svg>
           </div>
           <!-- [Dave 2026-05-12] Identity bubble — GnR-trained player identifies WITH THE COMMUNITY. -->
@@ -13662,16 +13678,13 @@ window.cs1m7Reverse = function() {
 
           <!-- 4 anonymous players: grey dots + rating labels (no personality, no roles) -->
           <g font-family="Manrope,sans-serif" font-size="9" font-weight="700" fill="rgba(26,22,18,0.62)" text-anchor="middle">
-            <!-- [Dave 2026-05-14 PM] Bottom-right player REMOVED — empty spot on the court visualizes the rating-only event's filling problem (3 players, can't find a 4th). The dashed outline marks where a player WOULD be. -->
+            <!-- [Dave 2026-05-14 PM v2] Bottom-right quadrant left completely BLANK per Dave — no dot, no rating, no '?'. The empty court section IS the message: the rating-only event couldn't fill the 4th spot. -->
             <circle cx="48" cy="45" r="7" fill="rgba(26,22,18,0.36)"/>
             <text x="48" y="32">3.5</text>
             <circle cx="48" cy="85" r="7" fill="rgba(26,22,18,0.36)"/>
             <text x="48" y="106">3.5</text>
             <circle cx="172" cy="45" r="7" fill="rgba(26,22,18,0.36)"/>
             <text x="172" y="32">3.5</text>
-            <!-- Empty spot — dashed circle outline + faint '?' to signal unfilled -->
-            <circle cx="172" cy="85" r="7" fill="none" stroke="rgba(26,22,18,0.40)" stroke-width="1" stroke-dasharray="2 1.6"/>
-            <text x="172" y="89" font-family="Manrope,sans-serif" font-size="8" font-weight="700" fill="rgba(26,22,18,0.45)" text-anchor="middle">?</text>
           </g>
         </svg>
         <div class="mg-outcome"><em>Balanced?</em> <em>Boring?</em> <em>Filled?</em></div>
