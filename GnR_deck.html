@@ -13637,11 +13637,11 @@ window.cs1m7Reverse = function() {
   #cs-magnetic .mg-insight,
   #cs-magnetic .mg-closer{opacity:0;transform:translateY(10px);will-change:opacity,transform}
   @keyframes mgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes mgGlow{0%,100%{box-shadow:0 14px 36px rgba(184,149,74,0.14)}50%{box-shadow:0 16px 50px rgba(184,149,74,0.28), 0 0 0 1px rgba(212,168,83,0.30) inset}}
+  /* [Dave 2026-05-14 PM] mgGlow breathing pulse REMOVED — the inset-shadow swap was making the card look like it was vibrating. Static glow only now. */
   #cs-magnetic.casey-entered .mg-hero{animation:mgIn .6s cubic-bezier(.22,1,.36,1) backwards .06s;opacity:1}
   #cs-magnetic.casey-entered .mg-side.left{animation:mgIn .65s cubic-bezier(.22,1,.36,1) backwards .32s;opacity:1}
   #cs-magnetic.casey-entered .mg-vs{animation:mgIn .55s cubic-bezier(.22,1,.36,1) backwards .72s;opacity:1}
-  #cs-magnetic.casey-entered .mg-side.right{animation:mgIn .75s cubic-bezier(.22,1,.36,1) backwards .88s, mgGlow 4s ease-in-out 1.7s infinite;opacity:1}
+  #cs-magnetic.casey-entered .mg-side.right{animation:mgIn .75s cubic-bezier(.22,1,.36,1) backwards .88s;opacity:1}
   #cs-magnetic.casey-entered .mg-insight{animation:mgIn .65s cubic-bezier(.22,1,.36,1) backwards 1.28s;opacity:1}
   #cs-magnetic.casey-entered .mg-closer{animation:mgIn .55s cubic-bezier(.22,1,.36,1) backwards 1.55s;opacity:1}
   html[data-export="1"] #cs-magnetic .mg-hero,
