@@ -10650,7 +10650,14 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .vd-hero em { display:block;font-style:italic;font-weight:850;color:#b8954a;margin-top:6px; }
   /* 3-pillar row */
   #cs-18-vd4 .v5-pillars { display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%;max-width:1180px;align-items:stretch;margin-top:12px; }
-  #cs-18-vd4 .v5-pillar { position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:0 16px; }
+  /* [Dave 2026-05-14 PM] Pillars are now FLIPPABLE cards — front shows just the badge, back shows the full content. perspective + cursor live on the pillar; the flex layout moves to the front/back faces inside .v5-flip-inner. */
+  #cs-18-vd4 .v5-pillar { position:relative;perspective:1400px;cursor:pointer;min-height:380px;padding:0 16px; }
+  #cs-18-vd4 .v5-flip-inner { position:relative;width:100%;min-height:380px;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,0,.2,1) }
+  #cs-18-vd4 .v5-pillar[data-flipped="1"] .v5-flip-inner { transform:rotateY(180deg) }
+  #cs-18-vd4 .v5-flip-front,
+  #cs-18-vd4 .v5-flip-back { position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center }
+  #cs-18-vd4 .v5-flip-front { justify-content:center }
+  #cs-18-vd4 .v5-flip-back { transform:rotateY(180deg);justify-content:flex-start;padding-top:0 }
   #cs-18-vd4 .v5-pillar .v5-body-wrap { display:flex;flex-direction:column;align-items:center;gap:8px;flex:1; }
   /* Circular icon badge */
   #cs-18-vd4 .v5-badge { width:118px;height:118px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 36px rgba(26,22,18,0.10); }
@@ -10799,68 +10806,112 @@ window.cs1m7Reverse = function() {
 
       <!-- 3-pillar row with circular icon badges [Dave 2026-05-12 LATEST · ChatGPT-style] -->
       <div class="v5-pillars">
-        <!-- PILLAR 1 · IDEA MAZE — [Dave 2026-05-14 PM] Badge recolored red → blue per Dave: 'everything you see here that's red, change it to blue'. Pillars 1 + 3 now sit at opposite ends of the brand color wheel (blue / red) with NEPC gold in the middle. -->
-        <div class="v5-pillar p1">
-          <div class="v5-badge blue">
-            <!-- [Dave 2026-05-14 v3] Spiral version rejected as 'still doesn't look enough like a maze'. Rebuilt as a CLASSIC RECTANGULAR HEDGE MAZE — clear outer boundary with an entry gap at the top + exit gap at the bottom-right, plus 7 interior walls creating recognizable T-junctions, dead-ends, and a forced winding path. Reads top-down like a garden maze; no spiral, no path overlay, just the walls themselves doing the work. -->
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                <!-- Outer boundary — left/top/bottom in one stroke, right wall with exit gap in another -->
-                <path d="M 28 14 L 14 14 L 14 66 L 48 66"/>
-                <path d="M 60 66 L 66 66 L 66 14 L 40 14"/>
-                <!-- Interior walls forming corridors + dead-ends -->
-                <path d="M 14 28 L 28 28 L 28 14"/>
-                <path d="M 28 40 L 40 40 L 40 28"/>
-                <path d="M 40 52 L 52 52 L 52 28"/>
-                <path d="M 22 52 L 22 66"/>
-                <path d="M 40 14 L 40 22"/>
-                <path d="M 52 40 L 66 40"/>
-                <path d="M 14 52 L 22 52"/>
-              </g>
-              <!-- Entry/exit markers outside the boundary -->
-              <circle cx="34" cy="8" r="2.8" fill="white"/>
-              <circle cx="54" cy="72" r="2.8" fill="white"/>
-            </svg>
+        <!-- [Dave 2026-05-14 PM] All three pillars are now FLIPPABLE — front face shows just the badge (graphic); back face shows the full stack (badge + num + eye + body + meta). Badge appears on both faces so it stays as the visual anchor through the flip. -->
+
+        <!-- PILLAR 1 · CLARITY (BLUE + MAZE) -->
+        <div class="v5-pillar p1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
+          <div class="v5-flip-inner">
+            <!-- FRONT — badge only -->
+            <div class="v5-flip-front">
+              <div class="v5-badge blue">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <path d="M 28 14 L 14 14 L 14 66 L 48 66"/>
+                    <path d="M 60 66 L 66 66 L 66 14 L 40 14"/>
+                    <path d="M 14 28 L 28 28 L 28 14"/>
+                    <path d="M 28 40 L 40 40 L 40 28"/>
+                    <path d="M 40 52 L 52 52 L 52 28"/>
+                    <path d="M 22 52 L 22 66"/>
+                    <path d="M 40 14 L 40 22"/>
+                    <path d="M 52 40 L 66 40"/>
+                    <path d="M 14 52 L 22 52"/>
+                  </g>
+                  <circle cx="34" cy="8" r="2.8" fill="white"/>
+                  <circle cx="54" cy="72" r="2.8" fill="white"/>
+                </svg>
+              </div>
+            </div>
+            <!-- BACK — badge + full content -->
+            <div class="v5-flip-back">
+              <div class="v5-badge blue">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <path d="M 28 14 L 14 14 L 14 66 L 48 66"/>
+                    <path d="M 60 66 L 66 66 L 66 14 L 40 14"/>
+                    <path d="M 14 28 L 28 28 L 28 14"/>
+                    <path d="M 28 40 L 40 40 L 40 28"/>
+                    <path d="M 40 52 L 52 52 L 52 28"/>
+                    <path d="M 22 52 L 22 66"/>
+                    <path d="M 40 14 L 40 22"/>
+                    <path d="M 52 40 L 66 40"/>
+                    <path d="M 14 52 L 22 52"/>
+                  </g>
+                  <circle cx="34" cy="8" r="2.8" fill="white"/>
+                  <circle cx="54" cy="72" r="2.8" fill="white"/>
+                </svg>
+              </div>
+              <div class="v5-num">01</div>
+              <div class="v5-eye">Clarity</div>
+              <div class="v5-body"><em>Next frontier of the technology that connects us</em></div>
+              <div class="v5-meta">Six years iterating path of least resistance</div>
+            </div>
           </div>
-          <div class="v5-num">01</div>
-          <!-- [Dave 2026-05-14 PM] Restructured: eye is now the short label 'Clarity'; the long 'Next frontier...' line moved DOWN into the body slot (italic); meta rewritten to 'Six years iterating path of least resistance'. -->
-          <div class="v5-eye">Clarity</div>
-          <div class="v5-body"><em>Next frontier of the technology that connects us</em></div>
-          <div class="v5-meta">Six years iterating path of least resistance</div>
         </div>
 
-        <!-- PILLAR 2 · STARTING POINT (NEPC LOGO replaces the gold R-M badge per Dave 2026-05-12 LATEST) -->
-        <div class="v5-pillar p2">
-          <div class="v5-badge nepc">
-            <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
+        <!-- PILLAR 2 · STARTING POINT (NEPC LOGO) -->
+        <div class="v5-pillar p2" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
+          <div class="v5-flip-inner">
+            <!-- FRONT — badge only -->
+            <div class="v5-flip-front">
+              <div class="v5-badge nepc">
+                <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
+              </div>
+            </div>
+            <!-- BACK — badge + full content -->
+            <div class="v5-flip-back">
+              <div class="v5-badge nepc">
+                <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
+              </div>
+              <div class="v5-num">02</div>
+              <div class="v5-eye">Starting Point</div>
+              <div class="v5-body">Built a <em>tiny lab</em>.</div>
+              <div class="v5-meta"><strong>NEPC</strong> &middot; Recruit community building talent &middot; 500&nbsp;members &middot; 20+&nbsp;employees</div>
+            </div>
           </div>
-          <div class="v5-num">02</div>
-          <div class="v5-eye">Starting Point</div>
-          <div class="v5-body">Built a <em>tiny lab</em>.</div>
-          <!-- [Dave 2026-05-14] Non-breaking spaces inside '500 members' + '20+ employees' so the natural wrap point falls AFTER 'talent ·' (was wrapping mid-phrase between '500' and 'members'). -->
-          <div class="v5-meta"><strong>NEPC</strong> &middot; Recruit community building talent &middot; 500&nbsp;members &middot; 20+&nbsp;employees</div>
         </div>
 
-        <!-- PILLAR 3 · MISSION — [Dave 2026-05-14] Network-node icon replaced with a PERSON CARRYING A FLAG. [Dave 2026-05-14 PM] Badge recolored from blue → red per Dave: 'graphic here should be red'. -->
-        <div class="v5-pillar p3">
-          <div class="v5-badge red">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Person silhouette: head -->
-              <circle cx="32" cy="24" r="9" fill="white"/>
-              <!-- Body / shoulders -->
-              <path d="M 18 64 L 18 50 C 18 42 24 38 32 38 C 40 38 46 42 46 50 L 46 64 Z" fill="white"/>
-              <!-- Flag pole — held in raised arm, extending up -->
-              <line x1="54" y1="64" x2="54" y2="14" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
-              <!-- Triangular flag pennant -->
-              <path d="M 54 14 L 72 19 L 54 24 Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
-              <!-- Arm connecting body to flag pole -->
-              <line x1="46" y1="42" x2="54" y2="34" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
-            </svg>
+        <!-- PILLAR 3 · MISSION (RED + PERSON-WITH-FLAG) -->
+        <div class="v5-pillar p3" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
+          <div class="v5-flip-inner">
+            <!-- FRONT — badge only -->
+            <div class="v5-flip-front">
+              <div class="v5-badge red">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="24" r="9" fill="white"/>
+                  <path d="M 18 64 L 18 50 C 18 42 24 38 32 38 C 40 38 46 42 46 50 L 46 64 Z" fill="white"/>
+                  <line x1="54" y1="64" x2="54" y2="14" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
+                  <path d="M 54 14 L 72 19 L 54 24 Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+                  <line x1="46" y1="42" x2="54" y2="34" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <!-- BACK — badge + full content -->
+            <div class="v5-flip-back">
+              <div class="v5-badge red">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="24" r="9" fill="white"/>
+                  <path d="M 18 64 L 18 50 C 18 42 24 38 32 38 C 40 38 46 42 46 50 L 46 64 Z" fill="white"/>
+                  <line x1="54" y1="64" x2="54" y2="14" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
+                  <path d="M 54 14 L 72 19 L 54 24 Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+                  <line x1="46" y1="42" x2="54" y2="34" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="v5-num">03</div>
+              <div class="v5-eye">Mission</div>
+              <div class="v5-body"><em>All in</em></div>
+              <div class="v5-meta">Lives it &middot; Face of it &middot; Club owner sales &middot; network &amp; podcasts &middot; community builder &middot; 4D play-style</div>
+            </div>
           </div>
-          <div class="v5-num">03</div>
-          <div class="v5-eye">Mission</div>
-          <div class="v5-body"><em>All in</em></div>
-          <div class="v5-meta">Lives it &middot; Face of it &middot; Club owner sales &middot; network &amp; podcasts &middot; community builder &middot; 4D play-style</div>
         </div>
       </div>
 
