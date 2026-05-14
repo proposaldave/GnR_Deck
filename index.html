@@ -6798,8 +6798,7 @@ window.cs1m5Reverse = function() {
 
         <!-- [Dave 2026-05-14 PM] Annotation moved to the RIGHT side of the chart, in the empty space above where the curve is actually going parabolic (around x=950-1100). Reads as a label pointing AT the rising motion instead of sitting in the still-flat early portion. -->
         <g class="fr-chart-annotation">
-          <text x="1000" y="92" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="28" font-weight="700" font-style="italic" fill="#1a1612" letter-spacing="-0.012em">Demand going</text>
-          <text x="1000" y="128" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="34" font-weight="800" font-style="italic" fill="#c8462c" letter-spacing="-0.018em">parabolic</text>
+          <text x="1000" y="110" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="38" font-weight="800" font-style="italic" fill="#c8462c" letter-spacing="-0.018em">Demand</text>
         </g>
 
         <!-- Soft horizontal gridlines -->
@@ -6870,9 +6869,14 @@ window.cs1m5Reverse = function() {
      ════════════════════════════════════════════════════════════════════════════════════ -->
 <style>
   #cs-frontier-iconic { background:radial-gradient(ellipse at 50% 0%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; }
-  #cs-frontier-iconic .fi-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 56px; }
+  #cs-frontier-iconic .fi-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:48px 56px 36px; gap:14px; }
+  /* [Dave 2026-05-14 PM v4 b] Hero headline added per Dave 'this slide needs to have text. use: The #1 predictor of a fulfilling life: openly giving and receiving real connection.' Sits above the curve so the eye reads the claim, then the curve + icons land the proof of demand. */
+  #cs-frontier-iconic .fi-headline { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,3.25vw,3rem); font-weight:800; line-height:1.14; letter-spacing:-0.022em; color:#1a1612; text-align:center; max-width:1280px; margin:0; opacity:0; transform:translateY(8px); }
+  #cs-frontier-iconic .fi-headline .fi-predictor { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-frontier-iconic .fi-headline .fi-give { color:#5B8FD4; font-weight:850; }
+  #cs-frontier-iconic .fi-headline .fi-receive { color:#c8462c; font-weight:850; }
   #cs-frontier-iconic .fi-canvas { width:min(1380px, 96%); }
-  #cs-frontier-iconic .fi-canvas svg { width:100%; height:auto; display:block; max-height:82vh; }
+  #cs-frontier-iconic .fi-canvas svg { width:100%; height:auto; display:block; max-height:64vh; }
   /* Entry animation — curve draws in, icons pop sequentially, peak icon glows in last. */
   @keyframes fiCurveDraw { from { stroke-dashoffset:2400; } to { stroke-dashoffset:0; } }
   @keyframes fiIconPop { 0% { opacity:0; transform:scale(0.55); } 60% { opacity:1; transform:scale(1.10); } 100% { opacity:1; transform:scale(1); } }
@@ -6881,7 +6885,8 @@ window.cs1m5Reverse = function() {
   #cs-frontier-iconic .fi-curve { stroke-dasharray:2400; stroke-dashoffset:2400; }
   #cs-frontier-iconic .fi-era { opacity:0; transform-box:fill-box; transform-origin:center; }
   #cs-frontier-iconic .fi-arrow { opacity:0; transform-box:fill-box; transform-origin:center; }
-  #cs-frontier-iconic.casey-entered .fi-curve { animation: fiCurveDraw 1.6s cubic-bezier(.22,1,.36,1) 0.25s forwards; }
+  #cs-frontier-iconic.casey-entered .fi-headline { animation: fiArrowIn .8s cubic-bezier(.22,1,.36,1) 0.15s both; }
+  #cs-frontier-iconic.casey-entered .fi-curve { animation: fiCurveDraw 1.6s cubic-bezier(.22,1,.36,1) 0.55s forwards; }
   #cs-frontier-iconic.casey-entered .fi-era[data-i="1"] { animation: fiIconPop .65s cubic-bezier(.34,1.56,.64,1) 0.55s both; }
   #cs-frontier-iconic.casey-entered .fi-era[data-i="2"] { animation: fiIconPop .65s cubic-bezier(.34,1.56,.64,1) 0.82s both; }
   #cs-frontier-iconic.casey-entered .fi-era[data-i="3"] { animation: fiIconPop .65s cubic-bezier(.34,1.56,.64,1) 1.10s both; }
@@ -6894,6 +6899,7 @@ window.cs1m5Reverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-frontier-iconic" style="display:none">
   <section class="fi-stage">
+    <h1 class="fi-headline">The <em class="fi-predictor">#1 predictor</em> of a fulfilling life:<br>openly <span class="fi-give">giving</span> and <span class="fi-receive">receiving</span><br>real connection.</h1>
     <div class="fi-canvas">
       <svg viewBox="0 0 1320 700" xmlns="http://www.w3.org/2000/svg" aria-label="The rising demand for connection across tech eras — told entirely through icons">
         <defs>
