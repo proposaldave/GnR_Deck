@@ -19211,11 +19211,16 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     altDot.onclick = (e) => {
       e.stopPropagation();
       // Manual navigate to the alt slide ID — without disturbing the primary SLIDE_ORDER index
-      document.querySelectorAll('.casey-slide').forEach(s => s.classList.remove('active'));
+      // [Dave 2026-05-14 FIX] Also clear .casey-entered on all slides + inline display:none on target so entrance animations replay and slides demoted from main flow (which carry inline display:none) actually paint. Mirrors caseyGo's behavior.
+      document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.classList.remove('casey-entered'); });
       document.querySelectorAll('.appendix-slide').forEach(s => { s.style.display = 'none'; });
       const target = document.getElementById(altId);
       if (target) {
+        target.style.display = '';
         target.classList.add('active');
+        // Force reflow then add casey-entered so entrance transitions re-fire from their initial state
+        void target.offsetWidth;
+        target.classList.add('casey-entered');
         // [Dave 2026-05-09] Reset data-stage on entry so click-to-reveal slides (like cs-1m5) start fresh each visit instead of resuming where the user last left off.
         if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0';
       }
@@ -19298,16 +19303,17 @@ window.navigateAlt = function(direction) {
   if (newIndex < 0 || newIndex > alts.length) return false;
   window.altIndex = newIndex;
   // Render: index 0 = primary, index N = alts[N-1]
-  document.querySelectorAll('.casey-slide').forEach(s => s.classList.remove('active'));
+  // [Dave 2026-05-14 FIX] Clear .casey-entered on all slides + clear target's inline display:none + force reflow + re-add .casey-entered. Mirrors caseyGo. Without this, slides demoted to alts (which carry inline display:none) paint blank because their opacity:0 entrance transitions never get the .casey-entered trigger.
+  document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.classList.remove('casey-entered'); });
   document.querySelectorAll('.appendix-slide').forEach(s => { s.style.display = 'none'; });
   if (window.altIndex === 0) {
     const target = document.getElementById(SLIDE_ORDER[current - 1]);
-    if (target) { target.classList.add('active'); if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0'; }
+    if (target) { target.style.display = ''; target.classList.add('active'); void target.offsetWidth; target.classList.add('casey-entered'); if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0'; }
     document.getElementById('ccount').textContent = current + ' / ' + TOTAL;
   } else {
     const altId = alts[window.altIndex - 1];
     const target = document.getElementById(altId);
-    if (target) { target.classList.add('active'); if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0'; }
+    if (target) { target.style.display = ''; target.classList.add('active'); void target.offsetWidth; target.classList.add('casey-entered'); if (target.dataset && target.dataset.stage !== undefined) target.dataset.stage = '0'; }
     document.getElementById('ccount').textContent = current + ' / ' + TOTAL + ' (alt)';
   }
   // Visual: update dot highlight
