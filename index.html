@@ -6587,7 +6587,8 @@ window.cs1m5Reverse = function() {
 
     <!-- [Dave 2026-05-14 MERGE] Hero rewritten to fuse cs-intro6's science truth + cs-frontier's parabolic/category positioning into a single editorial frame. Order of operations: science fact → demand reality → category claim. -->
     <h1 class="fr-hero">Giving and receiving human connection: the <em>#1 predictor</em> of a fulfilling life.</h1>
-    <div class="fr-sub">And demand for it is going <strong style="font-style:normal;font-weight:800;color:#c8462c">parabolic.</strong></div>
+    <!-- [Dave 2026-05-14] Sub line 'And demand for it is going parabolic' MOVED INTO the chart as an SVG annotation in the upper-left empty space (where the curve has the most negative real estate). -->
+
 
     <!-- Parabolic disconnection curve -->
     <div class="fr-curve">
@@ -6604,7 +6605,11 @@ window.cs1m5Reverse = function() {
           </linearGradient>
         </defs>
 
-        <!-- [Dave 2026-05-14] Y-axis 'DEMAND FOR REAL CONNECTION' label DELETED — eyebrow + hero carry the framing. -->
+        <!-- [Dave 2026-05-14] In-chart annotation: 'Demand is going parabolic.' lives in the empty upper-left where the curve hasn't risen yet. Reads as a label ON the chart instead of a separate sub line. -->
+        <g class="fr-chart-annotation">
+          <text x="80" y="92" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="28" font-weight="700" font-style="italic" fill="#1a1612" letter-spacing="-0.012em">Demand is going</text>
+          <text x="80" y="128" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="34" font-weight="800" font-style="italic" fill="#c8462c" letter-spacing="-0.018em">parabolic.</text>
+        </g>
 
         <!-- Soft horizontal gridlines -->
         <line x1="60" y1="320" x2="1280" y2="320" stroke="rgba(26,22,18,0.10)" stroke-width="1"/>
