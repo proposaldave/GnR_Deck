@@ -7491,8 +7491,26 @@ window.cs1m7Reverse = function() {
   [id^="cs-thegap"] .tg-svg-wrap { width:100%; max-width:1380px; margin:6px auto 0; }
   [id^="cs-thegap"] .tg-svg-wrap svg { max-height:48vh; width:100%; height:auto; display:block; margin:0 auto; }
 
-  /* Closing line — single red caps punchline (icon strip + bold black line removed 2026-05-04) */
-  [id^="cs-thegap"] .tg-close { margin-top:8px; }
+  /* Closing diagnostic — 3-beat causal cascade (operational → social → relational)
+     [Dave 2026-05-14] Refactored from flat stack of identical caps lines (read as wall-of-text)
+     to numbered beats with arrow separators that telegraph the causal chain. */
+  [id^="cs-thegap"] .tg-close { margin-top:14px; display:flex; flex-direction:column; align-items:center; gap:4px; }
+  [id^="cs-thegap"] .tg-close-beat { display:flex; align-items:center; gap:14px; }
+  [id^="cs-thegap"] .tg-close-num {
+    font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800;
+    color:#c8462c;
+    width:22px; height:22px; border:1.5px solid #c8462c; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    letter-spacing:0;
+  }
+  [id^="cs-thegap"] .tg-close-text {
+    font-family:'Manrope',sans-serif; font-size:clamp(.85rem,1.1vw,1.05rem);
+    font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:#c8462c;
+  }
+  [id^="cs-thegap"] .tg-close-arrow {
+    font-size:1.05rem; color:#c8462c; opacity:.40; line-height:1; margin:1px 0 1px 11px;
+  }
+  /* Legacy class retained for any other reference */
   [id^="cs-thegap"] .tg-close-2 { font-family:'Manrope',sans-serif; font-size:clamp(.85rem,1.1vw,1.05rem); font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:#c8462c; }
 
   /* ─── ENTRANCE STAGGER [Dave 2026-05-07 v2 — TONED DOWN] ─────────────────────
@@ -7706,11 +7724,23 @@ window.cs1m7Reverse = function() {
         </svg>
       </div>
 
-      <!-- [Dave 2026-05-14] Single closing line replaced with a 3-line diagnostic stack: operational failure → social failure → relational failure. Third line is mine — captures Dave's "NO TRUSTED RECIPROCITY" insight: in communities without infrastructure, trust + giving only happens inside close circles (cliques), so beyond them people retreat to self-interest. "Beyond cliques" hooks directly to line 2 so the three beats compound. -->
+      <!-- [Dave 2026-05-14] Single closing line replaced with a 3-line diagnostic stack: operational failure → social failure → relational failure. Third line is mine — captures Dave's "NO TRUSTED RECIPROCITY" insight: in communities without infrastructure, trust + giving only happens inside close circles (cliques), so beyond them people retreat to self-interest. "Beyond cliques" hooks directly to line 2 so the three beats compound.
+           [Dave 2026-05-14 PM] Refactored from identical-class flat stack (read as wall-of-text) to numbered beats with arrow separators between, telegraphing the causal chain. Numbers anchor each beat, arrows convey "this causes the next." -->
       <div class="tg-close">
-        <div class="tg-close-2">Coordination done by hand</div>
-        <div class="tg-close-2" style="margin-top:6px">Communities devolve into cliques</div>
-        <div class="tg-close-2" style="margin-top:6px">No trusted reciprocity beyond cliques</div>
+        <div class="tg-close-beat">
+          <span class="tg-close-num">1</span>
+          <span class="tg-close-text">Coordination done by hand</span>
+        </div>
+        <div class="tg-close-arrow">↓</div>
+        <div class="tg-close-beat">
+          <span class="tg-close-num">2</span>
+          <span class="tg-close-text">Communities devolve into cliques</span>
+        </div>
+        <div class="tg-close-arrow">↓</div>
+        <div class="tg-close-beat">
+          <span class="tg-close-num">3</span>
+          <span class="tg-close-text">No trusted reciprocity</span>
+        </div>
       </div>
     </div>
   </section>
@@ -10477,7 +10507,8 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-badge { width:118px;height:118px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 36px rgba(26,22,18,0.10); }
   #cs-18-vd4 .v5-badge.red { background:#c8462c; }
   #cs-18-vd4 .v5-badge.gold { background:#b8954a; }
-  #cs-18-vd4 .v5-badge.blue { background:#3a6dad; }
+  /* [Dave 2026-05-14] Mission pillar badge recolored red (was blue #3a6dad). Class name kept .blue to avoid HTML churn elsewhere; only the actual background color changed. */
+  #cs-18-vd4 .v5-badge.blue { background:#c8462c; }
   #cs-18-vd4 .v5-badge svg { width:62px;height:62px;display:block; }
   /* Pillar text */
   #cs-18-vd4 .v5-num { font-family:'Manrope',sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.22em;color:rgba(26,22,18,0.42);margin-top:6px; }
@@ -13254,7 +13285,7 @@ window.cs1m7Reverse = function() {
             <div class="sc-head blue">
               <svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 21 C5 16.5 8 14 12 14 C16 14 19 16.5 19 21"/></svg>
             </div>
-            <div class="sc-bubble blue" style="max-width:none;white-space:nowrap">I help build <strong style="font-style:normal;font-weight:800">NEPC</strong></div>
+            <div class="sc-bubble blue" style="max-width:none;white-space:nowrap">I help build <strong style="font-style:normal;font-weight:800">my community</strong></div>
           </div>
           <div class="sc-col-eye-row">
             <div class="sc-col-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#5B8FD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20 C3 16 5 14 9 14 C13 14 15 16 15 20"/><path d="M14 19 C14 16.5 15.5 15 17 15 C19 15 21 16.5 21 19"/></svg></div>
@@ -16089,7 +16120,7 @@ window.cs1m7Reverse = function() {
       <line x1="-58" y1="30" x2="58" y2="30" stroke="#5B8FD4" stroke-width="0.9" opacity="0.35"/>
       <line x1="-58" y1="45" x2="58" y2="45" stroke="#5B8FD4" stroke-width="0.9" opacity="0.3"/>
       <!-- Label [sizes bumped 2026-05-03] -->
-      <text x="0" y="-80" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.4" fill="#5B8FD4">JUMPSTART DATA</text>
+      <text x="0" y="-80" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.4" fill="#5B8FD4">COLDSTART DATA</text>
       <text x="0" y="80" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">historical scheduling</text>
       <text x="0" y="98" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">+ private booking data</text>
     </g>
