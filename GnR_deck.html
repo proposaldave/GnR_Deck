@@ -10170,15 +10170,15 @@ window.cs1m7Reverse = function() {
   #cs-16old .o16-head .gG { color:#5B8FD4 } #cs-16old .o16-head .gn { color:#1a1612;font-style:italic;font-weight:600 } #cs-16old .o16-head .gR { color:#c8462c }
   #cs-16old .o16-grid { display:grid;grid-template-columns:1fr 0.9fr 1fr;gap:24px;width:min(1640px,98%);align-items:start;margin-top:8px;position:relative }
   #cs-16old .o16-colhead { font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(184,149,74,0.85);text-align:center;margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid rgba(184,149,74,0.36) }
-  /* SIGNAL groups (left) */
-  #cs-16old .o16-sig { display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:8px 0;border-bottom:1px dotted rgba(26,22,18,0.10) }
+  /* SIGNAL groups (left) — [Dave 2026-05-14 PM v4] VISUAL FIX: align-items center→start (icon now sits at top with section label, not floating in middle of list); text-align:left explicit on label + list (was inheriting text-align:center from .o16-stage and breaking the bullet→text relationship); ul gets proper padding-left so bullets line up tight with text. */
+  #cs-16old .o16-sig { display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:10px 0;border-bottom:1px dotted rgba(26,22,18,0.10);text-align:left }
   #cs-16old .o16-sig:last-child { border-bottom:none }
-  #cs-16old .o16-sig-icon { width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,0.42);border:1px solid currentColor;flex-shrink:0 }
+  #cs-16old .o16-sig-icon { width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,0.42);border:1px solid currentColor;flex-shrink:0;margin-top:2px }
   #cs-16old .o16-sig-icon svg { width:22px;height:22px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round }
-  #cs-16old .o16-sig-name { font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;line-height:1.25;color:currentColor }
-  #cs-16old .o16-sig-list { font-family:'Manrope',sans-serif;font-size:.78rem;color:rgba(26,22,18,0.72);line-height:1.45 }
-  #cs-16old .o16-sig-list li { list-style:disc;margin-left:14px;padding-left:2px }
-  #cs-16old .o16-sig-list ul { padding:0;margin:0 }
+  #cs-16old .o16-sig-name { font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;line-height:1.25;color:currentColor;text-align:left;margin-bottom:4px }
+  #cs-16old .o16-sig-list { font-family:'Manrope',sans-serif;font-size:.78rem;color:rgba(26,22,18,0.72);line-height:1.5;text-align:left }
+  #cs-16old .o16-sig-list ul { padding:0 0 0 18px;margin:0;list-style:disc }
+  #cs-16old .o16-sig-list li { padding-left:2px;margin:0 }
   #cs-16old .blue { color:#5B8FD4 } #cs-16old .red { color:#c8462c } #cs-16old .gold { color:#b8954a } #cs-16old .green { color:#168651 }
   /* SMART ACTION pills (right) */
   #cs-16old .o16-act { display:flex;align-items:center;gap:12px;padding:11px 16px;border-radius:99px;background:rgba(255,255,255,0.42);border:1.4px solid currentColor;margin-bottom:10px;font-family:'Manrope',sans-serif;font-size:.86rem;font-weight:600;color:#1a1612 }
@@ -10334,7 +10334,7 @@ window.cs1m7Reverse = function() {
         </div>
       </div>
 
-      <div class="o16-live">Operating live at NEPC</div>
+      <!-- [Dave 2026-05-14 PM v4] 'Operating live at NEPC' badge DELETED here too — was floating disconnected below the grid and Dave already deleted the same badge from cs-16 primary. Removing for consistency. -->
     </div>
   </section>
 </div>
@@ -18979,7 +18979,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-12 LATER] cs-fv6 — Measuring is the unlock · 7-verb row (Measure → Test → Graph → ... → Abundance).
   'cs-fv6',   // What is real human connection technology? · 7-verb row.
   // [Dave 2026-05-12 LATEST] cs-onandoff MOVED DOWN — now immediately after cs-fv6 ('What is real human connection technology?') per Dave: 'the slide [A pickleball community's coordination stack, reoriented for value exchange between people, becomes its social network], move it just after the "What is real human connection technology?" slide'.
-  'cs-onandoff', // 'A pickleball community\'s coordination stack, reoriented for value exchange between people, becomes its social network.' + Krista Slack proof block.
+  // [Dave 2026-05-14 PM v4] cs-onandoff DELETED per Dave 'delete this slide'. HTML retained for rollback.
   // [Dave 2026-05-08 LATER] cs-18 MOVED UP to right after cs-fw1.
   // [Dave 2026-05-11 LATE] cs-18 MOVED AGAIN — now immediately after cs-brand-V8 (see slot 13 above). Removed from this position.
   // [Dave 2026-05-10] cs-wedge1 PROMOTED from blue-dot review to main deck per Dave: 'i love this slide - bring it into the main deck and off of the blue dot option slide situation'.
@@ -19099,7 +19099,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-12 LATEST] cs-18-vd3 DELETED per Dave: 'delete this' (the 'Two strengths' alt). cs-18-vd1 retained as red-dot alt.
   // [Dave 2026-05-14 MERGE] Wheelhouse alts now at slot 16 (cs-18-vd4 was 17; -1 after intro6 + frontier merged into one slot-1).
   // [Dave 2026-05-14] cs-18-vd1, cs-lab, cs-18 DELETED per Dave (3× 'delete this slide' for the wheelhouse-alt variants). Only cs-18-vd5 retained as the lone red-dot alt.
-  16: ['cs-18-vd5'],
+  // [Dave 2026-05-14 PM v4] cs-18-vd5 also DELETED per Dave 'delete this slide'. Slot 16 now has no alts. HTML retained for rollback.
+  16: [],
   // Slot 18 (cs-wedge1; was 19).
   18: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference. [Dave 2026-05-11] Key shifted 20→19 after cs-a7 moved to appendix.
