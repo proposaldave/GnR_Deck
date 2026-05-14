@@ -17153,42 +17153,69 @@ window.cs1m7Reverse = function() {
             </div>
             <!-- BACK FACE — current GnR vision (4-figure network + caption) -->
             <div class="a7m1-flip-back">
-              <!-- [Dave 2026-05-11 LATE] Wax-seal envelope replaced with INVITATION FEED — 3 stacked invitation cards (faded blue top, gold-featured middle, faded red bottom). Directly says 'invitation feed'. Per Dave: 'I'd like to see a simple graphic representing invitation feed'. -->
+              <!-- [Dave 2026-05-14] Invitation-feed graphic rebuilt so the cards SHOW that invitations are about PEOPLE: each card's left avatar is now a recognizable person silhouette (head + shoulders), and the right-side mini-icon is a 3-person group cluster instead of an envelope. The whole graphic now reads "this invitation is about people coming together" at a glance — not abstract dots + mail. -->
               <div class="a7m1-orb">
-                <svg width="86%" height="86%" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Invitation feed">
+                <svg width="86%" height="86%" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Invitation feed — each invitation is about people">
                   <!-- TOP card — faded blue (preview / past invitation) -->
                   <g opacity="0.55">
                     <rect x="14" y="16" width="92" height="22" rx="3" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="0.9"/>
-                    <circle cx="24" cy="27" r="4.5" fill="rgba(91,143,212,0.55)"/>
-                    <rect x="33" y="23" width="56" height="2" rx="1" fill="rgba(91,143,212,0.35)"/>
-                    <rect x="33" y="28" width="36" height="2" rx="1" fill="rgba(91,143,212,0.25)"/>
-                    <!-- mini envelope icon -->
-                    <g transform="translate(96 23)" stroke="#5B8FD4" stroke-width="0.7" fill="none">
-                      <rect x="-3" y="-1" width="6" height="4.5" rx="0.5"/>
-                      <path d="M -3 -1 L 0 1.6 L 3 -1"/>
+                    <!-- LEFT avatar — person silhouette (head + shoulders) in a blue chip -->
+                    <circle cx="24" cy="27" r="5" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="0.6"/>
+                    <circle cx="24" cy="25.4" r="1.6" fill="#5B8FD4"/>
+                    <path d="M 20.6 30 Q 24 27 27.4 30" stroke="#5B8FD4" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+                    <rect x="34" y="23" width="50" height="2" rx="1" fill="rgba(91,143,212,0.35)"/>
+                    <rect x="34" y="28" width="32" height="2" rx="1" fill="rgba(91,143,212,0.25)"/>
+                    <!-- RIGHT mini-icon — 3-person group cluster (says: this invitation is about a GROUP) -->
+                    <g transform="translate(96 27)" stroke="#5B8FD4" stroke-width="0.7" fill="#5B8FD4" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="-3" cy="-1" r="1.1"/><path d="M -5 2 Q -3 0.5 -1 2" fill="none"/>
+                      <circle cx="0" cy="-1.6" r="1.3"/><path d="M -2.4 2 Q 0 0.3 2.4 2" fill="none"/>
+                      <circle cx="3" cy="-1" r="1.1"/><path d="M 1 2 Q 3 0.5 5 2" fill="none"/>
                     </g>
                   </g>
+
                   <!-- MIDDLE card — FEATURED gold (the active invitation, prominent) -->
                   <rect x="10" y="46" width="100" height="28" rx="3" fill="rgba(26,22,18,0.06)"/>
                   <rect x="10" y="44" width="100" height="28" rx="3" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
                   <!-- subtle inner glow ring -->
                   <rect x="12" y="46" width="96" height="24" rx="2" fill="none" stroke="rgba(184,149,74,0.18)" stroke-width="0.6"/>
-                  <!-- gold avatar -->
-                  <circle cx="22" cy="58" r="5.8" fill="#b8954a"/>
-                  <!-- "host" indicator — tiny gold star above avatar -->
-                  <text x="33" y="55" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="5.5" font-weight="800" fill="#1a1612">Saturday · 9:00am</text>
-                  <text x="33" y="65" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="3.8" font-style="italic" fill="rgba(26,22,18,0.7)">Krista invited you &amp; 2 more</text>
-                  <!-- [Dave 2026-05-14] GnR wax-seal sticker on the Saturday card DELETED. At small scale it rendered as a partial fragment + the persistent GnR mark in the slide's top-right is already on every slide. Less is more. -->
+                  <!-- LEFT avatar — featured 3-PERSON CLUSTER (head + shoulders × 3) — this is Krista + you + 2 more, visually -->
+                  <g transform="translate(22 58)">
+                    <!-- back-left avatar -->
+                    <circle cx="-4.5" cy="0.5" r="3.6" fill="rgba(184,149,74,0.42)" stroke="#b8954a" stroke-width="0.5"/>
+                    <circle cx="-4.5" cy="-0.5" r="1.2" fill="#b8954a"/>
+                    <path d="M -7 2.5 Q -4.5 0.6 -2 2.5" stroke="#b8954a" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+                    <!-- center avatar — largest, gold (the host) -->
+                    <circle cx="0" cy="-0.5" r="4.6" fill="#b8954a"/>
+                    <circle cx="0" cy="-2" r="1.7" fill="#fbf7ef"/>
+                    <path d="M -3.4 2.5 Q 0 0.4 3.4 2.5" stroke="#fbf7ef" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+                    <!-- back-right avatar -->
+                    <circle cx="4.5" cy="0.5" r="3.6" fill="rgba(184,149,74,0.42)" stroke="#b8954a" stroke-width="0.5"/>
+                    <circle cx="4.5" cy="-0.5" r="1.2" fill="#b8954a"/>
+                    <path d="M 2 2.5 Q 4.5 0.6 7 2.5" stroke="#b8954a" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+                  </g>
+                  <text x="36" y="55" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="5.5" font-weight="800" fill="#1a1612">Saturday · 9:00am</text>
+                  <text x="36" y="65" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="3.8" font-style="italic" fill="rgba(26,22,18,0.7)">Krista invited you &amp; 2 more</text>
+                  <!-- RIGHT mini-icon — 3-person group cluster, gold -->
+                  <g transform="translate(96 58)" stroke="#b8954a" stroke-width="0.8" fill="#b8954a" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="-3" cy="-1.2" r="1.2"/><path d="M -5.4 2 Q -3 0.2 -0.6 2" fill="none" stroke-width="0.9"/>
+                    <circle cx="0" cy="-2" r="1.5"/><path d="M -2.8 2 Q 0 0.1 2.8 2" fill="none" stroke-width="0.9"/>
+                    <circle cx="3" cy="-1.2" r="1.2"/><path d="M 0.6 2 Q 3 0.2 5.4 2" fill="none" stroke-width="0.9"/>
+                  </g>
+
                   <!-- BOTTOM card — faded red (next upcoming) -->
                   <g opacity="0.55">
                     <rect x="14" y="82" width="92" height="22" rx="3" fill="#fbf7ef" stroke="#c8462c" stroke-width="0.9"/>
-                    <circle cx="24" cy="93" r="4.5" fill="rgba(200,70,44,0.55)"/>
-                    <rect x="33" y="89" width="56" height="2" rx="1" fill="rgba(200,70,44,0.35)"/>
-                    <rect x="33" y="94" width="42" height="2" rx="1" fill="rgba(200,70,44,0.25)"/>
-                    <!-- mini envelope icon -->
-                    <g transform="translate(96 89)" stroke="#c8462c" stroke-width="0.7" fill="none">
-                      <rect x="-3" y="-1" width="6" height="4.5" rx="0.5"/>
-                      <path d="M -3 -1 L 0 1.6 L 3 -1"/>
+                    <!-- LEFT avatar — person silhouette in red chip -->
+                    <circle cx="24" cy="93" r="5" fill="rgba(200,70,44,0.18)" stroke="#c8462c" stroke-width="0.6"/>
+                    <circle cx="24" cy="91.4" r="1.6" fill="#c8462c"/>
+                    <path d="M 20.6 96 Q 24 93 27.4 96" stroke="#c8462c" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+                    <rect x="34" y="89" width="50" height="2" rx="1" fill="rgba(200,70,44,0.35)"/>
+                    <rect x="34" y="94" width="32" height="2" rx="1" fill="rgba(200,70,44,0.25)"/>
+                    <!-- RIGHT mini-icon — 3-person group cluster, red -->
+                    <g transform="translate(96 93)" stroke="#c8462c" stroke-width="0.7" fill="#c8462c" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="-3" cy="-1" r="1.1"/><path d="M -5 2 Q -3 0.5 -1 2" fill="none"/>
+                      <circle cx="0" cy="-1.6" r="1.3"/><path d="M -2.4 2 Q 0 0.3 2.4 2" fill="none"/>
+                      <circle cx="3" cy="-1" r="1.1"/><path d="M 1 2 Q 3 0.5 5 2" fill="none"/>
                     </g>
                   </g>
                 </svg>
