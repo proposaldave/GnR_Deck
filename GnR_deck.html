@@ -6761,7 +6761,7 @@ window.cs1m5Reverse = function() {
   </section>
 </div>
 
-<div class="casey-slide ds-focus active casey-entered" id="cs-frontier" style="background:radial-gradient(ellipse at 50% 0%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important;">
+<div class="casey-slide ds-focus" id="cs-frontier" style="display:none;background:radial-gradient(ellipse at 50% 0%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important;">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">What are we wired for?</div>
   <section class="fr-stage">
 
@@ -6898,7 +6898,7 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-frontier-iconic .fi-era,
   html[data-export="1"] #cs-frontier-iconic .fi-arrow { opacity:1 !important; transform:none !important; animation:none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-frontier-iconic" style="display:none">
+<div class="casey-slide ds-focus active casey-entered" id="cs-frontier-iconic">
   <section class="fi-stage">
     <h1 class="fi-headline">The <em class="fi-predictor">#1 predictor</em> of a fulfilling life:<br>openly <span class="fi-give">giving</span> and <span class="fi-receive">receiving</span><br>real connection.</h1>
     <div class="fi-canvas">
@@ -19107,7 +19107,8 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-12 LATEST] cs-intro5 MOVED to first appendix slot per Dave: 'current slide 1, move it to be the first appendix slide'.
   // [Dave 2026-05-14] cs-intro6 INSERTED as new slot 1 per Dave: 'take the attached image and figure out how to leverage it to create a new slide just before the title slide for our new slide 1'. Cinematic science-proof opener (4-field convergence) lands BEFORE the wordmark title slide. All other main-flow slots shift +1.
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
-  'cs-frontier', //  1 MERGED PRIMARY · Real human connection: the #1 predictor of a fulfilling life. Demand parabolic. The category = real-world social networking. Starts in pickleball.
+  // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
+  'cs-frontier-iconic', //  1 PRIMARY · The #1 predictor of a fulfilling life: openly giving and receiving real connection. Iconic curve + 5 era waypoints + upward arrow. Zero text in the chart.
   'cs-1m8',   //  2 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
@@ -19242,8 +19243,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier merged into one slot-1 slide. cs-intro6 retained as red-dot alt at slot 1 so Dave can A/B vs the merged version. All slots past 1 shift -1.
   // Slot 1 (cs-frontier — merged opener) has cs-intro6 + cs-magcover as red-dot review alts.
   // [Dave 2026-05-14] cs-magcover added — magazine-cover editorial layout (big serif headline + reaching-hands line-art) inspired by 4 reference screenshots Dave shared.
-  // [Dave 2026-05-14 PM v4] cs-frontier-iconic added as red-dot alt — simpler iconic-only version of slot 1 with all text turned into visual/graphical symbols (handshake → phone → heart+notif → mask → AI chip + upward arrow). Curve + 5 icons + arrow tell the rising-demand story without a single word.
-  1: ['cs-magcover', 'cs-intro6', 'cs-frontier-iconic'],
+  // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to primary (see SLIDE_ORDER above). cs-frontier (former primary, with hero text + curve + era labels + 4-sciences strip) now sits as the FIRST red-dot alt — one step left of the new primary so it's the closest neighbor.
+  1: ['cs-frontier', 'cs-magcover', 'cs-intro6'],
   // Slot 2 (cs-1m8 title) has no alts.
   2: [],
   // Slot 3 alts (cs-a7m1 primary; was slot 4) — keys shifted 4 → 3.
