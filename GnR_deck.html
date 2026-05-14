@@ -6854,7 +6854,8 @@ window.cs1m5Reverse = function() {
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What we give</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#5B8FD4">fuels</em> our communities.</div>
         </div>
-        <div class="m8-cap-right" style="text-align:center;transform:translateX(28px)">
+        <!-- [Dave 2026-05-14 PM v4] Right cap translateX bumped 28 → 86 per Dave 'center this text directly below the large R'. R has translateX(+282) + scale(1.4) from its LEFT-edge origin, so R's visual center sits ~70px further right than the right-column's natural center. Right cap needed a larger right-shift than the left cap to track R precisely. (Earlier '+95 overcorrected' note was at a different viewport; +86 lands the caption under R.) -->
+        <div class="m8-cap-right" style="text-align:center;transform:translateX(86px)">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back.</div>
         </div>
@@ -7708,7 +7709,7 @@ window.cs1m7Reverse = function() {
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
       <div class="tg-head" style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-        <span>But our communities don&rsquo;t have a <em>like button</em>.</span>
+        <span>But our communities don&rsquo;t have a <em>like button</em><span style="color:#1877F2">.</span></span>
         <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#1877F2;box-shadow:0 3px 8px rgba(24,119,242,0.3);flex-shrink:0">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
         </span>
@@ -7720,16 +7721,165 @@ window.cs1m7Reverse = function() {
       <div class="tg-sub">Our private thoughts and feelings about each other stay <em>trapped in our heads</em>.</div>
 
       <div class="tg-svg-wrap">
-        <svg viewBox="0 -20 1300 520" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+        <!-- [Dave 2026-05-14 PM v4] MAIN GRAPHIC REBUILT per Dave 'given that this text is really important, should the main graphic(s) on the slide be focused on this? you figure it out'. Decision: yes — the 3-beat closing list (Coordination → by hand · Communities → cliques · No trusted reciprocity) is the load-bearing diagnostic. Prior SVG (thought bubbles + X-marks + texting workflow) was visually rich but only beat 1 mapped to it. New SVG is a 3-panel grid where each panel directly visualizes one beat AND carries its numbered label, so the diagnostic IS the visual. Old closing list (.tg-close) deleted to remove duplication. -->
+        <svg viewBox="0 -10 1380 400" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="tgBubbleGlow" cx="50%" cy="50%" r="55%">
-              <stop offset="0%" stop-color="#f0c040" stop-opacity="0.55"/>
-              <stop offset="60%" stop-color="#b8954a" stop-opacity="0.18"/>
+            <radialGradient id="tgPanelGlow" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="#f0c040" stop-opacity="0.32"/>
+              <stop offset="60%" stop-color="#b8954a" stop-opacity="0.10"/>
               <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
             </radialGradient>
+            <marker id="tgArrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#c8462c"/>
+            </marker>
           </defs>
 
-          <!-- ═══ ROW 1: 3 dark silhouette figures with glowing thought bubbles ═══ -->
+          <!-- ═══ PANEL 1 · COORDINATION → BY HAND ═══════════════════════════════
+               Single texter manually fanning messages out to 4 separate people, one-by-one.
+               No batching, no automation. The 'by hand' failure made physical. -->
+          <g>
+            <ellipse cx="220" cy="150" rx="200" ry="120" fill="url(#tgPanelGlow)"/>
+            <!-- Texter silhouette (centered) -->
+            <g transform="translate(120, 110)">
+              <circle cx="0" cy="0" r="22" fill="#1a1612"/>
+              <path d="M -32 70 Q -32 14 -10 6 L 10 6 Q 32 14 32 70 Z" fill="#1a1612"/>
+              <!-- Arm reaching forward holding phone -->
+              <path d="M 12 22 Q 24 22 30 34 L 40 42" fill="none" stroke="#1a1612" stroke-width="6" stroke-linecap="round"/>
+              <!-- Phone -->
+              <rect x="34" y="22" width="22" height="32" rx="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.6"/>
+              <rect x="37" y="26" width="16" height="22" fill="rgba(91,143,212,0.22)"/>
+              <circle cx="45" cy="51" r="1.4" fill="#1a1612"/>
+            </g>
+            <!-- 4 outgoing dashed red arrows (manual one-at-a-time sends) -->
+            <g stroke="#c8462c" stroke-width="1.7" stroke-dasharray="5 4" fill="none" stroke-linecap="round">
+              <path d="M 198 124 Q 248 100 296 86"/>
+              <path d="M 198 138 Q 248 138 296 132"/>
+              <path d="M 198 152 Q 248 158 296 178"/>
+              <path d="M 198 166 Q 248 188 296 224"/>
+            </g>
+            <!-- 4 target figures (small dark silhouettes) -->
+            <g fill="#1a1612">
+              <g transform="translate(312, 80)"><circle cx="0" cy="0" r="10"/><path d="M -14 26 Q -14 4 -4 0 L 4 0 Q 14 4 14 26 Z"/></g>
+              <g transform="translate(312, 126)"><circle cx="0" cy="0" r="10"/><path d="M -14 26 Q -14 4 -4 0 L 4 0 Q 14 4 14 26 Z"/></g>
+              <g transform="translate(312, 172)"><circle cx="0" cy="0" r="10"/><path d="M -14 26 Q -14 4 -4 0 L 4 0 Q 14 4 14 26 Z"/></g>
+              <g transform="translate(312, 218)"><circle cx="0" cy="0" r="10"/><path d="M -14 26 Q -14 4 -4 0 L 4 0 Q 14 4 14 26 Z"/></g>
+            </g>
+            <!-- Numbered badge + caption -->
+            <g transform="translate(220, 308)">
+              <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">1</text>
+            </g>
+            <text x="220" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#c8462c">COORDINATION &#8594; BY HAND</text>
+          </g>
+
+          <!-- ═══ PANEL 2 · COMMUNITIES → CLIQUES ════════════════════════════════
+               12 nodes split into 3 isolated clusters of 4. Tight intra-cluster edges; NO inter-cluster
+               edges. Faded grey X marks in the gaps to make the missing bridges visible. -->
+          <g>
+            <ellipse cx="690" cy="150" rx="200" ry="120" fill="url(#tgPanelGlow)"/>
+            <!-- Cluster A (top-left) -->
+            <g>
+              <g stroke="rgba(200,70,44,0.55)" stroke-width="0.9" fill="none">
+                <line x1="586" y1="86" x2="612" y2="74"/>
+                <line x1="612" y1="74" x2="624" y2="100"/>
+                <line x1="624" y1="100" x2="598" y2="112"/>
+                <line x1="598" y1="112" x2="586" y2="86"/>
+                <line x1="586" y1="86" x2="624" y2="100"/>
+                <line x1="612" y1="74" x2="598" y2="112"/>
+              </g>
+              <circle cx="586" cy="86" r="4.4" fill="#c8462c"/>
+              <circle cx="612" cy="74" r="4.4" fill="#c8462c"/>
+              <circle cx="624" cy="100" r="4.4" fill="#c8462c"/>
+              <circle cx="598" cy="112" r="4.4" fill="#c8462c"/>
+            </g>
+            <!-- Cluster B (top-right) -->
+            <g>
+              <g stroke="rgba(200,70,44,0.55)" stroke-width="0.9" fill="none">
+                <line x1="758" y1="78" x2="788" y2="92"/>
+                <line x1="788" y1="92" x2="800" y2="120"/>
+                <line x1="800" y1="120" x2="772" y2="116"/>
+                <line x1="772" y1="116" x2="758" y2="78"/>
+                <line x1="758" y1="78" x2="800" y2="120"/>
+                <line x1="788" y1="92" x2="772" y2="116"/>
+              </g>
+              <circle cx="758" cy="78" r="4.4" fill="#c8462c"/>
+              <circle cx="788" cy="92" r="4.4" fill="#c8462c"/>
+              <circle cx="800" cy="120" r="4.4" fill="#c8462c"/>
+              <circle cx="772" cy="116" r="4.4" fill="#c8462c"/>
+            </g>
+            <!-- Cluster C (bottom-center) -->
+            <g>
+              <g stroke="rgba(200,70,44,0.55)" stroke-width="0.9" fill="none">
+                <line x1="668" y1="184" x2="704" y2="176"/>
+                <line x1="704" y1="176" x2="722" y2="206"/>
+                <line x1="722" y1="206" x2="684" y2="218"/>
+                <line x1="684" y1="218" x2="668" y2="184"/>
+                <line x1="668" y1="184" x2="722" y2="206"/>
+                <line x1="704" y1="176" x2="684" y2="218"/>
+              </g>
+              <circle cx="668" cy="184" r="4.4" fill="#c8462c"/>
+              <circle cx="704" cy="176" r="4.4" fill="#c8462c"/>
+              <circle cx="722" cy="206" r="4.4" fill="#c8462c"/>
+              <circle cx="684" cy="218" r="4.4" fill="#c8462c"/>
+            </g>
+            <!-- Missing-bridge X marks in the gaps between clusters -->
+            <g stroke="rgba(26,22,18,0.32)" stroke-width="1.8" stroke-linecap="round">
+              <g transform="translate(690, 96)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
+              <g transform="translate(648, 158)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
+              <g transform="translate(744, 162)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
+            </g>
+            <!-- Numbered badge + caption -->
+            <g transform="translate(690, 308)">
+              <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">2</text>
+            </g>
+            <text x="690" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#c8462c">COMMUNITIES &#8594; CLIQUES</text>
+          </g>
+
+          <!-- ═══ PANEL 3 · NO TRUSTED RECIPROCITY ═══════════════════════════════
+               Two figures facing each other. LEFT gives (solid red arrow with heart icon). RIGHT does
+               NOT reciprocate — return arrow is broken/dashed with a '?' in place of the gift. The
+               asymmetric exchange = the failure of trusted reciprocity. -->
+          <g>
+            <ellipse cx="1160" cy="150" rx="200" ry="120" fill="url(#tgPanelGlow)"/>
+            <!-- Left figure (giver) -->
+            <g transform="translate(1054, 110)">
+              <circle cx="0" cy="0" r="22" fill="#1a1612"/>
+              <path d="M -32 70 Q -32 14 -10 6 L 10 6 Q 32 14 32 70 Z" fill="#1a1612"/>
+            </g>
+            <!-- Right figure (non-reciprocator) -->
+            <g transform="translate(1266, 110)">
+              <circle cx="0" cy="0" r="22" fill="#1a1612"/>
+              <path d="M -32 70 Q -32 14 -10 6 L 10 6 Q 32 14 32 70 Z" fill="#1a1612"/>
+            </g>
+            <!-- GIVE arrow (solid red, left → right) with heart at midpoint -->
+            <g>
+              <path d="M 1086 116 L 1232 116" stroke="#c8462c" stroke-width="2.2" fill="none" stroke-linecap="round" marker-end="url(#tgArrowRed)"/>
+              <g transform="translate(1160, 116)">
+                <path d="M 0 6 C -10 -4 -16 -10 -10 -16 C -6 -20 -2 -18 0 -14 C 2 -18 6 -20 10 -16 C 16 -10 10 -4 0 6 Z" fill="#c8462c"/>
+              </g>
+            </g>
+            <!-- RETURN arrow (broken / dashed, right → left) with '?' instead of return-gift -->
+            <g>
+              <path d="M 1232 168 L 1208 168 M 1196 168 L 1172 168 M 1160 168 L 1136 168 M 1124 168 L 1100 168" stroke="rgba(26,22,18,0.42)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <!-- Broken arrowhead at left end -->
+              <path d="M 1100 168 L 1108 162 M 1100 168 L 1108 174" stroke="rgba(26,22,18,0.42)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <!-- '?' midpoint -->
+              <g transform="translate(1160, 168)">
+                <circle r="11" fill="#fbf7ee" stroke="rgba(26,22,18,0.42)" stroke-width="1.5"/>
+                <text text-anchor="middle" y="5" font-family="Manrope,sans-serif" font-size="14" font-weight="800" fill="rgba(26,22,18,0.62)">?</text>
+              </g>
+            </g>
+            <!-- Numbered badge + caption -->
+            <g transform="translate(1160, 308)">
+              <circle r="17" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.6"/>
+              <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="800" fill="#c8462c">3</text>
+            </g>
+            <text x="1160" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#c8462c">NO TRUSTED RECIPROCITY</text>
+          </g>
+
+          <!-- ═══ ORIGINAL 3-ROW SVG CONTENT BELOW (kept commented for reference / rollback) ═══ -->
+          <g style="display:none">
           <g class="tg-row tg-row-1">
           <g class="tg-ghost-glow">
             <!-- Glow halos behind bubbles -->
@@ -7878,26 +8028,11 @@ window.cs1m7Reverse = function() {
             </g>
           </g>
           </g> <!-- /tg-row-3 -->
+          </g> <!-- /original-3-row-content (hidden) -->
         </svg>
       </div>
 
-      <!-- [Dave 2026-05-14] Single closing line replaced with a 3-line diagnostic stack: operational failure → social failure → relational failure. Third line is mine — captures Dave's "NO TRUSTED RECIPROCITY" insight: in communities without infrastructure, trust + giving only happens inside close circles (cliques), so beyond them people retreat to self-interest. "Beyond cliques" hooks directly to line 2 so the three beats compound.
-           [Dave 2026-05-14 PM] Refactored from identical-class flat stack (read as wall-of-text) to numbered beats with arrow separators between, telegraphing the causal chain. Numbers anchor each beat, arrows convey "this causes the next." -->
-      <div class="tg-close">
-        <!-- [Dave 2026-05-14] Arrow separators removed — numbered beats stand on their own. -->
-        <div class="tg-close-beat">
-          <span class="tg-close-num">1</span>
-          <span class="tg-close-text">Coordination &rarr; by hand</span>
-        </div>
-        <div class="tg-close-beat">
-          <span class="tg-close-num">2</span>
-          <span class="tg-close-text">Communities &rarr; cliques</span>
-        </div>
-        <div class="tg-close-beat">
-          <span class="tg-close-num">3</span>
-          <span class="tg-close-text">No trusted reciprocity</span>
-        </div>
-      </div>
+      <!-- [Dave 2026-05-14 PM v4] Closing 3-beat stack DELETED — labels now live inline under each panel in the new 3-panel SVG above. Slide flow is now headline + subhead + 3 visualized panels (each with its own number badge + label). No redundant text-only repetition below. -->
     </div>
   </section>
 </div>
