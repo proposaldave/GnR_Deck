@@ -10515,6 +10515,13 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-step.now .now-tag { display:inline-block;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase;color:#168651;background:rgba(22,134,81,0.10);border:1px solid rgba(22,134,81,0.40);border-radius:99px;padding:2px 8px;margin-top:6px; }
   @keyframes v5NowPulse { 0%,100% { box-shadow:0 0 0 6px rgba(22,134,81,0.14), 0 0 18px rgba(22,134,81,0.45); } 50% { box-shadow:0 0 0 10px rgba(22,134,81,0.10), 0 0 26px rgba(22,134,81,0.62); } }
   html[data-export="1"] #cs-18-vd4 .v5-step.now .dot { animation:none !important; }
+  /* [Dave 2026-05-14] Simple on-load animation for the 'Dave Velardo · Founder & CEO' name: letter-spacing 'settles in' from wider to its final value while fading up. Runs once on slide entry, skipped in export mode. */
+  @keyframes vd4NameIntro {
+    0%   { opacity: 0; transform: translateY(8px); letter-spacing: 0.62em; }
+    100% { opacity: 1; transform: translateY(0); letter-spacing: 0.42em; }
+  }
+  #cs-18-vd4.casey-entered .vd-name { animation: vd4NameIntro 1.15s cubic-bezier(.22,1,.36,1) backwards 0.18s; }
+  html[data-export="1"] #cs-18-vd4 .vd-name { animation: none !important; }
 </style>
 
 <div class="casey-slide ds-focus" id="cs-18-vd1">
@@ -10617,21 +10624,24 @@ window.cs1m7Reverse = function() {
         <!-- PILLAR 1 · IDEA MAZE (RED + STAIRCASE) -->
         <div class="v5-pillar p1">
           <div class="v5-badge red">
-            <!-- [Dave 2026-05-14 v2] Maze rebuilt as a clean SQUARE SPIRAL — single bold corridor winding inward from the entry dot on the left to a sparkling 'idea' destination at the center. The earlier random-walls + dashed-trace version read as a circuit diagram (Dave: 'doesn't look like a maze at all'); the spiral is universally recognized as labyrinth/idea-maze and stays legible at small icon size. -->
+            <!-- [Dave 2026-05-14 v3] Spiral version rejected as 'still doesn't look enough like a maze'. Rebuilt as a CLASSIC RECTANGULAR HEDGE MAZE — clear outer boundary with an entry gap at the top + exit gap at the bottom-right, plus 7 interior walls creating recognizable T-junctions, dead-ends, and a forced winding path. Reads top-down like a garden maze; no spiral, no path overlay, just the walls themselves doing the work. -->
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- 3-turn square spiral corridor: enters on the left edge, spirals into center. -->
-              <path d="M 6 40 L 14 40 L 14 14 L 66 14 L 66 66 L 22 66 L 22 26 L 58 26 L 58 54 L 32 54 L 32 40 L 44 40"
-                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <!-- Entry marker (outside the maze) -->
-              <circle cx="6" cy="40" r="2.6" fill="white"/>
-              <!-- 'Idea' destination: filled dot + 4-point sparkle at the spiral's terminus -->
-              <circle cx="44" cy="40" r="3.0" fill="white"/>
-              <g stroke="white" stroke-width="1.4" stroke-linecap="round">
-                <line x1="44" y1="32" x2="44" y2="29"/>
-                <line x1="50" y1="34" x2="52" y2="32"/>
-                <line x1="50" y1="46" x2="52" y2="48"/>
-                <line x1="44" y1="48" x2="44" y2="51"/>
+              <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <!-- Outer boundary — left/top/bottom in one stroke, right wall with exit gap in another -->
+                <path d="M 28 14 L 14 14 L 14 66 L 48 66"/>
+                <path d="M 60 66 L 66 66 L 66 14 L 40 14"/>
+                <!-- Interior walls forming corridors + dead-ends -->
+                <path d="M 14 28 L 28 28 L 28 14"/>
+                <path d="M 28 40 L 40 40 L 40 28"/>
+                <path d="M 40 52 L 52 52 L 52 28"/>
+                <path d="M 22 52 L 22 66"/>
+                <path d="M 40 14 L 40 22"/>
+                <path d="M 52 40 L 66 40"/>
+                <path d="M 14 52 L 22 52"/>
               </g>
+              <!-- Entry/exit markers outside the boundary -->
+              <circle cx="34" cy="8" r="2.8" fill="white"/>
+              <circle cx="54" cy="72" r="2.8" fill="white"/>
             </svg>
           </div>
           <div class="v5-num">01</div>
@@ -10649,34 +10659,30 @@ window.cs1m7Reverse = function() {
           <div class="v5-num">02</div>
           <div class="v5-eye">Starting Point</div>
           <div class="v5-body">Built a <em>tiny lab</em>.</div>
-          <div class="v5-meta"><strong>NEPC</strong> &middot; Recruit community building talent &middot; 500 members &middot; 20+ employees</div>
+          <!-- [Dave 2026-05-14] Non-breaking spaces inside '500 members' + '20+ employees' so the natural wrap point falls AFTER 'talent ·' (was wrapping mid-phrase between '500' and 'members'). -->
+          <div class="v5-meta"><strong>NEPC</strong> &middot; Recruit community building talent &middot; 500&nbsp;members &middot; 20+&nbsp;employees</div>
         </div>
 
-        <!-- PILLAR 3 · MISSION (BLUE + NETWORK ORB) -->
+        <!-- PILLAR 3 · MISSION — [Dave 2026-05-14] Network-node icon replaced with a PERSON CARRYING A FLAG: the literal "Lives it, Face of it" — someone standing for the mission, banner raised. Reads instantly; pairs the figure (face of it) with the flag (lives it / leads with the banner). -->
         <div class="v5-pillar p3">
           <div class="v5-badge blue">
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round">
-                <line x1="40" y1="40" x2="22" y2="22"/>
-                <line x1="40" y1="40" x2="58" y2="22"/>
-                <line x1="40" y1="40" x2="22" y2="58"/>
-                <line x1="40" y1="40" x2="58" y2="58"/>
-                <line x1="40" y1="40" x2="14" y2="40"/>
-                <line x1="40" y1="40" x2="66" y2="40"/>
-              </g>
-              <circle cx="22" cy="22" r="4.4" fill="white"/>
-              <circle cx="58" cy="22" r="4.4" fill="white"/>
-              <circle cx="22" cy="58" r="4.4" fill="white"/>
-              <circle cx="58" cy="58" r="4.4" fill="white"/>
-              <circle cx="14" cy="40" r="4.4" fill="white"/>
-              <circle cx="66" cy="40" r="4.4" fill="white"/>
-              <circle cx="40" cy="40" r="6.6" fill="white"/>
+              <!-- Person silhouette: head -->
+              <circle cx="32" cy="24" r="9" fill="white"/>
+              <!-- Body / shoulders -->
+              <path d="M 18 64 L 18 50 C 18 42 24 38 32 38 C 40 38 46 42 46 50 L 46 64 Z" fill="white"/>
+              <!-- Flag pole — held in raised arm, extending up -->
+              <line x1="54" y1="64" x2="54" y2="14" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
+              <!-- Triangular flag pennant -->
+              <path d="M 54 14 L 72 19 L 54 24 Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+              <!-- Arm connecting body to flag pole -->
+              <line x1="46" y1="42" x2="54" y2="34" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="v5-num">03</div>
           <div class="v5-eye">Mission</div>
-          <div class="v5-body"><em>Lives it</em></div>
-          <div class="v5-meta">Club owner sales &middot; network &amp; podcasts &middot; community builder expertise, mission, 4D play-style</div>
+          <div class="v5-body"><em>Lives it, Face of it</em></div>
+          <div class="v5-meta">Community builder expertise &middot; Club owner sales &middot; network &amp; podcasts &middot; 4D play-style</div>
         </div>
       </div>
 
@@ -13206,7 +13212,7 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-closer .sc-c3{color:#b8954a;font-weight:600}
 </style>
 <div class="casey-slide ds-focus" id="cs-samecourt">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Example: new paradigm powering our communities</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Example</div>
   <section class="sc-stage">
     <div class="sc-wrap">
       <h1 class="sc-hero">Flip the incentives <span class="sc-arr">&rarr;</span> <em>Unleash the community</em></h1>
