@@ -28,7 +28,11 @@ Hero subject = ONE mythic gesture or moment, not a wide establishing shot. Ambig
 
 ### STANDING - permanent banned aesthetics across hero imagery
 
-Permanent banned aesthetics across all hero imagery: two-people-on-porch / Hallmark / memoir / senior-living-brochure register, Mediterranean / villa / terra cotta / olive, Anthropologie catalog vibe, sunset-as-melancholy, photorealism, digital-flat illustration, cartoon, stock "diversity poster" staging, paddle-cluster or four-paddle-flower compositions, paddle-only product shots, faces / eyes / smiles in mythic close-ups.
+Permanent banned aesthetics across all hero imagery: two-people-on-porch / Hallmark / memoir / senior-living-brochure register, Mediterranean / villa / terra cotta / olive, Anthropologie catalog vibe, sunset-as-melancholy, photorealism, digital-flat illustration, cartoon, stock "diversity poster" staging, paddle-cluster or four-paddle-flower compositions, paddle-only product shots, fake posed smiles, and object-exchange metaphors that make connection feel transactional.
+
+### STANDING - emotion can be visible
+
+Faces and smiles are allowed on opener images when the slide needs visible emotion. The ban is not "no smiles"; the ban is fake stock-photo warmth, posed diversity-poster staging, or sentimental Hallmark register. A good opener smile should feel observed, specific, and emotionally true.
 
 ### STANDING - hands must read capable, not creepy
 
@@ -41,6 +45,10 @@ Typography audit is mandatory on every slide rebuild. When a slide's image, layo
 ### STANDING - first slide is universal, not the wedge
 
 The first slide must not use pickleball, racquet sports, courts, nets, paddles, balls, club scenes, or other proving-ground imagery. The opener sells the universal human truth before the wedge appears. Use a mythic, non-sport human gesture that lets the thesis text carry the claim: "The #1 predictor of a fulfilling life: openly giving and receiving real connection."
+
+### STANDING - avoid transactional props on connection slides
+
+Do not use keys, envelopes, invitations, documents, gifts, contracts, phones, or other exchanged objects as the emotional center of first-slide connection imagery. If the object becomes the meaning, the slide reads as access, transaction, or administration instead of openly giving and receiving real connection.
 
 ### Headline-image tension rule
 
@@ -57,7 +65,7 @@ If the headline makes a civilizational or existential claim, such as "fulfilling
 - Stock-photo "diversity poster" staging.
 - Generic "people connecting" framing.
 
-Superseded by the broader permanent banned-aesthetics rule that also bans photorealism, digital-flat illustration, cartoon, Mediterranean/villa/terra cotta/olive aesthetics, paddle clusters, paddle-only product shots, and faces/eyes/smiles in mythic close-ups.
+Superseded by the broader permanent banned-aesthetics rule. Dave later clarified that smiles can be right when the opener needs visible emotion; the active ban is fake posed warmth, not faces or smiles themselves.
 
 ### SUPERSEDED 2026-05-14 - One specific non-equipment gesture beats a wide establishing shot
 
