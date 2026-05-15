@@ -23131,6 +23131,41 @@ window.addEventListener('resize',drawLoop);
     margin-left: auto;
   }
 
+  /* === Slide revert panel (Shift+R) === */
+  #slideRevertPanel {
+    position: fixed;
+    top: 74px;
+    right: 26px;
+    width: 420px;
+    max-height: calc(100vh - 110px);
+    z-index: 10020;
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+    background: #fbf7ef;
+    color: #1a1612;
+    border: 1px solid rgba(184,149,74,0.42);
+    box-shadow: 0 24px 80px rgba(26,22,18,0.28);
+    font-family: 'Manrope', sans-serif;
+    overflow: auto;
+  }
+  #slideRevertPanel.open { display: flex; }
+  #slideRevertPanel .rv-head { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; }
+  #slideRevertPanel .rv-kicker { font-size:0.58rem; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:#b8954a; margin-bottom:4px; }
+  #slideRevertPanel .rv-title { font-family:'Playfair Display',Georgia,serif; font-size:1.25rem; font-weight:800; line-height:1.1; color:#1a1612; }
+  #slideRevertPanel .rv-close { border:0; background:rgba(26,22,18,0.06); color:#1a1612; width:30px; height:30px; cursor:pointer; font-size:20px; line-height:1; }
+  #slideRevertPanel .rv-status { font-size:0.78rem; line-height:1.45; color:rgba(26,22,18,0.68); }
+  #slideRevertPanel .rv-list { display:flex; flex-direction:column; gap:8px; }
+  #slideRevertPanel .rv-row { border:1px solid rgba(26,22,18,0.12); background:#fffaf1; padding:10px; display:grid; grid-template-columns:1fr auto auto; gap:8px; align-items:center; }
+  #slideRevertPanel .rv-time { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:#1a1612; }
+  #slideRevertPanel .rv-desc { font-size:0.72rem; color:rgba(26,22,18,0.62); margin-top:2px; }
+  #slideRevertPanel button.rv-action { border:1px solid rgba(184,149,74,0.42); background:rgba(184,149,74,0.10); color:#1a1612; font-size:0.62rem; font-weight:800; letter-spacing:0.10em; text-transform:uppercase; padding:8px 9px; cursor:pointer; }
+  #slideRevertPanel button.rv-action:hover { background:rgba(184,149,74,0.20); }
+  #slideRevertPanel .rv-preview { display:none; border:1px solid rgba(26,22,18,0.16); background:#1a1612; min-height:210px; }
+  #slideRevertPanel .rv-preview.open { display:block; }
+  #slideRevertPanel .rv-preview iframe { width:100%; height:230px; border:0; background:#fbf7ef; }
+
   /* === Speaker notes button + overlay === */
   #speakerNotesBtn {
     position: fixed; bottom: 22px; right: 22px;
@@ -23223,6 +23258,7 @@ window.addEventListener('resize',drawLoop);
   html[data-export="1"] #annotationOverlay,
   html[data-export="1"] #annotationPickHint,
   html[data-export="1"] .annotation-marker,
+  html[data-export="1"] #slideRevertPanel,
   html[data-export="1"] #speakerNotesBtn,
   html[data-export="1"] #speakerNotesOverlay { display: none !important; }
 </style>
@@ -23249,6 +23285,19 @@ window.addEventListener('resize',drawLoop);
       <span class="status" id="annotationStatus">Saved locally in this browser.</span>
     </div>
   </div>
+</div>
+
+<div id="slideRevertPanel" aria-live="polite">
+  <div class="rv-head">
+    <div>
+      <div class="rv-kicker">Slide revert</div>
+      <div class="rv-title" id="rvTitle">Backup history</div>
+    </div>
+    <button class="rv-close" onclick="closeSlideRevertPanel()" aria-label="Close revert panel">&times;</button>
+  </div>
+  <div class="rv-status" id="rvStatus">Press Shift+R to load backups for the active slide.</div>
+  <div class="rv-list" id="rvList"></div>
+  <div class="rv-preview" id="rvPreview"><iframe title="Backup preview" id="rvPreviewFrame"></iframe></div>
 </div>
 
 <div id="speakerNotesBtn" onclick="openSpeakerNotes()" title="Speaker notes (N)">📝</div>
@@ -23576,6 +23625,114 @@ document.addEventListener('keydown', function(e){
     activeAnnotationPoint = null;
     document.documentElement.classList.remove('annotation-pick-mode');
   }
+}, true);
+
+// =============================================================================
+// SLIDE REVERT PANEL — Shift+R reads backups/slides/_index.json
+// =============================================================================
+const SLIDE_REVERT_INDEX_URL = 'backups/slides/_index.json';
+
+function getCurrentRevertSlideId() {
+  const active = document.querySelector('.casey-slide.active');
+  return active ? active.id : (SLIDE_ORDER[current - 1] || '');
+}
+
+function closeSlideRevertPanel() {
+  const panel = document.getElementById('slideRevertPanel');
+  if (panel) panel.classList.remove('open');
+}
+
+function buildBackupPreviewHtml(blockHtml) {
+  const styles = Array.from(document.querySelectorAll('link[rel="stylesheet"], style')).map(node => node.outerHTML).join('\n');
+  return '<!doctype html><html><head><meta charset="utf-8">' + styles + '<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#1a1612}.casey-slide{display:block!important;position:relative!important;inset:auto!important;width:1920px!important;height:1080px!important;transform-origin:top left!important;transform:scale(.218)!important;opacity:1!important;visibility:visible!important}.casey-slide *{animation:none!important;transition:none!important}</style></head><body>' + blockHtml + '</body></html>';
+}
+
+function copyTextToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+  const area = document.createElement('textarea');
+  area.value = text;
+  area.style.position = 'fixed';
+  area.style.opacity = '0';
+  document.body.appendChild(area);
+  area.select();
+  document.execCommand('copy');
+  area.remove();
+  return Promise.resolve();
+}
+
+function copyRevertCommand(slideId, row) {
+  const prompt = `Revert slide ${slideId} in pitch_visuals/GnR_deck.html to backup ${row.file}. First save current state. Then replace the slide's div block with the backup HTML. Run deploy ritual.`;
+  copyTextToClipboard(prompt).then(() => {
+    document.getElementById('rvStatus').textContent = 'Copied revert command for ' + slideId + ' · ' + row.timestamp;
+  });
+}
+
+async function previewBackup(row) {
+  const status = document.getElementById('rvStatus');
+  const preview = document.getElementById('rvPreview');
+  const frame = document.getElementById('rvPreviewFrame');
+  status.textContent = 'Loading preview ' + row.timestamp + '...';
+  const response = await fetch(row.file);
+  if (!response.ok) throw new Error('Preview fetch failed: ' + response.status);
+  const html = await response.text();
+  frame.srcdoc = buildBackupPreviewHtml(html.replace(/^<!--[\s\S]*?-->\s*/, ''));
+  preview.classList.add('open');
+  status.textContent = 'Previewing ' + row.timestamp + '. This is visual only; nothing has been changed.';
+}
+
+async function openSlideRevertPanel() {
+  const panel = document.getElementById('slideRevertPanel');
+  const title = document.getElementById('rvTitle');
+  const status = document.getElementById('rvStatus');
+  const list = document.getElementById('rvList');
+  const preview = document.getElementById('rvPreview');
+  const slideId = getCurrentRevertSlideId();
+  panel.classList.add('open');
+  title.textContent = slideId || 'Backup history';
+  list.innerHTML = '';
+  preview.classList.remove('open');
+  status.textContent = 'Loading backup index...';
+  try {
+    const response = await fetch(SLIDE_REVERT_INDEX_URL, { cache: 'no-store' });
+    if (!response.ok) throw new Error('Index fetch failed: ' + response.status);
+    const index = await response.json();
+    const rows = (index[slideId] || []).slice().reverse();
+    if (!rows.length) {
+      status.textContent = 'No backups found for ' + slideId + '.';
+      return;
+    }
+    status.textContent = rows.length + ' backup' + (rows.length === 1 ? '' : 's') + ' found for ' + slideId + '.';
+    rows.forEach(row => {
+      const item = document.createElement('div');
+      item.className = 'rv-row';
+      const meta = document.createElement('div');
+      meta.innerHTML = '<div class="rv-time"></div><div class="rv-desc"></div>';
+      meta.querySelector('.rv-time').textContent = row.timestamp;
+      meta.querySelector('.rv-desc').textContent = row.description || 'backup';
+      const previewBtn = document.createElement('button');
+      previewBtn.className = 'rv-action';
+      previewBtn.textContent = 'Preview';
+      previewBtn.onclick = () => previewBackup(row).catch(err => { status.textContent = err.message; });
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'rv-action';
+      copyBtn.textContent = 'Copy revert command';
+      copyBtn.onclick = () => copyRevertCommand(slideId, row);
+      item.append(meta, previewBtn, copyBtn);
+      list.appendChild(item);
+    });
+  } catch (err) {
+    status.textContent = 'Could not read backups here. Use the deployed deck or a local web server. ' + err.message;
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable)) return;
+  if (e.key === 'R' && e.shiftKey) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    openSlideRevertPanel();
+  }
+  if (e.key === 'Escape') closeSlideRevertPanel();
 }, true);
 
 // =============================================================================
