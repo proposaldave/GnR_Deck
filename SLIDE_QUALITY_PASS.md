@@ -66,7 +66,7 @@ Will not touch: chart content, logo SVGs, bar widths, bridge, left/right flip in
 
 ### After
 
-Pending.
+Raised the thesis headline scale/weight and capped its measure for cleaner line rhythm. Increased the void-row dashed tracks, pulse, question mark, and "real human connection" labels for clearer contrast, and normalized the tech card heading to exact brand blue. Preserved both charts, bar widths, logo SVGs, bridge, click-to-flip behavior, and dated iteration comments.
 
 ## Deferred - Needs Dave Decision
 
