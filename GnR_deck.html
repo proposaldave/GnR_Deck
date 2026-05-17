@@ -9911,6 +9911,8 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-cards { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; perspective:1200px; }
   #cs-wedgepb-combo .wpc-cards::before { content:""; position:absolute; left:-18px; top:0; bottom:0; width:3px; border-radius:1.5px; background:linear-gradient(180deg, rgba(91,143,212,0.95) 0%, rgba(91,143,212,0.75) 50%, rgba(91,143,212,0.4) 100%); z-index:0; }
   #cs-wedgepb-combo .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; transform-style:preserve-3d; transition:transform 0.85s cubic-bezier(.22,1,.36,1); }
+  /* [Dave 2026-05-17 LATEST] Card 3 (red problem-beat) is now taller to fit 3 red callout pills inline (matching the reference card style with industry stuck in ratings/doesn't measure reality/manual scheduling). */
+  #cs-wedgepb-combo .wpc-card.wpc-c3 { height:142px; }
   #cs-wedgepb-combo .wpc-card[data-flipped="1"] { transform:rotateY(180deg); }
   #cs-wedgepb-combo .wpc-face { position:absolute; inset:0; display:flex; align-items:center; gap:18px; padding:14px 22px 14px 20px; background:rgba(251,247,239,0.96); border:1px solid rgba(184,149,74,0.30); border-left:4px solid var(--wpc-color); border-radius:0 12px 12px 0; box-shadow:0 6px 16px rgba(26,22,18,0.06); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
   #cs-wedgepb-combo .wpc-back { transform:rotateY(180deg); }
@@ -10001,8 +10003,7 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Already a social network</div>
-              <div class="wpc-card-clarify">&mdash; beyond the courts.</div>
+              <div class="wpc-card-lede">Already a social network<br><em style="font-style:italic;font-weight:850">beyond the courts.</em></div>
             </div>
             <div class="wpc-card-num">01</div>
           </div>
@@ -10020,8 +10021,7 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Fastest-growing sport</div>
-              <div class="wpc-card-clarify">in U.S. history.</div>
+              <div class="wpc-card-lede">Fastest-growing<br><em style="font-style:italic;font-weight:850">sport in U.S. history.</em></div>
             </div>
             <div class="wpc-card-num">02</div>
           </div>
@@ -10040,8 +10040,12 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Stuck in 2005</div>
-              <div class="wpc-card-clarify">&mdash; coordination stack hasn&rsquo;t moved.</div>
+              <div class="wpc-card-lede">Coordination stack stuck in 2005</div>
+              <div class="wpc-c3-pills" style="display:flex;flex-direction:column;gap:3px;margin-top:4px">
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.78rem;font-weight:650;line-height:1.2;color:rgba(251,247,239,0.96);background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:5px;padding:3px 8px">industry stuck in <em style="font-style:italic;font-weight:850">ratings, ego</em></div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.78rem;font-weight:650;line-height:1.2;color:rgba(251,247,239,0.96);background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:5px;padding:3px 8px">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850">reality (human connection)</em></div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.78rem;font-weight:650;line-height:1.2;color:rgba(251,247,239,0.96);background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:5px;padding:3px 8px"><em style="font-style:italic;font-weight:850">manual</em> club calendar creation &amp; signup</div>
+              </div>
             </div>
             <div class="wpc-card-num">03</div>
           </div>
@@ -10059,8 +10063,7 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Wildly social</div>
-              <div class="wpc-card-clarify">&mdash; high-velocity experiences.</div>
+              <div class="wpc-card-lede">Wildly social.<br>High velocity <em style="font-style:italic;font-weight:850">experiences.</em></div>
             </div>
             <div class="wpc-card-num">04</div>
           </div>
@@ -10078,8 +10081,7 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Cold-start data cracked</div>
-              <div class="wpc-card-clarify">at NEPC.</div>
+              <div class="wpc-card-lede">Cold-start <em style="font-style:italic;font-weight:850">data cracked.</em></div>
             </div>
             <div class="wpc-card-num">05</div>
           </div>
@@ -17499,6 +17501,12 @@ window.cs1m7Reverse = function() {
   /* Verb row — re-uses fv-* visual language but on a slightly stronger background tint so it floats clearly over the watercolor wash */
   #cs-fv6-img .fvi-row { display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:1820px;margin-top:4px;flex-wrap:nowrap; }
   #cs-fv6-img .fvi-card { background:rgba(251,247,239,0.94);border:1px solid rgba(184,149,74,0.32);border-radius:14px;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:0;box-shadow:0 4px 14px rgba(26,22,18,0.06); }
+
+  /* [Dave 2026-05-17 LATEST] Measure (start) + Abundance (end) cards bumped LARGER than the middle 6 cards — emphasizes the workflow's two anchors. Done by increasing flex-grow + padding + verb font-size on those two cards specifically. */
+  #cs-fv6-img .fvi-c0, #cs-fv6-img .fvi-c6 { flex:1.65; padding:20px 12px; gap:11px; box-shadow:0 8px 22px rgba(26,22,18,0.10); border-width:1.5px; }
+  #cs-fv6-img .fvi-c0 .fvi-ico, #cs-fv6-img .fvi-c6 .fvi-ico { width:50px; height:50px; }
+  #cs-fv6-img .fvi-c0 .fvi-ico svg, #cs-fv6-img .fvi-c6 .fvi-ico svg { width:26px; height:26px; }
+  #cs-fv6-img .fvi-c0 .fvi-verb, #cs-fv6-img .fvi-c6 .fvi-verb { font-size:clamp(1.05rem,1.35vw,1.3rem); }
   #cs-fv6-img .fvi-ico { width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--fvi-bg);color:var(--fvi-c); }
   #cs-fv6-img .fvi-ico svg { width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
   #cs-fv6-img .fvi-verb { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.85rem,1.05vw,1rem);font-weight:850;color:var(--fvi-c);letter-spacing:-0.01em; }
@@ -17542,7 +17550,7 @@ window.cs1m7Reverse = function() {
       <circle cx="72" cy="22" r="3.8" fill="#c8462c"/>
     </svg>
     <h1 class="fvi-head">Technology for our <em>deepest, most networkable, untapped human-social data</em>.</h1>
-    <p class="fvi-sub">The full workflow GnR brings online &mdash; <em>measure to abundance</em>.</p>
+    <!-- [Dave 2026-05-17 LATEST] Subtitle "The full workflow GnR brings online — measure to abundance." DELETED per Dave 'delete this'. -->
 
     <div class="fvi-row">
       <div class="fvi-card fvi-c0"><div class="fvi-ico"><svg viewBox="0 0 24 24"><rect x="3" y="9.5" width="18" height="5" rx="0.5"/><line x1="6" y1="9.5" x2="6" y2="12.5"/><line x1="9" y1="9.5" x2="9" y2="11.5"/><line x1="12" y1="9.5" x2="12" y2="12.5"/><line x1="15" y1="9.5" x2="15" y2="11.5"/><line x1="18" y1="9.5" x2="18" y2="12.5"/></svg></div><div class="fvi-verb">Measure.</div></div>
@@ -21670,14 +21678,15 @@ const SLIDE_ORDER = [
   // 'cs-pbfirst' DEMOTED — see SLIDE_ALTS[15].
   // [Dave 2026-05-17 v2] cs-18-vd4 MOVED UP — now sits IMMEDIATELY AFTER cs-pbfirst per Dave 'move the Dave Velardo wheelhouse slide after the Pickleball → fastest path slide'. The wedge claim lands first, then the founder/wheelhouse beat confirms "do-able by Dave's three core strengths" before the flywheel illustrates how it compounds.
   'cs-18-vd4',    // Founder · CEO · Dave Velardo (My Wheelhouse) · Three strengths layout (Vision/Foundation/Network + proof-row strip)
-  // [Dave 2026-05-12 EVENING] cs-fw1 — Autonomous social coordination (flywheel) — sits AFTER the wheelhouse now: wedge → founder → flywheel.
-  'cs-fw1',   // Autonomous social coordination ('Drop GnR into any pickleball club. It just works. And compounds forever — at AI speed.') — flywheel diagram.
   // [Dave 2026-05-15] cs-givefirst INSERTED right after the Wheelhouse slide — lands what "GnR Growth" actually means: "You can't tell someone to open their heart. You open yours first. Theirs opens back." The causal mechanism of human connection, in Dave's literal voice.
   // [Dave 2026-05-17 v8] cs-givefirst-art RESTORED as PRIMARY at slot 18 per Dave 'revert this to the one that had the amazing image which i never told you to delete'. cs-givefirst demoted back to red-dot alt.
+  // [Dave 2026-05-17 LATEST] cs-givefirst-art SWAPPED to come BEFORE cs-fw1 (was after). New flow: wheelhouse → give-first art → flywheel.
   'cs-givefirst-art', // PRIMARY · watercolor community gathering + quote + two-hearts graphic
+  // [Dave 2026-05-12 EVENING] cs-fw1 — Autonomous social coordination (flywheel) — now sits AFTER cs-givefirst-art: wedge → founder → give-first → flywheel.
+  'cs-fw1',   // Autonomous social coordination ('Drop GnR into any pickleball club. It just works. And compounds forever — at AI speed.') — flywheel diagram.
   // [Dave 2026-05-12 LATER] cs-fv6 — Measuring is the unlock · 7-verb row (Measure → Test → Graph → ... → Abundance).
   // [Dave 2026-05-17 v2] cs-fv6-art PROMOTED to slot 19 PRIMARY per Dave 'create new version of "Technology for our deepest..." slide making new one main image and current/old one a red dot slide to the left of it'. Image-led variant with golden-hour neighborhood watercolor + cream-wash overlay carrying the same headline + 7-verb workflow. cs-fv6 (typographic-only original) demoted to RED-DOT alt to the LEFT.
-  'cs-fv6', // What is real human connection technology? · typographic + 7-verb workflow row [Dave 2026-05-17: cs-fv6-art image-led variant DELETED per Dave 'delete this slide' — restored cs-fv6 as primary at slot 19]
+  'cs-fv6-img', // PRIMARY · Image-led "Technology for our deepest, most networkable, untapped human-social data" with codex watercolor background [Dave 2026-05-17 LATEST: promoted from pink-dot alt; cs-fv6 typographic version removed from main flow]
   // [Dave 2026-05-17 LATEST] cs-mv6 MOVED UP — now sits IMMEDIATELY AFTER cs-fv6 per Dave 'move the "The next great technology revolution." slide just after the "What is real human connection technology?" slide'.
   // [Dave 2026-05-17 v2] cs-mv6-merge PROMOTED to slot 20 as the NEW MISSION slide ('Mission · for all our lives to run on autonomous, abundant connection.'). cs-mv6 demoted to RED-DOT alt to the LEFT of cs-mv6-merge.
   // [Dave 2026-05-17 v2] cs-wedge1 MOVED UP — now sits IMMEDIATELY AFTER the mission slide (was further down at slot 23). The "Every community and every person wants autonomous, abundant GnR connection." beat now lands as the immediate follow-on to the mission claim.
@@ -21687,7 +21696,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-08 LATER] cs-18 MOVED UP to right after cs-fw1.
   // [Dave 2026-05-11 LATE] cs-18 MOVED AGAIN — now immediately after cs-brand-V8 (see slot 13 above). Removed from this position.
   // [Dave 2026-05-12] cs-twoops MOVED to APPENDIX per Dave: 'move to appendix'. Convergent-evolution NEPC+Racketeer story preserved as appendix-only backup.
-  'cs-16',    // Every natural community touchpoint trains GnR · the compounding engine
+  // [Dave 2026-05-17 LATEST] cs-16 REMOVED from main flow per Dave — moved to PINK-DOT alt to the LEFT of cs-fw1 (slot 18). cs-16 ('Every touchpoint becomes training data') now sits as the pink-dot alt at slot 18. HTML retained in DOM as silent backup.
   // [Dave 2026-05-12 LATEST] cs-future REMOVED from main flow per Dave: 'delete this slide'. Its 'As connection becomes measurable, abundance becomes programmable.' line now lives as the cs-fv6 eyebrow.
   // cs-8b (Abundance hero) → APPENDIX 2026-05-04 per Dave
   // cs-a7 ("Social media is a very narrow view of human connection technology") MOVED BACK to APPENDIX 2026-05-03 PM per Dave
@@ -21806,18 +21815,19 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-14 MERGE] Wheelhouse alts now at slot 16 (cs-18-vd4 was 17; -1 after intro6 + frontier merged into one slot-1).
   // [Dave 2026-05-14] cs-18-vd1, cs-lab, cs-18 DELETED per Dave (3× 'delete this slide' for the wheelhouse-alt variants). Only cs-18-vd5 retained as the lone red-dot alt.
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
-  15: ['cs-pbfirst', 'cs-wedgefunnel'],
+  15: ['cs-pbfirst'],  // [Dave 2026-05-17 LATEST] cs-wedgefunnel REMOVED — Dave 'delete this slide' (the inverted-pyramid funnel "Pickleball is the wedge. Human connection is the category."). HTML retained as silent backup.
   // [Dave 2026-05-14 PM v4] cs-18-vd5 also DELETED per Dave 'delete this slide'. Slot 16 now has no alts. HTML retained for rollback.
   16: [],
   // [Dave 2026-05-17 v10] cs-givefirst DELETED per Dave 'delete this slide' (the text-only two-hearts alt at slot 18). cs-givefirst-art (watercolor) remains as the lone primary.
-  18: [],
+  // [Dave 2026-05-17 LATEST] cs-16 ADDED as PINK-DOT alt at slot 18 (left of cs-fw1 flywheel slide) per Dave 'Make this slide a pink dot slide that goes to the left of the slide with the following text: Imagine dropping GnR into any pickleball community. And it just works — compounding forever — at AI speed.'
+  18: ['cs-16'],
   // [Dave 2026-05-17 v11] cs-fv6-img ADDED as PINK-DOT alt at slot 19 per Dave 'create a new different version of this slide that uses one of the codex background images, add it as a pink dot slide to the left of this one'. Image-led variant with gnr_vnext_real_world_graph.png background + cream wash + same 9-verb workflow row.
-  19: ['cs-fv6-img'],
+  19: [],  // [Dave 2026-05-17 LATEST] cs-fv6-img PROMOTED to primary; cs-fv6 typographic version removed from nav (HTML retained as silent backup).
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
   // [Dave 2026-05-17 LATEST] Key shifted 20 → 21 after cs-mv6 moved UP to slot 20 (was 23). cs-16 + cs-27 + cs-wedge1 all shift +1.
-  21: ['cs-16old', 'cs-funnel'],
+  // [Dave 2026-05-17 LATEST] slot 21 alts removed (cs-16 was removed from main flow). cs-16old and cs-funnel HTML retained as silent backups.
   // [Dave 2026-05-17 v3] cs-mv6 MOVED to appendix per Dave 'move this slide to the appendix'.
   // [Dave 2026-05-17 v4] cs-mv6-demand DELETED per Dave 'delete this slide'. SLIDE_ALTS[20] now empty.
   20: [],
@@ -22992,8 +23002,9 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const altDot = document.createElement('button');
     // [Dave 2026-05-08] Color overrides per altId:
     //   cs-merge3 = pink (newer candidate at slot 13)
+    //   cs-16 = pink (Every touchpoint becomes training data — alt to left of cs-fw1 flywheel)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img'); // [Dave 2026-05-17 v11] cs-fv6-img added — pink-dot image-led alt for cs-fv6 with codex watercolor background.
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel).
     const isBlueAlt = (altId === 'cs-wedge1');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
