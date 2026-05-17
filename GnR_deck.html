@@ -7063,6 +7063,12 @@ window.cs1m5Reverse = function() {
   #cs-frontier-iconic .fi-headline { position:absolute; top:7.2%; left:5.8%; z-index:3; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.1rem,3.55vw,3.62rem); font-weight:800; line-height:1.045; letter-spacing:-0.022em; color:#1a1612; text-align:left; max-width:930px; margin:0; opacity:0; transform:translateY(8px); text-shadow:0 1px 3px rgba(251,247,239,0.35); }
   #cs-frontier-iconic .fi-headline .fi-line { display:block; }
   #cs-frontier-iconic .fi-headline .fi-predictor { font-style:italic; font-weight:850; color:#8a6420; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
+  /* [Dave 2026-05-17 LATEST] Science-disciplines strip — small caps below the headline naming the 4 fields that agree. Cream-tinted ink so it reads against the watercolor, brand-gold middle-dot separator. */
+  #cs-frontier-iconic .fi-science-strip { position:absolute; top:calc(7.2% + 13rem); left:5.8%; z-index:3; font-family:'Inter','DM Sans',sans-serif; font-size:clamp(.72rem,.92vw,.88rem); font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.62); max-width:930px; opacity:0; transform:translateY(6px); text-shadow:0 1px 2px rgba(251,247,239,0.55); }
+  #cs-frontier-iconic .fi-science-strip .dot { color:#b8954a; padding:0 .35em; font-weight:700; }
+  @keyframes fiStripIn { 0% { opacity:0; transform:translateY(8px); } 100% { opacity:1; transform:translateY(0); } }
+  #cs-frontier-iconic.casey-entered .fi-science-strip { animation: fiStripIn .7s cubic-bezier(.22,1,.36,1) .85s both; }
+  html[data-export="1"] #cs-frontier-iconic .fi-science-strip { opacity:1 !important; transform:none !important; animation:none !important; }
   #cs-frontier-iconic .fi-headline .fi-give { color:#5B8FD4; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-headline .fi-receive { color:#c8462c; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-canvas { position:absolute; inset:0; width:100%; height:100%; }
@@ -7084,7 +7090,9 @@ window.cs1m5Reverse = function() {
   <!-- [Dave 2026-05-17 v9] Eyebrow changed from "We're wired for this" → "How we're wired" per Dave. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How we&rsquo;re wired</div>
   <section class="fi-stage">
-    <h1 class="fi-headline"><span class="fi-line">Science proved</span><span class="fi-line"><em class="fi-predictor">the #1 predictor</em></span><span class="fi-line">of a fulfilling life</span><span class="fi-line">is real connection.</span></h1>
+    <!-- [Dave 2026-05-17 LATEST] Headline tightened from a 4-line "Science proved the #1 predictor of a fulfilling life is real connection." to a 3-line direct claim. The science backing now lives in the disciplines strip below, replacing the prose phrase "Science proved". -->
+    <h1 class="fi-headline"><span class="fi-line">Real connection:</span><span class="fi-line"><em class="fi-predictor">#1 predictor</em></span><span class="fi-line">of a fulfilling life.</span></h1>
+    <div class="fi-science-strip">Neuroscience<span class="dot">&bull;</span>Longitudinal<span class="dot">&bull;</span>Public Health<span class="dot">&bull;</span>Epidemiology</div>
     <div class="fi-canvas">
       <img class="fi-hero-img" src="assets/cs-frontier-iconic-hero.png" alt="A warm human constellation of connection across a neighborhood">
     </div>
