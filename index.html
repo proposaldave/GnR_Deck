@@ -6468,12 +6468,15 @@ window.cs1m5Reverse = function() {
   @keyframes m8HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m8 .m8-hint svg { animation:m8HintBob 2.2s ease-in-out infinite }
   #cs-1m8[data-stage="3"] .m8-hint svg { animation:none }
-  /* Export mode: jump to terminal state — same transforms as stage 1+ */
-  html[data-export="1"] #cs-1m8 .wm-ive, html[data-export="1"] #cs-1m8 .wm-eceive { opacity: 0 !important; transform: scaleX(0) !important; }
-  html[data-export="1"] #cs-1m8 .wm-G { transform: translateX(85px) scale(1.4) !important; }
-  html[data-export="1"] #cs-1m8 .wm-R { transform: translateX(282px) scale(1.4) !important; }
-  html[data-export="1"] #cs-1m8 .wm-n-wrap { transform: translateX(110px) scale(1.3) !important; }
-  html[data-export="1"] #cs-1m8 .wm-arc { transform: translateX(-50%) translateY(-12px) !important }
+  /* Export mode: jump to terminal state. [Dave 2026-05-17 v18 BUGFIX] Previous export-mode rules forced the live-deck "G n R" SPREAD state, which produced asymmetric wordmark in PDF (G way left, n close to R) — Dave 'NEPC logo on #1 secret slide is still too small and... investor tonight'. Export mode now spells out the full "Give n Receive" wordmark (identical to the data-pdf override below) so PDF readers without voice-over context see the company name properly. */
+  html[data-export="1"] #cs-1m8 .wm-ive,
+  html[data-export="1"] #cs-1m8 .wm-eceive { opacity: 1 !important; transform: none !important; }
+  html[data-export="1"] #cs-1m8 .wm-G,
+  html[data-export="1"] #cs-1m8 .wm-R,
+  html[data-export="1"] #cs-1m8 .wm-n-wrap { transform: none !important; }
+  html[data-export="1"] #cs-1m8 .wm-arc { transform: translateX(-50%) !important }
+  html[data-export="1"] #cs-1m8 .m8-cap-left,
+  html[data-export="1"] #cs-1m8 .m8-cap-right { transform: none !important; }
   html[data-export="1"] #cs-1m8 .m8-truth { display:none !important }
   html[data-export="1"] #cs-1m8 .m8-caption, html[data-export="1"] #cs-1m8 .m8-network, html[data-export="1"] #cs-1m8 .m8-cap-right { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
   html[data-export="1"] #cs-1m8 .m8-hint { display:none !important }
@@ -9783,9 +9786,11 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
   #cs-wedgepb-combo .wpc-band-3 { width:66%;   clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); margin:0 auto; box-shadow:0 12px 24px rgba(200,70,44,0.18); }
   #cs-wedgepb-combo .wpc-band-4 { width:48%;   clip-path: polygon(0 0, 100% 0, 89% 100%, 11% 100%); background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); margin:0 auto; box-shadow:0 12px 26px rgba(91,143,212,0.20); }
-  #cs-wedgepb-combo .wpc-band-5 { width:28%;   clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%); background:linear-gradient(180deg, #f5cf6a 0%, #d4a85a 48%, #a87a35 100%); margin:0 auto; color:#3a2a14; }
+  /* [Dave 2026-05-17 v18] Band-5 NEPC: widened (28%→36%) + heightened (70px→90px) so the real logo + "NEPC" letterform both fit. Logo bumped to 56px + dark-gold NEPC text added inline (gap 14px) per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add "NEPC" there'. */
+  #cs-wedgepb-combo .wpc-band-5 { width:36%; height:90px; clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%); background:linear-gradient(180deg, #f5cf6a 0%, #d4a85a 48%, #a87a35 100%); margin:0 auto; color:#3a2a14; gap:14px; }
   #cs-wedgepb-combo .wpc-band-5::before { content:""; position:absolute; left:-40%; right:-40%; top:-22px; bottom:-26px; background:radial-gradient(ellipse at center, rgba(240,196,96,0.50) 0%, rgba(212,168,83,0.16) 40%, rgba(184,149,74,0) 70%); z-index:-1; filter:blur(2px); }
-  #cs-wedgepb-combo .wpc-band img { height:34px; width:auto; mix-blend-mode:multiply; }
+  #cs-wedgepb-combo .wpc-band-5 img { height:56px; width:auto; mix-blend-mode:multiply; }
+  #cs-wedgepb-combo .wpc-band-5 .wpc-band-nepc-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-weight:900; font-size:clamp(1.3rem,1.6vw,1.55rem); letter-spacing:0.06em; color:#3a2a14; }
 
   /* RIGHT — 5 rationale cards [Dave 2026-05-17 v16 — DESIGN OVERHAUL]
      v13 used a flip mechanic with cartoony pickleball-ball fronts ("PICKLEBALL · #N · TAP ›")
@@ -9851,7 +9856,8 @@ window.cs1m7Reverse = function() {
         <div class="wpc-band wpc-band-2"><span>Communities</span></div>
         <div class="wpc-band wpc-band-3"><span>Social Sports</span></div>
         <div class="wpc-band wpc-band-4"><span>Pickleball</span></div>
-        <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/></div>
+        <!-- [Dave 2026-05-17 v18] Big NEPC logo + "NEPC" text per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add NEPC there'. -->
+        <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
       </div>
 
       <!-- RIGHT · 5 rationale cards [Dave 2026-05-17 v16 — DESIGN OVERHAUL]
