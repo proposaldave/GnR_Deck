@@ -9964,13 +9964,17 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; }
   /* Card 3 (red problem-beat) is taller to fit the 3 callout pills inline. */
   #cs-wedgepb-combo .wpc-card.wpc-c3 { height:142px; }
-  /* [Dave 2026-05-17 LATEST RESOLVE] Flip mechanism RE-RESOLVED — 3D rotateY was unreliable on this slide (Dave: "I've already told you that these cards aren't flipping over. Resolve!!!"). Replaced with a simple opacity crossfade between .wpc-front and .wpc-back. Click handler still toggles .flipped on the card; the opacity rules below do the rest. No 3D, no perspective, no backface-visibility — bulletproof across browsers and stable through any future styling. */
-  #cs-wedgepb-combo .wpc-face { position:absolute; inset:0; display:flex; align-items:center; gap:18px; padding:14px 22px 14px 20px; background:rgba(251,247,239,0.96); border:1px solid rgba(184,149,74,0.30); border-left:4px solid var(--wpc-color); border-radius:0 12px 12px 0; box-shadow:0 6px 16px rgba(26,22,18,0.06); transition:opacity 0.42s cubic-bezier(.22,1,.36,1); }
-  /* Front face starts visible; back face starts hidden. Toggling .flipped on the card swaps the opacities. pointer-events:none on the hidden face so clicks always hit the visible one. */
-  #cs-wedgepb-combo .wpc-card .wpc-front { opacity:1; pointer-events:auto; }
-  #cs-wedgepb-combo .wpc-card .wpc-back  { opacity:0; pointer-events:none; }
-  #cs-wedgepb-combo .wpc-card.flipped .wpc-front { opacity:0; pointer-events:none; }
-  #cs-wedgepb-combo .wpc-card.flipped .wpc-back  { opacity:1; pointer-events:auto; }
+  /* [Dave 2026-05-17 LATEST RESOLVE v3 — true 3D card flip] Dave: "the animations here these need to flip like animation card flipping over". Opacity crossfade replaced with a proper rotateY 3D flip. Each card gets perspective; faces sit back-to-back with backface-visibility:hidden so only the camera-facing side is visible mid-rotation. Click toggles .flipped which rotates the card 180deg. PDF/export mode forces .flipped so the back-face content shows in print. */
+  #cs-wedgepb-combo .wpc-card { perspective:1400px; -webkit-perspective:1400px; transform-style:preserve-3d; }
+  #cs-wedgepb-combo .wpc-flip-inner { position:absolute; inset:0; transform-style:preserve-3d; transition:transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-wedgepb-combo .wpc-card.flipped .wpc-flip-inner { transform:rotateY(180deg); }
+  #cs-wedgepb-combo .wpc-face { position:absolute; inset:0; display:flex; align-items:center; gap:18px; padding:14px 22px 14px 20px; background:rgba(251,247,239,0.96); border:1px solid rgba(184,149,74,0.30); border-left:4px solid var(--wpc-color); border-radius:0 12px 12px 0; box-shadow:0 6px 16px rgba(26,22,18,0.06); backface-visibility:hidden; -webkit-backface-visibility:hidden; transform-style:preserve-3d; }
+  #cs-wedgepb-combo .wpc-card .wpc-front { transform:rotateY(0deg); }
+  #cs-wedgepb-combo .wpc-card .wpc-back  { transform:rotateY(180deg); }
+  /* Legacy fallback for any card that doesn't have the .wpc-flip-inner wrapper — flip the face directly. */
+  #cs-wedgepb-combo .wpc-card:not(:has(.wpc-flip-inner)) .wpc-face { transition:transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-wedgepb-combo .wpc-card:not(:has(.wpc-flip-inner)).flipped .wpc-front { transform:rotateY(-180deg); }
+  #cs-wedgepb-combo .wpc-card:not(:has(.wpc-flip-inner)).flipped .wpc-back  { transform:rotateY(0deg); }
   /* Front faces on Cards 1/2/4/5 are icon-only — center the lone icon horizontally. Card 3 keeps left-aligned multi-element front. */
   #cs-wedgepb-combo .wpc-face.wpc-front-iconly { justify-content:center; padding:14px 16px; }
   /* FRONT face — teaser */
@@ -9998,9 +10002,10 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-c3 .wpc-card-lede { color:#fff5d8; }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-clarify { color:rgba(251,247,239,0.88); }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-num { color:rgba(251,247,239,0.55); }
-  /* Export/PDF: force every card to its BACK face so the printed deck shows full text content. With the new opacity flip, this means hide the front and show the back. */
-  html[data-export="1"] #cs-wedgepb-combo .wpc-card .wpc-front { opacity:0 !important; }
-  html[data-export="1"] #cs-wedgepb-combo .wpc-card .wpc-back  { opacity:1 !important; }
+  /* Export/PDF: force every card to its BACK face so the printed deck shows full text content. Flatten the 3D rotation by hiding the front via opacity:0 and forcing the back to face-forward without rotation; backface-visibility off so the front doesn't disappear from the back of a non-rotated parent. */
+  html[data-export="1"] #cs-wedgepb-combo .wpc-card .wpc-front { opacity:0 !important; transform:none !important; backface-visibility:visible !important; }
+  html[data-export="1"] #cs-wedgepb-combo .wpc-card .wpc-back  { opacity:1 !important; transform:none !important; backface-visibility:visible !important; }
+  html[data-export="1"] #cs-wedgepb-combo .wpc-flip-inner { transform:none !important; transition:none !important; }
   html[data-export="1"] #cs-wedgepb-combo .wpc-face { transition:none !important; }
 
   /* Entry stagger */
@@ -10057,7 +10062,7 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Already a social network<br><em style="font-style:italic;font-weight:850">beyond the courts.</em></div>
+              <div class="wpc-card-lede" style="white-space:nowrap">Already a social network <em style="font-style:italic;font-weight:850">beyond the courts.</em></div>
             </div>
             <div class="wpc-card-num">01</div>
           </div>
@@ -10070,7 +10075,7 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Fastest-growing<br><em style="font-style:italic;font-weight:850">sport in U.S. history.</em></div>
+              <div class="wpc-card-lede" style="white-space:nowrap">Fastest-growing <em style="font-style:italic;font-weight:850">sport in U.S. history.</em></div>
             </div>
             <div class="wpc-card-num">02</div>
           </div>
@@ -10106,7 +10111,7 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Wildly social.<br>High velocity <em style="font-style:italic;font-weight:850">experiences.</em></div>
+              <div class="wpc-card-lede" style="white-space:nowrap"><em style="font-style:italic;font-weight:850">Wildly social.</em></div>
             </div>
             <div class="wpc-card-num">04</div>
           </div>
@@ -10131,18 +10136,8 @@ window.cs1m7Reverse = function() {
     </div>
 
   </section>
-  <!-- [Dave 2026-05-17 LATEST RESOLVE] Backup capture-phase click handler — runs once at parse time, attaches a click listener to every .wpc-card in this slide. Belt-and-suspenders alongside the inline onclick — if any global slide-click handler tries to swallow the event before bubbling, this capture-phase handler still fires. -->
-  <script>
-    (function(){
-      var cards = document.querySelectorAll('#cs-wedgepb-combo .wpc-card');
-      cards.forEach(function(card){
-        card.addEventListener('click', function(ev){
-          ev.stopPropagation();
-          card.classList.toggle('flipped');
-        }, true);
-      });
-    })();
-  </script>
+  <!-- [Dave 2026-05-17 LATEST RESOLVE v3 — flip bug ROOT CAUSE FIXED] The capture-phase JS handler from the previous "resolve" was DOUBLE-FIRING with the inline onclick — both toggled .flipped on the same click, so the class went on then off in a single tap, producing no net flip. Removed the JS handler entirely. The inline onclick + event.stopPropagation() on each .wpc-card now does the toggle exactly once per click, and the new 3D rotateY CSS animates the rotation visually. -->
+
 </div>
 
 
@@ -22752,8 +22747,8 @@ const SLIDE_ALTS = {
   // Slot 6 (cs-2c — was slot 5) — no alts.
   6: [],
   // Slot 13 (cs-samecourt — was slot 12) — no alts.
-  // [Dave 2026-05-17 LATEST PINK] Three pink-dot alts added at slot 13 — cs-samecourt-pink1 (MINIMAL: image-led + RATINGS/RECIPROCITY chips), cs-samecourt-pink2 (LIGHT: adds two quote bubbles "I'm a 3.9." / "I'm part of NEPC."), cs-samecourt-pink3 (FULL: complete cs-samecourt content with warehouse-scale pickleball watercolor as full-bleed bg image). Pickleball-court watercolor bg carries the paradigm story visually; pink1/pink2 are minimal text overlay; pink3 keeps all the columns/bubbles/behavior items.
-  13: ['cs-samecourt-pink1', 'cs-samecourt-pink2', 'cs-samecourt-pink3'],
+  // [Dave 2026-05-17 LATEST PINK] cs-samecourt-pink1 + cs-samecourt-pink2 REMOVED from nav per Dave: 'this slide doesn't have the content it should have that i asked you to copy over'. pink1 (minimal chips) + pink2 (added bubbles) didn't include the full cs-samecourt content (two columns + community graphics + character bubbles + behavior items + divider). pink3 — which DOES have the full content layered over the warehouse-pickleball watercolor — is now the only pink-dot alt at slot 13. HTML for pink1+pink2 retained as silent backup.
+  13: ['cs-samecourt-pink3'],
   // [Dave 2026-05-17 v7] cs-magnetic-orig added as RED-DOT alt at slot 13 per Dave 'add a red dot slide to left of social pull slide which was the original social pull slide where you had the ratings court on the right with the three questions'. Restores the older twin-court layout (marketplace LEFT + ratings RIGHT with Balanced/Fun/Filled questions). cs-merge3 retained as pink-dot drift alt.
   // Slot 14 (cs-magnetic — was slot 13) — red-dot + pink-dot alts
   14: ['cs-magnetic-orig', 'cs-merge3'],
