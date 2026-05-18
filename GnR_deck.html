@@ -15302,6 +15302,197 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-brand-V8 .v8-particles g { opacity:1 !important; transform: translateX(0) !important; animation:none !important; }
   html[data-export="1"] #cs-brand-V8 .v8-particles circle { animation:none !important; }
 </style>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-genbrand · GENERATIONAL CONSUMER BRAND OPPORTUNITY [Dave 2026-05-17 PM]
+     Per Dave: "my next investor pitch is with an investor who cares a lot about
+     consumer brand. so, i want you to create a new slide so if i dont like it
+     i can just delete it. take the 'Generational Consumer Brand Opportunity'
+     slide and figure out how to jaw droppingly improve it upgrade it."
+
+     Slot placement: inserted between cs-27 (CTO) and cs-brand-V8 (current closing
+     brand slide). Sets up a two-beat brand close — first the generational brand
+     opportunity argument (THIS slide), then cs-brand-V8 as the emotional closer.
+
+     Design intent (jaw-drop for a brand-focused investor):
+       • Magazine-spread typography — Fraunces serif + Manrope sans
+       • 6-brand pantheon ribbon (Nike→Apple→Starbucks→Lululemon→Patagonia→GnR)
+         showing how each generation crowns one consumer brand that names its
+         missing piece. Each brand card carries decade + one-word truth.
+       • GnR is the 6th card, gold-bordered + glowing — the 2020s+ brand.
+       • Three pillars below: CULTURAL MOMENT · IDENTITY OFFER · BRAND MARK
+         — the three things a generational consumer brand has to land.
+       • Closing line: "The first consumer brand of real connection."
+     Self-scoped gb-* CSS so this slide doesn't collide with cs-brand-V8 below.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-genbrand { background:radial-gradient(ellipse at 50% 38%, #fbf7ef 0%, #f3ead8 70%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-genbrand .gb-grid-tex { position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.045) 1px, transparent 0); background-size:4px 4px; opacity:0.5; pointer-events:none; mix-blend-mode:multiply; z-index:1; }
+  #cs-genbrand .gb-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:64px 56px 48px; z-index:2; gap:18px; }
+  /* HERO BAND */
+  #cs-genbrand .gb-hero { width:100%; max-width:1480px; text-align:center; margin-top:8px; }
+  #cs-genbrand .gb-hero h1 { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.0rem, 3.3vw, 3.05rem); font-weight:850; line-height:1.07; letter-spacing:-0.025em; color:#1a1612; margin:0; }
+  #cs-genbrand .gb-hero h1 em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-genbrand .gb-hero .gb-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem, 1.35vw, 1.25rem); font-style:italic; font-weight:500; color:rgba(26,22,18,0.66); letter-spacing:-0.005em; margin:10px 0 0; line-height:1.4; max-width:980px; margin-left:auto; margin-right:auto; }
+  /* PANTHEON RIBBON */
+  #cs-genbrand .gb-pantheon { width:100%; max-width:1620px; display:grid; grid-template-columns:repeat(6, 1fr); gap:11px; margin-top:22px; align-items:stretch; position:relative; }
+  /* horizontal connector line behind the cards */
+  #cs-genbrand .gb-pantheon::before { content:""; position:absolute; left:6%; right:6%; top:50%; height:2px; background:linear-gradient(90deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.35) 20%, rgba(184,149,74,0.55) 50%, rgba(184,149,74,0.75) 82%, #b8954a 100%); transform:translateY(-50%); z-index:0; }
+  #cs-genbrand .gb-card { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:18px 14px 16px; background:rgba(251,247,239,0.92); border:1px solid rgba(184,149,74,0.30); border-top:3px solid var(--gb-c, rgba(26,22,18,0.55)); border-radius:6px; box-shadow:0 6px 18px rgba(26,22,18,0.06); transition:transform 0.4s cubic-bezier(.22,1,.36,1), box-shadow 0.4s cubic-bezier(.22,1,.36,1); }
+  #cs-genbrand .gb-card:hover { transform:translateY(-3px); box-shadow:0 12px 26px rgba(26,22,18,0.10); }
+  #cs-genbrand .gb-decade { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.42); margin-bottom:10px; }
+  #cs-genbrand .gb-name { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem, 1.30vw, 1.30rem); font-weight:850; letter-spacing:-0.012em; color:#1a1612; line-height:1.1; text-align:center; margin-bottom:8px; }
+  #cs-genbrand .gb-truth { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.92rem, 1.05vw, 1.05rem); font-weight:500; font-style:italic; line-height:1.28; color:var(--gb-c, rgba(26,22,18,0.72)); text-align:center; max-width:160px; }
+  /* GnR final card — gold-bordered, glowing, branded */
+  #cs-genbrand .gb-card.gb-gnr { background:linear-gradient(180deg, #fef6e0 0%, #f6e6c3 100%); border:2px solid #b8954a; border-top:3px solid #b8954a; box-shadow:0 14px 38px rgba(184,149,74,0.32), 0 0 0 4px rgba(212,168,83,0.10), inset 0 0 0 1px rgba(255,255,255,0.6); }
+  #cs-genbrand .gb-card.gb-gnr .gb-decade { color:#a87a35; }
+  #cs-genbrand .gb-card.gb-gnr .gb-name { font-style:normal; font-weight:850; font-size:clamp(1.55rem, 1.95vw, 1.90rem); }
+  #cs-genbrand .gb-card.gb-gnr .gb-name .g { color:#5B8FD4; }
+  #cs-genbrand .gb-card.gb-gnr .gb-name .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.03em; }
+  #cs-genbrand .gb-card.gb-gnr .gb-name .r { color:#c8462c; }
+  #cs-genbrand .gb-card.gb-gnr .gb-truth { color:#7d5a1f; font-weight:600; }
+  #cs-genbrand .gb-card.gb-gnr::after { content:"NOW"; position:absolute; top:-9px; right:10px; font-family:'Manrope',sans-serif; font-size:.50rem; font-weight:900; letter-spacing:.30em; color:#fbf7ef; background:#c8462c; padding:3px 9px; border-radius:99px; box-shadow:0 4px 10px rgba(200,70,44,0.32); }
+  /* THREE PILLARS BAND */
+  #cs-genbrand .gb-pillars { width:100%; max-width:1620px; display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:30px; align-items:stretch; }
+  #cs-genbrand .gb-pillar { display:flex; flex-direction:column; padding:22px 24px 20px; background:rgba(251,247,239,0.78); border:1px solid rgba(184,149,74,0.28); border-radius:10px; box-shadow:0 6px 16px rgba(26,22,18,0.04); }
+  #cs-genbrand .gb-pillar-eye { display:flex; align-items:center; gap:10px; margin-bottom:10px; font-family:'Manrope',sans-serif; font-size:.60rem; font-weight:900; letter-spacing:.36em; text-transform:uppercase; }
+  #cs-genbrand .gb-pillar-eye .gb-ico { width:28px; height:28px; flex-shrink:0; border-radius:50%; display:grid; place-items:center; }
+  #cs-genbrand .gb-pillar-eye .gb-ico svg { width:14px; height:14px; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  #cs-genbrand .gb-pillar.p1 .gb-ico { background:rgba(200,70,44,0.10); border:1.4px solid rgba(200,70,44,0.45); } #cs-genbrand .gb-pillar.p1 .gb-ico svg { stroke:#c8462c; } #cs-genbrand .gb-pillar.p1 .gb-pillar-eye { color:#c8462c; }
+  #cs-genbrand .gb-pillar.p2 .gb-ico { background:rgba(91,143,212,0.10); border:1.4px solid rgba(91,143,212,0.45); } #cs-genbrand .gb-pillar.p2 .gb-ico svg { stroke:#5B8FD4; } #cs-genbrand .gb-pillar.p2 .gb-pillar-eye { color:#3a73b8; }
+  #cs-genbrand .gb-pillar.p3 .gb-ico { background:rgba(184,149,74,0.13); border:1.4px solid rgba(184,149,74,0.55); } #cs-genbrand .gb-pillar.p3 .gb-ico svg { stroke:#a87a35; } #cs-genbrand .gb-pillar.p3 .gb-pillar-eye { color:#a87a35; }
+  #cs-genbrand .gb-pillar-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.20rem, 1.45vw, 1.42rem); font-weight:850; line-height:1.12; letter-spacing:-0.014em; color:#1a1612; margin-bottom:8px; }
+  #cs-genbrand .gb-pillar-body { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem, 1.07vw, 1.08rem); font-weight:500; line-height:1.4; color:rgba(26,22,18,0.78); letter-spacing:-0.005em; }
+  #cs-genbrand .gb-pillar-body em { font-style:italic; font-weight:700; }
+  #cs-genbrand .gb-pillar.p1 .gb-pillar-body em { color:#c8462c; }
+  #cs-genbrand .gb-pillar.p2 .gb-pillar-body em { color:#3a73b8; }
+  #cs-genbrand .gb-pillar.p3 .gb-pillar-body em { color:#a87a35; }
+  /* CLOSING LINE */
+  #cs-genbrand .gb-closer { width:100%; max-width:1280px; margin-top:24px; padding:14px 22px 0; border-top:1px solid rgba(184,149,74,0.32); text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.20rem, 1.55vw, 1.50rem); font-weight:600; font-style:italic; color:#1a1612; line-height:1.34; letter-spacing:-0.008em; }
+  #cs-genbrand .gb-closer strong { color:#b8954a; font-style:normal; font-weight:850; letter-spacing:.02em; padding:0 4px; }
+  /* ENTRY ANIMATIONS — staggered cascade */
+  #cs-genbrand .gb-hero, #cs-genbrand .gb-pantheon, #cs-genbrand .gb-pillars, #cs-genbrand .gb-closer { opacity:0; transform:translateY(10px); transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-genbrand .gb-card { opacity:0; transform:translateY(8px); transition:opacity 0.55s cubic-bezier(.22,1,.36,1), transform 0.55s cubic-bezier(.22,1,.36,1); }
+  #cs-genbrand .gb-pillar { opacity:0; transform:translateY(8px); transition:opacity 0.55s cubic-bezier(.22,1,.36,1), transform 0.55s cubic-bezier(.22,1,.36,1); }
+  #cs-genbrand.casey-entered .gb-hero { opacity:1; transform:translateY(0); transition-delay:0.20s; }
+  #cs-genbrand.casey-entered .gb-pantheon { opacity:1; transform:translateY(0); transition-delay:0.55s; }
+  #cs-genbrand.casey-entered .gb-card:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.70s; }
+  #cs-genbrand.casey-entered .gb-card:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.82s; }
+  #cs-genbrand.casey-entered .gb-card:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:0.94s; }
+  #cs-genbrand.casey-entered .gb-card:nth-child(4) { opacity:1; transform:translateY(0); transition-delay:1.06s; }
+  #cs-genbrand.casey-entered .gb-card:nth-child(5) { opacity:1; transform:translateY(0); transition-delay:1.18s; }
+  #cs-genbrand.casey-entered .gb-card:nth-child(6) { opacity:1; transform:translateY(0); transition-delay:1.30s; }
+  #cs-genbrand.casey-entered .gb-pillars { opacity:1; transform:translateY(0); transition-delay:1.55s; }
+  #cs-genbrand.casey-entered .gb-pillar:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:1.70s; }
+  #cs-genbrand.casey-entered .gb-pillar:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:1.85s; }
+  #cs-genbrand.casey-entered .gb-pillar:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:2.00s; }
+  #cs-genbrand.casey-entered .gb-closer { opacity:1; transform:translateY(0); transition-delay:2.25s; }
+  /* Gold breathing halo on the GnR card */
+  @keyframes gbGnrPulse { 0%,100% { box-shadow:0 14px 38px rgba(184,149,74,0.32), 0 0 0 4px rgba(212,168,83,0.10), inset 0 0 0 1px rgba(255,255,255,0.6); } 50% { box-shadow:0 18px 50px rgba(184,149,74,0.50), 0 0 0 6px rgba(212,168,83,0.18), inset 0 0 0 1px rgba(255,255,255,0.7); } }
+  #cs-genbrand.casey-entered .gb-card.gb-gnr { animation:gbGnrPulse 3.4s ease-in-out infinite 1.6s; }
+  /* Export / PDF */
+  html[data-export="1"] #cs-genbrand .gb-hero,
+  html[data-export="1"] #cs-genbrand .gb-pantheon,
+  html[data-export="1"] #cs-genbrand .gb-pillars,
+  html[data-export="1"] #cs-genbrand .gb-closer,
+  html[data-export="1"] #cs-genbrand .gb-card,
+  html[data-export="1"] #cs-genbrand .gb-pillar { opacity:1 !important; transform:none !important; transition:none !important; }
+  html[data-export="1"] #cs-genbrand .gb-card.gb-gnr { animation:none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-genbrand">
+  <div class="gb-grid-tex"></div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
+  <section class="gb-stage">
+
+    <!-- HERO -->
+    <div class="gb-hero">
+      <h1>Every generation crowns <em>one consumer brand</em><br>that names its missing piece.</h1>
+      <p class="gb-sub">Nike named action. Apple named imagination. Starbucks named belonging. <em style="font-style:italic;color:#b8954a;font-weight:700">Real connection</em> is the missing piece of <em style="font-style:italic;color:#b8954a;font-weight:700">this</em> generation. The brand that names it owns the decade.</p>
+    </div>
+
+    <!-- PANTHEON RIBBON · 6 cards -->
+    <div class="gb-pantheon">
+
+      <div class="gb-card" style="--gb-c:#1a1612">
+        <div class="gb-decade">1970s</div>
+        <div class="gb-name">NIKE</div>
+        <div class="gb-truth">Named <em style="font-style:italic">action</em>.</div>
+      </div>
+
+      <div class="gb-card" style="--gb-c:#5B7287">
+        <div class="gb-decade">1980s</div>
+        <div class="gb-name">APPLE</div>
+        <div class="gb-truth">Named <em style="font-style:italic">imagination</em>.</div>
+      </div>
+
+      <div class="gb-card" style="--gb-c:#1e6f4d">
+        <div class="gb-decade">1990s</div>
+        <div class="gb-name">STARBUCKS</div>
+        <div class="gb-truth">Named <em style="font-style:italic">belonging</em>.</div>
+      </div>
+
+      <div class="gb-card" style="--gb-c:#c1444b">
+        <div class="gb-decade">2000s</div>
+        <div class="gb-name">LULULEMON</div>
+        <div class="gb-truth">Named <em style="font-style:italic">embodiment</em>.</div>
+      </div>
+
+      <div class="gb-card" style="--gb-c:#2a6b3a">
+        <div class="gb-decade">2010s</div>
+        <div class="gb-name">PATAGONIA</div>
+        <div class="gb-truth">Named <em style="font-style:italic">conscience</em>.</div>
+      </div>
+
+      <div class="gb-card gb-gnr">
+        <div class="gb-decade">2020s &rarr;</div>
+        <div class="gb-name"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <div class="gb-truth">Names <em style="font-style:italic">real connection</em>.</div>
+      </div>
+
+    </div>
+
+    <!-- THREE PILLARS — what makes GnR THE generational brand -->
+    <div class="gb-pillars">
+
+      <div class="gb-pillar p1">
+        <div class="gb-pillar-eye">
+          <span class="gb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><path d="M6 20 Q12 14 18 20"/></svg></span>
+          Cultural moment
+        </div>
+        <div class="gb-pillar-head">Connection scarcity is the new defining condition.</div>
+        <div class="gb-pillar-body">A Surgeon General <em>advisory</em>. An AI-induced meaning crisis. Loneliness costs the U.S. <em>$406B / year</em>. The cultural permission for a brand built on real connection has never been higher.</div>
+      </div>
+
+      <div class="gb-pillar p2">
+        <div class="gb-pillar-eye">
+          <span class="gb-ico"><svg viewBox="0 0 24 24"><path d="M12 2 L19 6 V12 C19 16.5 15.5 19.5 12 22 C8.5 19.5 5 16.5 5 12 V6 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
+          Identity offer
+        </div>
+        <div class="gb-pillar-head">A brand that turns members into authors of community.</div>
+        <div class="gb-pillar-body">Not <em>&ldquo;I&rsquo;m a 3.9.&rdquo;</em> — <em>&ldquo;I&rsquo;m part of NEPC.&rdquo;</em> Members wear the membership. They invite. They show up. The brand makes <em>belonging</em> the status symbol of the decade.</div>
+      </div>
+
+      <div class="gb-pillar p3">
+        <div class="gb-pillar-eye">
+          <span class="gb-ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12 H15"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+          Brand mark
+        </div>
+        <div class="gb-pillar-head"><span style="color:#5B8FD4;font-style:normal;font-weight:850">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .04em">n</span><span style="color:#c8462c;font-style:normal;font-weight:850">R</span> — the only mark that means &ldquo;I open first.&rdquo;</div>
+        <div class="gb-pillar-body">An <em>iconic</em> typographic mark built into every invite, every match, every ritual. The arc between G and R is the brand promise: <em>your give comes back to you.</em></div>
+      </div>
+
+    </div>
+
+    <!-- CLOSING LINE -->
+    <div class="gb-closer">
+      The first <strong>consumer brand</strong> of real connection.<br><em style="font-style:italic;font-weight:500;color:rgba(26,22,18,0.62);font-size:.86em;letter-spacing:0">Generational opportunity. Built on a generational need.</em>
+    </div>
+
+  </section>
+</div>
+
+
 <div class="casey-slide ds-focus" id="cs-brand-V8">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
@@ -22667,6 +22858,8 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-11 LATE] cs-prom REBUILT + RESTORED as CLOSING slide before appendix per Dave: 'bring whatever amazing closing slide back. i think before we had the one with the "your community gets the most out of you" text'. Brand-mark-exploded diptych: G slides up (give), italic n center, R slides down (receive); left half = 'You give · Your community gets the most out of you', right half = 'You receive · You get the most out of your community'.
   // [Dave 2026-05-12 LATEST] cs-hc8 MOVED to APPENDIX per Dave: 'move to an appendix slide'.
   // [Dave 2026-05-12 LATEST] cs-prom REMOVED from main flow per Dave 'delete this slide'. The 'You give / You receive' promise content now lives inside cs-brand-V8 (caption rewrite). cs-brand-V8 is now the final main slide.
+  // [Dave 2026-05-17 PM] cs-genbrand INSERTED right before cs-brand-V8 per Dave 'my next investor pitch is with an investor who cares a lot about consumer brand. so, i want you to create a new slide so if i dont like it i can just delete it. take the Generational Consumer Brand Opportunity slide and figure out how to jaw droppingly improve it.' Sets up a two-beat brand close — first the generational consumer brand argument (Nike→Apple→Starbucks→Lululemon→Patagonia→GnR pantheon + 3 pillars), then cs-brand-V8 as the emotional closer. If Dave doesn't like it, just remove this line.
+  'cs-genbrand',   // NEW · Generational Consumer Brand Opportunity · 6-brand pantheon ribbon (Nike/Apple/Starbucks/Lululemon/Patagonia/GnR) + 3 pillars (Cultural moment · Identity offer · Brand mark) + closing line.
   'cs-brand-V8',   // Brand Opportunity 'HUMAN VALUE, FINALLY SEEN' + promise diptych captions.
   // [Dave 2026-05-17] cs-ask APPENDED as the new FINAL slide of main flow. Two-path ask
   // (be a founding partner | OR | connect me to one) recapitulating the GnR brand mark
@@ -22776,15 +22969,15 @@ const SLIDE_ALTS = {
   16: ['cs-pbfirst'],
   // Slot 17 (cs-18-vd4 Wheelhouse — was slot 16) — no alts
   17: [],
-  // [Dave 2026-05-17 LATEST PINK] cs-givefirst-pink added — pink-dot alt of cs-givefirst-art (slot 18) with a different bg image. Same eyebrow + quote + hearts choreography, swapped img.
-  18: ['cs-givefirst-pink'],
+  // [Dave 2026-05-17 PM] cs-givefirst-pink DELETED from nav per Dave: 'delete this slide' — was rendering blank because bg image asset was never saved to disk and slide had no fallback content beyond the bg image. HTML retained as silent backup.
+  18: [],
   // Slot 19 (cs-fw1 flywheel — was slot 18) — cs-16 pink-dot alt
   19: ['cs-16'],
   // Slot 20 (cs-fv6-img — was slot 19) — no alts
   // [Dave 2026-05-17 LATEST PINK] cs-fv6-pink added — pink-dot alt of cs-fv6-img with handshake watercolor bg (two hands clasped in warm golden light). Identical content (headline + 8-card workflow row), swapped bg image.
   20: ['cs-fv6-pink'],
-  // [Dave 2026-05-17 LATEST PINK] cs-mv6-pink added — pink-dot alt of cs-mv6-merge (slot 21, MISSION slide) with a 'hands reaching toward each other' watercolor bg (Sistine-Chapel-esque, warm golden light). Same MISSION eyebrow + headline + exponential demand curve chart + era markers + YOU ARE HERE 2026 marker, now layered over a full-bleed bg image with a top-down cream wash so the chart still reads. Self-scoped mgp-* CSS + prefixed SVG defs IDs to avoid collisions with cs-mv6-merge's mg2-* IDs.
-  21: ['cs-mv6-pink'],
+  // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug' — was rendering blank (bg image asset not on disk; entry-animation CSS keeps content opacity:0 until .casey-entered fires). HTML retained as silent backup.
+  21: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
