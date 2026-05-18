@@ -403,8 +403,9 @@ html[data-export="1"] .env-letter-print { display: inline !important; }
 
 /* cs-2c: force 9-column grid in PDF so all 9 cards (incl. Hobbies) sit on one row.
    Live deck wraps responsively; PDF needs them in a single tidy row at 1920px width. */
+/* [Dave 2026-05-18 LATEST] Export grid drops to 8 cols (was 9) after Neighborhoods + Cities&Schools merged. */
 html[data-export="1"] #cs-2c .c2c-grid {
-  grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
   max-width: 1820px !important;
   gap: 10px !important;
 }
@@ -7201,8 +7202,8 @@ window.cs1m5Reverse = function() {
 <div class="casey-slide ds-measure" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
-  <!-- Eyebrow [Dave 2026-05-12]: 'Brand Promise' → 'Brand'. [Dave 2026-05-14]: → 'The next frontier of technology that connects us' → rewritten to 'The next frontier: technology that connects us' (Dave: 'reword for better grammar / clarity, you decide'). The colon eliminates the ambiguous attachment of 'that connects us' — it was hanging off either 'technology' or 'frontier'; now 'technology that connects us' is unambiguously a single noun phrase being equated with 'the next frontier'. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Bringing real human connection to our digital world</div>
+  <!-- Eyebrow [Dave 2026-05-12]: 'Brand Promise' → 'Brand'. [Dave 2026-05-14]: → 'The next frontier of technology that connects us' → 'The next frontier: technology that connects us'. [Dave 2026-05-18 LATEST]: → 'Bringing real human connection to our digital world' → 'Introducing Give n Receive' per Dave 'replace "Bringing real human connection to our digital world" with "Introducing Give n Receive"'. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Introducing Give n Receive</div>
   <div class="s on" style="background:transparent">
     <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
       <!-- Wordmark — same span structure as cs-1m5: G/ive/n/R/eceive renders 'Give n Receive' -->
@@ -12607,45 +12608,58 @@ window.cs1m7Reverse = function() {
         </div>
 
         <!-- PILLAR 3 · GnR GROWTH (RED + GROWTH-NETWORK) — [Dave 2026-05-15] renamed from "Mission" + graphic swapped from person-with-flag to rising-trajectory→connected-community network. -->
+        <!-- [Dave 2026-05-18 LATEST v6] Front + back badges UNIFIED to a single v6 graphic. v5 only updated the back face — the front was still the old heart, so the card flipped between two unrelated graphics. v6 = pickleball ball with the G·n·R wordmark centered + a gold growth arc rising out of the upper-right of the ball into a small mission-node. Reads in one glance: BALL (pickleball) + BRAND (G·n·R wordmark) + GROWTH (rising arc) + MISSION (terminal node). Same SVG on both faces. -->
         <!-- Comments elsewhere in this file that say "Mission pillar" or list "Clarity / Starting Point / Mission" refer to this pillar's previous label — kept intact since the styling class names still use .blue/.red color naming. -->
         <div class="v5-pillar p3" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
           <div class="v5-flip-inner">
-            <!-- FRONT — badge + label [Dave 2026-05-18 LATEST] -->
+            <!-- FRONT — badge + label [Dave 2026-05-18 LATEST v6 — front graphic synced to back] -->
             <div class="v5-flip-front">
               <div class="v5-badge red">
                 <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g transform="translate(40, 40)">
-                    <path d="M 0 26 C -16 16 -34 4 -34 -10 C -34 -24 -18 -26 -2 -12 C -1 -11 1 -11 2 -12 C 18 -26 34 -24 34 -10 C 34 4 16 16 0 26 Z" fill="white"/>
-                    <path d="M -18 -14 C -22 -8 -18 -2 -12 -4" fill="none" stroke="rgba(200,70,44,0.55)" stroke-width="2.6" stroke-linecap="round"/>
+                  <!-- Pickleball ball (slightly offset left to make room for growth arc top-right) -->
+                  <circle cx="34" cy="44" r="26" fill="#fbf7ef" stroke="rgba(184,149,74,0.55)" stroke-width="1.3"/>
+                  <!-- Hole pattern, faint -->
+                  <g fill="rgba(200,70,44,0.30)">
+                    <circle cx="34" cy="22" r="1.4"/><circle cx="48" cy="26" r="1.4"/><circle cx="56" cy="36" r="1.4"/>
+                    <circle cx="56" cy="50" r="1.4"/><circle cx="48" cy="60" r="1.4"/><circle cx="34" cy="66" r="1.4"/>
+                    <circle cx="20" cy="60" r="1.4"/><circle cx="12" cy="50" r="1.4"/><circle cx="12" cy="36" r="1.4"/>
+                    <circle cx="20" cy="26" r="1.4"/>
                   </g>
+                  <!-- G·n·R brand wordmark at center -->
+                  <text x="34" y="51" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="19" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic" font-weight="500" dx="-0.5">n</tspan><tspan fill="#c8462c" dx="-0.5">R</tspan></text>
+                  <!-- Growth arc rising from upper-right of ball into mission node top-right -->
+                  <path d="M 53 28 Q 64 16 73 9" stroke="#b8954a" stroke-width="2.0" fill="none" stroke-linecap="round"/>
+                  <!-- Arrowhead -->
+                  <path d="M 68 9 L 73 9 L 73 14" stroke="#b8954a" stroke-width="2.0" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- Terminal mission node + halo -->
+                  <circle cx="73" cy="9" r="5" fill="rgba(184,149,74,0.18)"/>
+                  <circle cx="73" cy="9" r="2.6" fill="#b8954a"/>
                 </svg>
               </div>
               <div class="v5-front-label">Pickleball Brand<br>&amp; Mission</div>
             </div>
-            <!-- BACK — badge + full content -->
+            <!-- BACK — badge + full content. IDENTICAL SVG to front (v6 unified graphic). -->
             <div class="v5-flip-back">
               <div class="v5-badge red">
                 <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <!-- [Dave 2026-05-18 LATEST] Pillar 3 graphic v4: PICKLEBALL with HEART inside — merges the sport (pickleball wedge) with the mission (open heart / give-first). White pickleball ball with red signature holes pattern + a red heart at center. Reads instantly as "pickleball brand + mission" — replaces the standalone heart per Dave 'try a different graphic that is pickleball + give n receive related so it's pickleball related instead of just a heart'. -->
-                  <g transform="translate(40, 40)">
-                    <!-- White pickleball ball -->
-                    <circle cx="0" cy="0" r="30" fill="white"/>
-                    <!-- Red pickleball signature holes pattern -->
-                    <g fill="#c8462c">
-                      <circle cx="-15" cy="-19" r="2.4"/>
-                      <circle cx="0" cy="-22" r="2.4"/>
-                      <circle cx="15" cy="-19" r="2.4"/>
-                      <circle cx="-22" cy="-6" r="2.4"/>
-                      <circle cx="22" cy="-6" r="2.4"/>
-                      <circle cx="-22" cy="8" r="2.4"/>
-                      <circle cx="22" cy="8" r="2.4"/>
-                      <circle cx="-15" cy="21" r="2.4"/>
-                      <circle cx="0" cy="24" r="2.4"/>
-                      <circle cx="15" cy="21" r="2.4"/>
-                    </g>
-                    <!-- Red heart at center -->
-                    <path d="M 0 9 C -8 4 -15 -3 -15 -9 C -15 -14 -9 -15 -2 -8 C -1 -7 1 -7 2 -8 C 9 -15 15 -14 15 -9 C 15 -3 8 4 0 9 Z" fill="#c8462c"/>
+                  <!-- Pickleball ball -->
+                  <circle cx="34" cy="44" r="26" fill="#fbf7ef" stroke="rgba(184,149,74,0.55)" stroke-width="1.3"/>
+                  <!-- Hole pattern, faint -->
+                  <g fill="rgba(200,70,44,0.30)">
+                    <circle cx="34" cy="22" r="1.4"/><circle cx="48" cy="26" r="1.4"/><circle cx="56" cy="36" r="1.4"/>
+                    <circle cx="56" cy="50" r="1.4"/><circle cx="48" cy="60" r="1.4"/><circle cx="34" cy="66" r="1.4"/>
+                    <circle cx="20" cy="60" r="1.4"/><circle cx="12" cy="50" r="1.4"/><circle cx="12" cy="36" r="1.4"/>
+                    <circle cx="20" cy="26" r="1.4"/>
                   </g>
+                  <!-- G·n·R brand wordmark at center -->
+                  <text x="34" y="51" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="19" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic" font-weight="500" dx="-0.5">n</tspan><tspan fill="#c8462c" dx="-0.5">R</tspan></text>
+                  <!-- Growth arc rising from upper-right of ball into mission node top-right -->
+                  <path d="M 53 28 Q 64 16 73 9" stroke="#b8954a" stroke-width="2.0" fill="none" stroke-linecap="round"/>
+                  <!-- Arrowhead -->
+                  <path d="M 68 9 L 73 9 L 73 14" stroke="#b8954a" stroke-width="2.0" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- Terminal mission node + halo -->
+                  <circle cx="73" cy="9" r="5" fill="rgba(184,149,74,0.18)"/>
+                  <circle cx="73" cy="9" r="2.6" fill="#b8954a"/>
                 </svg>
               </div>
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
@@ -13291,7 +13305,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-racketeer-att-arc .rka-quote { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-racketeer-att-arc" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Racketeer alt &middot; the narrative arc</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Racketeer</div>
   <section class="rka-stage">
     <div class="rka-head-row">
       <div class="rka-head-text">
@@ -13302,7 +13316,7 @@ window.cs1m7Reverse = function() {
         <img src="assets/racketeer-logo.png" alt="Racketeer Padel Club" onerror="this.style.display='none'"/>
         <div class="rka-attr-text">
           <div class="rka-attr-name">Marcos Garcia</div>
-          <div class="rka-attr-role">Founder &middot; Racketeer Padel Club &middot; London</div>
+          <div class="rka-attr-role">Ops Head &middot; Racketeer Padel Club &middot; London</div>
         </div>
       </div>
     </div>
@@ -13314,11 +13328,11 @@ window.cs1m7Reverse = function() {
       </div>
       <div class="rka-quotes">
         <div class="rka-quote q1">
-          <div class="rka-q-eye">The incumbent</div>
+          <div class="rka-q-eye">Incumbent social events</div>
           <div class="rka-q-text">&ldquo;We don&rsquo;t even use it &mdash; it&rsquo;s <em>so generic.</em>&rdquo;</div>
         </div>
         <div class="rka-quote q2">
-          <div class="rka-q-eye">Today</div>
+          <div class="rka-q-eye">Invitations today</div>
           <div class="rka-q-text">&ldquo;<em>All manual.</em> WhatsApp groups, my memory, people I know.&rdquo;</div>
         </div>
         <div class="rka-quote q3">
@@ -15221,13 +15235,12 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-wedge1">
   <!-- [Dave 2026-05-09] Eyebrow + hero refocused from 'human connection' to 'real-world social communities'. Sub line + Workplaces + Dating + Family icons + '★ The Network That Wins' DELETED. Pickleball court fixed to proper 44:20 (220:100) ratio with proper kitchen/net/centerline. Padel/Tennis/Golf/Social Sports added as expansion siblings beneath pickleball. -->
   <!-- [Dave 2026-05-17 v8] Eyebrow forced to single line per Dave 'the text below should fit on one line'. White-space:nowrap + slightly tighter letter-spacing so the full sentence reads on one row at 1920 width. -->
-  <!-- [Dave 2026-05-17 v20] Eyebrow shortened to "Human connection is the category" per Dave. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Human connection is the category</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow promoted to carry "The next great network..." line per Dave 'make the current top/header of the slide move that to be the top left label of the slide'. Mixed-case set instead of upper-case so the long sentence still reads as a typographic eyebrow without overwhelming the slot. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;max-width:1080px;line-height:1.5">The next great network is the one that helps us find ourselves and find each other</div>
   <section style="position:relative;width:100%;min-height:100%">
     <div class="wd-stage">
-      <!-- [Dave 2026-05-14 v2] TOP text is now the HEADER (bigger), bottom becomes the small caption — size hierarchy inverted per Dave. -->
-      <!-- [Dave 2026-05-17] Headline reframed from "GnR is how every community and every person is already wired to function" to the next-great-network mission line. The original line is preserved in speaker notes below for narration. -->
-      <div class="wd-tagline" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.3vw,2.15rem);font-style:italic;font-weight:700;color:#1a1612;line-height:1.18;letter-spacing:-0.015em;max-width:1480px;margin:0 auto 6px;text-align:center">The next great network is the one that helps us <em style="font-style:italic;font-weight:850;color:#b8954a">find ourselves and find each other</em>.</div>
+      <!-- [Dave 2026-05-18 LATEST] Header REPLACED — the pickleball-coordination-stack line (was the bottom closer) is now the SOLE header above the graphic. Old "next great network" tagline moved to top-left eyebrow above. -->
+      <div class="wd-tagline" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.3vw,2.15rem);font-style:italic;font-weight:700;color:#1a1612;line-height:1.20;letter-spacing:-0.015em;max-width:1500px;margin:0 auto 14px;text-align:center">A pickleball community&rsquo;s <em style="font-style:italic;font-weight:850;color:#5B8FD4">coordination stack</em>, rewired for <em style="font-style:italic;font-weight:850;color:#b8954a">autonomous, abundant connection</em>, becomes its <em style="font-style:italic;font-weight:850;color:#c8462c">social network</em>.</div>
       <div class="speaker-notes" data-slide="cs-wedge1" style="display:none">GnR is how every community and every person is already wired to function.</div>
 
       <div class="wd-svg-wrap">
@@ -15460,7 +15473,7 @@ window.cs1m7Reverse = function() {
 
 
 
-      <!-- [Dave 2026-05-11] Closer 'The category isn't sports. It's civilization.' DELETED per Dave. -->
+      <!-- [Dave 2026-05-18 LATEST] Bottom wd-closer DELETED — its text was PROMOTED to the slide's main header above the graphic. Old "next great network" header is now the top-left eyebrow. The slide now carries one header only. -->
     </div>
   </section>
 </div>
@@ -16843,11 +16856,12 @@ window.cs1m7Reverse = function() {
 
 
 <div class="casey-slide ds-focus" id="cs-brand-V8">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand: live a life of abundant, autonomous connection</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow simplified to "Brand". New big serif header "A life of autonomous, abundant connection." promoted ABOVE the galaxy. Old v8-claim ('Most human value is invisible. So it never returns.') MOVED to BOTTOM of slide as a quiet kicker line below the diptych captions. [Dave 2026-05-18 LATEST v2]: Eyebrow → 'Introducing Give n Receive' per Dave's latest positioning-eyebrow text (replaces the earlier 'Bringing real human connection to our digital world' proposal). -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Introducing Give n Receive</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v8-stage">
-      <!-- [Dave 2026-05-12 EVENING] 'Human Value, Finally Seen.' hero DELETED per Dave. The galaxy + diptych below carry the brand thesis. -->
-      <div class="v8-claim">Most human value is invisible.<br>So it never returns.</div>
+      <!-- [Dave 2026-05-18 LATEST v3] Header rewritten per Dave: '"A life of autonomous, abundant connection." → "Brand → live a life of abundant, autonomous connection."'. The "Brand →" prefix makes the slide self-identify even more clearly; word order flipped to "abundant, autonomous" per the new copy. -->
+      <h1 class="v8-header" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.0rem,3.2vw,2.95rem);font-weight:850;line-height:1.04;letter-spacing:-0.026em;color:#1a1612;text-align:center;margin:0 0 6px;max-width:1560px"><span style="font-family:'Manrope',sans-serif;font-size:0.62em;font-weight:900;letter-spacing:0.18em;text-transform:uppercase;color:#a87a35;vertical-align:0.12em;margin-right:0.16em">Brand</span> <span style="color:#b8954a;font-style:normal;font-weight:600;padding:0 0.06em">&rarr;</span> live a life of <em style="font-style:italic;font-weight:850;color:#b8954a">abundant, autonomous connection.</em></h1>
       <div class="v8-galaxy-row">
         <!-- Big G anchor on far left -->
         <span class="v8-G">G</span>
@@ -16910,9 +16924,70 @@ window.cs1m7Reverse = function() {
         </div>
       </div>
 
+      <!-- [Dave 2026-05-18 LATEST v2] 'Most human value is invisible. So it never returns.' kicker DELETED per Dave 'delete this text'. The header + galaxy + diptych carry the brand thesis on their own. HTML retained as silent backup. -->
+      <!-- <div class="v8-claim" style="margin-top:34px;padding-top:24px;border-top:1px solid rgba(184,149,74,0.32);max-width:980px;align-self:center;width:100%">Most human value is invisible.<br>So it never returns.</div> -->
+
       <!-- [Dave 2026-05-18 LATEST] CONTACT BLOCK MOVED to cs-ask (dinner slide) per Dave 'move the text below to the dinner/steak slide and off of the brand slide'. cs-brand-V8 is no longer the closing slide. -->
 
     </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-brand-mono · PINK-DOT ALT of cs-brand-V8 [Dave 2026-05-18 LATEST]
+     Per Dave: 'should the word "Brand" be in large header text so that it's
+     clear it's a brand slide... if you think there's a 10x better jaw dropping
+     brand slide, create that new slide and add as a pink dot slide'.
+     Design intent: BRAND MONUMENT treatment. Massive "BRAND" header so the
+     slide instantly self-identifies. Unified G·n·R wordmark at hero scale
+     (175+px) — the brand mark is the slide, not decoration around the mark.
+     Single tagline beneath. Tiny "Sees · Measures · Reciprocates" kicker
+     anchors what the network actually does.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-brand-mono { background:radial-gradient(ellipse at 50% 50%, #fbf7ef 0%, #f3ead8 55%, #e9dcc4 100%) !important; overflow:hidden; }
+  /* Subtle paper texture */
+  #cs-brand-mono::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.04) 1px, transparent 0); background-size:4px 4px; opacity:0.5; pointer-events:none; z-index:1; }
+  /* Soft gold halo behind the wordmark */
+  #cs-brand-mono::after { content:""; position:absolute; left:50%; top:48%; transform:translate(-50%,-50%); width:1280px; height:560px; background:radial-gradient(ellipse at center, rgba(212,168,83,0.18) 0%, rgba(212,168,83,0.05) 40%, transparent 70%); pointer-events:none; z-index:1; }
+  #cs-brand-mono .bm-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:88px 56px 64px; z-index:2; gap:38px; }
+  /* Massive "BRAND" header — makes the self-identification unambiguous */
+  #cs-brand-mono .bm-header { font-family:'Manrope',sans-serif; font-size:clamp(.92rem,1.15vw,1.10rem); font-weight:900; letter-spacing:.62em; text-transform:uppercase; color:#a87a35; margin:0; display:inline-flex; align-items:center; gap:18px; }
+  #cs-brand-mono .bm-header::before, #cs-brand-mono .bm-header::after { content:""; width:80px; height:1.5px; background:linear-gradient(90deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.65) 50%, rgba(184,149,74,0) 100%); }
+  /* HERO wordmark — the brand mark IS the slide */
+  #cs-brand-mono .bm-mark { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(8rem,15vw,15.5rem); font-weight:850; line-height:0.92; letter-spacing:-0.04em; display:flex; align-items:baseline; gap:0; margin:0; }
+  #cs-brand-mono .bm-mark .g { color:#5B8FD4; text-shadow:0 8px 28px rgba(91,143,212,0.20); }
+  #cs-brand-mono .bm-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 8px 28px rgba(184,149,74,0.20); font-size:0.82em; transform:translateY(-0.06em); }
+  #cs-brand-mono .bm-mark .r { color:#c8462c; text-shadow:0 8px 28px rgba(200,70,44,0.20); }
+  /* Tagline beneath the wordmark */
+  #cs-brand-mono .bm-tag { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,2.85vw,2.55rem); font-weight:600; font-style:italic; line-height:1.10; letter-spacing:-0.018em; color:#1a1612; text-align:center; margin:0; max-width:1280px; }
+  #cs-brand-mono .bm-tag strong { font-style:normal; font-weight:850; color:#b8954a; }
+  /* Tiny kicker — what the network does */
+  #cs-brand-mono .bm-kicker { font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:800; letter-spacing:.42em; text-transform:uppercase; color:rgba(26,22,18,0.55); margin:0; }
+  #cs-brand-mono .bm-kicker .dot { color:#b8954a; padding:0 0.4em; }
+  /* Entry stagger — header settles → wordmark scales in → tagline → kicker */
+  @keyframes bmHeaderIn { from { opacity:0; letter-spacing:1.2em; } to { opacity:1; letter-spacing:.62em; } }
+  @keyframes bmMarkIn { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
+  @keyframes bmFadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+  #cs-brand-mono .bm-header, #cs-brand-mono .bm-mark, #cs-brand-mono .bm-tag, #cs-brand-mono .bm-kicker { opacity:0; }
+  #cs-brand-mono.casey-entered .bm-header { animation: bmHeaderIn 1.2s cubic-bezier(.22,1,.36,1) 0.20s forwards; }
+  #cs-brand-mono.casey-entered .bm-mark   { animation: bmMarkIn   0.95s cubic-bezier(.34,1.36,.64,1) 0.55s forwards; }
+  #cs-brand-mono.casey-entered .bm-tag    { animation: bmFadeUp   0.75s cubic-bezier(.22,1,.36,1) 1.25s forwards; }
+  #cs-brand-mono.casey-entered .bm-kicker { animation: bmFadeUp   0.65s cubic-bezier(.22,1,.36,1) 1.70s forwards; }
+  html[data-export="1"] #cs-brand-mono .bm-header,
+  html[data-export="1"] #cs-brand-mono .bm-mark,
+  html[data-export="1"] #cs-brand-mono .bm-tag,
+  html[data-export="1"] #cs-brand-mono .bm-kicker { opacity:1 !important; transform:none !important; letter-spacing:.62em !important; animation:none !important; }
+  html[data-export="1"] #cs-brand-mono .bm-mark { letter-spacing:-0.04em !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-mono" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand</div>
+  <section class="bm-stage">
+    <h2 class="bm-header">Brand</h2>
+    <div class="bm-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+    <p class="bm-tag">A life of <strong>autonomous, abundant connection.</strong></p>
+    <p class="bm-kicker">Sees<span class="dot">&middot;</span>Measures<span class="dot">&middot;</span>Reciprocates</p>
   </section>
 </div>
 
@@ -17170,13 +17245,15 @@ window.cs1m7Reverse = function() {
     </svg>
   </div>
   <div class="ask-bg-wash" aria-hidden="true"></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Next</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Ask</div>
   <section class="ask-stage">
 
-    <!-- [Dave 2026-05-18 LATEST] Headline rewritten per Dave: '"Next, discuss:" → "Dinner tonight to discuss NEPC and pickleball, the perfect outlier wedge into a new economy of human connection."'. Length forces a multi-line reflow — kept serif italic for the framing words. -->
-    <h1 class="ask-headline" style="font-size:clamp(1.65rem, 2.85vw, 2.65rem);max-width:920px;line-height:1.16">
-      Dinner tonight to discuss <em>NEPC and pickleball</em> &mdash;<br>
-      the perfect outlier wedge into <em>a new economy of human connection.</em>
+    <!-- [Dave 2026-05-18 LATEST v2] Headline broken into 4 lines per Dave: 'Dinner tonight: / Discuss NEPC and pickleball — / the perfect outlier wedge into a / new economy of human connection.' -->
+    <h1 class="ask-headline" style="font-size:clamp(1.65rem, 2.85vw, 2.65rem);max-width:920px;line-height:1.20">
+      Dinner tonight:<br>
+      Discuss <em>NEPC and pickleball</em> &mdash;<br>
+      the perfect outlier wedge into a<br>
+      <em>new economy of human connection.</em>
     </h1>
 
     <div class="ask-paths">
@@ -17227,7 +17304,7 @@ window.cs1m7Reverse = function() {
           </svg>
         </div>
         <div class="ask-path-label">Connect me to one</div>
-        <div class="ask-path-body">Open doors.</div>
+        <div class="ask-path-body">Open a door.</div>
       </div>
     </div>
 
@@ -18130,20 +18207,7 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-17 LATEST] Bg-image treatment REVERTED per Dave 'the image background on this slide isn't working, so you need to revert so there's no image background'. mgbg/mgbg-wash markup now hidden via display:none below; CSS rules retained as silent backup. */
   #cs-magnetic .mgbg, #cs-magnetic .mgbg-wash { display:none !important; }
 
-  /* [Dave 2026-05-18] BIG CENTERED INVITATION ENVELOPE — gentle pulse animation so the eye locks onto it. The envelope is in the SVG at translate(110,65) (court center). transform-box:fill-box + transform-origin:center keeps the scale anchored to its own center, not the SVG origin. Halo breathes alongside the envelope for a soft "live" feel. */
-  @keyframes mgCenterEnvPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-  }
-  @keyframes mgCenterEnvHaloPulse {
-    0%, 100% { opacity: 0.85; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.12); }
-  }
-  #cs-magnetic .mg-center-env { transform-origin: center; transform-box: fill-box; animation: mgCenterEnvPulse 3.4s ease-in-out infinite 1.2s; filter: drop-shadow(0 3px 8px rgba(91,143,212,0.30)); }
-  #cs-magnetic .mg-center-env-halo, #cs-magnetic .mg-center-env-halo-inner { transform-origin: center; transform-box: fill-box; animation: mgCenterEnvHaloPulse 3.4s ease-in-out infinite 1.2s; }
-  html[data-export="1"] #cs-magnetic .mg-center-env,
-  html[data-export="1"] #cs-magnetic .mg-center-env-halo,
-  html[data-export="1"] #cs-magnetic .mg-center-env-halo-inner { animation: none !important; }
+  /* [Dave 2026-05-18 LATEST] Centered envelope DELETED — see SVG markup below. Orphan animation rules removed. The transform-box:fill-box + animation combination caused a single-frame flash at SVG origin (top-left) on slide entry, then the transform settled at court-center. Not worth fixing per Dave 'just delete it, not worth the effort'. */
 </style>
 <div class="casey-slide ds-focus" id="cs-magnetic">
   <!-- [Dave 2026-05-14 PM v4] Eyebrow and master header SWAPPED per Dave. Eyebrow now carries the long category claim ('PICKLEBALL IS A HUMAN VALUE MARKETPLACE') as a quiet banner; master header below is the short punchy phrase 'Social pull.' -->
@@ -18241,25 +18305,7 @@ window.cs1m7Reverse = function() {
             <text x="172" y="29" font-family="Manrope,sans-serif" font-size="6.6" font-weight="900" letter-spacing="0.06em" fill="#3a7da3" text-anchor="middle">NEW REFERRAL</text>
           </g>
 
-          <!-- [Dave 2026-05-18 v2 — VISUAL FIX] Envelope was rendering so small the GnR mark (blue+gold+red) read as a tiny UK flag from a distance. Enlarged ~1.6× and bumped GnR font so the brand mark is unmistakable. Also added a small gold wax-seal disc on the flap to break the flag pattern visually — the seal anchors the eye to one shape, then the GnR reads as a wordmark below. -->
-          <g class="mg-center-env" transform="translate(110, 65)">
-            <!-- soft gold halo radiating outward — pulses subtly via CSS -->
-            <ellipse class="mg-center-env-halo" cx="0" cy="0" rx="38" ry="25" fill="rgba(255,222,140,0.42)"/>
-            <ellipse class="mg-center-env-halo-inner" cx="0" cy="0" rx="26" ry="17" fill="rgba(255,222,140,0.30)"/>
-            <!-- subtle drop shadow under the envelope -->
-            <rect x="-21" y="-12" width="42" height="24" rx="2.2" fill="rgba(26,22,18,0.20)" transform="translate(1.2, 1.6)"/>
-            <!-- envelope body — cream paper, bold Pickleball-blue stroke -->
-            <rect x="-21" y="-12" width="42" height="24" rx="2.2" fill="#fbf7ef" stroke="#3a73b8" stroke-width="1.8"/>
-            <!-- envelope back flap (faint inside) -->
-            <path d="M -21 -12 L 0 2.6 L 21 -12" fill="rgba(91,143,212,0.10)" stroke="#3a73b8" stroke-width="1.8" stroke-linejoin="round"/>
-            <!-- Gold wax-seal disc on the flap — breaks up the red/white/blue pattern that was reading as a UK flag -->
-            <circle cx="0" cy="-2.4" r="3.6" fill="#d4a85a" stroke="#a87a35" stroke-width="0.6"/>
-            <text x="0" y="-1" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="3.4" font-weight="900" text-anchor="middle" fill="#fbf7ef" letter-spacing="-0.02em">★</text>
-            <!-- GnR wordmark below the seal — bigger, clearly a brand mark, not flag stripes -->
-            <g transform="translate(0, 8.2)">
-              <text x="0" y="0" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="7" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic">n</tspan><tspan fill="#c8462c">R</tspan></text>
-            </g>
-          </g>
+          <!-- [Dave 2026-05-18 LATEST] Centered GnR envelope DELETED per Dave 'major bug on the gnr envelope - at first it shows up very briefly center of the screen then it goes to top left as you can see the corner of it. just delete it'. transform-box:fill-box + animation interaction was causing the envelope to render at SVG origin (top-left) for a frame before the animation settled at translate(110,65). Not worth fixing — slide reads fine without the envelope. -->
         </svg>
         <!-- [Dave 2026-05-17 v11] "Autonomous human value exchange marketplace." outcome line DELETED from visible slide + moved to speaker notes per Dave 'delete... and move it to the speaker notes on that slide'. -->
         <div class="speaker-notes" data-slide="cs-magnetic" style="display:none">Autonomous human value exchange marketplace.</div>
@@ -21218,8 +21264,8 @@ window.cs1m7Reverse = function() {
         </defs>
 
         <!-- [Dave 2026-05-17 v15] "Demand for real connection" PROMOTED from rotated left-axis label → large horizontal centered headline IN the chart. [v17] Font slightly reduced (68→58) per Dave. -->
-        <text x="100" y="180" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="54" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">Demand for the solution</text>
-        <text x="100" y="238" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="54" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">to real connection.</text>
+        <text x="100" y="180" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="58" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">Demand for real</text>
+        <text x="100" y="238" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="58" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">connection.</text>
 
         <!-- Horizontal grid lines (faint) -->
         <g stroke="rgba(26,22,18,0.06)" stroke-width="1" stroke-dasharray="3 5" fill="none">
@@ -21451,8 +21497,8 @@ window.cs1m7Reverse = function() {
           </linearGradient>
         </defs>
 
-        <text x="100" y="180" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="54" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">Demand for the solution</text>
-        <text x="100" y="238" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="54" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">to real connection.</text>
+        <text x="100" y="180" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="58" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">Demand for real</text>
+        <text x="100" y="238" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="58" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">connection.</text>
 
         <g stroke="rgba(26,22,18,0.06)" stroke-width="1" stroke-dasharray="3 5" fill="none">
           <line x1="60" y1="60"  x2="1560" y2="60"/>
@@ -23116,7 +23162,7 @@ window.csA7m1Reverse = function() {
 
 <!-- ===== cs-2c — Real-world social communities · 6-card grid (ported from pitch-communities.html, paper-mode) [Dave 2026-04-30 PM evening] ===== -->
 <style>
-  #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(9,minmax(0,1fr)); gap:clamp(7px,0.8vw,12px); max-width:1820px; margin:48px auto 0; padding:0 clamp(14px,1.8vw,28px); align-items:stretch; }
+  #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:clamp(7px,0.8vw,12px); max-width:1820px; margin:48px auto 0; padding:0 clamp(14px,1.8vw,28px); align-items:stretch; }
   /* PERMANENT card-height equality [Dave 2026-05-07 — third correction]: align-items:stretch on grid + aspect-ratio + label min-height of 2 lines.
      Single-line labels (e.g. 'Neighborhoods') now reserve the same vertical space as two-line labels ('Colleges & Universities') so every card renders identical height regardless of label copy. Do NOT regress this. */
   #cs-2c .c2c-card { background:rgba(26,22,18,0.025); border:1px solid rgba(26,22,18,0.16); border-radius:14px; padding:clamp(18px,2.4vw,36px) clamp(8px,1.2vw,18px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:clamp(10px,1.4vw,18px); text-align:center; aspect-ratio:1/1; min-width:0; height:100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -23274,9 +23320,10 @@ window.csA7m1Reverse = function() {
       <div class="c2c-label">College</div>
     </div>
 
+    <!-- [Dave 2026-05-18 LATEST] Neighborhoods + Cities & Schools MERGED into a single card per Dave 'let's merge neighborhoods, cities, and schools into one. So that there's just one box for those three instead of neighborhoods and then cities and schools having two separate boxes'. Standalone Neighborhoods + Cities & Schools cards both deleted; one combined card replaces them. -->
     <div class="c2c-card">
       <div class="c2c-icon">🏘️</div>
-      <div class="c2c-label">Neighborhoods</div>
+      <div class="c2c-label">Neighborhoods,<br>Cities &amp; Schools</div>
     </div>
 
     <div class="c2c-card">
@@ -23287,11 +23334,6 @@ window.csA7m1Reverse = function() {
     <div class="c2c-card">
       <div class="c2c-icon">📚</div>
       <div class="c2c-label">Homeschool<br>Groups</div>
-    </div>
-
-    <div class="c2c-card">
-      <div class="c2c-icon">🏫</div>
-      <div class="c2c-label">Cities &amp;<br>Schools</div>
     </div>
 
     <div class="c2c-card">
@@ -23318,28 +23360,26 @@ window.csA7m1Reverse = function() {
     <!-- CONVERGING CONNECTOR LINES — SVG over the space between cards and hub. Lines from each card down to hub center. -->
     <svg class="c2c-connectors" viewBox="0 0 1600 240" preserveAspectRatio="none" style="display:block;width:100%;height:clamp(90px,11vh,160px);margin-top:-4px;overflow:visible" aria-hidden="true">
       <g fill="none" stroke="#b8954a" stroke-width="1.4" stroke-linecap="round" opacity="0.85">
-        <!-- [Dave 2026-05-17] 9 paths now (was 8) after Hobbies card added. Cards evenly spaced from x=85 → x=1515, fanning to the central hub at (800, 220). -->
-        <path class="c2c-line c2c-l-1" d="M 85 12 C 85 110, 580 180, 755 220"/>
-        <path class="c2c-line c2c-l-2" d="M 265 12 C 265 110, 640 180, 765 220"/>
-        <path class="c2c-line c2c-l-3" d="M 440 12 C 440 110, 700 180, 775 220"/>
-        <path class="c2c-line c2c-l-4" d="M 620 12 C 620 110, 760 180, 790 220"/>
-        <path class="c2c-line c2c-l-5" d="M 800 12 C 800 110, 800 180, 800 220"/>
-        <path class="c2c-line c2c-l-6" d="M 980 12 C 980 110, 840 180, 810 220"/>
-        <path class="c2c-line c2c-l-7" d="M 1160 12 C 1160 110, 900 180, 825 220"/>
-        <path class="c2c-line c2c-l-8" d="M 1335 12 C 1335 110, 960 180, 835 220"/>
-        <path class="c2c-line c2c-l-9" d="M 1515 12 C 1515 110, 1020 180, 845 220"/>
+        <!-- [Dave 2026-05-18 LATEST] 8 paths after Neighborhoods + Cities&Schools merged into one card. Cards evenly spaced from x=100 → x=1500, fanning to central hub at (800, 220). -->
+        <path class="c2c-line c2c-l-1" d="M 100 12 C 100 110, 580 180, 755 220"/>
+        <path class="c2c-line c2c-l-2" d="M 300 12 C 300 110, 640 180, 765 220"/>
+        <path class="c2c-line c2c-l-3" d="M 500 12 C 500 110, 700 180, 778 220"/>
+        <path class="c2c-line c2c-l-4" d="M 700 12 C 700 110, 770 180, 792 220"/>
+        <path class="c2c-line c2c-l-5" d="M 900 12 C 900 110, 830 180, 808 220"/>
+        <path class="c2c-line c2c-l-6" d="M 1100 12 C 1100 110, 900 180, 822 220"/>
+        <path class="c2c-line c2c-l-7" d="M 1300 12 C 1300 110, 960 180, 835 220"/>
+        <path class="c2c-line c2c-l-8" d="M 1500 12 C 1500 110, 1020 180, 845 220"/>
       </g>
       <!-- Anchor dots at each card-bottom + at hub -->
       <g fill="#b8954a">
-        <circle class="c2c-dot" cx="85" cy="12" r="3"/>
-        <circle class="c2c-dot" cx="265" cy="12" r="3"/>
-        <circle class="c2c-dot" cx="440" cy="12" r="3"/>
-        <circle class="c2c-dot" cx="620" cy="12" r="3"/>
-        <circle class="c2c-dot" cx="800" cy="12" r="3"/>
-        <circle class="c2c-dot" cx="980" cy="12" r="3"/>
-        <circle class="c2c-dot" cx="1160" cy="12" r="3"/>
-        <circle class="c2c-dot" cx="1335" cy="12" r="3"/>
-        <circle class="c2c-dot" cx="1515" cy="12" r="3"/>
+        <circle class="c2c-dot" cx="100" cy="12" r="3"/>
+        <circle class="c2c-dot" cx="300" cy="12" r="3"/>
+        <circle class="c2c-dot" cx="500" cy="12" r="3"/>
+        <circle class="c2c-dot" cx="700" cy="12" r="3"/>
+        <circle class="c2c-dot" cx="900" cy="12" r="3"/>
+        <circle class="c2c-dot" cx="1100" cy="12" r="3"/>
+        <circle class="c2c-dot" cx="1300" cy="12" r="3"/>
+        <circle class="c2c-dot" cx="1500" cy="12" r="3"/>
       </g>
     </svg>
 
@@ -24316,6 +24356,8 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
   'cs-1m8',   //  3 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
+  // [Dave 2026-05-18 LATEST] cs-brand-V8 MOVED to slot 3 per Dave 'make the brand slide the third slide'. Brand thesis now lands as the third beat: opener → title → BRAND ("Most human value is invisible. So it never returns.") → old-vs-new → modern-life → ... Its purple-dot alts (att3 + att5) follow via SLIDE_ALTS[3].
+  'cs-brand-V8',   // slot 3 · Brand: 'Most human value is invisible. So it never returns.' (G·n·R particle galaxy + diptych captions)
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
   'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
@@ -24330,6 +24372,8 @@ const SLIDE_ORDER = [
   'cs-2c',    //  5 Community · 6-card grid
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
   'cs-thegap', //  3 MERGED — Our communities are full of understanding, we just never unlock it. 3 figures + rich network-bubbles + by-hand texting.
+  // [Dave 2026-05-18 LATEST] cs-18-vd4 (Wheelhouse / Steve Jobs quote / Dave Velardo founder slide) MOVED HERE per Dave 'move steve jobs slide after "But real communities don't have a like button." slide'. The founder beat now lands immediately after the problem reveal — "communities don't have a like button" → "Dave Velardo · Founder & CEO" with Steve Jobs framing → product reveal.
+  'cs-18-vd4',    // Founder · CEO · Dave Velardo (Wheelhouse) · Three pillars + Steve Jobs hero
   // cs-bh2 (TOMORROW · multi-person synthesis) MOVED to APPENDIX per Dave 2026-05-03 PM — didn't land in main flow
   // cs-bh2-v2 (LIVING GRAPH) also in APPENDIX
   // cs-bh2-v3 (RADAR TOWER) DELETED — too abstract
@@ -24340,37 +24384,20 @@ const SLIDE_ORDER = [
   'cs-11d','cs-11e','cs-11',
   // [Dave 2026-05-12 LATEST] cs-3 MOVED HERE — Dave: 'the "Pickleball is the fastest-growing, highest-velocity, densest social-signal community, ever." slide needs to follow the "No like button? No problem." slide'. cs-3 now sits right after cs-11.
   'cs-3',           // Pickleball 24 unique social experiences per week — fastest-growing, highest-velocity, densest social-signal community
-  // [Dave 2026-05-15 LATEST] cs-samecourt MOVED ABOVE cs-magnetic per Dave 'move the "Flip the incentives → Unleash the community" slide before the "People are the product" slide'. Flow now: social density → flip the incentives (paradigm) → people are the product (social pull).
-  'cs-samecourt',  // Flip the incentive. Unleash the community. — paradigm-proof beat. [slot 12]
-  // [Dave 2026-05-15] cs-magnetic-v2 DELETED — Dave 'you can probably just delete this slide'. cs-magnetic (twin-courts) restored as slot 13 primary (was 12; +1 after cs-samecourt moved above).
-  'cs-magnetic',    // A rating can balance a match. A person can fill a room. — twin courts (rating-only vs marketplace roles). [slot 13]
-  // Duplicate cs-4 at old slot 9 REMOVED 2026-05-03 PM — cs-4 now lives at slot 5 only
-  // [Dave 2026-05-14 PM v3] cs-11e MOVED UP to right after cs-11d (see entry above). Was previously here, after cs-samecourt. Duplicate entry removed.
-  // cs-dupr (Founder's Bet) MERGED INTO cs-18 founder slide per Dave 2026-05-06 PM v2 — the DUPR-rejection IS the founder story; standalone cs-dupr div retained in HTML as backup but not in main flow.
-  'cs-19',    // 3× court fee revenue · For Your Club ('3x your community' slide per Dave)
-  // cs-brand-V9 MOVED to end of appendix per Dave 2026-05-07 PM — V15 (hybrid) won slot 12.
-  // cs-brand-V15 MOVED to end of appendix per Dave 2026-05-07 PM — V8 (HUMAN VALUE, FINALLY SEEN) now primary at slot 12.
-  // [Dave 2026-05-14 PM v4] cs-samecourt MOVED UP — now sits right after cs-magnetic (see entry above). Was previously here, immediately before cs-pbfirst. Duplicate entry removed.
-  // [Dave 2026-05-17 v12] cs-wedgepb-combo PROMOTED to slot 15 PRIMARY per Dave 'making the "15 / 26 (alt)" slide... add to main deck, and then making the "15 / 26" slide a red dot slide to the left of it'. cs-wedgefunnel demoted to red-dot alt.
-  'cs-wedgepb-combo', // PRIMARY · combo slide — sub-line promoted to headline ('Pickleball → fastest path to the world's first autonomous human value exchange network.') + funnel left + 5-card rationale right
-  // [Dave 2026-05-17] cs-wedgefunnel HTML retained below as red-dot alt — inverted-pyramid wedge slide ("Pickleball is the wedge. Human connection is the category.") with 5-band funnel + rating-myth callout.
-  // [Dave 2026-05-17 v14] cs-pbfirst MOVED from slot 16 PRIMARY to red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-pbfirst content (5-card rationale) is now redundant on the primary cs-wedgepb-combo slide, preserved as alt for reference.
-  // 'cs-pbfirst' DEMOTED — see SLIDE_ALTS[15].
-  // [Dave 2026-05-17 v2] cs-18-vd4 MOVED UP — now sits IMMEDIATELY AFTER cs-pbfirst per Dave 'move the Dave Velardo wheelhouse slide after the Pickleball → fastest path slide'. The wedge claim lands first, then the founder/wheelhouse beat confirms "do-able by Dave's three core strengths" before the flywheel illustrates how it compounds.
-  'cs-18-vd4',    // Founder · CEO · Dave Velardo (My Wheelhouse) · Three strengths layout (Vision/Foundation/Network + proof-row strip)
-  // [Dave 2026-05-15] cs-givefirst INSERTED right after the Wheelhouse slide — lands what "GnR Growth" actually means: "You can't tell someone to open their heart. You open yours first. Theirs opens back." The causal mechanism of human connection, in Dave's literal voice.
-  // [Dave 2026-05-17 v8] cs-givefirst-art RESTORED as PRIMARY at slot 18 per Dave 'revert this to the one that had the amazing image which i never told you to delete'. cs-givefirst demoted back to red-dot alt.
-  // [Dave 2026-05-17 LATEST] cs-givefirst-art SWAPPED to come BEFORE cs-fw1 (was after). New flow: wheelhouse → give-first art → flywheel.
-  'cs-givefirst-art', // PRIMARY · watercolor community gathering + quote + two-hearts graphic
-  // [Dave 2026-05-18 LATEST v3] cs-brand-V8 + its purple-dot alts MOVED HERE — Dave 'brand slide and these purple dot slides, move them right after the "How GnR Growth actually works" slide'. New flow: wheelhouse → give-first art → BRAND → racketeer → mission → ...
-  'cs-brand-V8',  // Brand Opportunity 'HUMAN VALUE, FINALLY SEEN' + promise diptych captions.
-  // [Dave 2026-05-18 LATEST] cs-fw1 MOVED FROM slot 18 TO END (after cs-ask) — flywheel becomes the FINAL slide.
-  'cs-racketeer', // External-club validation · Racketeer Padel Club (London) — first padel club outside NEPC says yes.
-  // [Dave 2026-05-12 LATER] cs-fv6 — Measuring is the unlock · 7-verb row (Measure → Test → Graph → ... → Abundance).
-  // [Dave 2026-05-18 LATEST] cs-fv6-img + cs-mv6-merge SWAPPED per Dave 'move "What is real human connection technology?" after mission slide'. New flow: mission → human connection technology question.
-  'cs-mv6-merge',  // MISSION · for all our lives to run on autonomous, abundant connection — era markers as x-axis + exponential demand curve, GnR peak gold
-  'cs-fv6-img', // Image-led "What is real human connection technology?" with codex watercolor background — now lands AFTER the mission slide
-  'cs-wedge1',     // slot 21 · "Every community and every person wants autonomous, abundant GnR connection." — moved here right after the mission slide
+  // [Dave 2026-05-18 LATEST v7] FOUR coordinated slide moves per Dave's batch:
+  //   (1) cs-givefirst-art MOVED to right after cs-samecourt (Charlie Munger) — give-first follows the incentive paradigm beat
+  //   (2) cs-19 MOVED to right after cs-wedgepb-combo (Pickleball → fastest path) — the 3× community value revenue slide follows the wedge claim
+  //   (3) cs-mv6-merge MOVED to right after cs-fv6-img (What is real human connection technology?) — mission lands after the question
+  //   New post-move flow: samecourt → givefirst-art → magnetic → wedgepb-combo → cs-19 → racketeer → fv6-img → mv6-merge → wedge1
+  'cs-samecourt',  // Flip the incentive. Unleash the community. — paradigm-proof beat.
+  'cs-givefirst-art', // 'You can't tell someone to open their heart.' — give-first follows Munger incentive paradigm
+  'cs-magnetic',    // A rating can balance a match. A person can fill a room. — twin courts (rating-only vs marketplace roles).
+  'cs-wedgepb-combo', // PRIMARY · Pickleball → fastest path to the world's first autonomous human value exchange network.
+  'cs-19',    // 3× court fee revenue · For Your Club ('3x your community') — follows the wedge claim
+  'cs-racketeer-att-arc', // RACKETEER · 3-quote narrative arc — first prospective customer outside NEPC
+  'cs-fv6-img', // Image-led "What is real human connection technology?" — question first
+  'cs-mv6-merge',  // MISSION · 'For all our lives to run on autonomous, abundant connection.' — answers the question
+  'cs-wedge1',     // "The next great network is the one that helps us find ourselves and find each other."
   // [Dave 2026-05-12 LATEST] cs-onandoff MOVED DOWN — now immediately after cs-fv6. [Dave 2026-05-14 PM v4] cs-onandoff DELETED per Dave 'delete this slide'. HTML retained for rollback.
   // [Dave 2026-05-08 LATER] cs-18 MOVED UP to right after cs-fw1.
   // [Dave 2026-05-11 LATE] cs-18 MOVED AGAIN — now immediately after cs-brand-V8 (see slot 13 above). Removed from this position.
@@ -24488,7 +24515,7 @@ const SLIDE_ALTS = {
   13: [],
   // [Dave 2026-05-17 v7] cs-magnetic-orig added as RED-DOT alt at slot 13 per Dave 'add a red dot slide to left of social pull slide which was the original social pull slide where you had the ratings court on the right with the three questions'. Restores the older twin-court layout (marketplace LEFT + ratings RIGHT with Balanced/Fun/Filled questions). cs-merge3 retained as pink-dot drift alt.
   // Slot 14 (cs-magnetic — was slot 13) — red-dot + pink-dot alts
-  14: ['cs-magnetic-orig', 'cs-merge3'],
+  16: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -24511,20 +24538,34 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
   // Slot 16 (cs-wedgepb-combo — was slot 15) — cs-pbfirst red-dot alt
   // [Dave 2026-05-18 LATEST] cs-18-vd4-pink REMOVED per Dave 'delete this slide' (was the 16/25 alt — original pre-edit wheelhouse copy). HTML retained as silent backup; restore by re-adding the id to this list.
-  16: ['cs-pbfirst'],
-  // [Dave 2026-05-18 LATEST v4] SLIDE_ORDER reshuffled AGAIN — cs-brand-V8 MOVED UP to slot 18 (right after cs-givefirst-art). New slot mapping:
-  //   17: cs-givefirst-art  (cs-givefirst-brand pink-dot alt)
-  //   18: cs-brand-V8       (purple-dot alts: cs-brand-att3 + cs-brand-att5)
-  //   19: cs-racketeer      (6 purple-dot alts: dense/pattern/triptych/incumbent/manual/arc)
-  //   20: cs-mv6-merge      (no alts)
-  //   21: cs-fv6-img        (no alts)
-  //   22: cs-wedge1         (no alts)
-  //   23: cs-27             (no alts)
-  //   24: cs-ask            (no alts)
-  //   25: cs-fw1            (cs-16 pink-dot alt — 'Every touchpoint becomes training data')
-  17: ['cs-givefirst-brand'],
-  18: ['cs-brand-att3', 'cs-brand-att5'],
-  19: ['cs-racketeer-att-dense', 'cs-racketeer-att-pattern', 'cs-racketeer-att-triptych', 'cs-racketeer-att-incumbent', 'cs-racketeer-att-manual', 'cs-racketeer-att-arc'],
+  17: ['cs-pbfirst'],
+  // [Dave 2026-05-18 LATEST v5] SLIDE_ORDER reshuffled AGAIN — cs-brand-V8 moved to slot 3 + cs-racketeer cluster (7 slides) deleted. New 24-slide mapping:
+  //    1: cs-frontier-pink1  (no alts)
+  //    2: cs-1m8             (no alts)
+  //    3: cs-brand-V8        (purple-dot alts: cs-brand-att3 + cs-brand-att5)
+  //    4: cs-a7m1            (no alts)
+  //    5: cs-1bm1            (no alts)
+  //    6: cs-2c              (no alts)
+  //    7: cs-thegap          (no alts)
+  //    8: cs-18-vd4          (no alts)
+  //    9: cs-gnr             (no alts)
+  //   10: cs-11d, 11: cs-11e, 12: cs-11 (no alts)
+  //   13: cs-3               (no alts)
+  //   14: cs-samecourt       (no alts)
+  //   15: cs-magnetic        (red-dot: cs-magnetic-orig + pink-dot: cs-merge3)
+  //   16: cs-19              (no alts)
+  //   17: cs-wedgepb-combo   (black-dot: cs-pbfirst)
+  //   18: cs-givefirst-art   (pink-dot: cs-givefirst-brand)
+  //   19: cs-mv6-merge       (no alts)
+  //   20: cs-fv6-img         (no alts)
+  //   21: cs-wedge1          (no alts)
+  //   22: cs-27              (no alts)
+  //   23: cs-ask             (no alts)
+  //   24: cs-fw1             (pink-dot: cs-16)
+  // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt per Dave 'if you think there's a 10x better jaw dropping brand slide, create that new slide and add as a pink dot slide next to this'. Brand-monument treatment: massive "BRAND" header, unified G·n·R wordmark at hero scale (15vw), tagline beneath. Strips the galaxy abstraction in favor of brand-keynote impact.
+  3: ['cs-brand-mono'],
+  15: ['cs-givefirst-brand'],
+  19: [],
   20: [],
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug' — was rendering blank (bg image asset not on disk; entry-animation CSS keeps content opacity:0 until .casey-entered fires). HTML retained as silent backup.
   21: [],
@@ -24582,6 +24623,8 @@ const LOCKED_POSITIONS = [];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
+  // [Dave 2026-05-18 LATEST] cs-brand-att5 MOVED here from SLIDE_ALTS[3] per Dave 'move this slide to appendix'. The invisible→seen diptych ('A community of strangers' grey scatter → 'A community that gives back' connected G·n·R constellation). Preserved as appendix reference.
+  'cs-brand-att5',
   // [Dave 2026-05-17 v6] cs-frontier + cs-intro6 MOVED here from SLIDE_ALTS[1] per Dave (consecutive 'move this slide to appendix' on both). cs-frontier = '#1 predictor of a fulfilling life / Giving and receiving real connection' + demand curve. cs-intro6 = 'An incredible truth / The #1 predictor of a fulfilling life: openly giving and receiving human connection' + 4-field science strip.
   'cs-frontier',
   'cs-intro6',
@@ -25707,7 +25750,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-16 = pink (Every touchpoint becomes training data — alt to left of cs-fw1 flywheel)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-mono');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
@@ -26017,7 +26060,8 @@ document.addEventListener('keydown', e => {
     if (window.navigateAlt(1)) return;
     return; // No-op if already at primary
   }
-  if (e.key === 'ArrowRight' || e.key === ' ') {
+  // [Dave 2026-05-18 LATEST] Bluetooth-clicker support: PageDown advances like Space (per-slide-aware advance, NOT bare ArrowRight which only navigates alt dots). Most Bluetooth presentation remotes (Logitech R400/R500/Spotlight, Kensington, generic Amazon clickers) send PageDown for forward and PageUp for back. PageDown / PageUp on a real keyboard also fall through here.
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    return;
@@ -26043,7 +26087,8 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) return;
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
-  if (e.key === 'ArrowLeft') {
+  // [Dave 2026-05-18 LATEST] Bluetooth-clicker support: PageUp reverses like the per-slide-aware ArrowLeft. NOTE: this handler is reached only when the EARLIER ArrowLeft handler (alt-dot navigation, ~line 26052) didn't claim the event — but PageUp never matches that earlier handler, so PageUp always falls through to here and triggers the proper per-slide reverse.
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    return;
