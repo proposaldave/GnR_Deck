@@ -8445,7 +8445,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-thegap .tg-hint { display: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-thegap" data-shown="0" onclick="csThegapAdvance();event.stopPropagation()" style="cursor:pointer">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Community technology is unsolved</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Our communities: not digitized + unsolved</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
       <div class="tg-head" style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
@@ -10060,11 +10060,8 @@ window.cs1m7Reverse = function() {
 
   /* LEFT — funnel [Dave 2026-05-17 LATEST: SIZED UP — max-width 620→920, band height 70→96, band-5 height 90→124, gap 7→10] */
   #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:10px; width:100%; max-width:920px; margin:0 auto; position:relative; overflow:visible; }
-  /* [Dave 2026-05-18 v5] Connector REVERTED to dotted treatment + made MORE visible. Dave: "the dotted line that you had previously was better than this attempt". v4 (solid gradient) failed because the right-side fade made the cards-bar end disappear. v5 keeps the v3 dotted vocabulary but: tighter dashes (3px on, 4px off), bumped stroke (1.7px), higher contrast (75% opacity), bigger anchor dots at BOTH ends (4.5px) with thin rings for visual weight, so the connection reads end-to-end without ambiguity. */
-  #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:366px; left:74%; transform:translateY(-50%); width:380px; height:20px; z-index:6; pointer-events:none; overflow:visible; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:rgba(91,143,212,0.78); stroke-width:1.7; fill:none; stroke-linecap:round; stroke-dasharray:3 4; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; filter:drop-shadow(0 1px 2px rgba(91,143,212,0.30)); }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-ring { fill:none; stroke:#5B8FD4; stroke-opacity:0.32; stroke-width:1; }
+  /* [Dave 2026-05-18 v6 — FINAL] Connector REMOVED per Dave 'look at how bad this looks. double check review and make sure you get this right finally'. After 5 iterations of dotted/solid/gradient lines + matched dots — every version looked like a crude flowchart on an editorial slide. The link between the Pickleball band and the cards is now carried purely by COLOR (cards' left vertical bar is Pickleball-blue, matching the Pickleball band's gradient) and SPATIAL PROXIMITY (cards sit directly to the right of the funnel). No floating arrow. No discrete connector. Cleaner reads. .wpc-pb-link rules retained as hidden no-op so the inline SVG markup below still parses without producing anything visible. */
+  #cs-wedgepb-combo .wpc-pb-link { display:none !important; }
   #cs-wedgepb-combo .wpc-band { position:relative; height:96px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.45vw,1.45rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
   #cs-wedgepb-combo .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
   #cs-wedgepb-combo .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
@@ -10230,22 +10227,24 @@ window.cs1m7Reverse = function() {
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
             <div class="wpc-card-body">
               <div class="wpc-card-lede">Social coordination max pain</div>
+              <!-- [Dave 2026-05-18] Pills updated: 'ratings, ego' → 'ratings assumption'; 'reality (human connection)' → 'community reality (human connection, unique human value)'; last two pills SWAPPED so 'manual ...' lands before 'doesn't measure ...'. -->
               <div class="wpc-c3-pills" style="display:flex;flex-direction:column;gap:4px;margin-top:5px">
-                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">industry stuck in <em style="font-style:italic;font-weight:850;color:#ffe7c7">ratings, ego</em></div>
-                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850;color:#ffe7c7">reality (human connection)</em></div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">industry stuck in <em style="font-style:italic;font-weight:850;color:#ffe7c7">ratings assumption</em></div>
                 <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)"><em style="font-style:italic;font-weight:850;color:#ffe7c7">manual</em> club calendar creation &amp; signup</div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850;color:#ffe7c7">community reality (human connection, unique human value)</em></div>
               </div>
             </div>
             <div class="wpc-card-num">03</div>
           </div>
         </div>
 
+        <!-- [Dave 2026-05-18] Card 4 icon swapped from 5-node network/asterisk to a HEART per Dave: 'how about a heart graphic there would be better than this current icon graphic which i dont really get it'. Heart reads "wildly social" instantly. Same path on both faces. -->
         <div class="wpc-card wpc-c4" onclick="this.classList.toggle('flipped');event.stopPropagation()">
           <div class="wpc-face wpc-front wpc-front-iconly">
-            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M 12 20 C 7 17 2 13 2 8 C 2 5 4 3.5 6 3.5 C 8.4 3.5 10.5 4.8 12 7 C 13.5 4.8 15.6 3.5 18 3.5 C 20 3.5 22 5 22 8 C 22 13 17 17 12 20 Z"/></svg></div>
           </div>
           <div class="wpc-face wpc-back">
-            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M 12 20 C 7 17 2 13 2 8 C 2 5 4 3.5 6 3.5 C 8.4 3.5 10.5 4.8 12 7 C 13.5 4.8 15.6 3.5 18 3.5 C 20 3.5 22 5 22 8 C 22 13 17 17 12 20 Z"/></svg></div>
             <div class="wpc-card-body">
               <div class="wpc-card-lede" style="white-space:nowrap"><em style="font-style:italic;font-weight:850">Wildly social.</em></div>
             </div>
@@ -10260,7 +10259,7 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Cold-start <em style="font-style:italic;font-weight:850">data cracked.</em></div>
+              <div class="wpc-card-lede">Cold-start <em style="font-style:italic;font-weight:850">cracked.</em></div>
             </div>
             <div class="wpc-card-num">05</div>
           </div>
