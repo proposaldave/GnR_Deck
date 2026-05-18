@@ -10027,27 +10027,25 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-head em { font-style:italic; color:#b8954a; font-weight:850; }
   #cs-wedgepb-combo .wpc-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,2.7vw,2.6rem); font-weight:850; font-style:normal; color:#1a1612; line-height:1.06; letter-spacing:-0.024em; max-width:1700px; text-align:center; margin:0; }
   #cs-wedgepb-combo .wpc-sub em { font-style:italic; font-weight:850; color:#b8954a; }
-  #cs-wedgepb-combo .wpc-grid { display:grid; grid-template-columns: 1fr 1.05fr; gap:36px; align-items:center; width:100%; max-width:1640px; margin-top:8px; }
+  /* [Dave 2026-05-17 LATEST] Grid REBALANCED — Dave: "increase size of this graphic so left is significantly larger than the five cards on the right". Funnel column now 1.55× the cards column. */
+  #cs-wedgepb-combo .wpc-grid { display:grid; grid-template-columns: 1.55fr 1fr; gap:40px; align-items:center; width:100%; max-width:1700px; margin-top:8px; }
 
-  /* LEFT — funnel */
-  #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:7px; width:100%; max-width:620px; margin:0 auto; position:relative; overflow:visible; }
-  /* [Dave 2026-05-17 LATEST v3] Connector REDESIGNED again — Dave: "blue arrow looks awful". Replaced
-     the thick line + chevron arrowhead with an editorial-grade SUBTLE dotted trail: thin stroke,
-     no arrowhead, a small origin dot on the Pickleball band and a matching terminator dot on the
-     cards' vertical bar. Reads as a quiet thread, not a Powerpoint arrow. */
-  #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:266px; left:73%; transform:translateY(-50%); width:380px; height:14px; z-index:6; pointer-events:none; overflow:visible; }
+  /* LEFT — funnel [Dave 2026-05-17 LATEST: SIZED UP — max-width 620→920, band height 70→96, band-5 height 90→124, gap 7→10] */
+  #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:10px; width:100%; max-width:920px; margin:0 auto; position:relative; overflow:visible; }
+  /* [Dave 2026-05-17 LATEST v3] Subtle dotted connector — origin dot on Pickleball band, terminator dot on cards' bar, no arrowhead. Top recalculated for new funnel dimensions: 96px*3 bands + 10px*3 gaps + 96px/2 = 366px to band-4 center. */
+  #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:366px; left:74%; transform:translateY(-50%); width:300px; height:14px; z-index:6; pointer-events:none; overflow:visible; }
   #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:rgba(91,143,212,0.62); stroke-width:1.3; fill:none; stroke-linecap:round; stroke-dasharray:2.5 5; }
   #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; }
   #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot-end { fill:rgba(91,143,212,0.72); }
-  #cs-wedgepb-combo .wpc-band { position:relative; height:70px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.18vw,1.15rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
+  #cs-wedgepb-combo .wpc-band { position:relative; height:96px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.45vw,1.45rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
   #cs-wedgepb-combo .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
   #cs-wedgepb-combo .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
   #cs-wedgepb-combo .wpc-band-3 { width:66%;   clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); margin:0 auto; box-shadow:0 12px 24px rgba(200,70,44,0.18); }
   #cs-wedgepb-combo .wpc-band-4 { width:48%;   clip-path: polygon(0 0, 100% 0, 89% 100%, 11% 100%); background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); margin:0 auto; box-shadow:0 12px 26px rgba(91,143,212,0.20); }
-  /* [Dave 2026-05-17 v18] Band-5 NEPC: widened (28%→36%) + heightened (70px→90px) so the real logo + "NEPC" letterform both fit. Logo bumped to 56px + dark-gold NEPC text added inline (gap 14px) per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add "NEPC" there'. */
-  #cs-wedgepb-combo .wpc-band-5 { width:36%; height:90px; clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%); background:linear-gradient(180deg, #f5cf6a 0%, #d4a85a 48%, #a87a35 100%); margin:0 auto; color:#3a2a14; gap:14px; }
-  #cs-wedgepb-combo .wpc-band-5::before { content:""; position:absolute; left:-40%; right:-40%; top:-22px; bottom:-26px; background:radial-gradient(ellipse at center, rgba(240,196,96,0.50) 0%, rgba(212,168,83,0.16) 40%, rgba(184,149,74,0) 70%); z-index:-1; filter:blur(2px); }
-  #cs-wedgepb-combo .wpc-band-5 img { height:56px; width:auto; mix-blend-mode:multiply; }
+  /* [Dave 2026-05-17 LATEST] Band-5 NEPC scaled up to match the larger funnel. */
+  #cs-wedgepb-combo .wpc-band-5 { width:36%; height:124px; clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%); background:linear-gradient(180deg, #f5cf6a 0%, #d4a85a 48%, #a87a35 100%); margin:0 auto; color:#3a2a14; gap:18px; }
+  #cs-wedgepb-combo .wpc-band-5::before { content:""; position:absolute; left:-40%; right:-40%; top:-30px; bottom:-34px; background:radial-gradient(ellipse at center, rgba(240,196,96,0.50) 0%, rgba(212,168,83,0.16) 40%, rgba(184,149,74,0) 70%); z-index:-1; filter:blur(2px); }
+  #cs-wedgepb-combo .wpc-band-5 img { height:74px; width:auto; mix-blend-mode:multiply; }
   /* [Dave 2026-05-17 LATEST] NEPC text recolored to WHITE + nudged slightly to the left (negative margin pulls it closer to the logo) per Dave. Dark text-shadow keeps the white legible against the warm gold band. */
   #cs-wedgepb-combo .wpc-band-5 .wpc-band-nepc-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-weight:900; font-size:clamp(1.3rem,1.6vw,1.55rem); letter-spacing:0.06em; color:#ffffff; margin-left:-12px; text-shadow:0 1px 2px rgba(58,42,20,0.55),0 1px 1px rgba(58,42,20,0.45); }
 
@@ -10087,20 +10085,21 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-card-body { display:flex; flex-direction:column; gap:1px; flex:1; min-width:0; }
   #cs-wedgepb-combo .wpc-card-lede { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.3vw,1.22rem); font-weight:850; font-style:italic; line-height:1.1; color:var(--wpc-color); letter-spacing:-0.012em; }
   #cs-wedgepb-combo .wpc-card-clarify { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.85rem,1.02vw,.98rem); font-weight:600; line-height:1.25; color:rgba(26,22,18,0.72); }
-  #cs-wedgepb-combo .wpc-card-num { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.30em; color:rgba(26,22,18,0.28); flex-shrink:0; align-self:center; }
-  #cs-wedgepb-combo .wpc-c1 { --wpc-color:#7d529f; --wpc-bg:rgba(125,82,159,0.10); }
-  #cs-wedgepb-combo .wpc-c2 { --wpc-color:#b8954a; --wpc-bg:rgba(184,149,74,0.12); }
-  #cs-wedgepb-combo .wpc-c3 { --wpc-color:#c8462c; --wpc-bg:rgba(200,70,44,0.14); }
+  /* [Dave 2026-05-17 LATEST] Card ordinals (01-05) HIDDEN per Dave 'delete these numbers'. */
+  #cs-wedgepb-combo .wpc-card-num { display:none !important; }
+  /* [Dave 2026-05-17 LATEST] All five cards unified to Pickleball-blue accents (was purple/gold/red/blue/green). Dave: "let's not have the different colors of all of these slides on the right, let's just have them all blue shaded like the same blue as the pickleball block on the left, and with the middle card changed from red to blue. with the others having mostly white as they do not but the trimmings all blue". */
+  #cs-wedgepb-combo .wpc-c1 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
+  #cs-wedgepb-combo .wpc-c2 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
+  #cs-wedgepb-combo .wpc-c3 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
   #cs-wedgepb-combo .wpc-c4 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
-  #cs-wedgepb-combo .wpc-c5 { --wpc-color:#168651; --wpc-bg:rgba(22,134,81,0.10); }
-  /* Card 3 — RED-FILLED problem-beat card (both faces) */
-  #cs-wedgepb-combo .wpc-c3 .wpc-face { background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); border-color:rgba(200,70,44,0.6); border-left-color:#7d2410; box-shadow:0 10px 24px rgba(200,70,44,0.26); }
+  #cs-wedgepb-combo .wpc-c5 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
+  /* Card 3 — was RED-FILLED problem-beat card; now BLUE-FILLED to match Pickleball band. Same visual weight as foil card, blue palette. */
+  #cs-wedgepb-combo .wpc-c3 .wpc-face { background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); border-color:rgba(91,143,212,0.6); border-left-color:#2f5a98; box-shadow:0 10px 24px rgba(91,143,212,0.26); }
   #cs-wedgepb-combo .wpc-c3 .wpc-front-teaser { color:#fff5d8; }
   #cs-wedgepb-combo .wpc-c3 .wpc-front-hint { color:rgba(251,247,239,0.62); }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-ico { background:rgba(251,247,239,0.18); color:#fff5d8; border-color:rgba(251,247,239,0.55); }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-lede { color:#fff5d8; }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-clarify { color:rgba(251,247,239,0.88); }
-  #cs-wedgepb-combo .wpc-c3 .wpc-card-num { color:rgba(251,247,239,0.55); }
   /* Export/PDF: force every card to its BACK face so the printed deck shows full text content. Flatten the 3D rotation by hiding the front via opacity:0 and forcing the back to face-forward without rotation; backface-visibility off so the front doesn't disappear from the back of a non-rotated parent. */
   html[data-export="1"] #cs-wedgepb-combo .wpc-card .wpc-front { opacity:0 !important; transform:none !important; backface-visibility:visible !important; }
   html[data-export="1"] #cs-wedgepb-combo .wpc-card .wpc-back  { opacity:1 !important; transform:none !important; backface-visibility:visible !important; }
@@ -10202,9 +10201,9 @@ window.cs1m7Reverse = function() {
             <div class="wpc-card-body">
               <div class="wpc-card-lede">Social coordination max pain</div>
               <div class="wpc-c3-pills" style="display:flex;flex-direction:column;gap:4px;margin-top:5px">
-                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(125,36,16,0.62);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">industry stuck in <em style="font-style:italic;font-weight:850;color:#ffe7c7">ratings, ego</em></div>
-                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(125,36,16,0.62);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850;color:#ffe7c7">reality (human connection)</em></div>
-                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(125,36,16,0.62);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)"><em style="font-style:italic;font-weight:850;color:#ffe7c7">manual</em> club calendar creation &amp; signup</div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">industry stuck in <em style="font-style:italic;font-weight:850;color:#ffe7c7">ratings, ego</em></div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850;color:#ffe7c7">reality (human connection)</em></div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(30,60,120,0.58);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)"><em style="font-style:italic;font-weight:850;color:#ffe7c7">manual</em> club calendar creation &amp; signup</div>
               </div>
             </div>
             <div class="wpc-card-num">03</div>
