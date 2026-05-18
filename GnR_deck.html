@@ -12729,100 +12729,185 @@ window.cs1m7Reverse = function() {
 <style>
   #cs-racketeer { background:radial-gradient(ellipse at 50% 38%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; overflow:hidden; }
   #cs-racketeer::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 18% 30%, rgba(212,168,83,0.16) 0%, rgba(212,168,83,0.04) 40%, transparent 65%); pointer-events:none; z-index:1; }
-  #cs-racketeer .rk-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:74px 64px 56px; z-index:2; gap:18px; }
-  #cs-racketeer .rk-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.0rem,3.2vw,2.95rem); font-weight:850; line-height:1.06; letter-spacing:-0.026em; color:#1a1612; text-align:center; max-width:1380px; margin:0; }
+  #cs-racketeer .rk-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 56px 44px; z-index:2; gap:14px; }
+  #cs-racketeer .rk-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,2.95vw,2.65rem); font-weight:850; line-height:1.08; letter-spacing:-0.024em; color:#1a1612; text-align:center; max-width:1380px; margin:0; }
   #cs-racketeer .rk-hero em { font-style:italic; font-weight:850; color:#b8954a; }
-  #cs-racketeer .rk-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.0rem,1.3vw,1.22rem); font-style:italic; font-weight:550; color:rgba(26,22,18,0.66); text-align:center; max-width:980px; margin:0; line-height:1.42; }
+  #cs-racketeer .rk-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.0rem,1.28vw,1.18rem); font-style:italic; font-weight:550; color:rgba(26,22,18,0.68); text-align:center; max-width:1040px; margin:0; line-height:1.40; }
   #cs-racketeer .rk-sub strong { font-style:normal; font-weight:800; color:#1a1612; }
-  #cs-racketeer .rk-grid { display:grid; grid-template-columns: 1.35fr 1fr; gap:38px; width:100%; max-width:1560px; align-items:stretch; margin-top:14px; }
+  #cs-racketeer .rk-grid { display:grid; grid-template-columns: 1.45fr 1fr; gap:32px; width:100%; max-width:1620px; align-items:stretch; margin-top:8px; }
 
-  /* LEFT — triptych of pull-quotes */
-  #cs-racketeer .rk-quotes { display:flex; flex-direction:column; gap:14px; }
-  #cs-racketeer .rk-q { position:relative; background:rgba(251,247,239,0.78); border:1px solid rgba(184,149,74,0.32); border-left:4px solid #b8954a; border-radius:10px; padding:18px 22px 16px 26px; box-shadow:0 6px 18px rgba(26,22,18,0.06); }
-  #cs-racketeer .rk-q.hero { background:linear-gradient(180deg, rgba(212,168,83,0.16) 0%, rgba(251,247,239,0.94) 100%); border:1.6px solid rgba(184,149,74,0.55); border-left:5px solid #b8954a; box-shadow:0 12px 30px rgba(184,149,74,0.18); }
-  #cs-racketeer .rk-q::before { content:"\201C"; position:absolute; top:-6px; left:8px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.4rem; font-style:italic; font-weight:850; color:rgba(184,149,74,0.42); line-height:1; }
-  #cs-racketeer .rk-q-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.1rem,1.45vw,1.42rem); font-weight:650; line-height:1.28; color:#1a1612; letter-spacing:-0.008em; }
-  #cs-racketeer .rk-q-text em { font-style:italic; font-weight:850; color:#b8954a; }
-  #cs-racketeer .rk-q.hero .rk-q-text { font-size:clamp(1.25rem,1.65vw,1.62rem); font-weight:700; }
-  #cs-racketeer .rk-q.hero .rk-q-text em { color:#a87a35; }
-  #cs-racketeer .rk-q-attr { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.55); margin-top:8px; }
+  /* LEFT — Krista ↔ Marcos parallel comparison panel */
+  #cs-racketeer .rk-parallel { display:flex; flex-direction:column; gap:14px; padding:22px 24px 22px; background:rgba(251,247,239,0.88); border:1.4px solid rgba(184,149,74,0.36); border-radius:12px; box-shadow:0 10px 28px rgba(26,22,18,0.08); position:relative; }
+  /* Operator-pair header */
+  #cs-racketeer .rk-ops-row { display:grid; grid-template-columns:1fr auto 1fr; gap:18px; align-items:stretch; }
+  #cs-racketeer .rk-op { display:flex; flex-direction:column; align-items:center; gap:4px; padding:14px 14px 12px; border-radius:10px; }
+  #cs-racketeer .rk-op.krista { background:linear-gradient(180deg, rgba(91,143,212,0.10) 0%, rgba(91,143,212,0.02) 100%); border:1.2px solid rgba(91,143,212,0.42); }
+  #cs-racketeer .rk-op.marcos { background:linear-gradient(180deg, rgba(200,70,44,0.10) 0%, rgba(200,70,44,0.02) 100%); border:1.2px solid rgba(200,70,44,0.42); }
+  #cs-racketeer .rk-op-avatar { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.32rem; font-weight:850; color:#fbf7ef; letter-spacing:0.02em; flex-shrink:0; margin-bottom:2px; }
+  #cs-racketeer .rk-op.krista .rk-op-avatar { background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); box-shadow:0 6px 14px rgba(91,143,212,0.30); }
+  #cs-racketeer .rk-op.marcos .rk-op-avatar { background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); box-shadow:0 6px 14px rgba(200,70,44,0.28); }
+  #cs-racketeer .rk-op-name { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.10rem,1.40vw,1.32rem); font-weight:850; color:#1a1612; letter-spacing:-0.010em; text-align:center; }
+  #cs-racketeer .rk-op-role { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; text-align:center; }
+  #cs-racketeer .rk-op.krista .rk-op-role { color:#3a73b8; }
+  #cs-racketeer .rk-op.marcos .rk-op-role { color:#a8351f; }
+  #cs-racketeer .rk-op-club { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(26,22,18,0.62); text-align:center; }
+  #cs-racketeer .rk-op-loc { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.85rem; font-style:italic; font-weight:500; color:rgba(26,22,18,0.60); text-align:center; }
+  /* Versus glyph in center column */
+  #cs-racketeer .rk-vs { display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  #cs-racketeer .rk-vs-glyph { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.95rem; font-weight:850; font-style:italic; color:#b8954a; line-height:1; }
+  #cs-racketeer .rk-vs-label { font-family:'Manrope',sans-serif; font-size:.50rem; font-weight:900; letter-spacing:.36em; text-transform:uppercase; color:rgba(184,149,74,0.85); margin-top:4px; }
+  /* Comparison table */
+  #cs-racketeer .rk-compare { display:grid; grid-template-columns: minmax(120px,0.7fr) 1fr auto 1fr; column-gap:14px; row-gap:8px; align-items:center; padding:6px 4px 4px; border-top:1px solid rgba(184,149,74,0.32); border-bottom:1px solid rgba(184,149,74,0.32); margin:6px 0 2px; }
+  #cs-racketeer .rk-compare-head { display:contents; }
+  #cs-racketeer .rk-compare-head .rk-h { font-family:'Manrope',sans-serif; font-size:.52rem; font-weight:900; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.45); padding:6px 0; }
+  #cs-racketeer .rk-compare-row { display:contents; }
+  #cs-racketeer .rk-compare-row .rk-r-label { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.55); }
+  #cs-racketeer .rk-compare-row .rk-r-val { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.05vw,1.08rem); font-weight:600; line-height:1.28; color:#1a1612; padding:8px 12px; border-radius:6px; }
+  #cs-racketeer .rk-compare-row .rk-r-val.krista { background:rgba(91,143,212,0.08); border-left:2.5px solid #5B8FD4; }
+  #cs-racketeer .rk-compare-row .rk-r-val.marcos { background:rgba(200,70,44,0.08); border-left:2.5px solid #c8462c; }
+  #cs-racketeer .rk-compare-row .rk-r-val em { font-style:italic; font-weight:800; }
+  #cs-racketeer .rk-compare-row .rk-r-val.krista em { color:#3a73b8; }
+  #cs-racketeer .rk-compare-row .rk-r-val.marcos em { color:#c8462c; }
+  #cs-racketeer .rk-compare-row .rk-r-eq { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.10rem; font-weight:600; color:rgba(184,149,74,0.85); text-align:center; }
+  /* Synthesis line — beneath the comparison */
+  #cs-racketeer .rk-synth { display:flex; align-items:center; gap:14px; margin-top:8px; padding:10px 14px; background:linear-gradient(180deg, rgba(212,168,83,0.16) 0%, rgba(212,168,83,0.04) 100%); border:1.2px solid rgba(184,149,74,0.50); border-radius:8px; }
+  #cs-racketeer .rk-synth-eye { font-family:'Manrope',sans-serif; font-size:.55rem; font-weight:900; letter-spacing:.34em; text-transform:uppercase; color:#a87a35; flex-shrink:0; }
+  #cs-racketeer .rk-synth-body { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.15vw,1.12rem); font-weight:700; font-style:italic; line-height:1.28; color:#1a1612; }
+  #cs-racketeer .rk-synth-body em { font-style:italic; font-weight:850; color:#b8954a; }
 
-  /* RIGHT — validation panel: logo + club info + video placeholder */
-  #cs-racketeer .rk-panel { display:flex; flex-direction:column; align-items:center; gap:14px; padding:24px 22px 22px; background:rgba(251,247,239,0.88); border:1.4px solid rgba(184,149,74,0.36); border-radius:12px; box-shadow:0 10px 28px rgba(26,22,18,0.08); }
-  #cs-racketeer .rk-logo-wrap { width:100%; min-height:96px; display:flex; align-items:center; justify-content:center; padding:6px 0; }
-  #cs-racketeer .rk-logo { max-width:200px; max-height:90px; width:auto; height:auto; display:block; }
-  #cs-racketeer .rk-logo-fallback { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.85rem; font-weight:850; letter-spacing:0.08em; color:#1a1612; text-align:center; }
-  #cs-racketeer .rk-logo-fallback .rk-mark { display:block; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:800; letter-spacing:.32em; color:rgba(26,22,18,0.5); text-transform:uppercase; margin-top:4px; }
-  #cs-racketeer .rk-club { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.5vw,1.42rem); font-weight:800; color:#1a1612; letter-spacing:-0.012em; text-align:center; }
-  #cs-racketeer .rk-loc { font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.52); }
-  #cs-racketeer .rk-divider { width:64px; height:1px; background:linear-gradient(90deg, rgba(184,149,74,0) 0%, #b8954a 50%, rgba(184,149,74,0) 100%); margin:2px 0; }
-  #cs-racketeer .rk-person { display:flex; flex-direction:column; align-items:center; gap:2px; }
-  #cs-racketeer .rk-name { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.08rem; font-weight:800; color:#1a1612; letter-spacing:-0.008em; }
-  #cs-racketeer .rk-role { font-family:'Manrope',sans-serif; font-size:.60rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.55); }
-  /* Video placeholder — 16:9 frame ready for Dave to drop a clip into. Replace the inner `<div class="rk-video-placeholder">…</div>` with `<video src="assets/marcos-clip.mp4" controls poster="…"></video>` later. */
-  #cs-racketeer .rk-video { width:100%; aspect-ratio: 16/9; margin-top:6px; position:relative; background:linear-gradient(180deg, #1a1612 0%, #2a2218 100%); border:1.2px dashed rgba(184,149,74,0.50); border-radius:10px; overflow:hidden; }
-  #cs-racketeer .rk-video-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
-  #cs-racketeer .rk-video-play { width:54px; height:54px; border-radius:50%; background:rgba(212,168,83,0.18); border:1.6px solid rgba(212,168,83,0.65); display:flex; align-items:center; justify-content:center; }
-  #cs-racketeer .rk-video-play svg { width:22px; height:22px; margin-left:3px; }
-  #cs-racketeer .rk-video-label { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:rgba(212,168,83,0.85); }
-  #cs-racketeer .rk-video-note { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.78rem; font-style:italic; color:rgba(251,247,239,0.55); margin-top:-2px; }
+  /* RIGHT — validation panel: logo + club info + Marcos quote + video placeholder */
+  #cs-racketeer .rk-panel { display:flex; flex-direction:column; align-items:center; gap:12px; padding:22px 22px 22px; background:rgba(251,247,239,0.92); border:1.4px solid rgba(184,149,74,0.42); border-radius:12px; box-shadow:0 10px 28px rgba(26,22,18,0.08); }
+  #cs-racketeer .rk-logo-wrap { width:100%; min-height:80px; display:flex; align-items:center; justify-content:center; padding:4px 0; }
+  #cs-racketeer .rk-logo { max-width:200px; max-height:80px; width:auto; height:auto; display:block; }
+  #cs-racketeer .rk-logo-fallback { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.65rem; font-weight:850; letter-spacing:0.08em; color:#1a1612; text-align:center; }
+  #cs-racketeer .rk-logo-fallback .rk-mark { display:block; font-family:'Manrope',sans-serif; font-size:.54rem; font-weight:800; letter-spacing:.32em; color:rgba(26,22,18,0.5); text-transform:uppercase; margin-top:4px; }
+  #cs-racketeer .rk-club { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.40vw,1.30rem); font-weight:800; color:#1a1612; letter-spacing:-0.010em; text-align:center; }
+  #cs-racketeer .rk-loc { font-family:'Manrope',sans-serif; font-size:.60rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.55); }
+  #cs-racketeer .rk-divider { width:54px; height:1px; background:linear-gradient(90deg, rgba(184,149,74,0) 0%, #b8954a 50%, rgba(184,149,74,0) 100%); margin:0; }
+  /* Single Marcos hero pull-quote */
+  #cs-racketeer .rk-q { position:relative; width:100%; background:linear-gradient(180deg, rgba(212,168,83,0.14) 0%, rgba(251,247,239,0.96) 100%); border:1.4px solid rgba(184,149,74,0.50); border-left:4px solid #b8954a; border-radius:10px; padding:14px 16px 12px 22px; box-shadow:0 8px 22px rgba(184,149,74,0.14); margin-top:2px; }
+  #cs-racketeer .rk-q::before { content:"\201C"; position:absolute; top:-8px; left:6px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.6rem; font-style:italic; font-weight:850; color:rgba(184,149,74,0.45); line-height:1; }
+  #cs-racketeer .rk-q-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.0rem,1.25vw,1.15rem); font-weight:700; line-height:1.26; color:#1a1612; letter-spacing:-0.008em; }
+  #cs-racketeer .rk-q-text em { font-style:italic; font-weight:850; color:#a87a35; }
+  #cs-racketeer .rk-q-attr { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:800; letter-spacing:.20em; text-transform:uppercase; color:rgba(26,22,18,0.55); margin-top:6px; }
+  /* Video placeholder — 16:9 frame ready for Dave to drop a clip into. */
+  #cs-racketeer .rk-video { width:100%; aspect-ratio: 16/9; margin-top:4px; position:relative; background:linear-gradient(180deg, #1a1612 0%, #2a2218 100%); border:1.2px dashed rgba(184,149,74,0.50); border-radius:10px; overflow:hidden; }
+  #cs-racketeer .rk-video-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; }
+  #cs-racketeer .rk-video-play { width:46px; height:46px; border-radius:50%; background:rgba(212,168,83,0.18); border:1.6px solid rgba(212,168,83,0.65); display:flex; align-items:center; justify-content:center; }
+  #cs-racketeer .rk-video-play svg { width:20px; height:20px; margin-left:3px; }
+  #cs-racketeer .rk-video-label { font-family:'Manrope',sans-serif; font-size:.50rem; font-weight:900; letter-spacing:.30em; text-transform:uppercase; color:rgba(212,168,83,0.85); }
+  #cs-racketeer .rk-video-note { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.70rem; font-style:italic; color:rgba(251,247,239,0.55); margin-top:-2px; }
   #cs-racketeer .rk-video video { width:100%; height:100%; object-fit:cover; display:block; }
-  #cs-racketeer .rk-attribution { width:100%; max-width:1560px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:.62rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.52); margin-top:8px; }
+  #cs-racketeer .rk-attribution { width:100%; max-width:1620px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:.58rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.52); margin-top:4px; }
   #cs-racketeer .rk-attribution strong { font-weight:800; color:#1a1612; }
 
   /* Entry stagger */
-  #cs-racketeer .rk-hero, #cs-racketeer .rk-sub, #cs-racketeer .rk-q, #cs-racketeer .rk-panel, #cs-racketeer .rk-attribution { opacity:0; transform:translateY(10px); transition:opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1); }
+  #cs-racketeer .rk-hero, #cs-racketeer .rk-sub, #cs-racketeer .rk-parallel, #cs-racketeer .rk-panel, #cs-racketeer .rk-attribution { opacity:0; transform:translateY(10px); transition:opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1); }
   #cs-racketeer.casey-entered .rk-hero { opacity:1; transform:none; transition-delay:0.10s; }
   #cs-racketeer.casey-entered .rk-sub { opacity:1; transform:none; transition-delay:0.30s; }
-  #cs-racketeer.casey-entered .rk-q:nth-child(1) { opacity:1; transform:none; transition-delay:0.55s; }
-  #cs-racketeer.casey-entered .rk-q:nth-child(2) { opacity:1; transform:none; transition-delay:0.75s; }
-  #cs-racketeer.casey-entered .rk-q:nth-child(3) { opacity:1; transform:none; transition-delay:0.95s; }
-  #cs-racketeer.casey-entered .rk-panel { opacity:1; transform:none; transition-delay:0.50s; }
-  #cs-racketeer.casey-entered .rk-attribution { opacity:1; transform:none; transition-delay:1.15s; }
+  #cs-racketeer.casey-entered .rk-parallel { opacity:1; transform:none; transition-delay:0.55s; }
+  #cs-racketeer.casey-entered .rk-panel { opacity:1; transform:none; transition-delay:0.70s; }
+  #cs-racketeer.casey-entered .rk-attribution { opacity:1; transform:none; transition-delay:1.05s; }
   html[data-export="1"] #cs-racketeer .rk-hero,
   html[data-export="1"] #cs-racketeer .rk-sub,
-  html[data-export="1"] #cs-racketeer .rk-q,
+  html[data-export="1"] #cs-racketeer .rk-parallel,
   html[data-export="1"] #cs-racketeer .rk-panel,
   html[data-export="1"] #cs-racketeer .rk-attribution { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-racketeer" style="display:none">
-  <!-- [Dave 2026-05-18] First external club validation — Racketeer Paddle Club, London. Dave will save the Racketeer logo to assets/racketeer-logo.png; falls back to a styled RACKETEER text mark if image isn't present. Video frame is a placeholder ready for <video> embed when the Zoom clip is exported. -->
+  <!-- [Dave 2026-05-18 v2] REDESIGNED to surface the Krista↔Marcos parallel — same instincts, same manual workarounds, same missing tool, two countries / two sports. Validates that GnR's wedge isn't NEPC-specific; it's a universal community-operator pattern. Right panel keeps the Racketeer logo + Marcos info + hero pull-quote + video frame placeholder. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">First external club &middot; London &middot; May 18, 2026</div>
   <section class="rk-stage">
-    <h1 class="rk-hero">The first paddle club outside NEPC just said <em>yes</em>.</h1>
-    <div class="rk-sub"><strong>Marcos Garcia</strong> &middot; Racketeer Paddle Club &middot; London &middot; first prospective customer outside New England.</div>
+    <h1 class="rk-hero">Same <em>instinct</em>. Same <em>workarounds</em>. Two countries. Two sports.</h1>
+    <div class="rk-sub"><strong>Krista</strong> runs NEPC operations. <strong>Marcos</strong> founded Racketeer. Both already build community by hand &mdash; because the tool to do it well <em style="font-style:italic;color:#b8954a;font-weight:800">doesn&rsquo;t exist</em>.</div>
 
     <div class="rk-grid">
 
-      <!-- LEFT · pull-quote triptych (Dave-approved Tier-1 block) -->
-      <div class="rk-quotes">
-        <div class="rk-q">
-          <div class="rk-q-text">We don&rsquo;t even use it &mdash; it&rsquo;s <em>so generic.</em></div>
-          <div class="rk-q-attr">&mdash; on the incumbent&rsquo;s matchmaking tool</div>
+      <!-- LEFT · Krista ↔ Marcos PARALLEL COMPARISON PANEL -->
+      <div class="rk-parallel">
+
+        <!-- Operator-pair header row -->
+        <div class="rk-ops-row">
+          <div class="rk-op krista">
+            <div class="rk-op-avatar">K</div>
+            <div class="rk-op-name">Krista</div>
+            <div class="rk-op-role">Operations Manager</div>
+            <div class="rk-op-club">NEPC</div>
+            <div class="rk-op-loc">Rye, NH &middot; Pickleball</div>
+          </div>
+          <div class="rk-vs">
+            <span class="rk-vs-glyph">=</span>
+            <span class="rk-vs-label">Same job</span>
+          </div>
+          <div class="rk-op marcos">
+            <div class="rk-op-avatar">M</div>
+            <div class="rk-op-name">Marcos</div>
+            <div class="rk-op-role">Founder &amp; Director</div>
+            <div class="rk-op-club">Racketeer Paddle Club</div>
+            <div class="rk-op-loc">London, UK &middot; Padel</div>
+          </div>
         </div>
-        <div class="rk-q">
-          <div class="rk-q-text"><em>All manual.</em> WhatsApp groups, my memory, people I know.</div>
-          <div class="rk-q-attr">&mdash; on how he does it today</div>
+
+        <!-- Behavior parallel table -->
+        <div class="rk-compare">
+          <div class="rk-compare-head">
+            <div class="rk-h">What she/he does</div>
+            <div class="rk-h" style="color:#3a73b8">Krista's workaround</div>
+            <div></div>
+            <div class="rk-h" style="color:#a8351f">Marcos's workaround</div>
+          </div>
+
+          <div class="rk-compare-row">
+            <div class="rk-r-label">Invitations</div>
+            <div class="rk-r-val krista"><em>Custom</em>, by hand, daily</div>
+            <div class="rk-r-eq">=</div>
+            <div class="rk-r-val marcos"><em>Custom</em>, by hand, weekly</div>
+          </div>
+
+          <div class="rk-compare-row">
+            <div class="rk-r-label">Matchmaking</div>
+            <div class="rk-r-val krista">From <em>memory</em> &amp; spreadsheet</div>
+            <div class="rk-r-eq">=</div>
+            <div class="rk-r-val marcos">From <em>memory</em> &amp; WhatsApp</div>
+          </div>
+
+          <div class="rk-compare-row">
+            <div class="rk-r-label">Coordination</div>
+            <div class="rk-r-val krista">Slack + texts + DMs</div>
+            <div class="rk-r-eq">=</div>
+            <div class="rk-r-val marcos">WhatsApp groups + DMs</div>
+          </div>
+
+          <div class="rk-compare-row">
+            <div class="rk-r-label">Their tool</div>
+            <div class="rk-r-val krista"><em>Doesn&rsquo;t exist.</em></div>
+            <div class="rk-r-eq">=</div>
+            <div class="rk-r-val marcos"><em>Doesn&rsquo;t exist.</em></div>
+          </div>
         </div>
-        <div class="rk-q hero">
-          <div class="rk-q-text">Genuinely surprised <em>how complete it is.</em></div>
-          <div class="rk-q-attr">&mdash; first reaction to Give &lsquo;n Receive</div>
+
+        <!-- Synthesis -->
+        <div class="rk-synth">
+          <div class="rk-synth-eye">The wedge</div>
+          <div class="rk-synth-body">One missing product. <em>Two clubs</em> already running its workaround. Same instincts, two countries. The wedge isn&rsquo;t NEPC &mdash; it&rsquo;s <em>every community operator</em>.</div>
         </div>
+
       </div>
 
-      <!-- RIGHT · validation panel: logo + club info + video frame -->
+      <!-- RIGHT · validation panel: logo + club info + Marcos quote + video frame -->
       <div class="rk-panel">
         <div class="rk-logo-wrap">
-          <!-- Save the Racketeer logo from racketeerpaddle.club to this path. Falls back to a styled text mark below. -->
+          <!-- Save the Racketeer logo from racketeerpaddle.club to assets/racketeer-logo.png. Falls back to a styled text mark below. -->
           <img class="rk-logo" src="assets/racketeer-logo.png" alt="Racketeer Paddle Club" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
           <div class="rk-logo-fallback" style="display:none">RACKETEER<span class="rk-mark">Paddle Club</span></div>
         </div>
         <div class="rk-club">Racketeer Paddle Club</div>
         <div class="rk-loc">London &middot; UK</div>
         <div class="rk-divider" aria-hidden="true"></div>
-        <div class="rk-person">
-          <div class="rk-name">Marcos Garcia</div>
-          <div class="rk-role">Founder &amp; Director</div>
+        <!-- Marcos's strongest quote — the PMF money line -->
+        <div class="rk-q">
+          <div class="rk-q-text">Genuinely surprised <em>how complete it is.</em></div>
+          <div class="rk-q-attr">&mdash; Marcos Garcia, first reaction to Give &lsquo;n Receive</div>
         </div>
         <!-- Video placeholder · Dave will replace .rk-video-placeholder with <video src="assets/marcos-clip.mp4" controls poster="…"></video> once the Zoom clip is exported. -->
         <div class="rk-video">
