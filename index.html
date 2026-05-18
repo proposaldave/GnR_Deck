@@ -10032,11 +10032,15 @@ window.cs1m7Reverse = function() {
 
   /* LEFT — funnel [Dave 2026-05-17 LATEST: SIZED UP — max-width 620→920, band height 70→96, band-5 height 90→124, gap 7→10] */
   #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:10px; width:100%; max-width:920px; margin:0 auto; position:relative; overflow:visible; }
-  /* [Dave 2026-05-17 LATEST v3] Subtle dotted connector — origin dot on Pickleball band, terminator dot on cards' bar, no arrowhead. Top recalculated for new funnel dimensions: 96px*3 bands + 10px*3 gaps + 96px/2 = 366px to band-4 center. */
-  #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:366px; left:74%; transform:translateY(-50%); width:300px; height:14px; z-index:6; pointer-events:none; overflow:visible; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:rgba(91,143,212,0.62); stroke-width:1.3; fill:none; stroke-linecap:round; stroke-dasharray:2.5 5; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot-end { fill:rgba(91,143,212,0.72); }
+  /* [Dave 2026-05-18] Connector REDESIGNED v4 — Dave: "decent but you can do better". Dashed thread + matched dots replaced with a more editorial treatment:
+     • Origin = a "port" node — a faint outer ring around a solid blue dot, with a soft drop-shadow for depth.
+     • Line = SOLID stroke with a gradient that fades from full Pickleball-blue at the port → near-transparent at the cards' bar. No dashes — confident flow, not a dotted timeline.
+     • Termination = no extra dot; the gradient whispers into the cards' vertical bar so the eye reads them as connected.
+     Visual language now matches the rest of the slide (solid filled bands, solid filled cards). */
+  #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:366px; left:74%; transform:translateY(-50%); width:380px; height:20px; z-index:6; pointer-events:none; overflow:visible; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { fill:none; stroke-linecap:round; stroke-width:1.8; stroke:url(#wpcPbFlowGrad); }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-ring { fill:none; stroke:#5B8FD4; stroke-opacity:0.30; stroke-width:1; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; filter:drop-shadow(0 1px 2px rgba(91,143,212,0.38)); }
   #cs-wedgepb-combo .wpc-band { position:relative; height:96px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.45vw,1.45rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
   #cs-wedgepb-combo .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
   #cs-wedgepb-combo .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
@@ -10141,14 +10145,21 @@ window.cs1m7Reverse = function() {
         <div class="wpc-band wpc-band-4"><span>Pickleball</span></div>
         <!-- [Dave 2026-05-17 v18] Big NEPC logo + "NEPC" text per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add NEPC there'. -->
         <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
-        <!-- [Dave 2026-05-17 LATEST v3] Pickleball→cards connector — subtle dotted trail, no arrowhead. Origin dot on Pickleball band's right edge; thin dashed thread crosses the gap; small terminator dot lands on the cards' vertical bar. Editorial whisper, not a Powerpoint shout. -->
-        <svg class="wpc-pb-link" viewBox="0 0 380 14" preserveAspectRatio="none" aria-hidden="true">
-          <!-- Origin dot — anchored to Pickleball band right edge -->
-          <circle class="wpc-pb-link-dot" cx="5" cy="7" r="3.5"/>
-          <!-- Thin dashed thread extending rightward -->
-          <path class="wpc-pb-link-line" d="M 12 7 L 370 7"/>
-          <!-- Terminator dot — lands on the cards' vertical bar -->
-          <circle class="wpc-pb-link-dot-end" cx="376" cy="7" r="2.6"/>
+        <!-- [Dave 2026-05-18 v4] Pickleball→cards connector — solid gradient flow line + designed origin "port" (ring + filled node). No dashes, no terminator dot. Line stroke uses an in-svg linearGradient that fades from full Pickleball-blue at the port to near-transparent as it approaches the cards' vertical bar, so the eye reads the two as connected via natural fall-off. -->
+        <svg class="wpc-pb-link" viewBox="0 0 380 20" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="wpcPbFlowGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#5B8FD4" stop-opacity="0.95"/>
+              <stop offset="40%" stop-color="#5B8FD4" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="#5B8FD4" stop-opacity="0.18"/>
+            </linearGradient>
+          </defs>
+          <!-- Faint outer ring — the "port" feel around the origin node -->
+          <circle class="wpc-pb-link-ring" cx="10" cy="10" r="8"/>
+          <!-- Origin filled node — anchored to Pickleball band's right edge -->
+          <circle class="wpc-pb-link-dot" cx="10" cy="10" r="4"/>
+          <!-- Solid gradient line — full blue at origin, fades into cards bar -->
+          <path class="wpc-pb-link-line" d="M 18 10 L 378 10"/>
         </svg>
       </div>
 
@@ -12462,76 +12473,76 @@ window.cs1m7Reverse = function() {
       <div class="v5-pillars">
         <!-- [Dave 2026-05-14 PM] All three pillars are now FLIPPABLE — front face shows just the badge (graphic); back face shows the full stack (badge + num + eye + body + meta). Badge appears on both faces so it stays as the visual anchor through the flip. -->
 
-        <!-- PILLAR 1 · CLARITY (BLUE + MAZE) -->
+        <!-- PILLAR 1 · BLAZE NEW TRAIL (NEPC LOGO) — [Dave 2026-05-18] SWAPPED with Clarity per Dave 'swap the location of these two cards'. NEPC pillar now leads the wheelhouse; Clarity moves to position 2. Numbers reflow to match display order (01 here, 02 in next slot). -->
         <div class="v5-pillar p1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
           <div class="v5-flip-inner">
             <!-- FRONT — badge only -->
             <div class="v5-flip-front">
-              <div class="v5-badge blue">
-                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                    <path d="M 28 14 L 14 14 L 14 66 L 48 66"/>
-                    <path d="M 60 66 L 66 66 L 66 14 L 40 14"/>
-                    <path d="M 14 28 L 28 28 L 28 14"/>
-                    <path d="M 28 40 L 40 40 L 40 28"/>
-                    <path d="M 40 52 L 52 52 L 52 28"/>
-                    <path d="M 22 52 L 22 66"/>
-                    <path d="M 40 14 L 40 22"/>
-                    <path d="M 52 40 L 66 40"/>
-                    <path d="M 14 52 L 22 52"/>
-                  </g>
-                  <circle cx="34" cy="8" r="2.8" fill="white"/>
-                  <circle cx="54" cy="72" r="2.8" fill="white"/>
-                </svg>
+              <div class="v5-badge nepc">
+                <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
               </div>
             </div>
             <!-- BACK — badge + full content -->
             <div class="v5-flip-back">
-              <div class="v5-badge blue">
-                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                    <path d="M 28 14 L 14 14 L 14 66 L 48 66"/>
-                    <path d="M 60 66 L 66 66 L 66 14 L 40 14"/>
-                    <path d="M 14 28 L 28 28 L 28 14"/>
-                    <path d="M 28 40 L 40 40 L 40 28"/>
-                    <path d="M 40 52 L 52 52 L 52 28"/>
-                    <path d="M 22 52 L 22 66"/>
-                    <path d="M 40 14 L 40 22"/>
-                    <path d="M 52 40 L 66 40"/>
-                    <path d="M 14 52 L 22 52"/>
-                  </g>
-                  <circle cx="34" cy="8" r="2.8" fill="white"/>
-                  <circle cx="54" cy="72" r="2.8" fill="white"/>
-                </svg>
+              <div class="v5-badge nepc">
+                <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
               </div>
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">01</div>
-              <div class="v5-eye">Clarity</div>
-              <div class="v5-body"><em>Next frontier: the technology<br>that connects us</em></div>
-              <div class="v5-meta">Six years iterating path of least resistance</div>
+              <div class="v5-eye">Blaze new trail</div>
+              <div class="v5-body"><em style="color:#1a1612">Proving lab: matchmaking +<br>community by hand.</em></div>
+              <div class="v5-meta"><strong>NEPC</strong> &middot; 500&nbsp;members &middot; 20+&nbsp;employees<br>Domain expert community building talent</div>
             </div>
           </div>
         </div>
 
-        <!-- PILLAR 2 · STARTING POINT (NEPC LOGO) -->
+        <!-- PILLAR 2 · CLARITY (BLUE + MAZE) — [Dave 2026-05-18] SWAPPED with Blaze new trail (now at position 1). -->
         <div class="v5-pillar p2" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
           <div class="v5-flip-inner">
             <!-- FRONT — badge only -->
             <div class="v5-flip-front">
-              <div class="v5-badge nepc">
-                <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
+              <div class="v5-badge blue">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <path d="M 28 14 L 14 14 L 14 66 L 48 66"/>
+                    <path d="M 60 66 L 66 66 L 66 14 L 40 14"/>
+                    <path d="M 14 28 L 28 28 L 28 14"/>
+                    <path d="M 28 40 L 40 40 L 40 28"/>
+                    <path d="M 40 52 L 52 52 L 52 28"/>
+                    <path d="M 22 52 L 22 66"/>
+                    <path d="M 40 14 L 40 22"/>
+                    <path d="M 52 40 L 66 40"/>
+                    <path d="M 14 52 L 22 52"/>
+                  </g>
+                  <circle cx="34" cy="8" r="2.8" fill="white"/>
+                  <circle cx="54" cy="72" r="2.8" fill="white"/>
+                </svg>
               </div>
             </div>
             <!-- BACK — badge + full content -->
             <div class="v5-flip-back">
-              <div class="v5-badge nepc">
-                <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
+              <div class="v5-badge blue">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <path d="M 28 14 L 14 14 L 14 66 L 48 66"/>
+                    <path d="M 60 66 L 66 66 L 66 14 L 40 14"/>
+                    <path d="M 14 28 L 28 28 L 28 14"/>
+                    <path d="M 28 40 L 40 40 L 40 28"/>
+                    <path d="M 40 52 L 52 52 L 52 28"/>
+                    <path d="M 22 52 L 22 66"/>
+                    <path d="M 40 14 L 40 22"/>
+                    <path d="M 52 40 L 66 40"/>
+                    <path d="M 14 52 L 22 52"/>
+                  </g>
+                  <circle cx="34" cy="8" r="2.8" fill="white"/>
+                  <circle cx="54" cy="72" r="2.8" fill="white"/>
+                </svg>
               </div>
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">02</div>
-              <div class="v5-eye">Blaze new trail</div>
-              <div class="v5-body"><em style="color:#1a1612">Proving lab: matchmaking +<br>community by hand.</em></div>
-              <div class="v5-meta"><strong>NEPC</strong> &middot; 500&nbsp;members &middot; 20+&nbsp;employees<br>Domain expert community building talent</div>
+              <div class="v5-eye">Clarity</div>
+              <div class="v5-body"><em>Next frontier: the technology<br>that connects us</em></div>
+              <div class="v5-meta">Six years iterating path of least resistance</div>
             </div>
           </div>
         </div>
