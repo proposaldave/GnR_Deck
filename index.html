@@ -10303,7 +10303,8 @@ window.cs1m7Reverse = function() {
 </div>
 
 
-<div class="casey-slide ds-focus" id="cs-pbfirst">
+<!-- [Dave 2026-05-18 LATEST] cs-pbfirst slide DELETED per Dave 'delete this slide' (the 17/25 alt with 'Pickleball → fastest path to the world's first autonomous human value exchange network' + 5-card wedge). Hidden via display:none !important + data-deleted="1" so the dot disappears from nav AND the slide is unreachable. Black-dot registration also removed from SLIDE_ALTS[17]. Existing csPbfirstAdvance/Reverse functions retained as inert defensive references for any keyboard/wheel handler paths that still mention cs-pbfirst — they no-op because the slide is no longer in the nav order. -->
+<div class="casey-slide ds-focus" id="cs-pbfirst" style="display:none !important" data-deleted="1">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Give n Receive&rsquo;s #1 secret</div>
   <section class="pb-stage">
     <div class="pb-wrap">
@@ -12539,7 +12540,8 @@ window.cs1m7Reverse = function() {
               <div class="v5-badge nepc">
                 <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
               </div>
-              <div class="v5-front-label">Social pickleball<br>community builder</div>
+              <!-- [Dave 2026-05-18 LATEST] Front label simplified per Dave 'change "social pickleball community builder" to "social community builder"'. -->
+              <div class="v5-front-label">Social<br>community builder</div>
             </div>
             <!-- BACK — badge + full content -->
             <div class="v5-flip-back">
@@ -12577,7 +12579,8 @@ window.cs1m7Reverse = function() {
                   <circle cx="54" cy="72" r="2.8" fill="white"/>
                 </svg>
               </div>
-              <div class="v5-front-label">Next Frontier of<br>Connection Technology</div>
+              <!-- [Dave 2026-05-18 LATEST] Front label simplified per Dave 'change "Next Frontier of Connection Technology" to "Next Frontier"'. -->
+              <div class="v5-front-label">Next Frontier</div>
             </div>
             <!-- BACK — badge + full content -->
             <div class="v5-flip-back">
@@ -12636,7 +12639,8 @@ window.cs1m7Reverse = function() {
                   <circle cx="73" cy="9" r="2.6" fill="#b8954a"/>
                 </svg>
               </div>
-              <div class="v5-front-label">Pickleball Brand<br>&amp; Mission</div>
+              <!-- [Dave 2026-05-18 LATEST] Front label retitled per Dave 'change "Pickleball Brand & Mission" to "Brand, Mission, Growth"'. -->
+              <div class="v5-front-label">Brand, Mission,<br>Growth</div>
             </div>
             <!-- BACK — badge + full content. IDENTICAL SVG to front (v6 unified graphic). -->
             <div class="v5-flip-back">
@@ -16993,6 +16997,115 @@ window.cs1m7Reverse = function() {
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-brand-codex · PINK-DOT ALT for cs-brand-V8 [Dave 2026-05-18 LATEST]
+     Per Dave: 'try building a new brand pink dot slide to the left of current
+     brand slide and you have to use attached image'. Image is a single watercolor
+     that splits L→R: LEFT half cool/blue (a phone with profile cards spilling
+     into isolated, faceless figures — the social-media stand-in) and RIGHT half
+     warm gold (real-world handshakes, friends at a table, pickleball courts
+     activated under string lights — the GnR future). Typography overlays each
+     half — left names the problem ("Social media is a narrow view of human
+     connection technology."), right names what GnR builds instead.
+     Registered as the LEFTMOST pink-dot alt at slot 3 (cs-brand-V8 primary)
+     ahead of cs-brand-mono — see SLIDE_ALTS[3] further below.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-brand-codex { background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  #cs-brand-codex .bc-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:1; display:block; }
+  /* Twin washes — soft cream over each typography zone so the overlay copy reads cleanly while the watercolor still breathes between them. */
+  #cs-brand-codex .bc-wash-left  { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg, rgba(243,234,216,0.78) 0%, rgba(243,234,216,0.55) 18%, rgba(243,234,216,0.15) 32%, rgba(243,234,216,0) 44%); }
+  #cs-brand-codex .bc-wash-right { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(270deg, rgba(243,234,216,0.78) 0%, rgba(243,234,216,0.55) 18%, rgba(243,234,216,0.15) 32%, rgba(243,234,216,0) 44%); }
+  /* Eyebrow stays in its global spot (top:28px;left:48px) — appended inline below. */
+  /* Two copy blocks — one anchored to each side. Vertical positions intentionally offset so they don't collide with the central handshake focal point of the painting. */
+  #cs-brand-codex .bc-copy-left {
+    position:absolute; top:30%; left:5%; transform:translateY(-50%);
+    z-index:3; max-width:34%;
+  }
+  #cs-brand-codex .bc-copy-right {
+    position:absolute; bottom:8%; right:5%;
+    z-index:3; max-width:36%; text-align:right;
+  }
+  #cs-brand-codex .bc-eye {
+    font-family:'Manrope',sans-serif;
+    font-size:.62rem; font-weight:800;
+    letter-spacing:.32em; text-transform:uppercase;
+    margin:0 0 14px;
+  }
+  #cs-brand-codex .bc-copy-left  .bc-eye { color:#3a73b8; }
+  #cs-brand-codex .bc-copy-right .bc-eye { color:#a8351f; }
+  #cs-brand-codex .bc-head {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.7rem, 2.5vw, 2.35rem);
+    font-weight:800; line-height:1.16;
+    letter-spacing:-0.018em;
+    color:#1a1612;
+    margin:0;
+    text-shadow:0 1px 3px rgba(251,247,239,0.55);
+  }
+  #cs-brand-codex .bc-head em { font-style:italic; font-weight:850; }
+  #cs-brand-codex .bc-copy-left  .bc-head em { color:#3a73b8; }
+  #cs-brand-codex .bc-copy-right .bc-head em { color:#b8954a; }
+  /* The right-side sub-line sells the GnR future a level more specifically. */
+  #cs-brand-codex .bc-sub {
+    margin:14px 0 0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(.98rem, 1.30vw, 1.22rem);
+    font-style:italic; font-weight:500;
+    line-height:1.38;
+    color:rgba(26,22,18,0.78);
+    text-shadow:0 1px 2px rgba(251,247,239,0.40);
+  }
+  #cs-brand-codex .bc-sub strong { font-style:normal; font-weight:850; color:#c8462c; }
+  /* Center arrow — quiet directional cue between the two halves so the reader feels the L→R "before/after" of the painting. */
+  #cs-brand-codex .bc-arrow {
+    position:absolute; left:50%; top:48%; transform:translate(-50%,-50%);
+    z-index:3; font-family:'Manrope',sans-serif;
+    font-size:.58rem; font-weight:800; letter-spacing:.42em; text-transform:uppercase;
+    color:rgba(184,149,74,0.78);
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    pointer-events:none;
+  }
+  #cs-brand-codex .bc-arrow svg { width:36px; height:14px; }
+  /* Entrance animations — fade up each copy zone. Skip in export mode. */
+  #cs-brand-codex .bc-copy-left, #cs-brand-codex .bc-copy-right, #cs-brand-codex .bc-arrow {
+    opacity:0; transform:translateY(10px);
+    transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
+  }
+  #cs-brand-codex.casey-entered .bc-copy-left  { opacity:1; transform:none; transition-delay:0.20s; }
+  #cs-brand-codex.casey-entered .bc-arrow      { opacity:1; transform:translate(-50%,-50%); transition-delay:0.55s; }
+  #cs-brand-codex.casey-entered .bc-copy-right { opacity:1; transform:none; transition-delay:0.85s; }
+  html[data-export="1"] #cs-brand-codex .bc-copy-left,
+  html[data-export="1"] #cs-brand-codex .bc-copy-right,
+  html[data-export="1"] #cs-brand-codex .bc-arrow {
+    opacity:1 !important; transform:none !important; transition:none !important;
+  }
+  html[data-export="1"] #cs-brand-codex .bc-arrow { transform:translate(-50%,-50%) !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-codex" style="display:none">
+  <img class="bc-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — left half cool-toned with a smartphone and isolated profile figures (the social-media view of connection); right half warm gold with handshakes, friends at a glowing dinner table, and an active pickleball community under string lights (the Give 'n Receive future)." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+  <div class="bc-wash-left"  aria-hidden="true"></div>
+  <div class="bc-wash-right" aria-hidden="true"></div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand &middot; The narrow view &rarr; the abundant one</div>
+
+  <div class="bc-copy-left">
+    <p class="bc-eye">Today &middot; The narrow view</p>
+    <h2 class="bc-head"><em>Social media</em> is a narrow view of human connection <em>technology</em>.</h2>
+  </div>
+
+  <div class="bc-arrow" aria-hidden="true">
+    <svg viewBox="0 0 36 14" fill="none"><path d="M2 7 H30" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round"/><polyline points="24 2, 30 7, 24 12" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>G n R</span>
+  </div>
+
+  <div class="bc-copy-right">
+    <p class="bc-eye">With Give &lsquo;n Receive</p>
+    <h2 class="bc-head"><em>Autonomous, abundant</em> human connection &mdash; for every community.</h2>
+    <p class="bc-sub">Our connection and unique value to each other &mdash; <strong>measured, multiplied, made abundant.</strong></p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
      cs-ask · THE ASK · FINAL slide of main flow [Dave 2026-05-17]
      Per Dave: "Looking for the right founding partners — or partner with people
      who can help me get the right founding partners — to make 100% sure the
@@ -17366,6 +17479,24 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-item .dash{display:inline-block;flex-shrink:0;font-weight:300}
   #cs-samecourt .sc-item-icon{flex-shrink:0;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.78}
   #cs-samecourt .sc-item-icon svg{width:24px;height:24px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  /* [Dave 2026-05-18 LATEST] Click/scroll-gated reveal of the sc-item bullet rows per Dave 'make it so i have to click / mouse scroll down to animate in this content'. Speech bubbles + identity row + community graphics stay visible from slide entry. The 3-line bullet stack (left = "The job is winning / Don't play down / Skip helping out", right = "open heart / new face / take my spot") is hidden until the slide is advanced once via click, ArrowRight, PageDown, or scroll-down. Both columns reveal together on the same beat with a short staggered cascade for editorial rhythm. */
+  #cs-samecourt[data-shown="0"] .sc-item { opacity:0; transform:translateY(10px); pointer-events:none; }
+  #cs-samecourt[data-shown="1"] .sc-item { opacity:1; transform:none; transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1); pointer-events:auto; }
+  /* Stagger: left column's 3 rows fire first, then right column's 3, then a small finish gap. */
+  #cs-samecourt[data-shown="1"] .sc-col.red  .sc-item:nth-of-type(1) { transition-delay:0.05s; }
+  #cs-samecourt[data-shown="1"] .sc-col.red  .sc-item:nth-of-type(2) { transition-delay:0.18s; }
+  #cs-samecourt[data-shown="1"] .sc-col.red  .sc-item:nth-of-type(3) { transition-delay:0.31s; }
+  #cs-samecourt[data-shown="1"] .sc-col.blue .sc-item:nth-of-type(1) { transition-delay:0.46s; }
+  #cs-samecourt[data-shown="1"] .sc-col.blue .sc-item:nth-of-type(2) { transition-delay:0.59s; }
+  #cs-samecourt[data-shown="1"] .sc-col.blue .sc-item:nth-of-type(3) { transition-delay:0.72s; }
+  /* Click hint chevron — visible only while the bullet rows are still hidden. */
+  #cs-samecourt .sc-click-hint { position:absolute; bottom:34px; left:50%; transform:translateX(-50%); z-index:6; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:rgba(184,149,74,0.78); display:flex; flex-direction:column; align-items:center; gap:6px; pointer-events:none; animation: scClickHintPulse 2.4s ease-in-out infinite; }
+  #cs-samecourt[data-shown="1"] .sc-click-hint { display:none; }
+  #cs-samecourt .sc-click-hint svg { width:20px; height:14px; stroke:#b8954a; }
+  @keyframes scClickHintPulse { 0%,100% { opacity:0.55; transform:translate(-50%, 0); } 50% { opacity:0.95; transform:translate(-50%, 4px); } }
+  /* Export/PDF mode: skip the gating entirely so the bullets always render in static screenshots. */
+  html[data-export="1"] #cs-samecourt .sc-item { opacity:1 !important; transform:none !important; transition:none !important; }
+  html[data-export="1"] #cs-samecourt .sc-click-hint { display:none !important; }
   #cs-samecourt .sc-col.red .sc-item-icon svg{stroke:rgba(200,70,44,0.72)}
   #cs-samecourt .sc-col.blue .sc-item-icon svg{stroke:rgba(91,143,212,0.85)}
   #cs-samecourt .sc-col.red .sc-item{color:rgba(26,22,18,0.82)}
@@ -17452,7 +17583,8 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-col.blue { background:linear-gradient(180deg, rgba(251,247,239,0.92) 0%, rgba(245,235,210,0.78) 100%) !important; }
   html[data-export="1"] #cs-samecourt .scf-bg { opacity:0.78 !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-samecourt">
+<!-- [Dave 2026-05-18 LATEST] Slide gated behind one click/scroll to reveal the sc-item bullet stacks per Dave 'make it so i have to click / mouse scroll down to animate in this content'. data-shown drives the CSS gate above; csSamecourtAdvance/Reverse drive keyboard + wheel + touch + click paths (defined alongside csPbfirstAdvance below). -->
+<div class="casey-slide ds-focus" id="cs-samecourt" data-shown="0" onclick="if(window.csSamecourtAdvance) window.csSamecourtAdvance(); event.stopPropagation()" style="cursor:pointer">
   <!-- [Dave 2026-05-17 PM] Full-bleed bg image — Dave attached a split-tone pickleball court (left cool/isolated, right warm/handshakes). Save attached image to assets/cs-samecourt-bg.png. Fallback chain: cs-samecourt-pink3.png (warehouse image — already on disk) → gnr_vnext_community_builders.png. -->
   <img class="scf-bg" src="assets/cs-samecourt-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="scf-wash" aria-hidden="true"></div>
@@ -17658,6 +17790,11 @@ window.cs1m7Reverse = function() {
 
       <!-- [Dave 2026-05-14 PM] Closer line 'Same humans. Different incentive.' DELETED per Dave. -->
 
+    </div>
+    <!-- [Dave 2026-05-18 LATEST] Click hint — only visible while sc-items are still hidden (data-shown="0"). Auto-hides after the first advance. -->
+    <div class="sc-click-hint">
+      <span>Click or scroll to reveal</span>
+      <svg viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
   </section>
 </div>
@@ -24538,7 +24675,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
   // Slot 16 (cs-wedgepb-combo — was slot 15) — cs-pbfirst red-dot alt
   // [Dave 2026-05-18 LATEST] cs-18-vd4-pink REMOVED per Dave 'delete this slide' (was the 16/25 alt — original pre-edit wheelhouse copy). HTML retained as silent backup; restore by re-adding the id to this list.
-  17: ['cs-pbfirst'],
+  // [Dave 2026-05-18 LATEST] cs-pbfirst DELETED per Dave 'delete this slide' (the 17/25 alt with 'Pickleball → fastest path to the world's first autonomous human value exchange network' + 5-card wedge). Slot 17 alts now empty; black-dot registration removed below.
+  17: [],
   // [Dave 2026-05-18 LATEST v5] SLIDE_ORDER reshuffled AGAIN — cs-brand-V8 moved to slot 3 + cs-racketeer cluster (7 slides) deleted. New 24-slide mapping:
   //    1: cs-frontier-pink1  (no alts)
   //    2: cs-1m8             (no alts)
@@ -24562,8 +24700,9 @@ const SLIDE_ALTS = {
   //   22: cs-27              (no alts)
   //   23: cs-ask             (no alts)
   //   24: cs-fw1             (pink-dot: cs-16)
-  // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt per Dave 'if you think there's a 10x better jaw dropping brand slide, create that new slide and add as a pink dot slide next to this'. Brand-monument treatment: massive "BRAND" header, unified G·n·R wordmark at hero scale (15vw), tagline beneath. Strips the galaxy abstraction in favor of brand-keynote impact.
-  3: ['cs-brand-mono'],
+  // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt — brand-monument treatment: massive "BRAND" header + unified G·n·R wordmark.
+  // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt per Dave 'try building a new brand pink dot slide to the left of current brand slide and you have to use attached image'. Listed FIRST in this array so it renders LEFTMOST in the alt-dot row (the SLIDE_ALTS array order maps left→right in the dot strip, so index 0 = furthest from primary).
+  3: ['cs-brand-codex', 'cs-brand-mono'],
   15: ['cs-givefirst-brand'],
   19: [],
   20: [],
@@ -25080,6 +25219,22 @@ window.csPbfirstReverse = function() {
   const flipped = slide.querySelectorAll('.pb-card[data-flipped="1"]');
   if (flipped.length === 0) return false;
   flipped[flipped.length - 1].dataset.flipped = '0';
+  return true;
+};
+
+// [Dave 2026-05-18 LATEST] csSamecourtAdvance/Reverse — single-stage click/scroll-gated reveal of the sc-item bullet rows on cs-samecourt per Dave 'make it so i have to click / mouse scroll down to animate in this content'. data-shown:0 → bullets hidden; first advance flips to 1 → both columns' 3 sc-items fade in with a staggered cascade. A second advance returns false so normal nav handles moving to the next slide. Reverse mirror: data-shown:1 → 0 hides bullets again; otherwise return false so prev-slide nav can fall through.
+window.csSamecourtAdvance = function() {
+  const slide = document.getElementById('cs-samecourt');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csSamecourtReverse = function() {
+  const slide = document.getElementById('cs-samecourt');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
   return true;
 };
 
@@ -25750,7 +25905,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-16 = pink (Every touchpoint becomes training data — alt to left of cs-fw1 flywheel)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-mono');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-mono' || altId === 'cs-brand-codex');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
@@ -25760,7 +25915,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel'); // [Dave 2026-05-18 LATEST] cs-magnetic-orig (slot 14 alt) + cs-pbfirst (slot 16 alt) MOVED from red-dot → BLACK-DOT per Dave 'turn this slide into a black dot, which will indicate that we've reviewed it and we're just keeping it where it is, and there's nothing further to do'.
     // [Dave 2026-05-18 LATEST] BLACK-DOT alts — slides reviewed + decided to leave as-is.
-    const isBlackAlt = (altId === 'cs-magnetic-orig' || altId === 'cs-pbfirst');
+    // [Dave 2026-05-18 LATEST] cs-pbfirst removed from black-dot list — slide DELETED per Dave 'delete this slide'.
+    const isBlackAlt = (altId === 'cs-magnetic-orig');
     altDot.className = 'casey-dot alt' + (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isBlackAlt ? ' black-alt' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : ''))))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
@@ -26076,6 +26232,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fv6' && window.csFv6Advance && window.csFv6Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    return;
@@ -26102,6 +26259,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-lab' && window.csLabReverse && window.csLabReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fv6' && window.csFv6Reverse && window.csFv6Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Reverse    && window.cs4Reverse())    return;
@@ -26183,6 +26341,11 @@ document.addEventListener('wheel', e => {
     // [Dave 2026-05-17] cs-pbfirst (5 flip cards) — scroll-down flips each card before next-slide nav.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    // [Dave 2026-05-18 LATEST] cs-samecourt (left = 'I'm a 3.9' card · right = 'I'm part of building my community' card) — scroll-down reveals the sc-item bullet stacks before next-slide nav.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
     // [Dave 2026-05-17] cs-fv6 (7-verb workflow row) — scroll-down reveals the row before next-slide nav.
@@ -26306,6 +26469,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) {
+      setTimeout(() => { wheelLock = false; }, 600);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fv6' && window.csFv6Reverse && window.csFv6Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -26394,6 +26561,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-fv6' && window.csFv6Advance && window.csFv6Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -26417,6 +26585,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-fv6' && window.csFv6Reverse && window.csFv6Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
