@@ -12722,6 +12722,134 @@ window.cs1m7Reverse = function() {
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-racketeer · FIRST EXTERNAL CLUB VALIDATION [Dave 2026-05-18]
+     Per Dave: "today I had a great Zoom call with Give and Receives first
+     prospective club customer outside of New England Pickleball Club... I need
+     to have one slide dedicated to so the investor understands what happened
+     in the meeting today."
+     • Validates investor's #1 question: would clubs beyond NEPC adopt GnR?
+     • Triptych of Marcos Garcia's Tier-1/full-pull-quote-block quotes (Dave's pick).
+     • Racketeer logo placeholder (Dave needs to save the logo file).
+     • Video frame placeholder for the Zoom-call clip Dave will embed later.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-racketeer { background:radial-gradient(ellipse at 50% 38%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-racketeer::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 18% 30%, rgba(212,168,83,0.16) 0%, rgba(212,168,83,0.04) 40%, transparent 65%); pointer-events:none; z-index:1; }
+  #cs-racketeer .rk-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:74px 64px 56px; z-index:2; gap:18px; }
+  #cs-racketeer .rk-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.0rem,3.2vw,2.95rem); font-weight:850; line-height:1.06; letter-spacing:-0.026em; color:#1a1612; text-align:center; max-width:1380px; margin:0; }
+  #cs-racketeer .rk-hero em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-racketeer .rk-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.0rem,1.3vw,1.22rem); font-style:italic; font-weight:550; color:rgba(26,22,18,0.66); text-align:center; max-width:980px; margin:0; line-height:1.42; }
+  #cs-racketeer .rk-sub strong { font-style:normal; font-weight:800; color:#1a1612; }
+  #cs-racketeer .rk-grid { display:grid; grid-template-columns: 1.35fr 1fr; gap:38px; width:100%; max-width:1560px; align-items:stretch; margin-top:14px; }
+
+  /* LEFT — triptych of pull-quotes */
+  #cs-racketeer .rk-quotes { display:flex; flex-direction:column; gap:14px; }
+  #cs-racketeer .rk-q { position:relative; background:rgba(251,247,239,0.78); border:1px solid rgba(184,149,74,0.32); border-left:4px solid #b8954a; border-radius:10px; padding:18px 22px 16px 26px; box-shadow:0 6px 18px rgba(26,22,18,0.06); }
+  #cs-racketeer .rk-q.hero { background:linear-gradient(180deg, rgba(212,168,83,0.16) 0%, rgba(251,247,239,0.94) 100%); border:1.6px solid rgba(184,149,74,0.55); border-left:5px solid #b8954a; box-shadow:0 12px 30px rgba(184,149,74,0.18); }
+  #cs-racketeer .rk-q::before { content:"\201C"; position:absolute; top:-6px; left:8px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.4rem; font-style:italic; font-weight:850; color:rgba(184,149,74,0.42); line-height:1; }
+  #cs-racketeer .rk-q-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.1rem,1.45vw,1.42rem); font-weight:650; line-height:1.28; color:#1a1612; letter-spacing:-0.008em; }
+  #cs-racketeer .rk-q-text em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-racketeer .rk-q.hero .rk-q-text { font-size:clamp(1.25rem,1.65vw,1.62rem); font-weight:700; }
+  #cs-racketeer .rk-q.hero .rk-q-text em { color:#a87a35; }
+  #cs-racketeer .rk-q-attr { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.55); margin-top:8px; }
+
+  /* RIGHT — validation panel: logo + club info + video placeholder */
+  #cs-racketeer .rk-panel { display:flex; flex-direction:column; align-items:center; gap:14px; padding:24px 22px 22px; background:rgba(251,247,239,0.88); border:1.4px solid rgba(184,149,74,0.36); border-radius:12px; box-shadow:0 10px 28px rgba(26,22,18,0.08); }
+  #cs-racketeer .rk-logo-wrap { width:100%; min-height:96px; display:flex; align-items:center; justify-content:center; padding:6px 0; }
+  #cs-racketeer .rk-logo { max-width:200px; max-height:90px; width:auto; height:auto; display:block; }
+  #cs-racketeer .rk-logo-fallback { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.85rem; font-weight:850; letter-spacing:0.08em; color:#1a1612; text-align:center; }
+  #cs-racketeer .rk-logo-fallback .rk-mark { display:block; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:800; letter-spacing:.32em; color:rgba(26,22,18,0.5); text-transform:uppercase; margin-top:4px; }
+  #cs-racketeer .rk-club { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.5vw,1.42rem); font-weight:800; color:#1a1612; letter-spacing:-0.012em; text-align:center; }
+  #cs-racketeer .rk-loc { font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.52); }
+  #cs-racketeer .rk-divider { width:64px; height:1px; background:linear-gradient(90deg, rgba(184,149,74,0) 0%, #b8954a 50%, rgba(184,149,74,0) 100%); margin:2px 0; }
+  #cs-racketeer .rk-person { display:flex; flex-direction:column; align-items:center; gap:2px; }
+  #cs-racketeer .rk-name { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.08rem; font-weight:800; color:#1a1612; letter-spacing:-0.008em; }
+  #cs-racketeer .rk-role { font-family:'Manrope',sans-serif; font-size:.60rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.55); }
+  /* Video placeholder — 16:9 frame ready for Dave to drop a clip into. Replace the inner `<div class="rk-video-placeholder">…</div>` with `<video src="assets/marcos-clip.mp4" controls poster="…"></video>` later. */
+  #cs-racketeer .rk-video { width:100%; aspect-ratio: 16/9; margin-top:6px; position:relative; background:linear-gradient(180deg, #1a1612 0%, #2a2218 100%); border:1.2px dashed rgba(184,149,74,0.50); border-radius:10px; overflow:hidden; }
+  #cs-racketeer .rk-video-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+  #cs-racketeer .rk-video-play { width:54px; height:54px; border-radius:50%; background:rgba(212,168,83,0.18); border:1.6px solid rgba(212,168,83,0.65); display:flex; align-items:center; justify-content:center; }
+  #cs-racketeer .rk-video-play svg { width:22px; height:22px; margin-left:3px; }
+  #cs-racketeer .rk-video-label { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:rgba(212,168,83,0.85); }
+  #cs-racketeer .rk-video-note { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.78rem; font-style:italic; color:rgba(251,247,239,0.55); margin-top:-2px; }
+  #cs-racketeer .rk-video video { width:100%; height:100%; object-fit:cover; display:block; }
+  #cs-racketeer .rk-attribution { width:100%; max-width:1560px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:.62rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.52); margin-top:8px; }
+  #cs-racketeer .rk-attribution strong { font-weight:800; color:#1a1612; }
+
+  /* Entry stagger */
+  #cs-racketeer .rk-hero, #cs-racketeer .rk-sub, #cs-racketeer .rk-q, #cs-racketeer .rk-panel, #cs-racketeer .rk-attribution { opacity:0; transform:translateY(10px); transition:opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1); }
+  #cs-racketeer.casey-entered .rk-hero { opacity:1; transform:none; transition-delay:0.10s; }
+  #cs-racketeer.casey-entered .rk-sub { opacity:1; transform:none; transition-delay:0.30s; }
+  #cs-racketeer.casey-entered .rk-q:nth-child(1) { opacity:1; transform:none; transition-delay:0.55s; }
+  #cs-racketeer.casey-entered .rk-q:nth-child(2) { opacity:1; transform:none; transition-delay:0.75s; }
+  #cs-racketeer.casey-entered .rk-q:nth-child(3) { opacity:1; transform:none; transition-delay:0.95s; }
+  #cs-racketeer.casey-entered .rk-panel { opacity:1; transform:none; transition-delay:0.50s; }
+  #cs-racketeer.casey-entered .rk-attribution { opacity:1; transform:none; transition-delay:1.15s; }
+  html[data-export="1"] #cs-racketeer .rk-hero,
+  html[data-export="1"] #cs-racketeer .rk-sub,
+  html[data-export="1"] #cs-racketeer .rk-q,
+  html[data-export="1"] #cs-racketeer .rk-panel,
+  html[data-export="1"] #cs-racketeer .rk-attribution { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-racketeer" style="display:none">
+  <!-- [Dave 2026-05-18] First external club validation — Racketeer Paddle Club, London. Dave will save the Racketeer logo to assets/racketeer-logo.png; falls back to a styled RACKETEER text mark if image isn't present. Video frame is a placeholder ready for <video> embed when the Zoom clip is exported. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">First external club &middot; London &middot; May 18, 2026</div>
+  <section class="rk-stage">
+    <h1 class="rk-hero">The first paddle club outside NEPC just said <em>yes</em>.</h1>
+    <div class="rk-sub"><strong>Marcos Garcia</strong> &middot; Racketeer Paddle Club &middot; London &middot; first prospective customer outside New England.</div>
+
+    <div class="rk-grid">
+
+      <!-- LEFT · pull-quote triptych (Dave-approved Tier-1 block) -->
+      <div class="rk-quotes">
+        <div class="rk-q">
+          <div class="rk-q-text">We don&rsquo;t even use it &mdash; it&rsquo;s <em>so generic.</em></div>
+          <div class="rk-q-attr">&mdash; on the incumbent&rsquo;s matchmaking tool</div>
+        </div>
+        <div class="rk-q">
+          <div class="rk-q-text"><em>All manual.</em> WhatsApp groups, my memory, people I know.</div>
+          <div class="rk-q-attr">&mdash; on how he does it today</div>
+        </div>
+        <div class="rk-q hero">
+          <div class="rk-q-text">Genuinely surprised <em>how complete it is.</em></div>
+          <div class="rk-q-attr">&mdash; first reaction to Give &lsquo;n Receive</div>
+        </div>
+      </div>
+
+      <!-- RIGHT · validation panel: logo + club info + video frame -->
+      <div class="rk-panel">
+        <div class="rk-logo-wrap">
+          <!-- Save the Racketeer logo from racketeerpaddle.club to this path. Falls back to a styled text mark below. -->
+          <img class="rk-logo" src="assets/racketeer-logo.png" alt="Racketeer Paddle Club" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+          <div class="rk-logo-fallback" style="display:none">RACKETEER<span class="rk-mark">Paddle Club</span></div>
+        </div>
+        <div class="rk-club">Racketeer Paddle Club</div>
+        <div class="rk-loc">London &middot; UK</div>
+        <div class="rk-divider" aria-hidden="true"></div>
+        <div class="rk-person">
+          <div class="rk-name">Marcos Garcia</div>
+          <div class="rk-role">Founder &amp; Director</div>
+        </div>
+        <!-- Video placeholder · Dave will replace .rk-video-placeholder with <video src="assets/marcos-clip.mp4" controls poster="…"></video> once the Zoom clip is exported. -->
+        <div class="rk-video">
+          <div class="rk-video-placeholder">
+            <div class="rk-video-play">
+              <svg viewBox="0 0 24 24" fill="none"><polygon points="9,6 9,18 18,12" fill="#d4a85a"/></svg>
+            </div>
+            <div class="rk-video-label">Zoom call clip</div>
+            <div class="rk-video-note">drops in here</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rk-attribution"><strong>Marcos Garcia</strong> &middot; Racketeer (UK paddle club, prospective customer) &middot; May 18, 2026</div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
      cs-givefirst · "You can't tell someone to open their heart" [Dave 2026-05-15]
      The slide directly after cs-18-vd4 (My Wheelhouse). Lands the THESIS of what
      "GnR Growth" actually means: you open YOUR heart first; theirs opens back. This is
@@ -23129,6 +23257,8 @@ const SLIDE_ORDER = [
   'cs-givefirst-art', // PRIMARY · watercolor community gathering + quote + two-hearts graphic
   // [Dave 2026-05-12 EVENING] cs-fw1 — Autonomous social coordination (flywheel) — now sits AFTER cs-givefirst-art: wedge → founder → give-first → flywheel.
   'cs-fw1',   // Autonomous social coordination ('Drop GnR into any pickleball club. It just works. And compounds forever — at AI speed.') — flywheel diagram.
+  // [Dave 2026-05-18] cs-racketeer INSERTED right after the flywheel — first external club validation (Racketeer Paddle Club, London · Marcos Garcia Zoom call May 18, 2026). Answers the investor's #1 question: 'will clubs beyond NEPC adopt this?' with three Tier-1 pull-quotes + logo + video frame.
+  'cs-racketeer', // External-club validation · Marcos Garcia / Racketeer Paddle Club (London) — first paddle club outside NEPC says yes.
   // [Dave 2026-05-12 LATER] cs-fv6 — Measuring is the unlock · 7-verb row (Measure → Test → Graph → ... → Abundance).
   // [Dave 2026-05-17 v2] cs-fv6-art PROMOTED to slot 19 PRIMARY per Dave 'create new version of "Technology for our deepest..." slide making new one main image and current/old one a red dot slide to the left of it'. Image-led variant with golden-hour neighborhood watercolor + cream-wash overlay carrying the same headline + 7-verb workflow. cs-fv6 (typographic-only original) demoted to RED-DOT alt to the LEFT.
   'cs-fv6-img', // PRIMARY · Image-led "Technology for our deepest, most networkable, untapped human-social data" with codex watercolor background [Dave 2026-05-17 LATEST: promoted from pink-dot alt; cs-fv6 typographic version removed from main flow]
