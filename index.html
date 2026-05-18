@@ -335,7 +335,7 @@ html[data-pdf="1"] .casey-slide.pdf-show:last-of-type {
    [data-export=1] alone so the per-slide PNG-screenshot PDF builder
    (build_pdf.js, which only sets ?export=1) also gets the flip rules. */
 html[data-export="1"] #cs-a7m1 .a7m1-flip-inner,
-html[data-export="1"] #cs-18-vd4  .v5-flip-inner {
+html[data-export="1"] [id^="cs-18-vd4"] .v5-flip-inner {
   transform: rotateY(180deg) !important;
   transition: none !important;
 }
@@ -347,7 +347,7 @@ html[data-export="1"] #cs-1bm1 .ti-ph,
 html[data-export="1"] #cs-11d  .hg-ph,
 html[data-export="1"] #cs-11   .cs11-flip-front,
 html[data-export="1"] #cs-pbfirst .pb-face.pb-front,
-html[data-export="1"] #cs-18-vd4  .v5-flip-front {
+html[data-export="1"] [id^="cs-18-vd4"] .v5-flip-front {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
@@ -10032,15 +10032,11 @@ window.cs1m7Reverse = function() {
 
   /* LEFT — funnel [Dave 2026-05-17 LATEST: SIZED UP — max-width 620→920, band height 70→96, band-5 height 90→124, gap 7→10] */
   #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:10px; width:100%; max-width:920px; margin:0 auto; position:relative; overflow:visible; }
-  /* [Dave 2026-05-18] Connector REDESIGNED v4 — Dave: "decent but you can do better". Dashed thread + matched dots replaced with a more editorial treatment:
-     • Origin = a "port" node — a faint outer ring around a solid blue dot, with a soft drop-shadow for depth.
-     • Line = SOLID stroke with a gradient that fades from full Pickleball-blue at the port → near-transparent at the cards' bar. No dashes — confident flow, not a dotted timeline.
-     • Termination = no extra dot; the gradient whispers into the cards' vertical bar so the eye reads them as connected.
-     Visual language now matches the rest of the slide (solid filled bands, solid filled cards). */
+  /* [Dave 2026-05-18 v5] Connector REVERTED to dotted treatment + made MORE visible. Dave: "the dotted line that you had previously was better than this attempt". v4 (solid gradient) failed because the right-side fade made the cards-bar end disappear. v5 keeps the v3 dotted vocabulary but: tighter dashes (3px on, 4px off), bumped stroke (1.7px), higher contrast (75% opacity), bigger anchor dots at BOTH ends (4.5px) with thin rings for visual weight, so the connection reads end-to-end without ambiguity. */
   #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:366px; left:74%; transform:translateY(-50%); width:380px; height:20px; z-index:6; pointer-events:none; overflow:visible; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { fill:none; stroke-linecap:round; stroke-width:1.8; stroke:url(#wpcPbFlowGrad); }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-ring { fill:none; stroke:#5B8FD4; stroke-opacity:0.30; stroke-width:1; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; filter:drop-shadow(0 1px 2px rgba(91,143,212,0.38)); }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:rgba(91,143,212,0.78); stroke-width:1.7; fill:none; stroke-linecap:round; stroke-dasharray:3 4; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; filter:drop-shadow(0 1px 2px rgba(91,143,212,0.30)); }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-ring { fill:none; stroke:#5B8FD4; stroke-opacity:0.32; stroke-width:1; }
   #cs-wedgepb-combo .wpc-band { position:relative; height:96px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.45vw,1.45rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
   #cs-wedgepb-combo .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
   #cs-wedgepb-combo .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
@@ -10145,21 +10141,16 @@ window.cs1m7Reverse = function() {
         <div class="wpc-band wpc-band-4"><span>Pickleball</span></div>
         <!-- [Dave 2026-05-17 v18] Big NEPC logo + "NEPC" text per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add NEPC there'. -->
         <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
-        <!-- [Dave 2026-05-18 v4] Pickleball→cards connector — solid gradient flow line + designed origin "port" (ring + filled node). No dashes, no terminator dot. Line stroke uses an in-svg linearGradient that fades from full Pickleball-blue at the port to near-transparent as it approaches the cards' vertical bar, so the eye reads the two as connected via natural fall-off. -->
+        <!-- [Dave 2026-05-18 v5] Pickleball→cards connector — DOTTED line restored (Dave: "the dotted line that you had previously was better than this attempt"). Anchor dots at BOTH ends with thin rings so each endpoint reads as a node — origin sits on the Pickleball band, terminator sits on the cards' vertical bar. -->
         <svg class="wpc-pb-link" viewBox="0 0 380 20" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="wpcPbFlowGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#5B8FD4" stop-opacity="0.95"/>
-              <stop offset="40%" stop-color="#5B8FD4" stop-opacity="0.65"/>
-              <stop offset="100%" stop-color="#5B8FD4" stop-opacity="0.18"/>
-            </linearGradient>
-          </defs>
-          <!-- Faint outer ring — the "port" feel around the origin node -->
-          <circle class="wpc-pb-link-ring" cx="10" cy="10" r="8"/>
-          <!-- Origin filled node — anchored to Pickleball band's right edge -->
-          <circle class="wpc-pb-link-dot" cx="10" cy="10" r="4"/>
-          <!-- Solid gradient line — full blue at origin, fades into cards bar -->
-          <path class="wpc-pb-link-line" d="M 18 10 L 378 10"/>
+          <!-- Origin port — ring + filled dot on Pickleball band's right edge -->
+          <circle class="wpc-pb-link-ring" cx="10" cy="10" r="7"/>
+          <circle class="wpc-pb-link-dot" cx="10" cy="10" r="4.5"/>
+          <!-- Dotted line crossing the gap -->
+          <path class="wpc-pb-link-line" d="M 17 10 L 363 10"/>
+          <!-- Terminator port — ring + filled dot landing on cards' vertical bar -->
+          <circle class="wpc-pb-link-ring" cx="370" cy="10" r="7"/>
+          <circle class="wpc-pb-link-dot" cx="370" cy="10" r="4.5"/>
         </svg>
       </div>
 
@@ -12284,76 +12275,78 @@ window.cs1m7Reverse = function() {
   /* ===== cs-18-vd4 · WHEELHOUSE v5 [Dave 2026-05-12 LATEST] — ChatGPT-style icon-badge layout =====
      Per Dave: 'chatgpt created this. i really like it. try using it on wheelhouse slide.'
      Three circular icon badges (red staircase / gold R-M / blue network orb) + clean horizontal timeline. */
-  #cs-18-vd4 .vd-stage { padding: 64px 56px 48px; }
-  #cs-18-vd4 .vd-wrap { display:flex;flex-direction:column;align-items:center;gap:32px;width:100%;max-width:1380px;margin:0 auto; }
-  #cs-18-vd4 .vd-name { font-family:'Manrope',sans-serif;font-size:clamp(.72rem,.92vw,.88rem);font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:rgba(26,22,18,0.62);text-align:center; }
-  #cs-18-vd4 .vd-hero { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.5rem,4.2vw,4rem);font-weight:850;line-height:1.14;letter-spacing:-0.028em;color:#1a1612;text-align:center; }
-  #cs-18-vd4 .vd-hero em { display:block;font-style:italic;font-weight:850;color:#b8954a;margin-top:6px; }
+  [id^="cs-18-vd4"] .vd-stage { padding: 64px 56px 48px; }
+  [id^="cs-18-vd4"] .vd-wrap { display:flex;flex-direction:column;align-items:center;gap:32px;width:100%;max-width:1380px;margin:0 auto; }
+  [id^="cs-18-vd4"] .vd-name { font-family:'Manrope',sans-serif;font-size:clamp(.72rem,.92vw,.88rem);font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:rgba(26,22,18,0.62);text-align:center; }
+  /* [Dave 2026-05-18] vd-hero font size REDUCED so the Steve Jobs quote sits on 2 lines instead of 3 (was clamp(2.5rem,4.2vw,4rem)). */
+  [id^="cs-18-vd4"] .vd-hero { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.6vw,2.45rem);font-weight:800;line-height:1.18;letter-spacing:-0.022em;color:#1a1612;text-align:center;max-width:1340px; }
+  [id^="cs-18-vd4"] .vd-hero em { display:block;font-style:italic;font-weight:850;color:#b8954a;margin-top:6px; }
   /* 3-pillar row */
-  #cs-18-vd4 .v5-pillars { display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%;max-width:1180px;align-items:stretch;margin-top:12px; }
+  [id^="cs-18-vd4"] .v5-pillars { display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%;max-width:1180px;align-items:stretch;margin-top:12px; }
   /* [Dave 2026-05-14 PM] Pillars are now FLIPPABLE cards — front shows just the badge, back shows the full content. perspective + cursor live on the pillar; the flex layout moves to the front/back faces inside .v5-flip-inner. */
-  #cs-18-vd4 .v5-pillar { position:relative;perspective:1400px;cursor:pointer;min-height:380px;padding:0 16px; }
-  #cs-18-vd4 .v5-flip-inner { position:relative;width:100%;min-height:380px;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,0,.2,1) }
-  #cs-18-vd4 .v5-pillar[data-flipped="1"] .v5-flip-inner { transform:rotateY(180deg) }
-  #cs-18-vd4 .v5-flip-front,
-  #cs-18-vd4 .v5-flip-back { position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center }
+  [id^="cs-18-vd4"] .v5-pillar { position:relative;perspective:1400px;cursor:pointer;min-height:380px;padding:0 16px; }
+  [id^="cs-18-vd4"] .v5-flip-inner { position:relative;width:100%;min-height:380px;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,0,.2,1) }
+  [id^="cs-18-vd4"] .v5-pillar[data-flipped="1"] .v5-flip-inner { transform:rotateY(180deg) }
+  [id^="cs-18-vd4"] .v5-flip-front,
+  [id^="cs-18-vd4"] .v5-flip-back { position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center }
   /* [Dave 2026-05-14 PM] Better centering — back face now centers content vertically (was flex-start). Combined with horizontal align-items:center, both faces fully center their content in the card. */
-  #cs-18-vd4 .v5-flip-front { justify-content:center }
-  #cs-18-vd4 .v5-flip-back { transform:rotateY(180deg);justify-content:center;padding:20px 0 }
-  #cs-18-vd4 .v5-pillar .v5-body-wrap { display:flex;flex-direction:column;align-items:center;gap:8px;flex:1; }
+  [id^="cs-18-vd4"] .v5-flip-front { justify-content:center }
+  [id^="cs-18-vd4"] .v5-flip-back { transform:rotateY(180deg);justify-content:center;padding:20px 0 }
+  [id^="cs-18-vd4"] .v5-pillar .v5-body-wrap { display:flex;flex-direction:column;align-items:center;gap:8px;flex:1; }
   /* Circular icon badge */
-  #cs-18-vd4 .v5-badge { width:118px;height:118px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 36px rgba(26,22,18,0.10); }
-  #cs-18-vd4 .v5-badge.red { background:#c8462c; }
-  #cs-18-vd4 .v5-badge.gold { background:#b8954a; }
+  [id^="cs-18-vd4"] .v5-badge { width:118px;height:118px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 36px rgba(26,22,18,0.10); }
+  [id^="cs-18-vd4"] .v5-badge.red { background:#c8462c; }
+  [id^="cs-18-vd4"] .v5-badge.gold { background:#b8954a; }
   /* [Dave 2026-05-14] Mission pillar badge recolored red (was blue #3a6dad). Class name kept .blue to avoid HTML churn elsewhere; only the actual background color changed. */
   /* [Dave 2026-05-14 PM] Fixed copy-paste bug — '.v5-badge.blue' was set to #c8462c (red) so the Clarity pillar's badge rendered red even though the class was 'blue'. Restored to brand navy-blue #3a6dad. */
-  #cs-18-vd4 .v5-badge.blue { background:#3a6dad; }
-  #cs-18-vd4 .v5-badge svg { width:62px;height:62px;display:block; }
+  [id^="cs-18-vd4"] .v5-badge.blue { background:#3a6dad; }
+  [id^="cs-18-vd4"] .v5-badge svg { width:62px;height:62px;display:block; }
   /* Pillar text */
-  #cs-18-vd4 .v5-num { font-family:'Manrope',sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.22em;color:rgba(26,22,18,0.42);margin-top:6px; }
-  #cs-18-vd4 .v5-eye { font-family:'Manrope',sans-serif;font-size:clamp(.82rem,1.02vw,.98rem);font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:#1a1612; }
-  #cs-18-vd4 .v5-body { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.3vw,1.25rem);font-weight:500;line-height:1.32;color:#1a1612;margin-top:2px; }
-  #cs-18-vd4 .v5-body em { font-style:italic;font-weight:700; }
-  #cs-18-vd4 .v5-pillar.p1 .v5-body em { color:#5B8FD4; }/* [Dave 2026-05-14 PM] red → blue to match badge recolor */
-  #cs-18-vd4 .v5-pillar.p2 .v5-body em { color:#b8954a; }
-  #cs-18-vd4 .v5-pillar.p3 .v5-body em { color:#c8462c; }
+  [id^="cs-18-vd4"] .v5-num { font-family:'Manrope',sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.22em;color:rgba(26,22,18,0.42);margin-top:6px; }
+  [id^="cs-18-vd4"] .v5-eye { font-family:'Manrope',sans-serif;font-size:clamp(.82rem,1.02vw,.98rem);font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:#1a1612; }
+  [id^="cs-18-vd4"] .v5-body { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.3vw,1.25rem);font-weight:500;line-height:1.32;color:#1a1612;margin-top:2px; }
+  [id^="cs-18-vd4"] .v5-body em { font-style:italic;font-weight:700; }
+  [id^="cs-18-vd4"] .v5-pillar.p1 .v5-body em { color:#5B8FD4; }/* [Dave 2026-05-14 PM] red → blue to match badge recolor */
+  [id^="cs-18-vd4"] .v5-pillar.p2 .v5-body em { color:#b8954a; }
+  [id^="cs-18-vd4"] .v5-pillar.p3 .v5-body em { color:#c8462c; }
   /* [Dave 2026-05-14 PM v3] Green 'I have this' checkmark badge — sits at the top-right of each pillar's BACK face. Indicates Dave has all three foundational pieces locked in (Clarity / Starting Point / Mission). */
   /* [Dave 2026-05-14 PM v4] Position nudged down + right per Dave 'move those green check marks down slightly and to the right slightly'. top 0 → 10, right 6 → -4. */
-  #cs-18-vd4 .v5-have { position:absolute; top:10px; right:-4px; width:34px; height:34px; border-radius:50%; background:#168651; border:1.6px solid #fbf7ef; box-shadow:0 0 0 2px rgba(22,134,81,0.32), 0 6px 16px rgba(22,134,81,0.30); display:flex; align-items:center; justify-content:center; z-index:3; }
-  #cs-18-vd4 .v5-have svg { width:18px; height:18px; display:block; stroke:#fbf7ef; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; fill:none; }
+  [id^="cs-18-vd4"] .v5-have { position:absolute; top:10px; right:-4px; width:34px; height:34px; border-radius:50%; background:#168651; border:1.6px solid #fbf7ef; box-shadow:0 0 0 2px rgba(22,134,81,0.32), 0 6px 16px rgba(22,134,81,0.30); display:flex; align-items:center; justify-content:center; z-index:3; }
+  [id^="cs-18-vd4"] .v5-have svg { width:18px; height:18px; display:block; stroke:#fbf7ef; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; fill:none; }
   /* NEPC logo badge — replaces the gold/R-M circle on Pillar 2 */
   /* [Dave 2026-05-12] NEPC badge enlarged so the visible logo matches the 118px solid red/blue circles. The PNG carries its own transparent padding, so the container needs to be ~165px for the logo to read at the same visible diameter as the other two pillars. */
   /* [Dave 2026-05-14 PM] Bumped 165→210 so the visible NEPC logo (which has transparent PNG padding around it) reads at the same visual diameter as the solid 118px red badges on pillars 1 + 3. */
-  #cs-18-vd4 .v5-badge.nepc { background:transparent;box-shadow:none;width:210px;height:210px;padding:0;margin:-46px 0; }
-  #cs-18-vd4 .v5-badge.nepc img { width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 28px rgba(184,149,74,0.22)); }
+  [id^="cs-18-vd4"] .v5-badge.nepc { background:transparent;box-shadow:none;width:210px;height:210px;padding:0;margin:-46px 0; }
+  [id^="cs-18-vd4"] .v5-badge.nepc img { width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 28px rgba(184,149,74,0.22)); }
   /* Starting Point sub-meta line — small caps-tracked stats below the body */
-  #cs-18-vd4 .v5-meta { font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.06em;line-height:1.5;color:rgba(26,22,18,0.62);max-width:300px;margin-top:6px;text-align:center; }
-  #cs-18-vd4 .v5-meta strong { font-weight:900;color:#b8954a;letter-spacing:.14em; }
+  [id^="cs-18-vd4"] .v5-meta { font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.06em;line-height:1.5;color:rgba(26,22,18,0.62);max-width:300px;margin-top:6px;text-align:center; }
+  [id^="cs-18-vd4"] .v5-meta strong { font-weight:900;color:#b8954a;letter-spacing:.14em; }
   /* === TIMELINE v2 [Dave 2026-05-12 LATEST · visual upgrade] ===
      Was: 5 plain text columns. Now: horizontal rail + dot markers, year ABOVE dot, label BELOW dot, "NOW" beat (2025) emphasized with larger green dot + glow + sub-line. */
   /* [Dave 2026-05-14 PM v4 f] Grid expanded 6 -> 7 columns + max-width bumped to fit a new first-bullet founding insight (ratings paradigm was wrong for the wildly social sport of pickleball). */
-  #cs-18-vd4 .v5-timeline { position:relative;display:grid;grid-template-columns:repeat(7,1fr);gap:0;width:100%;max-width:1320px;padding:36px 24px 14px;margin-top:24px; }
+  /* [Dave 2026-05-18] Timeline grid bumped 7→8 columns to accommodate the new 2026 Racketeer step. Max-width nudged 1320→1440 so each column has comparable breathing room. */
+  [id^="cs-18-vd4"] .v5-timeline { position:relative;display:grid;grid-template-columns:repeat(8,1fr);gap:0;width:100%;max-width:1440px;padding:36px 24px 14px;margin-top:24px; }
   /* Horizontal rail running through the dots */
-  #cs-18-vd4 .v5-timeline::before { content:"";position:absolute;left:84px;right:84px;top:50%;height:1.5px;background:linear-gradient(90deg, rgba(184,149,74,0.12) 0%, rgba(184,149,74,0.55) 12%, rgba(184,149,74,0.55) 80%, rgba(22,134,81,0.7) 100%);transform:translateY(-50%);z-index:0; }
-  #cs-18-vd4 .v5-step { position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:1; }
-  #cs-18-vd4 .v5-step .yr { font-family:'Manrope',sans-serif;font-size:.84rem;font-weight:800;letter-spacing:.08em;color:rgba(26,22,18,0.55);margin-bottom:14px; }
+  [id^="cs-18-vd4"] .v5-timeline::before { content:"";position:absolute;left:84px;right:84px;top:50%;height:1.5px;background:linear-gradient(90deg, rgba(184,149,74,0.12) 0%, rgba(184,149,74,0.55) 12%, rgba(184,149,74,0.55) 80%, rgba(22,134,81,0.7) 100%);transform:translateY(-50%);z-index:0; }
+  [id^="cs-18-vd4"] .v5-step { position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:1; }
+  [id^="cs-18-vd4"] .v5-step .yr { font-family:'Manrope',sans-serif;font-size:.84rem;font-weight:800;letter-spacing:.08em;color:rgba(26,22,18,0.55);margin-bottom:14px; }
   /* Dot on the rail */
-  #cs-18-vd4 .v5-step .dot { width:13px;height:13px;border-radius:50%;background:#fbf7ef;border:2.2px solid #b8954a;box-shadow:0 0 0 4px rgba(184,149,74,0.08);position:relative;z-index:2; }
-  #cs-18-vd4 .v5-step .txt { font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:600;color:rgba(26,22,18,0.78);line-height:1.3;margin-top:14px;max-width:170px; }
+  [id^="cs-18-vd4"] .v5-step .dot { width:13px;height:13px;border-radius:50%;background:#fbf7ef;border:2.2px solid #b8954a;box-shadow:0 0 0 4px rgba(184,149,74,0.08);position:relative;z-index:2; }
+  [id^="cs-18-vd4"] .v5-step .txt { font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:600;color:rgba(26,22,18,0.78);line-height:1.3;margin-top:14px;max-width:170px; }
   /* NOW emphasis on 2025 CTO Steve joins */
   /* [Dave 2026-05-17] All timeline color unified — green retired. The "we are here"
      marker is now distinguished by SIZE/WEIGHT only; color matches the rest of the
      gold/ink timeline. */
-  #cs-18-vd4 .v5-step.now .yr { color:#1a1612;font-size:.92rem;font-weight:900; }
-  #cs-18-vd4 .v5-step.now .dot { width:18px;height:18px;background:#b8954a;border-color:#b8954a;box-shadow:0 0 0 6px rgba(184,149,74,0.14), 0 0 18px rgba(184,149,74,0.28); }
-  #cs-18-vd4 .v5-step.now .txt { color:#1a1612;font-weight:800; }
-  #cs-18-vd4 .v5-step.now .sub { font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;color:#1a1612;margin-top:4px;letter-spacing:.04em; }
-  #cs-18-vd4 .v5-step.now .now-tag { display:inline-block;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase;color:#8a6420;background:rgba(184,149,74,0.10);border:1px solid rgba(184,149,74,0.40);border-radius:99px;padding:2px 8px;margin-top:6px; }
+  [id^="cs-18-vd4"] .v5-step.now .yr { color:#1a1612;font-size:.92rem;font-weight:900; }
+  [id^="cs-18-vd4"] .v5-step.now .dot { width:18px;height:18px;background:#b8954a;border-color:#b8954a;box-shadow:0 0 0 6px rgba(184,149,74,0.14), 0 0 18px rgba(184,149,74,0.28); }
+  [id^="cs-18-vd4"] .v5-step.now .txt { color:#1a1612;font-weight:800; }
+  [id^="cs-18-vd4"] .v5-step.now .sub { font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;color:#1a1612;margin-top:4px;letter-spacing:.04em; }
+  [id^="cs-18-vd4"] .v5-step.now .now-tag { display:inline-block;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase;color:#8a6420;background:rgba(184,149,74,0.10);border:1px solid rgba(184,149,74,0.40);border-radius:99px;padding:2px 8px;margin-top:6px; }
   /* [Dave 2026-05-14 PM] Timeline cascade — 6 steps animate in left-to-right on slide entry. Rail draws after dot 1 lands. */
   @keyframes v5StepIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
   @keyframes v5RailDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-  #cs-18-vd4 .v5-timeline::before { transform-origin: left center; }
-  #cs-18-vd4 .v5-step { opacity: 0; will-change: opacity, transform; }
+  [id^="cs-18-vd4"] .v5-timeline::before { transform-origin: left center; }
+  [id^="cs-18-vd4"] .v5-step { opacity: 0; will-change: opacity, transform; }
   #cs-18-vd4.casey-entered .v5-timeline::before { animation: v5RailDraw 1.2s cubic-bezier(.22,1,.36,1) backwards 1.55s; }
   #cs-18-vd4.casey-entered .v5-step:nth-child(1) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.40s; opacity:1; }
   #cs-18-vd4.casey-entered .v5-step:nth-child(2) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.58s; opacity:1; }
@@ -12362,15 +12355,16 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4.casey-entered .v5-step:nth-child(5) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.12s; opacity:1; }
   #cs-18-vd4.casey-entered .v5-step:nth-child(6) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.30s; opacity:1; }
   #cs-18-vd4.casey-entered .v5-step:nth-child(7) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.48s; opacity:1; }
-  html[data-export="1"] #cs-18-vd4 .v5-step,
-  html[data-export="1"] #cs-18-vd4 .v5-timeline::before { opacity:1 !important; transform:none !important; animation:none !important; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(8) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.66s; opacity:1; }
+  html[data-export="1"] [id^="cs-18-vd4"] .v5-step,
+  html[data-export="1"] [id^="cs-18-vd4"] .v5-timeline::before { opacity:1 !important; transform:none !important; animation:none !important; }
   /* [Dave 2026-05-14] Simple on-load animation for the 'Dave Velardo · Founder & CEO' name: letter-spacing 'settles in' from wider to its final value while fading up. Runs once on slide entry, skipped in export mode. */
   @keyframes vd4NameIntro {
     0%   { opacity: 0; transform: translateY(8px); letter-spacing: 0.62em; }
     100% { opacity: 1; transform: translateY(0); letter-spacing: 0.42em; }
   }
   #cs-18-vd4.casey-entered .vd-name { animation: vd4NameIntro 1.15s cubic-bezier(.22,1,.36,1) backwards 0.18s; }
-  html[data-export="1"] #cs-18-vd4 .vd-name { animation: none !important; }
+  html[data-export="1"] [id^="cs-18-vd4"] .vd-name { animation: none !important; }
 </style>
 
 <div class="casey-slide ds-focus" id="cs-18-vd1">
@@ -12463,7 +12457,7 @@ window.cs1m7Reverse = function() {
      Vision (idea maze) + Foundation (NEPC lab) + Network (pickleball world trust + lifelong commitment). -->
 <div class="casey-slide ds-focus" id="cs-18-vd4">
   <!-- [Dave 2026-05-18] Eyebrow + hero + timeline-2024 edits per Dave. Previous version preserved as pink-dot alt cs-18-vd4-pink below. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Founding GnR is about understanding community and connection</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Solving GnR &rarr; understanding community and connection</div>
   <section class="vd-stage">
     <div class="vd-wrap">
       <div class="vd-name">Dave Velardo &middot; Founder &amp; CEO</div>
@@ -12583,7 +12577,7 @@ window.cs1m7Reverse = function() {
               <div class="v5-num">03</div>
               <!-- [Dave 2026-05-17 v14] Pillar 3 retitled "Life Mission" → "GnR Growth & Mission" per Dave + body line simplified. [Dave 2026-05-17 LATEST] "GnR" now brand-colored (G=blue · n=italic gold · R=red) matching the wordmark used throughout the deck. -->
               <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Growth &amp; Mission</div>
-              <div class="v5-body"><em>We&rsquo;re wired to give first.</em></div>
+              <div class="v5-body"><em>We&rsquo;re wired to give.</em></div>
               <div class="v5-meta">Live it &middot; Face of it &middot; Club owner sales<br>Network &amp; podcasts &middot; 4D play-style</div>
             </div>
           </div>
@@ -16310,7 +16304,7 @@ window.cs1m7Reverse = function() {
   <img class="scf-bg" src="assets/cs-samecourt-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="scf-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-18] Eyebrow ↔ headline SWAPPED. Eyebrow now carries the slide-mechanic label ("Flip the incentive → Unleash connection & community"); the Munger quote is promoted to the slide HEADER. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Flip the incentive &rarr; Unleash connection &amp; community</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Flip the incentives &rarr; Unleash connection &amp; community</div>
   <section class="sc-stage">
     <div class="sc-wrap">
       <h1 class="sc-hero">Show me the incentive and I&rsquo;ll show you the outcome <em style="font-style:italic;color:#b8954a;font-weight:850">&mdash; Charlie Munger</em></h1>
@@ -16571,7 +16565,7 @@ window.cs1m7Reverse = function() {
 </style>
 
 <div class="casey-slide ds-focus" id="cs-samecourt-pink1" style="display:none">
-  <div class="scp-eyebrow">Flip the incentive &rarr; Unleash connection &amp; community</div>
+  <div class="scp-eyebrow">Flip the incentives &rarr; Unleash connection &amp; community</div>
   <section class="scp-stage">
     <img class="scp-bg" src="assets/cs-samecourt-pink.png" alt="A pickleball court split visually — left half cool-toned with an isolated player; right half warm gold with people shaking hands and walking off court together." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
     <h1 class="scp-headline">Show me the incentive and I&rsquo;ll show you the outcome <em>&mdash; Charlie Munger</em></h1>
@@ -16581,7 +16575,7 @@ window.cs1m7Reverse = function() {
 </div>
 
 <div class="casey-slide ds-focus" id="cs-samecourt-pink2" style="display:none">
-  <div class="scp-eyebrow">Flip the incentive &rarr; Unleash connection &amp; community</div>
+  <div class="scp-eyebrow">Flip the incentives &rarr; Unleash connection &amp; community</div>
   <section class="scp-stage">
     <img class="scp-bg" src="assets/cs-samecourt-pink.png" alt="A pickleball court split visually — left half cool-toned with an isolated player; right half warm gold with people shaking hands and walking off court together." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
     <h1 class="scp-headline">Show me the incentive and I&rsquo;ll show you the outcome <em>&mdash; Charlie Munger</em></h1>
@@ -16728,7 +16722,7 @@ window.cs1m7Reverse = function() {
   <img class="scf3-bg" src="assets/cs-samecourt-pink3.png" alt="Warehouse-scale pickleball facility filled with players at golden hour — courts, action, community gathering." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="scf3-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-18] Eyebrow ↔ headline SWAPPED. Eyebrow now carries the slide-mechanic label ("Flip the incentive → Unleash connection & community"); the Munger quote is promoted to the slide HEADER. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Flip the incentive &rarr; Unleash connection &amp; community</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Flip the incentives &rarr; Unleash connection &amp; community</div>
   <section class="sc-stage">
     <div class="sc-wrap">
       <h1 class="sc-hero">Show me the incentive and I&rsquo;ll show you the outcome <em style="font-style:italic;color:#b8954a;font-weight:850">&mdash; Charlie Munger</em></h1>
@@ -23362,7 +23356,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 v6] cs-frontier AND cs-intro6 MOVED to appendix per Dave (consecutive 'move this slide to appendix' on both slot-1 red-dot alts). Slot 1 now has no alts; cs-frontier-iconic stands alone as the opener.
   // [Dave 2026-05-17 LATEST PINK] Two pink-dot alts added at slot 1 — duplicates of cs-frontier-iconic with different bg images (cs-frontier-pink1 + cs-frontier-pink2). Same eyebrow/headline/structure, swapped hero img only. Fallback chain → cs-frontier-iconic-hero.png so they always render.
   // [Dave 2026-05-17 LATEST] cs-frontier-iconic REMOVED from slot-1 alts per Dave 'you can delete this slide'. HTML retained as silent backup.
-  1: ['cs-frontier-pink2'],
+  // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
+  1: [],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   2: [],
   // Slot 3 (cs-1m8 title — was slot 2) has no alts.
