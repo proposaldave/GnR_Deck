@@ -7340,7 +7340,32 @@ document.addEventListener('DOMContentLoaded', function() {
   if (slide.classList.contains('active')) { slide.dataset.stage = '0'; window.csM8TitleASync(); }
 });
 
-// [Dave 2026-05-18 LATEST] cs-1m8-title-B staggered diptych reveal is now driven by pure CSS keyframes (see #cs-1m8-title-B .tt-cap-l/.tt-ncell/.tt-cap-r animation rules in the tt-slide style block). The previous JS-based approach (caseyGo hook + WAAPI animate) was abandoned because the inline style reset to opacity:0 was blocking the subsequent reveal — pure CSS sidesteps that. No JS handler needed.
+// [Dave 2026-05-18 LATEST v3] cs-1m8-title-B 4-stage reveal handlers — replaces the prior auto-stagger approach. Stages: 0 (load, only tablet) → 1 (+top-band) → 2 (+cap-l) → 3 (+ncell) → 4 (+cap-r) → terminal. Returns true if call advanced; false at terminal so wheel/keyboard nav proceeds to next slide. CSS rules in the tt-slide style block above use [data-stage="N"] selectors with !important to win the cascade.
+window.csM8TitleBAdvance = function() {
+  const s = document.getElementById('cs-1m8-title-B');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage >= 4) return false;
+  s.dataset.stage = String(stage + 1);
+  return true;
+};
+window.csM8TitleBReverse = function() {
+  const s = document.getElementById('cs-1m8-title-B');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage <= 0) return false;
+  s.dataset.stage = String(stage - 1);
+  return true;
+};
+// Reset to stage 0 every time the slide is activated so the reveal replays on each visit.
+(function installM8TitleBReset() {
+  function poll() {
+    if (typeof caseyGo !== 'function') { setTimeout(poll, 50); return; }
+    const _orig = caseyGo;
+    caseyGo = function(n) { _orig(n); setTimeout(() => { const s = document.getElementById('cs-1m8-title-B'); if (s && s.classList.contains('active')) s.dataset.stage = '0'; }, 30); };
+  }
+  poll();
+})();
 </script>
 
 
@@ -10015,7 +10040,7 @@ window.cs1m7Reverse = function() {
   <!-- [Dave 2026-05-14 PM] 'GnR measures…' rewritten to 'We measure…' — founder-voice + single subject (same 'we' for measure + schedule). Cleaner grammar, stronger pitch voice.
        [Dave 2026-05-17] Font size bumped (clamp 1.05/1.6/1.5 → 1.3/1.95/1.85) per Dave 'slightly increase font size'. -->
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,1.95vw,1.85rem);color:rgba(26,22,18,0.78);line-height:1.32;margin:30px auto 0;font-weight:500;font-style:italic;letter-spacing:-0.012em;max-width:1180px;text-align:center">
-    We measure connection at the exact same time as we schedule it.
+    Measures connection at the exact same time as it&rsquo;s scheduled.
   </div>
 
 </div>
@@ -11427,7 +11452,8 @@ window.cs1m7Reverse = function() {
 
 <div class="casey-slide ds-focus" id="cs-gnr" data-shown="0" onclick="csGnrAdvance()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Autonomous, abundant connection&rsquo;s core product</div>
+<!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'Autonomous, abundant connection's core product → Core product'. -->
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Core product</div>
 <div class="inner" style="padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
@@ -12971,17 +12997,29 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-14 PM] Timeline cascade — 6 steps animate in left-to-right on slide entry. Rail draws after dot 1 lands. */
   @keyframes v5StepIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
   @keyframes v5RailDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  /* [Dave 2026-05-18 LATEST] Steve Jobs slide reordered: TIMELINE animates in FIRST, then the 3 large cards (v5-pillars). Default-hidden pillars + staggered fade-up starting AFTER the timeline finishes (~2.8s). */
+  @keyframes v5PillarIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  #cs-18-vd4 .v5-pillar { opacity:0; }
+  #cs-18-vd4.casey-entered .v5-pillar.p1 { animation: v5PillarIn .7s cubic-bezier(.22,1,.36,1) backwards 2.80s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-pillar.p2 { animation: v5PillarIn .7s cubic-bezier(.22,1,.36,1) backwards 3.05s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-pillar.p3 { animation: v5PillarIn .7s cubic-bezier(.22,1,.36,1) backwards 3.30s; opacity:1; }
+  /* Wheelhouse band (the gold rule + label between pillars and timeline) sits in DOM after pillars; gate it to appear with the last pillar. */
+  #cs-18-vd4 .v5-wheelhouse-band { opacity:0; }
+  #cs-18-vd4.casey-entered .v5-wheelhouse-band { animation: v5PillarIn .7s cubic-bezier(.22,1,.36,1) backwards 3.55s; opacity:1; }
+  html[data-export="1"] #cs-18-vd4 .v5-pillar,
+  html[data-export="1"] #cs-18-vd4 .v5-wheelhouse-band { opacity:1 !important; animation:none !important; transform:none !important; }
   [id^="cs-18-vd4"] .v5-timeline::before { transform-origin: left center; }
   [id^="cs-18-vd4"] .v5-step { opacity: 0; will-change: opacity, transform; }
-  #cs-18-vd4.casey-entered .v5-timeline::before { animation: v5RailDraw 1.2s cubic-bezier(.22,1,.36,1) backwards 1.55s; }
-  #cs-18-vd4.casey-entered .v5-step:nth-child(1) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.40s; opacity:1; }
-  #cs-18-vd4.casey-entered .v5-step:nth-child(2) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.58s; opacity:1; }
-  #cs-18-vd4.casey-entered .v5-step:nth-child(3) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.76s; opacity:1; }
-  #cs-18-vd4.casey-entered .v5-step:nth-child(4) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.94s; opacity:1; }
-  #cs-18-vd4.casey-entered .v5-step:nth-child(5) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.12s; opacity:1; }
-  #cs-18-vd4.casey-entered .v5-step:nth-child(6) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.30s; opacity:1; }
-  #cs-18-vd4.casey-entered .v5-step:nth-child(7) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.48s; opacity:1; }
-  #cs-18-vd4.casey-entered .v5-step:nth-child(8) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.66s; opacity:1; }
+  /* [Dave 2026-05-18 LATEST] Timeline now fires FIRST (delays compressed to .35s-1.95s) so it lands before the pillar cards (which now start at 2.80s above). Was 1.40-2.66s. */
+  #cs-18-vd4.casey-entered .v5-timeline::before { animation: v5RailDraw 1.2s cubic-bezier(.22,1,.36,1) backwards 0.50s; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(1) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 0.35s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(2) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 0.55s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(3) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 0.75s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(4) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 0.95s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(5) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.15s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(6) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.35s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(7) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.55s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(8) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.75s; opacity:1; }
   html[data-export="1"] [id^="cs-18-vd4"] .v5-step,
   html[data-export="1"] [id^="cs-18-vd4"] .v5-timeline::before { opacity:1 !important; transform:none !important; animation:none !important; }
   /* [Dave 2026-05-14] Simple on-load animation for the 'Dave Velardo · Founder & CEO' name: letter-spacing 'settles in' from wider to its final value while fading up. Runs once on slide entry, skipped in export mode. */
@@ -13082,8 +13120,8 @@ window.cs1m7Reverse = function() {
      Adds third strength: NETWORK / face of the company.
      Vision (idea maze) + Foundation (NEPC lab) + Network (pickleball world trust + lifelong commitment). -->
 <div class="casey-slide ds-focus" id="cs-18-vd4">
-  <!-- [Dave 2026-05-18 LATEST v3] Eyebrow ↔ wheelhouse band labels SWAPPED per Dave 'i want the text that you see in those two swapped places'. Eyebrow now reads "Wheelhouse" (the framing of the slide); the wheelhouse-band label below the pillars now reads "Dave Velardo · Founder & CEO" (the person who owns those strengths). -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Wheelhouse</div>
+  <!-- [Dave 2026-05-18 LATEST v4] Eyebrow extended per Dave 'change Wheelhouse to Found My Wheelhouse'. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Found My Wheelhouse</div>
   <section class="vd-stage">
     <div class="vd-wrap">
       <!-- [Dave 2026-05-18 LATEST] vd-name DELETED — founder identity moved to eyebrow above. -->
@@ -13970,7 +14008,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] [id^="cs-givefirst"] .gf-vis { opacity:1 !important;transform:none !important;animation:none !important }
 </style>
 <div class="casey-slide ds-focus" id="cs-givefirst" style="display:none !important" data-deleted="1">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Growth actually works</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Community Growth actually works</div>
   <section class="gf-stage">
     <div class="gf-grid">
 
@@ -14127,7 +14165,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-givefirst-pink .gfa-image { opacity:0.96 !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-givefirst-art">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Growth actually works</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Community Growth actually works</div>
   <!-- [Dave 2026-05-17 v15] Background image swapped to the GIVE-FIRST COMMUNITY watercolor —
        a man kneels to tie another man's boot while a small community gathers around (smiling
        woman in scarf, older man, child in beanie, distant onlookers, lamppost + storefront
@@ -14252,7 +14290,7 @@ window.cs1m7Reverse = function() {
      on SVG marker IDs to avoid collisions with cs-givefirst-art's gfa* + cs-givefirst-slide2's gfa2*.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <div class="casey-slide ds-focus" id="cs-givefirst-pink" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Growth actually works</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Community Growth actually works</div>
   <img class="gfa-image" src="assets/cs-givefirst-pink.png" alt="Watercolor depiction of give-first as the cause of community — pink-dot alt background variant." onerror="this.onerror=null;this.src='assets/cs-givefirst-art-community.png';this.onerror=function(){this.onerror=null;this.src='assets/cs-givefirst-art-dancing.png'}"/>
   <section class="gfa-stage">
     <div class="gfa-col">
@@ -14307,7 +14345,7 @@ window.cs1m7Reverse = function() {
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      cs-givefirst-slide2 · DUPLICATE of cs-givefirst-art placed at slot 2 [Dave 2026-05-17 LATEST]
-     Per Dave: 'the "How GnR Growth actually works" slide, i want you to make a
+     Per Dave: 'the "How GnR Community Growth actually works" slide, i want you to make a
      duplicate and make it slide 2, except use attached image as background.'
      Same eyebrow + quote + hearts-choreography graphic, but a fresh background
      image. Drop the new attached image at: assets/cs-givefirst-slide2.png.
@@ -14315,7 +14353,7 @@ window.cs1m7Reverse = function() {
      so the slide always renders even before the new asset lands on disk.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <div class="casey-slide ds-focus" id="cs-givefirst-slide2">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Growth actually works</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Community Growth actually works</div>
   <img class="gfa-image" src="assets/cs-givefirst-slide2.png" alt="A man kneels to tie another man's boot while a small community gathers around with warm smiles — watercolor depiction of give-first as the cause of community." onerror="this.onerror=null;this.src='assets/cs-givefirst-art-community.png';this.onerror=function(){this.onerror=null;this.src='assets/cs-givefirst-art-dancing.png'}"/>
   <section class="gfa-stage">
     <div class="gfa-col">
@@ -15995,18 +16033,7 @@ window.cs1m7Reverse = function() {
           </g>
           <text x="1100" y="340" class="wd-icon-label">Golf</text>
 
-          <!-- 13. Social Sports (sport-sibling umbrella, between Gyms & Mentors) -->
-          <g transform="translate(970, 400)">
-            <circle r="22" class="wd-icon-circle" stroke="#7d529f"/>
-            <g stroke="#7d529f" stroke-width="1.3" fill="rgba(122,74,140,0.12)" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="-6" cy="-4" r="3"/>
-              <circle cx="6" cy="-4" r="3"/>
-              <path d="M -11 7 C -11 3 -8 1 -6 1 C -3 1 -1 3 -1 5" fill="none"/>
-              <path d="M 1 7 C 1 3 3 1 6 1 C 9 1 11 3 11 7" fill="none"/>
-              <circle cx="0" cy="6" r="2.4" fill="rgba(232,180,80,0.55)" stroke="#b8954a" stroke-width="0.8"/>
-            </g>
-          </g>
-          <text x="970" y="440" class="wd-icon-label">Social Sports</text>
+          <!-- [Dave 2026-05-18 LATEST] "Social Sports" icon + label DELETED per Dave 'delete "social sports" from "The next great network → helps us find ourselves and find each other" slide'. SVG group + text label removed; remaining constellation nodes unchanged. -->
 
           <!-- CENTER GOLD ORB — COMMUNITY ('★ The Network That Wins' subline DELETED 2026-05-09) -->
           <ellipse cx="600" cy="240" rx="180" ry="170" fill="url(#wdCenterOrb)" opacity="0.85"/>
@@ -18301,8 +18328,8 @@ window.cs1m7Reverse = function() {
   #cs-1m8-title-A .tt-mark { font-size:clamp(4.2rem, 6.6vw, 6.4rem); margin:0 auto 14px; }
   #cs-1m8-title-A .tt-head { font-size:clamp(1.45rem, 2.25vw, 2.05rem); }
   /* Variant B: hero brand promise, "Give 'n Receive" attribution.
-     [Dave 2026-05-18 LATEST] Top-band padding pulled UP per Dave 'move this text up slightly on slide 2 so it doesn't go over the background image which makes it slightly hard to read'. Was the shared 80px/64px (top/bottom) — text was landing where the cream-wash gradient fades into the watercolor and getting visually muddied by the busy mid-image area. New 36px-top / 96px-bottom keeps the eyebrow + headline anchored in the high-opacity wash band at the very top. */
-  #cs-1m8-title-B .tt-top-band { padding:36px 56px 96px; }
+     [Dave 2026-05-18 LATEST v2] Top-band padding nudged slightly LOWER per Dave 'slide #2, reposition the text below slightly lower (not much, just slightly): Brand / Live a life... / by GnR · Give 'n Receive'. 36px-top → 64px-top so the eyebrow + headline land a touch deeper into the slide. Bottom padding bumped 96 → 108 to keep the band's total presence proportional. */
+  #cs-1m8-title-B .tt-top-band { padding:64px 56px 108px; }
   #cs-1m8-title-B .tt-head { font-size:clamp(2.05rem, 3.20vw, 2.95rem); margin-bottom:18px; }
   #cs-1m8-title-B .tt-attr {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
@@ -18310,19 +18337,48 @@ window.cs1m7Reverse = function() {
     color:rgba(26,22,18,0.62); margin:0; letter-spacing:.04em;
   }
   #cs-1m8-title-B .tt-attr .tt-mark { font-size:1.25em; vertical-align:-0.05em; padding-left:0.18em; }
-  /* [Dave 2026-05-18 LATEST] Bottom diptych — three columns. Per Dave 'i'd like these to animate in one at a time instead of all at once'. Animation is GATED behind .casey-entered so the keyframe clock starts AFTER the slide becomes visible — otherwise the animation "runs" silently while display:none, finishes during the hidden phase, and the element shows up already-faded-in (no visible stagger). Default state holds opacity:0 + translateY for hidden; .casey-entered triggers the animation which fills 'forwards' to opacity:1 final state. */
-  @keyframes m8tbFadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-  #cs-1m8-title-B .tt-cap-l, #cs-1m8-title-B .tt-ncell, #cs-1m8-title-B .tt-cap-r {
-    opacity:0; transform:translateY(8px);
-  }
-  #cs-1m8-title-B.casey-entered .tt-cap-l { animation: m8tbFadeUp .8s cubic-bezier(.22,1,.36,1) 1.05s forwards; }
-  #cs-1m8-title-B.casey-entered .tt-ncell { animation: m8tbFadeUp .8s cubic-bezier(.22,1,.36,1) 1.40s forwards; }
-  #cs-1m8-title-B.casey-entered .tt-cap-r { animation: m8tbFadeUp .8s cubic-bezier(.22,1,.36,1) 1.75s forwards; }
+  /* [Dave 2026-05-18 LATEST v3] cs-1m8-title-B staged reveal — 4 click/scroll stages instead of auto-stagger.
+     Per Dave: 'upon slide two load, i dont want [top-band] showing, but i do want the Social media is a narrow view text to be showing, and then first mouse scroll / click animation reveals [top-band]. Then 3 more clicks reveal the diptych columns one at a time'.
+     Stage 0 (load): only bg + eyebrow + .tt-left-quote (Social media tablet) visible
+     Stage 1: + .tt-top-band (BRAND eyebrow + Live a life headline + by GnR attribution)
+     Stage 2: + .tt-cap-l (What we give · fuels our communities)
+     Stage 3: + .tt-ncell (The Network · Sees. Measures. Reciprocates.)
+     Stage 4: + .tt-cap-r (Your People · Your Moments · Reciprocated back)
+     Stage 5: terminal — next click advances to slide 3.
+     Default state holds opacity:0 on all gated elements. Higher-specificity ID-stage rules paint them when stage matches. !important guards against the .tt-slide default opacity:0 rule winning the cascade. */
+  #cs-1m8-title-B[data-stage="0"] .tt-top-band,
+  #cs-1m8-title-B:not([data-stage]) .tt-top-band { opacity:0 !important; transform:translateY(10px) !important; transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+  #cs-1m8-title-B[data-stage="1"] .tt-top-band,
+  #cs-1m8-title-B[data-stage="2"] .tt-top-band,
+  #cs-1m8-title-B[data-stage="3"] .tt-top-band,
+  #cs-1m8-title-B[data-stage="4"] .tt-top-band { opacity:1 !important; transform:none !important; transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+  /* Left tablet — visible from load (stage 0). Auto-fades in on entry. */
+  #cs-1m8-title-B .tt-left-quote { opacity:1 !important; transform:none !important; transition: opacity .9s cubic-bezier(.22,1,.36,1) .25s; }
+  /* Diptych columns — all default-hidden; each unlocks at its stage. */
+  #cs-1m8-title-B .tt-cap-l, #cs-1m8-title-B .tt-ncell, #cs-1m8-title-B .tt-cap-r { opacity:0; transform:translateY(8px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  #cs-1m8-title-B[data-stage="2"] .tt-cap-l,
+  #cs-1m8-title-B[data-stage="3"] .tt-cap-l,
+  #cs-1m8-title-B[data-stage="4"] .tt-cap-l { opacity:1 !important; transform:none !important; }
+  #cs-1m8-title-B[data-stage="3"] .tt-ncell,
+  #cs-1m8-title-B[data-stage="4"] .tt-ncell { opacity:1 !important; transform:none !important; }
+  #cs-1m8-title-B[data-stage="4"] .tt-cap-r { opacity:1 !important; transform:none !important; }
+  /* Bottom-band wrapper visible on stages 2-4; the columns inside it gate individually. */
+  #cs-1m8-title-B .tt-bottom-band { opacity:1; transform:none; }
+  /* Pulsing click-hint indicator while reveals remain. Hides at stage 4 (terminal). */
+  #cs-1m8-title-B .ttb-stage-hint { position:absolute; bottom:28px; right:36px; display:flex; flex-direction:column; align-items:center; gap:4px; z-index:9; pointer-events:none; opacity:0.7; animation: ttbHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+  #cs-1m8-title-B[data-stage="4"] .ttb-stage-hint { opacity:0; animation:none; }
+  #cs-1m8-title-B .ttb-stage-hint svg { animation: ttbHintBounce 1.6s ease-in-out infinite; }
+  #cs-1m8-title-B .ttb-stage-hint-label { font-family:'Manrope',sans-serif; font-size:.52rem; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color:rgba(184,149,74,0.85); }
+  @keyframes ttbHintPulse { 0%,100% { opacity:0.55; } 50% { opacity:0.95; } }
+  @keyframes ttbHintBounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(3px); } }
+  /* Export mode: settle everything to final state for the PDF. */
+  html[data-export="1"] #cs-1m8-title-B .tt-top-band,
   html[data-export="1"] #cs-1m8-title-B .tt-cap-l,
   html[data-export="1"] #cs-1m8-title-B .tt-ncell,
   html[data-export="1"] #cs-1m8-title-B .tt-cap-r {
-    opacity:1 !important; transform:none !important; animation:none !important;
+    opacity:1 !important; transform:none !important; transition:none !important; animation:none !important;
   }
+  html[data-export="1"] #cs-1m8-title-B .ttb-stage-hint { display:none !important; }
   /* Variant C: eyebrow integrates the company name; medium-sized headline; HUGE diptych. */
   #cs-1m8-title-C .tt-top-band { padding:72px 56px 36px; }
   #cs-1m8-title-C .tt-head { font-size:clamp(1.75rem, 2.65vw, 2.40rem); }
@@ -18390,7 +18446,7 @@ window.cs1m7Reverse = function() {
      "Give 'n Receive" as a small italic attribution underneath ("by G·n·R").
      The diptych dominates the lower half — biggest type weight on the page.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-B" style="display:none">
+<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-B" data-stage="0" onclick="if(window.csM8TitleBAdvance) window.csM8TitleBAdvance(); event.stopPropagation()" style="display:none;cursor:pointer">
   <img class="tt-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
   <!-- [Dave 2026-05-18 LATEST] Eyebrow updated per Dave 'slide 2, change "Brings real human connection to our digital world" to "Brand: Brings real human connection to our digital world"'. -->
@@ -18398,6 +18454,12 @@ window.cs1m7Reverse = function() {
 
   <div class="tt-left-quote">
     <p><em>Social media</em> is a narrow view<br>of human connection technology.</p>
+  </div>
+
+  <!-- [Dave 2026-05-18 LATEST] Click-to-reveal hint indicator — pulses while stages remain, hidden at terminal. -->
+  <div class="ttb-stage-hint" aria-hidden="true">
+    <span class="ttb-stage-hint-label">Click to reveal</span>
+    <svg width="22" height="18" viewBox="0 0 22 18" fill="none"><path d="M3 5 L11 13 L19 5" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 
   <div class="tt-top-band">
@@ -18963,9 +19025,7 @@ window.cs1m7Reverse = function() {
 </style>
 <!-- [Dave 2026-05-18 LATEST v2] Slide gated behind TWO click/scroll beats: click 1 reveals LEFT column ("I'm a 3.9" trio), click 2 reveals RIGHT column ("I'm part of building my community" trio), click 3 advances to next slide. data-stage drives the CSS gate above; csSamecourtAdvance/Reverse increment/decrement the stage and only return false (= let nav fall through) once stage hits 2. -->
 <div class="casey-slide ds-focus" id="cs-samecourt" data-stage="0" onclick="if(window.csSamecourtAdvance) window.csSamecourtAdvance(); event.stopPropagation()" style="cursor:pointer">
-  <!-- [Dave 2026-05-17 PM] Full-bleed bg image — Dave attached a split-tone pickleball court (left cool/isolated, right warm/handshakes). Save attached image to assets/cs-samecourt-bg.png. Fallback chain: cs-samecourt-pink3.png (warehouse image — already on disk) → gnr_vnext_community_builders.png. -->
-  <img class="scf-bg" src="assets/cs-samecourt-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
-  <div class="scf-wash" aria-hidden="true"></div>
+  <!-- [Dave 2026-05-18 LATEST] Background image REMOVED per Dave 'look at the "Flip the incentives → Unleash connection & community" slide - it has a background image, but it doesn't need one. get rid of the background image'. Slide now relies on the cream radial bg + sc-col gradients only. The bg image (cs-samecourt-bg.png) was moved to cs-magnetic (next slide). The .scf-bg + .scf-wash CSS rules still exist below but no longer have matching DOM nodes — harmless no-op. -->
   <!-- [Dave 2026-05-18] Eyebrow ↔ headline SWAPPED. Eyebrow now carries the slide-mechanic label ("Flip the incentive → Unleash connection & community"); the Munger quote is promoted to the slide HEADER. -->
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Flip the incentives &rarr; Unleash connection &amp; community</div>
   <section class="sc-stage">
@@ -19727,6 +19787,9 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-18 LATEST] Centered envelope DELETED — see SVG markup below. Orphan animation rules removed. The transform-box:fill-box + animation combination caused a single-frame flash at SVG origin (top-left) on slide entry, then the transform settled at court-center. Not worth fixing per Dave 'just delete it, not worth the effort'. */
 </style>
 <div class="casey-slide ds-focus" id="cs-magnetic">
+  <!-- [Dave 2026-05-18 LATEST] Full-bleed bg image added per Dave 'use that same exact background image for the "People are the product and the sales engine" slide'. Re-uses assets/cs-samecourt-bg.png (the split-tone pickleball court watercolor that was previously on cs-samecourt). Cream wash overlay so the existing slide content reads cleanly above. -->
+  <img src="assets/cs-samecourt-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(251,247,239,0.85) 0%, rgba(251,247,239,0.62) 22%, rgba(251,247,239,0.42) 55%, rgba(251,247,239,0.52) 100%)"></div>
   <!-- [Dave 2026-05-18 LATEST] Eyebrow ↔ above-court hero SWAPPED per Dave: '"Social pull" / "People are the product and the sales engine." swap places of that text (eg so "People are the product..." will go top left label of the slide and social pull will go right above the court)'. Eyebrow now carries the marketplace claim; "Social pull" moves to the above-court hero (.mg-side-hero on .mg-side.right). -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">People are the product and the sales engine</div>
   <section class="mg-stage">
@@ -25938,7 +26001,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-12 LATEST] cs-prom REMOVED from main flow per Dave 'delete this slide'. The 'You give / You receive' promise content now lives inside cs-brand-V8 (caption rewrite). cs-brand-V8 is now the final main slide.
   // [Dave 2026-05-17 LATEST] cs-genbrand REMOVED from SLIDE_ORDER per Dave 'delete this slide'. HTML retained below as silent backup; flip back in by re-adding 'cs-genbrand', here.
   // 'cs-genbrand',   // (parked) Brand: live a life of abundant, autonomous connection · 6-brand pantheon ribbon
-  // [Dave 2026-05-18 LATEST v3] cs-brand-V8 MOVED UP to slot 18 (right after cs-givefirst-art) per Dave 'brand slide and these purple dot slides, move them right after the "How GnR Growth actually works" slide'. Its purple-dot alts (cs-brand-att3 + cs-brand-att5) follow via SLIDE_ALTS[18].
+  // [Dave 2026-05-18 LATEST v3] cs-brand-V8 MOVED UP to slot 18 (right after cs-givefirst-art) per Dave 'brand slide and these purple dot slides, move them right after the "How GnR Community Growth actually works" slide'. Its purple-dot alts (cs-brand-att3 + cs-brand-att5) follow via SLIDE_ALTS[18].
   // [Dave 2026-05-17] cs-ask APPENDED as the new FINAL slide of main flow. Two-path ask
   // (be a founding partner | OR | connect me to one) recapitulating the GnR brand mark
   // structure. Replaces the appendix-only Andreessen Ask slide for live presentations.
@@ -27613,6 +27676,8 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) return;
     // [Dave 2026-05-18 LATEST] cs-1m8-title-A (slot 2 primary) staged reveal.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAAdvance && window.csM8TitleAAdvance()) return;
+    // [Dave 2026-05-18 LATEST v3] cs-1m8-title-B (slot 2 primary) — 4-stage reveal (top-band → cap-l → ncell → cap-r).
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-B' && window.csM8TitleBAdvance && window.csM8TitleBAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) return;
@@ -27642,6 +27707,7 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAReverse && window.csM8TitleAReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-B' && window.csM8TitleBReverse && window.csM8TitleBReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) return;
@@ -27705,6 +27771,11 @@ document.addEventListener('wheel', e => {
     }
     // [Dave 2026-05-18 LATEST] cs-1m8-title-A (slot 2 primary) — wheel advances staged reveal.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAAdvance && window.csM8TitleAAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    // [Dave 2026-05-18 LATEST v3] cs-1m8-title-B (slot 2 primary) — 4-stage wheel-advance.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-B' && window.csM8TitleBAdvance && window.csM8TitleBAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
@@ -27839,6 +27910,11 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    // [Dave 2026-05-18 LATEST v3] cs-1m8-title-B (slot 2 primary) — 4-stage wheel-reverse.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-B' && window.csM8TitleBReverse && window.csM8TitleBReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // cs-1 / cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-up un-flips before navigating to prev slide
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -27953,6 +28029,7 @@ document.addEventListener('touchend', e => {
     const slideId = SLIDE_ORDER[current - 1];
     if (dy < 0) { // swipe UP → advance reveal
       if (!inAppendix && slideId === 'cs-1m8-title-A' && window.csM8TitleAAdvance && window.csM8TitleAAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-1m8-title-B' && window.csM8TitleBAdvance && window.csM8TitleBAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -27978,6 +28055,7 @@ document.addEventListener('touchend', e => {
       if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     } else {       // swipe DOWN → reverse reveal
       if (!inAppendix && slideId === 'cs-1m8-title-A' && window.csM8TitleAReverse && window.csM8TitleAReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-1m8-title-B' && window.csM8TitleBReverse && window.csM8TitleBReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
