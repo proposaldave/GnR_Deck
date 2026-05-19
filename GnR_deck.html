@@ -18034,7 +18034,7 @@ window.cs1m7Reverse = function() {
 
 
 <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     cs-1m8-envelopes Â· PINK-DOT ALT [Dave 2026-05-18 LATEST]
+     cs-1m8-envelopes Â· MAIN SLIDE 3 [Dave 2026-05-19]
      Per Dave: 'also try a different version of that (and create yet another
      new pink dot slide left of slide two) that attemps that i just gave you
      as well as the content that i'm attaching'. Combines everything in
@@ -25969,16 +25969,18 @@ const SLIDE_ORDER = [
   // 'cs-givefirst-slide2', // REMOVED â€” was duplicate at slot 2 with broken bg image
   // [Dave 2026-05-18 LATEST v4] Slot 2 PRIMARY swapped back to cs-1m8-title-A per Dave screenshot: large centered GnR wordmark + Give n Receive label + Live a life headline + full diptych. Previous main cs-1m8-title-B demoted to leftmost RED-DOT alt below.
   'cs-1m8',   //  2 BRAND FLOW - G n R wordmark/value split: what we give fuels communities, network sees/measures, people/moments reciprocated back.
+  // [Dave 2026-05-19] cs-1m8-envelopes PROMOTED from slot-2 pink-dot alt to main slide #3 per Dave. All downstream main-flow positions shift +1.
+  'cs-1m8-envelopes', //  3 BRAND FLOW - Autonomous, abundant human connection for communities.
   // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 â†’ SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
-  // [Dave 2026-05-18 LATEST v9] cs-a7m1 REMOVED from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'. Now lives as a RED-DOT alt at slot 2 (cs-1m8). All SLIDE_ALTS keys past slot 3 decrement by 1 â€” 4â†’3, 6â†’5, 13â†’12, 14â†’13, 15â†’14, 16â†’15, 24â†’23. Total main-flow slides now 23.
+  // [Dave 2026-05-18 LATEST v9] cs-a7m1 REMOVED from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'. Now lives as a RED-DOT alt at slot 2 (cs-1m8). All SLIDE_ALTS keys past slot 3 decrement by 1 â€” 4â†’3, 6â†’5, 13â†’12, 14â†’13, 15â†’14, 16â†’15, 24â†’23. Total main-flow slides was 23 before cs-1m8-envelopes promotion.
   // [Dave 2026-05-09] cs-a7 + cs-1bm1 SWAPPED â€” Dave wants 'Two imbalances rule our lives' as slot 3, then 'Social media is a very narrow view' as slot 4. The values/tech imbalance frames modern life FIRST, then social-media-as-narrow-view drops in as the consequence.
   // 2026-04-30 PM v3: cs-1b + cs-0a Values side MERGED into cs-1bm1 (and 2 alts).
   // Dave's directive: "save current two slides to appendix, then merge â€” try 2-3 attempts I'll pick best."
   // PRIMARY: cs-1bm1 (chart + emotional closing line â€” minimal merge)
   // ALTS at slot 3: cs-1bm2 (heart-first, science as proof) Â· cs-1bm3 (head + heart agree, two-pane)
   // Originals cs-1b and cs-0a moved to APPENDIX as backups.
-  'cs-1bm1',  //  3 Modern life Â· Two imbalances rule our lives Â· values + technology imbalance cards [Dave 2026-05-09: promoted from slot 4 to slot 3]
+  'cs-1bm1',  //  4 Modern life Â· Two imbalances rule our lives Â· values + technology imbalance cards [Dave 2026-05-09: promoted from slot 4 to slot 3]
   // [Dave 2026-05-11] cs-a7 MOVED to APPENDIX per Dave: 'move this slide to the appendix'. The 'Social media is an extremely narrow view of human connection technology' beat now lives only in cs-a7m1 (slot 2 left card) â€” keeping it as a standalone slot 4 was redundant. cs-a7 retained in appendix as backup.
   'cs-2c',    //  5 Community Â· 6-card grid
   // [2026-05-04 Dave] cs-bh, cs-bh-vA, cs-bh-vC, cs-2b, cs-4 MERGED into single cs-thegap problem slide. Originals moved to APPENDIX as backups.
@@ -26114,22 +26116,25 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
   // [Dave 2026-05-18 LATEST v9] cs-fw1 was slot 24; now slot 23 after cs-a7m1 demotion (was 25 before cs-brand-V8 v6). cs-16 stays as PINK-DOT alt.
-  23: ['cs-16'],
+  24: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 â†’ leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
   // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFTâ†’RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots â€” color groups stay contiguous.
   // [Dave 2026-05-18 LATEST v6] cs-1m8-codexmerge removed from slot 2 alts per Dave. cs-1m8-title-A remains primary. Order LEFTâ†’RIGHT: red dots first, then blue, then pink.
-  2: ['cs-1m8-title-A', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-brand-codex'],
+  2: ['cs-1m8-title-A', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-brand-codex'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4â†’3 (v6) â†’still 3 with v9, 5â†’5 still, 6â†’5 (v6), 14â†’13 (v6)â†’12 (v9), 15â†’14, 16â†’15, 24â†’23.
-  // Slot 3 (cs-1bm1 â€” was cs-a7m1) â€” no alts.
+  // [Dave 2026-05-19] cs-1m8-envelopes promoted to main slot 3. All SLIDE_ALTS keys past slot 2 incremented by 1.
+  // Slot 3 (cs-1m8-envelopes) â€” no alts.
   3: [],
-  // Slot 4 (cs-2c â€” was slot 5 was slot 6) â€” no alts.
+  // Slot 4 (cs-1bm1 â€” was cs-a7m1) â€” no alts.
   4: [],
-  // Slot 11 (cs-samecourt â€” was slot 12) â€” no alts.
-  11: [],
+  // Slot 5 (cs-2c â€” was slot 5 was slot 6) â€” no alts.
+  5: [],
+  // Slot 12 (cs-samecourt â€” was slot 12) â€” no alts.
+  12: [],
   // [Dave 2026-05-18 LATEST v9] cs-magnetic alts decrement from 14 â†’ 13 because cs-a7m1 demoted from main slot 3. cs-magnetic-orig (red-dot) + cs-merge3 (pink-dot) still alt cs-magnetic.
-  13: ['cs-magnetic-orig', 'cs-merge3'],
+  14: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 â†’ now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 â†’ 17.
@@ -26153,7 +26158,7 @@ const SLIDE_ALTS = {
   // Slot 16 (cs-wedgepb-combo â€” was slot 15) â€” cs-pbfirst red-dot alt
   // [Dave 2026-05-18 LATEST] cs-18-vd4-pink REMOVED per Dave 'delete this slide' (was the 16/25 alt â€” original pre-edit wheelhouse copy). HTML retained as silent backup; restore by re-adding the id to this list.
   // [Dave 2026-05-18 LATEST v9] Slot 15 = cs-wedgepb-combo (was 16 before cs-a7m1 demotion). cs-wedgepb-codex pink-dot alt follows.
-  15: ['cs-wedgepb-codex'],
+  16: ['cs-wedgepb-codex'],
   // [Dave 2026-05-18 LATEST v5] SLIDE_ORDER reshuffled AGAIN â€” cs-brand-V8 moved to slot 3 + cs-racketeer cluster (7 slides) deleted. New 24-slide mapping:
   //    1: cs-frontier-pink1  (no alts)
   //    2: cs-1m8             (no alts)
@@ -26181,11 +26186,11 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) â†’ slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 â€” which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-18 LATEST v9] cs-givefirst-art alts decrement 15 â†’ 14 (cs-a7m1 demoted).
-  14: ['cs-givefirst-brand'],
-  17: [],
+  15: ['cs-givefirst-brand'],
   18: [],
-  // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   19: [],
+  // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
+  20: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one â€” bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 â†’ 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL â€” a human value sales funnel which is exactly what GnR is.'
@@ -27393,7 +27398,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) Â· cs-samecourt-pink1/pink2 (slot 13) Â· cs-givefirst-pink (slot 18) Â· cs-fv6-pink (slot 20) Â· cs-mv6-pink (slot 21) â€” all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 â†’ pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 â€” same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-1m8-envelopes' || altId === 'cs-wedgepb-codex');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex');
     // [Dave 2026-05-18] Purple-dot alts â€” 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added â€” pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 â€” FULL-content variant at slot 13 with warehouse bg image.
