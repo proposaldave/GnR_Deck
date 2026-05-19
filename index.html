@@ -18570,7 +18570,7 @@ window.cs1m7Reverse = function() {
          while reading the ask.
      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <style>
-  #cs-ask .ask-stage {
+  :is(#cs-ask,#cs-ask-coasts) .ask-stage {
     position:absolute; inset:0;
     display:flex; flex-direction:column;
     align-items:center; justify-content:center;
@@ -18578,7 +18578,7 @@ window.cs1m7Reverse = function() {
     text-align:center;
     gap:22px;
   }
-  #cs-ask .ask-headline {
+  :is(#cs-ask,#cs-ask-coasts) .ask-headline {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
     font-size:clamp(2.2rem, 3.9vw, 3.7rem);
     font-weight:800;
@@ -18588,12 +18588,12 @@ window.cs1m7Reverse = function() {
     margin:0;
     max-width:1280px;
   }
-  #cs-ask .ask-headline em { font-style:italic; font-weight:850; color:#b8954a; }
-  #cs-ask .ask-gnr { font-style:normal; font-weight:850; padding:0 0.04em; }
-  #cs-ask .ask-gnr .g { color:#5B8FD4; }
-  #cs-ask .ask-gnr .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
-  #cs-ask .ask-gnr .r { color:#c8462c; }
-  #cs-ask .ask-sub {
+  :is(#cs-ask,#cs-ask-coasts) .ask-headline em { font-style:italic; font-weight:850; color:#b8954a; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-gnr { font-style:normal; font-weight:850; padding:0 0.04em; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-gnr .g { color:#5B8FD4; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-gnr .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-gnr .r { color:#c8462c; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-sub {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
     font-size:clamp(1.15rem, 1.55vw, 1.5rem);
     font-style:italic; font-weight:500;
@@ -18602,113 +18602,291 @@ window.cs1m7Reverse = function() {
     max-width:880px;
     margin:0;
   }
-  #cs-ask .ask-paths {
+  :is(#cs-ask,#cs-ask-coasts) .ask-paths {
     width:100%; max-width:920px;
     display:grid; grid-template-columns:1fr auto 1fr;
     align-items:stretch; gap:14px;
     margin:6px auto 0;
   }
-  #cs-ask .ask-path {
+  :is(#cs-ask,#cs-ask-coasts) .ask-path {
     display:flex; flex-direction:column; align-items:center;
     gap:12px; padding:24px 22px;
     border-radius:14px;
   }
   /* [Dave 2026-05-18 LATEST] Card backgrounds OPAQUE per Dave 'make the backgrounds of these two cards opaque'. Was a low-alpha tinted gradient that let the steakhouse watercolor bleed through behind BE A FOUNDING PARTNER / CONNECT ME TO ONE â€” now solid cream with a subtle blue/red tint so the cards punch off the bg. Added a soft warm shadow so they read as elevated above the painting instead of pasted on. */
-  #cs-ask .ask-path.left  { border:1.4px solid rgba(91,143,212,0.55); background:linear-gradient(180deg, #fbf7ef 0%, #f3ead8 100%); box-shadow:0 10px 24px rgba(26,22,18,0.10), 0 0 0 1px rgba(91,143,212,0.10) inset; }
-  #cs-ask .ask-path.right { border:1.4px solid rgba(200,70,44,0.55); background:linear-gradient(180deg, #fbf7ef 0%, #f3ead8 100%); box-shadow:0 10px 24px rgba(26,22,18,0.10), 0 0 0 1px rgba(200,70,44,0.10) inset; }
-  #cs-ask .ask-path-icon {
+  :is(#cs-ask,#cs-ask-coasts) .ask-path.left  { border:1.4px solid rgba(91,143,212,0.55); background:linear-gradient(180deg, #fbf7ef 0%, #f3ead8 100%); box-shadow:0 10px 24px rgba(26,22,18,0.10), 0 0 0 1px rgba(91,143,212,0.10) inset; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path.right { border:1.4px solid rgba(200,70,44,0.55); background:linear-gradient(180deg, #fbf7ef 0%, #f3ead8 100%); box-shadow:0 10px 24px rgba(26,22,18,0.10), 0 0 0 1px rgba(200,70,44,0.10) inset; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path-icon {
     width:60px; height:60px; border-radius:50%;
     display:grid; place-items:center; flex-shrink:0;
   }
-  #cs-ask .ask-path.left  .ask-path-icon { background:rgba(91,143,212,0.10); border:1.6px solid rgba(91,143,212,0.50); }
-  #cs-ask .ask-path.right .ask-path-icon { background:rgba(200,70,44,0.10); border:1.6px solid rgba(200,70,44,0.50); }
-  #cs-ask .ask-path-icon svg { width:30px; height:30px; }
-  #cs-ask .ask-path-label {
+  :is(#cs-ask,#cs-ask-coasts) .ask-path.left  .ask-path-icon { background:rgba(91,143,212,0.10); border:1.6px solid rgba(91,143,212,0.50); }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path.right .ask-path-icon { background:rgba(200,70,44,0.10); border:1.6px solid rgba(200,70,44,0.50); }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path-icon svg { width:30px; height:30px; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path-label {
     font-family:'Manrope',sans-serif;
     font-size:clamp(.64rem,.82vw,.76rem);
     font-weight:800; letter-spacing:.32em; text-transform:uppercase;
   }
-  #cs-ask .ask-path.left  .ask-path-label { color:#3a73b8; }
-  #cs-ask .ask-path.right .ask-path-label { color:#a8351f; }
-  #cs-ask .ask-path-body {
+  :is(#cs-ask,#cs-ask-coasts) .ask-path.left  .ask-path-label { color:#3a73b8; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path.right .ask-path-label { color:#a8351f; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path-body {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
     font-size:clamp(1.05rem,1.3vw,1.25rem);
     font-weight:600; color:#1a1612; line-height:1.32;
   }
-  #cs-ask .ask-merge {
+  :is(#cs-ask,#cs-ask-coasts) .ask-merge {
     display:flex; flex-direction:column; align-items:center;
     justify-content:center; gap:6px; padding:0 6px;
   }
-  #cs-ask .ask-or {
+  :is(#cs-ask,#cs-ask-coasts) .ask-or {
     font-family:'Manrope',sans-serif;
     font-size:.58rem; font-weight:800;
     letter-spacing:.32em; text-transform:uppercase;
     color:rgba(184,149,74,0.85);
   }
-  #cs-ask .ask-merge-line {
+  :is(#cs-ask,#cs-ask-coasts) .ask-merge-line {
     width:2px; flex:1 1 24px; min-height:32px;
     background:linear-gradient(180deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.55) 50%, rgba(184,149,74,0) 100%);
   }
   /* Contact block */
-  #cs-ask .ask-contact {
+  :is(#cs-ask,#cs-ask-coasts) .ask-contact {
     margin-top:30px;
     display:flex; flex-direction:column; align-items:center;
     gap:8px; padding-top:26px;
     border-top:1px solid rgba(184,149,74,0.32);
     max-width:880px; width:100%;
   }
-  #cs-ask .ask-contact .name { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:#b8954a; }
-  #cs-ask .ask-contact .email { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.55vw,1.45rem); font-weight:700; color:#1a1612; letter-spacing:-0.005em; }
-  #cs-ask .ask-contact .email a { color:#1a1612; text-decoration:none; border-bottom:1px solid rgba(184,149,74,0.55); padding-bottom:1px; }
-  #cs-ask .ask-contact .phone { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.0rem,1.3vw,1.2rem); font-weight:600; color:#1a1612; letter-spacing:-0.005em; }
-  #cs-ask .ask-contact .phone a { color:#1a1612; text-decoration:none; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-contact .name { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:#b8954a; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-contact .email { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.55vw,1.45rem); font-weight:700; color:#1a1612; letter-spacing:-0.005em; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-contact .email a { color:#1a1612; text-decoration:none; border-bottom:1px solid rgba(184,149,74,0.55); padding-bottom:1px; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-contact .phone { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.0rem,1.3vw,1.2rem); font-weight:600; color:#1a1612; letter-spacing:-0.005em; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-contact .phone a { color:#1a1612; text-decoration:none; }
 
   /* Entry animations â€” staggered fade-up so the slide lands as a deliberate close, not all-at-once */
   @keyframes askFadeUp { from { opacity:0; transform:translateY(14px) } to { opacity:1; transform:translateY(0) } }
   @keyframes askIconPop { 0% { opacity:0; transform:scale(0.78) } 60% { opacity:1; transform:scale(1.08) } 100% { opacity:1; transform:scale(1) } }
-  #cs-ask .ask-headline, #cs-ask .ask-sub, #cs-ask .ask-contact { opacity:0 }
-  #cs-ask.casey-entered .ask-headline { animation: askFadeUp 0.75s cubic-bezier(.22,1,.36,1) 0.20s both }
-  #cs-ask.casey-entered .ask-sub      { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 0.55s both }
-  #cs-ask.casey-entered .ask-contact  { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 1.85s both }
+  :is(#cs-ask,#cs-ask-coasts) .ask-headline, :is(#cs-ask,#cs-ask-coasts) .ask-sub, :is(#cs-ask,#cs-ask-coasts) .ask-contact { opacity:0 }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-headline { animation: askFadeUp 0.75s cubic-bezier(.22,1,.36,1) 0.20s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-sub      { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 0.55s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-contact  { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 1.85s both }
   /* [Dave 2026-05-17 LATEST] Two-paths block: left card cascade â†’ OR divider â†’ right card cascade. Within each card, the icon pops first, then the label fades up, then the body fades up. Simple, deliberate cadence. */
-  #cs-ask .ask-path.left,  #cs-ask .ask-path.right { opacity:0 }
-  #cs-ask .ask-path .ask-path-icon, #cs-ask .ask-path .ask-path-label, #cs-ask .ask-path .ask-path-body { opacity:0 }
-  #cs-ask .ask-merge { opacity:0 }
-  #cs-ask.casey-entered .ask-path.left  { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 0.90s both }
-  #cs-ask.casey-entered .ask-path.left  .ask-path-icon  { animation: askIconPop 0.55s cubic-bezier(.34,1.6,.64,1) 1.00s both }
-  #cs-ask.casey-entered .ask-path.left  .ask-path-label { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.20s both }
-  #cs-ask.casey-entered .ask-path.left  .ask-path-body  { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.35s both }
-  #cs-ask.casey-entered .ask-merge      { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.20s both }
-  #cs-ask.casey-entered .ask-path.right { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 1.30s both }
-  #cs-ask.casey-entered .ask-path.right .ask-path-icon  { animation: askIconPop 0.55s cubic-bezier(.34,1.6,.64,1) 1.40s both }
-  #cs-ask.casey-entered .ask-path.right .ask-path-label { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.55s both }
-  #cs-ask.casey-entered .ask-path.right .ask-path-body  { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.70s both }
-  html[data-export="1"] #cs-ask .ask-headline,
-  html[data-export="1"] #cs-ask .ask-sub,
-  html[data-export="1"] #cs-ask .ask-paths,
-  html[data-export="1"] #cs-ask .ask-path,
-  html[data-export="1"] #cs-ask .ask-path-icon,
-  html[data-export="1"] #cs-ask .ask-path-label,
-  html[data-export="1"] #cs-ask .ask-path-body,
-  html[data-export="1"] #cs-ask .ask-merge,
-  html[data-export="1"] #cs-ask .ask-contact { opacity:1 !important; transform:none !important; animation:none !important }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path.left,  :is(#cs-ask,#cs-ask-coasts) .ask-path.right { opacity:0 }
+  :is(#cs-ask,#cs-ask-coasts) .ask-path .ask-path-icon, :is(#cs-ask,#cs-ask-coasts) .ask-path .ask-path-label, :is(#cs-ask,#cs-ask-coasts) .ask-path .ask-path-body { opacity:0 }
+  :is(#cs-ask,#cs-ask-coasts) .ask-merge { opacity:0 }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-path.left  { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 0.90s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-path.left  .ask-path-icon  { animation: askIconPop 0.55s cubic-bezier(.34,1.6,.64,1) 1.00s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-path.left  .ask-path-label { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.20s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-path.left  .ask-path-body  { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.35s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-merge      { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.20s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-path.right { animation: askFadeUp 0.65s cubic-bezier(.22,1,.36,1) 1.30s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-path.right .ask-path-icon  { animation: askIconPop 0.55s cubic-bezier(.34,1.6,.64,1) 1.40s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-path.right .ask-path-label { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.55s both }
+  :is(#cs-ask,#cs-ask-coasts).casey-entered .ask-path.right .ask-path-body  { animation: askFadeUp 0.5s cubic-bezier(.22,1,.36,1) 1.70s both }
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-headline,
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-sub,
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-paths,
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-path,
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-path-icon,
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-path-label,
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-path-body,
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-merge,
+  html[data-export="1"] :is(#cs-ask,#cs-ask-coasts) .ask-contact { opacity:1 !important; transform:none !important; animation:none !important }
 
   /* [Dave 2026-05-18 LATEST v4] cs-ask bg image is now the codex-generated PICKLEBALL COMMUNITY NETWORK watercolor (cs-ask-bg.png, real PNG on disk). Theme flips from DARK steakhouse â†’ LIGHT cream watercolor. Content stays left-shifted; image's action sits right. Text recolored back to dark ink for legibility on the light bg. The inline SVG steakhouse scene below is now hidden by display:none (image overlay covers it anyway, but the cleanup avoids any chance of bleed). */
-  #cs-ask { background:radial-gradient(ellipse at 22% 50%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; overflow:hidden; }
-  #cs-ask .ask-bg { display:none !important; }
+  :is(#cs-ask,#cs-ask-coasts) { background:radial-gradient(ellipse at 22% 50%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; overflow:hidden; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-bg { display:none !important; }
   /* Soft cream wash from left so type column has clean breathing room over the watercolor */
-  #cs-ask .ask-bg-wash { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,0.96) 0%, rgba(251,247,239,0.78) 30%, rgba(251,247,239,0.18) 55%, rgba(251,247,239,0) 75%); }
+  :is(#cs-ask,#cs-ask-coasts) .ask-bg-wash { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,0.96) 0%, rgba(251,247,239,0.78) 30%, rgba(251,247,239,0.18) 55%, rgba(251,247,239,0) 75%); }
   /* [Dave 2026-05-18 LATEST v4] Text recolored to DARK INK for light cream bg. */
   /* [Dave 2026-05-18 LATEST] Stage moved down per Dave 'the content on the "Dinner tonight" slide, reposition it, moving it down at least a little bit'. justify-content was center which auto-centered the column vertically â€” bumped to flex-start with a deeper top padding (88px â†’ 180px) so the headline starts lower in the visible area, giving more headroom for the watercolor + lights up top to breathe. */
-  #cs-ask .ask-stage { z-index:3; align-items:flex-start !important; justify-content:flex-start !important; padding:180px 56px 56px 84px !important; text-align:left !important; }
-  #cs-ask .ask-headline { color:#1a1612 !important; max-width:780px; text-align:left; }
-  #cs-ask .ask-headline em { color:#b8954a !important; }
-  #cs-ask .ask-paths { max-width:720px; margin:6px 0 0 !important; }
-  #cs-ask .ask-contact { max-width:720px; align-items:flex-start !important; text-align:left !important; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-stage { z-index:3; align-items:flex-start !important; justify-content:flex-start !important; padding:180px 56px 56px 84px !important; text-align:left !important; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-headline { color:#1a1612 !important; max-width:780px; text-align:left; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-headline em { color:#b8954a !important; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-paths { max-width:720px; margin:6px 0 0 !important; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-contact { max-width:720px; align-items:flex-start !important; text-align:left !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-ask">
   <!-- [Dave 2026-05-18 LATEST v3] HYBRID bg: PNG override layer (Dave's ChatGPT-generated steakhouse image) layered ABOVE the inline SVG fallback. If assets/cs-ask-bg.png exists on disk, it covers the SVG entirely. If missing, onerror hides it and the SVG scene paints through. Both render at full bleed. ðŸŽ¯ ACTION REQUIRED: drop the ChatGPT image at C:\Users\dave\CLAUDE COWORK\07_PRODUCT\pitch_visuals\assets\cs-ask-bg.png. -->
   <img src="assets/cs-ask-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:1;display:block" onerror="this.style.display='none'"/>
+  <div class="ask-bg" aria-hidden="true">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;display:block">
+      <defs>
+        <linearGradient id="askSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1c2940"/>
+          <stop offset="50%" stop-color="#1a1f30"/>
+          <stop offset="100%" stop-color="#0f1422"/>
+        </linearGradient>
+        <radialGradient id="askMoon" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="rgba(255,232,180,0.90)"/>
+          <stop offset="40%" stop-color="rgba(212,168,90,0.40)"/>
+          <stop offset="100%" stop-color="rgba(212,168,90,0)"/>
+        </radialGradient>
+        <linearGradient id="askWood" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#3a2010"/>
+          <stop offset="100%" stop-color="#1a0e07"/>
+        </linearGradient>
+        <radialGradient id="askPlate" cx="0.5" cy="0.45" r="0.5">
+          <stop offset="0%" stop-color="#e4d1b1"/>
+          <stop offset="55%" stop-color="#6d4a30"/>
+          <stop offset="100%" stop-color="#1a0e07"/>
+        </radialGradient>
+        <radialGradient id="askCandle" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="rgba(255,232,160,1)"/>
+          <stop offset="50%" stop-color="rgba(232,150,60,0.55)"/>
+          <stop offset="100%" stop-color="rgba(212,120,40,0)"/>
+        </radialGradient>
+      </defs>
+      <!-- Window on right side: night sky -->
+      <rect x="920" y="100" width="900" height="620" fill="url(#askSky)"/>
+      <!-- Moon glow upper-right -->
+      <ellipse cx="1640" cy="240" rx="180" ry="160" fill="url(#askMoon)"/>
+      <!-- NYC skyline silhouettes (back layer) -->
+      <g fill="#0a0d1a" opacity="0.92">
+        <rect x="940" y="430" width="60" height="290"/>
+        <rect x="1010" y="380" width="44" height="340"/>
+        <rect x="1062" y="450" width="38" height="270"/>
+        <rect x="1108" y="320" width="52" height="400"/>
+        <rect x="1168" y="400" width="36" height="320"/>
+        <rect x="1212" y="370" width="48" height="350"/>
+        <rect x="1268" y="280" width="42" height="440"/>
+        <rect x="1318" y="350" width="58" height="370"/>
+        <rect x="1384" y="220" width="46" height="500"/>
+        <polygon points="1407,220 1430,160 1430,220"/>
+        <rect x="1438" y="380" width="52" height="340"/>
+        <rect x="1498" y="290" width="44" height="430"/>
+        <rect x="1550" y="340" width="60" height="380"/>
+        <rect x="1618" y="260" width="48" height="460"/>
+        <rect x="1674" y="380" width="42" height="340"/>
+        <rect x="1724" y="320" width="52" height="400"/>
+        <rect x="1784" y="420" width="36" height="300"/>
+      </g>
+      <!-- Window lights (scattered) -->
+      <g fill="rgba(255,210,140,0.78)">
+        <rect x="950" y="470" width="6" height="6"/><rect x="970" y="500" width="6" height="6"/><rect x="985" y="540" width="5" height="5"/>
+        <rect x="1018" y="420" width="6" height="6"/><rect x="1030" y="460" width="6" height="6"/><rect x="1042" y="520" width="5" height="5"/>
+        <rect x="1072" y="490" width="6" height="6"/><rect x="1086" y="560" width="5" height="5"/>
+        <rect x="1118" y="360" width="6" height="6"/><rect x="1132" y="420" width="6" height="6"/><rect x="1146" y="480" width="5" height="5"/><rect x="1118" y="540" width="6" height="6"/>
+        <rect x="1176" y="440" width="6" height="6"/><rect x="1188" y="500" width="5" height="5"/>
+        <rect x="1222" y="410" width="6" height="6"/><rect x="1240" y="470" width="5" height="5"/><rect x="1228" y="540" width="6" height="6"/>
+        <rect x="1276" y="320" width="6" height="6"/><rect x="1290" y="380" width="6" height="6"/><rect x="1280" y="450" width="5" height="5"/><rect x="1296" y="520" width="6" height="6"/>
+        <rect x="1330" y="400" width="6" height="6"/><rect x="1348" y="460" width="5" height="5"/><rect x="1336" y="540" width="6" height="6"/>
+        <rect x="1394" y="260" width="6" height="6"/><rect x="1410" y="320" width="6" height="6"/><rect x="1400" y="400" width="5" height="5"/><rect x="1416" y="470" width="6" height="6"/><rect x="1402" y="560" width="5" height="5"/>
+        <rect x="1450" y="420" width="6" height="6"/><rect x="1468" y="480" width="5" height="5"/><rect x="1456" y="560" width="6" height="6"/>
+        <rect x="1508" y="320" width="6" height="6"/><rect x="1524" y="400" width="6" height="6"/><rect x="1512" y="480" width="5" height="5"/><rect x="1528" y="560" width="6" height="6"/>
+        <rect x="1564" y="380" width="6" height="6"/><rect x="1582" y="440" width="5" height="5"/><rect x="1572" y="520" width="6" height="6"/>
+        <rect x="1628" y="300" width="6" height="6"/><rect x="1644" y="380" width="6" height="6"/><rect x="1632" y="460" width="5" height="5"/><rect x="1648" y="540" width="6" height="6"/>
+        <rect x="1684" y="420" width="6" height="6"/><rect x="1702" y="490" width="5" height="5"/>
+        <rect x="1736" y="360" width="6" height="6"/><rect x="1754" y="440" width="5" height="5"/><rect x="1742" y="540" width="6" height="6"/>
+        <rect x="1794" y="460" width="6" height="6"/><rect x="1808" y="540" width="5" height="5"/>
+      </g>
+      <!-- Window frame (warm brass) -->
+      <rect x="920" y="100" width="900" height="620" fill="none" stroke="rgba(184,149,74,0.50)" stroke-width="3"/>
+      <line x1="920" y1="410" x2="1820" y2="410" stroke="rgba(184,149,74,0.30)" stroke-width="2"/>
+      <line x1="1370" y1="100" x2="1370" y2="720" stroke="rgba(184,149,74,0.30)" stroke-width="2"/>
+      <!-- Table edge (foreground band) -->
+      <rect x="0" y="780" width="1920" height="300" fill="url(#askWood)"/>
+      <!-- Plate -->
+      <ellipse cx="1480" cy="870" rx="180" ry="48" fill="url(#askPlate)" stroke="rgba(184,149,74,0.32)" stroke-width="1.5"/>
+      <!-- Steak (dark silhouette on plate) -->
+      <ellipse cx="1480" cy="858" rx="118" ry="28" fill="#3a1a0a" opacity="0.92"/>
+      <ellipse cx="1480" cy="854" rx="100" ry="22" fill="#5a2818" opacity="0.6"/>
+      <!-- Wine glass -->
+      <g transform="translate(1230,820)">
+        <ellipse cx="0" cy="0" rx="36" ry="9" fill="rgba(110,30,30,0.85)" stroke="rgba(184,149,74,0.45)" stroke-width="1.2"/>
+        <path d="M -36 0 Q -28 50 0 56 Q 28 50 36 0 Z" fill="rgba(140,40,40,0.55)" stroke="rgba(184,149,74,0.45)" stroke-width="1.2"/>
+        <line x1="0" y1="56" x2="0" y2="100" stroke="rgba(184,149,74,0.55)" stroke-width="2"/>
+        <ellipse cx="0" cy="106" rx="20" ry="4" fill="rgba(184,149,74,0.30)"/>
+      </g>
+      <!-- Candle with flame -->
+      <g transform="translate(1080,810)">
+        <rect x="-9" y="-10" width="18" height="56" rx="3" fill="rgba(232,200,140,0.85)" stroke="rgba(184,149,74,0.55)" stroke-width="1"/>
+        <ellipse cx="0" cy="60" rx="22" ry="5" fill="rgba(60,30,12,0.50)"/>
+        <ellipse cx="0" cy="-28" rx="9" ry="18" fill="url(#askCandle)"/>
+        <ellipse cx="0" cy="-22" rx="5" ry="10" fill="rgba(255,250,220,0.92)"/>
+      </g>
+      <!-- Faint candle glow on table -->
+      <ellipse cx="1080" cy="850" rx="320" ry="80" fill="url(#askCandle)" opacity="0.42"/>
+    </svg>
+  </div>
+  <div class="ask-bg-wash" aria-hidden="true"></div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow "Ask" â†’ "Next" per Dave 'on that slide top left change "ask" to "next"' â€” reframes the dinner slide as a forward-pointing "what's next" beat rather than a request. -->
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow renamed "Next" â†’ "Outlier" per Dave 'dinner tonight slide, change top left "next" to "outlier"'. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Outlier</div>
+  <section class="ask-stage">
+
+    <!-- [Dave 2026-05-18 LATEST v4] Reworded per Dave â€” "Discuss the perfect outlier wedge into a new economy of human connection." â†’ "Discuss GnR's outlier wedge into the new economy of human connection." Adds the GnR possessive (it's OUR wedge, not just A wedge) + "the new economy" (definite article â€” implies the new economy is real, not hypothetical). -->
+    <h1 class="ask-headline" style="font-size:clamp(1.65rem, 2.85vw, 2.65rem);max-width:920px;line-height:1.20">
+      Dinner tonight:<br>
+      Discuss <span class="ask-gnr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span>&rsquo;s outlier wedge into<br>
+      <em>the new economy of human connection.</em>
+    </h1>
+
+    <div class="ask-paths">
+      <!-- LEFT path: Be a founding partner (BLUE â€” the Give side) -->
+      <!-- [Dave 2026-05-17] Single-person icon swapped for a HANDSHAKE pictogram â€”
+           "founding partner" is fundamentally a partnership (two parties), not a solo role.
+           Two figures shown with overlapping arms forming a handshake at the center. -->
+      <div class="ask-path left">
+        <div class="ask-path-icon">
+          <svg viewBox="0 0 36 32" fill="none" stroke="#5B8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- LEFT figure: head + shoulder/torso -->
+            <circle cx="9" cy="8" r="3.6"/>
+            <path d="M 3 26 q 0 -7 6 -7 q 2 0 3.4 0.8"/>
+            <!-- RIGHT figure: head + shoulder/torso -->
+            <circle cx="27" cy="8" r="3.6"/>
+            <path d="M 33 26 q 0 -7 -6 -7 q -2 0 -3.4 0.8"/>
+            <!-- Handshake clasp at center â€” two short forearms meeting -->
+            <path d="M 12 19 L 18 22"/>
+            <path d="M 24 19 L 18 22"/>
+            <!-- Clasp dot at meeting point -->
+            <circle cx="18" cy="22" r="1.1" fill="#5B8FD4" stroke="none"/>
+          </svg>
+        </div>
+        <div class="ask-path-label">Be a founding partner</div>
+        <div class="ask-path-body">Build this with me.</div>
+      </div>
+
+      <!-- OR â€” vertical divider with "or" label -->
+      <div class="ask-merge">
+        <div class="ask-merge-line"></div>
+        <div class="ask-or">or</div>
+        <div class="ask-merge-line"></div>
+      </div>
+
+      <!-- RIGHT path: Connect me to one (RED â€” the Receive side) -->
+      <div class="ask-path right">
+        <div class="ask-path-icon">
+          <!-- [Dave 2026-05-17] Icon swapped from 3-node network to open-door pictogram per
+               'change that logo graphic there to be an open door'. Doorway frame (3 sides) +
+               foreshortened door panel angled inward to read as "open." -->
+          <svg viewBox="0 0 32 32" fill="none" stroke="#c8462c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Doorway frame: left, top, right edges -->
+            <path d="M 5 29 L 5 3 L 27 3 L 27 29"/>
+            <!-- Open door panel â€” foreshortened parallelogram angled inward -->
+            <path d="M 5 29 L 18 26 L 18 6 L 5 3"/>
+            <!-- Doorknob on the open door's inner edge -->
+            <circle cx="15" cy="17" r="0.9" fill="#c8462c"/>
+          </svg>
+        </div>
+        <div class="ask-path-label">Connect me to one</div>
+        <div class="ask-path-body">Open a door.</div>
+      </div>
+    </div>
+
+    <div class="ask-contact">
+      <div class="name">Dave Velardo &middot; Founder &amp; CEO</div>
+      <div class="email"><a href="mailto:dave@givenreceive.com">dave@givenreceive.com</a></div>
+      <div class="phone"><a href="tel:+19786040223">978-604-0223</a></div>
+    </div>
+
+  </section>
+</div>
+
+<!-- [Dave 2026-05-19] cs-ask-coasts ? PINK-DOT ALT of dinner/outlier slide. Same content/layout as cs-ask; background swapped to generated SF + New York + Boston dinner-decision watercolor. -->
+<div class="casey-slide ds-focus" id="cs-ask-coasts" style="display:none">
+  <!-- [Dave 2026-05-18 LATEST v3] HYBRID bg: PNG override layer (Dave's ChatGPT-generated steakhouse image) layered ABOVE the inline SVG fallback. If assets/cs-ask-bg.png exists on disk, it covers the SVG entirely. If missing, onerror hides it and the SVG scene paints through. Both render at full bleed. ðŸŽ¯ ACTION REQUIRED: drop the ChatGPT image at C:\Users\dave\CLAUDE COWORK\07_PRODUCT\pitch_visuals\assets\cs-ask-bg.png. -->
+  <img src="assets/cs-ask-coasts-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:1;display:block" onerror="this.onerror=null;this.src='assets/cs-ask-bg.png';this.onerror=function(){this.style.display='none'}"/>
   <div class="ask-bg" aria-hidden="true">
     <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;display:block">
       <defs>
@@ -26201,6 +26379,8 @@ const SLIDE_ALTS = {
   19: [],
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   20: [],
+  // [Dave 2026-05-19] Pink-dot dinner/outlier alt with SF + New York + Boston decision-dinner background.
+  23: ['cs-ask-coasts'],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one â€” bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 â†’ 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL â€” a human value sales funnel which is exactly what GnR is.'
@@ -27406,7 +27586,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) Â· cs-samecourt-pink1/pink2 (slot 13) Â· cs-givefirst-pink (slot 18) Â· cs-fv6-pink (slot 20) Â· cs-mv6-pink (slot 21) â€” all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 â†’ pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 â€” same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-ask-coasts');
     // [Dave 2026-05-18] Purple-dot alts â€” 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added â€” pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 â€” FULL-content variant at slot 13 with warehouse bg image.
