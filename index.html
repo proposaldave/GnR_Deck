@@ -26123,7 +26123,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
   // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFTâ†’RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots â€” color groups stay contiguous.
   // [Dave 2026-05-18 LATEST v6] cs-1m8-codexmerge removed from slot 2 alts per Dave. cs-1m8-title-A remains primary. Order LEFTâ†’RIGHT: red dots first, then blue, then pink.
-  2: ['cs-1m8-title-A', 'cs-a7m1', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-brand-codex'],
+  2: ['cs-1m8-title-A', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-brand-codex'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4â†’3 (v6) â†’still 3 with v9, 5â†’5 still, 6â†’5 (v6), 14â†’13 (v6)â†’12 (v9), 15â†’14, 16â†’15, 24â†’23.
   // Slot 3 (cs-1bm1 â€” was cs-a7m1) â€” no alts.
   3: [],
@@ -26250,6 +26250,8 @@ const APPENDIX_ORDER = [
   'cs-intro6',
   // [Dave 2026-05-17 v5] cs-1 MOVED here from SLIDE_ALTS[3] per Dave 'move this slide to the appendix'. The second wordmark title slide ('Invitation-based matchmaking for our communities' Â· 'Our connection and unique value to each other â€” measured, multiplied, made abundant') preserved as appendix reference. cs1Advance/cs1Reverse handlers still work inside the appendix flow.
   'cs-1',
+  // [Dave 2026-05-19] cs-a7m1 MOVED here from SLIDE_ALTS[2] per Dave 'move this to the appendix'. Tech's next frontier / social-media narrow-view vs Give n Receive future comparison preserved as appendix reference.
+  'cs-a7m1',
   // [Dave 2026-05-15] cs-appx-andreessen PREPENDED as new FIRST appendix slide. Embeds the Andreessen clip on (a) founder-built crazy ideas that flip into huge companies, (b) storytelling = money flow, (c) the meaning question when AI removes work. All three validate GnR's pitch frame.
   'cs-appx-andreessen',
   // [Dave 2026-05-17] cs-appx-aiheart imported from GnR_deck_vNext.html slide-9 per Dave 'I really like this, put it in the appendix'. Full-bleed watercolor (assets/gnr_vnext_ai_heart.png) + dark left wash + 'More AI. More heart.' headline + 'Let AI do the coordination. Let humans do the connecting.' subtitle.
@@ -27404,7 +27406,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 â€” explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     // [Dave 2026-05-18 LATEST v9] cs-a7m1 added to red-dot list (demoted from main slot 3 to red-dot alt of slot 2). [Dave 2026-05-17 v7] cs-magnetic-orig RESTORED as red-dot per Dave 'add a red dot slide to left of social pull slide' â€” was momentarily classified as black-dot but the explicit isPinkAlt check above for cs-merge3 doesn't affect cs-magnetic-orig, so it lands as red-dot here.
-    const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel' || altId === 'cs-1m8-title-A' || altId === 'cs-a7m1' || altId === 'cs-magnetic-orig');
+    const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel' || altId === 'cs-1m8-title-A' || altId === 'cs-magnetic-orig');
     // [Dave 2026-05-18 LATEST] BLACK-DOT alts â€” slides reviewed + decided to leave as-is.
     // [Dave 2026-05-18 LATEST] cs-pbfirst removed from black-dot list â€” slide DELETED per Dave 'delete this slide'.
     const isBlackAlt = (altId === 'cs-magnetic-orig');
