@@ -21272,27 +21272,44 @@ window.cs1m7Reverse = function() {
 
       <div class="mg-side left">
         <h2 class="mg-side-hero">Social media &rarr; <em>1% influencers</em>.</h2>
-        <svg class="mg-broadcast" viewBox="0 0 220 130" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="Social media broadcast model: one influencer reaches many passive followers.">
+        <svg class="mg-broadcast" viewBox="0 0 220 130" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="Social media broadcast model: one influencer dominates a passive algorithmic feed.">
           <defs>
             <radialGradient id="mgBroadcastGlow" cx="34%" cy="50%" r="62%">
               <stop offset="0%" stop-color="rgba(91,143,212,0.22)"/>
               <stop offset="58%" stop-color="rgba(91,143,212,0.08)"/>
               <stop offset="100%" stop-color="rgba(91,143,212,0)"/>
             </radialGradient>
+            <linearGradient id="mgBroadcastBeam" x1="78" y1="63" x2="178" y2="63" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="rgba(91,143,212,0.34)"/>
+              <stop offset="58%" stop-color="rgba(91,143,212,0.14)"/>
+              <stop offset="100%" stop-color="rgba(91,143,212,0.02)"/>
+            </linearGradient>
           </defs>
           <rect x="20" y="20" width="180" height="90" rx="2" fill="rgba(91,143,212,0.045)" stroke="rgba(91,143,212,0.62)" stroke-width="1.7"/>
-          <ellipse cx="72" cy="65" rx="92" ry="58" fill="url(#mgBroadcastGlow)"/>
-          <g stroke="rgba(91,143,212,0.38)" stroke-width="1.2" stroke-linecap="round">
-            <line x1="72" y1="65" x2="152" y2="34"/><line x1="72" y1="65" x2="166" y2="50"/><line x1="72" y1="65" x2="174" y2="66"/><line x1="72" y1="65" x2="166" y2="82"/><line x1="72" y1="65" x2="152" y2="98"/>
+          <ellipse cx="78" cy="63" rx="68" ry="45" fill="url(#mgBroadcastGlow)"/>
+          <path d="M82 45C108 50 133 53 178 40v46C133 75 108 78 82 82Z" fill="url(#mgBroadcastBeam)"/>
+          <g stroke="rgba(91,143,212,0.20)" stroke-width=".8">
+            <path d="M92 53C118 55 142 52 176 43"/>
+            <path d="M92 64C122 64 146 64 178 64"/>
+            <path d="M92 75C118 73 142 76 176 84"/>
           </g>
           <g>
-            <circle cx="72" cy="65" r="22" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="2.1"/>
-            <circle cx="72" cy="58" r="7.5" fill="#5B8FD4"/>
-            <path d="M55 84c4-11 12-17 17-17s13 6 17 17" fill="#5B8FD4" opacity=".85"/>
+            <rect x="47" y="36" width="54" height="54" rx="7" fill="rgba(251,247,239,0.92)" stroke="#5B8FD4" stroke-width="2.4"/>
+            <rect x="54" y="43" width="40" height="23" rx="3" fill="rgba(91,143,212,0.18)"/>
+            <circle cx="74" cy="54" r="8.2" fill="#5B8FD4"/>
+            <path d="M58 80c3.8-8.8 10.8-13.6 16-13.6S86.2 71.2 90 80" fill="#5B8FD4" opacity=".86"/>
+            <path d="M50 33h48" stroke="rgba(91,143,212,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M50 93h48" stroke="rgba(91,143,212,0.55)" stroke-width="1.2" stroke-linecap="round"/>
             <text x="72" y="111" text-anchor="middle" font-family="Manrope,sans-serif" font-size="6.2" font-weight="900" letter-spacing="0.09em" fill="#5B8FD4">INFLUENCER</text>
           </g>
-          <g fill="rgba(26,22,18,0.34)" stroke="rgba(26,22,18,0.22)" stroke-width=".8">
-            <circle cx="152" cy="34" r="7"/><circle cx="166" cy="50" r="7"/><circle cx="174" cy="66" r="7"/><circle cx="166" cy="82" r="7"/><circle cx="152" cy="98" r="7"/>
+          <g>
+            <rect x="145" y="31" width="36" height="16" rx="4" fill="rgba(26,22,18,0.17)" stroke="rgba(26,22,18,0.18)" stroke-width=".7"/>
+            <rect x="145" y="54" width="36" height="16" rx="4" fill="rgba(26,22,18,0.13)" stroke="rgba(26,22,18,0.16)" stroke-width=".7"/>
+            <rect x="145" y="77" width="36" height="16" rx="4" fill="rgba(26,22,18,0.17)" stroke="rgba(26,22,18,0.18)" stroke-width=".7"/>
+            <circle cx="153" cy="39" r="3.2" fill="rgba(26,22,18,0.28)"/>
+            <circle cx="153" cy="62" r="3.2" fill="rgba(26,22,18,0.24)"/>
+            <circle cx="153" cy="85" r="3.2" fill="rgba(26,22,18,0.28)"/>
+            <path d="M161 37h14M161 41h10M161 60h14M161 64h10M161 83h14M161 87h10" stroke="rgba(26,22,18,0.25)" stroke-width="1.2" stroke-linecap="round"/>
           </g>
           <text x="156" y="112" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.8" font-weight="900" letter-spacing="0.10em" fill="rgba(26,22,18,0.46)">PASSIVE FEED</text>
         </svg>
