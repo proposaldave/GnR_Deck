@@ -9315,21 +9315,21 @@ window.cs1m7Reverse = function() {
 
   /* 3 panels SLIDE UP FROM BELOW + fade in, staggered. [Dave 2026-05-18 LATEST] Smoother easing + wider per-panel gaps (was 0.40/0.55/0.70 → now 0.40/0.75/1.10) + longer transitions (0.65-0.70s → 0.95s) so each panel arrives on its own clear beat instead of overlapping. */
   #cs-thegap [data-panel] {
-    opacity: 0; transform: translateY(42px); transform-box: fill-box;
+    opacity: 0; transform: translate(var(--tg-panel-x, 0px), 42px); transform-box: fill-box;
     transition: opacity 0.95s cubic-bezier(.16,1,.30,1), transform 1.05s cubic-bezier(.16,1,.30,1);
   }
   #cs-thegap[data-shown="1"] [data-panel="1"],
   #cs-thegap[data-shown="2"] [data-panel="1"],
-  #cs-thegap[data-shown="3"] [data-panel="1"] { opacity: 1; transform: translateY(0); transition-delay: 0.40s; }
+  #cs-thegap[data-shown="3"] [data-panel="1"] { opacity: 1; transform: translate(var(--tg-panel-x, 0px), 0); transition-delay: 0.40s; }
   #cs-thegap[data-shown="1"] [data-panel="2"],
   #cs-thegap[data-shown="2"] [data-panel="2"],
-  #cs-thegap[data-shown="3"] [data-panel="2"] { opacity: 1; transform: translateY(0); transition-delay: 0.75s; }
+  #cs-thegap[data-shown="3"] [data-panel="2"] { opacity: 1; transform: translate(var(--tg-panel-x, 0px), 0); transition-delay: 0.75s; }
   #cs-thegap[data-shown="1"] [data-panel="3"],
   #cs-thegap[data-shown="2"] [data-panel="3"],
-  #cs-thegap[data-shown="3"] [data-panel="3"] { opacity: 1; transform: translateY(0); transition-delay: 1.10s; }
+  #cs-thegap[data-shown="3"] [data-panel="3"] { opacity: 1; transform: translate(var(--tg-panel-x, 0px), 0); transition-delay: 1.10s; }
   #cs-thegap[data-shown="1"] [data-panel="4"],
   #cs-thegap[data-shown="2"] [data-panel="4"],
-  #cs-thegap[data-shown="3"] [data-panel="4"] { opacity: 1; transform: translateY(0); transition-delay: 1.45s; }
+  #cs-thegap[data-shown="3"] [data-panel="4"] { opacity: 1; transform: translate(var(--tg-panel-x, 0px), 0); transition-delay: 1.45s; }
   /* svg-wrap (containing the 3 panels) — hidden by default, visible after click. Shrunk so it
      coexists with the (now-also-shrunk) trapped graphic above it. */
   #cs-thegap .tg-svg-wrap { display: none; }
@@ -10175,7 +10175,7 @@ window.cs1m7Reverse = function() {
           <!-- ═══ PANEL 1 · COORDINATION → BY HAND ═══════════════════════════════
                Single texter manually fanning messages out to 4 separate people, one-by-one.
                No batching, no automation. The 'by hand' failure made physical. -->
-          <g data-panel="1" transform="translate(-55 0)">
+          <g data-panel="1" style="--tg-panel-x:0px">
             <ellipse cx="220" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <!-- [Dave 2026-05-15] Reverted to original simple silhouettes — the "realistic" upgrade with necks/oval heads/hair variations introduced weird artifacts (the long-hair target looked horned, the bun and cap silhouettes read as awkward shapes). Clean stick-figure silhouettes work better here. -->
             <!-- Texter silhouette (centered) -->
@@ -10215,7 +10215,7 @@ window.cs1m7Reverse = function() {
                [Dave 2026-05-17] SWAPPED with Panel 3 per 'swap positions of these two'.
                Lone-giver content moved to LEFT slot (cx=690) via translate(-470, 0). Badge
                number stays "2" since this is now the second-revealed panel. -->
-          <g data-panel="2">
+          <g data-panel="2" style="--tg-panel-x:63.3px">
             <ellipse cx="470" cy="150" rx="170" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(470, 144)">
               <g fill="#1a1612">
@@ -10250,7 +10250,7 @@ window.cs1m7Reverse = function() {
             <text x="470" y="364" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#c8462c">LATENT SUPPLY</text>
           </g>
 
-          <g data-panel="3" transform="translate(165 0)">
+          <g data-panel="3" style="--tg-panel-x:156.7px">
             <ellipse cx="690" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(-470, 0)">
               <!-- [Dave 2026-05-15] Reverted to original silhouettes — the realism upgrade made things worse. -->
@@ -10313,7 +10313,7 @@ window.cs1m7Reverse = function() {
                [Dave 2026-05-17] SWAPPED with Panel 2 per 'swap positions of these two'.
                Clusters content moved to RIGHT slot (cx=1160) via translate(470, 0). Badge
                number is now "3" since this is the third-revealed panel. -->
-          <g data-panel="4" transform="translate(35 0)">
+          <g data-panel="4" style="--tg-panel-x:0px">
             <ellipse cx="1160" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(470, 0)">
               <!-- Cluster A (top-left) -->
