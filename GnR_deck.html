@@ -30734,7 +30734,7 @@ window.csWedgepbCodexAdvance = function() {
   if (!slide || !slide.classList.contains('active')) return false;
   const stage = parseInt(slide.dataset.stage || '0', 10);
   if (stage >= 5) return false;
-  slide.dataset.stage = String(stage + 1);
+  slide.dataset.stage = '5';
   return true;
 };
 window.csWedgepbCodexReverse = function() {
@@ -30742,7 +30742,7 @@ window.csWedgepbCodexReverse = function() {
   if (!slide || !slide.classList.contains('active')) return false;
   const stage = parseInt(slide.dataset.stage || '0', 10);
   if (stage <= 0) return false;
-  slide.dataset.stage = String(stage - 1);
+  slide.dataset.stage = '0';
   return true;
 };
 
