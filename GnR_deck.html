@@ -13258,10 +13258,14 @@ window.cs1m7Reverse = function() {
   #cs-11e.active .c11e-q1       { animation-delay: 1.55s; }
   #cs-11e.active .c11e-q2       { animation-delay: 1.75s; }
   #cs-11e.active .c11e-q3       { animation-delay: 1.95s; }
+  #cs-11e .c11e-bg { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+  #cs-11e .c11e-bg img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.54; filter:saturate(.92) contrast(.98); }
+  #cs-11e .c11e-bg::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%); }
   html[data-export="1"] #cs-11e .c11e-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-11e">
-<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+<div class="c11e-bg" aria-hidden="true"><img src="assets/explorations/cs-11e-v3-faces-not-ratings.png" alt=""/></div>
+<section style="position:relative;z-index:1;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;z-index:10;">Founder-built community</div>
   <div style="padding:32px 48px 80px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <!-- Big NEPC logo so the audience knows we're talking about New England Pickleball Club -->
@@ -30441,7 +30445,6 @@ const CODEX_BG_REVIEW_ALTS = [
   { slot: 4,  sourceId: 'cs-thegap',             id: 'cs-thegap-bg-green',             image: 'assets/explorations/cs-thegap-v4-invisible-reciprocity.png' },
   { slot: 5,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
   { slot: 7,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png' },
-  { slot: 11, sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
   { slot: 12, sourceId: 'cs-11',                 id: 'cs-11-bg-green',                 image: 'assets/v2/cs-11/v1-hero-measurement.-preview.png' },
   { slot: 13, sourceId: 'cs-3',                  id: 'cs-3-bg-green',                  image: 'assets/v2/cs-3/v1-hero-signal-density.-preview.png' },
   { slot: 14, sourceId: 'cs-19',                 id: 'cs-19-bg-green',                 image: 'assets/v2/cs-19/v1-hero-revenue.-preview.png' },
