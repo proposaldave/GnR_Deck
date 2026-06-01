@@ -20717,7 +20717,8 @@ window.csBrandV8Reverse = function() {
   </section>
 </div>
 
-<div class="casey-slide ds-focus brand-bg-story" id="cs-brand-bg-story-product" style="display:none">
+<!-- [Codex 2026-06-01] cs-brand-bg-story-product DELETED per Dave attached-slide request: 19 / 23 (alt-b) "The next product is not on a screen." Removed from SLIDE_ALTS[19]; HTML retained hidden as rollback source. -->
+<div class="casey-slide ds-focus brand-bg-story" id="cs-brand-bg-story-product" style="display:none !important" data-deleted="1">
   <img class="bbs-bg" src="assets/cs-brand-promise-community-bg.png" alt="People gathered in a glowing community circle while technology sits around the edge."/>
   <div class="bbs-wash" aria-hidden="true"></div>
   <div class="bbs-eyebrow">the product is human connection</div>
@@ -32733,7 +32734,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
   16: [], // [Codex 2026-05-30] cs-unmeasured-value deleted per attached screenshot request; previous detached slot remains empty.
   17: ['cs-value-choice-image-annotated-pink', 'cs-value-choice-image-only-pink'], // [Codex 2026-05-30] cs-value-choice-image-receipts-pink moved to TRASH_ORDER per screenshot delete request.
-  19: ['cs-brand-bg-story-map', 'cs-brand-bg-story-product', 'cs-brand-bg-story-os'], // [Codex 2026-05-30] Brand-story image variants attached to current active cs-brand-V8 slot after founder slide restore.
+  19: ['cs-brand-bg-story-map', 'cs-brand-bg-story-os'], // [Codex 2026-06-01] cs-brand-bg-story-product deleted per attached slide request; remaining brand-story image variants stay attached to current active cs-brand-V8 slot.
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
   15: [], // [Codex 2026-05-30] cs-racketeer-padel-club-pink moved to TRASH_ORDER with its matching padel/glass-walls slide.
   13: ['cs-fv6-information-pink'], // [Codex 2026-05-30] Pink-dot alt for active cs-fv6-img: information digitized -> AI, connection measured -> community intelligence.
@@ -34773,7 +34774,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     // [Dave 2026-05-18 LATEST v9] cs-a7m1 added to red-dot list (demoted from main slot 3 to red-dot alt of slot 2). [Dave 2026-05-17 v7] cs-magnetic-orig RESTORED as red-dot per Dave 'add a red dot slide to left of social pull slide' — was momentarily classified as black-dot but the explicit isPinkAlt check above for cs-merge3 doesn't affect cs-magnetic-orig, so it lands as red-dot here.
-    const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel' || altId === 'cs-1m8-title-A' || altId === 'cs-magnetic-orig' || altId === 'cs-brand-bg-story-map' || altId === 'cs-brand-bg-story-product' || altId === 'cs-brand-bg-story-os');
+    const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel' || altId === 'cs-1m8-title-A' || altId === 'cs-magnetic-orig' || altId === 'cs-brand-bg-story-map' || altId === 'cs-brand-bg-story-os');
     // [Dave 2026-05-18 LATEST] BLACK-DOT alts — slides reviewed + decided to leave as-is.
     // [Dave 2026-05-18 LATEST] cs-pbfirst removed from black-dot list — slide DELETED per Dave 'delete this slide'.
     const isBlackAlt = (altId === 'cs-magnetic-orig' || altId === 'cs-1m8-black-backup' || altId === 'cs-11d-black-backup');
