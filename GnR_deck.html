@@ -13069,6 +13069,10 @@ window.cs1m7Reverse = function() {
   #cs-pb-silliness-image-net-pink,
   #cs-pb-silliness-image-open-pink,
   #cs-pb-silliness-image-map-pink,
+  #cs-pb-silliness-generated-sections-pink,
+  #cs-pb-silliness-generated-kitchen-pink,
+  #cs-pb-silliness-generated-apology-pink,
+  #cs-pb-silliness-generated-rotation-pink,
   #cs-pb-silliness-story-score-pink,
   #cs-pb-silliness-story-decision-pink,
   #cs-pb-silliness-chaos-pink,
@@ -13080,6 +13084,10 @@ window.cs1m7Reverse = function() {
   #cs-pb-silliness-image-net-pink.active,
   #cs-pb-silliness-image-open-pink.active,
   #cs-pb-silliness-image-map-pink.active,
+  #cs-pb-silliness-generated-sections-pink.active,
+  #cs-pb-silliness-generated-kitchen-pink.active,
+  #cs-pb-silliness-generated-apology-pink.active,
+  #cs-pb-silliness-generated-rotation-pink.active,
   #cs-pb-silliness-story-score-pink.active,
   #cs-pb-silliness-story-decision-pink.active,
   #cs-pb-silliness-chaos-pink.active,
@@ -13242,6 +13250,22 @@ window.cs1m7Reverse = function() {
     <p>A toy ball. A weird score. A soft shot called a dink. The absurdity lowers status &mdash; then reveals who welcomes, waits, laughs, adapts, and gets invited back.</p>
     <div class="silliness-bottom-line">GnR measures the human signal underneath the silliness.</div>
   </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-generated-sections-pink" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-pink-dots/sections.png" alt="Image-generated pickleball silliness scene with visual zones for toy ball, confused scoring, dinking, rotation, and invite-back signals." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-generated-kitchen-pink" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-pink-dots/kitchen-dink.png" alt="Image-generated pickleball kitchen scene showing adults taking a tiny dink seriously while signal arcs reveal waiting, patience, and adaptation." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-generated-apology-pink" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-pink-dots/net-apology.png" alt="Image-generated pickleball net-cord apology scene showing a lucky ball, exaggerated apology, laughter, and social signal arcs." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-generated-rotation-pink" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-pink-dots/rotation-invite.png" alt="Image-generated pickleball rotation and invite-back scene showing partner changes, paddle taps, welcome gestures, and invitation signal threads." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
 </div>
 
 <div class="casey-slide ds-focus psj-slide psb-slide psb-carnival" id="cs-pb-silliness-carnival-pink" style="display:none">
@@ -32809,7 +32833,7 @@ const SLIDE_ALTS = {
   20: ['cs-16'], // [Codex 2026-05-30] cs-16 stays attached to active cs-fw1 after founder slide restore.
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
   // [Codex 2026-05-30] Active cs-pb-silliness-feature is slot 21; attach its pink-dot image-led silliness variants here.
-  21: ['cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'], // [Codex 2026-05-30] Pink-dot image-led silliness variants attached to active cs-pb-silliness-feature after founder slide restore.
+  21: ['cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'], // [Codex 2026-06-02] New image-only silliness pink-dot candidates first; older text/card/image variants retained behind them for review.
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
   5: ['cs-referral-thesis-pink', 'cs-referral-builder-pink', 'cs-referral-loop-pink', 'cs-referral-data-pink', 'cs-referral-roadmap-pink'],
@@ -34827,7 +34851,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
+    const isGeneratedSillinessPinkAlt = /^cs-pb-silliness-generated-/.test(altId);
+    const isPinkAlt = (isGeneratedSillinessPinkAlt || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
