@@ -8328,8 +8328,8 @@ window.cs1m5Reverse = function() {
       <!-- [Dave 2026-05-12 LATEST v2] Caption alignment: G is at translateX 85, R is at translateX 282 (asymmetric). Captions sit in a symmetric 2-col grid, so they don't naturally match the G/R visual centers. Solution — apply the SAME translates to each caption column as the wordmark uses, so caption centers track G and R precisely. (Was previously +95 on right only — overcorrected per Dave.) -->
       <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
         <div class="m8-cap-left" style="text-align:center;transform:translateX(0)">
-          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The <strong style="color:#1a1612;font-weight:900">Fuel</strong></div>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">What we <em style="font-style:italic;font-weight:700;color:#5B8FD4">give</em></div>
+          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:10px">The <strong style="color:#1a1612;font-weight:900">Fuel</strong></div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">What we <em style="font-style:italic;font-weight:700;color:#5B8FD4">give</em><br>is the fuel</div>
         </div>
         <!-- [Dave 2026-05-17] Right cap translateX history: 28 → 86 → 140 → 100 → 70 → 50 → 30. Dave: "reposition this text a little more to the left". -->
         <!-- [Dave 2026-05-26] Centered under the large red R. -->
@@ -21060,6 +21060,8 @@ window.csBrandV8Reverse = function() {
   .vcio-label.speaker { left:39.8%; bottom:7.2%; }
   .vcio-label.laptop { right:6.2%; top:8.4%; }
   .vcio-label.cola { right:5.3%; bottom:20.5%; }
+  #cs-value-choice-image-annotated-pink .vcio-can-logo { position:absolute; right:8.3%; bottom:28.9%; z-index:2; width:52px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:5px; background:#c8462c; color:#fbf7ef; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.72rem; font-weight:900; font-style:italic; line-height:.78; text-align:center; transform:rotate(-4deg); box-shadow:inset 0 0 0 1px rgba(251,247,239,.38), 0 4px 10px rgba(26,22,18,.26); pointer-events:none; }
+  #cs-value-choice-image-annotated-pink .vcio-can-logo::after { content:""; position:absolute; left:9px; right:9px; bottom:7px; height:2px; border-radius:999px; background:#fbf7ef; transform:rotate(-7deg); opacity:.88; }
   #cs-value-choice-image-receipts-pink .vcio-question { color:#b8954a; }
   #cs-value-choice-image-receipts-pink .vcio-caption { position:absolute; left:50%; bottom:44px; transform:translateX(-50%); z-index:4; display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:7px; border:1px solid rgba(184,149,74,.48); background:rgba(26,22,18,.68); box-shadow:0 18px 44px rgba(0,0,0,.28); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.34rem; font-weight:850; font-style:italic; color:#fbf7ef; white-space:nowrap; }
   #cs-value-choice-image-receipts-pink .vcio-caption em { color:#c8462c; font-style:italic; }
@@ -21176,6 +21178,7 @@ window.csBrandV8Reverse = function() {
   <div class="vcio-label search"><div class="vcio-mark google">G</div><div><small>$3T+ ads sold</small></div></div>
   <div class="vcio-label speaker"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg></div><div><b>AI assistant</b><small>$2.5T spend</small></div></div>
   <div class="vcio-label laptop"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5 14.6 9.4 22 12l-7.4 2.6L12 21.5l-2.6-6.9L2 12l7.4-2.6z" fill="#c8462c"/></svg></div><div><small>$2.5T spend</small></div></div>
+  <div class="vcio-can-logo" aria-hidden="true">Coca<br>Cola</div>
   <div class="vcio-label cola"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
 </div>
 
@@ -23985,7 +23988,6 @@ window.csBrandV8Reverse = function() {
         <h2>Every GnR invitational event starts with referrals off.</h2>
         <p>The event creator can turn referrals on in settings. When off, attendees do not see a referral CTA. When on, attendees can refer friends into that specific event.</p>
       </div>
-      <div class="refspec-close">Build target: permissioned invitations, event-specific control, social signal capture.</div>
     </div>
     <div class="refspec-right">
       <div class="refspec-uses">
