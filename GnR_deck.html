@@ -134,6 +134,53 @@
   #cs-club-social-loop .loop-rail span:nth-child(3) { bottom:92px; background:repeating-linear-gradient(to right, #c8462c 0 8px, transparent 8px 17px); }
   #cs-club-social-loop .loop-foot { position:absolute; left:0; right:0; bottom:-56px; display:flex; justify-content:center; gap:10px; }
 
+  #cs-teamreach-referral-compare {
+    background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; color:#1a1612;
+  }
+  #cs-teamreach-referral-compare::before {
+    content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      linear-gradient(90deg,rgba(243,234,216,.98),rgba(243,234,216,.86) 48%,rgba(243,234,216,.96)),
+      radial-gradient(circle at 50% 52%,rgba(184,149,74,.18),transparent 38%),
+      linear-gradient(135deg,rgba(91,143,212,.08),transparent 42%,rgba(200,70,44,.08));
+  }
+  #cs-teamreach-referral-compare .trc-eye {
+    position:absolute; top:28px; left:48px; z-index:10;
+    font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c;
+  }
+  #cs-teamreach-referral-compare .trc-stage { position:absolute; inset:0; z-index:2; box-sizing:border-box; padding:88px 76px 58px; display:flex; flex-direction:column; gap:34px; }
+  #cs-teamreach-referral-compare .trc-head { text-align:center; max-width:1320px; margin:0 auto; }
+  #cs-teamreach-referral-compare .trc-kicker { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#b8954a; margin-bottom:16px; }
+  #cs-teamreach-referral-compare .trc-title { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.25rem,5vw,5.7rem); line-height:.98; font-weight:900; letter-spacing:0; color:#1a1612; text-wrap:balance; }
+  #cs-teamreach-referral-compare .trc-title em { color:#c8462c; font-style:italic; }
+  #cs-teamreach-referral-compare .trc-compare { flex:1; display:grid; grid-template-columns:1fr 138px 1fr; gap:28px; align-items:stretch; min-height:0; }
+  #cs-teamreach-referral-compare .trc-panel { position:relative; padding:34px 36px 30px; border:1.4px solid rgba(184,149,74,.32); border-radius:8px; background:rgba(251,247,239,.88); box-shadow:0 18px 52px rgba(26,22,18,.065); display:flex; flex-direction:column; gap:22px; }
+  #cs-teamreach-referral-compare .trc-panel.teamreach { border-left:7px solid #5B8FD4; }
+  #cs-teamreach-referral-compare .trc-panel.gnr { border-left:7px solid #c8462c; background:linear-gradient(180deg,rgba(251,247,239,.98),rgba(251,247,239,.84)); }
+  #cs-teamreach-referral-compare .trc-label { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.26em; text-transform:uppercase; }
+  #cs-teamreach-referral-compare .teamreach .trc-label { color:#5B8FD4; }
+  #cs-teamreach-referral-compare .gnr .trc-label { color:#c8462c; }
+  #cs-teamreach-referral-compare .trc-panel h2 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.1rem; font-weight:900; line-height:1.02; letter-spacing:0; color:#1a1612; }
+  #cs-teamreach-referral-compare .trc-proof { font-family:'Manrope',sans-serif; font-size:.76rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:rgba(26,22,18,.54); padding:14px 0; border-top:1px solid rgba(184,149,74,.28); border-bottom:1px solid rgba(184,149,74,.28); }
+  #cs-teamreach-referral-compare .trc-points { display:grid; gap:13px; margin-top:auto; }
+  #cs-teamreach-referral-compare .trc-point { position:relative; padding-left:24px; font-family:'Manrope',sans-serif; font-size:1.16rem; font-weight:780; line-height:1.18; color:#1a1612; }
+  #cs-teamreach-referral-compare .trc-point::before { content:''; position:absolute; left:0; top:.43em; width:8px; height:8px; border-radius:50%; background:#b8954a; }
+  #cs-teamreach-referral-compare .teamreach .trc-point::before { background:#5B8FD4; }
+  #cs-teamreach-referral-compare .gnr .trc-point::before { background:#c8462c; }
+  #cs-teamreach-referral-compare .trc-mid { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; text-align:center; }
+  #cs-teamreach-referral-compare .trc-mid-line { width:1px; height:94px; background:linear-gradient(180deg,rgba(91,143,212,.55),rgba(184,149,74,.75),rgba(200,70,44,.55)); }
+  #cs-teamreach-referral-compare .trc-vs { width:86px; height:86px; border-radius:50%; display:grid; place-items:center; border:1.5px solid rgba(184,149,74,.54); background:#fbf7ef; font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:rgba(26,22,18,.62); box-shadow:0 14px 32px rgba(26,22,18,.08); }
+  #cs-teamreach-referral-compare .trc-mid-copy { font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:rgba(26,22,18,.58); line-height:1.55; max-width:128px; }
+  #cs-teamreach-referral-compare .trc-close { display:flex; justify-content:center; gap:10px; margin-top:2px; }
+  #cs-teamreach-referral-compare .trc-chip { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:9px 16px; border:1px solid rgba(184,149,74,.38); background:rgba(251,247,239,.78); border-radius:7px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:#1a1612; }
+  #cs-teamreach-referral-compare .trc-chip.blue { border-color:rgba(91,143,212,.48); background:rgba(91,143,212,.08); color:#335f95; }
+  #cs-teamreach-referral-compare .trc-chip.hot { border-color:rgba(200,70,44,.58); background:rgba(200,70,44,.08); color:#c8462c; }
+  #cs-teamreach-referral-compare .trc-anim { opacity:0; transform:translateY(14px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
+  #cs-teamreach-referral-compare.casey-entered .trc-anim { opacity:1; transform:none; }
+  #cs-teamreach-referral-compare.casey-entered .trc-anim:nth-child(2) { transition-delay:.14s; }
+  #cs-teamreach-referral-compare.casey-entered .trc-anim:nth-child(3) { transition-delay:.28s; }
+  html[data-export="1"] #cs-teamreach-referral-compare .trc-anim { opacity:1 !important; transform:none !important; transition:none !important; }
+
   #cs-club-anti-dupr .cco-stage { display:flex; flex-direction:column; justify-content:center; gap:36px; }
   #cs-club-anti-dupr .adu-head { text-align:center; max-width:1320px; margin:0 auto; }
   #cs-club-anti-dupr .adu-compare { display:grid; grid-template-columns:1fr 128px 1fr; gap:28px; align-items:stretch; }
@@ -14921,6 +14968,51 @@ window.cs1m7Reverse = function() {
       <span>lower CAC through trusted invites</span>
       <span>upfront payment proves intent</span>
       <span>social data compounds into the long-term graph</span>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-teamreach-referral-compare">
+  <div class="trc-eye">competitor wedge</div>
+  <section class="trc-stage">
+    <div class="trc-head trc-anim">
+      <div class="trc-kicker">TeamReach proves the demand. GnR owns the expansion.</div>
+      <h1 class="trc-title">TeamReach manages known groups. <em>GnR grows the right room.</em></h1>
+    </div>
+    <div class="trc-compare trc-anim">
+      <div class="trc-panel teamreach">
+        <div class="trc-label">TeamReach</div>
+        <h2>A communication app for people already in the group.</h2>
+        <div class="trc-proof">messages &middot; schedules &middot; updates &middot; availability</div>
+        <div class="trc-points">
+          <div class="trc-point">Coach or manager creates a group code.</div>
+          <div class="trc-point">Members check schedules, event details, polls, photos, and headcounts.</div>
+          <div class="trc-point">It reduces confusion after the team already exists.</div>
+          <div class="trc-point">The product does not know who should be invited next.</div>
+        </div>
+      </div>
+      <div class="trc-mid" aria-hidden="true">
+        <div class="trc-mid-line"></div>
+        <div class="trc-vs">vs</div>
+        <div class="trc-mid-copy">coordination<br>after the group<br>vs<br>creation of the group</div>
+        <div class="trc-mid-line"></div>
+      </div>
+      <div class="trc-panel gnr">
+        <div class="trc-label">Give n Receive</div>
+        <h2>A player-referral engine for communities still forming.</h2>
+        <div class="trc-proof">invite &middot; refer &middot; fit &middot; compound</div>
+        <div class="trc-points">
+          <div class="trc-point">Players refer players into open social events.</div>
+          <div class="trc-point">GnR learns who fits the room, not just who saw the calendar.</div>
+          <div class="trc-point">Every yes, no, referral, and repeat visit trains the community graph.</div>
+          <div class="trc-point">Warm players pull in warm players, so the club grows from inside the event.</div>
+        </div>
+      </div>
+    </div>
+    <div class="trc-close trc-anim">
+      <span class="trc-chip blue">TeamReach: group admin</span>
+      <span class="trc-chip hot">GnR: player referral loop</span>
+      <span class="trc-chip">the social event becomes distribution</span>
     </div>
   </section>
 </div>
@@ -33491,6 +33583,7 @@ const SLIDE_ORDER = [
   'cs-referral-business-model',
   'cs-business-model-options',
   'cs-market-two-economics',
+  'cs-teamreach-referral-compare',
   // [Codex 2026-05-29] cs-pb-silliness-scroll moved to TRASH_ORDER per Dave screenshot delete request. HTML remains as rollback source.
   // [Codex 2026-05-29] cs-pb-silliness-dupr removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
