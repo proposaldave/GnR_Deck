@@ -9,6 +9,7 @@
 5. The session creates `deck/[short-task-name]`, commits, and does not push.
 6. The session reports `DONE` only after active-source verification and required rendered/visual verification pass.
 7. The session leaves a publish-readable `PUBLISH TRACE`: request slug, active slide ID, changed visible text, changed selectors/properties, changed registry keys, asset paths, source verification, and visual QA result.
+8. The commit body must also contain the same `PUBLISH TRACE`. Publish Control cannot rely on the app chat transcript being available later.
 
 ## Active Source Contract
 
@@ -35,12 +36,13 @@
 2. Paste `prompts/CODEX_DECK_PUBLISH_PROMPT.txt`.
 3. Preserve unrelated dirty work before publishing.
 4. Build the publish universe from checked-out worktrees plus every local `refs/heads/deck/*` branch, especially branches not contained in `origin/main`.
-5. Merge verified safe `deck/*` branches; when a completed branch is stale but the intent is clear, port the intent surgically onto current `main` instead of dropping it.
-6. Do not use `skip` as a silent final state for completed work. If a completed branch cannot be merged or ported, report `BLOCKED` with the exact branch, blocker, and next action.
-7. If `SLIDE_ORDER` changed, run the slide inventory guard before committing. Unauthorized active-slide removal is a hard blocker, not a warning.
-8. If a restored or inserted slide shifts later active slots, update affected `SLIDE_ALTS` keys in the same publish pass.
-9. Copy `GnR_deck.html` to `index.html`, verify hash identity, push if requested, then verify raw GitHub and Pages source.
-10. Report exactly what is `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
+5. Run `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"` before decisions and again before `DONE`.
+6. Merge verified safe `deck/*` branches; when a completed branch is stale but the intent is clear, port the intent surgically onto current `main` instead of dropping it.
+7. Do not use `skip` as a silent final state for completed work. If a completed branch cannot be merged or ported, report `BLOCKED` with the exact branch, blocker, and next action.
+8. If `SLIDE_ORDER` changed, run the slide inventory guard before committing. Unauthorized active-slide removal is a hard blocker, not a warning.
+9. If a restored or inserted slide shifts later active slots, update affected `SLIDE_ALTS` keys in the same publish pass.
+10. Copy `GnR_deck.html` to `index.html`, verify hash identity, push if requested, then verify raw GitHub and Pages source.
+11. Report exactly what is `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
 
 ## Dave Workflow
 
@@ -59,6 +61,9 @@ A solid status dot in the Codex app means the worktree session is done. Publish 
 
 Before declaring a publish pass done, run a completed-session audit: compare `git worktree list --porcelain`, all local `refs/heads/deck/*` branches, merge status against `origin/main`, branch commit messages, and current `main`. Every completed candidate must be merged, ported, or blocked with evidence. Do not leave completed work behind under a generic skipped label.
 
+Mechanical audit gate:
+Publish Control must run `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"` at the start and end of every publish pass. The output line `UNPUBLISHED_LOCAL_DECK_REFS=N` is not advisory; it is the checklist size. If `N` is nonzero at the end, every remaining branch from the CSV must appear in the final report with one of these states: `CONFLICTS`, `NOT VERIFIED`, `SKIPPED / NEEDS REVIEW`, `BLOCKED`, or `ALREADY LIVE`. A final report that omits any CSV branch is invalid.
+
 Unpublished-local-branch rule:
 `git worktree list --porcelain` is not enough. A finished branch can exist without a checked-out worktree. Before `DONE`, prove `UNPUBLISHED_LOCAL_DECK_REFS=0` for local `deck/*` branches not contained in `origin/main`, or list every remaining branch under `BLOCKED`, `CONFLICTS`, or `NOT VERIFIED` with the next action.
 
@@ -67,6 +72,9 @@ When Dave reports a missed visible phrase or asks "didn't I ask...", search all 
 
 Branch-intent audit:
 For every completed-session branch, diff the branch against its merge-base and extract the actual intent: visible text, active slide IDs, selectors, JavaScript hooks, assets, and registry edits. Verify that intent exists in current `main` before calling it integrated. An `ours` merge is allowed only after the intent has already been ported and verified. If a branch is an ancestor of `main` but the visible result is absent, treat it as a failed publish and repair it before reporting `DONE`.
+
+Trace requirement:
+New edit branches must put `PUBLISH TRACE` in the commit body. If an older branch lacks that trace, Publish Control must infer the visible intent from the diff and commit message instead of skipping it. `MISSING_PUBLISH_TRACE` is a diagnostic label, not a blocker by itself.
 
 Never run multiple Local edit sessions against `GnR_deck.html`.
 Never edit the old `pitch_visuals` copy during parallel work.

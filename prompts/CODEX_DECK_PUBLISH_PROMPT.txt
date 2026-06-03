@@ -14,6 +14,8 @@ PUBLISH CONTRACT
 
 START CHECKS
 - Run git branch --show-current, git status --short, git remote -v, git log --oneline --decorate -20, and git worktree list.
+- Run `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"` before making publish decisions.
+- Treat the audit CSV as the required publish ledger for this run. Every row where `ContainedInBase=False` must end as merged, ported, already live, conflict, not verified, risky/delete/trash blocked, unrelated, or dirty worktree blocked.
 - Confirm local HEAD, origin/main, and remote main.
 - If main is dirty, identify every dirty file.
 - If dirty work is unrelated, preserve it on preserve/[file-purpose]-local-change before cleaning main.
@@ -28,9 +30,11 @@ BRANCH UNIVERSE
   recent deck/* branches with commit messages that look like completed deck edits
 - For every local deck/* branch, run `git merge-base --is-ancestor <branch> origin/main`.
 - If that returns false, the branch is an unpublished candidate until it is merged, ported, or explicitly blocked.
+- Do not manually maintain the candidate list from memory. Use `tools/audit_deck_publish_candidates.ps1` as the mechanical source of the branch universe, then add human judgment for classification.
 - Do not rely on the app status dot, worktree existence, branch name, or merge status alone.
 - Before DONE, the count of clean or non-checked-out local deck/* branches not contained in origin/main must be zero unless each remaining branch is listed under BLOCKED / CONFLICTS / NOT VERIFIED with evidence.
 - Report the exact unpublished-branch audit line, for example: `UNPUBLISHED_LOCAL_DECK_REFS=0`.
+- If `UNPUBLISHED_LOCAL_DECK_REFS` is not zero at the final audit, DONE is allowed only when every remaining branch name from the audit appears in the report under BLOCKED, CONFLICTS, NOT VERIFIED, SKIPPED / NEEDS REVIEW, or ALREADY LIVE with exact evidence and next action.
 
 FAILED-EDIT PHRASE TRACE
 - If Dave names old visible text, new visible text, a screenshot, or says "didn't I ask you to change/move/delete this", do not rely on branch names.
@@ -66,13 +70,16 @@ BRANCH INVENTORY
 - If a branch conflicts, abort that merge and list it under CONFLICTS. Do not fix it unless Dave asked for that branch specifically.
 
 PUBLISH-READINESS EVIDENCE
-- Prefer a branch final report containing PUBLISH TRACE / INTEGRATION NOTE.
+- Prefer a commit body or branch final report containing PUBLISH TRACE / INTEGRATION NOTE.
 - If the branch has no publish-readable final report, infer intent from:
   commit message
+  `git log -1 --format=%B <branch>`
   `git diff $(git merge-base main <branch>) <branch> -- GnR_deck.html`
   changed selectors, visible text, slide IDs, registry keys, JS functions, and assets
   active-source presence in current main
 - For every published branch, verify the branch intent in current main after merge or port. For visual/layout changes, verify the exact selector/property or rendered visible result.
+- For every completed clean branch without PUBLISH TRACE, record `MISSING_PUBLISH_TRACE` in the report but do not use that alone as a reason to skip it. Infer and verify the visible intent yourself.
+- For every branch marked integrated with `ours`, include `OURS_AFTER_INTENT_VERIFIED` and name the verified text/selector/registry marker. Never use `ours` as a shortcut to make an unresolved branch disappear.
 
 MIRROR + VERIFY
 - After accepted merges, copy GnR_deck.html to index.html.
@@ -80,6 +87,8 @@ MIRROR + VERIFY
 - Run git diff --check.
 - If `SLIDE_ORDER` changed in this publish pass, run `tools/verify_slide_order_guard.ps1 -BaseRef origin/main -TargetRef WORKTREE` before commit. If any removed slide is not explicitly authorized, restore it before commit or report BLOCKED.
 - In CHECKS, report `SLIDE_ORDER_GUARD=PASS` or the exact unauthorized removed slides.
+- Before committing and before reporting DONE, rerun `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"`.
+- After push, rerun the audit against `origin/main` or run `git fetch origin main` followed by the audit. Report `UNPUBLISHED_LOCAL_DECK_REFS` and explain every nonzero row.
 - Commit publish changes on main.
 - Push only when Dave explicitly asked to publish.
 

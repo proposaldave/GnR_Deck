@@ -66,11 +66,23 @@ SELF-CORRECTION LOOP
 - Do not keep guessing.
 
 COMMIT
-- Commit message: deck: [short task name]
+- Commit message subject: deck: [short task name]
+- Commit message body must include a publish-readable `PUBLISH TRACE` block with:
+  request slug
+  active slide ID or registry slot
+  exact visible text markers changed
+  exact CSS selectors/properties changed for layout or positioning edits
+  exact registry keys changed for slide order, alts, trash, appendix, or staff order
+  ADDED_SLIDES and REMOVED_SLIDES if SLIDE_ORDER changed
+  exact asset paths added or changed
+  source verification command/result
+  visual QA method/result when required
+- If the edit is a no-op because the requested result was already active and visible, still create an empty commit with a PUBLISH TRACE proving that result.
 - Working tree must be clean after commit.
 
 PUBLISH TRACE
 - The final response must leave publish-readable evidence so Publish Control can verify and publish the branch without Dave re-explaining the request.
+- The commit body must also leave publish-readable evidence so Publish Control can recover the intent even if the chat final response is not available.
 - Include:
   request slug
   active slide ID or registry slot
@@ -92,6 +104,7 @@ HARD DONE RULE
   working tree is clean
   requested edit is verified against the active slide source
   visual/render verification passed when required
+  commit body contains PUBLISH TRACE
   nothing was pushed
 
 OUTPUT SECTIONS ONLY
