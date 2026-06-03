@@ -34956,6 +34956,8 @@ function getSlideEyebrowText(slideId) {
   // 1. Canonical class first (.slide-eyebrow)
   let eb = slide.querySelector('.slide-eyebrow');
   if (eb && eb.textContent.trim()) return eb.textContent.trim();
+  eb = slide.querySelector('.cco-eye');
+  if (eb && eb.textContent.trim()) return eb.textContent.trim();
   // 2. Standard inline pattern (top:28px / left:48px)
   eb = slide.querySelector('div[style*="top:28px"][style*="left:48px"]');
   if (eb && eb.textContent.trim()) return eb.textContent.trim();
@@ -34966,6 +34968,10 @@ function getSlideEyebrowText(slideId) {
   eb = slide.querySelector('div[style*="position:absolute"][style*="text-transform:uppercase"]');
   if (eb && eb.textContent.trim()) return eb.textContent.trim();
   return '';
+}
+
+function getDotTooltipText(slideId) {
+  return getSlideEyebrowText(slideId) || slideId || '';
 }
 
 // Materialize green-dot background review alts before nav/tooltips are built.
@@ -35062,13 +35068,22 @@ for (let i = 1; i <= TOTAL; i++) {
   const d = document.createElement('button');
   d.className = 'casey-dot' + (i === 1 ? ' on' : '');
   d.onclick = () => caseyGo(i);
-  // Tooltip — pulled live from the slide's eyebrow text (auto-syncs). Falls back to slideLabels[] then to "Slide N".
+  // Tooltip — pulled live from the target slide's eyebrow text so dot labels cannot drift.
   const tip = document.createElement('div');
-  const dynamicLabel = getSlideEyebrowText(SLIDE_ORDER[i - 1]);
-  tip.textContent = dynamicLabel || slideLabels[i] || ('Slide ' + i);
+  const primarySlideId = SLIDE_ORDER[i - 1];
+  tip.textContent = getDotTooltipText(primarySlideId);
+  d.title = tip.textContent;
+  d.onmouseenter = () => {
+    tip.textContent = getDotTooltipText(primarySlideId);
+    d.title = tip.textContent;
+  };
   // [Dave 2026-05-08] Tooltip now opens LEFTWARD (to the left of the dot, away from the right viewport edge). Was 'bottom:28px;left:50%;transform:translateX(-50%)' which centered above the dot — with vertical nav at right edge, that clipped the tooltip text.
   tip.style.cssText = 'position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);white-space:nowrap;font-family:Manrope,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.5px;color:#f3ead8;background:rgba(20,20,30,0.92);border:1px solid rgba(212,168,83,0.32);padding:5px 11px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity 0.2s;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.18)';
-  wrap.onmouseenter = () => { tip.style.opacity = '1'; };
+  wrap.onmouseenter = () => {
+    tip.textContent = getDotTooltipText(primarySlideId);
+    d.title = tip.textContent;
+    tip.style.opacity = '1';
+  };
   wrap.onmouseleave = () => { tip.style.opacity = '0'; };
   wrap.appendChild(d);
   wrap.appendChild(tip);
@@ -35112,8 +35127,16 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isBlackAlt = (altId === 'cs-magnetic-orig' || altId === 'cs-1m8-black-backup' || altId === 'cs-11d-black-backup');
     altDot.className = 'casey-dot alt' + (isGreenAlt ? ' locked' : (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isBlackAlt ? ' black-alt' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : (isWhiteAlt ? ' white-alt' : ''))))))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
-    const altLabel = getSlideEyebrowText(altId);
-    altDot.title = altLabel ? (altLabel + ' (' + getAltLabel(i + 1) + ' for slide ' + pos + ')') : (altId + ' (' + getAltLabel(i + 1) + ' for slide ' + pos + ')');
+    altDot.title = getDotTooltipText(altId);
+    altDot.onmouseenter = () => {
+      const label = getDotTooltipText(altId);
+      const primaryTip = wrap.querySelector('div');
+      altDot.title = label;
+      if (primaryTip) {
+        primaryTip.textContent = label;
+        primaryTip.style.opacity = '1';
+      }
+    };
     // [Dave 2026-05-09 LATER] Alt dots anchor the RIGHTMOST dot for every row regardless of alt count, then extend leftward. This keeps the rightmost-dot column visually consistent across rows with different numbers of alts (1-alt row, 3-alt row, 6-alt row all share the same right edge — only the left tail varies). Replaces the earlier centering-around-column-31 approach which made each row line up differently. Per Dave: 'everything here needs to be centered/aligned'.
     altDot.style.right = (20 + i * 15) + 'px';
     altDot.onclick = (e) => {
