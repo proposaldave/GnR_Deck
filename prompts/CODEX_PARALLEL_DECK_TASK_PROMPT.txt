@@ -69,11 +69,14 @@ COMMIT
 - Commit message subject: deck: [short task name]
 - Commit message body must include a publish-readable `PUBLISH TRACE` block with:
   request slug
+  publish bucket hint: `publish_now`, `port_if_stale`, or `needs_explicit_review`
+  safe-to-port-if-stale: yes/no, with reason
   active slide ID or registry slot
   exact visible text markers changed
   exact CSS selectors/properties changed for layout or positioning edits
   exact registry keys changed for slide order, alts, trash, appendix, or staff order
   ADDED_SLIDES and REMOVED_SLIDES if SLIDE_ORDER changed
+  explicit authorization evidence for every removed active slide ID, if any
   exact asset paths added or changed
   source verification command/result
   visual QA method/result when required
@@ -85,16 +88,21 @@ PUBLISH TRACE
 - The commit body must also leave publish-readable evidence so Publish Control can recover the intent even if the chat final response is not available.
 - Include:
   request slug
+  publish bucket hint: `publish_now`, `port_if_stale`, or `needs_explicit_review`
+  safe-to-port-if-stale: yes/no, with reason
   active slide ID or registry slot
   exact visible text markers changed
   exact CSS selectors/properties changed for layout or positioning edits
   exact registry keys changed for slide order, alts, trash, appendix, or staff order
   ADDED_SLIDES and REMOVED_SLIDES if SLIDE_ORDER changed
+  explicit authorization evidence for every removed active slide ID, if any
   exact asset paths added or changed
   source verification command/result
   visual QA method/result when required
 - For visual/layout/copy-positioning edits, do not say only "visual QA passed." Name the active slide ID and the selector/property or rendered element position that passed.
 - If the edit request changes two visible elements, list both elements in the acceptance contract and verification note. Do not report DONE after verifying only one of them.
+- If the edit request deletes, trashes, moves to appendix, or removes a slide/alt/staff item, quote Dave's exact removal instruction in the PUBLISH TRACE. Without that evidence, Publish Control must block the branch.
+- If the edit is small and mechanical, explicitly set `safe-to-port-if-stale: yes` and name the exact text/selector/registry marker Publish Control should verify after porting.
 - Make the branch name and commit message specific enough that Publish Control can match the branch to Dave's request.
 
 HARD DONE RULE

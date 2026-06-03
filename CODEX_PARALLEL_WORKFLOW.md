@@ -9,7 +9,9 @@
 5. The session creates `deck/[short-task-name]`, commits, and does not push.
 6. The session reports `DONE` only after active-source verification and required rendered/visual verification pass.
 7. The session leaves a publish-readable `PUBLISH TRACE`: request slug, active slide ID, changed visible text, changed selectors/properties, changed registry keys, asset paths, source verification, and visual QA result.
-8. The commit body must also contain the same `PUBLISH TRACE`. Publish Control cannot rely on the app chat transcript being available later.
+8. The `PUBLISH TRACE` must include a publish bucket hint (`publish_now`, `port_if_stale`, or `needs_explicit_review`) and `safe-to-port-if-stale: yes/no`.
+9. Delete/trash/appendix/move requests must quote Dave's exact removal instruction in the `PUBLISH TRACE`.
+10. The commit body must also contain the same `PUBLISH TRACE`. Publish Control cannot rely on the app chat transcript being available later.
 
 ## Active Source Contract
 
@@ -62,7 +64,13 @@ A solid status dot in the Codex app means the worktree session is done. Publish 
 Before declaring a publish pass done, run a completed-session audit: compare `git worktree list --porcelain`, all local `refs/heads/deck/*` branches, merge status against `origin/main`, branch commit messages, and current `main`. Every completed candidate must be merged, ported, or blocked with evidence. Do not leave completed work behind under a generic skipped label.
 
 Mechanical audit gate:
-Publish Control must run `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"` at the start and end of every publish pass. The output line `UNPUBLISHED_LOCAL_DECK_REFS=N` is not advisory; it is the checklist size. If `N` is nonzero at the end, every remaining branch from the CSV must appear in the final report with one of these states: `CONFLICTS`, `NOT VERIFIED`, `SKIPPED / NEEDS REVIEW`, `BLOCKED`, or `ALREADY LIVE`. A final report that omits any CSV branch is invalid.
+Publish Control must run `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"` at the start and end of every publish pass. The output line `UNPUBLISHED_LOCAL_DECK_REFS=N` is not advisory; it is the checklist size. The audit also reports `PUBLISH_NOW_CANDIDATES`, `PORT_OR_CONFLICT_REVIEW`, `RISKY_OR_DELETE_BLOCKED`, `DIRTY_WORKTREE_BLOCKED`, and `BROKEN_REF_OR_MERGE_BASE`.
+
+Zero-safe-left gate:
+Before `DONE`, `PUBLISH_NOW_CANDIDATES` must be zero. Publish Control must also prove every `PORT_OR_CONFLICT_REVIEW` branch received a branch-specific intent extraction attempt. If the intent is tiny and clear, port it and mark the source branch integrated only after verification. If it cannot be safely ported, the branch must have a one-line blocker and next action. A final report that merely says many branches were blocked is invalid.
+
+Unresolved ledger:
+If `UNPUBLISHED_LOCAL_DECK_REFS` is nonzero at the end, every remaining branch from the CSV must appear in an unresolved ledger with: branch, publish bucket, mergeability, worktree status, exact blocker, and exact next action. A final report that omits any CSV branch is invalid.
 
 Unpublished-local-branch rule:
 `git worktree list --porcelain` is not enough. A finished branch can exist without a checked-out worktree. Before `DONE`, prove `UNPUBLISHED_LOCAL_DECK_REFS=0` for local `deck/*` branches not contained in `origin/main`, or list every remaining branch under `BLOCKED`, `CONFLICTS`, or `NOT VERIFIED` with the next action.

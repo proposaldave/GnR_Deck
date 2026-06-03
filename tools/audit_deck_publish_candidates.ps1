@@ -25,6 +25,55 @@ function Test-Ancestor {
   return ($LASTEXITCODE -eq 0)
 }
 
+function Get-Mergeability {
+  param(
+    [string]$Base,
+    [string]$Branch,
+    [string]$MergeBase
+  )
+
+  if (-not $MergeBase -or $MergeBase -eq "BROKEN") {
+    return "broken"
+  }
+
+  & git merge-tree --write-tree --merge-base $MergeBase $Base $Branch *> $null
+  if ($LASTEXITCODE -eq 0) {
+    return "clean"
+  }
+  return "conflict"
+}
+
+function Get-PublishBucket {
+  param(
+    [bool]$ContainedInBase,
+    [string]$WorktreeStatus,
+    [string]$Mergeability,
+    [string[]]$RiskFlags
+  )
+
+  if ($ContainedInBase) {
+    return "already_integrated"
+  }
+  if ($WorktreeStatus -eq "dirty") {
+    return "dirty_worktree_blocked"
+  }
+
+  $hasRisk = @($RiskFlags).Count -gt 0
+  if ($Mergeability -eq "clean" -and -not $hasRisk) {
+    return "publish_now"
+  }
+  if ($Mergeability -eq "clean" -and $hasRisk) {
+    return "risky_clean_needs_review"
+  }
+  if ($Mergeability -eq "conflict" -and -not $hasRisk) {
+    return "port_or_conflict_review"
+  }
+  if ($Mergeability -eq "conflict" -and $hasRisk) {
+    return "risky_conflict_blocked"
+  }
+  return "broken_ref_or_merge_base"
+}
+
 $worktreeByBranch = @{}
 $currentWorktree = $null
 foreach ($line in (GitLines @("worktree", "list", "--porcelain"))) {
@@ -92,6 +141,16 @@ foreach ($line in $branchLines) {
   if ($diff -match "TRASH_ORDER") { $riskFlags += "changes_TRASH_ORDER" }
   if ($diff -match "data-deleted") { $riskFlags += "marks_deleted" }
 
+  $mergeability = "contained"
+  if (-not $isAncestor) {
+    $mergeability = Get-Mergeability -Base $BaseRef -Branch $branch -MergeBase $mergeBase
+  }
+  $publishBucket = Get-PublishBucket `
+    -ContainedInBase $isAncestor `
+    -WorktreeStatus $worktreeStatus `
+    -Mergeability $mergeability `
+    -RiskFlags $riskFlags
+
   $commitBody = ""
   try {
     $commitBody = GitText @("log", "-1", "--format=%B", $branch)
@@ -108,6 +167,8 @@ foreach ($line in $branchLines) {
     CommitDate = $date
     Subject = $subject
     MergeBase = $mergeBase
+    Mergeability = $mergeability
+    PublishBucket = $publishBucket
     FilesTouched = ($files -join ";")
     HasPublishTrace = ($commitBody -match "PUBLISH TRACE")
     ChangesSlideOrder = ($diff -match "SLIDE_ORDER")
@@ -118,8 +179,18 @@ foreach ($line in $branchLines) {
 }
 
 $unpublished = @($rows | Where-Object { -not $_.ContainedInBase })
+$publishNow = @($unpublished | Where-Object { $_.PublishBucket -eq "publish_now" })
+$portOrReview = @($unpublished | Where-Object { $_.PublishBucket -eq "port_or_conflict_review" })
+$riskyBlocked = @($unpublished | Where-Object { $_.PublishBucket -in @("risky_clean_needs_review", "risky_conflict_blocked") })
+$dirtyBlocked = @($unpublished | Where-Object { $_.PublishBucket -eq "dirty_worktree_blocked" })
+$broken = @($unpublished | Where-Object { $_.PublishBucket -eq "broken_ref_or_merge_base" })
 "UNPUBLISHED_LOCAL_DECK_REFS=$($unpublished.Count)"
-$rows | Sort-Object ContainedInBase, CommitDate -Descending | Format-Table Branch, ContainedInBase, WorktreeStatus, Head, Subject, RiskFlags -AutoSize
+"PUBLISH_NOW_CANDIDATES=$($publishNow.Count)"
+"PORT_OR_CONFLICT_REVIEW=$($portOrReview.Count)"
+"RISKY_OR_DELETE_BLOCKED=$($riskyBlocked.Count)"
+"DIRTY_WORKTREE_BLOCKED=$($dirtyBlocked.Count)"
+"BROKEN_REF_OR_MERGE_BASE=$($broken.Count)"
+$rows | Sort-Object ContainedInBase, CommitDate -Descending | Format-Table Branch, ContainedInBase, WorktreeStatus, Mergeability, PublishBucket, Head, Subject, RiskFlags -AutoSize
 
 if ($CsvPath) {
   $rows | Export-Csv -NoTypeInformation -Path $CsvPath

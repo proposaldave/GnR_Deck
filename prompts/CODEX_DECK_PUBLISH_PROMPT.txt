@@ -16,6 +16,7 @@ START CHECKS
 - Run git branch --show-current, git status --short, git remote -v, git log --oneline --decorate -20, and git worktree list.
 - Run `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"` before making publish decisions.
 - Treat the audit CSV as the required publish ledger for this run. Every row where `ContainedInBase=False` must end as merged, ported, already live, conflict, not verified, risky/delete/trash blocked, unrelated, or dirty worktree blocked.
+- The audit output includes `PUBLISH_NOW_CANDIDATES`, `PORT_OR_CONFLICT_REVIEW`, `RISKY_OR_DELETE_BLOCKED`, `DIRTY_WORKTREE_BLOCKED`, and `BROKEN_REF_OR_MERGE_BASE`. These are publish-control gates, not status decoration.
 - Confirm local HEAD, origin/main, and remote main.
 - If main is dirty, identify every dirty file.
 - If dirty work is unrelated, preserve it on preserve/[file-purpose]-local-change before cleaning main.
@@ -33,8 +34,22 @@ BRANCH UNIVERSE
 - Do not manually maintain the candidate list from memory. Use `tools/audit_deck_publish_candidates.ps1` as the mechanical source of the branch universe, then add human judgment for classification.
 - Do not rely on the app status dot, worktree existence, branch name, or merge status alone.
 - Before DONE, the count of clean or non-checked-out local deck/* branches not contained in origin/main must be zero unless each remaining branch is listed under BLOCKED / CONFLICTS / NOT VERIFIED with evidence.
-- Report the exact unpublished-branch audit line, for example: `UNPUBLISHED_LOCAL_DECK_REFS=0`.
-- If `UNPUBLISHED_LOCAL_DECK_REFS` is not zero at the final audit, DONE is allowed only when every remaining branch name from the audit appears in the report under BLOCKED, CONFLICTS, NOT VERIFIED, SKIPPED / NEEDS REVIEW, or ALREADY LIVE with exact evidence and next action.
+- Report the exact unpublished-branch audit lines, including `UNPUBLISHED_LOCAL_DECK_REFS=N` and `PUBLISH_NOW_CANDIDATES=N`.
+- Hard gate: do not report `DONE` while `PUBLISH_NOW_CANDIDATES` is greater than zero. Merge those branches before final output.
+- Hard gate: do not report `DONE` while any `PORT_OR_CONFLICT_REVIEW` branch has not received a branch-specific intent extraction attempt. For each one, either port its tiny visible intent, or list the exact selector/text/registry conflict that prevents safe porting.
+- If `UNPUBLISHED_LOCAL_DECK_REFS` is not zero at the final audit, the run may finish only when every remaining branch name from the audit appears in a persistent unresolved ledger and in the final report bucket summary with exact state and next action.
+- The final state must prove `ZERO_SAFE_OR_PORTABLE_LEFT=True`, meaning there are no remaining `publish_now` branches and no unexamined `port_or_conflict_review` branches.
+
+PUBLISH QUEUE GATE
+- This is an integration loop, not a one-pass summary.
+- Process branches in this order:
+  1. `publish_now`: direct merge, verify, mirror, and later push.
+  2. `port_or_conflict_review`: inspect diff from merge-base; if the visible intent is small and clear, port it surgically, verify, then mark the branch integrated with `ours`; if not clear, record exact blocker.
+  3. `risky_clean_needs_review` and `risky_conflict_blocked`: block unless Dave explicitly requested the exact delete/trash/slide-order action in the current publish request or the branch commit body contains explicit authorization for the removed active slide IDs.
+  4. `dirty_worktree_blocked` and `broken_ref_or_merge_base`: block with exact branch/path/ref reason.
+- Do not leave a `publish_now` branch behind because there are many branches.
+- Do not leave a tiny copy/CSS/asset/registry intent behind just because direct merge conflicts. Port it if the intent is unambiguous and active-source safe.
+- Create or update `publish_audit_unpublished.csv` only as a local audit artifact unless Dave explicitly asks to commit it.
 
 FAILED-EDIT PHRASE TRACE
 - If Dave names old visible text, new visible text, a screenshot, or says "didn't I ask you to change/move/delete this", do not rely on branch names.
@@ -59,6 +74,7 @@ BRANCH INVENTORY
 - If a branch is not checked out but is a local deck/* branch not contained in origin/main, inspect it exactly like a checked-out worktree branch.
 - If a branch is stale and a direct merge would remove newer live work, do not skip it. Port only its visible intent to current main, verify the active source/render result, then mark the branch integrated with an `ours` merge.
 - If a branch intent is small and mechanical, such as CSS position, copy, order, or registry changes, do not leave it unpublished because the branch is stale. Port the tiny intent and verify it.
+- If a branch requested multiple visible edits, all visible intents must be merged or ported before marking the branch integrated. Partial branch integration is a publish failure unless the unported part is listed under BLOCKED with the exact reason.
 - Prefer branches whose final report or commit evidence indicates active-slide verification.
 - Do not publish branches that appear to edit inactive variants without active-source/render verification; either port the intent to the active source when obvious or report BLOCKED.
 - Do not blindly merge delete/trash/risky branches; if Dave clearly requested that finished branch, apply the deletion/trash intent surgically to current main or report BLOCKED.
@@ -80,6 +96,9 @@ PUBLISH-READINESS EVIDENCE
 - For every published branch, verify the branch intent in current main after merge or port. For visual/layout changes, verify the exact selector/property or rendered visible result.
 - For every completed clean branch without PUBLISH TRACE, record `MISSING_PUBLISH_TRACE` in the report but do not use that alone as a reason to skip it. Infer and verify the visible intent yourself.
 - For every branch marked integrated with `ours`, include `OURS_AFTER_INTENT_VERIFIED` and name the verified text/selector/registry marker. Never use `ours` as a shortcut to make an unresolved branch disappear.
+- For every branch that remains unresolved, record a one-line ledger entry:
+  branch | bucket | mergeability | worktree status | exact blocker | exact next action
+- The unresolved ledger is the handoff for the next publish pass. Do not rely on Dave to re-identify these branches from screenshots.
 
 MIRROR + VERIFY
 - After accepted merges, copy GnR_deck.html to index.html.
@@ -89,6 +108,7 @@ MIRROR + VERIFY
 - In CHECKS, report `SLIDE_ORDER_GUARD=PASS` or the exact unauthorized removed slides.
 - Before committing and before reporting DONE, rerun `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"`.
 - After push, rerun the audit against `origin/main` or run `git fetch origin main` followed by the audit. Report `UNPUBLISHED_LOCAL_DECK_REFS` and explain every nonzero row.
+- After push, `PUBLISH_NOW_CANDIDATES` must be zero. If it is nonzero, continue the publish loop instead of reporting DONE.
 - Commit publish changes on main.
 - Push only when Dave explicitly asked to publish.
 
@@ -106,12 +126,17 @@ LIVE CHECK
 OUTPUT SECTIONS ONLY
 DONE
 CURRENT REPO STATE
+PUBLISH QUEUE
 MERGED AND LIVE
+PORTED AND LIVE
+ALREADY LIVE
 SKIPPED / NEEDS REVIEW
 CONFLICTS
 NOT VERIFIED
+UNRESOLVED LEDGER
 MIRRORED
 CHECKS
 PUSH
 LIVE
 BLOCKED
+NEXT
