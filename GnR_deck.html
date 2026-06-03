@@ -153,6 +153,361 @@
   #cs-club-anti-dupr .adu-mid-copy { font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,.58); line-height:1.55; }
 </style>
 
+<!-- ===== referral business model slides [Codex 2026-06-02] ===== -->
+<style>
+  #cs-referral-business-model,
+  #cs-business-model-options,
+  #cs-market-two-economics {
+    background:#f3ead8 !important;
+    color:#1a1612;
+    overflow:hidden;
+    position:relative;
+    min-height:1080px;
+    height:1080px;
+    width:100%;
+  }
+  .rbm-eye {
+    position:absolute;
+    top:28px;
+    left:48px;
+    z-index:12;
+    font-family:'Manrope',sans-serif;
+    font-size:.58rem;
+    line-height:1;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#c8462c;
+  }
+  .rbm-stage {
+    position:absolute;
+    inset:0;
+    z-index:2;
+    box-sizing:border-box;
+    padding:90px 82px 58px;
+  }
+  #cs-referral-business-model.active .rbm-stage,
+  #cs-referral-business-model.active .rbm-stage *,
+  #cs-business-model-options.active .rbm-stage,
+  #cs-business-model-options.active .rbm-stage *,
+  #cs-market-two-economics.active .rbm-stage,
+  #cs-market-two-economics.active .rbm-stage * {
+    opacity:1 !important;
+    transform:none !important;
+  }
+  .rbm-title {
+    margin:0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(3.0rem,4.75vw,5.35rem);
+    line-height:1.02;
+    font-weight:900;
+    letter-spacing:0;
+    color:#1a1612;
+    text-wrap:balance;
+  }
+  .rbm-title em { color:#b8954a; font-style:italic; }
+  .rbm-sub {
+    margin:20px 0 0;
+    max-width:920px;
+    font-family:'Manrope',sans-serif;
+    font-size:clamp(1.02rem,1.45vw,1.35rem);
+    line-height:1.32;
+    font-weight:760;
+    color:rgba(26,22,18,.70);
+  }
+  .rbm-kicker {
+    font-family:'Manrope',sans-serif;
+    font-size:.68rem;
+    font-weight:900;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#b8954a;
+    margin-bottom:16px;
+  }
+  .rbm-card {
+    background:rgba(251,247,239,.78);
+    border:1px solid rgba(184,149,74,.34);
+    border-radius:8px;
+    box-shadow:0 20px 58px rgba(26,22,18,.08);
+    color:#1a1612;
+  }
+  #cs-referral-business-model .rbm-stage {
+    display:grid;
+    grid-template-columns:.86fr 1.14fr;
+    gap:42px;
+    align-items:center;
+  }
+  .rbm-loop {
+    position:relative;
+    height:720px;
+    isolation:isolate;
+  }
+  .rbm-loop::before {
+    content:"";
+    position:absolute;
+    inset:38px;
+    border:1.5px solid rgba(184,149,74,.30);
+    border-radius:18px;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(184,149,74,.18) 0 112px, rgba(184,149,74,.06) 113px 214px, transparent 215px),
+      repeating-linear-gradient(90deg, rgba(91,143,212,.08) 0 1px, transparent 1px 112px),
+      repeating-linear-gradient(0deg, rgba(184,149,74,.12) 0 1px, transparent 1px 86px),
+      rgba(251,247,239,.62);
+    box-shadow:inset 0 0 0 18px rgba(251,247,239,.35),0 32px 86px rgba(26,22,18,.12);
+  }
+  .rbm-core {
+    position:absolute;
+    left:50%;
+    top:50%;
+    z-index:5;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-align:center;
+    background:#1a1612;
+    color:#fbf7ef;
+    box-shadow:0 26px 80px rgba(26,22,18,.23),0 0 0 20px rgba(184,149,74,.13),0 0 0 54px rgba(251,247,239,.30);
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:2.2rem;
+    font-weight:900;
+  }
+  .rbm-core small {
+    font-family:'Manrope',sans-serif;
+    font-size:.58rem;
+    font-weight:900;
+    letter-spacing:.20em;
+    text-transform:uppercase;
+    color:#f1d788;
+  }
+  .rbm-node {
+    position:absolute;
+    z-index:6;
+    width:248px;
+    min-height:106px;
+    padding:20px 22px;
+    border-left:5px solid #b8954a;
+  }
+  .rbm-node b {
+    display:block;
+    font-family:'Manrope',sans-serif;
+    font-size:.67rem;
+    font-weight:900;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#c8462c;
+    margin-bottom:8px;
+  }
+  .rbm-node span {
+    display:block;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.45rem;
+    line-height:1.04;
+    font-weight:850;
+  }
+  .rbm-n1 { left:36px; top:84px; border-left-color:#5B8FD4; }
+  .rbm-n2 { right:28px; top:142px; }
+  .rbm-n3 { right:46px; bottom:116px; border-left-color:#c8462c; }
+  .rbm-n4 { left:54px; bottom:92px; }
+  .rbm-arrow {
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:690px;
+    height:360px;
+    transform:translate(-50%,-50%);
+    border:2px solid rgba(184,149,74,.62);
+    border-left-color:rgba(91,143,212,.54);
+    border-bottom-color:rgba(200,70,44,.54);
+    border-radius:50%;
+    z-index:2;
+  }
+  .rbm-proof {
+    position:absolute;
+    left:50%;
+    bottom:30px;
+    transform:translateX(-50%);
+    width:min(740px,78%);
+    padding:14px 20px;
+    border-left:5px solid #c8462c;
+    background:rgba(251,247,239,.92);
+    font-family:'Manrope',sans-serif;
+    font-size:.96rem;
+    line-height:1.25;
+    font-weight:900;
+    text-align:center;
+  }
+  #cs-business-model-options .rbm-stage {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .rbm-options {
+    margin-top:44px;
+    width:min(1540px,88vw);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .rbm-option {
+    position:relative;
+    min-height:520px;
+    padding:32px 30px 28px;
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .rbm-option.recommended {
+    border-color:rgba(200,70,44,.52);
+    box-shadow:0 28px 80px rgba(200,70,44,.12);
+  }
+  .rbm-option .tag {
+    width:max-content;
+    padding:8px 12px;
+    border-radius:6px;
+    background:#1a1612;
+    color:#fbf7ef;
+    font-family:'Manrope',sans-serif;
+    font-size:.62rem;
+    font-weight:900;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+  .rbm-option h2 {
+    margin:0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:2.55rem;
+    line-height:1.02;
+    font-weight:900;
+    letter-spacing:0;
+    color:#1a1612;
+  }
+  .rbm-option p {
+    margin:0;
+    font-family:'Manrope',sans-serif;
+    font-size:1.05rem;
+    line-height:1.34;
+    font-weight:760;
+    color:rgba(26,22,18,.70);
+  }
+  .rbm-metrics {
+    margin-top:auto;
+    display:grid;
+    gap:10px;
+  }
+  .rbm-metric {
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    padding-top:11px;
+    border-top:1px solid rgba(184,149,74,.30);
+    font-family:'Manrope',sans-serif;
+    font-size:.78rem;
+    font-weight:900;
+    letter-spacing:.10em;
+    text-transform:uppercase;
+    color:rgba(26,22,18,.62);
+  }
+  .rbm-metric b {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.42rem;
+    line-height:.92;
+    letter-spacing:0;
+    text-transform:none;
+    color:#c8462c;
+  }
+  #cs-market-two-economics .rbm-stage {
+    display:grid;
+    grid-template-columns:.82fr 1.18fr;
+    gap:46px;
+    align-items:center;
+  }
+  .rbm-econ {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+  }
+  .rbm-market {
+    min-height:540px;
+    padding:30px 32px;
+    text-align:left;
+    border-top:7px solid #5B8FD4;
+  }
+  .rbm-market.connection { border-top-color:#c8462c; }
+  .rbm-market h2 {
+    margin:0 0 18px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:2.55rem;
+    line-height:1.02;
+    font-weight:900;
+    color:#1a1612;
+  }
+  .rbm-market p {
+    margin:0;
+    font-family:'Manrope',sans-serif;
+    font-size:1.02rem;
+    line-height:1.32;
+    font-weight:760;
+    color:rgba(26,22,18,.68);
+  }
+  .rbm-stat {
+    margin:30px 0 18px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:5.4rem;
+    line-height:.9;
+    font-weight:900;
+    color:#5B8FD4;
+  }
+  .rbm-market.connection .rbm-stat { color:#c8462c; }
+  .rbm-list {
+    margin-top:28px;
+    display:grid;
+    gap:13px;
+  }
+  .rbm-list div {
+    display:grid;
+    grid-template-columns:28px 1fr;
+    gap:12px;
+    font-family:'Manrope',sans-serif;
+    font-size:.95rem;
+    line-height:1.24;
+    font-weight:850;
+    color:#1a1612;
+  }
+  .rbm-list div:before {
+    content:"";
+    width:10px;
+    height:10px;
+    margin-top:.36em;
+    border-radius:50%;
+    background:#b8954a;
+  }
+  .rbm-bottom {
+    position:absolute;
+    left:82px;
+    right:82px;
+    bottom:36px;
+    padding-top:18px;
+    border-top:1px solid rgba(184,149,74,.36);
+    display:flex;
+    justify-content:space-between;
+    gap:28px;
+    font-family:'Manrope',sans-serif;
+    font-size:.86rem;
+    font-weight:900;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:#b8954a;
+  }
+</style>
+
 <style>
   /* [Dave 2026-05-15] iPad / iOS Safari polish — added with the rest of the audit pass:
      • Tap-highlight: kill the gray flash on every tap (looked twitchy on cards/nav).
@@ -14419,6 +14774,107 @@ window.cs1m7Reverse = function() {
         <span class="club-build-chip hot">compounding community value</span>
         <span class="club-build-chip">autonomous fills</span>
       </div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-referral-business-model">
+  <div class="rbm-eye">business model wedge</div>
+  <section class="rbm-stage">
+    <div>
+      <div class="rbm-kicker">What changed in the strategy</div>
+      <h1 class="rbm-title">The referral tool is not just a feature. <em>It is the sales engine.</em></h1>
+      <p class="rbm-sub">Start with events where skill does not matter: glow nights, social mixers, low-level community play, and pro-plus-three groups. The player invitation creates trust, the upfront payment creates intent, and GnR can monetize the transaction without asking the club to change its operating system on day one.</p>
+    </div>
+    <div class="rbm-loop" aria-label="Referral commerce loop">
+      <div class="rbm-arrow"></div>
+      <div class="rbm-core">GnR<small>referral commerce</small></div>
+      <div class="rbm-card rbm-node rbm-n1"><b>Member</b><span>Invites the friend they actually want there.</span></div>
+      <div class="rbm-card rbm-node rbm-n2"><b>Friend</b><span>Pays up front through the invite.</span></div>
+      <div class="rbm-card rbm-node rbm-n3"><b>Club</b><span>Fills courts with trusted top-of-funnel demand.</span></div>
+      <div class="rbm-card rbm-node rbm-n4"><b>Data</b><span>Every invite is a stronger social signal.</span></div>
+      <div class="rbm-proof">Immediate wedge: 10% transaction take-rate on paid social events, with referral rewards funded inside the flow.</div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-business-model-options">
+  <div class="rbm-eye">business model options</div>
+  <section class="rbm-stage">
+    <div class="rbm-kicker">Three monetization paths from the same product</div>
+    <h1 class="rbm-title">The right model starts as <em>payments plus proof.</em></h1>
+    <p class="rbm-sub" style="max-width:1040px;text-align:center">The transcript points to three possible businesses. The investor-ready answer: launch with the model that captures money when the club gets revenue, keep the platform subscription as the durable B2B layer, and let the community-builder network become the breakout expansion path.</p>
+    <div class="rbm-options">
+      <div class="rbm-card rbm-option recommended">
+        <div class="tag">Recommended first</div>
+        <h2>Referral commerce take-rate</h2>
+        <p>GnR collects the event fee, pays the club, and keeps a percentage. Clean ROI: no filled court, no fee.</p>
+        <div class="rbm-metrics">
+          <div class="rbm-metric"><span>Revenue</span><b>~10%</b></div>
+          <div class="rbm-metric"><span>Buyer</span><b>club</b></div>
+          <div class="rbm-metric"><span>Why now</span><b>sales engine</b></div>
+        </div>
+      </div>
+      <div class="rbm-card rbm-option">
+        <div class="tag">Durable layer</div>
+        <h2>Club operating subscription</h2>
+        <p>Monthly software fee once the club sees events filling, referrals working, and social data compounding.</p>
+        <div class="rbm-metrics">
+          <div class="rbm-metric"><span>Revenue</span><b>$199+/mo</b></div>
+          <div class="rbm-metric"><span>Buyer</span><b>club</b></div>
+          <div class="rbm-metric"><span>Why later</span><b>retention</b></div>
+        </div>
+      </div>
+      <div class="rbm-card rbm-option">
+        <div class="tag">Breakout path</div>
+        <h2>Community-builder network</h2>
+        <p>Pros and magnetic members create events, invite their people, and earn rewards when they generate demand.</p>
+        <div class="rbm-metrics">
+          <div class="rbm-metric"><span>Revenue</span><b>shared take</b></div>
+          <div class="rbm-metric"><span>User</span><b>host</b></div>
+          <div class="rbm-metric"><span>Why big</span><b>viral</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-market-two-economics">
+  <div class="rbm-eye">market two economics</div>
+  <section class="rbm-stage">
+    <div>
+      <div class="rbm-kicker">Why this can be bigger than the current court-fill product</div>
+      <h1 class="rbm-title">There are 100x more casual players than rating-obsessed regulars.</h1>
+      <p class="rbm-sub">Market one is the existing high-frequency player looking for best play. Market two is the casual social player who wants a trusted, fun reason to show up. Referrals turn market two from an advertising problem into a network problem.</p>
+    </div>
+    <div class="rbm-econ">
+      <div class="rbm-card rbm-market">
+        <div class="rbm-kicker">Market one</div>
+        <h2>Find my best play</h2>
+        <div class="rbm-stat">60/wk</div>
+        <p>Current NEPC invite volume proves demand, but the user is more price-sensitive and the matching problem is harder.</p>
+        <div class="rbm-list">
+          <div>Skill-fit constraints</div>
+          <div>Higher coordination complexity</div>
+          <div>Data-rich long-term roadmap</div>
+        </div>
+      </div>
+      <div class="rbm-card rbm-market connection">
+        <div class="rbm-kicker">Market two</div>
+        <h2>Come have fun with us</h2>
+        <div class="rbm-stat">100x</div>
+        <p>Community events do not need perfect matchmaking. Trust comes from the friend, demand comes from the network, and the club gets new people in the building.</p>
+        <div class="rbm-list">
+          <div>Lower software complexity</div>
+          <div>Referral-driven acquisition</div>
+          <div>Payments and rewards built in</div>
+        </div>
+      </div>
+    </div>
+    <div class="rbm-bottom">
+      <span>lower CAC through trusted invites</span>
+      <span>upfront payment proves intent</span>
+      <span>social data compounds into the long-term graph</span>
     </div>
   </section>
 </div>
@@ -32901,6 +33357,9 @@ const SLIDE_ORDER = [
   'cs-pb-silliness-feature',
   'cs-club-os',
   'cs-club-social-loop',
+  'cs-referral-business-model',
+  'cs-business-model-options',
+  'cs-market-two-economics',
   // [Codex 2026-05-29] cs-pb-silliness-scroll moved to TRASH_ORDER per Dave screenshot delete request. HTML remains as rollback source.
   // [Codex 2026-05-29] cs-pb-silliness-dupr removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
