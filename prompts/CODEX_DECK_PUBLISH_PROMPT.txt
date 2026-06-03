@@ -58,7 +58,9 @@ FAILED-EDIT PHRASE TRACE
   `git grep -n -i "<visible phrase>" <branch> -- GnR_deck.html`
   `git diff $(git merge-base main <branch>) <branch> -- GnR_deck.html`
 - A branch that contains the requested replacement or removes the old phrase is a publish candidate even if it is not checked out and even if the branch name does not mention the phrase.
-- If the intent is a tiny copy/layout/registry change, port it to current main, verify old text absent/new text present or selector/registry updated, then mark the source branch integrated.
+- If the intent is a tiny copy/layout/registry change, port it to current main, verify old text absent/new text present in the exact active selector/DOM line, then mark the source branch integrated.
+- Do not pass failed-edit verification by finding the replacement elsewhere in the same slide, a top-left eyebrow, an alt, a hidden duplicate, a comment, an appendix block, or an inactive retained block.
+- If the old visible text remains in the original active selector/DOM line, the edit is not live, even if the replacement appears somewhere else.
 
 BRANCH INVENTORY
 - List all local deck/* branches.
@@ -69,6 +71,7 @@ BRANCH INVENTORY
 - For each completed-session branch, do one of three things: merge it cleanly, port the requested intent onto current main when a direct merge would roll back newer live work, or report BLOCKED with the exact conflict/risk and next action.
 - For every branch not published, report the branch and the blocker. Do not use "skipped" as a final state for completed work unless the blocker is explicit and actionable.
 - For every completed-session branch, inspect the branch diff from its merge-base, not just branch name or merge status. Extract the visible text, slide IDs, CSS selectors, JS functions, assets, and registry entries it intended to change.
+- For visible text changes, extract the exact selector/DOM line that rendered the old visible text before the branch and verify that same active selector/DOM line after merge/port.
 - Do not mark a branch integrated with an `ours` merge until the branch intent is verified in current main/source/render. If the intent is missing, port it first, verify it, then record integration.
 - If a branch is already an ancestor of main but the visible requested result is absent, treat it as a failed publish and repair/port the intent before DONE.
 - If a branch is not checked out but is a local deck/* branch not contained in origin/main, inspect it exactly like a checked-out worktree branch.
@@ -94,6 +97,7 @@ PUBLISH-READINESS EVIDENCE
   changed selectors, visible text, slide IDs, registry keys, JS functions, and assets
   active-source presence in current main
 - For every published branch, verify the branch intent in current main after merge or port. For visual/layout changes, verify the exact selector/property or rendered visible result.
+- For copy changes, verify the exact active selector/DOM line changed. `new text exists somewhere` is not sufficient. `old text still exists in the original active selector` is a failed publish.
 - For every completed clean branch without PUBLISH TRACE, record `MISSING_PUBLISH_TRACE` in the report but do not use that alone as a reason to skip it. Infer and verify the visible intent yourself.
 - For every branch marked integrated with `ours`, include `OURS_AFTER_INTENT_VERIFIED` and name the verified text/selector/registry marker. Never use `ours` as a shortcut to make an unresolved branch disappear.
 - For every branch that remains unresolved, record a one-line ledger entry:

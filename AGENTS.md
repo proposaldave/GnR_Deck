@@ -16,6 +16,7 @@ This repo contains a large single-file HTML investor pitch deck. Treat every dec
 
 - Start with `git status --short`.
 - Locate the target by exact visible text, slide ID, section ID, dot/alt registry entry, nearby heading, unique class name, or screenshot context.
+- For visible text edits, locate the exact active selector/DOM line that renders the visible text. Do not accept nearby matches, duplicate variants, top-left eyebrows, comments, hidden blocks, appendix/trash blocks, or inactive alts as the target.
 - Use targeted search. Avoid broad repo exploration.
 - Ignore large/generated folders unless directly relevant: `node_modules`, `dist`, `build`, exports, screenshots, backups, generated assets, cache folders.
 - If multiple matches exist, inspect only enough surrounding context to choose the correct slide.
@@ -151,6 +152,7 @@ NEXT:
 - Do not wait for Dave to identify each completed branch manually. If a completed branch is stale but its intent is clear, port the intent surgically onto current `main` instead of leaving it unpublished.
 - After every publish, audit remaining checked-out `deck/*` worktrees, non-checked-out local `deck/*` branches, and recent `deck/*` branches for completed-session candidates before reporting done. Each completed candidate must be merged, ported, or blocked with the exact reason and next action.
 - Branch status is not enough. For every completed-session branch, diff it against its merge-base and verify the actual visible intent in current `main`: text, slide IDs, selectors, JS hooks, assets, and registry entries. Do not record an `ours` merge or call a branch integrated until that intent is present and verified.
+- Selector-exact verification is mandatory for copy edits. The replacement text appearing somewhere in the file is not enough; the old text must be absent from the original active selector/DOM line and the new text must be present in that same active selector/DOM line.
 - If a branch is technically merged or ancestor-of-main but Dave's visible requested result is absent, treat it as a failed publish and repair/port the intent before reporting `DONE`.
 - Edit sessions must leave a publish-readable `PUBLISH TRACE` in both the final response and the commit body: active slide ID, visible text markers, selectors/properties, registry keys, asset paths, source verification, visual QA result, publish bucket hint (`publish_now`, `port_if_stale`, or `needs_explicit_review`), and `safe-to-port-if-stale: yes/no`. For multi-element requests, every requested element must be named and verified. If the chat transcript is unavailable later, the commit body must still be enough to publish the branch.
 - Delete/trash/appendix/move branches must quote Dave's exact removal instruction in the `PUBLISH TRACE`. Without explicit removal evidence, Publish Control blocks the branch instead of deleting active inventory.

@@ -22,6 +22,7 @@
 - Red dots are alternate candidates for the same slot, not different slides.
 - Codex owns verification. Dave should not have to inspect branches or identify failed edits manually.
 - Visual/layout/copy-positioning/image/order edits require rendered evidence unless Dave explicitly approves source-only.
+- Copy edits require selector-exact verification: identify the active selector/DOM line that rendered the old visible text, remove the old text from that same selector, and verify the new text appears in that same selector. Finding the replacement in a nearby eyebrow, duplicate, alt, hidden block, comment, or appendix/trash block is a failed edit.
 - If verification fails, Codex attempts one targeted correction, verifies again, then reports `BLOCKED` with the root cause.
 
 ## Slide Inventory Guard
@@ -80,6 +81,9 @@ When Dave reports a missed visible phrase or asks "didn't I ask...", search all 
 
 Branch-intent audit:
 For every completed-session branch, diff the branch against its merge-base and extract the actual intent: visible text, active slide IDs, selectors, JavaScript hooks, assets, and registry edits. Verify that intent exists in current `main` before calling it integrated. An `ours` merge is allowed only after the intent has already been ported and verified. If a branch is an ancestor of `main` but the visible result is absent, treat it as a failed publish and repair it before reporting `DONE`.
+
+Wrong-selector guard:
+For copy changes, publish control must verify the original active selector/DOM line, not only the phrase. If the new text landed in a nearby eyebrow, duplicate slide, inactive variant, hidden block, comment, appendix/trash block, or another active slide while the original visible selector still has the old text, classify as `wrong selector`, repair the exact selector, and only then mark the branch/request live.
 
 Trace requirement:
 New edit branches must put `PUBLISH TRACE` in the commit body. If an older branch lacks that trace, Publish Control must infer the visible intent from the diff and commit message instead of skipping it. `MISSING_PUBLISH_TRACE` is a diagnostic label, not a blocker by itself.

@@ -25,6 +25,9 @@ ACCEPTANCE CONTRACT
 - Before editing, parse Dave's request into:
   requested change
   expected active slide/section
+  exact active selector/DOM line for each visible text or visual element
+  old text/element that must be absent from that exact selector after the edit
+  new text/element that must be present in that exact selector after the edit
   expected visible text/visual/layout result
   files likely touched
   whether visual QA is required
@@ -37,6 +40,7 @@ ACTIVE SLIDE CONTRACT
 - Staff targets must be present in STAFF_ORDER.
 - Red dots are alternate candidates at the same slot, not separate deck slides.
 - Confirm the requested target appears in the active slide source before patching.
+- For visible text edits, identify the exact element that renders the visible text, not just a nearby duplicate, eyebrow, comment, alt, hidden block, or copied phrase elsewhere in the slide.
 - If the target exists only in an inactive retained HTML block, backup block, deleted block, appendix-only block, or stale variant, do not edit it silently.
 - If the user's intent can be ported safely to the active slide, patch only the active slide and say so in ACTIVE SOURCE.
 - If the active target cannot be identified, stop and report BLOCKED with the exact reason and next step.
@@ -52,7 +56,8 @@ EDIT CONTRACT
 
 VALIDATION
 - Source verification is required for every edit: requested result exists in the active slide source and the active slide ID/registry path is correct.
-- For exact copy edits: verify old text absent or intentionally retained, new text present, and active slide source contains the requested result.
+- For exact copy edits: verify old text absent from the exact active selector/DOM line, new text present in that exact active selector/DOM line, and active slide source contains the requested result.
+- Do not pass source verification by finding the new text elsewhere in the same slide, an eyebrow, alt, comment, backup block, appendix block, or inactive duplicate.
 - For visual/layout/copy-positioning/image/order changes: run visual/render verification and verify the rendered active slide shows the requested outcome.
 - If SLIDE_ORDER changed, run `tools/verify_slide_order_guard.ps1 -BaseRef HEAD -TargetRef WORKTREE` before commit. If it reports unauthorized removed slides, restore them or report BLOCKED. Do not commit a branch that accidentally removes an active slide.
 - If visual QA cannot run, do not report DONE for visual edits; report BLOCKED or ask Dave to approve source-only.
@@ -72,6 +77,9 @@ COMMIT
   publish bucket hint: `publish_now`, `port_if_stale`, or `needs_explicit_review`
   safe-to-port-if-stale: yes/no, with reason
   active slide ID or registry slot
+  exact active selector/DOM line for each changed visible element
+  old text absent from exact selector: yes/no
+  new text present in exact selector: yes/no
   exact visible text markers changed
   exact CSS selectors/properties changed for layout or positioning edits
   exact registry keys changed for slide order, alts, trash, appendix, or staff order
@@ -91,6 +99,9 @@ PUBLISH TRACE
   publish bucket hint: `publish_now`, `port_if_stale`, or `needs_explicit_review`
   safe-to-port-if-stale: yes/no, with reason
   active slide ID or registry slot
+  exact active selector/DOM line for each changed visible element
+  old text absent from exact selector: yes/no
+  new text present in exact selector: yes/no
   exact visible text markers changed
   exact CSS selectors/properties changed for layout or positioning edits
   exact registry keys changed for slide order, alts, trash, appendix, or staff order
@@ -101,6 +112,7 @@ PUBLISH TRACE
   visual QA method/result when required
 - For visual/layout/copy-positioning edits, do not say only "visual QA passed." Name the active slide ID and the selector/property or rendered element position that passed.
 - If the edit request changes two visible elements, list both elements in the acceptance contract and verification note. Do not report DONE after verifying only one of them.
+- If the requested old text still appears in the same active selector/DOM line after editing, report BLOCKED instead of DONE, even if the replacement appears elsewhere in the file.
 - If the edit request deletes, trashes, moves to appendix, or removes a slide/alt/staff item, quote Dave's exact removal instruction in the PUBLISH TRACE. Without that evidence, Publish Control must block the branch.
 - If the edit is small and mechanical, explicitly set `safe-to-port-if-stale: yes` and name the exact text/selector/registry marker Publish Control should verify after porting.
 - Make the branch name and commit message specific enough that Publish Control can match the branch to Dave's request.

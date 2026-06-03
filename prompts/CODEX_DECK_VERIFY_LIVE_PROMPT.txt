@@ -19,7 +19,8 @@ CHECKS
    https://proposaldave.github.io/GnR_Deck/?v=[short-commit-hash]
 5. If Dave reports a missing visible edit, locate the requested text/element in local source, raw GitHub source, and Pages source.
 6. Verify whether the target slide ID is active through SLIDE_ORDER, SLIDE_ALTS, or STAFF_ORDER.
-7. If needed for a visual/layout issue, open/render the active visible slide and compare against the source.
+7. For visible text edits, identify the exact active selector/DOM line that renders the old text and verify that exact selector/DOM line changed. Do not treat the edit as live because the replacement appears elsewhere.
+8. If needed for a visual/layout issue, open/render the active visible slide and compare against the source.
 
 MISSING-SLIDE TRACE
 - If Dave reports a slide disappeared, treat it as a deck regression until proven otherwise.
@@ -32,11 +33,13 @@ MISSING-SLIDE TRACE
 FAILED-EDIT PHRASE TRACE
 - If Dave says "didn't I ask..." or names a visible phrase, trace the phrase across all local deck/* branches, not only checked-out worktrees.
 - Search by exact old text, likely replacement text, nearby slide ID, and screenshot context.
+- Identify the original active selector/DOM line for the visible text before deciding whether the edit is live.
 - Use branch content and branch diffs:
   `git grep -n -i "<visible phrase>" <branch> -- GnR_deck.html`
   `git diff $(git merge-base main <branch>) <branch> -- GnR_deck.html`
 - If a local branch contains the requested change but it is not in origin/main, classify as `skipped branch` and identify the branch.
 - If the branch intent is tiny and safe, the next action is to publish/port that exact intent, not to ask Dave to find the branch again.
+- If the replacement text exists somewhere else but the original active selector/DOM line still contains the old text, classify as `wrong selector` and the next action is to repair that exact selector.
 
 TRACE REQUIREMENT
 - Given a requested edit or branch, trace:
@@ -58,6 +61,7 @@ CLASSIFY THE ISSUE
 - skipped branch: change exists only on an unmerged branch.
 - conflict: branch was not merged because it conflicts.
 - wrong slide: edit landed on a different active slide/slot than Dave requested.
+- wrong selector: replacement text landed in a nearby element, eyebrow, duplicate, alt, comment, or hidden source while the original active visible selector stayed unchanged.
 - missing slide: slide exists in history/source but is absent from the active registry path.
 - rendered hidden: source exists but visible render hides, covers, or does not reach it.
 - request ambiguity: requested target cannot be mapped to one active slide/section.
