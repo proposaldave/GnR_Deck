@@ -13713,6 +13713,15 @@ window.cs1m7Reverse = function() {
   .psg-slide.casey-entered .psg-copy { opacity:1; transform:none; }
   html[data-export="1"] .psg-slide .psg-bg,
   html[data-export="1"] .psg-slide .psg-copy { opacity:1 !important; transform:none !important; transition:none !important; }
+  .psg-green { background:#1a1612 !important; overflow:hidden; position:absolute; inset:0; color:#fbf7ef; }
+  .psg-green.active { display:block !important; }
+  .psg-callout {
+    position:absolute; z-index:4; width:310px; min-height:74px; padding:14px 16px;
+    background:rgba(251,247,239,.88); border:1px solid rgba(184,149,74,.38); border-left:6px solid #c8462c;
+    box-shadow:0 12px 26px rgba(26,22,18,.14); color:#1a1612;
+  }
+  .psg-callout b { display:block; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.15em; text-transform:uppercase; color:#c8462c; }
+  .psg-callout span { display:block; margin-top:5px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.22rem; line-height:1.02; font-weight:850; letter-spacing:0; }
   #cs-pb-silliness-feature.silliness-signal-slide {
     background:#1a1612 !important;
     overflow:hidden;
@@ -13800,6 +13809,33 @@ window.cs1m7Reverse = function() {
     <p>A toy ball. A weird score. A soft shot called a dink. The absurdity lowers status &mdash; then reveals who welcomes, waits, laughs, adapts, and gets invited back.</p>
     <div class="silliness-bottom-line">GnR measures the human signal underneath the silliness.</div>
   </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-board-green" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-board-green.png" alt="Image-generated six-panel pickleball silliness board: score confusion, toy ball, kitchen dinks, speedup, weird form, and net apology." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+  <div class="psg-callout" style="left:74px;top:92px"><b>Silly score</b><span>Famously hard to keep straight.</span></div>
+  <div class="psg-callout" style="left:804px;top:92px"><b>Toy ball</b><span>A plastic wiffleball adults take seriously.</span></div>
+  <div class="psg-callout" style="right:88px;top:92px"><b>Dink kitchen</b><span>Soft taps from a place with a silly name.</span></div>
+  <div class="psg-callout" style="left:76px;bottom:326px"><b>Slow or fast</b><span>Soft-soft-soft, then sudden speedup.</span></div>
+  <div class="psg-callout" style="left:804px;bottom:326px"><b>Weird form</b><span>Bad-looking technique can still work.</span></div>
+  <div class="psg-callout" style="right:88px;bottom:326px"><b>Net apology</b><span>The lucky drip becomes part of the charm.</span></div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-social-green" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-social-green.png" alt="Image-generated pickleball social rotation board: mixed partners, paddle taps, welcoming strangers, and invite-back signals." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+  <div class="psg-callout" style="left:152px;top:446px"><b>Mixed partners</b><span>Constant rotation makes strangers safe fast.</span></div>
+  <div class="psg-callout" style="right:202px;top:438px"><b>Guard down</b><span>The absurdity lowers status before anyone postures.</span></div>
+  <div class="psg-callout" style="left:820px;bottom:144px"><b>Paddle tap</b><span>A small ritual signal after every point.</span></div>
+  <div class="psg-callout" style="right:190px;bottom:166px"><b>Invite back</b><span>The room reveals who people want again.</span></div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-decision-green" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-decision-green.png" alt="Image-generated pickleball decision board: keep dinking, roll the dice with a speedup, middle confusion, and low-ball patience." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+  <div class="psg-callout" style="left:430px;top:94px"><b>Keep dinking</b><span>Sometimes the strategy is patience forever.</span></div>
+  <div class="psg-callout" style="right:474px;top:318px"><b>Core choice</b><span>Stay slow or roll the dice early.</span></div>
+  <div class="psg-callout" style="left:358px;top:430px"><b>Speedup</b><span>The point flips from soft to hard in one beat.</span></div>
+  <div class="psg-callout" style="right:112px;top:562px"><b>Middle confusion</b><span>The absurdity exposes patience, ego, and humor.</span></div>
+  <div class="psg-callout" style="right:112px;bottom:118px"><b>Low ball wins</b><span>Ugly form survives when the ball lands well.</span></div>
 </div>
 
 <div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-generated-sections-pink" style="display:none">
@@ -14687,6 +14723,83 @@ window.cs1m7Reverse = function() {
 
   </div>
 </section>
+</div>
+
+<!-- ===== cs-invite-problem - club coordination problem bridge [Codex 2026-06-04]
+     Main-flow problem slide inserted immediately before cs-gnr so the personalized
+     invitation feed lands as the answer to a visible operator burden, not a cold product reveal. ===== -->
+<style>
+  #cs-invite-problem, #cs-invite-club-chaos-pink, #cs-invite-autonomy-wall-pink { background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; color:#1a1612; }
+  #cs-invite-problem .cip-eye, #cs-invite-club-chaos-pink .cip-eye, #cs-invite-autonomy-wall-pink .cip-eye { position:absolute; top:28px; left:48px; z-index:10; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
+  #cs-invite-problem .cip-stage { position:absolute; inset:0; padding:96px 74px 58px; display:grid; grid-template-columns:.92fr 1.08fr; gap:66px; align-items:center; }
+  #cs-invite-problem .cip-head { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4.2rem,6.4vw,7.25rem); line-height:.96; font-weight:850; letter-spacing:0; color:#1a1612; max-width:850px; }
+  #cs-invite-problem .cip-head em { color:#b8954a; font-style:italic; }
+  #cs-invite-problem .cip-sub { margin:30px 0 0; max-width:760px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.35rem,2.05vw,2.1rem); line-height:1.16; font-weight:650; color:rgba(26,22,18,.76); }
+  #cs-invite-problem .cip-sub strong { color:#c8462c; font-weight:850; }
+  #cs-invite-problem .cip-board { position:relative; height:704px; border:1px solid rgba(184,149,74,.34); background:linear-gradient(180deg,rgba(251,247,239,.86),rgba(243,234,216,.58)); box-shadow:0 32px 80px rgba(26,22,18,.09), inset 0 0 0 1px rgba(255,255,255,.28); overflow:hidden; }
+  #cs-invite-problem .cip-board::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.05) 1px,transparent 0); background-size:4px 4px; opacity:.42; pointer-events:none; }
+  #cs-invite-problem .cip-lane { position:absolute; left:54px; right:54px; height:116px; border:1px solid rgba(26,22,18,.10); background:rgba(251,247,239,.76); display:grid; grid-template-columns:170px 1fr 96px; align-items:center; gap:18px; padding:18px 22px; box-shadow:0 14px 30px rgba(26,22,18,.045); }
+  #cs-invite-problem .cip-lane:nth-child(1) { top:44px; }
+  #cs-invite-problem .cip-lane:nth-child(2) { top:178px; }
+  #cs-invite-problem .cip-lane:nth-child(3) { top:312px; }
+  #cs-invite-problem .cip-lane:nth-child(4) { top:446px; }
+  #cs-invite-problem .cip-time { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#b8954a; }
+  #cs-invite-problem .cip-ask { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.42rem; font-weight:780; line-height:1.08; color:#1a1612; }
+  #cs-invite-problem .cip-ask span { display:block; margin-top:7px; font-family:'Manrope',sans-serif; font-size:.57rem; font-weight:750; letter-spacing:.13em; text-transform:uppercase; color:rgba(26,22,18,.54); }
+  #cs-invite-problem .cip-status { display:grid; gap:6px; }
+  #cs-invite-problem .cip-dotline { height:10px; border-radius:99px; background:linear-gradient(90deg,#5B8FD4 0 34%,#b8954a 34% 66%,#c8462c 66% 100%); opacity:.82; }
+  #cs-invite-problem .cip-fail { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:#c8462c; text-align:right; }
+  #cs-invite-problem .cip-center { position:absolute; left:50%; bottom:48px; transform:translateX(-50%); width:min(690px,74%); padding:18px 24px; background:#1a1612; color:#fbf7ef; text-align:center; box-shadow:0 26px 58px rgba(26,22,18,.22); }
+  #cs-invite-problem .cip-center b { display:block; font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#b8954a; margin-bottom:8px; }
+  #cs-invite-problem .cip-center span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.25rem,1.85vw,1.85rem); font-weight:760; line-height:1.12; }
+  #cs-invite-club-chaos-pink .cip-pink-stage, #cs-invite-autonomy-wall-pink .cip-pink-stage { position:absolute; inset:0; padding:100px 86px 70px; display:grid; place-items:center; text-align:center; }
+  #cs-invite-club-chaos-pink h1, #cs-invite-autonomy-wall-pink h1 { margin:0 auto; max-width:1280px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4.3rem,7.1vw,7.6rem); line-height:.94; font-weight:880; letter-spacing:0; color:#1a1612; }
+  #cs-invite-club-chaos-pink h1 em, #cs-invite-autonomy-wall-pink h1 em { color:#c8462c; font-style:italic; }
+  #cs-invite-club-chaos-pink p, #cs-invite-autonomy-wall-pink p { margin:34px auto 0; max-width:980px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.55rem,2.35vw,2.45rem); line-height:1.16; font-weight:650; color:rgba(26,22,18,.76); }
+  #cs-invite-club-chaos-pink .cip-chaos { position:absolute; inset:112px 100px 96px; border:1px solid rgba(184,149,74,.28); opacity:.42; }
+  #cs-invite-club-chaos-pink .cip-chaos i { position:absolute; width:190px; height:58px; border:1px solid rgba(26,22,18,.16); background:rgba(251,247,239,.78); transform:rotate(var(--r)); }
+  #cs-invite-club-chaos-pink .cip-chaos i:nth-child(1){left:60px;top:44px;--r:-7deg} #cs-invite-club-chaos-pink .cip-chaos i:nth-child(2){right:140px;top:92px;--r:8deg} #cs-invite-club-chaos-pink .cip-chaos i:nth-child(3){left:220px;bottom:104px;--r:5deg} #cs-invite-club-chaos-pink .cip-chaos i:nth-child(4){right:90px;bottom:60px;--r:-9deg}
+  #cs-invite-autonomy-wall-pink .cip-wall { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:min(940px,62vw); height:500px; border:1px solid rgba(200,70,44,.28); box-shadow:inset 0 0 0 26px rgba(200,70,44,.035),0 36px 90px rgba(26,22,18,.06); opacity:.38; }
+  #cs-invite-autonomy-wall-pink .cip-wall::before, #cs-invite-autonomy-wall-pink .cip-wall::after { content:""; position:absolute; inset:70px; border:1px solid rgba(91,143,212,.22); }
+  #cs-invite-autonomy-wall-pink .cip-wall::after { inset:140px; border-color:rgba(184,149,74,.26); }
+</style>
+<div class="casey-slide ds-focus" id="cs-invite-problem">
+  <div class="cip-eye">The impossible club coordination problem</div>
+  <section class="cip-stage">
+    <div>
+      <h1 class="cip-head">Before the invitation, the club is doing <em>invisible matchmaking by hand.</em></h1>
+      <p class="cip-sub">Every round asks the same impossible question: <strong>who should play with who, right now, and why?</strong> Ratings, calendars, memory, texts, no-shows, cliques, new members, chemistry, confidence, and court yield all collide.</p>
+    </div>
+    <div class="cip-board" aria-label="Manual club coordination board">
+      <div class="cip-lane"><div class="cip-time">Tuesday 10 AM</div><div class="cip-ask">Find 16 compatible players<span>ratings + chemistry + availability</span></div><div class="cip-status"><i class="cip-dotline"></i><div class="cip-fail">manual</div></div></div>
+      <div class="cip-lane"><div class="cip-time">New member</div><div class="cip-ask">Choose a welcoming foursome<span>confidence + vibe + social fit</span></div><div class="cip-status"><i class="cip-dotline"></i><div class="cip-fail">memory</div></div></div>
+      <div class="cip-lane"><div class="cip-time">Cancellation</div><div class="cip-ask">Fill the court without breaking trust<span>who wants in + who belongs</span></div><div class="cip-status"><i class="cip-dotline"></i><div class="cip-fail">texts</div></div></div>
+      <div class="cip-lane"><div class="cip-time">Every week</div><div class="cip-ask">Keep the community from hardening into cliques<span>data nobody writes down</span></div><div class="cip-status"><i class="cip-dotline"></i><div class="cip-fail">guessing</div></div></div>
+      <div class="cip-center"><b>Why autonomous targeted invitations do not happen today</b><span>The work is too private, too contextual, too fast-moving, and too human for a calendar tool.</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-invite-club-chaos-pink" style="display:none">
+  <div class="cip-eye">Pink candidate - coordination chaos</div>
+  <div class="cip-chaos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <section class="cip-pink-stage">
+    <div>
+      <h1>A pickleball club is not a calendar. It is a thousand <em>social judgments</em> per week.</h1>
+      <p>Who is ready, who is nervous, who is generous, who is avoided, who needs a bridge, who makes the room better. That is the work operators do by hand.</p>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-invite-autonomy-wall-pink" style="display:none">
+  <div class="cip-eye">Pink candidate - autonomy wall</div>
+  <div class="cip-wall" aria-hidden="true"></div>
+  <section class="cip-pink-stage">
+    <div>
+      <h1>Autonomous matchmaking has been impossible because the best data is <em>private, contextual, and unwritten.</em></h1>
+      <p>Ratings know level. Calendars know time. Group chats know noise. The club needs judgment: chemistry, trust, generosity, avoidance, and who makes people come back.</p>
+    </div>
+  </section>
 </div>
 
 <div class="casey-slide ds-focus" id="cs-gnr" data-shown="0" onclick="csGnrAdvance()" style="cursor:pointer">
@@ -34009,14 +34122,15 @@ const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
   'cs-1m8',
   'cs-thegap',
+  'cs-invite-problem',
   'cs-gnr',
   'cs-18-vd4',
   'cs-invite-operational-insanity-pink',
   'cs-11e',
   'cs-programmable-invitations',
   'cs-invitation-word-of-mouth',
-  'cs-gnr-business-outcomes',
   'cs-app-store-people',
+  'cs-gnr-business-outcomes',
   'cs-samecourt',
   'cs-wedgepb-codex',
   'cs-wedge1',
@@ -34042,11 +34156,12 @@ const TOTAL = SLIDE_ORDER.length;
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
   3: ['cs-optimus-party-host-pink', 'cs-hc-market-planet', 'cs-hc-market-attention', 'cs-hc-market-latent'],
-  9: ['cs-invitation-word-of-mouth-white', 'cs-invitation-court-fill-white'],
+  4: ['cs-invite-club-chaos-pink', 'cs-invite-autonomy-wall-pink'],
+  10: ['cs-invitation-word-of-mouth-white', 'cs-invitation-court-fill-white'],
   11: ['cs-invite-atomic-unit-pink', 'cs-invite-proof-model-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'],
-  12: ['cs-samecourt-pyramid-white1', 'cs-samecourt-pyramid-white2', 'cs-referral-builder-pink', 'cs-referral-loop-pink'],
-  20: ['cs-16'],
-  21: ['cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'],
+  13: ['cs-samecourt-pyramid-white1', 'cs-samecourt-pyramid-white2', 'cs-referral-builder-pink', 'cs-referral-loop-pink'],
+  21: ['cs-16'],
+  22: ['cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -36062,7 +36177,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-hc-market-planet' || altId === 'cs-hc-market-attention' || altId === 'cs-hc-market-latent' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
     const isWhiteAlt = (altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
-    const isGreenAlt = Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId);
+    const isGreenAlt = /^cs-pb-silliness-.*-green$/.test(altId) || (Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId));
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     // [Dave 2026-05-18 LATEST v9] cs-a7m1 added to red-dot list (demoted from main slot 3 to red-dot alt of slot 2). [Dave 2026-05-17 v7] cs-magnetic-orig RESTORED as red-dot per Dave 'add a red dot slide to left of social pull slide' — was momentarily classified as black-dot but the explicit isPinkAlt check above for cs-merge3 doesn't affect cs-magnetic-orig, so it lands as red-dot here.
