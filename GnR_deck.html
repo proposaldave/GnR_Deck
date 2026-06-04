@@ -16439,7 +16439,7 @@ window.cs1m7Reverse = function() {
   [id^="cs-18-vd4"] .v5-flip-inner { position:relative;width:100%;min-height:380px;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,0,.2,1) }
   [id^="cs-18-vd4"] .v5-pillar[data-flipped="1"] .v5-flip-inner { transform:rotateY(180deg) }
   [id^="cs-18-vd4"] .v5-flip-front,
-  [id^="cs-18-vd4"] .v5-flip-back { position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center }
+  [id^="cs-18-vd4"] .v5-flip-back { position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;box-sizing:border-box;border:1.5px solid rgba(184,149,74,.52);border-radius:8px;background:rgba(251,247,239,.50);box-shadow:0 16px 34px rgba(26,22,18,.08), inset 0 0 0 1px rgba(251,247,239,.72); }
   /* [Dave 2026-05-14 PM] Better centering — back face now centers content vertically (was flex-start). Combined with horizontal align-items:center, both faces fully center their content in the card. */
   [id^="cs-18-vd4"] .v5-flip-front { justify-content:center }
   /* [Dave 2026-05-18 LATEST] Front-face labels under the badge — one keyword per pillar so the closed cards read as the 3-beat wheelhouse story without needing to be flipped. Editorial serif, brand-warm ink, kerned wide to feel like a section title. */
