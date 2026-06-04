@@ -16,91 +16,94 @@ Public deck:
 https://proposaldave.github.io/GnR_Deck/
 
 Mission:
-Make sure every completed Codex worktree / deck/* branch edit request that is safe and verifiable is actually integrated, mirrored to index.html, pushed, and live. Dave should not have to identify missed branches manually.
+Integrate every completed, safe, verifiable `deck/*` worktree edit into `main`, mirror `GnR_deck.html` to `index.html`, push, and verify live. Dave should not have to identify missed branches manually.
 
 Read first:
 - AGENTS.md
-- prompts/CODEX_DECK_PUBLISH_PROMPT.txt
+- CODEX_PARALLEL_WORKFLOW.md
+- WORKTREE_EDIT_SUBMISSION_PROTOCOL.md
 
 Hard rules:
-- GnR_deck.html is canonical.
-- index.html is the GitHub Pages mirror.
+- `GnR_deck.html` is canonical.
+- `index.html` is the GitHub Pages mirror.
 - Do not reset, force push, delete branches, delete refs, or drop dirty work.
 - Do not merge blindly.
-- Do not silently skip any clean completed deck/* worktree or local deck/* branch.
-- Do not report DONE while any clean publish_now branch remains unpublished.
-- Do not ours-merge stale branches unless the exact visible intent is already present in both GnR_deck.html and index.html.
-- Protect SLIDE_ORDER. If SLIDE_ORDER changes, run tools/verify_slide_order_guard.ps1.
-- If .git/refs/**/desktop.ini appears, report it as broken ref contamination. Do not delete it unless Dave explicitly approves.
+- Do not silently skip any clean completed `deck/*` worktree or local `deck/*` branch.
+- Do not report `DONE` while any clean `publish_now` branch remains unpublished.
+- Do not ours-merge stale branches unless the exact visible intent is already present in both `GnR_deck.html` and `index.html`.
+- Protect `SLIDE_ORDER`. If `SLIDE_ORDER` changes, run `tools/verify_slide_order_guard.ps1`.
+- If `.git/refs/**/desktop.ini` appears, report it as broken ref contamination. Do not delete it unless Dave explicitly approves.
 
-Full audit required:
+Start gate:
 1. Run:
-   - git status --short
-   - git rev-parse --short HEAD
-   - git rev-parse --short origin/main
-   - git worktree list --porcelain
-   - git for-each-ref refs/heads/deck --format="%(refname:short)|%(objectname:short)|%(committerdate:iso8601)|%(subject)"
-   - powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_current_check.csv
+   - `git status --short`
+   - `git rev-parse --short HEAD`
+   - `git rev-parse --short origin/main`
+   - `git worktree list --porcelain`
+   - `git for-each-ref refs/heads/deck --format="%(refname:short)|%(objectname:short)|%(committerdate:iso8601)|%(subject)"`
+   - `powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_current_check.csv`
+2. If `main` has dirty tracked files before publish work, stop and report `BLOCKED` unless the dirty files are generated audit/export artifacts outside the publish diff.
 
-2. Treat as publish candidates:
-   - every checked-out clean deck/* worktree not contained in origin/main
-   - every local refs/heads/deck/* branch not contained in origin/main
-   - every branch in audit bucket publish_now
-   - every branch with PUBLISH TRACE and safe-to-port-if-stale: yes
-   - every branch whose exact visible intent can be inferred from a tiny clean diff
-   - every branch whose commit says PUBLISH-READY: yes
+Candidate universe:
+- every checked-out clean `deck/*` worktree not contained in `origin/main`
+- every local `refs/heads/deck/*` branch not contained in `origin/main`
+- every branch in audit bucket `publish_now`
+- every branch with commit-body `PUBLISH-READY: yes`
+- every branch with `PUBLISH TRACE` and `safe-to-port-if-stale: yes`
+- every branch whose exact visible intent can be inferred from a tiny clean diff
 
-Audit classifier rule:
-- A branch with PUBLISH TRACE, publish bucket hint publish_now or port_if_stale, and safe-to-port-if-stale: yes is executable.
-- PUBLISH-READY must be in the commit body, not only in the chat final response.
-- If clean, it must be publish_now unless active inventory removal lacks explicit authorization.
-- If conflicting/stale, it must be port_or_conflict_review and receive a branch-specific intent extraction attempt.
+Classifier rules:
+- `PUBLISH-READY` must be in the commit body, not only in the chat final response.
+- A branch with `PUBLISH TRACE`, `publish bucket hint: publish_now` or `port_if_stale`, and `safe-to-port-if-stale: yes` is executable unless it removes active inventory without explicit authorization.
+- Clean executable branches are `publish_now`.
+- Conflicting/stale executable branches are `port_or_conflict_review` and must receive a branch-specific intent extraction attempt.
 - Branch-name words such as delete, move, trash, remove, or appendix are warnings, not blockers, when the trace proves no unauthorized active slide was removed or quotes Dave's exact removal instruction.
-- For every clean publish_now branch, run `tools/validate_deck_worktree_handoff.ps1 -Branch <branch>` before merging. If it returns `HANDOFF_VALID=no`, do not merge; put the branch in BLOCKED with the validator errors.
+- For every clean `publish_now` branch, run `tools/validate_deck_worktree_handoff.ps1 -Branch <branch>` before merging. If `HANDOFF_VALID=no`, do not merge; put the branch in `BLOCKED` with the validator errors.
 
-3. For each candidate, extract:
-   - branch
-   - latest commit/message
-   - worktree clean/dirty
-   - files touched
-   - active slide ID / registry slot
-   - exact selector/block
-   - old marker
-   - new marker
-   - registry changes
-   - whether SLIDE_ORDER changed
-   - mergeability
-   - publish decision
+For each candidate, extract:
+- branch
+- latest commit/message
+- worktree clean/dirty
+- files touched
+- active slide ID / registry slot
+- exact selector/block
+- old marker
+- new marker
+- registry changes
+- whether `SLIDE_ORDER` changed
+- mergeability
+- validator result when applicable
+- publish decision
 
-4. Integrate:
-   - If clean and publish_now, merge it.
-   - If stale but exact intent is clear, port it surgically.
-   - If already live, verify exact intent in both GnR_deck.html and index.html, then mark integrated only if safe.
-   - If risky/conflict/delete/trash/inactive/unverified, do not merge. Put it in BLOCKED with exact reason and next action.
+Integration rules:
+- If clean, validated, and `publish_now`, merge it.
+- If stale but exact intent is clear, port it surgically.
+- If already live, verify the exact intent in both `GnR_deck.html` and `index.html`, then mark integrated only if safe.
+- If risky/conflict/delete/trash/inactive/unverified, do not merge. Put it in `BLOCKED`, `CONFLICTS`, or `NOT VERIFIED` with exact reason and next action.
 
-5. After every integration:
-   - Mirror GnR_deck.html to index.html.
-   - Verify hashes match.
-   - Run git diff --check.
-   - If SLIDE_ORDER changed, run tools/verify_slide_order_guard.ps1.
-   - Commit with a PUBLISH TRACE.
-   - Push main.
-   - Verify raw GitHub source.
-   - Verify cache-busted GitHub Pages URL.
-   - Verify GitHub Pages action status when possible.
+After every integration:
+- Mirror `GnR_deck.html` to `index.html`.
+- Verify hashes match.
+- Run `git diff --check`.
+- If `SLIDE_ORDER` changed, run `tools/verify_slide_order_guard.ps1`.
+- Commit with a publish-control `PUBLISH TRACE`.
+- Push `main`.
+- Verify raw GitHub source.
+- Verify cache-busted GitHub Pages URL.
+- Verify GitHub Pages action status when possible.
 
-6. Before reporting DONE, rerun:
-   powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_after_publish.csv
+Final gate before `DONE`:
+- Rerun:
+  `powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_after_publish.csv`
+- `PUBLISH_NOW_CANDIDATES=0`
+- every checked-out clean `deck/*` worktree is contained in `origin/main` or listed under `BLOCKED`
+- every local `deck/*` branch not contained in `origin/main` is merged, ported, already live, or listed under `BLOCKED` / `CONFLICTS` / `NOT VERIFIED`
+- `GnR_deck.html` and `index.html` hashes match
+- `main` is pushed
+- raw GitHub source is verified
+- live cache-busted URL is verified
 
-DONE requires:
-- PUBLISH_NOW_CANDIDATES=0
-- every checked-out clean deck/* worktree is contained in origin/main OR listed under BLOCKED
-- every local deck/* branch not contained in origin/main is merged, ported, already live, or listed under BLOCKED / CONFLICTS / NOT VERIFIED
-- GnR_deck.html and index.html hashes match
-- pushed main
-- live cache-busted URL verified
-
-Report:
+Report sections:
 DONE
 CURRENT STATE
 MERGED AND LIVE

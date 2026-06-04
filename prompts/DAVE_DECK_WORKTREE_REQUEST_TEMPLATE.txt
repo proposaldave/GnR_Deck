@@ -14,15 +14,22 @@ Dave's edit request:
 [PASTE ONE EXACT DECK EDIT REQUEST HERE]
 ```
 
+DAVE RULE:
+- Submit one exact deck edit per worktree.
+- If you have three unrelated edits, create three worktrees with this same template.
+- Do not add publish instructions here. Publish happens later from `main`.
+
 WHAT MUST COME BACK BEFORE THE WORKTREE IS DONE:
 - DONE
-- BRANCH: deck/[short-task-name]
-- COMMIT: [sha]
+- BRANCH: `deck/[short-task-name]`
+- COMMIT: `[sha]`
 - COMMIT BODY: contains `PUBLISH-READY: yes` and `PUBLISH TRACE`
-- ACTIVE SOURCE: exact active slide ID / SLIDE_ALTS slot / STAFF_ORDER entry
-- CHECKS: source verification and visual QA when needed
-- PUBLISH TRACE: includes publish bucket hint and safe-to-port-if-stale
+- ACTIVE SOURCE: exact active slide ID / `SLIDE_ALTS` slot / `STAFF_ORDER` entry
+- CHECKS: source verification, plus visual QA when the edit changes layout, image, order, animation, or visibility
+- PUBLISH TRACE: final response names the active source, changed selectors/markers, publish bucket hint, and safe-to-port-if-stale value
 - VALIDATOR: `tools/validate_deck_worktree_handoff.ps1` returns `HANDOFF_VALID=yes`
 - PUSH: not pushed
 
-If any of those are missing, the worktree is not publish-ready.
+FAILURE RULE:
+- If any required line above is missing, the worktree is not publish-ready.
+- Do not treat a chat response alone as done. The local branch and commit are the artifact.
