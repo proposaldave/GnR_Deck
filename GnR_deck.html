@@ -13567,6 +13567,15 @@ window.cs1m7Reverse = function() {
   .psg-slide.casey-entered .psg-copy { opacity:1; transform:none; }
   html[data-export="1"] .psg-slide .psg-bg,
   html[data-export="1"] .psg-slide .psg-copy { opacity:1 !important; transform:none !important; transition:none !important; }
+  .psg-green { background:#1a1612 !important; overflow:hidden; position:absolute; inset:0; color:#fbf7ef; }
+  .psg-green.active { display:block !important; }
+  .psg-callout {
+    position:absolute; z-index:4; width:310px; min-height:74px; padding:14px 16px;
+    background:rgba(251,247,239,.88); border:1px solid rgba(184,149,74,.38); border-left:6px solid #c8462c;
+    box-shadow:0 12px 26px rgba(26,22,18,.14); color:#1a1612;
+  }
+  .psg-callout b { display:block; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.15em; text-transform:uppercase; color:#c8462c; }
+  .psg-callout span { display:block; margin-top:5px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.22rem; line-height:1.02; font-weight:850; letter-spacing:0; }
   #cs-pb-silliness-feature.silliness-signal-slide {
     background:#1a1612 !important;
     overflow:hidden;
@@ -13654,6 +13663,33 @@ window.cs1m7Reverse = function() {
     <p>A toy ball. A weird score. A soft shot called a dink. The absurdity lowers status &mdash; then reveals who welcomes, waits, laughs, adapts, and gets invited back.</p>
     <div class="silliness-bottom-line">GnR measures the human signal underneath the silliness.</div>
   </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-board-green" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-board-green.png" alt="Image-generated six-panel pickleball silliness board: score confusion, toy ball, kitchen dinks, speedup, weird form, and net apology." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+  <div class="psg-callout" style="left:74px;top:92px"><b>Silly score</b><span>Famously hard to keep straight.</span></div>
+  <div class="psg-callout" style="left:804px;top:92px"><b>Toy ball</b><span>A plastic wiffleball adults take seriously.</span></div>
+  <div class="psg-callout" style="right:88px;top:92px"><b>Dink kitchen</b><span>Soft taps from a place with a silly name.</span></div>
+  <div class="psg-callout" style="left:76px;bottom:326px"><b>Slow or fast</b><span>Soft-soft-soft, then sudden speedup.</span></div>
+  <div class="psg-callout" style="left:804px;bottom:326px"><b>Weird form</b><span>Bad-looking technique can still work.</span></div>
+  <div class="psg-callout" style="right:88px;bottom:326px"><b>Net apology</b><span>The lucky drip becomes part of the charm.</span></div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-social-green" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-social-green.png" alt="Image-generated pickleball social rotation board: mixed partners, paddle taps, welcoming strangers, and invite-back signals." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+  <div class="psg-callout" style="left:152px;top:446px"><b>Mixed partners</b><span>Constant rotation makes strangers safe fast.</span></div>
+  <div class="psg-callout" style="right:202px;top:438px"><b>Guard down</b><span>The absurdity lowers status before anyone postures.</span></div>
+  <div class="psg-callout" style="left:820px;bottom:144px"><b>Paddle tap</b><span>A small ritual signal after every point.</span></div>
+  <div class="psg-callout" style="right:190px;bottom:166px"><b>Invite back</b><span>The room reveals who people want again.</span></div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-decision-green" style="display:none">
+  <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-decision-green.png" alt="Image-generated pickleball decision board: keep dinking, roll the dice with a speedup, middle confusion, and low-ball patience." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+  <div class="psg-callout" style="left:430px;top:94px"><b>Keep dinking</b><span>Sometimes the strategy is patience forever.</span></div>
+  <div class="psg-callout" style="right:474px;top:318px"><b>Core choice</b><span>Stay slow or roll the dice early.</span></div>
+  <div class="psg-callout" style="left:358px;top:430px"><b>Speedup</b><span>The point flips from soft to hard in one beat.</span></div>
+  <div class="psg-callout" style="right:112px;top:562px"><b>Middle confusion</b><span>The absurdity exposes patience, ego, and humor.</span></div>
+  <div class="psg-callout" style="right:112px;bottom:118px"><b>Low ball wins</b><span>Ugly form survives when the ball lands well.</span></div>
 </div>
 
 <div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-generated-sections-pink" style="display:none">
@@ -34026,7 +34062,7 @@ const SLIDE_ALTS = {
   21: ['cs-16'], // [Codex 2026-05-30] cs-16 stays attached to active cs-fw1 after founder slide restore.
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
   // [Codex 2026-05-30] Active cs-pb-silliness-feature is slot 21; attach its pink-dot image-led silliness variants here.
-  22: ['cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'], // [Codex 2026-06-02] New image-only silliness pink-dot candidates first; older text/card/image variants retained behind them for review.
+  22: ['cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'], // [Codex 2026-06-04] New green-dot generated silliness boards added left of existing pink-dot image candidates; older text/card/image variants retained behind them for review.
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
   5: ['cs-referral-builder-pink', 'cs-referral-loop-pink'], // [Codex 2026-06-03] cs-referral-thesis-pink, cs-referral-data-pink, and cs-referral-product-spec-white removed from active dot rail per completed attached-slide/referral spec requests. cs-referral-roadmap-pink moved to APPENDIX_ORDER per attached-slide request.
@@ -36088,7 +36124,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-hc-market-planet' || altId === 'cs-hc-market-attention' || altId === 'cs-hc-market-latent' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
     const isWhiteAlt = (altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
-    const isGreenAlt = Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId);
+    const isGreenAlt = /^cs-pb-silliness-.*-green$/.test(altId) || (Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId));
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     // [Dave 2026-05-18 LATEST v9] cs-a7m1 added to red-dot list (demoted from main slot 3 to red-dot alt of slot 2). [Dave 2026-05-17 v7] cs-magnetic-orig RESTORED as red-dot per Dave 'add a red dot slide to left of social pull slide' — was momentarily classified as black-dot but the explicit isPinkAlt check above for cs-merge3 doesn't affect cs-magnetic-orig, so it lands as red-dot here.
