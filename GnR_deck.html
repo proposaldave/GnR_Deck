@@ -15184,6 +15184,158 @@ window.cs1m7Reverse = function() {
 </section>
 </div>
 
+<!-- Invitations mechanize word of mouth - main slide + white-dot variants [Codex 2026-06-04] -->
+<style>
+  #cs-invitation-word-of-mouth,
+  #cs-invitation-word-of-mouth-white,
+  #cs-invitation-court-fill-white{background:#fbf7ef!important;color:#1a1612;overflow:hidden}
+  .iwom-slide .iwom-eye{position:absolute;top:28px;left:48px;z-index:8;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
+  .iwom-slide .iwom-stage{position:absolute;inset:0;z-index:2;box-sizing:border-box;padding:86px 76px 82px;display:flex;flex-direction:column;gap:24px}
+  .iwom-slide .iwom-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.15rem,5.1vw,5.95rem);line-height:.96;font-weight:900;letter-spacing:0;color:#1a1612;text-align:center}
+  .iwom-slide .iwom-title em{font-style:italic;color:#b8954a}
+  .iwom-slide .iwom-sub{margin:0 auto;max-width:1040px;text-align:center;font-family:'Manrope',sans-serif;font-size:clamp(1rem,1.35vw,1.38rem);line-height:1.34;font-weight:780;color:rgba(26,22,18,.68)}
+  .iwom-slide .iwom-shell{position:relative;flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+  .iwom-slide .iwom-panel{position:relative;border:1.5px solid rgba(184,149,74,.38);border-radius:8px;background:rgba(251,247,239,.78);box-shadow:0 24px 60px rgba(26,22,18,.08);padding:30px;overflow:hidden}
+  .iwom-slide .iwom-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 22% 18%,rgba(184,149,74,.16),transparent 36%),linear-gradient(180deg,rgba(255,255,255,.48),rgba(255,255,255,.05));pointer-events:none}
+  .iwom-slide .iwom-panel h2{position:relative;margin:0 0 8px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.62rem;line-height:1;font-weight:900;color:#1a1612}
+  .iwom-slide .iwom-panel p{position:relative;margin:0;font-family:'Manrope',sans-serif;font-size:.94rem;line-height:1.34;font-weight:820;color:rgba(26,22,18,.64)}
+  .iwom-slide .iwom-visual{position:relative;margin-top:26px;height:340px;border-radius:8px;border:1px solid rgba(26,22,18,.12);background:linear-gradient(135deg,rgba(91,143,212,.10),rgba(184,149,74,.10));overflow:hidden}
+  .iwom-slide .iwom-phone{position:absolute;left:34px;bottom:28px;width:190px;height:278px;border:8px solid #1a1612;border-radius:32px;background:#fbf7ef;box-shadow:0 26px 54px rgba(26,22,18,.22);padding:22px 18px;box-sizing:border-box}
+  .iwom-slide .iwom-phone b{display:block;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;margin-bottom:14px}
+  .iwom-slide .iwom-phone strong{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.42rem;line-height:1.02;font-weight:850;color:#1a1612;margin-bottom:12px}
+  .iwom-slide .iwom-cta{display:inline-block;margin-top:16px;padding:9px 18px;border-radius:6px;background:#b8954a;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase}
+  .iwom-slide .iwom-people{position:absolute;right:34px;top:36px;bottom:34px;width:285px}
+  .iwom-slide .iwom-person{position:absolute;width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;border:2px solid rgba(184,149,74,.64);box-shadow:0 14px 32px rgba(26,22,18,.12);font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;color:#1a1612}
+  .iwom-slide .iwom-person:after{content:"";position:absolute;right:-6px;bottom:5px;width:20px;height:20px;border-radius:50%;background:#c8462c;box-shadow:0 0 0 4px #fbf7ef}
+  .iwom-slide .iwom-p1{left:18px;top:10px}.iwom-slide .iwom-p2{right:8px;top:78px}.iwom-slide .iwom-p3{left:36px;bottom:56px}.iwom-slide .iwom-p4{right:18px;bottom:0}
+  .iwom-slide .iwom-line{position:absolute;height:2px;background:linear-gradient(90deg,rgba(184,149,74,0),rgba(184,149,74,.86));transform-origin:left center;box-shadow:0 0 18px rgba(184,149,74,.32)}
+  .iwom-slide .l1{left:220px;top:120px;width:255px;transform:rotate(-16deg)}.iwom-slide .l2{left:220px;top:156px;width:282px;transform:rotate(4deg)}.iwom-slide .l3{left:220px;top:194px;width:246px;transform:rotate(20deg)}
+  .iwom-slide .iwom-note{position:relative;margin-top:18px;padding:15px 18px;border-left:5px solid #c8462c;background:rgba(255,255,255,.44);font-family:'Manrope',sans-serif;font-size:.86rem;line-height:1.28;font-weight:900;color:#1a1612}
+  .iwom-slide .iwom-rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:min(1220px,76vw);margin:0 auto}
+  .iwom-slide .iwom-chip{min-height:58px;border:1px solid rgba(184,149,74,.35);border-radius:8px;background:rgba(255,255,255,.46);display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;padding:10px 14px;font-family:'Manrope',sans-serif;font-size:.76rem;line-height:1.12;font-weight:900;color:#1a1612}
+  .iwom-slide .iwom-chip span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#1a1612;color:#fbf7ef;font-size:.68rem;letter-spacing:.08em}
+  #cs-invitation-word-of-mouth{background:#1a1612!important;color:#fbf7ef}
+  #cs-invitation-word-of-mouth:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 24%,rgba(184,149,74,.22),transparent 35%),radial-gradient(circle at 13% 78%,rgba(91,143,212,.14),transparent 30%),radial-gradient(circle at 88% 76%,rgba(200,70,44,.12),transparent 28%),linear-gradient(180deg,#071019 0%,#15110e 62%,#1a1612 100%);z-index:0}
+  #cs-invitation-word-of-mouth .iwom-eye{color:#b8954a}
+  #cs-invitation-word-of-mouth .iwom-stage{z-index:2}
+  #cs-invitation-word-of-mouth .iwom-title{color:#fbf7ef;text-shadow:0 18px 48px rgba(0,0,0,.46)}
+  #cs-invitation-word-of-mouth .iwom-sub{color:rgba(251,247,239,.72)}
+  #cs-invitation-word-of-mouth .iwom-panel{background:rgba(251,247,239,.07);border-color:rgba(184,149,74,.48);box-shadow:0 28px 76px rgba(0,0,0,.34)}
+  #cs-invitation-word-of-mouth .iwom-panel h2{color:#fbf7ef}
+  #cs-invitation-word-of-mouth .iwom-panel p{color:rgba(251,247,239,.72)}
+  #cs-invitation-word-of-mouth .iwom-note{background:rgba(26,22,18,.72);color:#fbf7ef}
+  #cs-invitation-word-of-mouth .iwom-chip{background:rgba(251,247,239,.07);color:#fbf7ef}
+  #cs-invitation-word-of-mouth .iwom-chip span{background:#b8954a;color:#1a1612}
+  .iwom-white-grid{flex:1;display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;min-height:0;align-items:stretch}
+  .iwom-white-card{border:1.5px solid rgba(184,149,74,.32);border-radius:8px;background:rgba(255,255,255,.48);box-shadow:0 20px 52px rgba(26,22,18,.07);padding:30px}
+  .iwom-white-card h2{margin:0 0 14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.35rem;line-height:1.02;color:#1a1612}
+  .iwom-white-card p{margin:0;font-family:'Manrope',sans-serif;font-size:1.02rem;line-height:1.34;font-weight:790;color:rgba(26,22,18,.66)}
+  .iwom-white-list{display:grid;gap:14px;margin-top:24px}
+  .iwom-white-row{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:center;padding:17px 18px;border-radius:8px;background:rgba(251,247,239,.86);border:1px solid rgba(26,22,18,.10)}
+  .iwom-white-row b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#c8462c;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950}
+  .iwom-white-row span{font-family:'Manrope',sans-serif;font-size:.98rem;line-height:1.24;font-weight:900;color:#1a1612}
+  .iwom-map{position:relative;min-height:620px;overflow:hidden}
+  .iwom-map svg{position:absolute;inset:48px;width:calc(100% - 96px);height:calc(100% - 96px)}
+  .iwom-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:168px;height:168px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#1a1612;color:#fbf7ef;box-shadow:0 26px 68px rgba(26,22,18,.22);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2rem;line-height:.94;font-weight:850}
+  .iwom-node{position:absolute;width:134px;height:134px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#fbf7ef;border:2px solid rgba(184,149,74,.50);box-shadow:0 18px 44px rgba(26,22,18,.10);font-family:'Manrope',sans-serif;font-size:.72rem;line-height:1.14;font-weight:950;text-transform:uppercase;color:#1a1612;padding:16px;box-sizing:border-box}
+  .iwom-n1{left:8%;top:40%}.iwom-n2{left:36%;top:10%}.iwom-n3{right:8%;top:40%}.iwom-n4{left:36%;bottom:9%}
+  .iwom-bottom{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);width:min(760px,80%);padding:14px 18px;border-left:5px solid #c8462c;background:rgba(251,247,239,.90);font-family:'Manrope',sans-serif;font-size:.9rem;line-height:1.24;font-weight:950;text-align:center;color:#1a1612}
+  .iwom-funnel{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+  .iwom-funnel-step{position:relative;border:1.5px solid rgba(184,149,74,.34);border-radius:8px;background:rgba(255,255,255,.52);padding:28px 22px;text-align:center;box-shadow:0 18px 44px rgba(26,22,18,.07)}
+  .iwom-funnel-step:after{content:"";position:absolute;right:-19px;top:50%;width:19px;border-top:2px solid rgba(184,149,74,.58)}
+  .iwom-funnel-step:last-child:after{display:none}
+  .iwom-funnel-step b{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;margin:0 auto 20px;background:#1a1612;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.76rem;font-weight:950}
+  .iwom-funnel-step h2{margin:0 0 10px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2rem;line-height:1;color:#1a1612}
+  .iwom-funnel-step p{margin:0;font-family:'Manrope',sans-serif;font-size:.92rem;line-height:1.28;font-weight:820;color:rgba(26,22,18,.66)}
+  html[data-export="1"] .iwom-slide *{transition:none!important;animation:none!important}
+</style>
+
+<div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth">
+  <div class="iwom-eye">invitation engine</div>
+  <section class="iwom-stage">
+    <h1 class="iwom-title">Invitations <em>mechanize</em> word of mouth.</h1>
+    <p class="iwom-sub">The behavior that already grows great clubs becomes a product loop: trusted people bring the next right people in.</p>
+    <div class="iwom-shell">
+      <div class="iwom-panel">
+        <h2>Open community event</h2>
+        <p>Wide-open social play turns every attendee into a trusted growth channel.</p>
+        <div class="iwom-visual">
+          <div class="iwom-phone"><b>You are invited</b><strong>Glow Pickleball Social Night</strong><span>Everyone welcome</span><div class="iwom-cta">Join us</div></div>
+          <div class="iwom-line l1"></div><div class="iwom-line l2"></div><div class="iwom-line l3"></div>
+          <div class="iwom-people"><div class="iwom-person iwom-p1">Jess</div><div class="iwom-person iwom-p2">Dean</div><div class="iwom-person iwom-p3">Maya</div><div class="iwom-person iwom-p4">Tom</div></div>
+        </div>
+        <div class="iwom-note">Any player can bring a friend. The event stays open, but distribution becomes personal.</div>
+      </div>
+      <div class="iwom-panel">
+        <h2>Bring friends to the pro</h2>
+        <p>Clinics, classes, and group private lessons fill through people the club already trusts.</p>
+        <div class="iwom-visual">
+          <div class="iwom-phone"><b>Invite friends</b><strong>Pro Clinic<br>Sat 9:00 AM</strong><span>Group private</span><div class="iwom-cta">Join us</div></div>
+          <div class="iwom-line l1"></div><div class="iwom-line l2"></div><div class="iwom-line l3"></div>
+          <div class="iwom-people"><div class="iwom-person iwom-p1">Nina</div><div class="iwom-person iwom-p2">Mark</div><div class="iwom-person iwom-p3">Taylor</div><div class="iwom-person iwom-p4">Ali</div></div>
+        </div>
+        <div class="iwom-note">Fill classes through friend referrals. More players, stronger sessions, better data.</div>
+      </div>
+    </div>
+    <div class="iwom-rail">
+      <div class="iwom-chip"><span>01</span>Belonging becomes distribution</div>
+      <div class="iwom-chip"><span>02</span>Text or call becomes product</div>
+      <div class="iwom-chip"><span>03</span>Courts fill with trust</div>
+      <div class="iwom-chip"><span>04</span>Every yes trains GnR</div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth-white" style="display:none">
+  <div class="iwom-eye">invitation engine / white variant</div>
+  <section class="iwom-stage">
+    <h1 class="iwom-title">Word of mouth becomes a <em>product surface.</em></h1>
+    <p class="iwom-sub">The slide works when investors see the simple mechanism: invite, accept, bring someone trusted, learn who makes the room better.</p>
+    <div class="iwom-white-grid">
+      <div class="iwom-white-card">
+        <h2>The invitation is the atomic unit.</h2>
+        <p>GnR does not need a feed to create growth. It needs the right person inviting the next right person into a real-world moment.</p>
+        <div class="iwom-white-list">
+          <div class="iwom-white-row"><b>01</b><span>Create a live event with referral permission.</span></div>
+          <div class="iwom-white-row"><b>02</b><span>Players invite friends who fit the room.</span></div>
+          <div class="iwom-white-row"><b>03</b><span>The graph learns from every accept, decline, referral, and repeat visit.</span></div>
+        </div>
+      </div>
+      <div class="iwom-white-card iwom-map">
+        <svg viewBox="0 0 720 520" aria-hidden="true">
+          <path d="M115 260 C230 120 330 118 360 260" fill="none" stroke="rgba(184,149,74,.58)" stroke-width="3"/>
+          <path d="M360 260 C430 106 570 150 610 260" fill="none" stroke="rgba(91,143,212,.52)" stroke-width="3"/>
+          <path d="M610 260 C500 420 394 415 360 260" fill="none" stroke="rgba(200,70,44,.50)" stroke-width="3"/>
+          <path d="M360 260 C250 405 150 390 115 260" fill="none" stroke="rgba(184,149,74,.52)" stroke-width="3"/>
+        </svg>
+        <div class="iwom-core">GnR<br><span style="font-family:'Manrope',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:#b8954a">invite loop</span></div>
+        <div class="iwom-node iwom-n1">Open social</div>
+        <div class="iwom-node iwom-n2">Trusted friend</div>
+        <div class="iwom-node iwom-n3">Better group</div>
+        <div class="iwom-node iwom-n4">Next invite</div>
+        <div class="iwom-bottom">Every invitation is distribution plus measurement: who gives the room life, who receives it, and who should be invited next.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus iwom-slide" id="cs-invitation-court-fill-white" style="display:none">
+  <div class="iwom-eye">invitation engine / white variant</div>
+  <section class="iwom-stage">
+    <h1 class="iwom-title">Fill the court through the people <em>already trusted.</em></h1>
+    <p class="iwom-sub">This version makes the investor point more operational: GnR turns community trust into a repeatable court-fill motion.</p>
+    <div class="iwom-funnel">
+      <div class="iwom-funnel-step"><b>01</b><h2>Event opens</h2><p>Staff creates the real-world moment: social night, clinic, class, group lesson.</p></div>
+      <div class="iwom-funnel-step"><b>02</b><h2>GnR invites</h2><p>The product reaches the right people with the right context, not a generic blast.</p></div>
+      <div class="iwom-funnel-step"><b>03</b><h2>Players refer</h2><p>Trusted attendees bring friends who fit the room and raise the session quality.</p></div>
+      <div class="iwom-funnel-step"><b>04</b><h2>Graph compounds</h2><p>Accepts, declines, referrals, and repeat play improve the next invitation.</p></div>
+    </div>
+    <div class="iwom-white-card" style="padding:20px 28px;text-align:center">
+      <p style="font-size:1.08rem;font-weight:900;color:#1a1612">Mechanized word of mouth is not virality for clicks. It is trusted distribution for real-world community growth.</p>
+    </div>
+  </section>
+</div>
+
 <!-- How it Started at NEPC — nav pos 14 -->
 <!-- Invitation engine story candidates — pink-dot alts ported to current active slot 12 (cs-11e). [Codex 2026-06-04] -->
 <style>
@@ -33795,7 +33947,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-26] cs-cultural-shift MOVED to APPENDIX per screenshot request.
   // [Codex 2026-05-27] Founder-built community now follows the uncomfortable cultural shift; wedge + measurable-connection slides moved later after proof/Racketeer validation, before the final vision bridge.
   // [Dave 2026-05-26] cs-givefirst-art MOVED to APPENDIX per screenshot request.
-  'cs-11d','cs-11e','cs-11',
+  'cs-11d','cs-11e','cs-invitation-word-of-mouth','cs-11',
   // [Codex 2026-05-27] cs-3 restored after Dave flagged the pickleball wedge slide missing from the active deck.
   'cs-3',
   // [Codex 2026-05-29] cs-magnetic-reciprocity-system moved to TRASH_ORDER per Dave screenshot request.
@@ -33934,7 +34086,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
   // [Codex 2026-06-02] Slot 22 is now cs-club-os, not cs-fw1; keep cs-16 only at active cs-fw1 slot 20 below.
-  23: [],
+  24: [],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
@@ -33958,9 +34110,10 @@ const SLIDE_ALTS = {
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
-  9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
+  9: ['cs-invitation-word-of-mouth-white', 'cs-invitation-court-fill-white'], // [Codex 2026-06-04] White-dot variants for new main slide cs-invitation-word-of-mouth.
+  10: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
   // [Codex 2026-05-30] Community incentive system was moved to trash; keep the human-value market/magnetic variants attached to the current outcomes slide slot.
-  12: ['cs-invite-broken-primitive-pink', 'cs-invite-rating-vs-chemistry-pink', 'cs-invite-operational-insanity-pink', 'cs-invite-coordinator-brain-pink', 'cs-invite-atomic-unit-pink', 'cs-invite-sms-fill-pink', 'cs-invite-proof-model-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'], // [Codex 2026-06-04] Invitation-engine essay candidates ported to current slot 12 (cs-11e); existing magnetic alts preserved.
+  13: ['cs-invite-broken-primitive-pink', 'cs-invite-rating-vs-chemistry-pink', 'cs-invite-operational-insanity-pink', 'cs-invite-coordinator-brain-pink', 'cs-invite-atomic-unit-pink', 'cs-invite-sms-fill-pink', 'cs-invite-proof-model-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -34014,25 +34167,25 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
-  17: [], // [Codex 2026-05-30] cs-unmeasured-value deleted per attached screenshot request; previous detached slot remains empty.
-  18: ['cs-value-choice-image-annotated-pink'], // [Codex 2026-06-03] cs-value-choice-image-only-pink moved to TRASH_ORDER per attached-slide delete request. cs-value-choice-image-receipts-pink moved to TRASH_ORDER per screenshot delete request.
-  20: [], // [Codex 2026-06-03] cs-brand-bg-story-map and cs-brand-bg-story-product moved to TRASH_ORDER per attached-slide delete requests. cs-brand-bg-story-os moved from slot-19 alt-c to APPENDIX_ORDER per attached-slide request.
+  18: [], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
+  19: ['cs-value-choice-image-annotated-pink'], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
+  21: [], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
-  16: [], // [Codex 2026-05-30] cs-racketeer-padel-club-pink moved to TRASH_ORDER with its matching padel/glass-walls slide.
-  14: [], // [Codex 2026-06-03] cs-fv6-pink and cs-fv6-information-pink moved to TRASH_ORDER per attached-slide delete requests.
-  15: [],
+  17: [], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
+  15: [], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
+  16: [],
   // [Dave 2026-05-26] Racketeer proof slide moved to appendix; detach same-slot Racketeer path alts from the main flow.
-  13: [], // [Codex 2026-06-03] cs-2c-measure-loop and cs-2c-invisible-layer moved to TRASH_ORDER per attached-slide delete requests.
-  21: ['cs-16'], // [Codex 2026-05-30] cs-16 stays attached to active cs-fw1 after founder slide restore.
+  14: [], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
+  22: ['cs-16'], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
   // [Codex 2026-05-30] Active cs-pb-silliness-feature is slot 21; attach its pink-dot image-led silliness variants here.
-  22: ['cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'], // [Codex 2026-06-02] New image-only silliness pink-dot candidates first; older text/card/image variants retained behind them for review.
+  23: ['cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'], // [Codex 2026-06-04] Shifted +1 after inserting cs-invitation-word-of-mouth.
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
   5: ['cs-referral-builder-pink', 'cs-referral-loop-pink'], // [Codex 2026-06-03] cs-referral-thesis-pink, cs-referral-data-pink, and cs-referral-product-spec-white removed from active dot rail per completed attached-slide/referral spec requests. cs-referral-roadmap-pink moved to APPENDIX_ORDER per attached-slide request.
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
   // [Codex 2026-05-30] Slot 23 is cs-club-social-loop; silliness variants moved to the actual active cs-pb-silliness-feature slot.
-  24: [],
+  25: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -35880,38 +36033,35 @@ function animateCsa2Expansion() {
 // Rebuilt 2026-05-06 PM v2 — was wildly out of sync (showing wrong slide names like "Cost of Honesty" on slot 12).
 const slideLabels = [
   '', // 0 placeholder
-  'Give n Receive',                                  //  1 cs-1
-  'Social media · narrow view of human connection',  //  2 cs-a7 [Dave 2026-05-07: promoted to main slot 2]
-  'Modern life · two imbalances',                    //  3 cs-1bm1
-  'Community technology is unsolved',                //  4 cs-thegap
-  "Give n Receive = community",                     //  5 cs-2c
-  // cs-once label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
-  'Introducing Give n Receive',                      //  7 cs-gnr
-  'Club owner offer',
-  'Community growth system',
-  'Anti-DUPR position',
-  'The Secret Inside the Invitation · 70/0.6',      //  6 cs-11d
-  'Scheduling is measuring',                         //  7 cs-11
-  'NEPC proof · $210K court fees',                   //  9 cs-11e
-  // cs-brand-V9 + cs-brand-V15 labels REMOVED from main 2026-05-07 PM — both moved to appendix end
-  'Brand: live a life of abundant, autonomous connection · Human Value, Finally Seen',   // 12 cs-brand-V8 [REVERTED 2026-05-08 to pre-jaw-drop state per Dave: 'revert to what you had just before you changed the header text']
-  // [Dave 2026-05-08] slot 13 = measurement-is-the-network review (cs-measure primary). Alts cs-byproduct + cs-onandoff don't get separate label slots — alt-dot tooltips read from each slide's own eyebrow.
-  'A pickleball coordination system becomes its social network', // 13 cs-onandoff [PROMOTED to primary per Dave 2026-05-08 v3 — v1 headline restored, Krista Slack proof block]
-  'Why pickleball first',                            // 14 cs-25
-  'Autonomous social coordination',                  // 14 cs-fw1 (moved from appendix to main slot 14 per Dave 2026-05-07 PM)
-  'Every natural community touchpoint trains GnR',   // 15 cs-16 [v2 2026-05-08 — 'community' inserted in headline; Concierge moved above Diary]
-  'The AI Inversion',                                // 16 cs-hc8 (moved from appendix to main slot 15 per Dave 2026-05-07 PM)
-  'The Wedge Into Human Connection',              // 17 cs-wedge1 [promoted from blue-dot alt 2026-05-10]
-  'Future of our communities',                       // 17 cs-future
-  'My Wheelhouse · Dave Velardo',                    // 16 cs-18 [eyebrow renamed 2026-05-08]
-  'The Founder Method · The Living Lab',             // 17 cs-lab [NEW Dave 2026-05-08 — Dave\'s iteration method + NEPC domain-expert team]
-  'CTO · Steve Callan',                              // 18 cs-27
-  // 'Mission · variant A' label removed — cs-mv6-altA deleted from main flow 2026-05-06 PM (10x version moved to appendix as cs-mv6-app)
-  'Mission · run on abundant human connection',      // 19 cs-mv6 (era-cards version restored to main flow per Dave 2026-05-07)
-  'Our Promise',                                     // 21 cs-prom (now last main slide)
-  // cs-hc11 label removed from main — moved to first appendix slide per Dave 2026-05-07 PM
-  // 'What is your human value to others?' label removed — cs-hc12 deleted from main flow 2026-05-06 PM per Dave
-  // cs-hc9 label removed at end — moved to slot 13 (right after cs-12m2) per Dave 2026-05-06 PM
+  'Frontier scale',                                  //  1 cs-frontier-scale-pink-2
+  'What we give fuels our communities',              //  2 cs-1m8
+  'Community technology is unsolved',                //  3 cs-thegap
+  'Introducing Give n Receive',                      //  4 cs-gnr
+  'Same courts. Better groups.',                     //  5 cs-samecourt
+  'Programmable invitations',                        //  6 cs-programmable-invitations
+  'The secret inside the invitation',                //  7 cs-11d
+  'NEPC proof - $210K court fees',                   //  8 cs-11e
+  'Invitations mechanize word of mouth',             //  9 cs-invitation-word-of-mouth
+  'Scheduling is measuring',                         // 10 cs-11
+  'Why pickleball first',                            // 11 cs-3
+  'Business outcomes',                               // 12 cs-gnr-business-outcomes
+  'People App Store',                                // 13 cs-app-store-people
+  'Pickleball wedge',                                // 14 cs-wedgepb-codex
+  'Future value graph',                              // 15 cs-fv6-img
+  'Community grid',                                  // 16 cs-2c
+  'The Wedge Into Human Connection',                 // 17 cs-wedge1
+  'Mission - abundant human connection',             // 18 cs-mv6-merge
+  'Most valuable product',                           // 19 cs-value-choice
+  'My Wheelhouse - Dave Velardo',                    // 20 cs-18-vd4
+  'Brand promise',                                   // 21 cs-brand-V8
+  'Flywheel',                                        // 22 cs-fw1
+  'Pickleball silliness',                            // 23 cs-pb-silliness-feature
+  'Club OS',                                         // 24 cs-club-os
+  'Club social loop',                                // 25 cs-club-social-loop
+  'Referral business model',                         // 26 cs-referral-business-model
+  'Business model options',                          // 27 cs-business-model-options
+  'Two-market economics',                            // 28 cs-market-two-economics
+  'TeamReach referral compare',                      // 29 cs-teamreach-referral-compare
 ];
 
 // ─── Tooltip text resolver [Dave 2026-05-07] ────────────────────────────────
@@ -36086,7 +36236,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
     const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-hc-market-planet' || altId === 'cs-hc-market-attention' || altId === 'cs-hc-market-latent' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
-    const isWhiteAlt = (altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market');
+    const isWhiteAlt = (altId === 'cs-invitation-word-of-mouth-white' || altId === 'cs-invitation-court-fill-white' || altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     const isGreenAlt = Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
