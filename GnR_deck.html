@@ -11674,6 +11674,7 @@ window.cs1m7Reverse = function() {
   #cs-invitation-word-of-mouth-white,
   #cs-invitation-court-fill-white{background:#fbf7ef!important;color:#1a1612;overflow:hidden}
   .iwom-slide .iwom-eye{position:absolute;top:28px;left:48px;z-index:8;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
+  .iwom-slide .iwom-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   .iwom-slide .iwom-stage{position:absolute;inset:0;z-index:2;box-sizing:border-box;padding:86px 76px 82px;display:flex;flex-direction:column;gap:24px}
   .iwom-slide .iwom-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.15rem,5.1vw,5.95rem);line-height:.96;font-weight:900;letter-spacing:0;color:#1a1612;text-align:center}
   .iwom-slide .iwom-title em{font-style:italic;color:#b8954a}
@@ -11698,18 +11699,17 @@ window.cs1m7Reverse = function() {
   .iwom-slide .iwom-rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:min(1220px,76vw);margin:0 auto}
   .iwom-slide .iwom-chip{min-height:58px;border:1px solid rgba(184,149,74,.35);border-radius:8px;background:rgba(255,255,255,.46);display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;padding:10px 14px;font-family:'Manrope',sans-serif;font-size:.76rem;line-height:1.12;font-weight:900;color:#1a1612}
   .iwom-slide .iwom-chip span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#1a1612;color:#fbf7ef;font-size:.68rem;letter-spacing:.08em}
-  #cs-invitation-word-of-mouth{background:#1a1612!important;color:#fbf7ef}
-  #cs-invitation-word-of-mouth:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 24%,rgba(184,149,74,.22),transparent 35%),radial-gradient(circle at 13% 78%,rgba(91,143,212,.14),transparent 30%),radial-gradient(circle at 88% 76%,rgba(200,70,44,.12),transparent 28%),linear-gradient(180deg,#071019 0%,#15110e 62%,#1a1612 100%);z-index:0}
-  #cs-invitation-word-of-mouth .iwom-eye{color:#b8954a}
-  #cs-invitation-word-of-mouth .iwom-stage{z-index:2}
-  #cs-invitation-word-of-mouth .iwom-title{color:#fbf7ef;text-shadow:0 18px 48px rgba(0,0,0,.46)}
-  #cs-invitation-word-of-mouth .iwom-sub{color:rgba(251,247,239,.72)}
-  #cs-invitation-word-of-mouth .iwom-panel{background:rgba(251,247,239,.07);border-color:rgba(184,149,74,.48);box-shadow:0 28px 76px rgba(0,0,0,.34)}
-  #cs-invitation-word-of-mouth .iwom-panel h2{color:#fbf7ef}
-  #cs-invitation-word-of-mouth .iwom-panel p{color:rgba(251,247,239,.72)}
-  #cs-invitation-word-of-mouth .iwom-note{background:rgba(26,22,18,.72);color:#fbf7ef}
-  #cs-invitation-word-of-mouth .iwom-chip{background:rgba(251,247,239,.07);color:#fbf7ef}
-  #cs-invitation-word-of-mouth .iwom-chip span{background:#b8954a;color:#1a1612}
+  #cs-invitation-word-of-mouth{background:#fbf7ef!important;color:#1a1612}
+  #cs-invitation-word-of-mouth:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.97) 0%,rgba(251,247,239,.91) 36%,rgba(251,247,239,.76) 62%,rgba(251,247,239,.58) 100%),radial-gradient(circle at 22% 20%,rgba(184,149,74,.16),transparent 32%);z-index:1}
+  #cs-invitation-word-of-mouth .iwom-eye{color:#c8462c}
+  #cs-invitation-word-of-mouth .iwom-stage{z-index:2;padding-bottom:62px}
+  #cs-invitation-word-of-mouth .iwom-title{color:#1a1612;text-shadow:none}
+  #cs-invitation-word-of-mouth .iwom-sub{color:rgba(26,22,18,.66);font-weight:900;letter-spacing:.10em;text-transform:uppercase}
+  #cs-invitation-word-of-mouth .iwom-shell{flex:0 0 auto;width:min(1400px,78vw);margin:0 auto;align-items:start}
+  #cs-invitation-word-of-mouth .iwom-panel{background:rgba(251,247,239,.84);border-color:rgba(184,149,74,.38);box-shadow:0 24px 64px rgba(26,22,18,.10),0 0 0 1px rgba(255,255,255,.52) inset;backdrop-filter:blur(2px)}
+  #cs-invitation-word-of-mouth .iwom-panel h2{color:#1a1612}
+  #cs-invitation-word-of-mouth .iwom-panel p{color:rgba(26,22,18,.68)}
+  #cs-invitation-word-of-mouth .iwom-note{background:rgba(26,22,18,.84);color:#fbf7ef}
   .iwom-white-grid{flex:1;display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;min-height:0;align-items:stretch}
   .iwom-white-card{border:1.5px solid rgba(184,149,74,.32);border-radius:8px;background:rgba(255,255,255,.48);box-shadow:0 20px 52px rgba(26,22,18,.07);padding:30px}
   .iwom-white-card h2{margin:0 0 14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.35rem;line-height:1.02;color:#1a1612}
@@ -11735,10 +11735,11 @@ window.cs1m7Reverse = function() {
 </style>
 
 <div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth">
-  <div class="iwom-eye">invitation engine</div>
+  <img class="iwom-bg" src="assets/cs-referral-loop-bg.png" alt="Text-free pickleball court referral loop background">
+  <div class="iwom-eye">The community sales engine</div>
   <section class="iwom-stage">
     <h1 class="iwom-title">Invitations <em>mechanize</em> word of mouth.</h1>
-    <p class="iwom-sub">The behavior that already grows great clubs becomes a product loop: trusted people bring the next right people in.</p>
+    <p class="iwom-sub">Two example use cases</p>
     <div class="iwom-shell">
       <div class="iwom-panel">
         <h2>Open community event</h2>
@@ -11752,7 +11753,7 @@ window.cs1m7Reverse = function() {
       </div>
       <div class="iwom-panel">
         <h2>Bring friends to the pro</h2>
-        <p>Clinics, classes, and group private lessons fill through people the club already trusts.</p>
+        <p>Group private lessons fill through the pros most loyal followers</p>
         <div class="iwom-visual">
           <div class="iwom-phone"><b>Invite friends</b><strong>Pro Clinic<br>Sat 9:00 AM</strong><span>Group private</span><div class="iwom-cta">Join us</div></div>
           <div class="iwom-line l1"></div><div class="iwom-line l2"></div><div class="iwom-line l3"></div>
@@ -11760,12 +11761,6 @@ window.cs1m7Reverse = function() {
         </div>
         <div class="iwom-note">Fill classes through friend referrals. More players, stronger sessions, better data.</div>
       </div>
-    </div>
-    <div class="iwom-rail">
-      <div class="iwom-chip"><span>01</span>Belonging becomes distribution</div>
-      <div class="iwom-chip"><span>02</span>Text or call becomes product</div>
-      <div class="iwom-chip"><span>03</span>Courts fill with trust</div>
-      <div class="iwom-chip"><span>04</span>Every yes trains GnR</div>
     </div>
   </section>
 </div>
