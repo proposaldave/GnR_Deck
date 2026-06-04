@@ -8324,7 +8324,7 @@ window.cs1m5Reverse = function() {
       <div class="m8-wordmark">
         <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
       </div>
-      <div class="m8-autonomous">Invitation-Feed for Real Communities</div>
+      <div class="m8-autonomous">Invitation engine for real communities</div>
       <!-- [Dave 2026-05-11 LATE] 4-stage reveal: STAGE 1 = LEFT cap only, STAGE 2 = + network line, STAGE 3 = + RIGHT cap. -->
       <!-- STAGE 1: LEFT caption (m8-cap-left auto-shows with parent at stage 1+); RIGHT (m8-cap-right) stays hidden until stage 3 -->
       <!-- [Dave 2026-05-12 LATEST v2] Caption alignment: G is at translateX 85, R is at translateX 282 (asymmetric). Captions sit in a symmetric 2-col grid, so they don't naturally match the G/R visual centers. Solution — apply the SAME translates to each caption column as the wordmark uses, so caption centers track G and R precisely. (Was previously +95 on right only — overcorrected per Dave.) -->
@@ -15185,6 +15185,125 @@ window.cs1m7Reverse = function() {
 </div>
 
 <!-- How it Started at NEPC — nav pos 14 -->
+<!-- Invitation engine story candidates — pink-dot alts ported to current active slot 12 (cs-11e). [Codex 2026-06-04] -->
+<style>
+  .invp-slide{background:#fbf7ef!important;position:absolute;inset:0;overflow:hidden;color:#1a1612}
+  .invp-stage{position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center;padding:86px 72px 66px}
+  .invp-stage:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 26%,rgba(184,149,74,.15),transparent 34%),radial-gradient(circle at 78% 62%,rgba(91,143,212,.10),transparent 30%);pointer-events:none}
+  .invp-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
+  .invp-wrap{position:relative;z-index:1;width:min(1280px,100%);margin:0 auto}
+  .invp-kicker{font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#b8954a;margin-bottom:18px}
+  .invp-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.25rem,5.55vw,6rem);line-height:.95;font-weight:900;letter-spacing:0;color:#1a1612;max-width:1120px;margin:0}
+  .invp-title em{font-style:italic;color:#b8954a}
+  .invp-sub{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.22rem,1.65vw,1.78rem);line-height:1.18;font-weight:650;color:rgba(26,22,18,.72);max-width:860px;margin:24px 0 0}
+  .invp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .invp-card{min-height:172px;border:1px solid rgba(26,22,18,.13);border-radius:8px;background:rgba(251,247,239,.72);padding:24px 24px 22px;box-shadow:0 18px 42px rgba(26,22,18,.06)}
+  .invp-card b{display:block;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;margin-bottom:13px}
+  .invp-card span{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.28rem;line-height:1.13;font-weight:750;color:#1a1612}
+  .invp-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px}
+  .invp-step{position:relative;min-height:154px;border:1px solid rgba(184,149,74,.28);border-radius:8px;background:rgba(255,255,255,.38);padding:20px 18px;text-align:center}
+  .invp-step:after{content:"";position:absolute;right:-13px;top:50%;width:13px;border-top:1px solid rgba(184,149,74,.50)}
+  .invp-step:last-child:after{display:none}
+  .invp-step strong{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;margin:0 auto 13px;background:#1a1612;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950}
+  .invp-step span{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.12rem;line-height:1.08;font-weight:800}
+  .invp-metrics{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:18px;margin-top:38px;align-items:stretch}
+  .invp-metric{border-radius:8px;border:1px solid rgba(184,149,74,.32);background:rgba(255,255,255,.50);padding:28px 24px;text-align:center}
+  .invp-num{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.4rem,6.2vw,6rem);line-height:.9;font-weight:950;color:#b8954a;letter-spacing:0}
+  .invp-label{margin-top:13px;font-family:'Manrope',sans-serif;font-size:.72rem;line-height:1.18;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,22,18,.62)}
+  .invp-note{margin-top:28px;font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#c8462c}
+  .invp-image-only .slide-eyebrow{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+  .invp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+  .invp-slide.casey-entered .invp-wrap,.invp-slide.casey-entered .invp-bg{opacity:1;transform:none}
+  .invp-wrap,.invp-bg{opacity:0;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  html[data-export="1"] .invp-wrap,html[data-export="1"] .invp-bg{opacity:1!important;transform:none!important;transition:none!important}
+</style>
+
+<div class="casey-slide ds-focus invp-slide invp-text-slide" id="cs-invite-broken-primitive-pink" style="display:none">
+  <div class="invp-eye slide-eyebrow">invitation engine / broken primitive</div>
+  <section class="invp-stage">
+    <div class="invp-wrap">
+      <div class="invp-kicker">The old product is access</div>
+      <h1 class="invp-title">A “3.5 game” is not the <em>job.</em></h1>
+      <p class="invp-sub">Clubs do not win by sorting competitors. They win by creating the right game, with the right people, at the right moment.</p>
+      <div class="invp-grid">
+        <div class="invp-card"><b>Ratings know</b><span>who is technically allowed to share a court.</span></div>
+        <div class="invp-card"><b>Members feel</b><span>who is safe, fun, reliable, generous, and worth returning for.</span></div>
+        <div class="invp-card"><b>Clubs sell</b><span>the five-star experience that ratings cannot see.</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus invp-slide invp-image-only" id="cs-invite-rating-vs-chemistry-pink" style="display:none" aria-label="Rating board versus curated game">
+  <div class="slide-eyebrow">invitation engine / ratings versus chemistry</div>
+  <img class="invp-bg" src="assets/cs-invite-rating-vs-chemistry-pink.png" alt="Image-generated split scene: rating board access on one side, curated pickleball group chemistry on the other." onerror="this.onerror=null;this.src='assets/cs-11-invitation-background.png'"/>
+</div>
+
+<div class="casey-slide ds-focus invp-slide invp-text-slide" id="cs-invite-operational-insanity-pink" style="display:none">
+  <div class="invp-eye slide-eyebrow">invitation engine / why it has not scaled</div>
+  <section class="invp-stage">
+    <div class="invp-wrap">
+      <div class="invp-kicker">Custom invitations are the right product</div>
+      <h1 class="invp-title">They are also <em>operationally insane.</em></h1>
+      <div class="invp-grid">
+        <div class="invp-card"><b>Who gets invited?</b><span>And who quietly should not?</span></div>
+        <div class="invp-card"><b>Who fills the slot?</b><span>When the trusted person declines.</span></div>
+        <div class="invp-card"><b>Who absorbs politics?</b><span>When a member feels left out.</span></div>
+      </div>
+      <p class="invp-sub">That is why clubs default to open events even when every great coordinator knows curation wins.</p>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus invp-slide invp-image-only" id="cs-invite-coordinator-brain-pink" style="display:none" aria-label="Coordinator intelligence becoming a scalable graph">
+  <div class="slide-eyebrow">invitation engine / coordinator intelligence</div>
+  <img class="invp-bg" src="assets/cs-invite-coordinator-brain-pink.png" alt="Image-generated club coordinator turning hidden human judgment into a scalable social graph." onerror="this.onerror=null;this.src='assets/cs-11d-cultural-shift-bg.png'"/>
+</div>
+
+<div class="casey-slide ds-focus invp-slide invp-text-slide" id="cs-invite-atomic-unit-pink" style="display:none">
+  <div class="invp-eye slide-eyebrow">invitation engine / atomic unit</div>
+  <section class="invp-stage">
+    <div class="invp-wrap">
+      <div class="invp-kicker">AI changes the math</div>
+      <h1 class="invp-title">The invitation becomes the <em>operating layer.</em></h1>
+      <div class="invp-flow">
+        <div class="invp-step"><strong>01</strong><span>Invite</span></div>
+        <div class="invp-step"><strong>02</strong><span>RSVP</span></div>
+        <div class="invp-step"><strong>03</strong><span>Play</span></div>
+        <div class="invp-step"><strong>04</strong><span>Signal</span></div>
+        <div class="invp-step"><strong>05</strong><span>Next invite</span></div>
+      </div>
+      <p class="invp-sub">Bookings, check-ins, cancellations, referrals, feedback, and SMS conversations teach the system who should be together next.</p>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus invp-slide invp-image-only" id="cs-invite-sms-fill-pink" style="display:none" aria-label="SMS invitation filling an empty court">
+  <div class="slide-eyebrow">invitation engine / sms first</div>
+  <img class="invp-bg" src="assets/cs-invite-sms-fill-pink.png" alt="Image-generated SMS-first invitations filling dead pickleball court time." onerror="this.onerror=null;this.src='assets/cs-app-store-people-bg.png'"/>
+</div>
+
+<div class="casey-slide ds-focus invp-slide invp-text-slide" id="cs-invite-proof-model-pink" style="display:none">
+  <div class="invp-eye slide-eyebrow">invitation engine / proof and model</div>
+  <section class="invp-stage">
+    <div class="invp-wrap">
+      <div class="invp-kicker">The funnel is one story</div>
+      <h1 class="invp-title">Every invite fills courts and trains the <em>graph.</em></h1>
+      <div class="invp-metrics">
+        <div class="invp-metric"><div class="invp-num">86.7%</div><div class="invp-label">curated-group acceptance versus 49.9% open groups</div></div>
+        <div class="invp-metric"><div class="invp-num">0.90</div><div class="invp-label">AUC after one week of invitation history</div></div>
+        <div class="invp-metric"><div class="invp-num">10%</div><div class="invp-label">of booking revenue after a 90-day pilot</div></div>
+      </div>
+      <div class="invp-note">No app download. No behavior change. The club is the customer.</div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus invp-slide invp-image-only" id="cs-invite-graph-compounds-pink" style="display:none" aria-label="Real-world social graph compounding from invitations">
+  <div class="slide-eyebrow">invitation engine / give n receive graph</div>
+  <img class="invp-bg" src="assets/cs-invite-graph-compounds-pink.png" alt="Image-generated real-world social graph compounding across courts, RSVPs, play, referrals, and relationships." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png'"/>
+</div>
+
 <div class="casey-slide ds-focus appendix-slide" id="cs-12" style="display:none">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our Moat &middot; Krista's judgment, digitized</div>
 <section id="s3b">
@@ -33841,7 +33960,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
   9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
   // [Codex 2026-05-30] Community incentive system was moved to trash; keep the human-value market/magnetic variants attached to the current outcomes slide slot.
-  12: ['cs-magnetic-human-value-market', 'cs-magnetic'],
+  12: ['cs-invite-broken-primitive-pink', 'cs-invite-rating-vs-chemistry-pink', 'cs-invite-operational-insanity-pink', 'cs-invite-coordinator-brain-pink', 'cs-invite-atomic-unit-pink', 'cs-invite-sms-fill-pink', 'cs-invite-proof-model-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'], // [Codex 2026-06-04] Invitation-engine essay candidates ported to current slot 12 (cs-11e); existing magnetic alts preserved.
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -35960,7 +36079,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
     const isGeneratedSillinessPinkAlt = /^cs-pb-silliness-generated-/.test(altId);
-    const isPinkAlt = (isGeneratedSillinessPinkAlt || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
+    const isInvitationPinkAlt = /^cs-invite-/.test(altId);
+    const isPinkAlt = (isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
