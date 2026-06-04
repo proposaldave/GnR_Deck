@@ -33795,9 +33795,8 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-26] cs-cultural-shift MOVED to APPENDIX per screenshot request.
   // [Codex 2026-05-27] Founder-built community now follows the uncomfortable cultural shift; wedge + measurable-connection slides moved later after proof/Racketeer validation, before the final vision bridge.
   // [Dave 2026-05-26] cs-givefirst-art MOVED to APPENDIX per screenshot request.
-  'cs-11d','cs-11e','cs-11',
-  // [Codex 2026-05-27] cs-3 restored after Dave flagged the pickleball wedge slide missing from the active deck.
-  'cs-3',
+  // [Codex 2026-06-04] cs-11d, cs-11, and cs-3 moved to the beginning of APPENDIX_ORDER per Dave: "move attached slides to beginning of appendix".
+  'cs-11e',
   // [Codex 2026-05-29] cs-magnetic-reciprocity-system moved to TRASH_ORDER per Dave screenshot request.
   'cs-gnr-business-outcomes', // [Codex 2026-05-29] Simplified community-business stakes slide moved next to the cs-magnetic white-dot concept cluster.
   'cs-app-store-people', // [Codex 2026-05-30] Moved higher as the pickleball-destiny bridge before the product/system reveal.
@@ -33934,7 +33933,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
   // [Codex 2026-06-02] Slot 22 is now cs-club-os, not cs-fw1; keep cs-16 only at active cs-fw1 slot 20 below.
-  23: [],
+  20: [],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
@@ -33949,7 +33948,7 @@ const SLIDE_ALTS = {
   // [Codex 2026-05-26] Removed slot-4 alt per screenshot request: delete the 4 / 20 (alt) slide.
   4: [],
   // Slot 4 (cs-1bm1 — was cs-a7m1) — no alts.
-  7: ['cs-two-markets-bg-only-pink', 'cs-two-markets-wall-pink', 'cs-connection-market-fills-courts-pink', 'cs-two-market-stack-pink'], // [Codex 2026-06-03] cs-referral-market-engine-pink moved to TRASH_ORDER per attached-slide delete request.
+  // [Codex 2026-06-04] Former slot-7 alts detached because primary cs-11d moved to APPENDIX_ORDER per Dave: "move attached slides to beginning of appendix".
   // Slot 5 (cs-2c — was slot 5 was slot 6) — no alts.
   // [Dave 2026-05-26] cs-cultural-shift moved to APPENDIX; pink candidate detached from active slide slots.
   // [Dave 2026-05-26] cs-11d black-dot backup DELETED per screenshot request: remove active slot-7 alt registration; clone stub remains inert.
@@ -33958,9 +33957,9 @@ const SLIDE_ALTS = {
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
-  9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
+  // [Codex 2026-06-04] Former slot-9 alts detached because primary cs-11 moved to APPENDIX_ORDER per Dave: "move attached slides to beginning of appendix".
   // [Codex 2026-05-30] Community incentive system was moved to trash; keep the human-value market/magnetic variants attached to the current outcomes slide slot.
-  12: ['cs-invite-broken-primitive-pink', 'cs-invite-rating-vs-chemistry-pink', 'cs-invite-operational-insanity-pink', 'cs-invite-coordinator-brain-pink', 'cs-invite-atomic-unit-pink', 'cs-invite-sms-fill-pink', 'cs-invite-proof-model-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'], // [Codex 2026-06-04] Invitation-engine essay candidates ported to current slot 12 (cs-11e); existing magnetic alts preserved.
+  9: ['cs-invite-broken-primitive-pink', 'cs-invite-rating-vs-chemistry-pink', 'cs-invite-operational-insanity-pink', 'cs-invite-coordinator-brain-pink', 'cs-invite-atomic-unit-pink', 'cs-invite-sms-fill-pink', 'cs-invite-proof-model-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'], // [Codex 2026-06-04] Shifted with cs-app-store-people after appendix move; existing magnetic alts preserved.
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -34014,25 +34013,25 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
-  17: [], // [Codex 2026-05-30] cs-unmeasured-value deleted per attached screenshot request; previous detached slot remains empty.
-  18: ['cs-value-choice-image-annotated-pink'], // [Codex 2026-06-03] cs-value-choice-image-only-pink moved to TRASH_ORDER per attached-slide delete request. cs-value-choice-image-receipts-pink moved to TRASH_ORDER per screenshot delete request.
-  20: [], // [Codex 2026-06-03] cs-brand-bg-story-map and cs-brand-bg-story-product moved to TRASH_ORDER per attached-slide delete requests. cs-brand-bg-story-os moved from slot-19 alt-c to APPENDIX_ORDER per attached-slide request.
+  14: [], // [Codex 2026-05-30] cs-unmeasured-value deleted per attached screenshot request; previous detached slot remains empty.
+  15: ['cs-value-choice-image-annotated-pink'], // [Codex 2026-06-03] cs-value-choice-image-only-pink moved to TRASH_ORDER per attached-slide delete request. cs-value-choice-image-receipts-pink moved to TRASH_ORDER per screenshot delete request.
+  17: [], // [Codex 2026-06-03] cs-brand-bg-story-map and cs-brand-bg-story-product moved to TRASH_ORDER per attached-slide delete requests. cs-brand-bg-story-os moved from slot-19 alt-c to APPENDIX_ORDER per attached-slide request.
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
-  16: [], // [Codex 2026-05-30] cs-racketeer-padel-club-pink moved to TRASH_ORDER with its matching padel/glass-walls slide.
-  14: [], // [Codex 2026-06-03] cs-fv6-pink and cs-fv6-information-pink moved to TRASH_ORDER per attached-slide delete requests.
-  15: [],
+  13: [], // [Codex 2026-05-30] cs-racketeer-padel-club-pink moved to TRASH_ORDER with its matching padel/glass-walls slide.
+  11: [], // [Codex 2026-06-03] cs-fv6-pink and cs-fv6-information-pink moved to TRASH_ORDER per attached-slide delete requests.
+  12: [],
   // [Dave 2026-05-26] Racketeer proof slide moved to appendix; detach same-slot Racketeer path alts from the main flow.
-  13: [], // [Codex 2026-06-03] cs-2c-measure-loop and cs-2c-invisible-layer moved to TRASH_ORDER per attached-slide delete requests.
-  21: ['cs-16'], // [Codex 2026-05-30] cs-16 stays attached to active cs-fw1 after founder slide restore.
+  10: [], // [Codex 2026-06-03] cs-2c-measure-loop and cs-2c-invisible-layer moved to TRASH_ORDER per attached-slide delete requests.
+  18: ['cs-16'], // [Codex 2026-05-30] cs-16 stays attached to active cs-fw1 after founder slide restore.
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
   // [Codex 2026-05-30] Active cs-pb-silliness-feature is slot 21; attach its pink-dot image-led silliness variants here.
-  22: ['cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'], // [Codex 2026-06-02] New image-only silliness pink-dot candidates first; older text/card/image variants retained behind them for review.
+  19: ['cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'], // [Codex 2026-06-02] New image-only silliness pink-dot candidates first; older text/card/image variants retained behind them for review.
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
   5: ['cs-referral-builder-pink', 'cs-referral-loop-pink'], // [Codex 2026-06-03] cs-referral-thesis-pink, cs-referral-data-pink, and cs-referral-product-spec-white removed from active dot rail per completed attached-slide/referral spec requests. cs-referral-roadmap-pink moved to APPENDIX_ORDER per attached-slide request.
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
   // [Codex 2026-05-30] Slot 23 is cs-club-social-loop; silliness variants moved to the actual active cs-pb-silliness-feature slot.
-  24: [],
+  21: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -34131,6 +34130,10 @@ const LOCKED_POSITIONS = [];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
+  // [Codex 2026-06-04] MOVED here from SLIDE_ORDER per Dave: "move attached slides to beginning of appendix".
+  'cs-11d',
+  'cs-11',
+  'cs-3',
   // [Dave 2026-05-26] cs-cultural-shift MOVED here from SLIDE_ORDER per screenshot request.
   'cs-cultural-shift',
   // [Dave 2026-05-26] cs-givefirst-art MOVED here from SLIDE_ORDER per screenshot request: "You can't tell someone to open their heart."
