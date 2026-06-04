@@ -9937,21 +9937,21 @@ window.cs1m7Reverse = function() {
 
   /* 3 panels SLIDE UP FROM BELOW + fade in, staggered. [Dave 2026-05-18 LATEST] Smoother easing + wider per-panel gaps (was 0.40/0.55/0.70 → now 0.40/0.75/1.10) + longer transitions (0.65-0.70s → 0.95s) so each panel arrives on its own clear beat instead of overlapping. */
   #cs-thegap [data-panel] {
-    opacity: 0; transform: translateY(42px); transform-box: fill-box;
+    opacity: 0; transform: translate(var(--tg-panel-x, 0px), 42px); transform-box: fill-box;
     transition: opacity 0.95s cubic-bezier(.16,1,.30,1), transform 1.05s cubic-bezier(.16,1,.30,1);
   }
   #cs-thegap[data-shown="1"] [data-panel="1"],
   #cs-thegap[data-shown="2"] [data-panel="1"],
-  #cs-thegap[data-shown="3"] [data-panel="1"] { opacity: 1; transform: translateY(0); transition-delay: 0.40s; }
+  #cs-thegap[data-shown="3"] [data-panel="1"] { opacity: 1; transform: translate(var(--tg-panel-x, 0px), 0); transition-delay: 0.40s; }
   #cs-thegap[data-shown="1"] [data-panel="2"],
   #cs-thegap[data-shown="2"] [data-panel="2"],
-  #cs-thegap[data-shown="3"] [data-panel="2"] { opacity: 1; transform: translateY(0); transition-delay: 0.75s; }
+  #cs-thegap[data-shown="3"] [data-panel="2"] { opacity: 1; transform: translate(var(--tg-panel-x, 0px), 0); transition-delay: 0.75s; }
   #cs-thegap[data-shown="1"] [data-panel="3"],
   #cs-thegap[data-shown="2"] [data-panel="3"],
-  #cs-thegap[data-shown="3"] [data-panel="3"] { opacity: 1; transform: translateY(0); transition-delay: 1.10s; }
+  #cs-thegap[data-shown="3"] [data-panel="3"] { opacity: 1; transform: translate(var(--tg-panel-x, 0px), 0); transition-delay: 1.10s; }
   #cs-thegap[data-shown="1"] [data-panel="4"],
   #cs-thegap[data-shown="2"] [data-panel="4"],
-  #cs-thegap[data-shown="3"] [data-panel="4"] { opacity: 1; transform: translateY(0); transition-delay: 1.45s; }
+  #cs-thegap[data-shown="3"] [data-panel="4"] { opacity: 1; transform: translate(var(--tg-panel-x, 0px), 0); transition-delay: 1.45s; }
   /* svg-wrap (containing the 3 panels) — hidden by default, visible after click. Shrunk so it
      coexists with the (now-also-shrunk) trapped graphic above it. */
   #cs-thegap .tg-svg-wrap { display: none; }
@@ -10800,7 +10800,7 @@ window.cs1m7Reverse = function() {
           <!-- ═══ PANEL 1 · COORDINATION → BY HAND ═══════════════════════════════
                Single texter manually fanning messages out to 4 separate people, one-by-one.
                No batching, no automation. The 'by hand' failure made physical. -->
-          <g data-panel="1">
+          <g data-panel="1" style="--tg-panel-x:0px">
             <ellipse cx="160" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <!-- [Dave 2026-05-15] Reverted to original simple silhouettes — the "realistic" upgrade with necks/oval heads/hair variations introduced weird artifacts (the long-hair target looked horned, the bun and cap silhouettes read as awkward shapes). Clean stick-figure silhouettes work better here. -->
             <!-- Texter silhouette (centered) -->
@@ -10835,7 +10835,7 @@ window.cs1m7Reverse = function() {
                [Dave 2026-05-17] SWAPPED with Panel 3 per 'swap positions of these two'.
                Lone-giver content moved to LEFT slot (cx=690) via translate(-470, 0). Badge
                number stays "2" since this is now the second-revealed panel. -->
-          <g data-panel="2">
+          <g data-panel="2" style="--tg-panel-x:63.3px">
             <ellipse cx="513" cy="150" rx="170" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(513, 144)" filter="url(#tgInkLiftOld)">
               <g fill="#1a1612">
@@ -10872,7 +10872,7 @@ window.cs1m7Reverse = function() {
             <text x="513" y="354" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="2.2" fill="#c8462c">LATENT HUMAN VALUE</text>
           </g>
 
-          <g data-panel="3">
+          <g data-panel="3" style="--tg-panel-x:156.7px">
             <ellipse cx="867" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(-293, 0)" filter="url(#tgInkLiftOld)">
               <!-- [Dave 2026-05-15] Reverted to original silhouettes — the realism upgrade made things worse. -->
@@ -10930,7 +10930,7 @@ window.cs1m7Reverse = function() {
                [Dave 2026-05-17] SWAPPED with Panel 2 per 'swap positions of these two'.
                Clusters content moved to RIGHT slot (cx=1160) via translate(470, 0). Badge
                number is now "3" since this is the third-revealed panel. -->
-          <g data-panel="4">
+          <g data-panel="4" style="--tg-panel-x:0px">
             <ellipse cx="1220" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(530, 0)" filter="url(#tgInkLiftOld)">
               <!-- Cluster A (top-left) -->
@@ -15228,8 +15228,8 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-11d .hg-flip-inner { transform: rotateY(180deg) !important; }
   #cs-11d .hg-ph .hg-env-flap { transform-origin: top; transform: rotateX(0deg); transition: transform .9s ease; }
   #cs-11d .hg-ph:hover .hg-env-flap { transform: rotateX(35deg); }
-  #cs-11d .c11d-bg { position:absolute; inset:0; z-index:0; background:none; opacity:.64; pointer-events:none; }
-  #cs-11d .c11d-bg::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 48%, rgba(243,234,216,.88) 0%, rgba(243,234,216,.72) 40%, rgba(243,234,216,.28) 100%); }
+  #cs-11d .c11d-bg { position:absolute; inset:0; z-index:0; background:radial-gradient(circle at 84% 40%, rgba(91,143,212,.12) 0 4px, transparent 5px),radial-gradient(circle at 88% 56%, rgba(200,70,44,.12) 0 4px, transparent 5px),radial-gradient(circle at 80% 68%, rgba(184,149,74,.10) 0 4px, transparent 5px),linear-gradient(180deg,#f3ead8 0%,#fbf7ef 100%); opacity:1; pointer-events:none; }
+  #cs-11d .c11d-bg::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 48% 48%, rgba(243,234,216,.38) 0%, rgba(243,234,216,.18) 46%, rgba(243,234,216,0) 100%); }
 </style>
 <div class="casey-slide ds-focus" id="cs-11d" data-left="0" data-right="0" style="cursor:default">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
@@ -25227,7 +25227,7 @@ window.csBrandV8Reverse = function() {
   #cs-magnetic .mg-side-hero{font-size:clamp(1.38rem,2.12vw,2.05rem);line-height:1.04;letter-spacing:0;white-space:normal;min-height:70px;display:block;text-align:center;margin:0 0 6px}
   #cs-magnetic .mg-side.right .mg-side-hero{font-size:clamp(1.18rem,1.82vw,1.72rem);line-height:1.06}
   #cs-magnetic .mg-side.left .mg-side-hero em{color:#5B8FD4}
-  #cs-magnetic .mg-broadcast{width:100%;max-width:720px;height:auto;display:block;margin:auto 0 0}
+  #cs-magnetic .mg-broadcast{width:100%;max-width:620px;height:auto;display:block;margin:6px auto 0}
   #cs-magnetic .mg-side.left .mg-outcome{display:none}
   #cs-magnetic[data-stage="0"] .mg-stage{opacity:0;visibility:hidden;transform:translateY(12px);pointer-events:none}
   #cs-magnetic[data-stage="1"] .mg-stage{opacity:1;visibility:visible;transform:none;transition:opacity .48s cubic-bezier(.22,1,.36,1),transform .58s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
@@ -25256,29 +25256,46 @@ window.csBrandV8Reverse = function() {
 
       <div class="mg-side left">
         <h2 class="mg-side-hero">Social media &rarr; <em>1% influencers</em>.</h2>
-        <svg class="mg-broadcast" viewBox="0 0 220 130" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="Social media broadcast model: one influencer reaches many lurkers.">
+        <svg class="mg-broadcast" viewBox="0 0 220 130" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="Social media broadcast model: one influencer dominates a passive algorithmic feed.">
           <defs>
             <radialGradient id="mgBroadcastGlow" cx="34%" cy="50%" r="62%">
               <stop offset="0%" stop-color="rgba(91,143,212,0.22)"/>
               <stop offset="58%" stop-color="rgba(91,143,212,0.08)"/>
               <stop offset="100%" stop-color="rgba(91,143,212,0)"/>
             </radialGradient>
+            <linearGradient id="mgBroadcastBeam" x1="78" y1="63" x2="178" y2="63" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="rgba(91,143,212,0.34)"/>
+              <stop offset="58%" stop-color="rgba(91,143,212,0.14)"/>
+              <stop offset="100%" stop-color="rgba(91,143,212,0.02)"/>
+            </linearGradient>
           </defs>
           <rect x="20" y="20" width="180" height="90" rx="2" fill="rgba(91,143,212,0.045)" stroke="rgba(91,143,212,0.62)" stroke-width="1.7"/>
-          <ellipse cx="72" cy="65" rx="92" ry="58" fill="url(#mgBroadcastGlow)"/>
-          <g stroke="rgba(91,143,212,0.38)" stroke-width="1.2" stroke-linecap="round">
-            <line x1="72" y1="65" x2="152" y2="34"/><line x1="72" y1="65" x2="166" y2="50"/><line x1="72" y1="65" x2="174" y2="66"/><line x1="72" y1="65" x2="166" y2="82"/><line x1="72" y1="65" x2="152" y2="96"/>
+          <ellipse cx="78" cy="63" rx="68" ry="45" fill="url(#mgBroadcastGlow)"/>
+          <path d="M82 45C108 50 133 53 178 40v46C133 75 108 78 82 82Z" fill="url(#mgBroadcastBeam)"/>
+          <g stroke="rgba(91,143,212,0.20)" stroke-width=".8">
+            <path d="M92 53C118 55 142 52 176 43"/>
+            <path d="M92 64C122 64 146 64 178 64"/>
+            <path d="M92 75C118 73 142 76 176 84"/>
           </g>
           <g>
-            <circle cx="72" cy="65" r="22" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="2.1"/>
-            <circle cx="72" cy="58" r="7.5" fill="#5B8FD4"/>
-            <path d="M55 84c4-11 12-17 17-17s13 6 17 17" fill="#5B8FD4" opacity=".85"/>
-            <text x="72" y="104" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.8" font-weight="900" letter-spacing="0.08em" fill="#5B8FD4">INFLUENCER</text>
+            <rect x="47" y="36" width="54" height="54" rx="7" fill="rgba(251,247,239,0.92)" stroke="#5B8FD4" stroke-width="2.4"/>
+            <rect x="54" y="43" width="40" height="23" rx="3" fill="rgba(91,143,212,0.18)"/>
+            <circle cx="74" cy="54" r="8.2" fill="#5B8FD4"/>
+            <path d="M58 80c3.8-8.8 10.8-13.6 16-13.6S86.2 71.2 90 80" fill="#5B8FD4" opacity=".86"/>
+            <path d="M50 33h48" stroke="rgba(91,143,212,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M50 93h48" stroke="rgba(91,143,212,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+            <text x="72" y="104" text-anchor="middle" font-family="Manrope,sans-serif" font-size="6.2" font-weight="900" letter-spacing="0.09em" fill="#5B8FD4">INFLUENCER</text>
           </g>
-          <g fill="rgba(26,22,18,0.34)" stroke="rgba(26,22,18,0.22)" stroke-width=".8">
-            <circle cx="152" cy="34" r="7"/><circle cx="166" cy="50" r="7"/><circle cx="174" cy="66" r="7"/><circle cx="166" cy="82" r="7"/><circle cx="152" cy="96" r="7"/>
+          <g>
+            <rect x="145" y="31" width="36" height="16" rx="4" fill="rgba(26,22,18,0.17)" stroke="rgba(26,22,18,0.18)" stroke-width=".7"/>
+            <rect x="145" y="54" width="36" height="16" rx="4" fill="rgba(26,22,18,0.13)" stroke="rgba(26,22,18,0.16)" stroke-width=".7"/>
+            <rect x="145" y="77" width="36" height="16" rx="4" fill="rgba(26,22,18,0.17)" stroke="rgba(26,22,18,0.18)" stroke-width=".7"/>
+            <circle cx="153" cy="39" r="3.2" fill="rgba(26,22,18,0.28)"/>
+            <circle cx="153" cy="62" r="3.2" fill="rgba(26,22,18,0.24)"/>
+            <circle cx="153" cy="85" r="3.2" fill="rgba(26,22,18,0.28)"/>
+            <path d="M161 37h14M161 41h10M161 60h14M161 64h10M161 83h14M161 87h10" stroke="rgba(26,22,18,0.25)" stroke-width="1.2" stroke-linecap="round"/>
           </g>
-          <text x="166" y="108" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.25" font-weight="900" letter-spacing="0.08em" fill="rgba(26,22,18,0.46)">LURKER</text>
+          <text x="156" y="105" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.8" font-weight="900" letter-spacing="0.10em" fill="rgba(26,22,18,0.46)">PASSIVE FEED</text>
         </svg>
       </div>
 
@@ -34315,7 +34332,7 @@ window.csWedgepbCodexAdvance = function() {
     slide.dataset.stage = '1';
     return true;
   }
-  slide.dataset.stage = String(stage + 1);
+  slide.dataset.stage = '5';
   if (cards[stage - 1]) cards[stage - 1].classList.add('flipped');
   return true;
 };
@@ -34326,7 +34343,7 @@ window.csWedgepbCodexReverse = function() {
   const stage = parseInt(slide.dataset.stage || '0', 10);
   if (stage <= 0) return false;
   if (cards[stage - 1]) cards[stage - 1].classList.remove('flipped');
-  slide.dataset.stage = String(stage - 1);
+  slide.dataset.stage = '0';
   return true;
 };
 
