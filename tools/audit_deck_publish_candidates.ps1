@@ -138,6 +138,7 @@ foreach ($line in $branchLines) {
     $commitBody = ""
   }
   $hasPublishTrace = ($commitBody -match "PUBLISH TRACE")
+  $hasPublishReady = ($commitBody -match "PUBLISH-READY:\s*yes")
   $safeToPortIfStale = ($commitBody -match "safe-to-port-if-stale:\s*yes")
   $publishHint = ""
   if ($commitBody -match "publish bucket hint:\s*([A-Za-z0-9_\-]+)") {
@@ -165,6 +166,7 @@ foreach ($line in $branchLines) {
   if ($diff -match "TRASH_ORDER") { $riskFlags += "changes_TRASH_ORDER" }
   if ($diff -match "data-deleted") { $riskFlags += "marks_deleted" }
   if ($hasPublishTrace -and $safeToPortIfStale) { $riskFlags += "trace_safe_to_port" }
+  if ($hasPublishReady) { $riskFlags += "publish_ready_commit" }
 
   $mergeability = "contained"
   if (-not $isAncestor) {
@@ -192,6 +194,7 @@ foreach ($line in $branchLines) {
     PublishBucket = $publishBucket
     FilesTouched = ($files -join ";")
     HasPublishTrace = $hasPublishTrace
+    HasPublishReady = $hasPublishReady
     PublishHint = $publishHint
     SafeToPortIfStale = $safeToPortIfStale
     ChangesSlideOrder = ($diff -match "SLIDE_ORDER")

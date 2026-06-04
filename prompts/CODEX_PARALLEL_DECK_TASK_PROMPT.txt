@@ -63,6 +63,9 @@ VALIDATION
 - If visual QA cannot run, do not report DONE for visual edits; report BLOCKED or ask Dave to approve source-only.
 - If browser/Playwright QA fails for tooling reasons, report the limitation and do source verification instead.
 - Run git diff --check before commit.
+- After commit, run:
+  powershell -NoProfile -ExecutionPolicy Bypass -File tools/validate_deck_worktree_handoff.ps1 -Branch (git branch --show-current)
+- If `HANDOFF_VALID` is not `yes`, fix the handoff evidence or report BLOCKED. Do not report DONE.
 
 SELF-CORRECTION LOOP
 - If verification fails, attempt one targeted correction.
@@ -74,6 +77,7 @@ COMMIT
 - Commit message subject: deck: [short task name]
 - The branch and commit are the product of the worktree session. If either is missing, the request is not executable by Publish Control.
 - Commit message body must include a publish-readable `PUBLISH TRACE` block with:
+  PUBLISH-READY: yes
   request slug
   publish bucket hint: `publish_now`, `port_if_stale`, or `needs_explicit_review`
   safe-to-port-if-stale: yes/no, with reason
@@ -96,6 +100,7 @@ PUBLISH TRACE
 - The final response must leave publish-readable evidence so Publish Control can verify and publish the branch without Dave re-explaining the request.
 - The commit body must also leave publish-readable evidence so Publish Control can recover the intent even if the chat final response is not available.
 - Include:
+  PUBLISH-READY: yes
   request slug
   publish bucket hint: `publish_now`, `port_if_stale`, or `needs_explicit_review`
   safe-to-port-if-stale: yes/no, with reason
@@ -127,6 +132,8 @@ HARD DONE RULE
   requested edit is verified against the active slide source
   visual/render verification passed when required
   commit body contains PUBLISH TRACE
+  commit body contains PUBLISH-READY: yes
+  `tools/validate_deck_worktree_handoff.ps1` reports `HANDOFF_VALID=yes`
   nothing was pushed
 
 PUBLISH-READY LINE
@@ -150,7 +157,3 @@ PUBLISH TRACE
 VERIFICATION NOTE
 PUSH
 BLOCKED
-
-End with:
-My edit request:
-[PASTE EXACT REQUEST HERE]

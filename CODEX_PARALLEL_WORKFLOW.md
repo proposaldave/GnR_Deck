@@ -11,7 +11,8 @@
 7. The session leaves a publish-readable `PUBLISH TRACE`: request slug, active slide ID, changed visible text, changed selectors/properties, changed registry keys, asset paths, source verification, and visual QA result.
 8. The `PUBLISH TRACE` must include a publish bucket hint (`publish_now`, `port_if_stale`, or `needs_explicit_review`) and `safe-to-port-if-stale: yes/no`.
 9. Delete/trash/appendix/move requests must quote Dave's exact removal instruction in the `PUBLISH TRACE`.
-10. The commit body must also contain the same `PUBLISH TRACE`. Publish Control cannot rely on the app chat transcript being available later.
+10. The commit body must contain both `PUBLISH-READY: yes` and the same `PUBLISH TRACE`. Publish Control cannot rely on the app chat transcript being available later.
+11. The worktree must run `tools/validate_deck_worktree_handoff.ps1 -Branch (git branch --show-current)` after committing and before its final response. `HANDOFF_VALID=no` means the worktree is not done.
 
 ## Active Source Contract
 
@@ -71,6 +72,8 @@ Publish Control must run `tools/audit_deck_publish_candidates.ps1 -BaseRef origi
 
 Trace-backed execution gate:
 If a branch has `PUBLISH TRACE`, `publish bucket hint: publish_now` or `port_if_stale`, and `safe-to-port-if-stale: yes`, publish control must treat it as executable. Clean branches go to `publish_now`; conflicting stale branches go to `port_or_conflict_review`. Branch-name risk words like `delete`, `move`, or `trash` do not override a trace unless active slide inventory was removed without explicit authorization.
+
+Before merging a clean `publish_now` branch, Publish Control must run `tools/validate_deck_worktree_handoff.ps1 -Branch <branch>`. Validator failure is a BLOCKED state with the exact validator error, not a silent skip.
 
 Zero-safe-left gate:
 Before `DONE`, `PUBLISH_NOW_CANDIDATES` must be zero. Publish Control must also prove every `PORT_OR_CONFLICT_REVIEW` branch received a branch-specific intent extraction attempt. If the intent is tiny and clear, port it and mark the source branch integrated only after verification. If it cannot be safely ported, the branch must have a one-line blocker and next action. A final report that merely says many branches were blocked is invalid.

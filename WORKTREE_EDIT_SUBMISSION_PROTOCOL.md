@@ -44,8 +44,10 @@ A completed worktree is publish-ready only when its final response and commit bo
 - source verification result
 - visual QA result when the change is visual/layout/order/media
 - `PUBLISH TRACE`
+- `PUBLISH-READY: yes` in the commit body
 - `publish bucket hint: publish_now` or `port_if_stale`
 - `safe-to-port-if-stale: yes` for small mechanical edits
+- `tools/validate_deck_worktree_handoff.ps1` output with `HANDOFF_VALID=yes`
 - `ADDED_SLIDES` and `REMOVED_SLIDES` when `SLIDE_ORDER` changes
 - exact removal authorization if anything is deleted, trashed, appended, or removed from active inventory
 

@@ -18,9 +18,11 @@ WHAT MUST COME BACK BEFORE THE WORKTREE IS DONE:
 - DONE
 - BRANCH: deck/[short-task-name]
 - COMMIT: [sha]
+- COMMIT BODY: contains `PUBLISH-READY: yes` and `PUBLISH TRACE`
 - ACTIVE SOURCE: exact active slide ID / SLIDE_ALTS slot / STAFF_ORDER entry
 - CHECKS: source verification and visual QA when needed
 - PUBLISH TRACE: includes publish bucket hint and safe-to-port-if-stale
+- VALIDATOR: `tools/validate_deck_worktree_handoff.ps1` returns `HANDOFF_VALID=yes`
 - PUSH: not pushed
 
 If any of those are missing, the worktree is not publish-ready.

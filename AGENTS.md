@@ -85,7 +85,9 @@ Do not run expensive builds, full previews, screenshot generation, or full-deck 
 
 - Stay on the current branch unless explicitly told otherwise.
 - Commit completed deck edits with concise messages.
-- Push to the existing remote only after checks pass or after noting a non-blocking validation limitation.
+- For normal Local-mode deck edits, push to the existing remote only after checks pass or after noting a non-blocking validation limitation.
+- For parallel Worktree-mode deck edits, do not push; the branch and local commit are the deliverable.
+- For Deck Ops / Publish Control sessions on `main`, push after integration, mirror, and verification.
 - Do not create a separate commit for AGENTS.md if there is an active deck edit ready to commit; include it in the next sensible deck-work commit unless that would mix unrelated work.
 
 ### Response format
@@ -125,7 +127,7 @@ NEXT:
 - Parallel edit sessions should not edit index.html.
 - index.html should be updated only during integration/publish.
 - Do not edit the old pitch_visuals copy during parallel tasks.
-- Do not push unless Dave explicitly asks.
+- Parallel Worktree-mode sessions must not push. Deck Ops / Publish Control sessions may push `main` after verified publish integration.
 - Do not open Chrome, Playwright, or screenshot QA unless Dave explicitly asks or the task requires visual QA.
 - Do not regenerate images unless Dave explicitly asks.
 - Do not refactor, reformat, lint, prettify, or restructure the deck.
