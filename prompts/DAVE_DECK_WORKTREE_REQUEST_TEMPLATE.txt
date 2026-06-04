@@ -1,0 +1,26 @@
+SETTINGS:
+Project: `GnR_Deck`
+Mode: `New worktree`
+Branch: `main`
+Environment: `No environment`
+Model: `5.5 Medium`
+
+PROMPT:
+```text
+Read and follow exactly:
+prompts/CODEX_PARALLEL_DECK_TASK_PROMPT.txt
+
+Dave's edit request:
+[PASTE ONE EXACT DECK EDIT REQUEST HERE]
+```
+
+WHAT MUST COME BACK BEFORE THE WORKTREE IS DONE:
+- DONE
+- BRANCH: deck/[short-task-name]
+- COMMIT: [sha]
+- ACTIVE SOURCE: exact active slide ID / SLIDE_ALTS slot / STAFF_ORDER entry
+- CHECKS: source verification and visual QA when needed
+- PUBLISH TRACE: includes publish bucket hint and safe-to-port-if-stale
+- PUSH: not pushed
+
+If any of those are missing, the worktree is not publish-ready.

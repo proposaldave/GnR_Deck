@@ -48,6 +48,13 @@ Full audit required:
    - every branch in audit bucket publish_now
    - every branch with PUBLISH TRACE and safe-to-port-if-stale: yes
    - every branch whose exact visible intent can be inferred from a tiny clean diff
+   - every branch whose final response or commit says PUBLISH-READY: yes
+
+Audit classifier rule:
+- A branch with PUBLISH TRACE, publish bucket hint publish_now or port_if_stale, and safe-to-port-if-stale: yes is executable.
+- If clean, it must be publish_now unless active inventory removal lacks explicit authorization.
+- If conflicting/stale, it must be port_or_conflict_review and receive a branch-specific intent extraction attempt.
+- Branch-name words such as delete, move, trash, remove, or appendix are warnings, not blockers, when the trace proves no unauthorized active slide was removed or quotes Dave's exact removal instruction.
 
 3. For each candidate, extract:
    - branch

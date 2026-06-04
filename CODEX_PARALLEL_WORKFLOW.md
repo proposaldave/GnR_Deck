@@ -50,10 +50,12 @@
 ## Dave Workflow
 
 Normal edit:
-New Codex chat -> GnR_Deck -> New worktree -> main -> No environment -> 5.5 Medium -> paste normal edit request.
+New Codex chat -> GnR_Deck -> New worktree -> main -> No environment -> 5.5 Medium -> paste `prompts/DAVE_DECK_WORKTREE_REQUEST_TEMPLATE.txt`, then replace the final bracketed line with the exact edit request.
 
-Dave only provides the desired edit.
+Dave only provides one desired edit per worktree.
 Codex must verify active rendered success or report `BLOCKED`.
+
+Do not submit multiple unrelated edits in one worktree. Separate requests create separate `deck/*` branches, which makes publish control mechanical instead of interpretive.
 
 Publish:
 Deck Ops session -> Work locally -> main -> use publish prompt.
@@ -66,6 +68,9 @@ Before declaring a publish pass done, run a completed-session audit: compare `gi
 
 Mechanical audit gate:
 Publish Control must run `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath "$env:TEMP\gnr_publish_audit_unpublished.csv"` at the start and end of every publish pass. The output line `UNPUBLISHED_LOCAL_DECK_REFS=N` is not advisory; it is the checklist size. The audit also reports `PUBLISH_NOW_CANDIDATES`, `PORT_OR_CONFLICT_REVIEW`, `RISKY_OR_DELETE_BLOCKED`, `DIRTY_WORKTREE_BLOCKED`, and `BROKEN_REF_OR_MERGE_BASE`.
+
+Trace-backed execution gate:
+If a branch has `PUBLISH TRACE`, `publish bucket hint: publish_now` or `port_if_stale`, and `safe-to-port-if-stale: yes`, publish control must treat it as executable. Clean branches go to `publish_now`; conflicting stale branches go to `port_or_conflict_review`. Branch-name risk words like `delete`, `move`, or `trash` do not override a trace unless active slide inventory was removed without explicit authorization.
 
 Zero-safe-left gate:
 Before `DONE`, `PUBLISH_NOW_CANDIDATES` must be zero. Publish Control must also prove every `PORT_OR_CONFLICT_REVIEW` branch received a branch-specific intent extraction attempt. If the intent is tiny and clear, port it and mark the source branch integrated only after verification. If it cannot be safely ported, the branch must have a one-line blocker and next action. A final report that merely says many branches were blocked is invalid.

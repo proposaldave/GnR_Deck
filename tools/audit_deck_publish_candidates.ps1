@@ -48,7 +48,10 @@ function Get-PublishBucket {
     [bool]$ContainedInBase,
     [string]$WorktreeStatus,
     [string]$Mergeability,
-    [string[]]$RiskFlags
+    [string[]]$RiskFlags,
+    [bool]$HasPublishTrace,
+    [string]$PublishHint,
+    [bool]$SafeToPortIfStale
   )
 
   if ($ContainedInBase) {
@@ -59,6 +62,14 @@ function Get-PublishBucket {
   }
 
   $hasRisk = @($RiskFlags).Count -gt 0
+  $traceSaysExecutable = $HasPublishTrace -and $SafeToPortIfStale -and ($PublishHint -in @("publish_now", "port_if_stale"))
+  if ($traceSaysExecutable -and $Mergeability -eq "clean" -and $PublishHint -eq "publish_now") {
+    return "publish_now"
+  }
+  if ($traceSaysExecutable -and $Mergeability -in @("clean", "conflict")) {
+    return "port_or_conflict_review"
+  }
+
   if ($Mergeability -eq "clean" -and -not $hasRisk) {
     return "publish_now"
   }
@@ -120,6 +131,19 @@ foreach ($line in $branchLines) {
     }
   }
 
+  $commitBody = ""
+  try {
+    $commitBody = GitText @("log", "-1", "--format=%B", $branch)
+  } catch {
+    $commitBody = ""
+  }
+  $hasPublishTrace = ($commitBody -match "PUBLISH TRACE")
+  $safeToPortIfStale = ($commitBody -match "safe-to-port-if-stale:\s*yes")
+  $publishHint = ""
+  if ($commitBody -match "publish bucket hint:\s*([A-Za-z0-9_\-]+)") {
+    $publishHint = $Matches[1]
+  }
+
   $worktreePath = ""
   $worktreeStatus = "not_checked_out"
   if ($worktreeByBranch.ContainsKey($branch)) {
@@ -140,6 +164,7 @@ foreach ($line in $branchLines) {
   if ($diff -match "SLIDE_ALTS") { $riskFlags += "changes_SLIDE_ALTS" }
   if ($diff -match "TRASH_ORDER") { $riskFlags += "changes_TRASH_ORDER" }
   if ($diff -match "data-deleted") { $riskFlags += "marks_deleted" }
+  if ($hasPublishTrace -and $safeToPortIfStale) { $riskFlags += "trace_safe_to_port" }
 
   $mergeability = "contained"
   if (-not $isAncestor) {
@@ -149,14 +174,10 @@ foreach ($line in $branchLines) {
     -ContainedInBase $isAncestor `
     -WorktreeStatus $worktreeStatus `
     -Mergeability $mergeability `
-    -RiskFlags $riskFlags
-
-  $commitBody = ""
-  try {
-    $commitBody = GitText @("log", "-1", "--format=%B", $branch)
-  } catch {
-    $commitBody = ""
-  }
+    -RiskFlags $riskFlags `
+    -HasPublishTrace $hasPublishTrace `
+    -PublishHint $publishHint `
+    -SafeToPortIfStale $safeToPortIfStale
 
   $rows += [pscustomobject]@{
     Branch = $branch
@@ -170,7 +191,9 @@ foreach ($line in $branchLines) {
     Mergeability = $mergeability
     PublishBucket = $publishBucket
     FilesTouched = ($files -join ";")
-    HasPublishTrace = ($commitBody -match "PUBLISH TRACE")
+    HasPublishTrace = $hasPublishTrace
+    PublishHint = $publishHint
+    SafeToPortIfStale = $safeToPortIfStale
     ChangesSlideOrder = ($diff -match "SLIDE_ORDER")
     ChangesSlideAlts = ($diff -match "SLIDE_ALTS")
     ChangesTrashOrder = ($diff -match "TRASH_ORDER")

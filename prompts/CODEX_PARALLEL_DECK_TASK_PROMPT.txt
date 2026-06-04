@@ -72,6 +72,7 @@ SELF-CORRECTION LOOP
 
 COMMIT
 - Commit message subject: deck: [short task name]
+- The branch and commit are the product of the worktree session. If either is missing, the request is not executable by Publish Control.
 - Commit message body must include a publish-readable `PUBLISH TRACE` block with:
   request slug
   publish bucket hint: `publish_now`, `port_if_stale`, or `needs_explicit_review`
@@ -116,6 +117,7 @@ PUBLISH TRACE
 - If the edit request deletes, trashes, moves to appendix, or removes a slide/alt/staff item, quote Dave's exact removal instruction in the PUBLISH TRACE. Without that evidence, Publish Control must block the branch.
 - If the edit is small and mechanical, explicitly set `safe-to-port-if-stale: yes` and name the exact text/selector/registry marker Publish Control should verify after porting.
 - Make the branch name and commit message specific enough that Publish Control can match the branch to Dave's request.
+- If the final response says DONE but the commit body lacks `PUBLISH TRACE`, the session failed the handoff even if the visible edit appears correct.
 
 HARD DONE RULE
 - Do not report DONE unless:
@@ -127,10 +129,17 @@ HARD DONE RULE
   commit body contains PUBLISH TRACE
   nothing was pushed
 
+PUBLISH-READY LINE
+- Include one line in the final response:
+  PUBLISH-READY: yes - audit should classify this branch as publish_now or port_or_conflict_review
+- If any required trace, verification, branch, or commit evidence is missing, use:
+  PUBLISH-READY: no - [exact blocker]
+
 OUTPUT SECTIONS ONLY
 DONE
 BRANCH
 COMMIT
+PUBLISH-READY
 TOUCHED
 ACCEPTANCE CONTRACT
 ACTIVE SOURCE
