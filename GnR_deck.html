@@ -16718,9 +16718,10 @@ window.cs1m7Reverse = function() {
   [id^="cs-18-vd4"] .v5-pillar.p1 .v5-front-label { color:#8a6420; }
   [id^="cs-18-vd4"] .v5-pillar.p2 .v5-front-label { color:#3a73b8; }
   [id^="cs-18-vd4"] .v5-pillar.p3 .v5-front-label { color:#a8351f; }
-  #cs-18-vd4 .v5-pillar.p1 { transform:translate(16px,83px); }
-  #cs-18-vd4 .v5-pillar.p2 { transform:translate(-134px,-138px); }
-  #cs-18-vd4 .v5-pillar.p3 { transform:translate(-226px,-32px); }
+  #cs-18-vd4 .v5-pillar { --v5-final-x:0px; --v5-final-y:0px; transform:translate(var(--v5-final-x),var(--v5-final-y)); }
+  #cs-18-vd4 .v5-pillar.p1 { --v5-final-x:16px; --v5-final-y:83px; }
+  #cs-18-vd4 .v5-pillar.p2 { --v5-final-x:-134px; --v5-final-y:-138px; }
+  #cs-18-vd4 .v5-pillar.p3 { --v5-final-x:-226px; --v5-final-y:-32px; }
   /* [Dave 2026-05-18 LATEST] Wheelhouse unifier band — connects the 3 closed cards to one section label. */
   [id^="cs-18-vd4"] .v5-wheelhouse-band { position:relative; width:100%; max-width:1180px; margin:18px auto 4px; display:flex; flex-direction:column; align-items:center; }
   [id^="cs-18-vd4"] .v5-wh-svg { width:100%; height:56px; display:block; overflow:visible; }
@@ -16780,7 +16781,7 @@ window.cs1m7Reverse = function() {
   @keyframes v5StepIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
   @keyframes v5RailDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   /* [Dave 2026-05-18 LATEST] Steve Jobs slide reordered: TIMELINE animates in FIRST, then the 3 large cards (v5-pillars). Default-hidden pillars + staggered fade-up starting AFTER the timeline finishes (~2.8s). */
-  @keyframes v5PillarIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes v5PillarIn { from { opacity:0; transform:translate(var(--v5-final-x,0px),calc(var(--v5-final-y,0px) + 12px)); } to { opacity:1; transform:translate(var(--v5-final-x,0px),var(--v5-final-y,0px)); } }
   #cs-18-vd4 .v5-pillar { opacity:0; }
   #cs-18-vd4.casey-entered .v5-pillar.p1 { animation: v5PillarIn .7s cubic-bezier(.22,1,.36,1) backwards 2.80s; opacity:1; }
   #cs-18-vd4.casey-entered .v5-pillar.p2 { animation: v5PillarIn .7s cubic-bezier(.22,1,.36,1) backwards 3.05s; opacity:1; }
