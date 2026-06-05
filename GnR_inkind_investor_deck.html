@@ -52,6 +52,29 @@
   .use{display:grid;grid-template-columns:112px 1fr;gap:24px;align-items:center;border:1.5px solid rgba(184,149,74,.34);border-radius:10px;padding:26px;background:rgba(251,247,239,.60);margin-bottom:18px}
   .use .pct{font-family:'Fraunces',Georgia,serif;font-size:3rem;font-weight:850;color:var(--gold)}
   .use .txt{font-size:1.22rem;line-height:1.28;font-weight:800;color:rgba(26,22,18,.75)}
+  .seed-slide{position:absolute;inset:0;background:#f3ead8;background-image:radial-gradient(rgba(184,149,74,.13) .8px,transparent .8px);background-size:8px 8px;padding:112px 94px 70px}
+  .seed-title{font-family:'Fraunces',Georgia,serif;font-size:5.45rem;line-height:.92;font-weight:850;letter-spacing:0;color:var(--ink);width:1000px}
+  .seed-title .red{color:var(--red)}.seed-title .gold{color:var(--gold);font-style:italic}.seed-title .blue{color:var(--blue)}
+  .seed-amount{position:absolute;right:100px;top:118px;width:470px;border:1.6px solid rgba(200,70,44,.42);border-radius:10px;background:rgba(251,247,239,.70);padding:34px 38px;box-shadow:0 20px 50px rgba(26,22,18,.07)}
+  .seed-amount .label{font-size:.66rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .seed-amount .num{font-family:'Fraunces',Georgia,serif;font-size:7.6rem;line-height:.82;font-weight:850;letter-spacing:-.055em;color:var(--red)}
+  .seed-amount .note{margin-top:18px;font-size:1.08rem;line-height:1.28;font-weight:850;color:rgba(26,22,18,.64)}
+  .seed-body{position:absolute;left:98px;right:98px;top:502px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:stretch}
+  .seed-panel{border:1.5px solid rgba(184,149,74,.36);border-radius:10px;background:rgba(251,247,239,.62);padding:28px 32px;box-shadow:0 16px 42px rgba(26,22,18,.045)}
+  .seed-panel.red{border-color:rgba(200,70,44,.38);background:rgba(200,70,44,.045)}
+  .seed-panel .panel-label{font-size:.64rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+  .seed-panel.red .panel-label{color:var(--red)}
+  .seed-list{display:grid;gap:18px}
+  .seed-item{display:grid;grid-template-columns:86px 1fr;gap:20px;align-items:start}
+  .seed-item .tag{font-family:'Fraunces',Georgia,serif;font-size:2.55rem;line-height:.92;font-weight:850;color:var(--gold)}
+  .seed-item h3{font-size:1.22rem;line-height:1.15;font-weight:900;color:var(--ink);margin-bottom:6px}
+  .seed-item p{font-size:.98rem;line-height:1.3;font-weight:780;color:rgba(26,22,18,.62)}
+  .seed-milestones{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .seed-mile{min-height:142px;border:1.3px solid rgba(91,143,212,.36);border-radius:8px;background:rgba(91,143,212,.07);padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between}
+  .seed-mile.red{border-color:rgba(200,70,44,.38);background:rgba(200,70,44,.055)}.seed-mile.gold{border-color:rgba(184,149,74,.42);background:rgba(184,149,74,.09)}
+  .seed-mile strong{font-family:'Fraunces',Georgia,serif;font-size:2.2rem;line-height:.92;font-weight:850;color:var(--ink)}
+  .seed-mile span{font-size:.82rem;line-height:1.22;font-weight:900;color:rgba(26,22,18,.62)}
+  .seed-footer{position:absolute;left:98px;right:98px;bottom:54px;border-top:1px solid rgba(184,149,74,.34);padding-top:18px;display:flex;justify-content:space-between;gap:28px;font-size:.68rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.52)}
   .mechanic{gap:22px}
   .mechanic-title{font-size:4.65rem;line-height:.92;font-weight:850;max-width:1420px;margin:76px 0 12px}
   .mechanic-sub{font-size:1.38rem;line-height:1.32;font-weight:800;color:rgba(26,22,18,.58);max-width:1280px}
@@ -352,6 +375,38 @@
         <div class="how-item"><div class="how-icon">REP</div><div><h3>Stronger communities</h3><p>More connection, more repeats, more off-peak demand.</p></div></div>
       </div>
       <div class="how-chip-row"><div class="how-chip blue">Invitation graph</div><div class="how-chip">Autonomous scheduling</div><div class="how-chip red">Community demand</div></div>
+    </div>
+  </div></section>
+
+  <section class="slide" data-slot="12"><div class="canvas">
+    <div class="seed-slide">
+      <div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="eyebrow">Seed round</div>
+      <div class="seed-title">Raising <span class="red">$2.5M</span> to prove the <span class="gold">Invitation Graph</span> turns expiring capacity into repeatable demand.</div>
+      <div class="seed-amount">
+        <div class="label">Current round</div>
+        <div class="num">$2.5M</div>
+        <div class="note">Seed capital to move from founder-owned lab proof to repeatable club deployments.</div>
+      </div>
+      <div class="seed-body">
+        <div class="seed-panel">
+          <div class="panel-label">Use of funds</div>
+          <div class="seed-list">
+            <div class="seed-item"><div class="tag">45%</div><div><h3>Product + coordination engine</h3><p>Ship the scheduling, invitation, feedback, and operator workflows needed to run without founder drag.</p></div></div>
+            <div class="seed-item"><div class="tag">35%</div><div><h3>Capacity trials + operating data</h3><p>Pre-buy controlled off-peak inventory, run real groups, and capture the correction data that compounds.</p></div></div>
+            <div class="seed-item"><div class="tag">20%</div><div><h3>Club go-to-market</h3><p>Package the wedge for early partner clubs and turn NEPC proof into a repeatable sales motion.</p></div></div>
+          </div>
+        </div>
+        <div class="seed-panel red">
+          <div class="panel-label">Milestones this round must prove</div>
+          <div class="seed-milestones">
+            <div class="seed-mile"><strong>Loop</strong><span>AI proposes, operator corrects, players respond, system learns.</span></div>
+            <div class="seed-mile gold"><strong>Paid</strong><span>Clubs accept cash-now capacity trials without peak-time displacement.</span></div>
+            <div class="seed-mile red"><strong>Repeat</strong><span>Curated groups create recurring demand beyond a discounted court slot.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="seed-footer"><span>Target proof: repeatable capacity-to-demand conversion</span><span>Founder-owned lab: NEPC</span><span>Next raise: scale only after loop proof</span></div>
     </div>
   </div></section>
 
