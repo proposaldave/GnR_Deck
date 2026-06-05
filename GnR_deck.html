@@ -13814,6 +13814,269 @@ window.cs1m7Reverse = function() {
   </div>
 </div>
 
+<!-- [Codex 2026-06-04] Pink-dot lab candidates for the active Why Pickleball slot, inspired by Dave's strategy-note image. -->
+<style>
+  #cs-pb-lab-right-lab-pink,
+  #cs-pb-lab-dataset-pink {
+    background:#1a1612 !important;
+    overflow:hidden;
+    position:absolute;
+    inset:0;
+    color:#fbf7ef;
+  }
+  #cs-pb-lab-right-lab-pink::before,
+  #cs-pb-lab-dataset-pink::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(ellipse at 78% 16%, rgba(91,143,212,.18), transparent 34%),
+      radial-gradient(ellipse at 16% 86%, rgba(184,149,74,.16), transparent 38%),
+      linear-gradient(180deg, rgba(26,22,18,.96), rgba(26,22,18,1));
+  }
+  .pbl-eye {
+    position:absolute;
+    top:28px;
+    left:48px;
+    z-index:5;
+    font-family:'Manrope',sans-serif;
+    font-size:.58rem;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#c8462c;
+  }
+  .pbl-stage {
+    position:absolute;
+    inset:0;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:96px 100px 64px;
+    box-sizing:border-box;
+  }
+  .pbl-title {
+    margin:0;
+    max-width:1500px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(3.15rem,5vw,5.85rem);
+    line-height:1;
+    font-weight:900;
+    letter-spacing:0;
+    color:#fbf7ef !important;
+  }
+  .pbl-title em { font-style:italic; color:#b8954a; }
+  .pbl-sub {
+    margin:28px 0 0;
+    max-width:1320px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.38rem,1.95vw,2.25rem);
+    line-height:1.18;
+    font-weight:650;
+    color:rgba(251,247,239,.82) !important;
+  }
+  .pbl-row-stack {
+    margin-top:38px;
+    display:grid;
+    gap:12px;
+    width:100%;
+  }
+  .pbl-row {
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:34px;
+    align-items:center;
+    min-height:86px;
+    padding:0 34px;
+    background:rgba(91,143,212,.12);
+    border:1px solid rgba(251,247,239,.12);
+    box-shadow:inset 5px 0 0 #5B8FD4;
+  }
+  .pbl-row:nth-child(2),
+  .pbl-row:nth-child(4) { background:rgba(251,247,239,.06); box-shadow:inset 5px 0 0 #b8954a; }
+  .pbl-row b {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:2.05rem;
+    line-height:1;
+    font-weight:900;
+    color:#5B8FD4;
+  }
+  .pbl-row:nth-child(2) b,
+  .pbl-row:nth-child(4) b { color:#b8954a; }
+  .pbl-row span {
+    font-family:'Manrope',sans-serif;
+    font-size:1.18rem;
+    line-height:1.34;
+    font-weight:650;
+    color:rgba(251,247,239,.86);
+  }
+  .pbl-proof {
+    margin-top:26px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.32rem;
+    line-height:1.2;
+    font-style:italic;
+    font-weight:650;
+    color:rgba(251,247,239,.62);
+  }
+  .pbl-proof strong { color:#fbf7ef; font-style:normal; font-weight:850; }
+  #cs-pb-lab-dataset-pink .pbl-stage { padding-right:88px; }
+  .pbl-dataset-grid {
+    margin-top:42px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    max-width:1560px;
+  }
+  .pbl-panel {
+    min-height:408px;
+    padding:32px;
+    background:rgba(251,247,239,.07);
+    border:1px solid rgba(251,247,239,.13);
+    box-shadow:0 26px 70px rgba(0,0,0,.22);
+  }
+  .pbl-panel.dark { background:rgba(91,143,212,.14); border-color:rgba(91,143,212,.34); }
+  .pbl-panel h2 {
+    margin:0 0 26px;
+    font-family:'Manrope',sans-serif;
+    font-size:.72rem;
+    line-height:1.2;
+    font-weight:900;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#c8462c;
+  }
+  .pbl-panel.dark h2 { color:#f7df9a; }
+  .pbl-list {
+    display:grid;
+    gap:18px;
+  }
+  .pbl-item {
+    display:grid;
+    grid-template-columns:42px 1fr;
+    gap:16px;
+    align-items:start;
+  }
+  .pbl-num {
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(184,149,74,.55);
+    color:#b8954a;
+    font-family:'Manrope',sans-serif;
+    font-size:.68rem;
+    font-weight:900;
+    letter-spacing:.08em;
+  }
+  .pbl-item p {
+    margin:0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.46rem;
+    line-height:1.14;
+    font-weight:760;
+    color:#fbf7ef;
+  }
+  .pbl-item p em { color:#b8954a; font-style:italic; }
+  .pbl-close {
+    margin-top:28px;
+    padding:18px 22px;
+    border-left:5px solid #c8462c;
+    background:rgba(200,70,44,.11);
+    font-family:'Manrope',sans-serif;
+    font-size:.86rem;
+    line-height:1.34;
+    font-weight:900;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(251,247,239,.82);
+  }
+  #cs-pb-lab-right-lab-pink .pbl-title,
+  #cs-pb-lab-right-lab-pink .pbl-sub,
+  #cs-pb-lab-right-lab-pink .pbl-row,
+  #cs-pb-lab-right-lab-pink .pbl-proof,
+  #cs-pb-lab-dataset-pink .pbl-title,
+  #cs-pb-lab-dataset-pink .pbl-sub,
+  #cs-pb-lab-dataset-pink .pbl-panel,
+  #cs-pb-lab-dataset-pink .pbl-close {
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .72s cubic-bezier(.22,1,.36,1), transform .72s cubic-bezier(.22,1,.36,1);
+  }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-title,
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-sub,
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row,
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-proof,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-title,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-sub,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-panel,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-close { opacity:1; transform:none; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-sub,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-sub { transition-delay:.12s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row:nth-child(1) { transition-delay:.20s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row:nth-child(2) { transition-delay:.30s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row:nth-child(3) { transition-delay:.40s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row:nth-child(4) { transition-delay:.50s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-proof { transition-delay:.62s; }
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-panel:nth-child(1) { transition-delay:.22s; }
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-panel:nth-child(2) { transition-delay:.34s; }
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-close { transition-delay:.48s; }
+  html[data-export="1"] #cs-pb-lab-right-lab-pink .pbl-title,
+  html[data-export="1"] #cs-pb-lab-right-lab-pink .pbl-sub,
+  html[data-export="1"] #cs-pb-lab-right-lab-pink .pbl-row,
+  html[data-export="1"] #cs-pb-lab-right-lab-pink .pbl-proof,
+  html[data-export="1"] #cs-pb-lab-dataset-pink .pbl-title,
+  html[data-export="1"] #cs-pb-lab-dataset-pink .pbl-sub,
+  html[data-export="1"] #cs-pb-lab-dataset-pink .pbl-panel,
+  html[data-export="1"] #cs-pb-lab-dataset-pink .pbl-close { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+
+<div class="casey-slide ds-focus psj-slide" id="cs-pb-lab-right-lab-pink" style="display:none">
+  <div class="pbl-eye slide-eyebrow">why pickleball works / lab thesis</div>
+  <section class="pbl-stage">
+    <h1 class="pbl-title">Why a pickleball club is the right <em>laboratory.</em></h1>
+    <p class="pbl-sub">A social-sports club is the densest source of repeated, real, revealed social choice outside of work. Unlike work, every choice is voluntary.</p>
+    <div class="pbl-row-stack">
+      <div class="pbl-row"><b>Repeated</b><span>The same people choose each other again and again. The signal compounds weekly.</span></div>
+      <div class="pbl-row"><b>Revealed</b><span>Accepting, declining, rotating, waiting, and inviting back are real decisions with social cost.</span></div>
+      <div class="pbl-row"><b>Monetized</b><span>There is already an owner paying for the pain: filling courts, retaining members, and keeping the room alive.</span></div>
+      <div class="pbl-row"><b>Bounded</b><span>A closed roster makes the graph dense enough to learn from. The cold start is solvable.</span></div>
+    </div>
+    <div class="pbl-proof">The proving ground already runs: <strong>NEPC - ~$2M ARR, 500 members, 20,000+ invitations sent.</strong></div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus psj-slide" id="cs-pb-lab-dataset-pink" style="display:none">
+  <div class="pbl-eye slide-eyebrow">why pickleball works / dataset thesis</div>
+  <section class="pbl-stage">
+    <h1 class="pbl-title">Pickleball gives GnR the dataset no social app can <em>buy.</em></h1>
+    <p class="pbl-sub">The product does not need people to describe their community. The club produces the behavior every week.</p>
+    <div class="pbl-dataset-grid">
+      <div class="pbl-panel">
+        <h2>What happens every week</h2>
+        <div class="pbl-list">
+          <div class="pbl-item"><div class="pbl-num">01</div><p>Members say yes or no to a real invitation.</p></div>
+          <div class="pbl-item"><div class="pbl-num">02</div><p>Players reveal who they want again.</p></div>
+          <div class="pbl-item"><div class="pbl-num">03</div><p>Operators feel the cost when the room is wrong.</p></div>
+          <div class="pbl-item"><div class="pbl-num">04</div><p>The graph changes after every session.</p></div>
+        </div>
+      </div>
+      <div class="pbl-panel dark">
+        <h2>What GnR learns</h2>
+        <div class="pbl-list">
+          <div class="pbl-item"><div class="pbl-num">A</div><p>Who creates <em>energy</em>, not just attendance.</p></div>
+          <div class="pbl-item"><div class="pbl-num">B</div><p>Who builds trust across the roster.</p></div>
+          <div class="pbl-item"><div class="pbl-num">C</div><p>Which invitation makes the next group better.</p></div>
+          <div class="pbl-item"><div class="pbl-num">D</div><p>How to make social coordination autonomous.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="pbl-close">This is why pickleball is not the destination. It is the lowest-risk environment to train the engine.</div>
+  </section>
+</div>
+
 <div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-board-green" style="display:none">
   <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-board-green.png" alt="Image-generated six-panel pickleball silliness board: score confusion, toy ball, kitchen dinks, speedup, weird form, and net apology." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
   <div class="psg-callout" style="left:74px;top:92px"><b>Silly score</b><span>Famously hard to keep straight.</span></div>
@@ -34301,7 +34564,7 @@ const SLIDE_ALTS = {
   11: ['cs-invite-atomic-unit-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'],
   14: ['cs-samecourt-pyramid-white1', 'cs-referral-builder-pink', 'cs-referral-loop-pink'],
   22: ['cs-16'],
-  23: ['cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'],
+  23: ['cs-pb-lab-right-lab-pink', 'cs-pb-lab-dataset-pink', 'cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -36310,7 +36573,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
     const isGeneratedSillinessPinkAlt = /^cs-pb-silliness-generated-/.test(altId);
     const isInvitationPinkAlt = /^cs-invite-/.test(altId);
-    const isPinkAlt = (isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
+    const isPinkAlt = (isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
