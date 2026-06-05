@@ -14903,7 +14903,9 @@ window.csInvitationWordOfMouthAdvance = function() {
   @keyframes gnrHintBounce { 0%,100% { transform: translateY(0) } 50% { transform: translateY(3px) } }
   #cs-gnr .gnr-hint { display:flex; flex-direction:column; align-items:center; gap:6px; margin: 22px auto 0; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(184,149,74,0.85); animation: gnrHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
   #cs-gnr .gnr-hint svg { animation: gnrHintBounce 1.6s ease-in-out infinite; }
-  #cs-gnr:not([data-shown="2"]) .gnr-hint { opacity: 0; pointer-events: none; animation: none; }
+  #cs-gnr[data-shown="0"] .gnr-hint { opacity: 0; pointer-events: none; animation: none; }
+  #cs-gnr[data-shown="1"] .gnr-hint.gnr-stage2,
+  #cs-gnr[data-shown="2"] .gnr-hint.gnr-stage2 { opacity: 1 !important; pointer-events: auto; }
   html[data-export="1"] #cs-gnr .gnr-stage2 { opacity: 1 !important; pointer-events: auto !important; transition: none !important; }
   html[data-export="1"] #cs-gnr .gnr-hint { opacity: 0 !important; animation: none !important; }
 </style>
