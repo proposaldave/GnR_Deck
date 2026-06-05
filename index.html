@@ -40610,7 +40610,7 @@ window.addEventListener('resize',drawLoop);
     <div class="close-btn" onclick="closeAnnotationPanel()">&times;</div>
     <div class="label" id="annLabel">Slide annotation</div>
     <div class="title" id="annTitle">Mark up this slide</div>
-    <textarea id="annotationText" placeholder="Type what you want changed on this slide. Example: make the headline shorter, move this card to appendix, generate a warmer human-connection image here."></textarea>
+    <textarea id="annotationText" onkeydown="handleAnnotationTextKeydown(event)" placeholder="Type what you want changed on this slide. Example: make the headline shorter, move this card to appendix, generate a warmer human-connection image here."></textarea>
     <div class="actions">
       <button class="action primary" onclick="saveAnnotation()">Save note</button>
       <button class="action" onclick="copyCurrentAnnotation()">Copy current</button>
@@ -40717,6 +40717,13 @@ function closeAnnotationPanel() {
   document.getElementById('annotationOverlay').classList.remove('open');
 }
 
+function handleAnnotationTextKeydown(event) {
+  if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+    event.preventDefault();
+    event.stopPropagation();
+    saveAnnotation();
+  }
+}
 function saveAnnotation() {
   const active = getActiveSlideForAnnotation();
   const text = document.getElementById('annotationText').value.trim();
