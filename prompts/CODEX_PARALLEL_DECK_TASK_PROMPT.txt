@@ -17,10 +17,16 @@ SOURCE GATE
 - Do not edit `index.html` in a parallel worktree.
 - Do not edit `pitch_visuals`.
 - Do not regenerate images unless Dave explicitly asks.
+- DECISION: Default to HTML/CSS/deck-code edits for `GnR_deck.html` because most deck work needs precision, active-slide verification, tiny diffs, and preservation of slide IDs, alts, nav, animation hooks, and brand typography.
 - Do not refactor, reformat, lint, prettify, split files, or restructure the deck.
 - Keep the diff tiny and localized.
 - Preserve slide IDs, animation hooks, navigation, dot view, presenter behavior, and asset paths.
 - Protect `SLIDE_ORDER`. Do not remove an active slide ID unless Dave explicitly requested that exact slide to be deleted, trashed, moved to appendix, or moved to an alt rail in this task.
+
+IMAGE GENERATION VS DECK CODE
+- Use deck code, not image generation, for copy edits, layout fixes, typography, spacing, labels, dots, arrows, icons, charts, diagrams, overlays, brand-color fixes, active/inactive alt wiring, screenshots, logos, video embeds, Drive iframe swaps, and anything where exact readable text is required.
+- Use image generation only when the missing piece is a new text-free bitmap visual: hero/background image, cinematic or editorial community scene, metaphorical visual for reciprocity, human value, measurable connection, real-world community, or texture/section-breaker/atmospheric asset that HTML/CSS cannot produce cleanly.
+- Generated images must be text-free, brand-compatible with warm cream / ink / gold / red, not generic SaaS/AI stock art, not blue-purple gradient tech art, not green, inserted only after active-slide/source path is identified, and paired with all readable text rendered separately in HTML.
 
 ACCEPTANCE CONTRACT
 Before patching, identify and use this as the pass/fail test:

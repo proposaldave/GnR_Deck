@@ -20,6 +20,25 @@ DAVE RULE:
 - If you have three unrelated edits, create three annotations and three worktrees with this same template.
 - Do not add publish instructions here. Publish happens later from `main`.
 - For a delete/trash/move/appendix request, write the delete/move instruction directly in the annotation on the visible slide. The worktree prompt requires Codex to quote that instruction in the commit trace so Publish Control can execute it later without asking you to prove it again.
+- For normal deck edits, use this shape in the annotation/request:
+
+```text
+Target: [slide number / visible phrase / screenshot context]
+Change: [specific visible result]
+Use deck code/CSS, not image generation, unless a new text-free bitmap asset is genuinely required.
+Keep the diff tiny. Preserve slide IDs, nav, alts, animations, and brand system. Verify active source/render path before DONE.
+```
+
+- For image-specific deck edits, use this shape:
+
+```text
+Create [N] text-free image concepts for the GnR deck.
+Story beat: [human value / reciprocity / measurable connection / real-world community]
+Use as: [full-bleed background / section breaker / side visual / hero visual]
+Style: warm editorial, cream paper, ink, gold/red accents.
+Avoid: text, logos, literal app UI, generic tech stock imagery, green, blue-purple SaaS gradients.
+After generation, place the strongest asset into the active slide and render all copy separately in HTML.
+```
 
 WHAT MUST COME BACK BEFORE THE WORKTREE IS DONE:
 - DONE

@@ -46,6 +46,37 @@ This repo contains a large single-file HTML investor pitch deck. Treat every dec
 - Never introduce green.
 - For hero art or deck visuals, default to text-free imagery because text is rendered separately in HTML.
 
+### Image Generation vs Deck Code
+
+DECISION: Default to HTML/CSS/deck-code edits for `GnR_deck.html` because most deck work needs precision, active-slide verification, tiny diffs, and preservation of slide IDs, alts, nav, animation hooks, and brand typography.
+
+Use deck code, not image generation, for:
+
+- copy edits
+- layout fixes
+- typography, spacing, labels, dots, arrows, icons, charts, diagrams, overlays
+- brand-color fixes
+- active/inactive alt wiring
+- screenshots, logos, video embeds, Drive iframe swaps
+- anything where exact readable text is required
+
+Use image generation only when the missing piece is a new text-free bitmap visual:
+
+- hero/background image
+- cinematic or editorial community scene
+- metaphorical visual for reciprocity, human value, measurable connection, or real-world community
+- texture/section-breaker/atmospheric asset that HTML/CSS cannot produce cleanly
+
+Generated images must be:
+
+- text-free
+- brand-compatible with warm cream / ink / gold / red
+- not generic SaaS/AI stock art
+- not blue-purple gradient tech art
+- not green
+- inserted only after active-slide/source path is identified
+- rendered text separately in HTML, never baked into the image
+
 ### Speed rules
 
 - Assume the main deck HTML file is expensive to process.

@@ -26,6 +26,14 @@
 - Copy edits require selector-exact verification: identify the active selector/DOM line that rendered the old visible text, remove the old text from that same selector, and verify the new text appears in that same selector. Finding the replacement in a nearby eyebrow, duplicate, alt, hidden block, comment, or appendix/trash block is a failed edit.
 - If verification fails, Codex attempts one targeted correction, verifies again, then reports `BLOCKED` with the root cause.
 
+## Image Generation vs Deck Code
+
+DECISION: Default to HTML/CSS/deck-code edits for `GnR_deck.html` because most deck work needs precision, active-slide verification, tiny diffs, and preservation of slide IDs, alts, nav, animation hooks, and brand typography.
+
+- Use deck code, not image generation, for copy edits, layout fixes, typography, spacing, labels, dots, arrows, icons, charts, diagrams, overlays, brand-color fixes, active/inactive alt wiring, screenshots, logos, video embeds, Drive iframe swaps, and anything where exact readable text is required.
+- Use image generation only when the missing piece is a new text-free bitmap visual: hero/background image, cinematic or editorial community scene, metaphorical visual for reciprocity, human value, measurable connection, real-world community, or texture/section-breaker/atmospheric asset that HTML/CSS cannot produce cleanly.
+- Generated images must be text-free, brand-compatible with warm cream / ink / gold / red, not generic SaaS/AI stock art, not blue-purple gradient tech art, not green, inserted only after active-slide/source path is identified, and paired with all readable text rendered separately in HTML.
+
 ## Slide Inventory Guard
 
 - `SLIDE_ORDER` is the active-slide inventory, not just implementation detail.

@@ -7,6 +7,7 @@ ANNOTATION INTAKE MODE
 - Dave may paste JSON from the local deck annotation tool: `Copy current`, `Copy all`, or `gnr-annotations.json`.
 - Treat each annotation `text` value as Dave's exact edit request.
 - Treat `slideId`, `slideLabel`, `slideTitle`, and point coordinates as target evidence.
+- Apply the Image Generation vs Deck Code rule from `prompts/CODEX_PARALLEL_DECK_TASK_PROMPT.txt`: use deck code/CSS by default, and generate images only for genuinely missing text-free bitmap visuals.
 - Do not treat coordinates or nearby duplicate source as permission to patch inactive variants.
 - Verify the annotated `slideId` is active in the correct registry: `SLIDE_ORDER`, `SLIDE_ALTS`, `STAFF_ORDER`, `SEED_ORDER`, `CONCEPT_ORDER`, `APPENDIX_ORDER`, or `TRASH_ORDER`.
 - If the annotation target is stale or inactive, port the obvious intent to the active slide only when the visible intent is mechanically clear; otherwise report `BLOCKED`.

@@ -43,6 +43,36 @@ One request means one visible deck intent. If there are five unrelated deck chan
 
 Plain text is still allowed for tiny obvious changes, but annotation JSON is preferred because it carries the visible slide ID, title, and click coordinates into the branch trace.
 
+## Image Generation vs Deck Code
+
+DECISION: Default to HTML/CSS/deck-code edits for `GnR_deck.html` because most deck work needs precision, active-slide verification, tiny diffs, and preservation of slide IDs, alts, nav, animation hooks, and brand typography.
+
+Use deck code, not image generation, for copy edits, layout fixes, typography, spacing, labels, dots, arrows, icons, charts, diagrams, overlays, brand-color fixes, active/inactive alt wiring, screenshots, logos, video embeds, Drive iframe swaps, and anything where exact readable text is required.
+
+Use image generation only when the missing piece is a new text-free bitmap visual: hero/background image, cinematic or editorial community scene, metaphorical visual for reciprocity, human value, measurable connection, real-world community, or texture/section-breaker/atmospheric asset that HTML/CSS cannot produce cleanly.
+
+Generated images must be text-free, brand-compatible with warm cream / ink / gold / red, not generic SaaS/AI stock art, not blue-purple gradient tech art, not green, inserted only after active-slide/source path is identified, and paired with all readable text rendered separately in HTML.
+
+Reusable deck-code prompt pattern:
+
+```text
+Target: [slide number / visible phrase / screenshot context]
+Change: [specific visible result]
+Use deck code/CSS, not image generation, unless a new text-free bitmap asset is genuinely required.
+Keep the diff tiny. Preserve slide IDs, nav, alts, animations, and brand system. Verify active source/render path before DONE.
+```
+
+Reusable image-specific prompt pattern:
+
+```text
+Create [N] text-free image concepts for the GnR deck.
+Story beat: [human value / reciprocity / measurable connection / real-world community]
+Use as: [full-bleed background / section breaker / side visual / hero visual]
+Style: warm editorial, cream paper, ink, gold/red accents.
+Avoid: text, logos, literal app UI, generic tech stock imagery, green, blue-purple SaaS gradients.
+After generation, place the strongest asset into the active slide and render all copy separately in HTML.
+```
+
 ## What Makes A Worktree Publish-Ready
 
 A completed worktree is publish-ready only when its final response and commit body include:
