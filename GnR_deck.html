@@ -14588,13 +14588,16 @@ window.cs1m7Reverse = function() {
   #cs-gnr .gnr-env-svg { display:block; width:100%; height:auto; filter:drop-shadow(0 2px 10px rgba(184,149,74,0.20)); }
   #cs-gnr .gnr-env-text { position:absolute; top:72%; left:50%; transform:translate(-50%,-50%); width:88%; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1rem,1.55vw,1.35rem); font-weight:700; color:#1a1612; line-height:1.22; letter-spacing:-0.008em; }
   #cs-gnr .gnr-env-text em { font-style:italic; font-weight:500; color:#b8954a; }
-  #cs-gnr .gnr-lonely-bg { position:absolute; inset:0; z-index:0; overflow:hidden; opacity:0; transition:opacity 0.85s cubic-bezier(.45,.05,.18,1), filter 0.85s cubic-bezier(.45,.05,.18,1); }
+  #cs-gnr .gnr-lonely-bg { position:absolute; inset:0; z-index:0; overflow:hidden; opacity:0; transition:opacity 0.85s cubic-bezier(.45,.05,.18,1), filter 0.85s cubic-bezier(.45,.05,.18,1); animation:none !important; }
   #cs-gnr .gnr-lonely-bg img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.94) contrast(0.98); }
   #cs-gnr .gnr-lonely-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(251,247,239,0.06) 0%,rgba(251,247,239,0.02) 45%,rgba(251,247,239,0.18) 100%); }
-  #cs-gnr[data-shown="2"] .gnr-lonely-bg { opacity:0.18; filter:blur(1px); }
-  #cs-gnr .gnr-reveal-on-advance { opacity:0; transform:translateY(12px); transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events:none; }
+  @keyframes gnrLonelyBgIn { from { opacity:0; } to { opacity:0.18; } }
+  #cs-gnr.active .gnr-lonely-bg { opacity:0.18; filter:blur(1px); transition-delay:0.10s; animation:gnrLonelyBgIn 0.45s cubic-bezier(.45,.05,.18,1) 0.08s both !important; }
+  #cs-gnr.active[data-shown="1"] .gnr-lonely-bg,
+  #cs-gnr.active[data-shown="2"] .gnr-lonely-bg { transition-delay:0s; }
+  #cs-gnr .gnr-reveal-on-advance { opacity:0 !important; transform:translateY(12px); transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events:none !important; animation:none !important; }
   #cs-gnr[data-shown="1"] .gnr-reveal-on-advance,
-  #cs-gnr[data-shown="2"] .gnr-reveal-on-advance { opacity:1; transform:translateY(0); pointer-events:auto; }
+  #cs-gnr[data-shown="2"] .gnr-reveal-on-advance { opacity:1 !important; transform:translateY(0); pointer-events:auto !important; }
   html[data-export="1"] #cs-gnr .gnr-reveal-on-advance { opacity:1 !important; transform:none !important; pointer-events:auto !important; transition:none !important; }
   /* Stage-2 reveal [Dave 2026-05-06 PM v2]: 3 envelopes animate in with translateY + scale stagger when slide advances. */
   #cs-gnr .gnr-stage2 { opacity: 0 !important; transition: opacity 0.55s cubic-bezier(.45,.05,.18,1); pointer-events: none; }
@@ -14812,7 +14815,7 @@ window.cs1m7Reverse = function() {
 <section style="position:relative;min-height:100%;width:100%">
 <div class="gnr-lonely-bg" aria-hidden="true"><img src="design_refs/gnr_loneliness_deck_style.png" alt=""/></div>
 <!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'Autonomous, abundant connection's core product → Core product'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product to solve community and loneliness</div>
+<div class="gnr-reveal-on-advance" style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product to solve community and loneliness</div>
 <div class="inner gnr-reveal-on-advance" style="position:relative;z-index:1;padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
@@ -35084,9 +35087,19 @@ window.C2C_STORIES = {
 // Recognize) one at a time so mouse-scroll animates through every beat before jumping to the
 // next slide. Per Dave 'mouse scroll down should always go to the next animation. Make sure
 // that happens on every slide, as opposed to skipping over animations going to the next slide.'
+let csGnrAutoRevealTimer = null;
+function csGnrQueueAutoReveal() {
+  clearTimeout(csGnrAutoRevealTimer);
+  const slide = document.getElementById('cs-gnr');
+  if (!slide || !slide.classList.contains('active') || slide.dataset.shown !== '0') return;
+  csGnrAutoRevealTimer = setTimeout(() => {
+    if (slide.classList.contains('active') && slide.dataset.shown === '0') slide.dataset.shown = '1';
+  }, 650);
+}
 window.csGnrAdvance = function() {
   const slide = document.getElementById('cs-gnr');
   if (!slide || !slide.classList.contains('active')) return false;
+  clearTimeout(csGnrAutoRevealTimer);
   if (slide.dataset.shown !== '1' && slide.dataset.shown !== '2') { slide.dataset.shown = '1'; return true; }
   if (slide.dataset.shown === '1') { slide.dataset.shown = '2'; return true; }
   const closedEnv = slide.querySelector('.env-card[data-open="0"]');
@@ -35466,6 +35479,7 @@ function caseyGo(n) {
     target.classList.remove('casey-entered');
     void target.offsetWidth;  // reflow
     target.classList.add('casey-entered');
+    if (targetId === 'cs-gnr' && typeof csGnrQueueAutoReveal === 'function') csGnrQueueAutoReveal();
   }
   // Only toggle on PRIMARY dots (skip alt-stacked dots so index math matches SLIDE_ORDER)
   if (!syncCaseyDotHighlightToActiveSlide()) document.querySelectorAll('.casey-dot:not(.alt)').forEach((d, i) => d.classList.toggle('on', i === n - 1));
