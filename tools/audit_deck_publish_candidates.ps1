@@ -146,7 +146,7 @@ foreach ($line in $branchLines) {
   $hasPublishTrace = ($commitBody -match "PUBLISH TRACE")
   $hasPublishReady = ($commitBody -match "PUBLISH-READY:\s*yes")
   $safeToPortIfStale = ($commitBody -match "safe-to-port-if-stale:\s*yes")
-  $hasExplicitRemovalAuthorization = ($commitBody -match "explicit authorization evidence[\s\S]{0,240}(Dave|requested|attached|delete|deleted|remove|removed|trash|trashed|appendix|move|moved)")
+  $hasExplicitRemovalAuthorization = ($commitBody -match "(explicit\s+)?authorization evidence[\s\S]{0,240}(Dave|requested|attached|delete|deleted|remove|removed|trash|trashed|appendix|move|moved)")
   $publishHint = ""
   if ($commitBody -match "publish bucket hint:\s*([A-Za-z0-9_\-]+)") {
     $publishHint = $Matches[1]
