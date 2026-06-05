@@ -55,10 +55,12 @@ Candidate universe:
 Classifier rules:
 - `PUBLISH-READY` must be in the commit body, not only in the chat final response.
 - A branch with `PUBLISH TRACE`, `publish bucket hint: publish_now` or `port_if_stale`, and `safe-to-port-if-stale: yes` is executable unless it removes active inventory without explicit authorization.
+- A branch with `PUBLISH-READY: yes`, `PUBLISH TRACE`, `publish bucket hint: needs_explicit_review`, and an `explicit authorization evidence` line quoting Dave's delete/trash/remove/move/appendix instruction is not a generic risky skip. It is an `EXPLICIT_DELETE_DECISION_REQUIRED` branch: extract the intent, compare it to current active registries, then merge, port, or list it by name under `BLOCKED / NEEDS REVIEW`.
 - Clean executable branches are `publish_now`.
 - Conflicting/stale executable branches are `port_or_conflict_review` and must receive a branch-specific intent extraction attempt.
 - Branch-name words such as delete, move, trash, remove, or appendix are warnings, not blockers, when the trace proves no unauthorized active slide was removed or quotes Dave's exact removal instruction.
 - For every clean `publish_now` branch, run `tools/validate_deck_worktree_handoff.ps1 -Branch <branch>` before merging. If `HANDOFF_VALID=no`, do not merge; put the branch in `BLOCKED` with the validator errors.
+- For every `EXPLICIT_DELETE_DECISION_REQUIRED` branch, run `tools/validate_deck_worktree_handoff.ps1 -Branch <branch>` when the branch is clean or readable. If valid and the exact visible target can be verified, port or merge it; if not, the final report must include that branch name, the removed IDs, the authorization line, and the exact blocker.
 
 For each candidate, extract:
 - branch
@@ -96,6 +98,7 @@ Final gate before `DONE`:
 - Rerun:
   `powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_after_publish.csv`
 - `PUBLISH_NOW_CANDIDATES=0`
+- `EXPLICIT_DELETE_DECISION_REQUIRED=0` or every listed branch appears under `MERGED AND LIVE`, `PORTED AND LIVE`, or `BLOCKED / NEEDS REVIEW` with its exact removed IDs and next action.
 - every checked-out clean `deck/*` worktree is contained in `origin/main` or listed under `BLOCKED`
 - every local `deck/*` branch not contained in `origin/main` is merged, ported, already live, or listed under `BLOCKED` / `CONFLICTS` / `NOT VERIFIED`
 - `GnR_deck.html` and `index.html` hashes match

@@ -74,7 +74,8 @@ The audit is the checklist. It must not be replaced by memory, the app status do
 
 - `publish_now`: merge, mirror, verify, commit, push.
 - `port_or_conflict_review`: inspect branch intent; if small and clear, port it surgically, verify, then mark source branch integrated with `ours`.
-- `risky_clean_needs_review` / `risky_conflict_blocked`: do not merge unless the branch trace quotes Dave's exact delete/move/trash instruction or no active inventory is removed.
+- `EXPLICIT_DELETE_DECISION_REQUIRED`: a branch with `PUBLISH-READY: yes`, `PUBLISH TRACE`, `needs_explicit_review`, and an `explicit authorization evidence` line quoting Dave's delete/move/trash/remove/appendix instruction. This is not a skip bucket. Deck Ops must extract the removed IDs and registry keys, validate the branch when possible, then merge, port, or name the exact blocker.
+- `risky_clean_needs_review` / `risky_conflict_blocked`: do not merge unless the branch trace quotes Dave's exact delete/move/trash instruction or no active inventory is removed. If it does quote Dave's instruction, promote it to branch-specific decision review instead of leaving it in a generic risky pile.
 - `dirty_worktree_blocked`: preserve and report; do not drop work.
 - `broken_ref_or_merge_base`: report exact ref/path; do not delete refs without Dave approval.
 
@@ -83,6 +84,7 @@ The audit is the checklist. It must not be replaced by memory, the app status do
 Deck Ops may report `DONE` only when:
 
 - `PUBLISH_NOW_CANDIDATES=0`
+- `EXPLICIT_DELETE_DECISION_REQUIRED=0` or every explicit delete branch is named in the report with removed IDs, decision, and next action
 - every clean checked-out `deck/*` worktree is either contained in `origin/main` or explicitly blocked
 - every local `deck/*` branch not contained in `origin/main` is merged, ported, already live, or in the unresolved ledger
 - `GnR_deck.html` and `index.html` hashes match

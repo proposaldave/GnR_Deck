@@ -18,6 +18,7 @@ DAVE RULE:
 - Submit one exact deck edit per worktree.
 - If you have three unrelated edits, create three worktrees with this same template.
 - Do not add publish instructions here. Publish happens later from `main`.
+- For a delete/trash/move/appendix request, name the visible slide or attach the screenshot in that worktree. The worktree prompt now requires Codex to quote that instruction in the commit trace so Publish Control can execute it later without asking you to prove it again.
 
 WHAT MUST COME BACK BEFORE THE WORKTREE IS DONE:
 - DONE
@@ -27,6 +28,7 @@ WHAT MUST COME BACK BEFORE THE WORKTREE IS DONE:
 - ACTIVE SOURCE: exact active slide ID / `SLIDE_ALTS` slot / `STAFF_ORDER` entry
 - CHECKS: source verification, plus visual QA when the edit changes layout, image, order, animation, or visibility
 - PUBLISH TRACE: final response names the active source, changed selectors/markers, publish bucket hint, and safe-to-port-if-stale value
+- DELETE/MOVE TRACE: for delete/trash/move/appendix requests, final response and commit body quote Dave's removal instruction and name removed slide IDs / registry keys
 - VALIDATOR: `tools/validate_deck_worktree_handoff.ps1` returns `HANDOFF_VALID=yes`
 - PUSH: not pushed
 

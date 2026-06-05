@@ -98,8 +98,11 @@ After commit, run:
 PUBLISH BUCKET RULES
 - Use `publish bucket hint: publish_now` for clean, verified, current edits that should merge directly.
 - Use `publish bucket hint: port_if_stale` when the edit is tiny, mechanical, and safe to reapply if the branch becomes stale.
-- Use `publish bucket hint: needs_explicit_review` for risky deletes, ambiguous targets, broad narrative moves, or anything you cannot verify.
+- Use `publish bucket hint: port_if_stale` for Dave-explicit delete/trash/appendix/move requests when the exact active slide ID or `SLIDE_ALTS[slot]` ID is named, the removal authorization is quoted, the registry diff is mechanical, and verification passes.
+- Use `publish bucket hint: needs_explicit_review` only when the delete/trash/appendix/move target is ambiguous, removes active inventory without a quote of Dave's instruction, changes broad narrative structure, or cannot be verified.
 - Use `safe-to-port-if-stale: yes` only when the exact selector/text/registry marker is named and mechanically verifiable.
+- For explicit deletions, `safe-to-port-if-stale: yes` is allowed and preferred when the trace names the removed IDs, quotes Dave's deletion instruction, lists the registry keys changed, and `verify_slide_order_guard.ps1` passes for any `SLIDE_ORDER` change.
+- Do not finish a branch as `needs_explicit_review` merely because the branch name includes delete/trash/remove. If Dave explicitly asked for that visible deletion and the active registry path is verified, make the branch executable.
 
 HARD DONE RULE
 Do not report `DONE` unless all are true:

@@ -50,8 +50,10 @@ function Get-PublishBucket {
     [string]$Mergeability,
     [string[]]$RiskFlags,
     [bool]$HasPublishTrace,
+    [bool]$HasPublishReady,
     [string]$PublishHint,
-    [bool]$SafeToPortIfStale
+    [bool]$SafeToPortIfStale,
+    [bool]$HasExplicitRemovalAuthorization
   )
 
   if ($ContainedInBase) {
@@ -63,10 +65,14 @@ function Get-PublishBucket {
 
   $hasRisk = @($RiskFlags).Count -gt 0
   $traceSaysExecutable = $HasPublishTrace -and $SafeToPortIfStale -and ($PublishHint -in @("publish_now", "port_if_stale"))
+  $traceNeedsDeletionDecision = $HasPublishReady -and $HasPublishTrace -and $HasExplicitRemovalAuthorization -and ($PublishHint -eq "needs_explicit_review")
   if ($traceSaysExecutable -and $Mergeability -eq "clean" -and $PublishHint -eq "publish_now") {
     return "publish_now"
   }
   if ($traceSaysExecutable -and $Mergeability -in @("clean", "conflict")) {
+    return "port_or_conflict_review"
+  }
+  if ($traceNeedsDeletionDecision -and $Mergeability -in @("clean", "conflict")) {
     return "port_or_conflict_review"
   }
 
@@ -140,6 +146,7 @@ foreach ($line in $branchLines) {
   $hasPublishTrace = ($commitBody -match "PUBLISH TRACE")
   $hasPublishReady = ($commitBody -match "PUBLISH-READY:\s*yes")
   $safeToPortIfStale = ($commitBody -match "safe-to-port-if-stale:\s*yes")
+  $hasExplicitRemovalAuthorization = ($commitBody -match "explicit authorization evidence[\s\S]{0,240}(Dave|requested|attached|delete|deleted|remove|removed|trash|trashed|appendix|move|moved)")
   $publishHint = ""
   if ($commitBody -match "publish bucket hint:\s*([A-Za-z0-9_\-]+)") {
     $publishHint = $Matches[1]
@@ -178,8 +185,10 @@ foreach ($line in $branchLines) {
     -Mergeability $mergeability `
     -RiskFlags $riskFlags `
     -HasPublishTrace $hasPublishTrace `
+    -HasPublishReady $hasPublishReady `
     -PublishHint $publishHint `
-    -SafeToPortIfStale $safeToPortIfStale
+    -SafeToPortIfStale $safeToPortIfStale `
+    -HasExplicitRemovalAuthorization $hasExplicitRemovalAuthorization
 
   $rows += [pscustomobject]@{
     Branch = $branch
@@ -197,6 +206,7 @@ foreach ($line in $branchLines) {
     HasPublishReady = $hasPublishReady
     PublishHint = $publishHint
     SafeToPortIfStale = $safeToPortIfStale
+    HasExplicitRemovalAuthorization = $hasExplicitRemovalAuthorization
     ChangesSlideOrder = ($diff -match "SLIDE_ORDER")
     ChangesSlideAlts = ($diff -match "SLIDE_ALTS")
     ChangesTrashOrder = ($diff -match "TRASH_ORDER")
@@ -216,6 +226,11 @@ $broken = @($unpublished | Where-Object { $_.PublishBucket -eq "broken_ref_or_me
 "RISKY_OR_DELETE_BLOCKED=$($riskyBlocked.Count)"
 "DIRTY_WORKTREE_BLOCKED=$($dirtyBlocked.Count)"
 "BROKEN_REF_OR_MERGE_BASE=$($broken.Count)"
+$deleteDecisions = @($unpublished | Where-Object { $_.PublishBucket -eq "port_or_conflict_review" -and $_.HasExplicitRemovalAuthorization -and $_.PublishHint -eq "needs_explicit_review" })
+if ($deleteDecisions.Count -gt 0) {
+  "EXPLICIT_DELETE_DECISION_REQUIRED=$($deleteDecisions.Count)"
+  $deleteDecisions | ForEach-Object { "EXPLICIT_DELETE_DECISION_BRANCH=$($_.Branch)|$($_.Mergeability)|$($_.Subject)" }
+}
 $rows | Sort-Object ContainedInBase, CommitDate -Descending | Format-Table Branch, ContainedInBase, WorktreeStatus, Mergeability, PublishBucket, Head, Subject, RiskFlags -AutoSize
 
 if ($CsvPath) {
