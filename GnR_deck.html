@@ -13631,7 +13631,9 @@ window.cs1m7Reverse = function() {
   #cs-pb-silliness-chaos-pink,
   #cs-pb-silliness-netdrip-pink,
   #cs-pb-silliness-overhead-pink,
-  #cs-pb-silliness-ritual2-pink {
+  #cs-pb-silliness-ritual2-pink,
+  #cs-pb-silliness-white-mosaic,
+  #cs-pb-silliness-white-social-test {
     background:#1a1612 !important; overflow:hidden; position:absolute; inset:0; color:#fbf7ef;
   }
   #cs-pb-silliness-image-net-pink.active,
@@ -13646,7 +13648,9 @@ window.cs1m7Reverse = function() {
   #cs-pb-silliness-chaos-pink.active,
   #cs-pb-silliness-netdrip-pink.active,
   #cs-pb-silliness-overhead-pink.active,
-  #cs-pb-silliness-ritual2-pink.active { display:block !important; }
+  #cs-pb-silliness-ritual2-pink.active,
+  #cs-pb-silliness-white-mosaic.active,
+  #cs-pb-silliness-white-social-test.active { display:block !important; }
   .psg-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
   .psg-scrim { position:absolute; inset:0; z-index:1; pointer-events:none; }
   #cs-pb-silliness-image-net-pink .psg-scrim {
@@ -13679,6 +13683,22 @@ window.cs1m7Reverse = function() {
   #cs-pb-silliness-ritual2-pink .psg-scrim {
     background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.58) 40%, transparent 70%);
   }
+  #cs-pb-silliness-white-mosaic .psg-scrim {
+    background:linear-gradient(90deg, rgba(251,247,239,.94) 0%, rgba(251,247,239,.62) 30%, transparent 58%),
+      linear-gradient(0deg, rgba(251,247,239,.58) 0%, transparent 44%);
+  }
+  #cs-pb-silliness-white-social-test .psg-scrim {
+    background:linear-gradient(90deg, rgba(251,247,239,.96) 0%, rgba(251,247,239,.72) 36%, transparent 66%),
+      linear-gradient(0deg, rgba(251,247,239,.48) 0%, transparent 50%);
+  }
+  .psg-copy.white-panel {
+    left:74px; bottom:72px; max-width:720px; padding:26px 30px 28px;
+    background:rgba(251,247,239,.88); border:1px solid rgba(184,149,74,.34); border-left:6px solid #c8462c;
+    box-shadow:0 18px 42px rgba(26,22,18,.12); color:#1a1612; text-shadow:none;
+  }
+  .psg-copy.white-panel h1 em { color:#c8462c; }
+  .psg-copy.white-panel p { color:rgba(26,22,18,.74); }
+  .psg-copy.white-panel .psg-tags span { color:#1a1612; background:rgba(251,247,239,.86); border-color:rgba(184,149,74,.42); }
   .psg-eye {
     position:absolute; top:28px; left:48px; z-index:5;
     font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em;
@@ -13970,6 +13990,28 @@ window.cs1m7Reverse = function() {
     <h1>Silliness makes the room <em>readable.</em></h1>
     <p>The sport reveals patience, ego, generosity, humor, and who people actually want to play with again.</p>
     <div class="psg-tags"><span>guard down</span><span>low movement</span><span>belonging</span></div>
+  </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-white-mosaic" style="display:none">
+  <div class="psg-eye slide-eyebrow">why pickleball works</div>
+  <img class="psg-bg" src="assets/generated/silliness-white-dots/silliness-human-mosaic-white.png" alt="Image-generated pickleball silliness mural: score confusion, toy ball, dinks, speedup, weird form, net drip, paddle taps, rotation, middle confusion, laughter, and invite-back warmth." onerror="this.onerror=null;this.src='assets/cs-pb-silliness-image-open-play.png'"/>
+  <div class="psg-scrim" aria-hidden="true"></div>
+  <div class="psg-copy white-panel">
+    <h1>The absurdity is the <em>social test.</em></h1>
+    <p>Score confusion, toy balls, kitchen dinks, sudden speedups, lucky drips, weird form, paddle taps, rotation, and invite-back warmth all expose who belongs together.</p>
+    <div class="psg-tags"><span>score</span><span>wiffleball</span><span>dink</span><span>speedup</span><span>net drip</span><span>invite back</span></div>
+  </div>
+</div>
+
+<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-white-social-test" style="display:none">
+  <div class="psg-eye slide-eyebrow">why pickleball works</div>
+  <img class="psg-bg" src="assets/generated/silliness-white-dots/silliness-social-test-white.png" alt="Image-generated pickleball silliness as social test: kitchen dinks, early speedup, low-ball save, middle confusion, net apology, posturing, patience, paddle tap, mixed partners, and invite-back handshake." onerror="this.onerror=null;this.src='assets/generated/silliness-white-dots/silliness-human-mosaic-white.png'"/>
+  <div class="psg-scrim" aria-hidden="true"></div>
+  <div class="psg-copy white-panel">
+    <h1>Silly is how strangers become <em>safe.</em></h1>
+    <p>The sport reveals patience, ego, generosity, humor, adaptability, and who people want to play with again before anyone knows what to call the score.</p>
+    <div class="psg-tags"><span>patience</span><span>ego</span><span>humor</span><span>generosity</span><span>middle</span><span>paddle tap</span></div>
   </div>
 </div>
 
@@ -34301,7 +34343,7 @@ const SLIDE_ALTS = {
   11: ['cs-invite-atomic-unit-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'],
   14: ['cs-samecourt-pyramid-white1', 'cs-referral-builder-pink', 'cs-referral-loop-pink'],
   22: ['cs-16'],
-  23: ['cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'],
+  23: ['cs-pb-silliness-white-mosaic', 'cs-pb-silliness-white-social-test', 'cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -36316,7 +36358,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
     const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-hc-market-planet' || altId === 'cs-hc-market-attention' || altId === 'cs-hc-market-latent' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
-    const isWhiteAlt = (altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market');
+    const isWhiteAlt = (altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market' || altId === 'cs-pb-silliness-white-mosaic' || altId === 'cs-pb-silliness-white-social-test');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     const isGreenAlt = /^cs-pb-silliness-.*-green$/.test(altId) || (Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId));
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
