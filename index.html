@@ -40863,9 +40863,16 @@ function openAnnotationPanel() {
 
 function closeAnnotationPanel() {
   document.getElementById('annotationOverlay').classList.remove('open');
+  activeAnnotationPoint = null;
 }
 
 function handleAnnotationTextKeydown(event) {
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    event.stopPropagation();
+    closeAnnotationPanel();
+    return;
+  }
   if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
     event.preventDefault();
     event.stopPropagation();
@@ -40959,6 +40966,12 @@ function clearCurrentAnnotation() {
 }
 
 document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && document.getElementById('annotationOverlay').classList.contains('open')) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    closeAnnotationPanel();
+    return;
+  }
   if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
   if (e.key === 'a' || e.key === 'A') {
     if (!annotationsAllowedHere()) return;
@@ -41217,6 +41230,12 @@ function handleAnnotationCapture(event) {
 document.addEventListener('click', handleAnnotationCapture, true);
 document.addEventListener('click', () => setTimeout(renderAnnotationMarkers, 80));
 document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && document.getElementById('annotationOverlay').classList.contains('open')) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    closeAnnotationPanel();
+    return;
+  }
   if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
   if (e.key === 'a' || e.key === 'A') {
     if (!annotationsAllowedHere()) return;
