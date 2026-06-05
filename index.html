@@ -40820,7 +40820,8 @@ function setAnnotationStore(store) {
 }
 
 function annotationsAllowedHere() {
-  return location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  const params = new URLSearchParams(location.search || '');
+  return location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || params.get('annotations') === '1';
 }
 
 function getActiveSlideForAnnotation() {
