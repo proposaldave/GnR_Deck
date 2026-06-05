@@ -54,8 +54,8 @@
 
   #cs-club-os .cco-stage { display:grid; grid-template-columns:.93fr 1.07fr; gap:42px; align-items:center; }
   #cs-club-os .cco-stage > .club-build-anim:first-child { position:relative; z-index:3; }
-  #cs-club-os .club-build-title { max-width:860px; text-shadow:0 14px 34px rgba(251,247,239,.56); }
-  #cs-club-os .club-build-sub { max-width:790px; text-shadow:0 10px 26px rgba(251,247,239,.72); }
+  #cs-club-os .club-build-title { max-width:860px; text-shadow:0 7px 16px rgba(251,247,239,.42); }
+  #cs-club-os .club-build-sub { max-width:790px; text-shadow:0 6px 14px rgba(251,247,239,.54); }
   #cs-club-os .cco-offer { position:relative; height:760px; isolation:isolate; }
   #cs-club-os .cco-offer::before {
     content:""; position:absolute; inset:42px 26px 18px 12px; z-index:0; border:1.5px solid rgba(184,149,74,.34); border-radius:28px;
@@ -69,7 +69,7 @@
   #cs-club-os .cco-offer::after {
     content:""; position:absolute; left:50%; top:50%; z-index:1; width:520px; height:520px; transform:translate(-50%,-50%); border-radius:50%;
     background:conic-gradient(from 18deg,rgba(91,143,212,.22),rgba(184,149,74,.18),rgba(200,70,44,.20),rgba(184,149,74,.18),rgba(91,143,212,.22));
-    opacity:.72; filter:blur(.2px);
+    opacity:.72; filter:none;
   }
   #cs-club-os .cco-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:4; width:264px; height:264px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; background:radial-gradient(circle at 50% 37%,rgba(91,143,212,.18),transparent 38%),#1a1612; color:#fbf7ef; box-shadow:0 24px 80px rgba(26,22,18,.22),0 0 0 18px rgba(184,149,74,.14),0 0 0 46px rgba(251,247,239,.28); }
   #cs-club-os .cco-core::before { content:""; position:absolute; inset:-78px; border-radius:50%; border:1px dashed rgba(26,22,18,.18); }
@@ -83,7 +83,7 @@
     opacity:.92;
   }
   #cs-club-os .cco-core small { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#f1d788; }
-  #cs-club-os .cco-spoke { position:absolute; z-index:5; width:294px; padding:22px 24px 24px; border:1.4px solid rgba(184,149,74,.42); background:linear-gradient(180deg,rgba(251,247,239,.94),rgba(251,247,239,.82)); border-radius:8px; box-shadow:0 22px 58px rgba(26,22,18,.13); backdrop-filter:blur(3px); }
+  #cs-club-os .cco-spoke { position:absolute; z-index:5; width:294px; padding:22px 24px 24px; border:1.4px solid rgba(184,149,74,.42); background:linear-gradient(180deg,rgba(251,247,239,.97),rgba(251,247,239,.90)); border-radius:8px; box-shadow:0 22px 58px rgba(26,22,18,.13); backdrop-filter:none; }
   #cs-club-os .cco-spoke::before { content:""; position:absolute; left:18px; right:18px; top:-8px; height:5px; border-radius:999px; background:linear-gradient(90deg,#5B8FD4,#b8954a,#c8462c); opacity:.62; }
   #cs-club-os .cco-spoke::after { content:""; position:absolute; right:18px; top:19px; width:8px; height:8px; border-radius:50%; background:#5B8FD4; box-shadow:14px 0 0 rgba(91,143,212,.74),28px 0 0 rgba(91,143,212,.46); }
   #cs-club-os .cco-spoke b { display:block; font-family:'Manrope',sans-serif; font-size:.70rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#c8462c; margin-bottom:10px; }
