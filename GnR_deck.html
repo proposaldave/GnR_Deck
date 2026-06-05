@@ -11718,7 +11718,7 @@ window.cs1m7Reverse = function() {
   #cs-invitation-word-of-mouth:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,22,18,.18) 0%,rgba(26,22,18,.09) 36%,rgba(251,247,239,.10) 62%,rgba(251,247,239,.24) 100%),radial-gradient(circle at 18% 18%,rgba(184,149,74,.18),transparent 34%);z-index:1}
   #cs-invitation-word-of-mouth .iwom-eye{color:#c8462c}
   #cs-invitation-word-of-mouth .iwom-stage{z-index:2;padding-bottom:62px;opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
-  #cs-invitation-word-of-mouth.casey-entered .iwom-stage{opacity:1;transform:none;transition-delay:1.05s}
+  #cs-invitation-word-of-mouth.casey-entered[data-stage="1"] .iwom-stage{opacity:1;transform:none}
   html[data-export="1"] #cs-invitation-word-of-mouth .iwom-stage{opacity:1!important;transform:none!important;transition:none!important}
   #cs-invitation-word-of-mouth .iwom-title{color:#fbf7ef;text-shadow:0 4px 28px rgba(26,22,18,.72)}
   #cs-invitation-word-of-mouth .iwom-sub{color:rgba(26,22,18,.66);font-weight:900;letter-spacing:.10em;text-transform:uppercase}
@@ -11751,7 +11751,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] .iwom-slide *{transition:none!important;animation:none!important}
 </style>
 
-<div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth">
+<div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth" data-stage="0" onclick="if(window.csInvitationWordOfMouthAdvance && window.csInvitationWordOfMouthAdvance()) event.stopPropagation()">
   <img class="iwom-bg" src="assets/cs-invitation-word-of-mouth-glow-clinic-bg.png" alt="Text-free glow pickleball event and pro clinic referral background">
   <div class="iwom-eye">The community sales engine</div>
   <section class="iwom-stage">
@@ -11781,6 +11781,15 @@ window.cs1m7Reverse = function() {
     </div>
   </section>
 </div>
+
+<script>
+window.csInvitationWordOfMouthAdvance = function() {
+  const slide = document.getElementById('cs-invitation-word-of-mouth');
+  if (!slide || slide.dataset.stage === '1') return false;
+  slide.dataset.stage = '1';
+  return true;
+};
+</script>
 
 <div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth-white" style="display:none">
   <div class="iwom-eye">invitation engine / white variant</div>
@@ -37042,6 +37051,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-2b': 'cs2bAdvance',
     'cs-2c': 'cs2cAdvance',
     'cs-gnr': 'csGnrAdvance',
+    'cs-invitation-word-of-mouth': 'csInvitationWordOfMouthAdvance',
     'cs-pbfirst': 'csPbfirstAdvance',
     'cs-samecourt': 'csSamecourtAdvance',
     'cs-wedgepb-codex': 'csWedgepbCodexAdvance',
@@ -37379,6 +37389,10 @@ document.addEventListener('wheel', e => {
       return;
     }
     // [Dave 2026-05-17] cs-pbfirst (5 flip cards) — scroll-down flips each card before next-slide nav.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-invitation-word-of-mouth' && window.csInvitationWordOfMouthAdvance && window.csInvitationWordOfMouthAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
