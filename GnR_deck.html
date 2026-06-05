@@ -15473,12 +15473,14 @@ window.cs1m7Reverse = function() {
   .invp-card{min-height:172px;border:1px solid rgba(26,22,18,.13);border-radius:8px;background:rgba(251,247,239,.72);padding:24px 24px 22px;box-shadow:0 18px 42px rgba(26,22,18,.06)}
   .invp-card b{display:block;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;margin-bottom:13px}
   .invp-card span{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.28rem;line-height:1.13;font-weight:750;color:#1a1612}
-  .invp-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px}
-  .invp-step{position:relative;min-height:154px;border:1px solid rgba(184,149,74,.28);border-radius:8px;background:rgba(255,255,255,.38);padding:20px 18px;text-align:center}
+  .invp-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:34px}
+  .invp-step{position:relative;min-height:154px;border:1px solid rgba(184,149,74,.28);border-radius:8px;background:rgba(255,255,255,.38);padding:18px 14px;text-align:center}
   .invp-step:after{content:"";position:absolute;right:-13px;top:50%;width:13px;border-top:1px solid rgba(184,149,74,.50)}
   .invp-step:last-child:after{display:none}
-  .invp-step strong{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;margin:0 auto 13px;background:#1a1612;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950}
-  .invp-step span{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.12rem;line-height:1.08;font-weight:800}
+  .invp-step strong{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;margin:0 auto 10px;background:#1a1612;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950}
+  .invp-icon{display:grid;place-items:center;width:34px;height:34px;margin:0 auto 10px;color:#b8954a}
+  .invp-icon svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .invp-step span{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.02rem;line-height:1.08;font-weight:800}
   .invp-metrics{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:18px;margin-top:38px;align-items:stretch}
   .invp-metric{border-radius:8px;border:1px solid rgba(184,149,74,.32);background:rgba(255,255,255,.50);padding:28px 24px;text-align:center}
   .invp-num{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.4rem,6.2vw,6rem);line-height:.9;font-weight:950;color:#b8954a;letter-spacing:0}
@@ -15547,11 +15549,12 @@ window.cs1m7Reverse = function() {
       <div class="invp-kicker">AI changes the math</div>
       <h1 class="invp-title">The invitation becomes the <em>operating layer.</em></h1>
       <div class="invp-flow">
-        <div class="invp-step"><strong>01</strong><span>Invite</span></div>
-        <div class="invp-step"><strong>02</strong><span>RSVP / refer</span></div>
-        <div class="invp-step"><strong>03</strong><span>Play</span></div>
-        <div class="invp-step"><strong>04</strong><span>Signal</span></div>
-        <div class="invp-step"><strong>05</strong><span>Next invite</span></div>
+        <div class="invp-step"><strong>01</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4z"/><path d="m4 8 8 6 8-6"/></svg></div><span>Invite</span></div>
+        <div class="invp-step"><strong>02</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17 19 7"/><path d="M4 20h16"/></svg></div><span>RSVP</span></div>
+        <div class="invp-step"><strong>03</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="m10 11 4-3"/><path d="m10 13 4 3"/></svg></div><span>Refer</span></div>
+        <div class="invp-step"><strong>04</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18V6"/><path d="M19 18V6"/><path d="M5 12h14"/><path d="M9 6v12"/><path d="M15 6v12"/></svg></div><span>Play</span></div>
+        <div class="invp-step"><strong>05</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M8 12a4 4 0 0 1 4-4"/><path d="M16 12a4 4 0 0 1-4 4"/><path d="M4 12a8 8 0 0 1 8-8"/><path d="M20 12a8 8 0 0 1-8 8"/></svg></div><span>Signal</span></div>
+        <div class="invp-step"><strong>06</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 3v5h-5"/><path d="M6 11a7 7 0 0 1 11-6"/><path d="M7 21v-5h5"/><path d="M18 13a7 7 0 0 1-11 6"/></svg></div><span>Next invite</span></div>
       </div>
     </div>
   </section>
