@@ -40440,6 +40440,101 @@ window.addEventListener('resize',drawLoop);
     outline: 2px solid rgba(200,70,44,0.28);
     border-color: rgba(200,70,44,0.55);
   }
+  .annotation-attachments {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Manrope', sans-serif;
+  }
+  .annotation-attach-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .annotation-file-input { display: none; }
+  .annotation-attach-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 9px 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(26,22,18,0.14);
+    background: rgba(184,149,74,0.12);
+    color: #1a1612;
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .annotation-attach-count {
+    font-size: 0.72rem;
+    color: rgba(26,22,18,0.55);
+  }
+  .annotation-attach-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px;
+  }
+  .annotation-attachment {
+    display: grid;
+    grid-template-columns: 44px minmax(0,1fr) 28px;
+    align-items: center;
+    gap: 8px;
+    min-height: 54px;
+    border: 1px solid rgba(26,22,18,0.12);
+    border-radius: 8px;
+    background: rgba(255,250,241,0.82);
+    padding: 6px;
+  }
+  .annotation-attachment img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(26,22,18,0.10);
+  }
+  .annotation-attachment .file-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    background: rgba(26,22,18,0.08);
+    color: #b8954a;
+    font-size: 1.15rem;
+    font-weight: 900;
+  }
+  .annotation-attachment .meta {
+    min-width: 0;
+  }
+  .annotation-attachment .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.72rem;
+    font-weight: 850;
+    color: #1a1612;
+  }
+  .annotation-attachment .size {
+    margin-top: 2px;
+    font-size: 0.62rem;
+    color: rgba(26,22,18,0.50);
+  }
+  .annotation-attachment .remove {
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(200,70,44,0.12);
+    color: #c8462c;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+  }
   #annotationPanel .actions {
     display: flex; gap: 10px; flex-wrap: wrap;
     margin-top: 16px; align-items: center;
@@ -40615,6 +40710,14 @@ window.addEventListener('resize',drawLoop);
     <div class="label" id="annLabel">Slide annotation</div>
     <div class="title" id="annTitle">Mark up this slide</div>
     <textarea id="annotationText" onkeydown="handleAnnotationTextKeydown(event)" placeholder="Type what you want changed on this slide. Example: make the headline shorter, move this card to appendix, generate a warmer human-connection image here."></textarea>
+    <div class="annotation-attachments">
+      <div class="annotation-attach-row">
+        <label class="annotation-attach-btn" for="annotationFileInput">Attach files/images</label>
+        <input class="annotation-file-input" id="annotationFileInput" type="file" accept="image/*,.pdf,.txt,.md,.csv,.json,.doc,.docx,.ppt,.pptx,.xls,.xlsx" multiple onchange="handleAnnotationFiles(event)">
+        <span class="annotation-attach-count" id="annotationAttachCount">No attachments</span>
+      </div>
+      <div class="annotation-attach-list" id="annotationAttachList"></div>
+    </div>
     <div class="actions">
       <button class="action primary" onclick="saveAnnotation()">Save note</button>
       <button class="action" onclick="copyCurrentAnnotation()">Copy current</button>
@@ -40696,7 +40799,7 @@ function pruneProcessedAnnotations(store) {
       item.points = nextPoints;
       changed = true;
     }
-    if (!item.points.length && !String(item.text || '').trim()) {
+    if (!item.points.length && !String(item.text || '').trim() && !(item.attachments && item.attachments.length)) {
       delete store[slideId];
     }
   });
@@ -40850,6 +40953,8 @@ function downloadAllAnnotations() {
 
 function clearCurrentAnnotation() {
   document.getElementById('annotationText').value = '';
+  annotationDraftAttachments = [];
+  renderAnnotationAttachments();
   saveAnnotation();
 }
 
@@ -40873,6 +40978,7 @@ document.addEventListener('DOMContentLoaded', function(){
 // Click-to-annotate upgrade: press A or click the pen, then click any spot on the active slide.
 let annotationPickModeActive = false;
 let activeAnnotationPoint = null;
+let annotationDraftAttachments = [];
 
 function normalizeAnnotationItem(item, active) {
   const base = item || {};
@@ -40881,9 +40987,105 @@ function normalizeAnnotationItem(item, active) {
     slideLabel: base.slideLabel || active.label,
     slideTitle: base.slideTitle || active.title,
     text: base.text || '',
-    points: Array.isArray(base.points) ? base.points : [],
+    attachments: Array.isArray(base.attachments) ? base.attachments : [],
+    points: Array.isArray(base.points) ? base.points.map(point => ({
+      ...point,
+      attachments: Array.isArray(point.attachments) ? point.attachments : []
+    })) : [],
     updatedAt: base.updatedAt || ''
   };
+}
+
+function cloneAnnotationAttachments(attachments) {
+  return (Array.isArray(attachments) ? attachments : []).map(attachment => ({ ...attachment }));
+}
+
+function formatAttachmentSize(size) {
+  if (!Number.isFinite(size)) return '';
+  if (size >= 1024 * 1024) return (size / (1024 * 1024)).toFixed(1) + ' MB';
+  if (size >= 1024) return Math.round(size / 1024) + ' KB';
+  return size + ' B';
+}
+
+function renderAnnotationAttachments() {
+  const list = document.getElementById('annotationAttachList');
+  const count = document.getElementById('annotationAttachCount');
+  if (!list || !count) return;
+  list.innerHTML = '';
+  count.textContent = annotationDraftAttachments.length
+    ? annotationDraftAttachments.length + ' attachment' + (annotationDraftAttachments.length === 1 ? '' : 's')
+    : 'No attachments';
+  annotationDraftAttachments.forEach(attachment => {
+    const row = document.createElement('div');
+    row.className = 'annotation-attachment';
+    if ((attachment.type || '').startsWith('image/') && attachment.dataUrl) {
+      const img = document.createElement('img');
+      img.src = attachment.dataUrl;
+      img.alt = attachment.name || 'Attached image';
+      row.appendChild(img);
+    } else {
+      const icon = document.createElement('div');
+      icon.className = 'file-icon';
+      icon.textContent = 'FILE';
+      row.appendChild(icon);
+    }
+    const meta = document.createElement('div');
+    meta.className = 'meta';
+    const name = document.createElement('div');
+    name.className = 'name';
+    name.textContent = attachment.name || 'attachment';
+    const size = document.createElement('div');
+    size.className = 'size';
+    size.textContent = [attachment.type || 'file', formatAttachmentSize(attachment.size)].filter(Boolean).join(' - ');
+    meta.appendChild(name);
+    meta.appendChild(size);
+    row.appendChild(meta);
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'remove';
+    remove.setAttribute('aria-label', 'Remove attachment');
+    remove.textContent = 'x';
+    remove.onclick = () => {
+      annotationDraftAttachments = annotationDraftAttachments.filter(item => item.id !== attachment.id);
+      renderAnnotationAttachments();
+    };
+    row.appendChild(remove);
+    list.appendChild(row);
+  });
+}
+
+function readAnnotationFile(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve({
+      id: 'att-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
+      name: file.name,
+      type: file.type || 'application/octet-stream',
+      size: file.size,
+      dataUrl: reader.result,
+      updatedAt: new Date().toLocaleString()
+    });
+    reader.onerror = () => reject(reader.error || new Error('File read failed'));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function handleAnnotationFiles(event) {
+  const input = event.target;
+  const files = Array.from(input.files || []);
+  if (!files.length) return;
+  const status = document.getElementById('annotationStatus');
+  if (status) status.textContent = 'Attaching files...';
+  try {
+    const attachments = await Promise.all(files.map(readAnnotationFile));
+    annotationDraftAttachments = annotationDraftAttachments.concat(attachments);
+    renderAnnotationAttachments();
+    if (status) status.textContent = 'Attachment ready. Save note to keep it.';
+  } catch (e) {
+    if (status) status.textContent = 'Attachment failed.';
+  } finally {
+    input.value = '';
+  }
 }
 
 function toggleAnnotationPickMode(event) {
@@ -40906,6 +41108,8 @@ function openAnnotationPanel(point) {
   document.getElementById('annLabel').textContent = active.label + ' · ' + active.id + pointLabel;
   document.getElementById('annTitle').textContent = point ? 'Note at clicked spot' : (active.title || 'Mark up this slide');
   document.getElementById('annotationText').value = point ? (point.text || '') : (item.text || '');
+  annotationDraftAttachments = cloneAnnotationAttachments(point ? point.attachments : item.attachments);
+  renderAnnotationAttachments();
   document.getElementById('annotationStatus').textContent = item.updatedAt ? ('Last saved ' + item.updatedAt) : 'Saved locally in this browser.';
   document.getElementById('annotationOverlay').classList.add('open');
   setTimeout(() => document.getElementById('annotationText').focus(), 40);
@@ -40920,23 +41124,28 @@ function saveAnnotation() {
   item.slideLabel = active.label;
   item.slideTitle = active.title;
   item.updatedAt = new Date().toLocaleString();
+  const attachments = cloneAnnotationAttachments(annotationDraftAttachments);
   if (activeAnnotationPoint) {
     const point = {
       id: activeAnnotationPoint.id || ('ann-' + Date.now()),
       x: activeAnnotationPoint.x,
       y: activeAnnotationPoint.y,
       text,
+      attachments,
       updatedAt: item.updatedAt
     };
     item.points = item.points.filter(existing => existing.id !== point.id);
-    if (text) item.points.push(point);
+    if (text || attachments.length) item.points.push(point);
   } else {
     item.text = text;
+    item.attachments = attachments;
   }
-  if ((item.text && item.text.trim()) || item.points.some(point => point.text && point.text.trim())) store[active.id] = item;
+  const hasSlideNote = (item.text && item.text.trim()) || (item.attachments && item.attachments.length);
+  const hasPointNote = item.points.some(point => (point.text && point.text.trim()) || (point.attachments && point.attachments.length));
+  if (hasSlideNote || hasPointNote) store[active.id] = item;
   else delete store[active.id];
   setAnnotationStore(store);
-  document.getElementById('annotationStatus').textContent = text ? 'Saved.' : 'Cleared.';
+  document.getElementById('annotationStatus').textContent = (text || attachments.length) ? 'Saved.' : 'Cleared.';
   updateAnnotationBadge();
   renderAnnotationMarkers();
 }
@@ -40946,7 +41155,7 @@ function updateAnnotationBadge() {
   if (!btn) return;
   const active = getActiveSlideForAnnotation();
   const item = normalizeAnnotationItem(getAnnotationStore()[active.id], active);
-  const hasNote = !!((item.text && item.text.trim()) || item.points.some(point => point.text && point.text.trim()));
+  const hasNote = !!((item.text && item.text.trim()) || (item.attachments && item.attachments.length) || item.points.some(point => (point.text && point.text.trim()) || (point.attachments && point.attachments.length)));
   btn.classList.toggle('has-note', hasNote);
 }
 
@@ -40954,7 +41163,7 @@ function buildAnnotationPayload(onlyCurrent) {
   const active = getActiveSlideForAnnotation();
   const items = Object.values(getAnnotationStore())
     .map(item => normalizeAnnotationItem(item, active))
-    .filter(item => (item.text && item.text.trim()) || item.points.some(point => point.text && point.text.trim()));
+    .filter(item => (item.text && item.text.trim()) || (item.attachments && item.attachments.length) || item.points.some(point => (point.text && point.text.trim()) || (point.attachments && point.attachments.length)));
   const selected = onlyCurrent ? items.filter(item => item.slideId === active.id) : items;
   return {
     deck: 'GnR_deck.html',
@@ -40971,13 +41180,13 @@ function renderAnnotationMarkers() {
   if (!activeSlide) return;
   const active = getActiveSlideForAnnotation();
   const item = normalizeAnnotationItem(getAnnotationStore()[active.id], active);
-  item.points.filter(point => point.text && point.text.trim()).forEach((point, index) => {
+  item.points.filter(point => (point.text && point.text.trim()) || (point.attachments && point.attachments.length)).forEach((point, index) => {
     const marker = document.createElement('button');
     marker.type = 'button';
     marker.className = 'annotation-marker';
     marker.dataset.pointId = point.id;
     marker.dataset.num = String(index + 1);
-    marker.title = point.text;
+    marker.title = point.text || ((point.attachments || []).length + ' attachment(s)');
     marker.style.left = point.x + '%';
     marker.style.top = point.y + '%';
     marker.addEventListener('click', function(event) {
