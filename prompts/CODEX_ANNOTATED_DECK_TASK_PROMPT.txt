@@ -17,5 +17,23 @@ ANNOTATION INTAKE MODE
 - Do not edit `index.html`.
 - Do not push.
 
+UNPUBLISHED WORKTREE PREFLIGHT
+Before processing the JSON queue, run:
+- `git status --short`
+- `git worktree list --porcelain`
+- `git for-each-ref refs/heads/deck --format="%(refname:short)|%(objectname:short)|%(committerdate:iso8601)|%(subject)"`
+- `powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_annotation_preflight.csv`
+
+Use this preflight for two things:
+- Detect existing unpublished `deck/*` worktree branches before creating new work.
+- Avoid duplicating an annotation that is already completed in a local `deck/*` branch.
+
+Rules:
+- A clean checked-out `deck/*` worktree not contained in `origin/main` is an unpublished candidate.
+- A local `refs/heads/deck/*` branch not contained in `origin/main` is an unpublished candidate even if no worktree is currently checked out.
+- If an unpublished branch already implements the same annotation, verify the exact active source/registry intent before marking the annotation `ALREADY COMPLETED`.
+- If unrelated unpublished branches exist, do not publish them from this JSON task. List them under `PUBLISH NEXT` so Dave and Deck Ops can run `prompts/CODEX_DECK_PUBLISH_PROMPT.txt`.
+- Do not report `DONE` if a matching completed branch exists but was not verified, reused, or listed under `BLOCKED`.
+
 ANNOTATION JSON OR EXACT REQUEST
 [PASTE DAVE'S `Copy current`, `Copy all`, `gnr-annotations.json`, OR ONE EXACT EDIT REQUEST HERE]

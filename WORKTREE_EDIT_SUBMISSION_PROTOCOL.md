@@ -111,6 +111,26 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_can
 
 The audit is the checklist. It must not be replaced by memory, the app status dot, or a hand-picked branch list.
 
+Deck Ops must also build a worktree ledger from:
+
+```powershell
+git worktree list --porcelain
+git for-each-ref refs/heads/deck --format="%(refname:short)|%(objectname:short)|%(committerdate:iso8601)|%(subject)"
+```
+
+The ledger must include every checked-out `deck/*` worktree and every local `refs/heads/deck/*` branch not contained in `origin/main`. A completed Codex app worktree shown by a solid status dot is not a reminder for Dave; it is a publish candidate that Deck Ops must merge, port, mark already live, or block with evidence.
+
+## Annotation JSON Preflight
+
+When Dave feeds Codex an annotation JSON file or pasted annotation payload, the annotation task prompt must check for unpublished work before creating more branches:
+
+- run `git status --short`
+- run `git worktree list --porcelain`
+- run `git for-each-ref refs/heads/deck --format="%(refname:short)|%(objectname:short)|%(committerdate:iso8601)|%(subject)"`
+- run `tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_annotation_preflight.csv`
+
+If an existing unpublished `deck/*` branch already implements an annotation, verify the active source/registry result and mark that annotation `ALREADY COMPLETED` instead of creating a duplicate branch. If unrelated unpublished branches exist, the JSON task does not publish them; it must list them under `PUBLISH NEXT` so the next Deck Ops publish run cannot miss them.
+
 ## Execution Rule
 
 - `publish_now`: merge, mirror, verify, commit, push.

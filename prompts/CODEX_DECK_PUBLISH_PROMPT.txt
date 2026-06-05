@@ -43,6 +43,8 @@ Start gate:
    - `git for-each-ref refs/heads/deck --format="%(refname:short)|%(objectname:short)|%(committerdate:iso8601)|%(subject)"`
    - `powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_current_check.csv`
 2. If `main` has dirty tracked files before publish work, stop and report `BLOCKED` unless the dirty files are generated audit/export artifacts outside the publish diff.
+3. Build a worktree ledger from `git worktree list --porcelain`: path, branch, HEAD, and dirty/clean status for every checked-out `deck/*` worktree. A completed Codex app worktree shown by a solid status dot is a publish candidate if its matching `deck/*` branch is clean and not contained in `origin/main`.
+4. Compare the worktree ledger to `git for-each-ref refs/heads/deck`. Worktree list is not the full universe: a finished branch may no longer be checked out. Do not rely on Dave's screenshot or branch names alone.
 
 Candidate universe:
 - every checked-out clean `deck/*` worktree not contained in `origin/main`
@@ -99,8 +101,10 @@ Final gate before `DONE`:
   `powershell -NoProfile -ExecutionPolicy Bypass -File tools/audit_deck_publish_candidates.ps1 -BaseRef origin/main -CsvPath publish_audit_after_publish.csv`
 - `PUBLISH_NOW_CANDIDATES=0`
 - `EXPLICIT_DELETE_DECISION_REQUIRED=0` or every listed branch appears under `MERGED AND LIVE`, `PORTED AND LIVE`, or `BLOCKED / NEEDS REVIEW` with its exact removed IDs and next action.
+- every `deck/*` branch from the start-gate worktree ledger is contained in `origin/main`, merged, ported, already live, or listed under `BLOCKED` / `CONFLICTS` / `NOT VERIFIED`
 - every checked-out clean `deck/*` worktree is contained in `origin/main` or listed under `BLOCKED`
 - every local `deck/*` branch not contained in `origin/main` is merged, ported, already live, or listed under `BLOCKED` / `CONFLICTS` / `NOT VERIFIED`
+- no clean completed worktree branch from Dave's visible Codex app queue is omitted from the final report
 - `GnR_deck.html` and `index.html` hashes match
 - `main` is pushed
 - raw GitHub source is verified
