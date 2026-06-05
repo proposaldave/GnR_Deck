@@ -8324,7 +8324,7 @@ window.cs1m5Reverse = function() {
       <div class="m8-wordmark">
         <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
       </div>
-      <div class="m8-autonomous">The human connection invitation engine for real communities</div>
+      <div class="m8-autonomous">The invitation engine for real communities</div>
       <!-- [Dave 2026-05-11 LATE] 4-stage reveal: STAGE 1 = LEFT cap only, STAGE 2 = + network line, STAGE 3 = + RIGHT cap. -->
       <!-- STAGE 1: LEFT caption (m8-cap-left auto-shows with parent at stage 1+); RIGHT (m8-cap-right) stays hidden until stage 3 -->
       <!-- [Dave 2026-05-12 LATEST v2] Caption alignment: G is at translateX 85, R is at translateX 282 (asymmetric). Captions sit in a symmetric 2-col grid, so they don't naturally match the G/R visual centers. Solution — apply the SAME translates to each caption column as the wordmark uses, so caption centers track G and R precisely. (Was previously +95 on right only — overcorrected per Dave.) -->
@@ -10772,7 +10772,7 @@ window.cs1m7Reverse = function() {
 
       <!-- [Dave 2026-05-17 v3] tg-sub relocated here, BELOW the trapped-wrap graphic — lands as the caption to the visual story. -->
       <div class="tg-sub tg-swap-line tg-swap-private" style="opacity:1;transform:none">
-        So our private thoughts <span class="tg-plain-amp">&amp;</span> feelings about each other stay <em>trapped in our heads</em>.
+        Our private thoughts <span class="tg-plain-amp">&amp;</span> feelings about each other stay <em>trapped in our heads</em>.
       </div>
 
       <!-- Click hint — pulses while in trapped state; fades after first advance -->
@@ -10835,7 +10835,7 @@ window.cs1m7Reverse = function() {
                [Dave 2026-05-17] SWAPPED with Panel 3 per 'swap positions of these two'.
                Lone-giver content moved to LEFT slot (cx=690) via translate(-470, 0). Badge
                number stays "2" since this is now the second-revealed panel. -->
-          <g data-panel="2" style="--tg-panel-x:63.3px">
+          <g data-panel="2" style="--tg-panel-x:-10px">
             <ellipse cx="513" cy="150" rx="170" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(513, 144)" filter="url(#tgInkLiftOld)">
               <g fill="#1a1612">
@@ -10872,7 +10872,7 @@ window.cs1m7Reverse = function() {
             <text x="513" y="354" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="2.2" fill="#c8462c">LATENT HUMAN VALUE</text>
           </g>
 
-          <g data-panel="3" style="--tg-panel-x:-40px">
+          <g data-panel="3" style="--tg-panel-x:30px">
             <ellipse cx="867" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <g transform="translate(-293, 0)" filter="url(#tgInkLiftOld)">
               <!-- [Dave 2026-05-15] Reverted to original silhouettes — the realism upgrade made things worse. -->
@@ -11685,10 +11685,25 @@ window.cs1m7Reverse = function() {
   .iwom-slide .iwom-panel h2{position:relative;margin:0 0 8px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.62rem;line-height:1;font-weight:900;color:#1a1612}
   .iwom-slide .iwom-panel p{position:relative;margin:0;font-family:'Manrope',sans-serif;font-size:.94rem;line-height:1.34;font-weight:820;color:rgba(26,22,18,.64)}
   .iwom-slide .iwom-visual{position:relative;margin-top:26px;height:340px;border-radius:8px;border:1px solid rgba(26,22,18,.12);background:linear-gradient(135deg,rgba(91,143,212,.10),rgba(184,149,74,.10));overflow:hidden}
-  .iwom-slide .iwom-phone{position:absolute;left:34px;bottom:28px;width:190px;height:278px;border:8px solid #1a1612;border-radius:32px;background:#fbf7ef;box-shadow:0 26px 54px rgba(26,22,18,.22);padding:22px 18px;box-sizing:border-box}
-  .iwom-slide .iwom-phone b{display:block;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;margin-bottom:14px}
-  .iwom-slide .iwom-phone strong{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.42rem;line-height:1.02;font-weight:850;color:#1a1612;margin-bottom:12px}
-  .iwom-slide .iwom-cta{display:inline-block;margin-top:16px;padding:9px 18px;border-radius:6px;background:#b8954a;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase}
+  .iwom-slide .iwom-phone{position:absolute;left:34px;bottom:28px;width:190px;height:278px;border:8px solid #1a1612;border-radius:32px;background:#fbf7ef;box-shadow:0 26px 54px rgba(26,22,18,.22);padding:18px 16px 16px;box-sizing:border-box}
+  .iwom-slide .iwom-phone b{display:block;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;margin-bottom:10px}
+  .iwom-slide .iwom-phone strong{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.06rem;line-height:1.02;font-weight:850;color:#1a1612;margin-bottom:3px}
+  .iwom-slide .iwom-phone span{display:block;font-family:'Manrope',sans-serif;font-size:.66rem;line-height:1.1;font-weight:820;color:rgba(26,22,18,.70)}
+  .iwom-slide .iwom-phone-art{position:relative;height:118px;margin:11px 0 12px;border-radius:14px;overflow:hidden;background:#1a1612;box-shadow:0 10px 22px rgba(26,22,18,.14)}
+  .iwom-slide .iwom-phone-art:before{content:"";position:absolute;inset:14px 18px;border:2px solid rgba(251,247,239,.68);border-left:0;border-right:0}
+  .iwom-slide .iwom-phone-art:after{content:"";position:absolute;left:50%;top:12px;bottom:12px;border-left:2px dashed rgba(251,247,239,.46)}
+  .iwom-slide .iwom-glow-art{background:radial-gradient(circle at 28% 25%,rgba(91,143,212,.90),transparent 22%),radial-gradient(circle at 72% 68%,rgba(200,70,44,.88),transparent 24%),linear-gradient(135deg,#1a1612,#2b2119)}
+  .iwom-slide .iwom-glow-art .iwom-orb{position:absolute;width:34px;height:34px;border-radius:50%;background:#b8954a;box-shadow:0 0 28px rgba(184,149,74,.95),0 0 54px rgba(91,143,212,.42)}
+  .iwom-slide .iwom-glow-art .o1{left:25px;bottom:25px}.iwom-slide .iwom-glow-art .o2{right:30px;top:26px;background:#5B8FD4}
+  .iwom-slide .iwom-glow-art .iwom-paddle{position:absolute;width:28px;height:42px;border-radius:18px 18px 14px 14px;background:#fbf7ef;box-shadow:0 0 18px rgba(251,247,239,.45)}
+  .iwom-slide .iwom-glow-art .p1{left:44px;top:44px;transform:rotate(-26deg)}.iwom-slide .iwom-glow-art .p2{right:44px;bottom:25px;transform:rotate(22deg)}
+  .iwom-slide .iwom-clinic-art{background:linear-gradient(135deg,rgba(91,143,212,.22),rgba(184,149,74,.22)),#fbf7ef;border:1px solid rgba(26,22,18,.10)}
+  .iwom-slide .iwom-clinic-art:before{border-color:rgba(91,143,212,.62)}.iwom-slide .iwom-clinic-art:after{border-left-color:rgba(91,143,212,.48)}
+  .iwom-slide .iwom-clinic-art .iwom-coach{position:absolute;left:24px;top:22px;width:46px;height:72px;border-radius:24px 24px 16px 16px;background:#1a1612;box-shadow:0 0 0 5px rgba(184,149,74,.24)}
+  .iwom-slide .iwom-clinic-art .iwom-coach:before{content:"";position:absolute;left:13px;top:-14px;width:20px;height:20px;border-radius:50%;background:#b8954a}
+  .iwom-slide .iwom-clinic-art .iwom-player{position:absolute;width:22px;height:22px;border-radius:50%;background:#c8462c;box-shadow:0 0 0 5px rgba(200,70,44,.16)}
+  .iwom-slide .iwom-clinic-art .c1{right:31px;top:28px}.iwom-slide .iwom-clinic-art .c2{right:54px;bottom:27px;background:#5B8FD4}.iwom-slide .iwom-clinic-art .c3{right:19px;bottom:39px;background:#b8954a}
+  .iwom-slide .iwom-cta{display:inline-block;padding:8px 15px;border-radius:6px;background:#b8954a;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase}
   .iwom-slide .iwom-people{position:absolute;right:34px;top:36px;bottom:34px;width:285px}
   .iwom-slide .iwom-person{position:absolute;width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;border:2px solid rgba(184,149,74,.64);box-shadow:0 14px 32px rgba(26,22,18,.12);font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;color:#1a1612}
   .iwom-slide .iwom-person:after{content:"";position:absolute;right:-6px;bottom:5px;width:20px;height:20px;border-radius:50%;background:#c8462c;box-shadow:0 0 0 4px #fbf7ef}
@@ -11703,7 +11718,7 @@ window.cs1m7Reverse = function() {
   #cs-invitation-word-of-mouth:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,22,18,.18) 0%,rgba(26,22,18,.09) 36%,rgba(251,247,239,.10) 62%,rgba(251,247,239,.24) 100%),radial-gradient(circle at 18% 18%,rgba(184,149,74,.18),transparent 34%);z-index:1}
   #cs-invitation-word-of-mouth .iwom-eye{color:#c8462c}
   #cs-invitation-word-of-mouth .iwom-stage{z-index:2;padding-bottom:62px;opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
-  #cs-invitation-word-of-mouth.casey-entered .iwom-stage{opacity:1;transform:none;transition-delay:1.05s}
+  #cs-invitation-word-of-mouth.casey-entered[data-stage="1"] .iwom-stage{opacity:1;transform:none}
   html[data-export="1"] #cs-invitation-word-of-mouth .iwom-stage{opacity:1!important;transform:none!important;transition:none!important}
   #cs-invitation-word-of-mouth .iwom-title{color:#fbf7ef;text-shadow:0 4px 28px rgba(26,22,18,.72)}
   #cs-invitation-word-of-mouth .iwom-sub{color:rgba(26,22,18,.66);font-weight:900;letter-spacing:.10em;text-transform:uppercase}
@@ -11736,7 +11751,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] .iwom-slide *{transition:none!important;animation:none!important}
 </style>
 
-<div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth">
+<div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth" data-stage="0" onclick="if(window.csInvitationWordOfMouthAdvance && window.csInvitationWordOfMouthAdvance()) event.stopPropagation()">
   <img class="iwom-bg" src="assets/cs-invitation-word-of-mouth-glow-clinic-bg.png" alt="Text-free glow pickleball event and pro clinic referral background">
   <div class="iwom-eye">The community sales engine</div>
   <section class="iwom-stage">
@@ -11747,17 +11762,17 @@ window.cs1m7Reverse = function() {
         <h2>Open community event</h2>
         <p>Wide-open social play turns every attendee into a trusted growth channel.</p>
         <div class="iwom-visual">
-          <div class="iwom-phone"><b>You are invited</b><strong>Glow Pickleball Social Night</strong><span>Everyone welcome</span><div class="iwom-cta">Join us</div></div>
+          <div class="iwom-phone"><b>You are invited</b><div class="iwom-phone-art iwom-glow-art" aria-label="Glow pickleball social night graphic"><i class="iwom-orb o1"></i><i class="iwom-orb o2"></i><i class="iwom-paddle p1"></i><i class="iwom-paddle p2"></i></div><strong>Glow Night</strong><span>Everyone welcome</span><div class="iwom-cta">Join us</div></div>
           <div class="iwom-line l1"></div><div class="iwom-line l2"></div><div class="iwom-line l3"></div>
           <div class="iwom-people"><div class="iwom-person iwom-p1">Jess</div><div class="iwom-person iwom-p2">Dean</div><div class="iwom-person iwom-p3">Maya</div><div class="iwom-person iwom-p4">Tom</div></div>
         </div>
-        <div class="iwom-note">Any player can bring a friend. The event stays open, but distribution becomes personal.</div>
+        <div class="iwom-note">Open play stays open. Growth moves through people players already trust.</div>
       </div>
       <div class="iwom-panel">
         <h2>Bring friends to the pro</h2>
         <p>Group private lessons fill through the pros most loyal followers</p>
         <div class="iwom-visual">
-          <div class="iwom-phone"><b>Invite friends</b><strong>Pro Clinic<br>Sat 9:00 AM</strong><span>Group private</span><div class="iwom-cta">Join us</div></div>
+          <div class="iwom-phone"><b>Invite friends</b><div class="iwom-phone-art iwom-clinic-art" aria-label="Coach Caleb pro clinic graphic"><i class="iwom-coach"></i><i class="iwom-player c1"></i><i class="iwom-player c2"></i><i class="iwom-player c3"></i></div><strong>Caleb Clinic</strong><span>Sat 9:00 AM</span><div class="iwom-cta">Join us</div></div>
           <div class="iwom-line l1"></div><div class="iwom-line l2"></div><div class="iwom-line l3"></div>
           <div class="iwom-people"><div class="iwom-person iwom-p1">Nina</div><div class="iwom-person iwom-p2">Mark</div><div class="iwom-person iwom-p3">Taylor</div><div class="iwom-person iwom-p4">Ali</div></div>
         </div>
@@ -11766,6 +11781,15 @@ window.cs1m7Reverse = function() {
     </div>
   </section>
 </div>
+
+<script>
+window.csInvitationWordOfMouthAdvance = function() {
+  const slide = document.getElementById('cs-invitation-word-of-mouth');
+  if (!slide || slide.dataset.stage === '1') return false;
+  slide.dataset.stage = '1';
+  return true;
+};
+</script>
 
 <div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth-white" style="display:none">
   <div class="iwom-eye">invitation engine / white variant</div>
@@ -13814,6 +13838,269 @@ window.cs1m7Reverse = function() {
   </div>
 </div>
 
+<!-- [Codex 2026-06-04] Pink-dot lab candidates for the active Why Pickleball slot, inspired by Dave's strategy-note image. -->
+<style>
+  #cs-pb-lab-right-lab-pink,
+  #cs-pb-lab-dataset-pink {
+    background:#1a1612 !important;
+    overflow:hidden;
+    position:absolute;
+    inset:0;
+    color:#fbf7ef;
+  }
+  #cs-pb-lab-right-lab-pink::before,
+  #cs-pb-lab-dataset-pink::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(ellipse at 78% 16%, rgba(91,143,212,.18), transparent 34%),
+      radial-gradient(ellipse at 16% 86%, rgba(184,149,74,.16), transparent 38%),
+      linear-gradient(180deg, rgba(26,22,18,.96), rgba(26,22,18,1));
+  }
+  .pbl-eye {
+    position:absolute;
+    top:28px;
+    left:48px;
+    z-index:5;
+    font-family:'Manrope',sans-serif;
+    font-size:.58rem;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#c8462c;
+  }
+  .pbl-stage {
+    position:absolute;
+    inset:0;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:96px 100px 64px;
+    box-sizing:border-box;
+  }
+  .pbl-title {
+    margin:0;
+    max-width:1500px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(3.15rem,5vw,5.85rem);
+    line-height:1;
+    font-weight:900;
+    letter-spacing:0;
+    color:#fbf7ef !important;
+  }
+  .pbl-title em { font-style:italic; color:#b8954a; }
+  .pbl-sub {
+    margin:28px 0 0;
+    max-width:1320px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.38rem,1.95vw,2.25rem);
+    line-height:1.18;
+    font-weight:650;
+    color:rgba(251,247,239,.82) !important;
+  }
+  .pbl-row-stack {
+    margin-top:38px;
+    display:grid;
+    gap:12px;
+    width:100%;
+  }
+  .pbl-row {
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:34px;
+    align-items:center;
+    min-height:86px;
+    padding:0 34px;
+    background:rgba(91,143,212,.12);
+    border:1px solid rgba(251,247,239,.12);
+    box-shadow:inset 5px 0 0 #5B8FD4;
+  }
+  .pbl-row:nth-child(2),
+  .pbl-row:nth-child(4) { background:rgba(251,247,239,.06); box-shadow:inset 5px 0 0 #b8954a; }
+  .pbl-row b {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:2.05rem;
+    line-height:1;
+    font-weight:900;
+    color:#5B8FD4;
+  }
+  .pbl-row:nth-child(2) b,
+  .pbl-row:nth-child(4) b { color:#b8954a; }
+  .pbl-row span {
+    font-family:'Manrope',sans-serif;
+    font-size:1.18rem;
+    line-height:1.34;
+    font-weight:650;
+    color:rgba(251,247,239,.86);
+  }
+  .pbl-proof {
+    margin-top:26px;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.32rem;
+    line-height:1.2;
+    font-style:italic;
+    font-weight:650;
+    color:rgba(251,247,239,.62);
+  }
+  .pbl-proof strong { color:#fbf7ef; font-style:normal; font-weight:850; }
+  #cs-pb-lab-dataset-pink .pbl-stage { padding-right:88px; }
+  .pbl-dataset-grid {
+    margin-top:42px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    max-width:1560px;
+  }
+  .pbl-panel {
+    min-height:408px;
+    padding:32px;
+    background:rgba(251,247,239,.07);
+    border:1px solid rgba(251,247,239,.13);
+    box-shadow:0 26px 70px rgba(0,0,0,.22);
+  }
+  .pbl-panel.dark { background:rgba(91,143,212,.14); border-color:rgba(91,143,212,.34); }
+  .pbl-panel h2 {
+    margin:0 0 26px;
+    font-family:'Manrope',sans-serif;
+    font-size:.72rem;
+    line-height:1.2;
+    font-weight:900;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#c8462c;
+  }
+  .pbl-panel.dark h2 { color:#f7df9a; }
+  .pbl-list {
+    display:grid;
+    gap:18px;
+  }
+  .pbl-item {
+    display:grid;
+    grid-template-columns:42px 1fr;
+    gap:16px;
+    align-items:start;
+  }
+  .pbl-num {
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(184,149,74,.55);
+    color:#b8954a;
+    font-family:'Manrope',sans-serif;
+    font-size:.68rem;
+    font-weight:900;
+    letter-spacing:.08em;
+  }
+  .pbl-item p {
+    margin:0;
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:1.46rem;
+    line-height:1.14;
+    font-weight:760;
+    color:#fbf7ef;
+  }
+  .pbl-item p em { color:#b8954a; font-style:italic; }
+  .pbl-close {
+    margin-top:28px;
+    padding:18px 22px;
+    border-left:5px solid #c8462c;
+    background:rgba(200,70,44,.11);
+    font-family:'Manrope',sans-serif;
+    font-size:.86rem;
+    line-height:1.34;
+    font-weight:900;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(251,247,239,.82);
+  }
+  #cs-pb-lab-right-lab-pink .pbl-title,
+  #cs-pb-lab-right-lab-pink .pbl-sub,
+  #cs-pb-lab-right-lab-pink .pbl-row,
+  #cs-pb-lab-right-lab-pink .pbl-proof,
+  #cs-pb-lab-dataset-pink .pbl-title,
+  #cs-pb-lab-dataset-pink .pbl-sub,
+  #cs-pb-lab-dataset-pink .pbl-panel,
+  #cs-pb-lab-dataset-pink .pbl-close {
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .72s cubic-bezier(.22,1,.36,1), transform .72s cubic-bezier(.22,1,.36,1);
+  }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-title,
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-sub,
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row,
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-proof,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-title,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-sub,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-panel,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-close { opacity:1; transform:none; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-sub,
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-sub { transition-delay:.12s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row:nth-child(1) { transition-delay:.20s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row:nth-child(2) { transition-delay:.30s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row:nth-child(3) { transition-delay:.40s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-row:nth-child(4) { transition-delay:.50s; }
+  #cs-pb-lab-right-lab-pink.casey-entered .pbl-proof { transition-delay:.62s; }
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-panel:nth-child(1) { transition-delay:.22s; }
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-panel:nth-child(2) { transition-delay:.34s; }
+  #cs-pb-lab-dataset-pink.casey-entered .pbl-close { transition-delay:.48s; }
+  html[data-export="1"] #cs-pb-lab-right-lab-pink .pbl-title,
+  html[data-export="1"] #cs-pb-lab-right-lab-pink .pbl-sub,
+  html[data-export="1"] #cs-pb-lab-right-lab-pink .pbl-row,
+  html[data-export="1"] #cs-pb-lab-right-lab-pink .pbl-proof,
+  html[data-export="1"] #cs-pb-lab-dataset-pink .pbl-title,
+  html[data-export="1"] #cs-pb-lab-dataset-pink .pbl-sub,
+  html[data-export="1"] #cs-pb-lab-dataset-pink .pbl-panel,
+  html[data-export="1"] #cs-pb-lab-dataset-pink .pbl-close { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+
+<div class="casey-slide ds-focus psj-slide" id="cs-pb-lab-right-lab-pink" style="display:none">
+  <div class="pbl-eye slide-eyebrow">why pickleball works / lab thesis</div>
+  <section class="pbl-stage">
+    <h1 class="pbl-title">Why a pickleball club is the right <em>laboratory.</em></h1>
+    <p class="pbl-sub">A social-sports club is the densest source of repeated, real, revealed social choice outside of work. Unlike work, every choice is voluntary.</p>
+    <div class="pbl-row-stack">
+      <div class="pbl-row"><b>Repeated</b><span>The same people choose each other again and again. The signal compounds weekly.</span></div>
+      <div class="pbl-row"><b>Revealed</b><span>Accepting, declining, rotating, waiting, and inviting back are real decisions with social cost.</span></div>
+      <div class="pbl-row"><b>Monetized</b><span>There is already an owner paying for the pain: filling courts, retaining members, and keeping the room alive.</span></div>
+      <div class="pbl-row"><b>Bounded</b><span>A closed roster makes the graph dense enough to learn from. The cold start is solvable.</span></div>
+    </div>
+    <div class="pbl-proof">The proving ground already runs: <strong>NEPC - ~$2M ARR, 500 members, 20,000+ invitations sent.</strong></div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus psj-slide" id="cs-pb-lab-dataset-pink" style="display:none">
+  <div class="pbl-eye slide-eyebrow">why pickleball works / dataset thesis</div>
+  <section class="pbl-stage">
+    <h1 class="pbl-title">Pickleball gives GnR the dataset no social app can <em>buy.</em></h1>
+    <p class="pbl-sub">The product does not need people to describe their community. The club produces the behavior every week.</p>
+    <div class="pbl-dataset-grid">
+      <div class="pbl-panel">
+        <h2>What happens every week</h2>
+        <div class="pbl-list">
+          <div class="pbl-item"><div class="pbl-num">01</div><p>Members say yes or no to a real invitation.</p></div>
+          <div class="pbl-item"><div class="pbl-num">02</div><p>Players reveal who they want again.</p></div>
+          <div class="pbl-item"><div class="pbl-num">03</div><p>Operators feel the cost when the room is wrong.</p></div>
+          <div class="pbl-item"><div class="pbl-num">04</div><p>The graph changes after every session.</p></div>
+        </div>
+      </div>
+      <div class="pbl-panel dark">
+        <h2>What GnR learns</h2>
+        <div class="pbl-list">
+          <div class="pbl-item"><div class="pbl-num">A</div><p>Who creates <em>energy</em>, not just attendance.</p></div>
+          <div class="pbl-item"><div class="pbl-num">B</div><p>Who builds trust across the roster.</p></div>
+          <div class="pbl-item"><div class="pbl-num">C</div><p>Which invitation makes the next group better.</p></div>
+          <div class="pbl-item"><div class="pbl-num">D</div><p>How to make social coordination autonomous.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="pbl-close">This is why pickleball is not the destination. It is the lowest-risk environment to train the engine.</div>
+  </section>
+</div>
+
 <div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-board-green" style="display:none">
   <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-board-green.png" alt="Image-generated six-panel pickleball silliness board: score confusion, toy ball, kitchen dinks, speedup, weird form, and net apology." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
   <div class="psg-callout" style="left:74px;top:92px"><b>Silly score</b><span>Famously hard to keep straight.</span></div>
@@ -14588,13 +14875,16 @@ window.cs1m7Reverse = function() {
   #cs-gnr .gnr-env-svg { display:block; width:100%; height:auto; filter:drop-shadow(0 2px 10px rgba(184,149,74,0.20)); }
   #cs-gnr .gnr-env-text { position:absolute; top:72%; left:50%; transform:translate(-50%,-50%); width:88%; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1rem,1.55vw,1.35rem); font-weight:700; color:#1a1612; line-height:1.22; letter-spacing:-0.008em; }
   #cs-gnr .gnr-env-text em { font-style:italic; font-weight:500; color:#b8954a; }
-  #cs-gnr .gnr-lonely-bg { position:absolute; inset:0; z-index:0; overflow:hidden; opacity:0; transition:opacity 0.85s cubic-bezier(.45,.05,.18,1), filter 0.85s cubic-bezier(.45,.05,.18,1); }
+  #cs-gnr .gnr-lonely-bg { position:absolute; inset:0; z-index:0; overflow:hidden; opacity:0; transition:opacity 0.85s cubic-bezier(.45,.05,.18,1), filter 0.85s cubic-bezier(.45,.05,.18,1); animation:none !important; }
   #cs-gnr .gnr-lonely-bg img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.94) contrast(0.98); }
   #cs-gnr .gnr-lonely-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(251,247,239,0.06) 0%,rgba(251,247,239,0.02) 45%,rgba(251,247,239,0.18) 100%); }
-  #cs-gnr[data-shown="2"] .gnr-lonely-bg { opacity:0.18; filter:blur(1px); }
-  #cs-gnr .gnr-reveal-on-advance { opacity:0; transform:translateY(12px); transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events:none; }
+  @keyframes gnrLonelyBgIn { from { opacity:0; } to { opacity:0.18; } }
+  #cs-gnr.active .gnr-lonely-bg { opacity:0.18; filter:blur(1px); transition-delay:0.10s; animation:gnrLonelyBgIn 0.45s cubic-bezier(.45,.05,.18,1) 0.08s both !important; }
+  #cs-gnr.active[data-shown="1"] .gnr-lonely-bg,
+  #cs-gnr.active[data-shown="2"] .gnr-lonely-bg { transition-delay:0s; }
+  #cs-gnr .gnr-reveal-on-advance { opacity:0 !important; transform:translateY(12px); transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events:none !important; animation:none !important; }
   #cs-gnr[data-shown="1"] .gnr-reveal-on-advance,
-  #cs-gnr[data-shown="2"] .gnr-reveal-on-advance { opacity:1; transform:translateY(0); pointer-events:auto; }
+  #cs-gnr[data-shown="2"] .gnr-reveal-on-advance { opacity:1 !important; transform:translateY(0); pointer-events:auto !important; }
   html[data-export="1"] #cs-gnr .gnr-reveal-on-advance { opacity:1 !important; transform:none !important; pointer-events:auto !important; transition:none !important; }
   /* Stage-2 reveal [Dave 2026-05-06 PM v2]: 3 envelopes animate in with translateY + scale stagger when slide advances. */
   #cs-gnr .gnr-stage2 { opacity: 0 !important; transition: opacity 0.55s cubic-bezier(.45,.05,.18,1); pointer-events: none; }
@@ -14613,7 +14903,9 @@ window.cs1m7Reverse = function() {
   @keyframes gnrHintBounce { 0%,100% { transform: translateY(0) } 50% { transform: translateY(3px) } }
   #cs-gnr .gnr-hint { display:flex; flex-direction:column; align-items:center; gap:6px; margin: 22px auto 0; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(184,149,74,0.85); animation: gnrHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
   #cs-gnr .gnr-hint svg { animation: gnrHintBounce 1.6s ease-in-out infinite; }
-  #cs-gnr:not([data-shown="2"]) .gnr-hint { opacity: 0; pointer-events: none; animation: none; }
+  #cs-gnr[data-shown="0"] .gnr-hint { opacity: 0; pointer-events: none; animation: none; }
+  #cs-gnr[data-shown="1"] .gnr-hint.gnr-stage2,
+  #cs-gnr[data-shown="2"] .gnr-hint.gnr-stage2 { opacity: 1 !important; pointer-events: auto; }
   html[data-export="1"] #cs-gnr .gnr-stage2 { opacity: 1 !important; pointer-events: auto !important; transition: none !important; }
   html[data-export="1"] #cs-gnr .gnr-hint { opacity: 0 !important; animation: none !important; }
 </style>
@@ -14812,7 +15104,7 @@ window.cs1m7Reverse = function() {
 <section style="position:relative;min-height:100%;width:100%">
 <div class="gnr-lonely-bg" aria-hidden="true"><img src="design_refs/gnr_loneliness_deck_style.png" alt=""/></div>
 <!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'Autonomous, abundant connection's core product → Core product'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product to solve community and loneliness</div>
+<div class="gnr-reveal-on-advance" style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product to solve community and loneliness</div>
 <div class="inner gnr-reveal-on-advance" style="position:relative;z-index:1;padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
@@ -14855,10 +15147,14 @@ window.cs1m7Reverse = function() {
     #cs-gnr:not([data-shown="1"]):not([data-shown="2"]) .gnr-load-hidden { opacity:0 !important; transform:translateY(26px); pointer-events:none; }
     #cs-gnr[data-shown="1"] .gnr-load-hidden,
     #cs-gnr[data-shown="2"] .gnr-load-hidden { opacity:1; transform:translateY(0); }
-    #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(14px) rotate(-2deg); }
+    #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(78px) scale(.96) rotate(-3deg); }
     #cs-gnr.active[data-shown="1"] .gnr-env-hero,
-    #cs-gnr.active[data-shown="2"] .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
-    @keyframes gnrEnvHeroIn { to { opacity:1; transform:translateY(0) rotate(-1deg); } }
+    #cs-gnr.active[data-shown="2"] .gnr-env-hero { animation: gnrEnvHeroIn 1.25s cubic-bezier(.22,1,.36,1) forwards 0.24s; }
+    @keyframes gnrEnvHeroIn {
+      0% { opacity:0; transform:translateY(78px) scale(.96) rotate(-3deg); }
+      62% { opacity:1; transform:translateY(-12px) scale(1.015) rotate(-0.5deg); }
+      100% { opacity:1; transform:translateY(0) scale(1) rotate(-1deg); }
+    }
     /* Foursome strip is absolute-positioned at the BOTTOM of the envelope (top:86%) per Dave 2026-05-03 PM —
        was overlapping the GnR seal at top:64%. Keyframe preserves translate(-50%,-50%) centering throughout. */
     #cs-gnr.active[data-shown="1"] .gnr-fs-strip,
@@ -15473,12 +15769,14 @@ window.cs1m7Reverse = function() {
   .invp-card{min-height:172px;border:1px solid rgba(26,22,18,.13);border-radius:8px;background:rgba(251,247,239,.72);padding:24px 24px 22px;box-shadow:0 18px 42px rgba(26,22,18,.06)}
   .invp-card b{display:block;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;margin-bottom:13px}
   .invp-card span{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.28rem;line-height:1.13;font-weight:750;color:#1a1612}
-  .invp-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px}
-  .invp-step{position:relative;min-height:154px;border:1px solid rgba(184,149,74,.28);border-radius:8px;background:rgba(255,255,255,.38);padding:20px 18px;text-align:center}
+  .invp-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:34px}
+  .invp-step{position:relative;min-height:154px;border:1px solid rgba(184,149,74,.28);border-radius:8px;background:rgba(255,255,255,.38);padding:18px 14px;text-align:center}
   .invp-step:after{content:"";position:absolute;right:-13px;top:50%;width:13px;border-top:1px solid rgba(184,149,74,.50)}
   .invp-step:last-child:after{display:none}
-  .invp-step strong{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;margin:0 auto 13px;background:#1a1612;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950}
-  .invp-step span{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.12rem;line-height:1.08;font-weight:800}
+  .invp-step strong{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;margin:0 auto 10px;background:#1a1612;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950}
+  .invp-icon{display:grid;place-items:center;width:34px;height:34px;margin:0 auto 10px;color:#b8954a}
+  .invp-icon svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .invp-step span{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.02rem;line-height:1.08;font-weight:800}
   .invp-metrics{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:18px;margin-top:38px;align-items:stretch}
   .invp-metric{border-radius:8px;border:1px solid rgba(184,149,74,.32);background:rgba(255,255,255,.50);padding:28px 24px;text-align:center}
   .invp-num{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.4rem,6.2vw,6rem);line-height:.9;font-weight:950;color:#b8954a;letter-spacing:0}
@@ -15488,11 +15786,16 @@ window.cs1m7Reverse = function() {
   .invp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
   #cs-invite-atomic-unit-pink .invp-bg{object-position:center center}
   #cs-invite-atomic-unit-pink .invp-bg-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.92) 0%,rgba(251,247,239,.84) 44%,rgba(251,247,239,.50) 72%,rgba(251,247,239,.26) 100%);z-index:0;pointer-events:none}
+  #cs-invite-operational-insanity-pink .invp-bg-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.94) 0%,rgba(251,247,239,.84) 36%,rgba(251,247,239,.50) 64%,rgba(251,247,239,.18) 100%),linear-gradient(0deg,rgba(251,247,239,.78) 0%,rgba(251,247,239,.44) 34%,rgba(251,247,239,0) 62%);z-index:0;pointer-events:none}
+  #cs-invite-operational-insanity-pink .invp-title{text-shadow:0 2px 18px rgba(251,247,239,.85),0 1px 1px rgba(251,247,239,.65)}
   .invp-slide.casey-entered .invp-wrap,.invp-slide.casey-entered .invp-bg{opacity:1;transform:none}
   .invp-wrap,.invp-bg{opacity:0;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
   #cs-invite-operational-insanity-pink.casey-entered .invp-bg{opacity:1;transform:none}
   #cs-invite-operational-insanity-pink[data-shown="0"] .invp-wrap{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(14px)!important;animation:none!important}
   #cs-invite-operational-insanity-pink[data-shown="1"] .invp-wrap{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important;animation:none!important}
+  #cs-invite-operational-insanity-pink .invp-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  #cs-invite-operational-insanity-pink .invp-card{min-height:166px;padding:22px 20px 20px}
+  #cs-invite-operational-insanity-pink .invp-card span{font-size:1.12rem;line-height:1.12}
   html[data-export="1"] .invp-wrap,html[data-export="1"] .invp-bg{opacity:1!important;transform:none!important;transition:none!important}
 </style>
 
@@ -15518,16 +15821,17 @@ window.cs1m7Reverse = function() {
 </div>
 
 <div class="casey-slide ds-focus invp-slide invp-text-slide" id="cs-invite-operational-insanity-pink" data-shown="0" onclick="csInviteInsanityAdvance();event.stopPropagation()" style="display:none">
-  <img class="invp-bg" src="assets/cs-invite-operational-insanity-manual-matchmaking-bg.png" alt="Text-free background showing hand-built invitation matchmaking pressure, complaints, and last-minute slot chaos at a pickleball club." onerror="this.onerror=null;this.src='assets/cs-11-invitation-background.png'"/>
+  <img class="invp-bg" src="assets/cs-invite-operational-insanity-frustrated-chaos-bg.png" alt="Text-free background showing frustrated players complaining around hand-built invitation matchmaking chaos at a pickleball club." onerror="this.onerror=null;this.src='assets/cs-11-invitation-background.png'"/>
   <div class="invp-bg-wash" aria-hidden="true"></div>
-  <div class="invp-eye slide-eyebrow">matchmaking by hand</div>
+  <div class="invp-eye slide-eyebrow">Custom invitations are operationally insane.</div>
   <section class="invp-stage">
     <div class="invp-wrap">
-      <h1 class="invp-title">Custom invitations are <em>operationally insane.</em></h1>
+      <h1 class="invp-title">Very few social racquets clubs do custom matchmaking across the entire membership.</h1>
       <div class="invp-grid">
-        <div class="invp-card"><b>Who gets the invite?</b><span>The person who fits the game, the group, and the moment.</span></div>
+        <div class="invp-card"><b>Who fits where?</b><span>Imagine 500+ members &rarr; who plays with who, and when, every week?</span></div>
         <div class="invp-card"><b>Who is the perfect last-minute fill?</b><span>When the trusted first choice declines at the last minute.</span></div>
-        <div class="invp-card"><b>Who takes the heat?</b><span>When the right call still makes someone feel left out.</span></div>
+        <div class="invp-card"><b>Who takes the heat?</b><span>When the right person is put in a group, but someone it makes someone feel left out.</span></div>
+        <div class="invp-card"><b>Who protects the room?</b><span>When someone can hang on court, but the group does not enjoy the game.</span></div>
       </div>
     </div>
   </section>
@@ -15547,11 +15851,12 @@ window.cs1m7Reverse = function() {
       <div class="invp-kicker">AI changes the math</div>
       <h1 class="invp-title">The invitation becomes the <em>operating layer.</em></h1>
       <div class="invp-flow">
-        <div class="invp-step"><strong>01</strong><span>Invite</span></div>
-        <div class="invp-step"><strong>02</strong><span>RSVP / refer</span></div>
-        <div class="invp-step"><strong>03</strong><span>Play</span></div>
-        <div class="invp-step"><strong>04</strong><span>Signal</span></div>
-        <div class="invp-step"><strong>05</strong><span>Next invite</span></div>
+        <div class="invp-step"><strong>01</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4z"/><path d="m4 8 8 6 8-6"/></svg></div><span>Invite</span></div>
+        <div class="invp-step"><strong>02</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17 19 7"/><path d="M4 20h16"/></svg></div><span>RSVP</span></div>
+        <div class="invp-step"><strong>03</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="m10 11 4-3"/><path d="m10 13 4 3"/></svg></div><span>Refer</span></div>
+        <div class="invp-step"><strong>04</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18V6"/><path d="M19 18V6"/><path d="M5 12h14"/><path d="M9 6v12"/><path d="M15 6v12"/></svg></div><span>Play</span></div>
+        <div class="invp-step"><strong>05</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M8 12a4 4 0 0 1 4-4"/><path d="M16 12a4 4 0 0 1-4 4"/><path d="M4 12a8 8 0 0 1 8-8"/><path d="M20 12a8 8 0 0 1-8 8"/></svg></div><span>Signal</span></div>
+        <div class="invp-step"><strong>06</strong><div class="invp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 3v5h-5"/><path d="M6 11a7 7 0 0 1 11-6"/><path d="M7 21v-5h5"/><path d="M18 13a7 7 0 0 1-11 6"/></svg></div><span>Next invite</span></div>
       </div>
     </div>
   </section>
@@ -16729,9 +17034,9 @@ window.cs1m7Reverse = function() {
   [id^="cs-18-vd4"] .v5-pillar.p2 .v5-front-label { color:#3a73b8; }
   [id^="cs-18-vd4"] .v5-pillar.p3 .v5-front-label { color:#a8351f; }
   #cs-18-vd4 .v5-pillar { --v5-final-x:0px; --v5-final-y:0px; transform:translate(var(--v5-final-x),var(--v5-final-y)); }
-  #cs-18-vd4 .v5-pillar.p1 { --v5-final-x:16px; --v5-final-y:83px; }
-  #cs-18-vd4 .v5-pillar.p2 { --v5-final-x:-134px; --v5-final-y:-138px; }
-  #cs-18-vd4 .v5-pillar.p3 { --v5-final-x:-226px; --v5-final-y:-32px; }
+  #cs-18-vd4 .v5-pillar.p1 { --v5-final-x:16px; --v5-final-y:57px; }
+  #cs-18-vd4 .v5-pillar.p2 { --v5-final-x:-134px; --v5-final-y:-164px; }
+  #cs-18-vd4 .v5-pillar.p3 { --v5-final-x:-226px; --v5-final-y:-58px; }
   /* [Dave 2026-05-18 LATEST] Wheelhouse unifier band — connects the 3 closed cards to one section label. */
   [id^="cs-18-vd4"] .v5-wheelhouse-band { position:relative; width:100%; max-width:1180px; margin:18px auto 4px; display:flex; flex-direction:column; align-items:center; }
   [id^="cs-18-vd4"] .v5-wh-svg { width:100%; height:56px; display:block; overflow:visible; }
@@ -21458,13 +21763,14 @@ window.csBrandV8Reverse = function() {
   .vcio-mark.ai { gap:2px; background:linear-gradient(135deg, rgba(251,247,239,.94), rgba(184,149,74,.32)); }
   .vcio-mark.ai svg { display:block; }
   .vcio-label.tv { left:9.4%; top:7.7%; }
-  .vcio-label.phone { left:5.2%; top:31.2%; }
+  .vcio-label.phone { left:5.2%; top:43.8%; }
   .vcio-label.search { left:6.5%; bottom:16.2%; }
   .vcio-label.speaker { left:39.8%; bottom:7.2%; }
   .vcio-label.laptop { right:6.2%; top:8.4%; }
   .vcio-label.cola { right:5.3%; bottom:20.5%; }
-  #cs-value-choice-image-annotated-pink .vcio-can-logo { position:absolute; right:8.3%; bottom:28.9%; z-index:2; width:52px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:5px; background:#c8462c; color:#fbf7ef; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.72rem; font-weight:900; font-style:italic; line-height:.78; text-align:center; transform:rotate(-4deg); box-shadow:inset 0 0 0 1px rgba(251,247,239,.38), 0 4px 10px rgba(26,22,18,.26); pointer-events:none; }
-  #cs-value-choice-image-annotated-pink .vcio-can-logo::after { content:""; position:absolute; left:9px; right:9px; bottom:7px; height:2px; border-radius:999px; background:#fbf7ef; transform:rotate(-7deg); opacity:.88; }
+  #cs-value-choice-image-annotated-pink .vcio-can-logo { position:absolute; right:8.05%; bottom:27.5%; z-index:2; width:58px; height:88px; display:flex; align-items:center; justify-content:center; border-radius:17px 17px 13px 13px / 8px 8px 18px 18px; background:linear-gradient(90deg,#7b1010 0%,#bb1418 17%,#e52624 45%,#c4161c 72%,#73100f 100%); color:#fbf7ef; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.88rem; font-weight:900; font-style:italic; line-height:.72; letter-spacing:-.03em; text-align:center; transform:rotate(-5deg); box-shadow:inset 7px 0 8px rgba(251,247,239,.18), inset -9px 0 10px rgba(26,22,18,.30), inset 0 5px 0 rgba(251,247,239,.88), inset 0 -5px 0 rgba(184,149,74,.34), 0 8px 18px rgba(26,22,18,.30); text-shadow:0 1px 0 rgba(26,22,18,.30); pointer-events:none; }
+  #cs-value-choice-image-annotated-pink .vcio-can-logo::before { content:""; position:absolute; left:7px; right:7px; top:42px; height:12px; border-top:3px solid #fbf7ef; border-radius:50%; transform:rotate(-13deg); opacity:.96; }
+  #cs-value-choice-image-annotated-pink .vcio-can-logo::after { content:""; position:absolute; left:9px; right:9px; top:8px; height:6px; border-radius:50%; background:linear-gradient(90deg, rgba(251,247,239,.55), rgba(251,247,239,.95), rgba(184,149,74,.44)); box-shadow:0 72px 0 -1px rgba(251,247,239,.62); opacity:.92; }
   #cs-value-choice-image-receipts-pink .vcio-question { color:#b8954a; }
   #cs-value-choice-image-receipts-pink .vcio-caption { position:absolute; left:50%; bottom:44px; transform:translateX(-50%); z-index:4; display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:7px; border:1px solid rgba(184,149,74,.48); background:rgba(26,22,18,.68); box-shadow:0 18px 44px rgba(0,0,0,.28); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.34rem; font-weight:850; font-style:italic; color:#fbf7ef; white-space:nowrap; }
   #cs-value-choice-image-receipts-pink .vcio-caption em { color:#c8462c; font-style:italic; }
@@ -21579,7 +21885,6 @@ window.csBrandV8Reverse = function() {
   <div class="vcio-label tv"><div class="vcio-mark netflix">N</div><div><small>$300B+ sold</small></div></div>
   <div class="vcio-label phone"><div class="vcio-mark apple"><svg viewBox="0 0 64 76" aria-hidden="true"><path d="M45.6 39.5c-.1-8 6.5-11.8 6.8-12-3.8-5.5-9.6-6.2-11.6-6.3-4.9-.5-9.5 2.9-12 2.9-2.6 0-6.4-2.8-10.5-2.7-5.4.1-10.4 3.2-13.2 8.1-5.7 9.9-1.5 24.4 4 32.4 2.7 3.9 5.9 8.2 10.1 8.1 4.1-.2 5.6-2.6 10.5-2.6 4.9 0 6.3 2.6 10.6 2.5 4.4-.1 7.2-4 9.8-7.9 3.1-4.5 4.4-8.9 4.5-9.1-.1-.1-8.9-3.4-9-13.4zM37.6 16.1c2.2-2.7 3.7-6.4 3.3-10.1-3.2.1-7.1 2.1-9.4 4.8-2.1 2.4-3.9 6.2-3.4 9.9 3.6.3 7.2-1.8 9.5-4.6z"/></svg></div><div><small>$2T+ sold</small></div></div>
   <div class="vcio-label search"><div class="vcio-mark google">G</div><div><small>$3T+ ads sold</small></div></div>
-  <div class="vcio-label speaker"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg></div><div><b>AI assistant</b><small>$2.5T spend</small></div></div>
   <div class="vcio-label laptop"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5 14.6 9.4 22 12l-7.4 2.6L12 21.5l-2.6-6.9L2 12l7.4-2.6z" fill="#c8462c"/></svg></div><div><small>$2.5T spend</small></div></div>
   <div class="vcio-can-logo" aria-hidden="true">Coca<br>Cola</div>
   <div class="vcio-label cola"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
@@ -24063,27 +24368,35 @@ window.csBrandV8Reverse = function() {
   #cs-samecourt-pyramid-white1 .top-chip{right:546px;top:238px;color:#c8462c}
   #cs-samecourt-pyramid-white1 .base-chip{left:618px;bottom:118px;color:#5B8FD4}
   #cs-samecourt-pyramid-white1 .base-chip .scpyr-dot{background:#5B8FD4;box-shadow:0 0 0 5px rgba(91,143,212,.12)}
-  #cs-samecourt-pyramid-white2 .scpyr-bg{opacity:.86;object-position:center center}
+  #cs-samecourt-pyramid-white2:before,
+  #cs-samecourt-pyramid-white2:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url('assets/cs-samecourt-pyramid-white2.png');background-repeat:no-repeat}
+  #cs-samecourt-pyramid-white2:before{clip-path:polygon(0 0,100% 0,100% 43%,0 50%);background-size:72% auto;background-position:center 42px;opacity:.66;-webkit-mask-image:radial-gradient(ellipse at 50% 30%, #000 0 50%, transparent 78%);mask-image:radial-gradient(ellipse at 50% 30%, #000 0 50%, transparent 78%)}
+  #cs-samecourt-pyramid-white2:after{clip-path:polygon(0 32%,100% 25%,100% 100%,0 100%);background-size:118% auto;background-position:center bottom;opacity:.86}
+  #cs-samecourt-pyramid-white2 .scpyr-bg{opacity:0;object-position:center center}
   #cs-samecourt-pyramid-white2 .scpyr-wash{background:linear-gradient(90deg,rgba(251,247,239,.97) 0%,rgba(251,247,239,.92) 32%,rgba(251,247,239,.42) 64%,rgba(251,247,239,.82) 100%)}
   #cs-samecourt-pyramid-white2 .scpyr-title{left:68px;top:112px;max-width:610px}
   #cs-samecourt-pyramid-white2 .scpyr-stack{position:absolute;left:68px;bottom:62px;z-index:6;display:grid;gap:12px;width:548px}
   #cs-samecourt-pyramid-white2 .scpyr-stack .scpyr-panel{position:relative;padding:18px 23px}
   #cs-samecourt-pyramid-white2 .apex-panel{right:74px;top:90px;width:498px;padding:21px 24px 22px;border-left:5px solid #c8462c}
+  #cs-samecourt-pyramid-white2 .apex-panel:before{content:'';position:absolute;left:-17px;top:15px;width:12px;height:calc(100% - 30px);border-left:3px solid #c8462c;border-top:3px solid #c8462c;border-bottom:3px solid #c8462c;border-radius:8px 0 0 8px;opacity:.92}
   #cs-samecourt-pyramid-white2 .base-panel{right:74px;bottom:66px;width:500px;padding:22px 25px;border-left:5px solid #5B8FD4}
   #cs-samecourt-pyramid-white2 .product-chip{right:360px;top:292px;color:#c8462c}
-  #cs-samecourt-pyramid-white2 .market-panel{position:absolute;left:672px;top:354px;z-index:7;width:635px;padding:17px 18px 16px;border-radius:8px;background:rgba(251,247,239,.9);border:1.4px solid rgba(184,149,74,.36);box-shadow:0 18px 46px rgba(26,22,18,.12);backdrop-filter:blur(5px)}
+  #cs-samecourt-pyramid-white2 .market-panel{position:absolute;left:68px;top:342px;z-index:7;width:548px;padding:13px 14px 12px;border-radius:8px;background:rgba(251,247,239,.9);border:1.4px solid rgba(184,149,74,.36);box-shadow:0 16px 40px rgba(26,22,18,.11);backdrop-filter:blur(5px)}
   #cs-samecourt-pyramid-white2 .market-title{font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:950;letter-spacing:.20em;text-transform:uppercase;color:#b8954a;margin:0 0 10px}
   #cs-samecourt-pyramid-white2 .market-grid{display:grid;grid-template-columns:1.02fr 1fr 1fr;gap:0;border:1px solid rgba(26,22,18,.12);border-radius:7px;overflow:hidden;background:rgba(255,255,255,.34)}
-  #cs-samecourt-pyramid-white2 .market-cell{min-height:58px;padding:9px 11px;border-right:1px solid rgba(26,22,18,.10);border-bottom:1px solid rgba(26,22,18,.10);font-family:'Manrope',sans-serif;font-size:.68rem;line-height:1.12;font-weight:820;color:rgba(26,22,18,.70)}
+  #cs-samecourt-pyramid-white2 .market-cell{min-height:48px;padding:7px 9px;border-right:1px solid rgba(26,22,18,.10);border-bottom:1px solid rgba(26,22,18,.10);font-family:'Manrope',sans-serif;font-size:.61rem;line-height:1.08;font-weight:820;color:rgba(26,22,18,.70)}
   #cs-samecourt-pyramid-white2 .market-cell:nth-child(3n){border-right:0}
   #cs-samecourt-pyramid-white2 .market-cell:nth-last-child(-n+3){border-bottom:0}
   #cs-samecourt-pyramid-white2 .market-head{font-size:.56rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#1a1612;background:rgba(184,149,74,.08)}
   #cs-samecourt-pyramid-white2 .market-apex{color:#c8462c}
   #cs-samecourt-pyramid-white2 .market-base{color:#5B8FD4}
-  #cs-samecourt-pyramid-white2 .market-cell strong{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.18rem;line-height:1.02;font-weight:850;color:#1a1612;margin-bottom:2px}
+  #cs-samecourt-pyramid-white2 .market-cell strong{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.02rem;line-height:1.02;font-weight:850;color:#1a1612;margin-bottom:2px}
   #cs-samecourt-pyramid-white2 .market-note{margin-top:9px;font-family:'Manrope',sans-serif;font-size:.57rem;line-height:1.22;font-weight:850;letter-spacing:.06em;text-transform:uppercase;color:rgba(26,22,18,.50)}
   #cs-samecourt-pyramid-white2 .down-arrows{position:absolute;left:742px;top:236px;width:660px;height:548px;z-index:4;pointer-events:none;opacity:.86}
   #cs-samecourt-pyramid-white2 .down-arrows path{fill:none;stroke:#c8462c;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:8 10;filter:drop-shadow(0 5px 8px rgba(200,70,44,.15))}
+  #cs-samecourt-pyramid-white2 .apex-pointer{position:absolute;left:742px;top:104px;width:366px;height:108px;z-index:7;pointer-events:none;overflow:visible}
+  #cs-samecourt-pyramid-white2 .apex-pointer path{fill:none;stroke:#c8462c;stroke-width:3.1;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 5px 8px rgba(200,70,44,.14))}
+  #cs-samecourt-pyramid-white2 .apex-pointer .apex-pointer-line{stroke-dasharray:7 9}
   #cs-samecourt-pyramid-white2 .scpyr-arrow{position:absolute;left:50%;bottom:168px;z-index:7;transform:translateX(-50%);font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.9);border:1.4px solid rgba(200,70,44,.28);border-radius:999px;padding:10px 16px;box-shadow:0 16px 36px rgba(26,22,18,.10)}
   html[data-export="1"] .scpyr-slide .scpyr-bg{opacity:.86!important}
 </style>
@@ -24129,6 +24442,14 @@ window.csBrandV8Reverse = function() {
     <path d="M274 70 C212 168, 156 250, 92 438" marker-end="url(#scpyrArrowHead)"></path>
     <path d="M434 80 C496 180, 552 280, 622 466" marker-end="url(#scpyrArrowHead)"></path>
   </svg>
+  <svg class="apex-pointer" viewBox="0 0 366 108" aria-hidden="true">
+    <defs>
+      <marker id="scpyrApexPointerHead" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L8,3 z" fill="#c8462c"></path>
+      </marker>
+    </defs>
+    <path class="apex-pointer-line" d="M346 40 C248 8, 132 4, 26 24" marker-end="url(#scpyrApexPointerHead)"></path>
+  </svg>
   <div class="scpyr-panel apex-panel">
     <p class="scpyr-label">Top: traditional pickleball market</p>
     <h2>Find my best play.</h2>
@@ -24151,7 +24472,6 @@ window.csBrandV8Reverse = function() {
       <div class="market-cell">Less loyal. High price sensitivity.</div>
       <div class="market-cell">Stickier. Higher pricing power because belonging is meaningful.</div>
     </div>
-    <div class="market-note">SFIA 2026: 24.3M U.S. pickleball players; Pickleball.com/SFIA: 7.48M core and 16.8M casual.</div>
   </div>
   <div class="scpyr-stack">
     <div class="scpyr-panel">
@@ -24165,10 +24485,10 @@ window.csBrandV8Reverse = function() {
       <p>Give n Receive starts with connection coordination, then compounds toward stronger community, better play, and the high-level players who want back into the fun.</p>
     </div>
   </div>
-  <div class="scpyr-arrow">coordination by Give n Receive starts here</div>
+  <div class="scpyr-arrow">Give n Receive abundance starts here</div>
   <div class="scpyr-panel base-panel">
     <p class="scpyr-label">New coordination layer</p>
-    <h2>Real connection is the unserved job.</h2>
+    <h2>Connection is the missing coordination layer.</h2>
     <p>Traditional skill tools sort the apex. GnR activates the bigger human market below it: more meaningful, more loyal, and far more valuable in people's lives.</p>
   </div>
 </div>
@@ -24385,7 +24705,7 @@ window.csBrandV8Reverse = function() {
 <!-- ===== cs-programmable-invitations · main-flow slot 6 [Codex 2026-06-03] ===== -->
 <style>
   #cs-programmable-invitations{background:#fbf7ef!important;color:#1a1612;overflow:hidden}
-  #cs-programmable-invitations .pi-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 18% 24%,rgba(91,143,212,.12),rgba(91,143,212,0) 30%),radial-gradient(circle at 84% 30%,rgba(200,70,44,.10),rgba(200,70,44,0) 30%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%)}
+  #cs-programmable-invitations .pi-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(251,247,239,.78) 0%,rgba(251,247,239,.58) 46%,rgba(251,247,239,.72) 100%),radial-gradient(ellipse at 50% 15%,rgba(251,247,239,.96),rgba(251,247,239,.40) 45%,rgba(251,247,239,.20) 74%),url('assets/cs-programmable-invitations-bg.png') center/cover no-repeat}
   #cs-programmable-invitations .pi-noise{position:absolute;inset:0;z-index:1;opacity:.16;background-image:linear-gradient(rgba(26,22,18,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(26,22,18,.035) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse at 50% 48%,#000 0%,rgba(0,0,0,.66) 54%,transparent 90%)}
   #cs-programmable-invitations .pi-eyebrow{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
   #cs-programmable-invitations .pi-stage{position:absolute;inset:0;z-index:2;padding:74px 78px 46px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center}
@@ -24438,7 +24758,7 @@ window.csBrandV8Reverse = function() {
   <div class="pi-noise"></div>
   <div class="pi-eyebrow slide-eyebrow">invitation engine</div>
   <section class="pi-stage">
-    <h1 class="pi-title">Invitations are <em>programmable.</em></h1>
+    <h1 class="pi-title">Invitations make communities <em>programmable.</em></h1>
     <p class="pi-sub">Every event can choose who enters, who can refer, and what balance the room needs.</p>
     <div class="pi-grid">
       <article class="pi-side pi-left-top">
@@ -25299,10 +25619,10 @@ window.csBrandV8Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-real-world-measurable-market" style="display:none">
   <img class="rwmm-bg" src="assets/cs-samecourt-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-fv6-measured-connection-bg.png'"/>
   <div class="rwmm-wash"></div>
-  <div class="rwmm-eyebrow slide-eyebrow">next frontier</div>
+  <div class="rwmm-eyebrow slide-eyebrow">frontier shift</div>
   <section class="rwmm-stage">
     <div>
-      <h1 class="rwmm-title">Real-world <em>connection</em> becomes measurable.</h1>
+      <h1 class="rwmm-title">The last frontier made <em>online behavior</em> measurable.</h1>
       <div class="rwmm-ledger" aria-label="Measurable market progression">
         <div class="rwmm-row">
           <div class="rwmm-num">01</div>
@@ -25311,13 +25631,13 @@ window.csBrandV8Reverse = function() {
         </div>
         <div class="rwmm-row">
           <div class="rwmm-num">02</div>
-          <div><h2>Social pull &rarr; <em>local magnets.</em></h2><p>Real-world behavior becomes referral markets</p></div>
-          <div class="rwmm-market">connection markets</div>
+          <div><h2>Search intent &rarr; <em>search engines.</em></h2><p>Queries became search markets</p></div>
+          <div class="rwmm-market">search markets</div>
         </div>
       </div>
     </div>
     <div class="rwmm-panel">
-      <div class="rwmm-panel-title">The market is<br><em>who fills the room.</em></div>
+      <div class="rwmm-panel-title">social pull</div>
       <div class="rwmm-note">GnR sees the hidden human value the old systems miss.</div>
       <svg class="rwmm-court" viewBox="0 0 760 392" role="img" aria-label="Social pull turns local connection into a measurable market">
         <defs>
@@ -25344,7 +25664,7 @@ window.csBrandV8Reverse = function() {
           <g transform="translate(176 270)"><circle r="34" fill="none" stroke="rgba(184,149,74,.54)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#b8954a"/><text y="55" font-size="18" fill="#b8954a">REFERRER</text></g>
           <g transform="translate(604 134)"><circle r="34" fill="none" stroke="rgba(91,143,212,.42)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#5B8FD4"/><text y="-42" font-size="18" fill="#5B8FD4">NEW REFERRAL</text></g>
           <g transform="translate(604 270)"><circle r="34" fill="none" stroke="rgba(200,70,44,.48)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#c8462c"/><text y="55" font-size="18" fill="#c8462c">REGULAR</text></g>
-          <g transform="translate(380 198)"><circle r="76" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><text y="-10" font-family="Fraunces,Georgia,serif" font-size="38" font-weight="850" letter-spacing="0" fill="#1a1612">social</text><text y="30" font-family="Fraunces,Georgia,serif" font-size="38" font-weight="850" letter-spacing="0" fill="#b8954a">pull</text></g>
+          <g transform="translate(380 198)"><circle r="76" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/></g>
         </g>
       </svg>
       <div class="rwmm-caption"><span>the hidden supply</span><strong>becomes measurable</strong></div>
@@ -34301,7 +34621,7 @@ const SLIDE_ALTS = {
   11: ['cs-invite-atomic-unit-pink', 'cs-invite-graph-compounds-pink', 'cs-magnetic-human-value-market', 'cs-magnetic'],
   14: ['cs-samecourt-pyramid-white1', 'cs-referral-builder-pink', 'cs-referral-loop-pink'],
   22: ['cs-16'],
-  23: ['cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'],
+  23: ['cs-pb-lab-right-lab-pink', 'cs-pb-lab-dataset-pink', 'cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink', 'cs-pb-silliness-chaos-pink', 'cs-pb-silliness-netdrip-pink', 'cs-pb-silliness-overhead-pink', 'cs-pb-silliness-ritual2-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -35084,9 +35404,19 @@ window.C2C_STORIES = {
 // Recognize) one at a time so mouse-scroll animates through every beat before jumping to the
 // next slide. Per Dave 'mouse scroll down should always go to the next animation. Make sure
 // that happens on every slide, as opposed to skipping over animations going to the next slide.'
+let csGnrAutoRevealTimer = null;
+function csGnrQueueAutoReveal() {
+  clearTimeout(csGnrAutoRevealTimer);
+  const slide = document.getElementById('cs-gnr');
+  if (!slide || !slide.classList.contains('active') || slide.dataset.shown !== '0') return;
+  csGnrAutoRevealTimer = setTimeout(() => {
+    if (slide.classList.contains('active') && slide.dataset.shown === '0') slide.dataset.shown = '1';
+  }, 650);
+}
 window.csGnrAdvance = function() {
   const slide = document.getElementById('cs-gnr');
   if (!slide || !slide.classList.contains('active')) return false;
+  clearTimeout(csGnrAutoRevealTimer);
   if (slide.dataset.shown !== '1' && slide.dataset.shown !== '2') { slide.dataset.shown = '1'; return true; }
   if (slide.dataset.shown === '1') { slide.dataset.shown = '2'; return true; }
   const closedEnv = slide.querySelector('.env-card[data-open="0"]');
@@ -35466,6 +35796,7 @@ function caseyGo(n) {
     target.classList.remove('casey-entered');
     void target.offsetWidth;  // reflow
     target.classList.add('casey-entered');
+    if (targetId === 'cs-gnr' && typeof csGnrQueueAutoReveal === 'function') csGnrQueueAutoReveal();
   }
   // Only toggle on PRIMARY dots (skip alt-stacked dots so index math matches SLIDE_ORDER)
   if (!syncCaseyDotHighlightToActiveSlide()) document.querySelectorAll('.casey-dot:not(.alt)').forEach((d, i) => d.classList.toggle('on', i === n - 1));
@@ -36310,7 +36641,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
     const isGeneratedSillinessPinkAlt = /^cs-pb-silliness-generated-/.test(altId);
     const isInvitationPinkAlt = /^cs-invite-/.test(altId);
-    const isPinkAlt = (isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
+    const isPinkAlt = (isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
@@ -36735,6 +37066,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-2b': 'cs2bAdvance',
     'cs-2c': 'cs2cAdvance',
     'cs-gnr': 'csGnrAdvance',
+    'cs-invitation-word-of-mouth': 'csInvitationWordOfMouthAdvance',
     'cs-pbfirst': 'csPbfirstAdvance',
     'cs-samecourt': 'csSamecourtAdvance',
     'cs-wedgepb-codex': 'csWedgepbCodexAdvance',
@@ -37072,6 +37404,10 @@ document.addEventListener('wheel', e => {
       return;
     }
     // [Dave 2026-05-17] cs-pbfirst (5 flip cards) — scroll-down flips each card before next-slide nav.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-invitation-word-of-mouth' && window.csInvitationWordOfMouthAdvance && window.csInvitationWordOfMouthAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
