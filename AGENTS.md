@@ -83,6 +83,9 @@ Generated images must be:
 - Avoid repeatedly reading the whole file.
 - Avoid full-file diffs when targeted diffs are enough.
 - Avoid repeated Chrome launches.
+- Do not open Chrome at the start of an edit session just to show the current file.
+- After a completed Local-mode deck or annotation-tool edit batch, open the updated local annotation deck exactly once in Dave's Chrome: `file:///C:/Users/dave/CLAUDE%20COWORK/sites/GnR_Deck/GnR_deck.html?annotations=1`. This is the preferred handoff point so Dave can continue annotating.
+- In Worktree mode, do not open Chrome at handoff unless visual QA is required or Dave explicitly asked; report the local file URL instead. Publish/Local sessions may open the updated annotation deck once after mirroring and checks.
 - Avoid repeated GitHub Pages cache checks.
 - Avoid Playwright/runtime debugging unless the user specifically asks for QA automation.
 - If headless/browser QA fails because of local Windows/tooling issues, do not spend cycles fixing QA. Fall back to source checks, targeted DOM checks if cheap, or one normal Chrome open.
@@ -159,7 +162,7 @@ NEXT:
 - index.html should be updated only during integration/publish.
 - Do not edit the old pitch_visuals copy during parallel tasks.
 - Parallel Worktree-mode sessions must not push. Deck Ops / Publish Control sessions may push `main` after verified publish integration.
-- Do not open Chrome, Playwright, or screenshot QA unless Dave explicitly asks or the task requires visual QA.
+- Do not open Chrome, Playwright, or screenshot QA during work unless Dave explicitly asks or the task requires visual QA. The normal browser handoff is one final Chrome open of the updated local annotation deck after a completed Local-mode deck/annotation batch.
 - Do not regenerate images unless Dave explicitly asks.
 - Do not refactor, reformat, lint, prettify, or restructure the deck.
 - Keep diffs tiny and localized.

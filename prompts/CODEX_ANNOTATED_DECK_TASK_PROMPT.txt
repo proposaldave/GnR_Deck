@@ -16,6 +16,7 @@ ANNOTATION INTAKE MODE
 - Include annotation metadata in the acceptance contract and `PUBLISH TRACE`: annotation `slideId`, `slideLabel`, `slideTitle`, point `x/y` when present, and request text.
 - Do not edit `index.html`.
 - Do not push.
+- Do not open Chrome at the beginning or repeatedly during the task. If this is a Local-mode annotation/deck batch that updates `GnR_deck.html` and mirrors `index.html`, open the updated local annotation deck exactly once after checks are complete: `file:///C:/Users/dave/CLAUDE%20COWORK/sites/GnR_Deck/GnR_deck.html?annotations=1`. In Worktree mode, do not open Chrome at handoff unless visual QA is required or Dave explicitly asked.
 
 UNPUBLISHED WORKTREE PREFLIGHT
 Before processing the JSON queue, run:

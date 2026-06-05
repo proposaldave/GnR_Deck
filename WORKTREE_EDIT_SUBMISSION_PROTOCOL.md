@@ -21,6 +21,14 @@ Default to deck annotations. The local deck already has an annotation tool that 
 4. Use `Copy current`, `Copy all`, or `Download JSON for Codex`.
 5. Paste that annotation payload into one new worktree prompt.
 
+Browser handoff rule: Codex should not open Chrome at the start of an edit session or repeatedly during work. After a completed Local-mode deck or annotation-tool batch, Codex should open the updated local annotation deck exactly once so Dave can continue annotating:
+
+```text
+file:///C:/Users/dave/CLAUDE%20COWORK/sites/GnR_Deck/GnR_deck.html?annotations=1
+```
+
+Worktree sessions should not open Chrome at handoff unless visual QA is required or Dave explicitly asked; they should leave a committed `deck/*` branch for Deck Ops.
+
 Use this template for each edit:
 
 ```text
