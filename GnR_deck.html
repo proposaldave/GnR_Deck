@@ -24062,7 +24062,11 @@ window.csBrandV8Reverse = function() {
   #cs-samecourt-pyramid-white1 .top-chip{right:546px;top:238px;color:#c8462c}
   #cs-samecourt-pyramid-white1 .base-chip{left:618px;bottom:118px;color:#5B8FD4}
   #cs-samecourt-pyramid-white1 .base-chip .scpyr-dot{background:#5B8FD4;box-shadow:0 0 0 5px rgba(91,143,212,.12)}
-  #cs-samecourt-pyramid-white2 .scpyr-bg{opacity:.86;object-position:center center}
+  #cs-samecourt-pyramid-white2:before,
+  #cs-samecourt-pyramid-white2:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url('assets/cs-samecourt-pyramid-white2.png');background-repeat:no-repeat}
+  #cs-samecourt-pyramid-white2:before{clip-path:polygon(0 0,100% 0,100% 43%,0 50%);background-size:72% auto;background-position:center 42px;opacity:.66;-webkit-mask-image:radial-gradient(ellipse at 50% 30%, #000 0 50%, transparent 78%);mask-image:radial-gradient(ellipse at 50% 30%, #000 0 50%, transparent 78%)}
+  #cs-samecourt-pyramid-white2:after{clip-path:polygon(0 32%,100% 25%,100% 100%,0 100%);background-size:118% auto;background-position:center bottom;opacity:.86}
+  #cs-samecourt-pyramid-white2 .scpyr-bg{opacity:0;object-position:center center}
   #cs-samecourt-pyramid-white2 .scpyr-wash{background:linear-gradient(90deg,rgba(251,247,239,.97) 0%,rgba(251,247,239,.92) 32%,rgba(251,247,239,.42) 64%,rgba(251,247,239,.82) 100%)}
   #cs-samecourt-pyramid-white2 .scpyr-title{left:68px;top:112px;max-width:610px}
   #cs-samecourt-pyramid-white2 .scpyr-stack{position:absolute;left:68px;bottom:62px;z-index:6;display:grid;gap:12px;width:548px}
