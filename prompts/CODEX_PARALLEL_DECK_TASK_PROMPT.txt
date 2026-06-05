@@ -25,6 +25,7 @@ SOURCE GATE
 ACCEPTANCE CONTRACT
 Before patching, identify and use this as the pass/fail test:
 - requested change
+- annotation metadata if Dave supplied JSON: annotation slide ID, label/title, point coordinates when present, and exact note text
 - expected active slide/section
 - exact active selector/DOM line for each visible text or visual element
 - old text/element that must be absent from that exact active selector after the edit
@@ -34,6 +35,8 @@ Before patching, identify and use this as the pass/fail test:
 - whether visual QA is required
 
 ACTIVE SOURCE GATE
+- If Dave supplied annotation JSON, use the annotation `slideId`, `slideLabel`, `slideTitle`, coordinates, and note text as target evidence.
+- Annotation evidence does not replace active-source verification.
 - Main-flow targets must be present in `SLIDE_ORDER`.
 - Dot variants must be present in the correct `SLIDE_ALTS[slot]`.
 - Staff targets must be present in `STAFF_ORDER`.
@@ -70,6 +73,7 @@ COMMIT GATE
 - The commit body must contain `PUBLISH-READY: yes`.
 - The commit body must contain a `PUBLISH TRACE` block with:
   - request slug
+  - annotation metadata if supplied: slide ID, label/title, point coordinates, and exact note text
   - publish bucket hint: `publish_now`, `port_if_stale`, or `needs_explicit_review`
   - safe-to-port-if-stale: yes/no, with reason
   - active slide ID or registry slot

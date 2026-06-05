@@ -8,17 +8,18 @@ Model: `5.5 Medium`
 PROMPT:
 ```text
 Read and follow exactly:
-prompts/CODEX_PARALLEL_DECK_TASK_PROMPT.txt
+prompts/CODEX_ANNOTATED_DECK_TASK_PROMPT.txt
 
-Dave's edit request:
-[PASTE ONE EXACT DECK EDIT REQUEST HERE]
+Dave's annotation JSON or exact edit request:
+[PASTE `Copy current`, `Copy all`, `gnr-annotations.json`, OR ONE EXACT DECK EDIT REQUEST HERE]
 ```
 
 DAVE RULE:
-- Submit one exact deck edit per worktree.
-- If you have three unrelated edits, create three worktrees with this same template.
+- Fastest path: open the local deck, turn on annotation mode, click the target slide, type the exact request, save the note, then paste `Copy current` or `gnr-annotations.json` here.
+- Submit one exact deck intent per worktree.
+- If you have three unrelated edits, create three annotations and three worktrees with this same template.
 - Do not add publish instructions here. Publish happens later from `main`.
-- For a delete/trash/move/appendix request, name the visible slide or attach the screenshot in that worktree. The worktree prompt now requires Codex to quote that instruction in the commit trace so Publish Control can execute it later without asking you to prove it again.
+- For a delete/trash/move/appendix request, write the delete/move instruction directly in the annotation on the visible slide. The worktree prompt requires Codex to quote that instruction in the commit trace so Publish Control can execute it later without asking you to prove it again.
 
 WHAT MUST COME BACK BEFORE THE WORKTREE IS DONE:
 - DONE
@@ -28,6 +29,7 @@ WHAT MUST COME BACK BEFORE THE WORKTREE IS DONE:
 - ACTIVE SOURCE: exact active slide ID / `SLIDE_ALTS` slot / `STAFF_ORDER` entry
 - CHECKS: source verification, plus visual QA when the edit changes layout, image, order, animation, or visibility
 - PUBLISH TRACE: final response names the active source, changed selectors/markers, publish bucket hint, and safe-to-port-if-stale value
+- ANNOTATION TRACE: for annotation requests, final response and commit body name the annotation slide ID, label/title, point coordinates when present, and exact note text
 - DELETE/MOVE TRACE: for delete/trash/move/appendix requests, final response and commit body quote Dave's removal instruction and name removed slide IDs / registry keys
 - VALIDATOR: `tools/validate_deck_worktree_handoff.ps1` returns `HANDOFF_VALID=yes`
 - PUSH: not pushed

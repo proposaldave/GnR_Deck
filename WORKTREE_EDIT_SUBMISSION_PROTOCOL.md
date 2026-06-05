@@ -13,6 +13,14 @@ This is the only reliable shape:
 
 ## Dave Submits Edits This Way
 
+Default to deck annotations. The local deck already has an annotation tool that can export a Codex-readable payload.
+
+1. Open the local `GnR_deck.html`.
+2. Turn on annotation mode, click the visible target slide, and type the exact edit request into the note.
+3. Save the note.
+4. Use `Copy current`, `Copy all`, or `Download JSON for Codex`.
+5. Paste that annotation payload into one new worktree prompt.
+
 Use this template for each edit:
 
 ```text
@@ -25,13 +33,15 @@ Model: `5.5 Medium`
 
 PROMPT:
 Read and follow exactly:
-prompts/CODEX_PARALLEL_DECK_TASK_PROMPT.txt
+prompts/CODEX_ANNOTATED_DECK_TASK_PROMPT.txt
 
-Dave's edit request:
-[PASTE ONE EXACT DECK EDIT REQUEST HERE]
+Dave's annotation JSON or exact edit request:
+[PASTE `Copy current`, `Copy all`, `gnr-annotations.json`, OR ONE EXACT DECK EDIT REQUEST HERE]
 ```
 
-One request means one visible deck intent. If there are five unrelated deck changes, create five worktrees.
+One request means one visible deck intent. If there are five unrelated deck changes, create five annotations and five worktrees.
+
+Plain text is still allowed for tiny obvious changes, but annotation JSON is preferred because it carries the visible slide ID, title, and click coordinates into the branch trace.
 
 ## What Makes A Worktree Publish-Ready
 
@@ -43,6 +53,7 @@ A completed worktree is publish-ready only when its final response and commit bo
 - exact visible marker or selector changed
 - source verification result
 - visual QA result when the change is visual/layout/order/media
+- annotation metadata when Dave submitted JSON: slide ID, label/title, point coordinates when present, and exact annotation text
 - `PUBLISH TRACE`
 - `PUBLISH-READY: yes` in the commit body
 - `publish bucket hint: publish_now` or `port_if_stale`

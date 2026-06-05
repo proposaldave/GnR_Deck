@@ -1,0 +1,20 @@
+You are editing the Give n Receive investor deck from Dave's in-deck annotation request.
+
+Read and follow exactly:
+prompts/CODEX_PARALLEL_DECK_TASK_PROMPT.txt
+
+ANNOTATION INTAKE MODE
+- Dave may paste JSON from the local deck annotation tool: `Copy current`, `Copy all`, or `gnr-annotations.json`.
+- Treat each annotation `text` value as Dave's exact edit request.
+- Treat `slideId`, `slideLabel`, `slideTitle`, and point coordinates as target evidence.
+- Do not treat coordinates or nearby duplicate source as permission to patch inactive variants.
+- Verify the annotated `slideId` is active in the correct registry: `SLIDE_ORDER`, `SLIDE_ALTS`, `STAFF_ORDER`, `SEED_ORDER`, `CONCEPT_ORDER`, `APPENDIX_ORDER`, or `TRASH_ORDER`.
+- If the annotation target is stale or inactive, port the obvious intent to the active slide only when the visible intent is mechanically clear; otherwise report `BLOCKED`.
+- If multiple unrelated annotations are present, execute only the first actionable annotation in this branch and list the remaining annotations in `BLOCKED` or `NEXT`. Do not combine unrelated edits in one branch.
+- For delete/trash/move/appendix annotations, quote Dave's exact annotation text in `PUBLISH TRACE` and name every removed slide ID, registry key, and active inventory effect.
+- Include annotation metadata in the acceptance contract and `PUBLISH TRACE`: annotation `slideId`, `slideLabel`, `slideTitle`, point `x/y` when present, and request text.
+- Do not edit `index.html`.
+- Do not push.
+
+ANNOTATION JSON OR EXACT REQUEST
+[PASTE DAVE'S `Copy current`, `Copy all`, `gnr-annotations.json`, OR ONE EXACT EDIT REQUEST HERE]
