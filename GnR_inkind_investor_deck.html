@@ -59,9 +59,9 @@
   .seed-amount .label{font-size:.66rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
   .seed-amount .num{font-family:'Fraunces',Georgia,serif;font-size:7.6rem;line-height:.82;font-weight:850;letter-spacing:-.055em;color:var(--red)}
   .seed-amount .note{margin-top:18px;font-size:1.08rem;line-height:1.28;font-weight:850;color:rgba(26,22,18,.64)}
-  .seed-body{position:absolute;left:98px;right:98px;top:530px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:stretch}
+  .seed-body{position:absolute;left:98px;right:98px;top:520px;display:block}
   .seed-panel{border:1.5px solid rgba(184,149,74,.36);border-radius:10px;background:rgba(251,247,239,.62);padding:28px 32px;box-shadow:0 16px 42px rgba(26,22,18,.045)}
-  .seed-panel.red{border-color:rgba(200,70,44,.38);background:rgba(200,70,44,.045)}
+  .seed-panel.red{border-color:rgba(200,70,44,.38);background:rgba(200,70,44,.045);min-height:318px}
   .seed-panel .panel-label{font-size:.64rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
   .seed-panel.red .panel-label{color:var(--red)}
   .seed-list{display:grid;gap:14px}
@@ -70,10 +70,10 @@
   .seed-item h3{font-size:1.16rem;line-height:1.12;font-weight:900;color:var(--ink);margin-bottom:5px}
   .seed-item p{font-size:.90rem;line-height:1.25;font-weight:780;color:rgba(26,22,18,.62)}
   .seed-milestones{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .seed-mile{min-height:142px;border:1.3px solid rgba(91,143,212,.36);border-radius:8px;background:rgba(91,143,212,.07);padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between}
+  .seed-mile{min-height:112px;border:1.3px solid rgba(91,143,212,.36);border-radius:8px;background:rgba(91,143,212,.07);padding:17px 16px;display:flex;flex-direction:column;justify-content:space-between}
   .seed-mile.red{border-color:rgba(200,70,44,.38);background:rgba(200,70,44,.055)}.seed-mile.gold{border-color:rgba(184,149,74,.42);background:rgba(184,149,74,.09)}
-  .seed-mile strong{font-family:'Fraunces',Georgia,serif;font-size:2.2rem;line-height:.92;font-weight:850;color:var(--ink)}
-  .seed-mile span{font-size:.82rem;line-height:1.22;font-weight:900;color:rgba(26,22,18,.62)}
+  .seed-mile strong{font-family:'Fraunces',Georgia,serif;font-size:1.9rem;line-height:.92;font-weight:850;color:var(--ink)}
+  .seed-mile span{font-size:.76rem;line-height:1.22;font-weight:900;color:rgba(26,22,18,.62)}
   .seed-footer{position:absolute;left:98px;right:98px;bottom:54px;border-top:1px solid rgba(184,149,74,.34);padding-top:18px;display:flex;justify-content:space-between;gap:28px;font-size:.68rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.52)}
   .mechanic{gap:22px}
   .mechanic-title{font-size:4.65rem;line-height:.92;font-weight:850;max-width:1420px;margin:76px 0 12px}
@@ -323,21 +323,15 @@
       <div class="eyebrow">Seed round</div>
       <div class="seed-title">Raising <span class="red">$2.5M</span> to turn <span class="gold">community-led invitations</span> into a repeatable growth engine for clubs.</div>
       <div class="seed-body">
-        <div class="seed-panel">
-          <div class="panel-label">Use of funds</div>
-          <div class="seed-list">
-            <div class="seed-item"><div><h3>Invitation + referral product</h3><p>Use member referrals to fill large community events and pro clinics, then turn those wins into repeatable sales proof and building the community from the bottom-up.</p></div></div>
-            <div class="seed-item"><div><h3>Marketing, brand + sales</h3><p>Package the NEPC proof into a sales story: it fills community events and pro clinics here, and your club can have the same tool.</p></div></div>
-            <div class="seed-item"><div><h3>Business model tests</h3><p>Test prepaid off-peak court credits and organizer-led paid events where players pay in GnR and the host buys discounted courts.</p></div></div>
-            <div class="seed-item"><div><h3>Invitation graph math</h3><p>Prove GnR can predict connection before a group plays, using vibes, anchors, player preferences, RSVPs, and repeat-play behavior.</p></div></div>
-          </div>
-        </div>
         <div class="seed-panel red">
-          <div class="panel-label">What this round proves</div>
+          <div class="panel-label">What the seed round proves</div>
           <div class="seed-milestones">
-            <div class="seed-mile"><strong>NEPC</strong><span>Referrals fill big community events and pro clinics.</span></div>
-            <div class="seed-mile gold"><strong>Models</strong><span>Test prepaid club credits and organizer-paid events through GnR.</span></div>
-            <div class="seed-mile red"><strong>GTM</strong><span>Sales motion: it works at NEPC, and your club can have it too.</span></div>
+            <div class="seed-mile"><strong>Product</strong><span>Member referrals fill community events and pro clinics, then become bottom-up sales proof.</span></div>
+            <div class="seed-mile gold"><strong>Sales</strong><span>Package NEPC proof into a story clubs understand: it works here, and your club can have it too.</span></div>
+            <div class="seed-mile red"><strong>Models</strong><span>Test prepaid off-peak credits and organizer-led paid events where players pay through GnR.</span></div>
+            <div class="seed-mile gold"><strong>Graph</strong><span>Prove GnR can predict connection before a group plays from RSVP, preference, vibe, and repeat-play signals.</span></div>
+            <div class="seed-mile"><strong>NEPC</strong><span>Use the founder-owned lab to keep proving referral-led court fill in live operations.</span></div>
+            <div class="seed-mile red"><strong>30 clubs</strong><span>Target signed or active rollout clubs by the end of 2026.</span></div>
           </div>
         </div>
       </div>
