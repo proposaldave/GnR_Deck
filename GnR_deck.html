@@ -140,29 +140,34 @@
   #cs-teamreach-referral-compare::before {
     content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
     background:
-      linear-gradient(90deg,rgba(243,234,216,.98),rgba(243,234,216,.86) 48%,rgba(243,234,216,.96)),
-      radial-gradient(circle at 50% 52%,rgba(184,149,74,.18),transparent 38%),
+      radial-gradient(circle at 21% 56%,rgba(91,143,212,.22) 0 9px,transparent 10px),
+      radial-gradient(circle at 29% 47%,rgba(91,143,212,.16) 0 7px,transparent 8px),
+      radial-gradient(circle at 75% 43%,rgba(200,70,44,.22) 0 11px,transparent 12px),
+      radial-gradient(circle at 83% 57%,rgba(200,70,44,.16) 0 8px,transparent 9px),
+      linear-gradient(90deg,rgba(243,234,216,.98),rgba(243,234,216,.82) 48%,rgba(243,234,216,.96)),
+      radial-gradient(circle at 50% 52%,rgba(184,149,74,.20),transparent 38%),
       linear-gradient(135deg,rgba(91,143,212,.08),transparent 42%,rgba(200,70,44,.08));
   }
   #cs-teamreach-referral-compare .trc-eye {
     position:absolute; top:28px; left:48px; z-index:10;
     font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c;
   }
-  #cs-teamreach-referral-compare .trc-stage { position:absolute; inset:0; z-index:2; box-sizing:border-box; padding:88px 76px 58px; display:flex; flex-direction:column; gap:34px; }
+  #cs-teamreach-referral-compare .trc-stage { position:absolute; inset:0; z-index:2; box-sizing:border-box; padding:88px 76px 58px; display:flex; flex-direction:column; gap:26px; }
   #cs-teamreach-referral-compare .trc-head { text-align:center; max-width:1320px; margin:0 auto; }
   #cs-teamreach-referral-compare .trc-kicker { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#b8954a; margin-bottom:16px; }
-  #cs-teamreach-referral-compare .trc-title { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.25rem,5vw,5.7rem); line-height:.98; font-weight:900; letter-spacing:0; color:#1a1612; text-wrap:balance; }
+  #cs-teamreach-referral-compare .trc-title { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.55rem,5.55vw,6.25rem); line-height:.96; font-weight:900; letter-spacing:0; color:#1a1612; text-wrap:balance; }
   #cs-teamreach-referral-compare .trc-title em { color:#c8462c; font-style:italic; }
-  #cs-teamreach-referral-compare .trc-compare { flex:1; display:grid; grid-template-columns:1fr 138px 1fr; gap:28px; align-items:stretch; min-height:0; }
-  #cs-teamreach-referral-compare .trc-panel { position:relative; padding:34px 36px 30px; border:1.4px solid rgba(184,149,74,.32); border-radius:8px; background:rgba(251,247,239,.88); box-shadow:0 18px 52px rgba(26,22,18,.065); display:flex; flex-direction:column; gap:22px; }
+  #cs-teamreach-referral-compare .trc-compare { flex:1; display:grid; grid-template-columns:1fr 112px 1fr; gap:24px; align-items:stretch; min-height:0; }
+  #cs-teamreach-referral-compare .trc-panel { position:relative; padding:38px 38px 32px; border:1.4px solid rgba(184,149,74,.32); border-radius:8px; background:rgba(251,247,239,.90); box-shadow:0 18px 52px rgba(26,22,18,.065); display:flex; flex-direction:column; justify-content:center; gap:20px; overflow:hidden; }
+  #cs-teamreach-referral-compare .trc-panel::after { content:""; position:absolute; right:28px; bottom:26px; width:172px; height:112px; opacity:.16; background:radial-gradient(circle at 15% 70%,currentColor 0 10px,transparent 11px),radial-gradient(circle at 48% 36%,currentColor 0 10px,transparent 11px),radial-gradient(circle at 82% 66%,currentColor 0 10px,transparent 11px),linear-gradient(22deg,transparent 46%,currentColor 47% 49%,transparent 50%),linear-gradient(152deg,transparent 47%,currentColor 48% 50%,transparent 51%); }
   #cs-teamreach-referral-compare .trc-panel.teamreach { border-left:7px solid #5B8FD4; }
   #cs-teamreach-referral-compare .trc-panel.gnr { border-left:7px solid #c8462c; background:linear-gradient(180deg,rgba(251,247,239,.98),rgba(251,247,239,.84)); }
   #cs-teamreach-referral-compare .trc-label { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.26em; text-transform:uppercase; }
   #cs-teamreach-referral-compare .teamreach .trc-label { color:#5B8FD4; }
   #cs-teamreach-referral-compare .gnr .trc-label { color:#c8462c; }
-  #cs-teamreach-referral-compare .trc-panel h2 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.1rem; font-weight:900; line-height:1.02; letter-spacing:0; color:#1a1612; }
-  #cs-teamreach-referral-compare .trc-proof { font-family:'Manrope',sans-serif; font-size:.76rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:rgba(26,22,18,.54); padding:14px 0; border-top:1px solid rgba(184,149,74,.28); border-bottom:1px solid rgba(184,149,74,.28); }
-  #cs-teamreach-referral-compare .trc-points { display:grid; gap:13px; margin-top:auto; }
+  #cs-teamreach-referral-compare .trc-panel h2 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.35rem; font-weight:900; line-height:1.0; letter-spacing:0; color:#1a1612; max-width:92%; }
+  #cs-teamreach-referral-compare .trc-proof { font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:rgba(26,22,18,.56); padding:14px 0; border-top:1px solid rgba(184,149,74,.28); border-bottom:1px solid rgba(184,149,74,.28); }
+  #cs-teamreach-referral-compare .trc-points { display:grid; gap:14px; margin-top:0; max-width:86%; }
   #cs-teamreach-referral-compare .trc-point { position:relative; padding-left:24px; font-family:'Manrope',sans-serif; font-size:1.16rem; font-weight:780; line-height:1.18; color:#1a1612; }
   #cs-teamreach-referral-compare .trc-point::before { content:''; position:absolute; left:0; top:.43em; width:8px; height:8px; border-radius:50%; background:#b8954a; }
   #cs-teamreach-referral-compare .teamreach .trc-point::before { background:#5B8FD4; }
@@ -11789,7 +11794,12 @@ window.cs1m7Reverse = function() {
   .iwom-funnel-step b{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;margin:0 auto 20px;background:#1a1612;color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.76rem;font-weight:950}
   .iwom-funnel-step h2{margin:0 0 10px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2rem;line-height:1;color:#1a1612}
   .iwom-funnel-step p{margin:0;font-family:'Manrope',sans-serif;font-size:.92rem;line-height:1.28;font-weight:820;color:rgba(26,22,18,.66)}
+  @keyframes iwomCardPop{0%{opacity:0;transform:translateY(18px) scale(.955)}68%{opacity:1;transform:translateY(-3px) scale(1.012)}100%{opacity:1;transform:none}}
+  #cs-invitation-word-of-mouth .iwom-panel{opacity:0;transform:translateY(18px) scale(.955)}
+  #cs-invitation-word-of-mouth.casey-entered .iwom-panel{animation:iwomCardPop .62s cubic-bezier(.18,1.22,.32,1) both}
+  #cs-invitation-word-of-mouth.casey-entered .iwom-panel:nth-child(2){animation-delay:.16s}
   html[data-export="1"] .iwom-slide *{transition:none!important;animation:none!important}
+  html[data-export="1"] #cs-invitation-word-of-mouth .iwom-panel{opacity:1!important;transform:none!important}
 </style>
 
 <div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth" data-stage="0" onclick="if(window.csInvitationWordOfMouthAdvance && window.csInvitationWordOfMouthAdvance()) event.stopPropagation()">
@@ -14163,6 +14173,7 @@ window.csInvitationWordOfMouthAdvance = function() {
 </div>
 
 <div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-board-green" style="display:none">
+  <div class="psg-eye slide-eyebrow">Pickleball silliness brings out Give n Receive</div>
   <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-board-green.png" alt="Image-generated six-panel pickleball silliness board: score confusion, toy ball, kitchen dinks, speedup, weird form, and net apology." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
   <div class="psg-callout" style="left:74px;top:92px"><b>Silly score</b><span>Famously hard to keep straight.</span></div>
   <div class="psg-callout" style="left:804px;top:92px"><b>Toy ball</b><span>A plastic wiffleball adults take seriously.</span></div>
@@ -15631,42 +15642,38 @@ window.csInvitationWordOfMouthAdvance = function() {
   <section class="trc-stage">
     <div class="trc-head trc-anim">
       <div class="trc-kicker">TeamReach proves the demand. GnR owns the expansion.</div>
-      <h1 class="trc-title">TeamReach manages known groups. <em>GnR grows the right room.</em></h1>
+      <h1 class="trc-title">TeamReach coordinates a group. <em>GnR makes the group grow.</em></h1>
     </div>
     <div class="trc-compare trc-anim">
       <div class="trc-panel teamreach">
         <div class="trc-label">TeamReach</div>
-        <h2>A communication app for people already in the group.</h2>
-        <div class="trc-proof">messages &middot; schedules &middot; updates &middot; availability</div>
+        <h2>Good after the room already exists.</h2>
+        <div class="trc-proof">messages &middot; schedules &middot; availability</div>
         <div class="trc-points">
-          <div class="trc-point">Coach or manager creates a group code.</div>
-          <div class="trc-point">Members check schedules, event details, polls, photos, and headcounts.</div>
-          <div class="trc-point">It reduces confusion after the team already exists.</div>
-          <div class="trc-point">The product does not know who should be invited next.</div>
+          <div class="trc-point">A manager broadcasts to known members.</div>
+          <div class="trc-point">The app reduces confusion, but it does not create new demand.</div>
         </div>
       </div>
       <div class="trc-mid" aria-hidden="true">
         <div class="trc-mid-line"></div>
         <div class="trc-vs">vs</div>
-        <div class="trc-mid-copy">coordination<br>after the group<br>vs<br>creation of the group</div>
+        <div class="trc-mid-copy">admin tool<br>vs<br>growth loop</div>
         <div class="trc-mid-line"></div>
       </div>
       <div class="trc-panel gnr">
         <div class="trc-label">Give n Receive</div>
-        <h2>A player-referral engine for communities still forming.</h2>
+        <h2>Built before the room is full.</h2>
         <div class="trc-proof">invite &middot; refer &middot; fit &middot; compound</div>
         <div class="trc-points">
-          <div class="trc-point">Players refer players into open social events.</div>
-          <div class="trc-point">GnR learns who fits the room, not just who saw the calendar.</div>
-          <div class="trc-point">Every yes, no, referral, and repeat visit trains the community graph.</div>
-          <div class="trc-point">Warm players pull in warm players, so the club grows from inside the event.</div>
+          <div class="trc-point">Warm players pull the next warm players into the event.</div>
+          <div class="trc-point">Every yes, no, referral, and repeat visit trains who should be invited next.</div>
         </div>
       </div>
     </div>
     <div class="trc-close trc-anim">
-      <span class="trc-chip blue">TeamReach: group admin</span>
-      <span class="trc-chip hot">GnR: player referral loop</span>
-      <span class="trc-chip">the social event becomes distribution</span>
+      <span class="trc-chip blue">TeamReach: admin</span>
+      <span class="trc-chip hot">GnR: growth loop</span>
+      <span class="trc-chip">the event becomes distribution</span>
     </div>
   </section>
 </div>
@@ -16155,42 +16162,38 @@ window.csInvitationWordOfMouthAdvance = function() {
   <section class="trc-stage">
     <div class="trc-head trc-anim">
       <div class="trc-kicker">TeamReach proves the demand. GnR owns the expansion.</div>
-      <h1 class="trc-title">TeamReach manages known groups. <em>GnR grows the right room.</em></h1>
+      <h1 class="trc-title">TeamReach coordinates a group. <em>GnR makes the group grow.</em></h1>
     </div>
     <div class="trc-compare trc-anim">
       <div class="trc-panel teamreach">
         <div class="trc-label">TeamReach</div>
-        <h2>A communication app for people already in the group.</h2>
-        <div class="trc-proof">messages &middot; schedules &middot; updates &middot; availability</div>
+        <h2>Good after the room already exists.</h2>
+        <div class="trc-proof">messages &middot; schedules &middot; availability</div>
         <div class="trc-points">
-          <div class="trc-point">Coach or manager creates a group code.</div>
-          <div class="trc-point">Members check schedules, event details, polls, photos, and headcounts.</div>
-          <div class="trc-point">It reduces confusion after the team already exists.</div>
-          <div class="trc-point">The product does not know who should be invited next.</div>
+          <div class="trc-point">A manager broadcasts to known members.</div>
+          <div class="trc-point">The app reduces confusion, but it does not create new demand.</div>
         </div>
       </div>
       <div class="trc-mid" aria-hidden="true">
         <div class="trc-mid-line"></div>
         <div class="trc-vs">vs</div>
-        <div class="trc-mid-copy">coordination<br>after the group<br>vs<br>creation of the group</div>
+        <div class="trc-mid-copy">admin tool<br>vs<br>growth loop</div>
         <div class="trc-mid-line"></div>
       </div>
       <div class="trc-panel gnr">
         <div class="trc-label">Give n Receive</div>
-        <h2>A player-referral engine for communities still forming.</h2>
+        <h2>Built before the room is full.</h2>
         <div class="trc-proof">invite &middot; refer &middot; fit &middot; compound</div>
         <div class="trc-points">
-          <div class="trc-point">Players refer players into open social events.</div>
-          <div class="trc-point">GnR learns who fits the room, not just who saw the calendar.</div>
-          <div class="trc-point">Every yes, no, referral, and repeat visit trains the community graph.</div>
-          <div class="trc-point">Warm players pull in warm players, so the club grows from inside the event.</div>
+          <div class="trc-point">Warm players pull the next warm players into the event.</div>
+          <div class="trc-point">Every yes, no, referral, and repeat visit trains who should be invited next.</div>
         </div>
       </div>
     </div>
     <div class="trc-close trc-anim">
-      <span class="trc-chip blue">TeamReach: group admin</span>
-      <span class="trc-chip hot">GnR: player referral loop</span>
-      <span class="trc-chip">the social event becomes distribution</span>
+      <span class="trc-chip blue">TeamReach: admin</span>
+      <span class="trc-chip hot">GnR: growth loop</span>
+      <span class="trc-chip">the event becomes distribution</span>
     </div>
   </section>
 </div>
@@ -16407,7 +16410,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-invite-atomic-unit-pink .invp-bg{object-position:center center}
   #cs-invite-atomic-unit-pink .invp-bg-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.92) 0%,rgba(251,247,239,.84) 44%,rgba(251,247,239,.50) 72%,rgba(251,247,239,.26) 100%);z-index:0;pointer-events:none}
   #cs-invite-operational-insanity-pink .invp-bg-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.94) 0%,rgba(251,247,239,.84) 36%,rgba(251,247,239,.50) 64%,rgba(251,247,239,.18) 100%),linear-gradient(0deg,rgba(251,247,239,.78) 0%,rgba(251,247,239,.44) 34%,rgba(251,247,239,0) 62%);z-index:0;pointer-events:none}
-  #cs-invite-operational-insanity-pink .invp-title{text-shadow:0 2px 18px rgba(251,247,239,.85),0 1px 1px rgba(251,247,239,.65)}
+  #cs-invite-operational-insanity-pink .invp-title{display:inline-block;padding:10px 16px 14px;margin-left:-16px;border-radius:8px;background:rgba(251,247,239,.74);box-shadow:0 18px 46px rgba(26,22,18,.10),0 0 0 1px rgba(184,149,74,.22);text-shadow:0 2px 18px rgba(251,247,239,.95),0 1px 1px rgba(251,247,239,.85)}
   #cs-invite-operational-insanity-pink .invp-arrows{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;max-width:1660px;margin:14px 0 -2px;pointer-events:none}
   #cs-invite-operational-insanity-pink .invp-arrows span{position:relative;height:34px}
   #cs-invite-operational-insanity-pink .invp-arrows span:before{content:"";position:absolute;left:50%;top:0;width:2px;height:24px;background:linear-gradient(180deg,rgba(200,70,44,.18),#c8462c);transform:translateX(-50%)}
@@ -18033,7 +18036,7 @@ window.csInvitationWordOfMouthAdvance = function() {
         <div class="v5-step"><div class="yr">2021</div><div class="dot"></div><div class="txt">DUPR acquisition<br>offer</div></div>
         <div class="v5-step"><div class="yr">2022</div><div class="dot"></div><div class="txt">Founded NEPC</div></div>
         <div class="v5-step"><div class="yr">2024</div><div class="dot"></div><div class="txt"><strong style="font-weight:800;color:#1a1612">Core Product Pivot:</strong> invitations</div></div>
-        <div class="v5-step now"><div class="yr">2025</div><div class="dot"></div><div class="txt">CTO Steve joins</div><div class="sub">60 GnR invitation courts</div></div>
+        <div class="v5-step now"><div class="yr">2025</div><div class="dot"></div><div class="txt">CTO Steve joins</div></div>
       </div>
     </div>
   </section>
@@ -18146,7 +18149,7 @@ window.csInvitationWordOfMouthAdvance = function() {
         <div class="v5-step"><div class="yr">2021</div><div class="dot"></div><div class="txt">DUPR acquisition offer</div></div>
         <div class="v5-step"><div class="yr">2022</div><div class="dot"></div><div class="txt">Founded NEPC</div></div>
         <div class="v5-step"><div class="yr">2024</div><div class="dot"></div><div class="txt"><strong style="font-weight:800;color:#1a1612">Pivot:</strong> invitation matchmaking</div></div>
-        <div class="v5-step now"><div class="yr">2025</div><div class="dot"></div><div class="txt">CTO Steve joins</div><div class="sub">60 GnR invitation courts</div></div>
+        <div class="v5-step now"><div class="yr">2025</div><div class="dot"></div><div class="txt">CTO Steve joins</div></div>
       </div>
     </div>
   </section>
@@ -19302,7 +19305,7 @@ window.csInvitationWordOfMouthAdvance = function() {
         <div class="vd-proof"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 10h8"/></svg></div><div class="yr">2020</div><div class="txt">Pickleball computer vision</div></div>
         <div class="vd-proof hot"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></div><div class="yr">2021</div><div class="txt">DUPR acquisition offer</div></div>
         <div class="vd-proof"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 19V9l8-5 8 5v10"/><path d="M4 19h16"/></svg></div><div class="yr">2022</div><div class="txt">Founded NEPC</div></div>
-        <div class="vd-proof now"><div class="ico"><svg viewBox="0 0 24 24"><polyline points="8 8 4 12 8 16"/><polyline points="16 8 20 12 16 16"/><line x1="13" y1="6" x2="11" y2="18"/></svg></div><div class="yr">2025</div><div class="txt">CTO Steve joins<br><span style="display:inline-block;margin-top:3px;font-size:.78em;color:#168651;font-weight:700">60 GnR invitation courts</span></div></div>
+        <div class="vd-proof now"><div class="ico"><svg viewBox="0 0 24 24"><polyline points="8 8 4 12 8 16"/><polyline points="16 8 20 12 16 16"/><line x1="13" y1="6" x2="11" y2="18"/></svg></div><div class="yr">2025</div><div class="txt">CTO Steve joins</div></div>
       </div>
     </div>
   </section>
@@ -22516,7 +22519,6 @@ window.csBrandV8Reverse = function() {
   <div class="vcio-label tv"><div class="vcio-mark netflix">N</div><div><small>$300B+ sold</small></div></div>
   <div class="vcio-label phone"><div class="vcio-mark apple"><svg viewBox="0 0 64 76" aria-hidden="true"><path d="M45.6 39.5c-.1-8 6.5-11.8 6.8-12-3.8-5.5-9.6-6.2-11.6-6.3-4.9-.5-9.5 2.9-12 2.9-2.6 0-6.4-2.8-10.5-2.7-5.4.1-10.4 3.2-13.2 8.1-5.7 9.9-1.5 24.4 4 32.4 2.7 3.9 5.9 8.2 10.1 8.1 4.1-.2 5.6-2.6 10.5-2.6 4.9 0 6.3 2.6 10.6 2.5 4.4-.1 7.2-4 9.8-7.9 3.1-4.5 4.4-8.9 4.5-9.1-.1-.1-8.9-3.4-9-13.4zM37.6 16.1c2.2-2.7 3.7-6.4 3.3-10.1-3.2.1-7.1 2.1-9.4 4.8-2.1 2.4-3.9 6.2-3.4 9.9 3.6.3 7.2-1.8 9.5-4.6z"/></svg></div><div><small>$2T+ sold</small></div></div>
   <div class="vcio-label search"><div class="vcio-mark google">G</div><div><small>$3T+ ads sold</small></div></div>
-  <div class="vcio-ai-pair" aria-label="AI product value examples"><div class="vcio-ai-badge"><svg viewBox="0 0 36 36" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg></div><div class="vcio-ai-badge"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 4L31 11.5V24.5L18 32L5 24.5V11.5L18 4Z" fill="none" stroke="#1a1612" stroke-width="1.8"/><path d="M18 9L26 13.5V22.5L18 27L10 22.5V13.5L18 9Z" fill="none" stroke="#b8954a" stroke-width="1.5"/></svg></div><div class="vcio-ai-copy"><b>OpenAI + Anthropic</b><small>$2.5T AI spend</small></div></div>
 </div>
 
 <div class="casey-slide ds-focus" id="cs-value-choice-image-receipts-pink" style="display:none" aria-label="Receipts-led product value visual concept">
@@ -22589,7 +22591,7 @@ window.csBrandV8Reverse = function() {
       <div class="asp-byline">Brian Chesky</div>
     </div>
     <div class="asp-video">
-      <iframe src="https://drive.google.com/file/d/1EZ5BhLDwULyTUdnMnHIFBS67SRlJY-xE/preview?vq=hd720&amp;hd=1" allow="autoplay; fullscreen" allowfullscreen title="Brian Chesky app store for people video"></iframe>
+      <iframe src="https://drive.google.com/file/d/1EZ5BhLDwULyTUdnMnHIFBS67SRlJY-xE/preview" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Brian Chesky app store for people video"></iframe>
     </div>
   </section>
 </div>
@@ -25051,8 +25053,33 @@ window.csBrandV8Reverse = function() {
   #cs-samecourt-pyramid-image-led-pink .apex-tag{position:absolute;right:190px;top:98px;z-index:7;width:262px;padding:17px 19px;border-left:5px solid #c8462c}
   #cs-samecourt-pyramid-image-led-pink .base-tag{position:absolute;right:96px;bottom:92px;z-index:7;width:430px;padding:21px 24px;border-left:5px solid #5B8FD4}
   #cs-samecourt-pyramid-white2 .scpyr-arrow{position:absolute;left:50%;bottom:168px;z-index:7;transform:translateX(-50%);font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.9);border:1.4px solid rgba(200,70,44,.28);border-radius:999px;padding:10px 16px;box-shadow:0 16px 36px rgba(26,22,18,.10)}
+  .scpyr-blue{background:#fbf7ef!important;overflow:hidden;color:#1a1612}
+  .scpyr-blue:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 58%,rgba(91,143,212,.18),transparent 34%),radial-gradient(circle at 34% 72%,rgba(184,149,74,.22),transparent 36%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%);z-index:0}
+  .scpyr-blue-stage{position:absolute;inset:0;z-index:1;display:grid;grid-template-columns:.86fr 1fr;gap:52px;align-items:center;padding:92px 86px 64px;box-sizing:border-box}
+  .scpyr-blue-pyramid{position:relative;height:760px;border:1px solid rgba(184,149,74,.30);background:rgba(251,247,239,.50);box-shadow:0 24px 70px rgba(26,22,18,.08);overflow:hidden}
+  .scpyr-blue-pyramid .apex{position:absolute;left:31%;right:31%;top:68px;height:190px;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(26,22,18,.78),rgba(200,70,44,.64));display:grid;place-items:end center;padding-bottom:28px;color:#fbf7ef}
+  .scpyr-blue-pyramid .base{position:absolute;left:8%;right:8%;bottom:70px;height:438px;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);background:radial-gradient(circle at 50% 58%,rgba(251,247,239,.38),transparent 28%),linear-gradient(180deg,rgba(91,143,212,.72),rgba(184,149,74,.70));display:grid;place-items:center;color:#fbf7ef}
+  .scpyr-blue-pyramid span{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;letter-spacing:.22em;text-transform:uppercase;text-align:center;text-shadow:0 2px 14px rgba(26,22,18,.28)}
+  .scpyr-blue-pyramid .base:before{content:"";position:absolute;inset:16% 8% 12%;background:radial-gradient(circle at 16% 42%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 32% 62%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 49% 35%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 64% 60%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 82% 42%,#fbf7ef 0 9px,transparent 10px);opacity:.86}
+  .scpyr-blue-copy h1{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4rem,6vw,6.8rem);line-height:.94;font-weight:900;letter-spacing:0;color:#1a1612}
+  .scpyr-blue-copy h1 em{color:#5B8FD4;font-style:italic}
+  .scpyr-blue-copy p{margin:26px 0 0;max-width:820px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,1.9vw,2.05rem);line-height:1.18;font-weight:650;color:rgba(26,22,18,.76)}
   html[data-export="1"] .scpyr-slide .scpyr-bg{opacity:.86!important}
 </style>
+
+
+<div class="casey-slide ds-focus scpyr-blue scpyr-blue-base" id="cs-samecourt-pyramid-blue-human-base" style="display:none">
+  <div class="slide-eyebrow">Pyramid image concept / social base</div>
+  <section class="scpyr-blue-stage"><div class="scpyr-blue-pyramid"><div class="apex"><span>competitive apex</span></div><div class="base"><span>social connection base</span></div></div><div class="scpyr-blue-copy"><h1>A small competitive apex.<br><em>A massive social base.</em></h1><p>Top: serious rating-driven players. Bottom: the community players who make the club feel alive.</p></div></section>
+</div>
+<div class="casey-slide ds-focus scpyr-blue scpyr-blue-contrast" id="cs-samecourt-pyramid-blue-contrast" style="display:none">
+  <div class="slide-eyebrow">Pyramid image concept / contrast</div>
+  <section class="scpyr-blue-stage"><div class="scpyr-blue-pyramid"><div class="apex"><span>tight serious play</span></div><div class="base"><span>laughter, welcome, return play</span></div></div><div class="scpyr-blue-copy"><h1>The club is built on<br><em>the base.</em></h1><p>The investable market is not the narrow top. It is the giant bottom that wants connection.</p></div></section>
+</div>
+<div class="casey-slide ds-focus scpyr-blue scpyr-blue-joy" id="cs-samecourt-pyramid-blue-joy-map" style="display:none">
+  <div class="slide-eyebrow">Pyramid image concept / joy map</div>
+  <section class="scpyr-blue-stage"><div class="scpyr-blue-pyramid"><div class="apex"><span>ratings</span></div><div class="base"><span>belonging compounds</span></div></div><div class="scpyr-blue-copy"><h1>Pickleball's wedge is<br><em>social abundance.</em></h1><p>Ratings explain the top. GnR explains why the base keeps coming back.</p></div></section>
+</div>
 
 <!-- [Codex 2026-06-04] cs-samecourt-pyramid-white1 DELETED by porting deck/delete-pyramid-alt; removed from current SLIDE_ALTS[13] and retained hidden as rollback source. -->
 <div class="casey-slide ds-focus scpyr-slide" id="cs-samecourt-pyramid-white1" style="display:none !important" data-deleted="1">
@@ -25381,8 +25408,8 @@ window.csBrandV8Reverse = function() {
   #cs-programmable-invitations .pi-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.25rem,5.2vw,5.95rem);line-height:.96;font-weight:880;letter-spacing:0;text-align:center;margin:0;color:#1a1612;text-shadow:none}
   #cs-programmable-invitations .pi-title em{font-style:normal;color:#b8954a;text-shadow:none}
   #cs-programmable-invitations .pi-sub{font-family:'Manrope',sans-serif;font-size:clamp(1rem,1.25vw,1.34rem);line-height:1.3;font-weight:760;text-align:center;color:rgba(26,22,18,.66);margin:14px 0 20px;max-width:980px}
-  #cs-programmable-invitations .pi-grid{width:100%;max-width:1660px;display:grid;grid-template-columns:370px minmax(640px,1fr) 370px;grid-template-rows:1fr 1fr;gap:18px 24px;align-items:stretch;flex:1;min-height:0}
-  #cs-programmable-invitations .pi-side{position:relative;border:1px solid rgba(184,149,74,.32);border-radius:8px;background:rgba(251,247,239,.72);box-shadow:0 20px 50px rgba(26,22,18,.10),0 0 0 1px rgba(255,255,255,.48) inset;padding:25px 28px 22px;overflow:hidden}
+  #cs-programmable-invitations .pi-grid{width:100%;max-width:1180px;display:grid;grid-template-columns:1fr;grid-template-rows:1fr;gap:0;align-items:center;justify-items:center;flex:1;min-height:0}
+  #cs-programmable-invitations .pi-side{display:none;position:relative;border:1px solid rgba(184,149,74,.32);border-radius:8px;background:rgba(251,247,239,.72);box-shadow:0 20px 50px rgba(26,22,18,.10),0 0 0 1px rgba(255,255,255,.48) inset;padding:25px 28px 22px;overflow:hidden}
   #cs-programmable-invitations .pi-left-top{grid-column:1;grid-row:1}
   #cs-programmable-invitations .pi-left-bottom{grid-column:1;grid-row:2}
   #cs-programmable-invitations .pi-right-top{grid-column:3;grid-row:1}
@@ -25397,7 +25424,7 @@ window.csBrandV8Reverse = function() {
   #cs-programmable-invitations .pi-dot{width:34px;height:34px;border-radius:50%;border:1px solid rgba(184,149,74,.56);background-image:var(--img),linear-gradient(135deg,#5B8FD4,#b8954a);background-size:cover;background-position:center;box-shadow:0 8px 18px rgba(26,22,18,.10)}
   #cs-programmable-invitations .pi-status{margin-left:auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1.4px solid rgba(184,149,74,.68);background:#fbf7ef;color:#b8954a}
   #cs-programmable-invitations .pi-status svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  #cs-programmable-invitations .pi-center{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-height:0}
+  #cs-programmable-invitations .pi-center{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:0;width:100%}
   #cs-programmable-invitations .pi-engine{position:relative;width:100%;border:1.5px solid rgba(184,149,74,.36);border-radius:8px;background:rgba(251,247,239,.82);box-shadow:0 24px 64px rgba(26,22,18,.12),0 0 0 1px rgba(255,255,255,.45) inset;padding:34px 36px 30px;box-sizing:border-box}
   #cs-programmable-invitations .pi-engine-label{font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:950;letter-spacing:.24em;text-transform:uppercase;color:#b8954a;text-align:center;margin-bottom:28px}
   #cs-programmable-invitations .pi-flow{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:start}
@@ -25409,12 +25436,12 @@ window.csBrandV8Reverse = function() {
   #cs-programmable-invitations .pi-num{font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:950;color:#b8954a;line-height:1}
   #cs-programmable-invitations .pi-step h3{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.18rem;line-height:1.08;font-weight:850;color:#1a1612;margin:7px 0 7px}
   #cs-programmable-invitations .pi-step p{font-family:'Manrope',sans-serif;font-size:.78rem;line-height:1.26;font-weight:720;color:rgba(26,22,18,.62);margin:0 auto;max-width:150px}
-  #cs-programmable-invitations .pi-callout{width:min(660px,92%);border:1px solid rgba(184,149,74,.42);border-radius:8px;background:rgba(251,247,239,.82);box-shadow:0 18px 42px rgba(26,22,18,.10);padding:14px 24px;text-align:center;font-family:'Manrope',sans-serif;font-size:1.06rem;line-height:1.24;font-weight:820;color:#1a1612}
+  #cs-programmable-invitations .pi-callout{width:min(760px,92%);border:1px solid rgba(184,149,74,.42);border-radius:8px;background:rgba(251,247,239,.86);box-shadow:0 18px 42px rgba(26,22,18,.10);padding:16px 26px;text-align:center;font-family:'Manrope',sans-serif;font-size:1.06rem;line-height:1.24;font-weight:820;color:#1a1612}
   #cs-programmable-invitations .pi-callout strong{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.35rem;color:#b8954a;font-weight:850}
-  #cs-programmable-invitations .pi-chips{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;width:min(780px,100%)}
+  #cs-programmable-invitations .pi-chips{display:none;grid-template-columns:repeat(4,1fr);gap:10px;width:min(780px,100%)}
   #cs-programmable-invitations .pi-chip{display:grid;grid-template-columns:38px 1fr;align-items:center;gap:10px;min-height:64px;padding:10px 14px;border:1px solid rgba(184,149,74,.34);border-radius:8px;background:rgba(251,247,239,.78);font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:880;color:rgba(26,22,18,.76)}
   #cs-programmable-invitations .pi-chip svg{width:28px;height:28px;stroke:#b8954a;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  #cs-programmable-invitations .pi-footer{margin-top:10px;font-family:'Manrope',sans-serif;font-size:.92rem;line-height:1.34;font-weight:730;color:rgba(26,22,18,.60);text-align:center;max-width:900px}
+  #cs-programmable-invitations .pi-footer{display:none;margin-top:10px;font-family:'Manrope',sans-serif;font-size:.92rem;line-height:1.34;font-weight:730;color:rgba(26,22,18,.60);text-align:center;max-width:900px}
   #cs-programmable-invitations .pi-footer strong{color:#1a1612;font-weight:950}
   #cs-programmable-invitations .pi-side,#cs-programmable-invitations .pi-engine,#cs-programmable-invitations .pi-callout,#cs-programmable-invitations .pi-chip,#cs-programmable-invitations .pi-footer{opacity:0;transform:translateY(12px)}
   #cs-programmable-invitations[data-shown="1"] .pi-side,#cs-programmable-invitations[data-shown="1"] .pi-engine,#cs-programmable-invitations[data-shown="1"] .pi-callout,#cs-programmable-invitations[data-shown="1"] .pi-chip,#cs-programmable-invitations[data-shown="1"] .pi-footer{animation:piRise .7s cubic-bezier(.22,1,.36,1) both}
@@ -25427,7 +25454,7 @@ window.csBrandV8Reverse = function() {
   <div class="pi-noise"></div>
   <div class="pi-eyebrow slide-eyebrow">invitation engine</div>
   <section class="pi-stage">
-    <h1 class="pi-title">Invitations become a <em>programmable community engine.</em></h1>
+    <h1 class="pi-title">Every invite trains the <em>next invite.</em></h1>
     <div class="pi-grid">
       <article class="pi-side pi-left-top">
         <div class="pi-side-head">
@@ -25467,7 +25494,7 @@ window.csBrandV8Reverse = function() {
             </div>
           </div>
         </div>
-        <div class="pi-callout"><strong>Invite the anchor first.</strong> Then build outward based on fit, trust, and social pull.</div>
+        <div class="pi-callout"><strong>The product is the loop.</strong> Every accept, decline, referral, and repeat visit makes the next invitation smarter.</div>
         <div class="pi-chips">
           <div class="pi-chip"><svg viewBox="0 0 24 24"><path d="M4 6h12"/><path d="M4 12h16"/><path d="M4 18h10"/><path d="M18 6l2 2-2 2"/></svg><span>Sequential</span></div>
           <div class="pi-chip"><svg viewBox="0 0 24 24"><path d="M4 5h16l-6 7v6l-4 2v-8L4 5z"/></svg><span>Criteria-based</span></div>
@@ -26291,15 +26318,19 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-real-world-measurable-market .rwmm-market{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.42);text-align:right}
   #cs-real-world-measurable-market .rwmm-panel{position:relative;min-height:690px;border:2px solid rgba(184,149,74,.54);border-radius:8px;background:rgba(251,247,239,.55);box-shadow:0 28px 70px rgba(26,22,18,.10), inset 0 0 0 1px rgba(255,255,255,.35);overflow:hidden}
   #cs-real-world-measurable-market .rwmm-panel::before{content:"";position:absolute;inset:34px 40px;border:1.5px solid rgba(184,149,74,.36);border-radius:4px}
-  #cs-real-world-measurable-market .rwmm-panel-title{position:absolute;top:38px;left:44px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.55rem,3.55vw,4.15rem);font-weight:900;line-height:.94;letter-spacing:-.024em;color:#1a1612;z-index:2;text-shadow:0 1px 0 rgba(251,247,239,.70)}
+  #cs-real-world-measurable-market .rwmm-panel-title{position:absolute;top:38px;left:50%;transform:translateX(-50%);width:min(620px,82%);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,3.05vw,3.6rem);font-weight:900;line-height:.96;letter-spacing:-.024em;color:#1a1612;z-index:2;text-shadow:0 1px 0 rgba(251,247,239,.70)}
   #cs-real-world-measurable-market .rwmm-panel-title em{font-style:italic;color:#b8954a}
   #cs-real-world-measurable-market .rwmm-court{position:absolute;left:54px;right:54px;bottom:70px;height:392px;z-index:2}
-  #cs-real-world-measurable-market .rwmm-note{position:absolute;right:58px;top:196px;width:330px;font-family:'Manrope',sans-serif;font-size:.76rem;font-weight:900;line-height:1.42;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.48);text-align:right;z-index:2}
+  #cs-real-world-measurable-market .rwmm-note{position:absolute;left:50%;top:150px;transform:translateX(-50%);width:min(560px,78%);font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;line-height:1.38;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.55);text-align:center;z-index:2}
   #cs-real-world-measurable-market .rwmm-caption{position:absolute;left:58px;right:58px;bottom:30px;display:flex;justify-content:space-between;align-items:center;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.55);z-index:2}
   #cs-real-world-measurable-market .rwmm-caption strong{color:#c8462c}
+  #cs-real-world-measurable-market .rwmm-stage{opacity:0;transform:translateY(14px)}
+  #cs-real-world-measurable-market.casey-entered .rwmm-stage{animation:rwmmStageIn .72s cubic-bezier(.22,1,.36,1) .42s both}
+  @keyframes rwmmStageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  html[data-export="1"] #cs-real-world-measurable-market .rwmm-stage{opacity:1!important;transform:none!important;animation:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-real-world-measurable-market" style="display:none">
-  <img class="rwmm-bg" src="assets/cs-samecourt-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-fv6-measured-connection-bg.png'"/>
+  <img class="rwmm-bg" src="assets/cs-fv6-measured-connection-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-samecourt-bg.png'"/>
   <div class="rwmm-wash"></div>
   <div class="rwmm-eyebrow slide-eyebrow">Measuring the next frontier</div>
   <section class="rwmm-stage">
@@ -26320,7 +26351,7 @@ window.csProgrammableInvitationsReverse = function() {
     </div>
     <div class="rwmm-panel">
       <div class="rwmm-panel-title">Social <em>pull</em></div>
-      <div class="rwmm-note" aria-hidden="true"></div>
+      <div class="rwmm-note">The next frontier makes real-world connection measurable.</div>
       <svg class="rwmm-court" viewBox="0 0 760 392" role="img" aria-label="Social pull turns local connection into a measurable market">
         <defs>
           <radialGradient id="rwmmGlow" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="rgba(255,226,142,.80)"/><stop offset="54%" stop-color="rgba(184,149,74,.18)"/><stop offset="100%" stop-color="rgba(184,149,74,0)"/></radialGradient>
@@ -31798,8 +31829,8 @@ window.csA7m1Reverse = function() {
 
 <!-- ===== cs-2c — Real-world social communities · 6-card grid (ported from pitch-communities.html, paper-mode) [Dave 2026-04-30 PM evening] ===== -->
 <style>
-  #cs-2c { background:#1a1612 !important; overflow:hidden; position:relative; min-height:100vh; }
-  #cs-2c > section { min-height:100vh !important; height:100vh !important; }
+  #cs-2c { background:#1a1612 !important; overflow:hidden; position:relative; min-height:100%; height:100%; width:100%; }
+  #cs-2c > section { min-height:100% !important; height:100% !important; width:100% !important; }
   #cs-2c::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:url('assets/cs-2c-v2-community-listening.png') center/cover no-repeat !important; opacity:.54; filter:saturate(.92) contrast(.98); mix-blend-mode:normal; }
   #cs-2c::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%) !important; }
   #cs-2c[data-shown="0"] .inner { opacity:0 !important; visibility:hidden !important; transform:translateY(14px) !important; animation:none !important; pointer-events:none !important; transition:opacity .62s cubic-bezier(.22,1,.36,1), transform .62s cubic-bezier(.22,1,.36,1), visibility 0s linear .62s; }
@@ -35343,19 +35374,19 @@ window.csA7m1Reverse = function() {
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // Codex 2026-06-05: process gnr-annotations (3) safe registry moves; active removals moved to appendix or same-slot alts.
+  // Codex 2026-06-06: annotation batch 5 order edits; cs-11e moves before invitation-feed rise, cs-18-vd4 moves later, silliness board promoted.
   'cs-frontier-scale-pink-2',
   'cs-1m8',
   'cs-thegap',
   'cs-invite-operational-insanity-pink',
-  'cs-gnr',
   'cs-11e',
-  'cs-18-vd4',
+  'cs-gnr',
   'cs-samecourt-pyramid-white2',
   'cs-invitation-word-of-mouth',
   'cs-programmable-invitations',
   'cs-app-store-people',
   'cs-real-world-measurable-market',
+  'cs-18-vd4',
   'cs-samecourt',
   'cs-wedgepb-codex',
   'cs-wedge1',
@@ -35365,7 +35396,7 @@ const SLIDE_ORDER = [
   'cs-value-choice-image-annotated-pink',
   'cs-brand-V8',
   'cs-fw1',
-  'cs-pb-silliness-feature',
+  'cs-pb-silliness-board-green',
   'cs-club-os',
   'cs-teamreach-referral-compare',
 ];
@@ -35377,10 +35408,10 @@ const TOTAL = SLIDE_ORDER.length;
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
   3: ['cs-optimus-party-overhead-pink'],
-  8: ['cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  11: ['cs-magnetic-human-value-market', 'cs-magnetic'],
+  7: ['cs-samecourt-pyramid-blue-human-base', 'cs-samecourt-pyramid-blue-contrast', 'cs-samecourt-pyramid-blue-joy-map', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
+  10: ['cs-magnetic-human-value-market', 'cs-magnetic'],
   21: ['cs-16'],
-  22: ['cs-pb-lab-right-lab-pink', 'cs-pb-silliness-board-green', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-story-score-pink', 'cs-pb-silliness-story-decision-pink', 'cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual2-pink'],
+  22: ['cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink', 'cs-pb-silliness-ritual2-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -35388,10 +35419,9 @@ const SLIDE_ALTS = {
 // generated alts clone the active main slide at runtime, insert one emotional
 // image layer behind the cloned content, and register as same-slot green dots.
 const CODEX_BG_REVIEW_ALTS = [
-  { slot: 12, sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
-  { slot: 4,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
-  { slot: 5,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/cs-11d-cultural-shift-v2-bg.png' },
-  { slot: 6,  sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
+  { slot: 17, sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
+  { slot: 13, sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
+  { slot: 5,  sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
 ];
 
 const CODEX_BG_REVIEW_GLASS_CARD_ALTS = new Set(['cs-2c-bg-green']);
@@ -35550,6 +35580,11 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  // Codex 2026-06-06: annotation batch 5 move/delete requests; retained for recovery.
+  'cs-pb-silliness-feature',
+  'cs-pb-silliness-story-decision-pink',
+  'cs-pb-silliness-carnival-pink',
+  'cs-pb-silliness-story-score-pink',
   // Codex 2026-06-05: processed gnr-annotations (4) delete requests; removed from active alt rails.
   'cs-referral-builder-pink',
   'cs-pb-silliness-white-mosaic',
@@ -37231,40 +37266,31 @@ function animateCsa2Expansion() {
 // Slide labels for tooltips. MUST mirror SLIDE_ORDER exactly (index 0 placeholder, then 1:1 with SLIDE_ORDER).
 // Rebuilt 2026-05-06 PM v2 — was wildly out of sync (showing wrong slide names like "Cost of Honesty" on slot 12).
 const slideLabels = [
-  '', // 0 placeholder
-  'Give n Receive',                                  //  1 cs-1
-  'Social media · narrow view of human connection',  //  2 cs-a7 [Dave 2026-05-07: promoted to main slot 2]
-  'Modern life · two imbalances',                    //  3 cs-1bm1
-  'Community technology is unsolved',                //  4 cs-thegap
-  "Give n Receive = community",                     //  5 cs-2c
-  // cs-once label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
-  'Introducing Give n Receive',                      //  7 cs-gnr
-  'Club owner offer',
-  'Community growth system',
-  'Anti-DUPR position',
-  'The Secret Inside the Invitation · 70/0.6',      //  6 cs-11d
-  'Scheduling is measuring',                         //  7 cs-11
-  'NEPC proof · $210K court fees',                   //  9 cs-11e
-  'Pickleball pyramid · GnR wedge',
-  // cs-brand-V9 + cs-brand-V15 labels REMOVED from main 2026-05-07 PM — both moved to appendix end
-  'Brand: live a life of abundant, autonomous connection · Human Value, Finally Seen',   // 12 cs-brand-V8 [REVERTED 2026-05-08 to pre-jaw-drop state per Dave: 'revert to what you had just before you changed the header text']
-  // [Dave 2026-05-08] slot 13 = measurement-is-the-network review (cs-measure primary). Alts cs-byproduct + cs-onandoff don't get separate label slots — alt-dot tooltips read from each slide's own eyebrow.
-  'A pickleball coordination system becomes its social network', // 13 cs-onandoff [PROMOTED to primary per Dave 2026-05-08 v3 — v1 headline restored, Krista Slack proof block]
-  'Why pickleball first',                            // 14 cs-25
-  'Autonomous social coordination',                  // 14 cs-fw1 (moved from appendix to main slot 14 per Dave 2026-05-07 PM)
-  'Every natural community touchpoint trains GnR',   // 15 cs-16 [v2 2026-05-08 — 'community' inserted in headline; Concierge moved above Diary]
-  'The AI Inversion',                                // 16 cs-hc8 (moved from appendix to main slot 15 per Dave 2026-05-07 PM)
-  'The Wedge Into Human Connection',              // 17 cs-wedge1 [promoted from blue-dot alt 2026-05-10]
-  'Future of our communities',                       // 17 cs-future
-  'My Wheelhouse · Dave Velardo',                    // 16 cs-18 [eyebrow renamed 2026-05-08]
-  'The Founder Method · The Living Lab',             // 17 cs-lab [NEW Dave 2026-05-08 — Dave\'s iteration method + NEPC domain-expert team]
-  'CTO · Steve Callan',                              // 18 cs-27
-  // 'Mission · variant A' label removed — cs-mv6-altA deleted from main flow 2026-05-06 PM (10x version moved to appendix as cs-mv6-app)
-  'Mission · run on abundant human connection',      // 19 cs-mv6 (era-cards version restored to main flow per Dave 2026-05-07)
-  'Our Promise',                                     // 21 cs-prom (now last main slide)
-  // cs-hc11 label removed from main — moved to first appendix slide per Dave 2026-05-07 PM
-  // 'What is your human value to others?' label removed — cs-hc12 deleted from main flow 2026-05-06 PM per Dave
-  // cs-hc9 label removed at end — moved to slot 13 (right after cs-12m2) per Dave 2026-05-06 PM
+  '',
+  'Give n Receive',                      //  1 cs-frontier-scale-pink-2
+  'Social media / narrow view',          //  2 cs-1m8
+  'Community technology is unsolved',    //  3 cs-thegap
+  'Custom invitations are operationally hard', //  4 cs-invite-operational-insanity-pink
+  'NEPC proof / proving ground',         //  5 cs-11e
+  'Rise of the personalized invitation feed', //  6 cs-gnr
+  'Pickleball pyramid / GnR wedge',      //  7 cs-samecourt-pyramid-white2
+  'Invitations mechanize word of mouth', //  8 cs-invitation-word-of-mouth
+  'Every invite trains the next invite', //  9 cs-programmable-invitations
+  'App store for people',                // 10 cs-app-store-people
+  'Measuring the next frontier',         // 11 cs-real-world-measurable-market
+  'Founder wheelhouse',                  // 12 cs-18-vd4
+  'SameCourt paradigm flip',             // 13 cs-samecourt
+  'Pickleball wedge',                    // 14 cs-wedgepb-codex
+  'The wedge into human connection',     // 15 cs-wedge1
+  'Community intelligence flywheel',     // 16 cs-fv6-img
+  'Communities run on connection',       // 17 cs-2c
+  'Mission / abundant connection',       // 18 cs-mv6-merge
+  'Human connection value question',     // 19 cs-value-choice-image-annotated-pink
+  'Brand promise',                       // 20 cs-brand-V8
+  'Drop into any pickleball community',  // 21 cs-fw1
+  'Pickleball silliness brings out GnR', // 22 cs-pb-silliness-board-green
+  'Club owner offer',                    // 23 cs-club-os
+  'TeamReach vs GnR',                    // 24 cs-teamreach-referral-compare
 ];
 
 // ─── Tooltip text resolver [Dave 2026-05-07] ────────────────────────────────
@@ -37437,9 +37463,9 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isPinkAlt = (isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-market-two-economics' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
-    const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
+    const isPurpleAlt = (altId === 'cs-pb-silliness-generated-sections-pink' || altId === 'cs-pb-silliness-generated-kitchen-pink' || altId === 'cs-pb-silliness-generated-apology-pink' || altId === 'cs-pb-silliness-generated-rotation-pink' || altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
-    const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
+    const isBlueAlt = (altId === 'cs-samecourt-pyramid-blue-human-base' || altId === 'cs-samecourt-pyramid-blue-contrast' || altId === 'cs-samecourt-pyramid-blue-joy-map' || altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
     const isWhiteAlt = (altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market' || altId === 'cs-pb-silliness-white-mosaic' || altId === 'cs-pb-silliness-white-social-test');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     const isGreenAlt = /^cs-pb-silliness-.*-green$/.test(altId) || (Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId));
@@ -40889,6 +40915,31 @@ const PROCESSED_ANNOTATION_IDS = new Set([
   'ann-1780710904926',
   'ann-1780710961971',
   'ann-1780710968749',
+  'ann-1780710021604',
+  'ann-1780710107024',
+  'ann-1780710338027',
+  'ann-1780710346702',
+  'ann-1780750060749',
+  'ann-1780710786681',
+  'ann-1780710979131',
+  'ann-1780749799462',
+  'ann-1780749831149',
+  'ann-1780749857686',
+  'ann-1780749879413',
+  'ann-1780749952978',
+  'ann-1780750129685',
+  'ann-1780750240325',
+  'ann-1780750156824',
+  'ann-1780750177610',
+  'ann-1780750212905',
+  'ann-1780750273986',
+  'ann-1780750345914',
+  'ann-1780750377618',
+  'ann-1780750423834',
+  'ann-1780750462206',
+  'ann-1780750494963',
+  'ann-1780750504803',
+  'ann-1780750510952',
 ]);
 
 function pruneProcessedAnnotations(store) {
