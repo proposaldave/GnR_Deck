@@ -140,13 +140,9 @@
   #cs-teamreach-referral-compare::before {
     content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
     background:
-      radial-gradient(circle at 21% 56%,rgba(91,143,212,.22) 0 9px,transparent 10px),
-      radial-gradient(circle at 29% 47%,rgba(91,143,212,.16) 0 7px,transparent 8px),
-      radial-gradient(circle at 75% 43%,rgba(200,70,44,.22) 0 11px,transparent 12px),
-      radial-gradient(circle at 83% 57%,rgba(200,70,44,.16) 0 8px,transparent 9px),
-      linear-gradient(90deg,rgba(243,234,216,.98),rgba(243,234,216,.82) 48%,rgba(243,234,216,.96)),
-      radial-gradient(circle at 50% 52%,rgba(184,149,74,.20),transparent 38%),
-      linear-gradient(135deg,rgba(91,143,212,.08),transparent 42%,rgba(200,70,44,.08));
+      linear-gradient(90deg,rgba(243,234,216,.96),rgba(243,234,216,.72) 46%,rgba(243,234,216,.94)),
+      radial-gradient(circle at 50% 52%,rgba(184,149,74,.18),transparent 40%),
+      url('assets/generated/annotation7/teamreach-growth-bg.png') center/cover no-repeat;
   }
   #cs-teamreach-referral-compare .trc-eye {
     position:absolute; top:28px; left:48px; z-index:10;
@@ -13758,8 +13754,20 @@ window.csInvitationWordOfMouthAdvance = function() {
     background:linear-gradient(90deg, rgba(251,247,239,.94) 0%, rgba(251,247,239,.70) 35%, rgba(251,247,239,.10) 64%),
       linear-gradient(0deg, rgba(251,247,239,.86) 0%, transparent 46%);
   }
-  #cs-pb-silliness-board-green .psg-board-rail{position:absolute;left:50%;bottom:42px;transform:translateX(-50%);z-index:8;display:flex;gap:10px;align-items:center;justify-content:center;max-width:92%;padding:12px 14px;border-radius:999px;background:rgba(251,247,239,.84);border:1px solid rgba(184,149,74,.32);box-shadow:0 16px 38px rgba(26,22,18,.12);backdrop-filter:blur(8px)}
-  #cs-pb-silliness-board-green .psg-board-rail span{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;white-space:nowrap}
+  #cs-pb-silliness-board-green .psg-board-rail{display:none!important}
+  #cs-pb-silliness-board-green .psg-board-tags{position:absolute;inset:0;z-index:8;pointer-events:none}
+  #cs-pb-silliness-board-green .psg-board-tags span{position:absolute;transform:translateX(-50%);padding:8px 12px;border-radius:999px;background:rgba(251,247,239,.88);border:1px solid rgba(184,149,74,.38);box-shadow:0 12px 28px rgba(26,22,18,.14);font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;white-space:nowrap}
+  #cs-pb-silliness-board-green .psg-board-tags span:nth-child(1){left:16.5%;top:47%}
+  #cs-pb-silliness-board-green .psg-board-tags span:nth-child(2){left:50%;top:47%}
+  #cs-pb-silliness-board-green .psg-board-tags span:nth-child(3){left:83.5%;top:47%}
+  #cs-pb-silliness-board-green .psg-board-tags span:nth-child(4){left:16.5%;top:91%}
+  #cs-pb-silliness-board-green .psg-board-tags span:nth-child(5){left:50%;top:91%}
+  #cs-pb-silliness-board-green .psg-board-tags span:nth-child(6){left:83.5%;top:91%}
+  #cs-pb-silliness-social-green .psg-callout{width:248px!important;min-height:76px!important;display:flex!important;flex-direction:column!important;justify-content:center!important}
+  #cs-pb-silliness-social-green .psg-callout:nth-of-type(1){left:154px!important;top:186px!important}
+  #cs-pb-silliness-social-green .psg-callout:nth-of-type(2){right:178px!important;top:184px!important}
+  #cs-pb-silliness-social-green .psg-callout:nth-of-type(3){left:154px!important;bottom:178px!important}
+  #cs-pb-silliness-social-green .psg-callout:nth-of-type(4){right:178px!important;bottom:178px!important}
   #cs-pb-silliness-ritual2-pink .psg-scrim {
     background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.58) 40%, transparent 70%);
   }
@@ -14181,6 +14189,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   <div class="psg-eye slide-eyebrow">Pickleball silliness brings out Give n Receive</div>
   <div class="psg-board-rail"><span>Silly score</span><span>Toy ball</span><span>Dink kitchen</span><span>Weird form</span><span>Net apology</span></div>
   <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-board-green.png" alt="Image-generated six-panel pickleball silliness board: score confusion, toy ball, kitchen dinks, speedup, weird form, and net apology." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
+  <div class="psg-board-tags" aria-hidden="true"><span>Silly score</span><span>Toy ball</span><span>Dink kitchen</span><span>Speedup chaos</span><span>Weird form</span><span>Net apology</span></div>
 </div>
 
 <div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-social-green" style="display:none">
@@ -14191,7 +14200,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   <div class="psg-callout" style="right:190px;bottom:166px"><b>Invite back</b><span>The room reveals who people want again.</span></div>
 </div>
 
-<div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-decision-green" style="display:none">
+<div class="casey-slide ds-focus psj-slide psg-slide psg-green trash-slide" id="cs-pb-silliness-decision-green" data-deleted="1" style="display:none !important">
   <img class="psg-bg" src="assets/generated/silliness-green-dots/silliness-decision-green.png" alt="Image-generated pickleball decision board: keep dinking, roll the dice with a speedup, middle confusion, and low-ball patience." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
   <div class="psg-callout" style="left:430px;top:94px"><b>Keep dinking</b><span>Sometimes the strategy is patience forever.</span></div>
   <div class="psg-callout" style="right:474px;top:318px"><b>Core choice</b><span>Stay slow or roll the dice early.</span></div>
@@ -14200,7 +14209,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   <div class="psg-callout" style="right:112px;bottom:118px"><b>Low ball wins</b><span>Ugly form survives when the ball lands well.</span></div>
 </div>
 
-<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-generated-sections-pink" style="display:none">
+<div class="casey-slide ds-focus psj-slide psg-slide trash-slide" id="cs-pb-silliness-generated-sections-pink" data-deleted="1" style="display:none !important">
   <img class="psg-bg" src="assets/generated/silliness-pink-dots/sections-labeled.png" alt="Image-generated pickleball silliness scene labeled Toy ball, Weird score, Soft dink, Mixed partners, and Invite back." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
 </div>
 
@@ -14212,15 +14221,15 @@ window.csInvitationWordOfMouthAdvance = function() {
   <img class="psg-bg" src="assets/generated/silliness-pink-dots/net-apology-labeled.png" alt="Image-generated pickleball net-cord apology scene labeled Apologize, Net drip, Laugh, and Paddle tap." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
 </div>
 
-<div class="casey-slide ds-focus psj-slide psg-slide" id="cs-pb-silliness-generated-rotation-pink" style="display:none">
+<div class="casey-slide ds-focus psj-slide psg-slide trash-slide" id="cs-pb-silliness-generated-rotation-pink" data-deleted="1" style="display:none !important">
   <img class="psg-bg" src="assets/generated/silliness-pink-dots/rotation-invite-labeled.png" alt="Image-generated pickleball rotation and invite-back scene labeled Mixed partners, Rotate, Welcome, and Invite back." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
 </div>
 
-<div class="casey-slide ds-focus psj-slide psg-slide psg-image-only" id="cs-pb-silliness-purple-chaotic-bounce" style="display:none" aria-label="Purple-dot image-only pickleball silliness candidate: chaotic bounce">
+<div class="casey-slide ds-focus psj-slide psg-slide psg-image-only trash-slide" id="cs-pb-silliness-purple-chaotic-bounce" data-deleted="1" style="display:none !important" aria-label="Purple-dot image-only pickleball silliness candidate: chaotic bounce">
   <img class="psg-bg" src="assets/generated/silliness-purple-dots/chaotic-bounce.png" alt="Image-generated pickleball silliness scene: adults laughing at an absurd plastic-ball bounce on an indoor court." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
 </div>
 
-<div class="casey-slide ds-focus psj-slide psg-slide psg-image-only" id="cs-pb-silliness-purple-rotation-confusion" style="display:none" aria-label="Purple-dot image-only pickleball silliness candidate: rotation confusion">
+<div class="casey-slide ds-focus psj-slide psg-slide psg-image-only trash-slide" id="cs-pb-silliness-purple-rotation-confusion" data-deleted="1" style="display:none !important" aria-label="Purple-dot image-only pickleball silliness candidate: rotation confusion">
   <img class="psg-bg" src="assets/generated/silliness-purple-dots/rotation-confusion.png" alt="Image-generated pickleball silliness scene: mixed adult players laughing through harmless rotation confusion." onerror="this.onerror=null;this.src='assets/generated/silliness-signal/candidate-a.png'"/>
 </div>
 
@@ -16424,9 +16433,9 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-invite-operational-insanity-pink .invp-bg-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.70) 34%,rgba(251,247,239,.34) 62%,rgba(251,247,239,.10) 100%),linear-gradient(0deg,rgba(251,247,239,.18) 0%,rgba(251,247,239,.08) 34%,rgba(251,247,239,0) 62%);z-index:0;pointer-events:none}
   #cs-invite-operational-insanity-pink .invp-title{max-width:1180px;text-shadow:0 2px 18px rgba(251,247,239,.92),0 1px 1px rgba(251,247,239,.86)}
   #cs-invite-operational-insanity-pink .invp-arrows{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;max-width:1660px;margin:14px 0 -2px;pointer-events:none}
-  #cs-invite-operational-insanity-pink .invp-arrows span{position:relative;height:34px}
-  #cs-invite-operational-insanity-pink .invp-arrows span:before{content:"";position:absolute;left:50%;top:0;width:2px;height:24px;background:linear-gradient(180deg,rgba(200,70,44,.18),#c8462c);transform:translateX(-50%)}
-  #cs-invite-operational-insanity-pink .invp-arrows span:after{content:"";position:absolute;left:50%;top:22px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid #c8462c;transform:translateX(-50%);filter:drop-shadow(0 4px 8px rgba(200,70,44,.22))}
+  #cs-invite-operational-insanity-pink .invp-arrows span{position:relative;height:44px}
+  #cs-invite-operational-insanity-pink .invp-arrows span:before{content:"";position:absolute;left:50%;top:0;width:5px;height:30px;border-radius:999px;background:linear-gradient(180deg,rgba(200,70,44,.42),#c8462c);transform:translateX(-50%);box-shadow:0 8px 18px rgba(200,70,44,.28)}
+  #cs-invite-operational-insanity-pink .invp-arrows span:after{content:"";position:absolute;left:50%;top:28px;width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:15px solid #c8462c;transform:translateX(-50%);filter:drop-shadow(0 5px 10px rgba(200,70,44,.34))}
   .invp-slide.casey-entered .invp-wrap,.invp-slide.casey-entered .invp-bg{opacity:1;transform:none}
   .invp-wrap,.invp-bg{opacity:0;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
   #cs-invite-operational-insanity-pink.casey-entered .invp-bg{opacity:1;transform:none}
@@ -16439,6 +16448,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-invite-operational-insanity-pink .invp-card:nth-child(3) .invp-card-icon{color:#5B8FD4}
   #cs-invite-operational-insanity-pink .invp-card:nth-child(4) .invp-card-icon{color:#1a1612}
   #cs-invite-operational-insanity-pink .invp-card-icon svg{width:38px;height:38px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  #cs-invite-operational-insanity-pink .invp-card b{font-weight:950;color:#c8462c}
   #cs-invite-operational-insanity-pink .invp-card span{font-size:1.12rem;line-height:1.12}
   html[data-export="1"] .invp-wrap,html[data-export="1"] .invp-bg{opacity:1!important;transform:none!important;transition:none!important}
 </style>
@@ -22528,8 +22538,13 @@ window.csBrandV8Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-value-choice-image-annotated-pink" style="display:none" aria-label="Annotated product value visual concept">
   <img class="vcio-bg" src="assets/cs-value-choice-image-only-pink.png" alt="Human connection circle surrounded by products with value labels."/>
   <div class="vcio-scrim" aria-hidden="true"></div>
-  <div class="vcio-question">What is human connection worth?</div>
-  <div class="vcio-clean-note">The product value question points back to the room.</div>
+  <div class="vcio-question">Which product is most valuable to you?</div>
+  <div class="vcio-label tv"><div class="vcio-mark netflix">N</div><div><b>Netflix</b><small>$300B+ sold</small></div></div>
+  <div class="vcio-label phone"><div class="vcio-mark apple"><svg viewBox="0 0 64 76" aria-hidden="true"><path d="M45.6 39.5c-.1-8 6.5-11.8 6.8-12-3.8-5.5-9.6-6.2-11.6-6.3-4.9-.5-9.5 2.9-12 2.9-2.6 0-6.4-2.8-10.5-2.7-5.4.1-10.4 3.2-13.2 8.1-5.7 9.9-1.5 24.4 4 32.4 2.7 3.9 5.9 8.2 10.1 8.1 4.1-.2 5.6-2.6 10.5-2.6 4.9 0 6.3 2.6 10.6 2.5 4.4-.1 7.2-4 9.8-7.9 3.1-4.5 4.4-8.9 4.5-9.1-.1-.1-8.9-3.4-9-13.4zM37.6 16.1c2.2-2.7 3.7-6.4 3.3-10.1-3.2.1-7.1 2.1-9.4 4.8-2.1 2.4-3.9 6.2-3.4 9.9 3.6.3 7.2-1.8 9.5-4.6z"/></svg></div><div><b>iPhone</b><small>$2T+ devices</small></div></div>
+  <div class="vcio-label search"><div class="vcio-mark google">G</div><div><b>Google Search</b><small>$3T+ ads sold</small></div></div>
+  <div class="vcio-label laptop"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg></div><div><b>AI tools</b><small>$2.5T spend</small></div></div>
+  <div class="vcio-label cola"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
+  <div class="vcio-clean-note">All that value, or the room that makes life worth living?</div>
 </div>
 
 <div class="casey-slide ds-focus" id="cs-value-choice-image-receipts-pink" style="display:none" aria-label="Receipts-led product value visual concept">
@@ -22720,11 +22735,6 @@ window.csBrandV8Reverse = function() {
         <div class="v8-cap-r">
           <div class="v8-cap-body" style="text-align:center"><span style="color:#c8462c;font-style:normal;font-weight:800">You</span> get the most out of <em>your community</em>.</div>
         </div>
-      </div>
-
-      <div class="v8-contact" style="margin-top:14px;padding-top:16px;border-top:1px solid rgba(184,149,74,0.32);font-family:'Manrope',sans-serif;text-align:center;color:rgba(26,22,18,0.74);line-height:1.55">
-        <div style="font-size:.86rem;font-weight:800;color:#1a1612">Dave Velardo &middot; Founder &amp; CEO</div>
-        <div style="font-size:.78rem;font-weight:600"><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.74);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.45)">dave@givenreceive.com</a> &middot; <a href="tel:+19786040223" style="color:rgba(26,22,18,0.74);text-decoration:none">978-604-0223</a></div>
       </div>
 
       <!-- [Dave 2026-05-18 LATEST v2] 'Most human value is invisible. So it never returns.' kicker DELETED per Dave 'delete this text'. The header + galaxy + diptych carry the brand thesis on their own. HTML retained as silent backup. -->
@@ -25083,6 +25093,8 @@ window.csBrandV8Reverse = function() {
   .scpyr-generated-pyramid .scpyr-gen-label{position:absolute;left:50%;z-index:4;transform:translateX(-50%);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,3vw,3.55rem);line-height:1;font-weight:900;letter-spacing:.02em;text-transform:uppercase;text-shadow:0 2px 0 rgba(251,247,239,.70),0 18px 42px rgba(26,22,18,.18);pointer-events:none}
   .scpyr-generated-pyramid .scpyr-gen-label.serious{top:164px;color:#9f3b26}
   .scpyr-generated-pyramid .scpyr-gen-label.silly{top:418px;color:#1f5f9c}
+  #cs-samecourt-pyramid-blue-two-section-01 .scpyr-gen-label,#cs-samecourt-pyramid-blue-two-section-02 .scpyr-gen-label,#cs-samecourt-pyramid-blue-two-section-03 .scpyr-gen-label,#cs-samecourt-pyramid-blue-two-section-04 .scpyr-gen-label{display:none!important}
+  #cs-samecourt-pyramid-blue-two-section-01 .scpyr-generated-bg,#cs-samecourt-pyramid-blue-two-section-02 .scpyr-generated-bg,#cs-samecourt-pyramid-blue-two-section-03 .scpyr-generated-bg,#cs-samecourt-pyramid-blue-two-section-04 .scpyr-generated-bg{object-position:center 58%;transform:scale(1.035);transform-origin:center 68%}
   html[data-export="1"] .scpyr-slide .scpyr-bg{opacity:.86!important}
 </style>
 
@@ -25162,11 +25174,11 @@ window.csBrandV8Reverse = function() {
   <div class="scpyr-gen-label serious">SERIOUS</div>
   <div class="scpyr-gen-label silly">SILLY</div>
 </div>
-<div class="casey-slide ds-focus scpyr-blue scpyr-blue-contrast" id="cs-samecourt-pyramid-blue-contrast" style="display:none">
+<div class="casey-slide ds-focus scpyr-blue scpyr-blue-contrast trash-slide" id="cs-samecourt-pyramid-blue-contrast" data-deleted="1" style="display:none !important">
   <div class="slide-eyebrow">Pyramid image concept / contrast</div>
   <section class="scpyr-blue-stage"><div class="scpyr-blue-pyramid"><div class="apex"><span>tight serious play</span></div><div class="base"><span>laughter, welcome, return play</span></div></div><div class="scpyr-blue-copy"><h1>The club is built on<br><em>the base.</em></h1><p>The investable market is not the narrow top. It is the giant bottom that wants connection.</p></div></section>
 </div>
-<div class="casey-slide ds-focus scpyr-blue scpyr-blue-joy" id="cs-samecourt-pyramid-blue-joy-map" style="display:none">
+<div class="casey-slide ds-focus scpyr-blue scpyr-blue-joy trash-slide" id="cs-samecourt-pyramid-blue-joy-map" data-deleted="1" style="display:none !important">
   <div class="slide-eyebrow">Pyramid image concept / joy map</div>
   <section class="scpyr-blue-stage"><div class="scpyr-blue-pyramid"><div class="apex"><span>ratings</span></div><div class="base"><span>belonging compounds</span></div></div><div class="scpyr-blue-copy"><h1>Pickleball's wedge is<br><em>social abundance.</em></h1><p>Ratings explain the top. GnR explains why the base keeps coming back.</p></div></section>
 </div>
@@ -25250,10 +25262,10 @@ window.csBrandV8Reverse = function() {
   <div class="scpyr-wash" aria-hidden="true"></div>
   <div class="scpyr-eyebrow">players today / potential market</div>
   <h1 class="scpyr-title">The pyramid shows the <em>market map.</em></h1>
-  <div class="image-label">Apex: best match</div>
+  <div class="image-label">Top: best match</div>
   <div class="base-label">Base: most connection</div>
   <div class="scpyr-panel map-panel">
-    <div class="map-row apex"><div><strong>Apex</strong><span>top section</span></div><p>Limited competitive slice: ~7.5M core players, ratings products, match quality, higher price sensitivity.</p></div>
+    <div class="map-row apex"><div><strong>Competitive top</strong><span>top section</span></div><p>Limited competitive slice: ~7.5M core players; 50+ league, tournament, rating products chase match quality and price-sensitive competitors.</p></div>
     <div class="map-row base"><div><strong>Base</strong><span>bottom section</span></div><p>Large social market: 16.8M casual/social players today, 90M+ team-sport adults, belonging and repeat community.</p></div>
   </div>
 </div>
@@ -25264,9 +25276,9 @@ window.csBrandV8Reverse = function() {
   <div class="scpyr-eyebrow">one-image market slide</div>
   <h1 class="scpyr-title">A small competitive apex. A massive social base.</h1>
   <div class="scpyr-panel apex-tag">
-    <p class="scpyr-label">Apex</p>
+    <p class="scpyr-label">Competitive top</p>
     <h2>Best match.</h2>
-    <p>Competitive tools sort the limited rating-driven slice.</p>
+    <p>50+ league, tournament, rating products already sort the limited rating-driven slice.</p>
   </div>
   <div class="scpyr-panel base-tag">
     <p class="scpyr-label">Base</p>
@@ -25496,7 +25508,7 @@ window.csBrandV8Reverse = function() {
   #cs-programmable-invitations .pi-noise{position:absolute;inset:0;z-index:1;opacity:.16;background-image:linear-gradient(rgba(26,22,18,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(26,22,18,.035) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse at 50% 48%,#000 0%,rgba(0,0,0,.66) 54%,transparent 90%)}
   #cs-programmable-invitations .pi-eyebrow{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
   #cs-programmable-invitations .pi-stage{position:absolute;inset:0;z-index:2;padding:74px 78px 46px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center}
-  #cs-programmable-invitations .pi-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.25rem,5.2vw,5.95rem);line-height:.96;font-weight:880;letter-spacing:0;text-align:center;margin:0;color:#1a1612;text-shadow:none}
+  #cs-programmable-invitations .pi-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.25rem,5.2vw,5.95rem);line-height:.96;font-weight:880;letter-spacing:0;text-align:center;margin:0;color:#1a1612;text-shadow:none;opacity:0;transform:translateY(12px)}
   #cs-programmable-invitations .pi-title em{font-style:normal;color:#b8954a;text-shadow:none}
   #cs-programmable-invitations .pi-sub{font-family:'Manrope',sans-serif;font-size:clamp(1rem,1.25vw,1.34rem);line-height:1.3;font-weight:760;text-align:center;color:rgba(26,22,18,.66);margin:14px 0 20px;max-width:980px}
   #cs-programmable-invitations .pi-grid{width:100%;max-width:1180px;display:grid;grid-template-columns:1fr;grid-template-rows:1fr;gap:0;align-items:center;justify-items:center;flex:1;min-height:0}
@@ -25535,17 +25547,17 @@ window.csBrandV8Reverse = function() {
   #cs-programmable-invitations .pi-footer{display:none;margin-top:10px;font-family:'Manrope',sans-serif;font-size:.92rem;line-height:1.34;font-weight:730;color:rgba(26,22,18,.60);text-align:center;max-width:900px}
   #cs-programmable-invitations .pi-footer strong{color:#1a1612;font-weight:950}
   #cs-programmable-invitations .pi-side,#cs-programmable-invitations .pi-engine,#cs-programmable-invitations .pi-callout,#cs-programmable-invitations .pi-chip,#cs-programmable-invitations .pi-footer{opacity:0;transform:translateY(12px)}
-  #cs-programmable-invitations[data-shown="1"] .pi-side,#cs-programmable-invitations[data-shown="1"] .pi-engine,#cs-programmable-invitations[data-shown="1"] .pi-callout,#cs-programmable-invitations[data-shown="1"] .pi-chip,#cs-programmable-invitations[data-shown="1"] .pi-footer{animation:piRise .7s cubic-bezier(.22,1,.36,1) both}
-  #cs-programmable-invitations[data-shown="1"] .pi-left-top{animation-delay:.14s}#cs-programmable-invitations[data-shown="1"] .pi-right-top{animation-delay:.24s}#cs-programmable-invitations[data-shown="1"] .pi-engine{animation-delay:.34s}#cs-programmable-invitations[data-shown="1"] .pi-left-bottom{animation-delay:.44s}#cs-programmable-invitations[data-shown="1"] .pi-right-bottom{animation-delay:.54s}#cs-programmable-invitations[data-shown="1"] .pi-callout{animation-delay:.64s}#cs-programmable-invitations[data-shown="1"] .pi-chip{animation-delay:.72s}#cs-programmable-invitations[data-shown="1"] .pi-footer{animation-delay:.82s}
+  #cs-programmable-invitations[data-shown="1"] .pi-title,#cs-programmable-invitations[data-shown="1"] .pi-side,#cs-programmable-invitations[data-shown="1"] .pi-engine,#cs-programmable-invitations[data-shown="1"] .pi-callout,#cs-programmable-invitations[data-shown="1"] .pi-chip,#cs-programmable-invitations[data-shown="1"] .pi-footer{animation:piRise .7s cubic-bezier(.22,1,.36,1) both}
+  #cs-programmable-invitations[data-shown="1"] .pi-title{animation-delay:.05s}#cs-programmable-invitations[data-shown="1"] .pi-left-top{animation-delay:.14s}#cs-programmable-invitations[data-shown="1"] .pi-right-top{animation-delay:.24s}#cs-programmable-invitations[data-shown="1"] .pi-engine{animation-delay:.34s}#cs-programmable-invitations[data-shown="1"] .pi-left-bottom{animation-delay:.44s}#cs-programmable-invitations[data-shown="1"] .pi-right-bottom{animation-delay:.54s}#cs-programmable-invitations[data-shown="1"] .pi-callout{animation-delay:.64s}#cs-programmable-invitations[data-shown="1"] .pi-chip{animation-delay:.72s}#cs-programmable-invitations[data-shown="1"] .pi-footer{animation-delay:.82s}
   @keyframes piRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-  html[data-export="1"] #cs-programmable-invitations .pi-side,html[data-export="1"] #cs-programmable-invitations .pi-engine,html[data-export="1"] #cs-programmable-invitations .pi-callout,html[data-export="1"] #cs-programmable-invitations .pi-chip,html[data-export="1"] #cs-programmable-invitations .pi-footer{opacity:1!important;transform:none!important;animation:none!important}
+  html[data-export="1"] #cs-programmable-invitations .pi-title,html[data-export="1"] #cs-programmable-invitations .pi-side,html[data-export="1"] #cs-programmable-invitations .pi-engine,html[data-export="1"] #cs-programmable-invitations .pi-callout,html[data-export="1"] #cs-programmable-invitations .pi-chip,html[data-export="1"] #cs-programmable-invitations .pi-footer{opacity:1!important;transform:none!important;animation:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-programmable-invitations" data-shown="0" onclick="if(window.csProgrammableInvitationsAdvance && window.csProgrammableInvitationsAdvance()) event.stopPropagation()" style="display:none;cursor:pointer">
   <div class="pi-bg"></div>
   <div class="pi-noise"></div>
   <div class="pi-eyebrow slide-eyebrow">invitation engine</div>
   <section class="pi-stage">
-    <h1 class="pi-title">Programmable invitations train the <em>community graph.</em></h1>
+    <h1 class="pi-title">The invitation becomes <em>programmable.</em></h1>
     <div class="pi-grid">
       <article class="pi-side pi-left-top">
         <div class="pi-side-head">
@@ -25569,23 +25581,23 @@ window.csBrandV8Reverse = function() {
           <div class="pi-flow">
             <div class="pi-step">
               <div class="pi-face" style="--img:url('assets/cs-app-store-people-bg.png')"></div>
-              <h3>Leader invites</h3><p>The event leader sets the first trusted room.</p>
+              <h3>Community builder invites</h3><p>The trusted host defines the room before the first text goes out.</p>
             </div>
             <div class="pi-step">
               <div class="pi-face" style="--img:url('assets/cs-optimus-party-pink1.png')"></div>
-              <div class="pi-num">2</div><h3>Player referrals</h3><p>The right players open the room to the next trusted people.</p>
+              <div class="pi-num">2</div><h3>Trusted referrals</h3><p>Chosen players pull in people who already fit the room.</p>
             </div>
             <div class="pi-step">
               <div class="pi-face" style="--img:url('assets/cs-samecourt-pink3.png')"></div>
-              <div class="pi-num">3</div><h3>Graph data</h3><p>Accepts, declines, referrals, and repeat play reveal real social fit.</p>
+              <div class="pi-num">3</div><h3>Social fit data</h3><p>Yes, no, referral, and repeat choices reveal who makes the room better.</p>
             </div>
             <div class="pi-step">
               <div class="pi-face icon-only"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.8 2.4-6 6-6s6 2.2 6 6"/><path d="M14 19c0-2.8 1.6-4.4 3.6-4.4S21 16.2 21 19"/></svg></div>
-              <div class="pi-num">4</div><h3>Optimize scheduling</h3><p>Scheduling gets smarter, more automatic, and more human.</p>
+              <div class="pi-num">4</div><h3>Next invite improves</h3><p>The next schedule gets more automatic without losing human judgment.</p>
             </div>
           </div>
         </div>
-        <div class="pi-callout"><strong>The invitation becomes programmable.</strong> Start with the event leader, open referrals to trusted players, then use the social graph to optimize and automate the next schedule.</div>
+        <div class="pi-callout"><strong>The invitation becomes programmable.</strong> Start with the community builder, open referrals to trusted players, then let the graph improve the next invitation.</div>
         <div class="pi-chips">
           <div class="pi-chip"><svg viewBox="0 0 24 24"><path d="M4 6h12"/><path d="M4 12h16"/><path d="M4 18h10"/><path d="M18 6l2 2-2 2"/></svg><span>Sequential</span></div>
           <div class="pi-chip"><svg viewBox="0 0 24 24"><path d="M4 5h16l-6 7v6l-4 2v-8L4 5z"/></svg><span>Criteria-based</span></div>
@@ -26468,7 +26480,7 @@ window.csProgrammableInvitationsReverse = function() {
           <g transform="translate(176 270)"><circle r="34" fill="none" stroke="rgba(184,149,74,.54)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#b8954a"/><text y="55" font-size="18" fill="#b8954a">REFERRER</text></g>
           <g transform="translate(604 134)"><circle r="34" fill="none" stroke="rgba(91,143,212,.42)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#5B8FD4"/><text y="-42" font-size="18" fill="#5B8FD4">NEW REFERRAL</text></g>
           <g transform="translate(604 270)"><circle r="34" fill="none" stroke="rgba(200,70,44,.48)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#c8462c"/><text y="55" font-size="18" fill="#c8462c">REGULAR</text></g>
-          <g transform="translate(380 198)"><circle r="76" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/></g>
+          <g transform="translate(380 198)"><circle r="76" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><text y="14" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="52" font-weight="800"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic" font-weight="500">n</tspan><tspan fill="#c8462c">R</tspan></text></g>
         </g>
       </svg>
       <div class="rwmm-caption"><span aria-hidden="true"></span><strong aria-hidden="true"></strong></div>
@@ -35473,6 +35485,7 @@ const SLIDE_ORDER = [
   'cs-11e',
   'cs-gnr',
   'cs-samecourt-pyramid-white2',
+  'cs-brand-V8',
   'cs-invitation-word-of-mouth',
   'cs-programmable-invitations',
   'cs-app-store-people',
@@ -35485,8 +35498,8 @@ const SLIDE_ORDER = [
   'cs-2c',
   'cs-mv6-merge',
   'cs-value-choice-image-annotated-pink',
-  'cs-brand-V8',
   'cs-fw1',
+  'cs-pb-silliness-purple-net-apology',
   'cs-pb-silliness-board-green',
   'cs-club-os',
   'cs-teamreach-referral-compare',
@@ -35499,10 +35512,10 @@ const TOTAL = SLIDE_ORDER.length;
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
   3: ['cs-optimus-party-overhead-pink'],
-  7: ['cs-samecourt-pyramid-blue-two-section-01', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-samecourt-pyramid-blue-two-section-03', 'cs-samecourt-pyramid-blue-two-section-04', 'cs-samecourt-pyramid-blue-human-base', 'cs-samecourt-pyramid-blue-contrast', 'cs-samecourt-pyramid-blue-joy-map', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  10: ['cs-magnetic-human-value-market', 'cs-magnetic'],
+  7: ['cs-samecourt-pyramid-blue-two-section-01', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-samecourt-pyramid-blue-two-section-03', 'cs-samecourt-pyramid-blue-two-section-04', 'cs-samecourt-pyramid-blue-human-base', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
+  11: ['cs-magnetic-human-value-market', 'cs-magnetic'],
   21: ['cs-16'],
-  22: ['cs-pb-silliness-purple-chaotic-bounce', 'cs-pb-silliness-purple-rotation-confusion', 'cs-pb-silliness-purple-net-apology', 'cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-decision-green', 'cs-pb-silliness-generated-sections-pink', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink', 'cs-pb-silliness-generated-rotation-pink'],
+  22: ['cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -35667,6 +35680,14 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  // Codex 2026-06-06: annotation batch 7 delete/promote requests; retained for recovery.
+  'cs-samecourt-pyramid-blue-contrast',
+  'cs-samecourt-pyramid-blue-joy-map',
+  'cs-pb-silliness-purple-chaotic-bounce',
+  'cs-pb-silliness-purple-rotation-confusion',
+  'cs-pb-silliness-generated-sections-pink',
+  'cs-pb-silliness-generated-rotation-pink',
+  'cs-pb-silliness-decision-green',
   // Codex 2026-06-06: annotation batch 6 delete requests; retained for recovery.
   'cs-11e-bg-green',
   'cs-samecourt-bg-green',
@@ -37366,23 +37387,24 @@ const slideLabels = [
   'NEPC proof / proving ground', //  5 cs-11e
   'Rise of the personalized invitation feed', //  6 cs-gnr
   'Pickleball pyramid / GnR wedge', //  7 cs-samecourt-pyramid-white2
-  'Invitations mechanize word of mouth', //  8 cs-invitation-word-of-mouth
-  'Programmable invitations train the graph', //  9 cs-programmable-invitations
-  'App store for people', // 10 cs-app-store-people
-  'Measuring the next frontier', // 11 cs-real-world-measurable-market
-  'Community intelligence flywheel', // 12 cs-fv6-img
-  'Founder wheelhouse', // 13 cs-18-vd4
-  'SameCourt paradigm flip', // 14 cs-samecourt
-  'Pickleball wedge', // 15 cs-wedgepb-codex
-  'Pickleball as wedge market', // 16 cs-wedge1
-  'Real-world communities', // 17 cs-2c
-  'Invisible layer of community value', // 18 cs-mv6-merge
-  'Human connection value question', // 19 cs-value-choice-image-annotated-pink
-  'Brand promise', // 20 cs-brand-V8
+  'Brand promise', //  8 cs-brand-V8
+  'Invitations mechanize word of mouth', //  9 cs-invitation-word-of-mouth
+  'Programmable invitations train the graph', // 10 cs-programmable-invitations
+  'App store for people', // 11 cs-app-store-people
+  'Measuring the next frontier', // 12 cs-real-world-measurable-market
+  'Community intelligence flywheel', // 13 cs-fv6-img
+  'Founder wheelhouse', // 14 cs-18-vd4
+  'SameCourt paradigm flip', // 15 cs-samecourt
+  'Pickleball wedge', // 16 cs-wedgepb-codex
+  'Pickleball as wedge market', // 17 cs-wedge1
+  'Real-world communities', // 18 cs-2c
+  'Invisible layer of community value', // 19 cs-mv6-merge
+  'Human connection value question', // 20 cs-value-choice-image-annotated-pink
   'Drop into any pickleball community', // 21 cs-fw1
-  'Pickleball silliness brings out GnR', // 22 cs-pb-silliness-board-green
-  'Club owner offer', // 23 cs-club-os
-  'TeamReach vs GnR', // 24 cs-teamreach-referral-compare
+  'Pickleball silliness / net apology', // 22 cs-pb-silliness-purple-net-apology
+  'Pickleball silliness / section board', // 23 cs-pb-silliness-board-green
+  'Club owner offer', // 24 cs-club-os
+  'TeamReach vs GnR', // 25 cs-teamreach-referral-compare
 ];
 
 // ─── Tooltip text resolver [Dave 2026-05-07] ────────────────────────────────
@@ -41047,6 +41069,41 @@ const PROCESSED_ANNOTATION_IDS = new Set([
   'ann-1780755151276',
   'ann-1780755192102',
   'ann-1780755201074',
+  'ann-1780786270806',
+  'ann-1780786285500',
+  'ann-1780786335407',
+  'ann-1780786340102',
+  'ann-1780786359667',
+  'ann-1780786434281',
+  'ann-1780786373748',
+  'ann-1780786431643',
+  'ann-1780786378258',
+  'ann-1780786427603',
+  'ann-1780786402732',
+  'ann-1780786495755',
+  'ann-1780786523337',
+  'ann-1780786508853',
+  'ann-1780786515936',
+  'ann-1780786541652',
+  'ann-1780786577356',
+  'ann-1780786620247',
+  'ann-1780786633266',
+  'ann-1780786609979',
+  'ann-1780786594533',
+  'ann-1780786645102',
+  'ann-1780786685528',
+  'ann-1780786715633',
+  'ann-1780786753755',
+  'ann-1780786767375',
+  'ann-1780786791049',
+  'ann-1780786804021',
+  'ann-1780786815419',
+  'ann-1780786820344',
+  'ann-1780786839246',
+  'ann-1780786852649',
+  'ann-1780786880933',
+  'ann-1780786891252',
+  'ann-1780786898088',
 ]);
 
 function pruneProcessedAnnotations(store) {
