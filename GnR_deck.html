@@ -26495,6 +26495,35 @@ window.csProgrammableInvitationsReverse = function() {
      paradigm flip, this slide does the marketplace proof of what the flip catches.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
+  #cs-work-evolution-prelude{background:#f3ead8!important;overflow:hidden}
+  #cs-work-evolution-prelude .worke-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  #cs-work-evolution-prelude .worke-eyebrow{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:none!important;color:#c8462c;z-index:3}
+  #cs-work-evolution-prelude .worke-reveal{position:absolute;inset:0;z-index:2;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(14px);background:linear-gradient(90deg,rgba(251,247,239,.92) 0%,rgba(251,247,239,.66) 34%,rgba(251,247,239,.16) 62%,rgba(251,247,239,0) 100%)}
+  #cs-work-evolution-prelude .worke-copy{position:absolute;left:74px;bottom:82px;width:min(720px,44vw);padding:34px 38px 36px;border-left:3px solid #c8462c;background:rgba(251,247,239,.62);box-shadow:0 30px 80px rgba(26,22,18,.12);backdrop-filter:blur(3px)}
+  #cs-work-evolution-prelude .worke-kicker{font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#b8954a;margin:0 0 13px}
+  #cs-work-evolution-prelude .worke-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.1rem,4.75vw,5.55rem);font-weight:850;line-height:.94;letter-spacing:-.026em;color:#1a1612;margin:0}
+  #cs-work-evolution-prelude .worke-title em{font-style:italic;color:#c8462c;font-weight:850}
+  #cs-work-evolution-prelude .worke-sub{font-family:'Manrope',sans-serif;font-size:clamp(1.02rem,1.25vw,1.34rem);font-weight:800;line-height:1.45;color:rgba(26,22,18,.72);margin:22px 0 0;max-width:660px}
+  #cs-work-evolution-prelude .worke-chip{display:inline-flex;margin-top:24px;padding:10px 14px;border:1px solid rgba(184,149,74,.46);border-radius:999px;background:rgba(251,247,239,.72);font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#b8954a}
+  #cs-work-evolution-prelude[data-shown="1"] .worke-reveal{visibility:visible;pointer-events:auto;animation:workeRevealIn .68s cubic-bezier(.22,1,.36,1) both}
+  #cs-work-evolution-prelude[data-shown="0"] .worke-reveal{opacity:0!important;visibility:hidden!important;pointer-events:none!important;animation:none!important}
+  @keyframes workeRevealIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  html[data-export="1"] #cs-work-evolution-prelude .worke-reveal{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-work-evolution-prelude" data-shown="0" onclick="csWorkEvolutionAdvance();event.stopPropagation()" style="display:none;cursor:pointer">
+  <img class="worke-bg" src="assets/generated/work-evolution/work-evolution-bg-v1.png" alt="" onerror="this.onerror=null;this.src='assets/generated/real-world-frontier/real-world-frontier-bg-v1.png'"/>
+  <div class="worke-eyebrow slide-eyebrow">&quot;work&quot;</div>
+  <section class="worke-reveal" aria-label="Invisible community work becomes measurable">
+    <div class="worke-copy">
+      <p class="worke-kicker">the unpriced layer</p>
+      <h1 class="worke-title">Every era makes a new kind of <em>work</em> visible.</h1>
+      <p class="worke-sub">The next one is the human work that keeps real communities alive: inviting, welcoming, bridging, remembering, and bringing people back.</p>
+      <div class="worke-chip">GnR makes that work measurable</div>
+    </div>
+  </section>
+</div>
+
+<style>
   #cs-real-world-measurable-market{background:#f3ead8!important;overflow:hidden}
   #cs-real-world-measurable-market .rwmm-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78;filter:saturate(1.02) contrast(1.04);z-index:0}
   #cs-real-world-measurable-market .rwmm-wash{position:absolute;inset:0;background:radial-gradient(ellipse at 58% 45%, rgba(255,239,184,.34) 0%, rgba(251,247,239,.42) 44%, rgba(243,234,216,.66) 78%);z-index:1}
@@ -35585,6 +35614,7 @@ const SLIDE_ORDER = [
   'cs-samecourt-pyramid-white2',
   'cs-invitation-word-of-mouth',
   'cs-programmable-invitations',
+  'cs-work-evolution-prelude',
   'cs-real-world-measurable-market',
   'cs-app-store-people',
   'cs-fv6-img',
@@ -35611,9 +35641,9 @@ const SLIDE_ALTS = {
   4: ['cs-optimus-party-overhead-pink'],
   5: ['cs-invite-dupr-vs-gnr-club-pink'],
   9: ['cs-samecourt-pyramid-blue-heart-base-01', 'cs-samecourt-pyramid-blue-heart-base-02', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  13: ['cs-magnetic-human-value-market', 'cs-magnetic'],
-  21: ['cs-16'],
-  22: ['cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
+  14: ['cs-magnetic-human-value-market', 'cs-magnetic'],
+  22: ['cs-16'],
+  23: ['cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -36495,6 +36525,21 @@ window.csFv6Advance = function() {
 window.csFv6Reverse = function() {
   const slide = document.querySelector('.casey-slide.active[id^="cs-fv6"]');
   if (!slide) return false;
+  if (slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+
+window.csWorkEvolutionAdvance = function() {
+  const slide = document.getElementById('cs-work-evolution-prelude');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csWorkEvolutionReverse = function() {
+  const slide = document.getElementById('cs-work-evolution-prelude');
+  if (!slide || !slide.classList.contains('active')) return false;
   if (slide.dataset.shown !== '1') return false;
   slide.dataset.shown = '0';
   return true;
@@ -37543,20 +37588,21 @@ const slideLabels = [
   'Pickleball pyramid / GnR wedge', //  9 cs-samecourt-pyramid-white2
   'Invitations mechanize word of mouth', // 10 cs-invitation-word-of-mouth
   'Programmable invitations train the graph', // 11 cs-programmable-invitations
-  '"Work"', // 12 cs-real-world-measurable-market
-  'App store for people', // 13 cs-app-store-people
-  'Community intelligence flywheel', // 14 cs-fv6-img
-  'Founder wheelhouse', // 15 cs-18-vd4
-  'SameCourt paradigm flip', // 16 cs-samecourt
-  'Pickleball wedge', // 17 cs-wedgepb-codex
-  'Pickleball as wedge market', // 18 cs-wedge1
-  'Real-world communities', // 19 cs-2c
-  'Invisible layer of community value', // 20 cs-mv6-merge
-  'Drop into any pickleball community', // 21 cs-fw1
-  'Pickleball silliness / net apology', // 22 cs-pb-silliness-purple-net-apology
-  'Pickleball silliness / section board', // 23 cs-pb-silliness-board-green
-  'Club owner offer', // 24 cs-club-os
-  'TeamReach vs GnR', // 25 cs-teamreach-referral-compare
+  '"work"', // 12 cs-work-evolution-prelude
+  '"Work"', // 13 cs-real-world-measurable-market
+  'App store for people', // 14 cs-app-store-people
+  'Community intelligence flywheel', // 15 cs-fv6-img
+  'Founder wheelhouse', // 16 cs-18-vd4
+  'SameCourt paradigm flip', // 17 cs-samecourt
+  'Pickleball wedge', // 18 cs-wedgepb-codex
+  'Pickleball as wedge market', // 19 cs-wedge1
+  'Real-world communities', // 20 cs-2c
+  'Invisible layer of community value', // 21 cs-mv6-merge
+  'Drop into any pickleball community', // 22 cs-fw1
+  'Pickleball silliness / net apology', // 23 cs-pb-silliness-purple-net-apology
+  'Pickleball silliness / section board', // 24 cs-pb-silliness-board-green
+  'Club owner offer', // 25 cs-club-os
+  'TeamReach vs GnR', // 26 cs-teamreach-referral-compare
 ];
 
 // ─── Tooltip text resolver [Dave 2026-05-07] ────────────────────────────────
@@ -38166,6 +38212,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-magnetic': 'csMagneticAdvance',
     'cs-25': 'cs25Advance',
     'cs-mv6': 'cs_mv6_Advance',
+    'cs-work-evolution-prelude': 'csWorkEvolutionAdvance',
     'cs-real-world-measurable-market': 'csRwmmAdvance',
     'cs-mv6-merge': 'csMv6MergeAdvance',
     'cs-teamreach-referral-compare': 'csTeamreachCompareAdvance',
@@ -38221,6 +38268,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-magnetic': 'csMagneticReverse',
     'cs-25': 'cs25Reverse',
     'cs-mv6': 'cs_mv6_Reverse',
+    'cs-work-evolution-prelude': 'csWorkEvolutionReverse',
     'cs-real-world-measurable-market': 'csRwmmReverse',
     'cs-mv6-merge': 'csMv6MergeReverse',
     'cs-teamreach-referral-compare': 'csTeamreachCompareReverse',
@@ -38319,6 +38367,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) return;
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Advance && window.csFv6Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) return;
@@ -38356,6 +38405,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) return;
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Reverse && window.csFv6Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) return;
@@ -38531,6 +38581,7 @@ document.addEventListener('wheel', e => {
       return;
     }
     // [Dave 2026-05-19] cs-fv6* workflow row — scroll-down reveals the row before next-slide nav.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Advance && window.csFv6Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -38704,6 +38755,7 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Reverse && window.csFv6Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -38838,6 +38890,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
+      if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Advance && window.csFv6Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -38867,6 +38920,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
+      if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Reverse && window.csFv6Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
