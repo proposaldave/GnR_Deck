@@ -8192,7 +8192,7 @@ window.cs1m5Reverse = function() {
   #cs-frontier-scale-pink-2[data-stage="2"] .scale-footer{opacity:1!important;visibility:visible!important;transform:translateX(-50%) translateY(0);transition-delay:.1s, .1s, 0s}
 </style>
 
-<div class="casey-slide ds-focus scale-option-slide active casey-entered" id="cs-frontier-scale-pink-2" data-stage="0" onclick="if(window.csFrontierScalePink2Advance && window.csFrontierScalePink2Advance()) event.stopPropagation()" style="cursor:pointer">
+<div class="casey-slide ds-focus scale-option-slide" id="cs-frontier-scale-pink-2" data-stage="0" onclick="if(window.csFrontierScalePink2Advance && window.csFrontierScalePink2Advance()) event.stopPropagation()" style="display:none;cursor:pointer">
   <div class="scale-paper"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
   <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
@@ -39444,6 +39444,16 @@ function startCourtForm() {
   draw();
 }
 function stopCourtForm() { courtFormRunning = false; }
+
+// Startup must follow SLIDE_ORDER, not stale static markup classes. Run after stateful helpers exist.
+function normalizeInitialCaseySlide() {
+  if (typeof caseyGo === 'function' && !inAppendix && !inTrash && !inConcept && !inSeed && !inStaff) caseyGo(1);
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', normalizeInitialCaseySlide, { once: true });
+} else {
+  setTimeout(normalizeInitialCaseySlide, 0);
+}
 
 // ===== DIGITIZE CYCLE (slide 9) =====
 let digiTimer = null;
