@@ -85,6 +85,7 @@ Generated images must be:
 - Avoid repeated Chrome launches.
 - Do not open Chrome at the start of an edit session just to show the current file.
 - After a completed Local-mode deck or annotation-tool edit batch, open the updated local annotation deck exactly once in Dave's Chrome: `file:///C:/Users/dave/CLAUDE%20COWORK/sites/GnR_Deck/GnR_deck.html?annotations=1`. This is the preferred handoff point so Dave can continue annotating.
+- After a completed publish or Local-mode deck/annotation batch that verifies GitHub Pages, send Dave a private Slack DM as `Proposal Dave` with the cache-busted annotatable GitHub URL: `https://proposaldave.github.io/GnR_Deck/?annotations=1&cb=<timestamp>`. Resolve the Slack user before sending. If Slack tools are unavailable or the user cannot be resolved, do not pretend it was sent; report `SLACK: BLOCKED` with the exact reason and include the URL in the final response.
 - In Worktree mode, do not open Chrome at handoff unless visual QA is required or Dave explicitly asked; report the local file URL instead. Publish/Local sessions may open the updated annotation deck once after mirroring and checks.
 - Avoid repeated GitHub Pages cache checks.
 - Avoid Playwright/runtime debugging unless the user specifically asks for QA automation.
@@ -144,6 +145,9 @@ CHECKS:
 
 PUSH:
 - commit hash if pushed, or why not
+
+SLACK:
+- DM sent to Proposal Dave with the annotatable GitHub URL, or exact blocker if Slack was unavailable
 
 BLOCKED:
 - only if truly blocked

@@ -17,6 +17,7 @@ ANNOTATION INTAKE MODE
 - Do not edit `index.html`.
 - Do not push.
 - Do not open Chrome at the beginning or repeatedly during the task. If this is a Local-mode annotation/deck batch that updates `GnR_deck.html` and mirrors `index.html`, open the updated local annotation deck exactly once after checks are complete: `file:///C:/Users/dave/CLAUDE%20COWORK/sites/GnR_Deck/GnR_deck.html?annotations=1`. In Worktree mode, do not open Chrome at handoff unless visual QA is required or Dave explicitly asked.
+- If this annotation run also publishes to GitHub Pages, send Dave a private Slack DM as `Proposal Dave` after the cache-busted annotatable GitHub URL is verified: `GnR deck ready for review: https://proposaldave.github.io/GnR_Deck/?annotations=1&cb=<timestamp>`. If Slack tools are unavailable or `Proposal Dave` cannot be resolved, report `SLACK: BLOCKED` with the exact reason and include the URL in the final response.
 
 UNPUBLISHED WORKTREE PREFLIGHT
 Before processing the JSON queue, run:

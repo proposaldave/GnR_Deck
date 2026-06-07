@@ -95,6 +95,9 @@ After every integration:
 - Verify raw GitHub source.
 - Verify cache-busted GitHub Pages URL.
 - Verify GitHub Pages action status when possible.
+- Send Dave a private Slack DM as `Proposal Dave` with the verified cache-busted annotatable GitHub URL:
+  `GnR deck ready for review: https://proposaldave.github.io/GnR_Deck/?annotations=1&cb=<timestamp>`
+- If Slack tools are unavailable or `Proposal Dave` cannot be resolved, do not claim the DM was sent. Report `SLACK: BLOCKED` with the exact connector/user-resolution blocker and include the URL in the final report.
 
 Final gate before `DONE`:
 - Rerun:
@@ -109,6 +112,7 @@ Final gate before `DONE`:
 - `main` is pushed
 - raw GitHub source is verified
 - live cache-busted URL is verified
+- Slack DM to Proposal Dave is sent, or `SLACK: BLOCKED` states the exact reason it could not be sent
 
 Report sections:
 DONE
@@ -122,5 +126,6 @@ NOT VERIFIED
 CHECKS
 PUSH
 LIVE URL
+SLACK
 NEXT
 ```
