@@ -177,9 +177,10 @@
   #cs-teamreach-referral-compare .trc-chip.blue { border-color:rgba(91,143,212,.48); background:rgba(91,143,212,.08); color:#335f95; }
   #cs-teamreach-referral-compare .trc-chip.hot { border-color:rgba(200,70,44,.58); background:rgba(200,70,44,.08); color:#c8462c; }
   #cs-teamreach-referral-compare .trc-anim { opacity:0; transform:translateY(14px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
-  #cs-teamreach-referral-compare.casey-entered .trc-anim { opacity:1; transform:none; }
-  #cs-teamreach-referral-compare.casey-entered .trc-anim:nth-child(2) { transition-delay:.14s; }
-  #cs-teamreach-referral-compare.casey-entered .trc-anim:nth-child(3) { transition-delay:.28s; }
+  #cs-teamreach-referral-compare[data-shown="1"] .trc-anim { opacity:1; transform:none; }
+  #cs-teamreach-referral-compare[data-shown="1"] .trc-anim:nth-child(2) { transition-delay:.14s; }
+  #cs-teamreach-referral-compare[data-shown="1"] .trc-anim:nth-child(3) { transition-delay:.28s; }
+  #cs-teamreach-referral-compare[data-shown="0"] .trc-anim { opacity:0!important;visibility:hidden!important;pointer-events:none!important;transition:none!important; }
   html[data-export="1"] #cs-teamreach-referral-compare .trc-anim { opacity:1 !important; transform:none !important; transition:none !important; }
 
   #cs-club-anti-dupr .cco-stage { display:flex; flex-direction:column; justify-content:center; gap:36px; }
@@ -15673,7 +15674,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   </section>
 </div>
 
-<div class="casey-slide ds-focus" id="cs-teamreach-referral-compare">
+<div class="casey-slide ds-focus" id="cs-teamreach-referral-compare" data-shown="0" onclick="csTeamreachCompareAdvance();event.stopPropagation()" style="cursor:pointer">
   <div class="trc-eye">competitor wedge</div>
   <section class="trc-stage">
     <div class="trc-head trc-anim">
@@ -16193,7 +16194,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   </section>
 </div>
 
-<div class="casey-slide ds-focus" id="cs-teamreach-referral-compare">
+<div class="casey-slide ds-focus" id="cs-teamreach-referral-compare" data-shown="0" onclick="csTeamreachCompareAdvance();event.stopPropagation()" style="cursor:pointer">
   <div class="trc-eye">competitor wedge</div>
   <section class="trc-stage">
     <div class="trc-head trc-anim">
@@ -22596,7 +22597,6 @@ window.csBrandV8Reverse = function() {
   <div class="vcio-label search"><div class="vcio-mark google">G</div><div><b>Google Search</b><small>$3T+ ads sold</small></div></div>
   <div class="vcio-label laptop"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg></div><div><b>AI tools</b><small>$2.5T spend</small></div></div>
   <div class="vcio-label cola"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
-  <div class="vcio-clean-note">All that value, or the room that makes life worth living?</div>
 </div>
 
 <div class="casey-slide ds-focus" id="cs-value-choice-image-receipts-pink" style="display:none" aria-label="Receipts-led product value visual concept">
@@ -26492,12 +26492,13 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-real-world-measurable-market .rwmm-caption{position:absolute;left:58px;right:58px;bottom:30px;display:flex;justify-content:space-between;align-items:center;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.55);z-index:2}
   #cs-real-world-measurable-market .rwmm-caption strong{color:#c8462c}
   #cs-real-world-measurable-market .rwmm-stage{opacity:0;transform:translateY(14px)}
-  #cs-real-world-measurable-market.casey-entered .rwmm-stage{animation:rwmmStageIn .72s cubic-bezier(.22,1,.36,1) .42s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-stage{animation:rwmmStageIn .72s cubic-bezier(.22,1,.36,1) .42s both;pointer-events:auto}
+  #cs-real-world-measurable-market[data-shown="0"] .rwmm-stage{opacity:0!important;visibility:hidden!important;pointer-events:none!important;animation:none!important}
   @keyframes rwmmStageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   html[data-export="1"] #cs-real-world-measurable-market .rwmm-stage{opacity:1!important;transform:none!important;animation:none!important}
 </style>
-<div class="casey-slide ds-focus" id="cs-real-world-measurable-market" style="display:none">
-  <img class="rwmm-bg" src="assets/cs-fv6-measured-connection-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-samecourt-bg.png'"/>
+<div class="casey-slide ds-focus" id="cs-real-world-measurable-market" data-shown="0" onclick="csRwmmAdvance();event.stopPropagation()" style="display:none;cursor:pointer">
+  <img class="rwmm-bg" src="assets/generated/real-world-frontier/real-world-frontier-bg-v1.png" alt="" onerror="this.onerror=null;this.src='assets/cs-samecourt-bg.png'"/>
   <div class="rwmm-wash"></div>
   <div class="rwmm-eyebrow slide-eyebrow">&quot;Work&quot;</div>
   <section class="rwmm-stage">
@@ -29863,36 +29864,37 @@ window.csProgrammableInvitationsReverse = function() {
   @keyframes mg2EyebrowIn { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
   @keyframes mg2MissionEyeIn { from { opacity:0;transform:translateY(6px);letter-spacing:0.38em; } to { opacity:1;transform:translateY(0);letter-spacing:0.26em; } }
   #cs-mv6-merge .mg2-eyebrow { position:absolute;top:28px;left:48px;z-index:10;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;opacity:1;transform:none; }
-  #cs-mv6-merge.casey-entered .mg2-eyebrow { animation:none; }
+  #cs-mv6-merge[data-shown="1"] .mg2-eyebrow { animation:none; }
   /* Entry animations — [Dave 2026-05-17 LATEST] upgraded from plain fade to fade-UP (translateY 14→0) so the MISSION beat and headline land with deliberate movement on slide load. MISSION eyebrow span (.mg2-mission-eye) animates a beat before the rest of the head text. */
   #cs-mv6-merge .mg2-head, #cs-mv6-merge .mg2-sub, #cs-mv6-merge .mg2-chart, #cs-mv6-merge .mg2-jobs { opacity:0;transform:translateY(14px);transition:opacity 0.75s cubic-bezier(.22,1,.36,1),transform 0.75s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-head    { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.35s both; }
-  #cs-mv6-merge.casey-entered .mg2-sub     { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.55s both; }
-  #cs-mv6-merge.casey-entered .mg2-chart   { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.75s both; }
-  #cs-mv6-merge.casey-entered .mg2-jobs    { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 2.35s both; }
+  #cs-mv6-merge[data-shown="0"] .mg2-head, #cs-mv6-merge[data-shown="0"] .mg2-sub, #cs-mv6-merge[data-shown="0"] .mg2-chart, #cs-mv6-merge[data-shown="0"] .mg2-jobs, #cs-mv6-merge[data-shown="0"] .mg2-mission-eye, #cs-mv6-merge[data-shown="0"] .mg2-curve-path, #cs-mv6-merge[data-shown="0"] .mg2-end-halo-outer, #cs-mv6-merge[data-shown="0"] .mg2-here, #cs-mv6-merge[data-shown="0"] .mg2-stage::after { opacity:0!important;visibility:hidden!important;pointer-events:none!important;animation:none!important;transition:none!important; }
+  #cs-mv6-merge[data-shown="1"] .mg2-head    { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.35s both; }
+  #cs-mv6-merge[data-shown="1"] .mg2-sub     { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.55s both; }
+  #cs-mv6-merge[data-shown="1"] .mg2-chart   { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.75s both; }
+  #cs-mv6-merge[data-shown="1"] .mg2-jobs    { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 2.35s both; }
   /* MISSION eyebrow lands first — small upward drift + brief letter-spacing settle for emphasis */
   #cs-mv6-merge .mg2-mission-eye { display:inline-block;opacity:0;transform:translateY(6px);letter-spacing:0.38em;transition:opacity 0.55s cubic-bezier(.22,1,.36,1),transform 0.55s cubic-bezier(.22,1,.36,1),letter-spacing 0.65s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-mission-eye { animation:mg2MissionEyeIn 0.55s cubic-bezier(.22,1,.36,1) 0.85s both; }
+  #cs-mv6-merge[data-shown="1"] .mg2-mission-eye { animation:mg2MissionEyeIn 0.55s cubic-bezier(.22,1,.36,1) 0.85s both; }
   @keyframes mg2CurveDraw { from { stroke-dashoffset: 2400; } to { stroke-dashoffset: 0; } }
   #cs-mv6-merge .mg2-curve-path { stroke-dasharray:2400;stroke-dashoffset:2400; }
   /* [Dave 2026-05-18 LATEST] Animation speed bumped per Dave 'have the animation begin and be slightly faster'. Duration 2.4s → 1.5s. Delay 0.95s → 0.30s so the curve starts drawing almost immediately on slide entry. */
-  #cs-mv6-merge.casey-entered .mg2-curve-path { animation:mg2CurveDraw 1.5s cubic-bezier(.55,0,.65,.55) forwards 1.05s; }
+  #cs-mv6-merge[data-shown="1"] .mg2-curve-path { animation:mg2CurveDraw 1.5s cubic-bezier(.55,0,.65,.55) forwards 1.05s; }
   @keyframes mg2EndPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.16); } }
   #cs-mv6-merge .mg2-end-pt { transform-origin:center;transform-box:fill-box; }
-  #cs-mv6-merge.casey-entered .mg2-end-pt { animation:mg2EndPulse 2.4s ease-in-out infinite 4.15s; }
+  #cs-mv6-merge[data-shown="1"] .mg2-end-pt { animation:mg2EndPulse 2.4s ease-in-out infinite 4.15s; }
   /* [Dave 2026-05-17 LATEST jaw-drop] Outer halo behind the endpoint — slower, larger breath, suggesting the future radiating outward. */
   @keyframes mg2HaloBreath { 0%,100% { opacity:0.55; transform:scale(0.92); } 50% { opacity:1; transform:scale(1.18); } }
   #cs-mv6-merge .mg2-end-halo-outer { transform-origin:center;transform-box:fill-box;opacity:0; }
-  #cs-mv6-merge.casey-entered .mg2-end-halo-outer { animation:mg2HaloBreath 4.4s ease-in-out infinite 3.75s; }
+  #cs-mv6-merge[data-shown="1"] .mg2-end-halo-outer { animation:mg2HaloBreath 4.4s ease-in-out infinite 3.75s; }
   /* "YOU ARE HERE · 2026" marker — sits on the curve between AI (2022) and HUMAN CONNECTION (2030). Lands LAST so the audience reads the chart fully before locating themselves on it. */
   #cs-mv6-merge .mg2-here { opacity:0;transition:opacity 0.85s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-here { opacity:1;transition-delay:4.55s; }
+  #cs-mv6-merge[data-shown="1"] .mg2-here { opacity:1;transition-delay:4.55s; }
   @keyframes mg2HereDotPulse { 0%,100% { transform:scale(1);opacity:1; } 50% { transform:scale(1.45);opacity:0.65; } }
   #cs-mv6-merge .mg2-here-dot { transform-origin:center;transform-box:fill-box; }
-  #cs-mv6-merge.casey-entered .mg2-here-dot { animation:mg2HereDotPulse 1.8s ease-in-out infinite 4.95s; }
+  #cs-mv6-merge[data-shown="1"] .mg2-here-dot { animation:mg2HereDotPulse 1.8s ease-in-out infinite 4.95s; }
   /* Cosmic gold backdrop at top-right of chart — suggests "the future is being born here" without adding clutter. */
   #cs-mv6-merge .mg2-stage::after { content:"";position:absolute;top:36px;right:28px;width:38%;height:50%;background:radial-gradient(ellipse 60% 70% at 78% 28%, rgba(255,220,140,0.18) 0%, rgba(232,180,80,0.08) 35%, rgba(184,149,74,0) 70%);pointer-events:none;z-index:0;opacity:0;transition:opacity 1.4s cubic-bezier(.22,1,.36,1) 1.0s; }
-  #cs-mv6-merge.casey-entered .mg2-stage::after { opacity:1; }
+  #cs-mv6-merge[data-shown="1"] .mg2-stage::after { opacity:1; }
   html[data-export="1"] #cs-mv6-merge .mg2-end-halo-outer,
   html[data-export="1"] #cs-mv6-merge .mg2-here,
   html[data-export="1"] #cs-mv6-merge .mg2-here-dot,
@@ -29905,7 +29907,7 @@ window.csProgrammableInvitationsReverse = function() {
   html[data-export="1"] #cs-mv6-merge .mg2-curve-path,
   html[data-export="1"] #cs-mv6-merge .mg2-end-pt { opacity:1 !important;animation:none !important;transform:none !important;stroke-dashoffset:0 !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-mv6-merge" style="display:none">
+<div class="casey-slide ds-focus" id="cs-mv6-merge" data-shown="0" onclick="csMv6MergeAdvance();event.stopPropagation()" style="display:none;cursor:pointer">
   <!-- [Dave 2026-05-18 LATEST] Eyebrow "The future of off-screen connection" → "Mission". Internal mg2-mission-eye-block ("Mission" + rule) DELETED — the eyebrow now carries the Mission framing, so the redundant in-slide "Mission" label and its gold rule are gone. Headline rises directly under the chart. -->
   <div class="mg2-eyebrow">We're wired for this</div>
   <section class="mg2-stage">
@@ -35576,11 +35578,11 @@ const TOTAL = SLIDE_ORDER.length;
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
   3: ['cs-optimus-party-overhead-pink'],
-  4: ['cs-invite-operational-insanity-bg-refined-pink', 'cs-invite-dupr-vs-gnr-club-pink'],
-  7: ['cs-samecourt-pyramid-blue-heart-base-01', 'cs-samecourt-pyramid-blue-heart-base-02', 'cs-samecourt-pyramid-blue-heart-base-03', 'cs-samecourt-pyramid-blue-two-section-01', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-samecourt-pyramid-blue-two-section-03', 'cs-samecourt-pyramid-blue-two-section-04', 'cs-samecourt-pyramid-blue-human-base', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
+  4: ['cs-invite-dupr-vs-gnr-club-pink'],
+  7: ['cs-samecourt-pyramid-blue-heart-base-01', 'cs-samecourt-pyramid-blue-heart-base-02', 'cs-samecourt-pyramid-blue-heart-base-03', 'cs-samecourt-pyramid-blue-two-section-01', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
   11: ['cs-magnetic-human-value-market', 'cs-magnetic'],
   21: ['cs-16'],
-  22: ['cs-pb-silliness-generated-fastest-silliest-01', 'cs-pb-silliness-generated-fastest-silliest-02', 'cs-pb-silliness-generated-fastest-silliest-03', 'cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
+  22: ['cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -35745,6 +35747,14 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  // Codex 2026-06-06: annotation batch 8 explicit delete requests; retained for recovery.
+  'cs-invite-operational-insanity-bg-refined-pink',
+  'cs-samecourt-pyramid-blue-two-section-03',
+  'cs-samecourt-pyramid-blue-two-section-04',
+  'cs-samecourt-pyramid-blue-human-base',
+  'cs-pb-silliness-generated-fastest-silliest-01',
+  'cs-pb-silliness-generated-fastest-silliest-02',
+  'cs-pb-silliness-generated-fastest-silliest-03',
   // Codex 2026-06-06: annotation batch 7 delete/promote requests; retained for recovery.
   'cs-samecourt-pyramid-blue-contrast',
   'cs-samecourt-pyramid-blue-joy-map',
@@ -36451,6 +36461,49 @@ window.csFv6Advance = function() {
 window.csFv6Reverse = function() {
   const slide = document.querySelector('.casey-slide.active[id^="cs-fv6"]');
   if (!slide) return false;
+  if (slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+
+window.csRwmmAdvance = function() {
+  const slide = document.getElementById('cs-real-world-measurable-market');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csRwmmReverse = function() {
+  const slide = document.getElementById('cs-real-world-measurable-market');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+window.csMv6MergeAdvance = function() {
+  const slide = document.getElementById('cs-mv6-merge');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csMv6MergeReverse = function() {
+  const slide = document.getElementById('cs-mv6-merge');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+window.csTeamreachCompareAdvance = function() {
+  const slide = document.getElementById('cs-teamreach-referral-compare');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csTeamreachCompareReverse = function() {
+  const slide = document.getElementById('cs-teamreach-referral-compare');
+  if (!slide || !slide.classList.contains('active')) return false;
   if (slide.dataset.shown !== '1') return false;
   slide.dataset.shown = '0';
   return true;
@@ -38079,6 +38132,9 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-magnetic': 'csMagneticAdvance',
     'cs-25': 'cs25Advance',
     'cs-mv6': 'cs_mv6_Advance',
+    'cs-real-world-measurable-market': 'csRwmmAdvance',
+    'cs-mv6-merge': 'csMv6MergeAdvance',
+    'cs-teamreach-referral-compare': 'csTeamreachCompareAdvance',
     'cs-a7m1': 'csA7m1Advance'
   };
   if (/^cs-fv6/.test(activeId || '') && window.csFv6Advance && window.csFv6Advance()) return true;
@@ -38131,6 +38187,9 @@ window.caseyReverseActiveReveal = function() {
     'cs-magnetic': 'csMagneticReverse',
     'cs-25': 'cs25Reverse',
     'cs-mv6': 'cs_mv6_Reverse',
+    'cs-real-world-measurable-market': 'csRwmmReverse',
+    'cs-mv6-merge': 'csMv6MergeReverse',
+    'cs-teamreach-referral-compare': 'csTeamreachCompareReverse',
     'cs-a7m1': 'csA7m1Reverse'
   };
   if (/^cs-fv6/.test(activeId || '') && window.csFv6Reverse && window.csFv6Reverse()) return true;
@@ -38226,7 +38285,10 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) return;
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Advance && window.csFv6Advance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareAdvance && window.csTeamreachCompareAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  return;
@@ -38260,7 +38322,10 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) return;
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Reverse && window.csFv6Reverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Reverse    && window.cs4Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    return;
@@ -38432,10 +38497,13 @@ document.addEventListener('wheel', e => {
       return;
     }
     // [Dave 2026-05-19] cs-fv6* workflow row — scroll-down reveals the row before next-slide nav.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Advance && window.csFv6Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareAdvance && window.csTeamreachCompareAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance()) {
       setTimeout(() => { wheelLock = false; }, 1000);
       return;
@@ -38602,10 +38670,13 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && /^cs-fv6/.test(SLIDE_ORDER[current - 1] || '') && window.csFv6Reverse && window.csFv6Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -38733,7 +38804,10 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
+      if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Advance && window.csFv6Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-teamreach-referral-compare' && window.csTeamreachCompareAdvance && window.csTeamreachCompareAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -38759,7 +38833,10 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
+      if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Reverse && window.csFv6Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
