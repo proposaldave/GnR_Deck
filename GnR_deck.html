@@ -14213,6 +14213,15 @@ window.csInvitationWordOfMouthAdvance = function() {
   </section>
 </div>
 
+<style>
+  #cs-pb-silliness-collage-main{background:#f3ead8!important;overflow:hidden}
+  #cs-pb-silliness-collage-main .pbsc-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0}
+  #cs-pb-silliness-collage-main .pbsc-edge{position:absolute;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(184,149,74,.18),inset 0 0 70px rgba(26,22,18,.08)}
+</style>
+<div class="casey-slide ds-focus" id="cs-pb-silliness-collage-main" style="display:none" aria-label="Pickleball is silly collage">
+  <img class="pbsc-img" src="assets/generated/silliness/pickleball-is-silly-collage-v1.png" alt="Pickleball is silly collage showing silly Give n Receive moments: the name, dinking, middle confusion, score, slow then boom, the kitchen, net-cord apology, wiffle ball, paddle taps, and weird works."/>
+  <div class="pbsc-edge" aria-hidden="true"></div>
+</div>
 <div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-board-green" style="display:none">
   <div class="psg-eye slide-eyebrow">Pickleball silliness brings out Give n Receive</div>
   <div class="psg-board-rail"><span>Silly score</span><span>Wiffle ball</span><span>Dink kitchen</span><span>Weird form</span><span>Net apology</span></div>
@@ -35660,7 +35669,7 @@ window.csA7m1Reverse = function() {
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // Codex 2026-06-07: feature ladder slide inserted before Work sequence.
+  // Codex 2026-06-07: pickleball silliness collage inserted before silliness board.
   'cs-value-choice-image-annotated-pink',
   'cs-frontier-scale-pink-2',
   'cs-1m8',
@@ -35683,6 +35692,7 @@ const SLIDE_ORDER = [
   'cs-2c',
   'cs-mv6-merge',
   'cs-fw1',
+  'cs-pb-silliness-collage-main',
   'cs-pb-silliness-board-green',
   'cs-club-os',
   'cs-teamreach-referral-compare',
@@ -35702,7 +35712,7 @@ const SLIDE_ALTS = {
   12: ['cs-real-world-measurable-market'],
   13: ['cs-magnetic-human-value-market'],
   22: ['cs-16'],
-  23: ['cs-pb-silliness-purple-net-apology', 'cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
+  24: ['cs-pb-silliness-purple-net-apology', 'cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -37658,10 +37668,11 @@ const slideLabels = [
   'Real-world communities', // 20 cs-2c
   'Invisible layer of community value', // 21 cs-mv6-merge
   'Drop into any pickleball community', // 22 cs-fw1
-  'Pickleball silliness / section board', // 23 cs-pb-silliness-board-green
-  'Club owner offer', // 24 cs-club-os
-  'TeamReach vs GnR', // 25 cs-teamreach-referral-compare
-  'Brand promise', // 26 cs-brand-V8
+  'Pickleball is silly', // 23 cs-pb-silliness-collage-main
+  'Pickleball silliness / section board', // 24 cs-pb-silliness-board-green
+  'Club owner offer', // 25 cs-club-os
+  'TeamReach vs GnR', // 26 cs-teamreach-referral-compare
+  'Brand promise', // 27 cs-brand-V8
 ];
 
 // ─── Tooltip text resolver [Dave 2026-05-07] ────────────────────────────────
