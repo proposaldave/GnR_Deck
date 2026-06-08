@@ -41207,6 +41207,8 @@ window.addEventListener('resize',drawLoop);
 // DAVE ANNOTATIONS — local slide markup for edit direction
 // =============================================================================
 const ANNOTATION_STORAGE_KEY = 'gnrDeckAnnotations:v1';
+const ANNOTATION_CLEANUP_STORAGE_KEY = 'gnrDeckAnnotationsCleanup:v1';
+const ANNOTATION_CLEANUP_VERSION = '2026-06-07-value-choice-slide-clear-v1';
 const PROCESSED_ANNOTATION_IDS = new Set([
   'ann-1780629707714',
   'ann-1780629755819',
@@ -41629,8 +41631,26 @@ function pruneProcessedAnnotations(store) {
   return store;
 }
 
+function migrateProcessedAnnotationStore() {
+  try {
+    if (localStorage.getItem(ANNOTATION_CLEANUP_STORAGE_KEY) === ANNOTATION_CLEANUP_VERSION) return;
+    const store = JSON.parse(localStorage.getItem(ANNOTATION_STORAGE_KEY) || '{}');
+    const firstSlideId = 'cs-value-choice-image-annotated-pink';
+    const item = store[firstSlideId];
+    if (item) {
+      item.points = [];
+      const hasSlideNote = (item.text && item.text.trim()) || (item.attachments && item.attachments.length);
+      if (hasSlideNote) store[firstSlideId] = item;
+      else delete store[firstSlideId];
+      localStorage.setItem(ANNOTATION_STORAGE_KEY, JSON.stringify(store));
+    }
+    localStorage.setItem(ANNOTATION_CLEANUP_STORAGE_KEY, ANNOTATION_CLEANUP_VERSION);
+  } catch (e) {}
+}
+
 function getAnnotationStore() {
   try {
+    migrateProcessedAnnotationStore();
     return pruneProcessedAnnotations(JSON.parse(localStorage.getItem(ANNOTATION_STORAGE_KEY) || '{}'));
   } catch (e) {
     return {};
@@ -41806,7 +41826,9 @@ document.addEventListener('keydown', function(e){
 
 document.addEventListener('DOMContentLoaded', function(){
   if (annotationsAllowedHere()) document.documentElement.classList.add('annotations-enabled');
+  migrateProcessedAnnotationStore();
   updateAnnotationBadge();
+  if (window.renderAnnotationMarkers) renderAnnotationMarkers();
   document.addEventListener('click', () => setTimeout(updateAnnotationBadge, 80));
   document.addEventListener('keydown', () => setTimeout(updateAnnotationBadge, 80));
 });
