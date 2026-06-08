@@ -8345,6 +8345,15 @@ window.cs1m5Reverse = function() {
   </div>
 </div>
 
+<style>
+  #cs-trusted-reciprocity-works{background:#f3ead8!important;overflow:hidden}
+  #cs-trusted-reciprocity-works .trw-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0}
+  #cs-trusted-reciprocity-works .trw-edge{position:absolute;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(184,149,74,.18),inset 0 0 80px rgba(26,22,18,.07)}
+</style>
+<div class="casey-slide ds-focus" id="cs-trusted-reciprocity-works" style="display:none" aria-label="Trusted Give n Receive reciprocity is how human connection works">
+  <img class="trw-img" src="assets/generated/reciprocity/trusted-reciprocity-works-v1.png" alt="Trusted Give n Receive reciprocity is how human connection works: relationship works naturally, close friendships compound, community is still unsolved."/>
+  <div class="trw-edge" aria-hidden="true"></div>
+</div>
 <div class="casey-slide ds-measure" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
@@ -35669,9 +35678,10 @@ window.csA7m1Reverse = function() {
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // Codex 2026-06-07: pickleball silliness collage inserted before silliness board.
+  // Codex 2026-06-07: trusted reciprocity slide inserted before relationship graph.
   'cs-value-choice-image-annotated-pink',
   'cs-frontier-scale-pink-2',
+  'cs-trusted-reciprocity-works',
   'cs-1m8',
   'cs-thegap',
   'cs-invite-operational-insanity-pink',
@@ -35705,14 +35715,14 @@ const TOTAL = SLIDE_ORDER.length;
 // Alt dots at REVIEW_POSITION render RED (matching primary review dot) — these are
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
-  3: ['cs-invite-matchmaking-opener-pink'],
-  4: ['cs-optimus-party-overhead-pink'],
-  5: ['cs-invite-dupr-vs-gnr-club-pink'],
-  8: ['cs-samecourt-pyramid-blue-heart-base-01', 'cs-samecourt-pyramid-blue-heart-base-02', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  12: ['cs-real-world-measurable-market'],
-  13: ['cs-magnetic-human-value-market'],
-  22: ['cs-16'],
-  24: ['cs-pb-silliness-purple-net-apology', 'cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
+  4: ['cs-invite-matchmaking-opener-pink'],
+  5: ['cs-optimus-party-overhead-pink'],
+  6: ['cs-invite-dupr-vs-gnr-club-pink'],
+  9: ['cs-samecourt-pyramid-blue-heart-base-01', 'cs-samecourt-pyramid-blue-heart-base-02', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
+  13: ['cs-real-world-measurable-market'],
+  14: ['cs-magnetic-human-value-market'],
+  23: ['cs-16'],
+  25: ['cs-pb-silliness-purple-net-apology', 'cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -37648,31 +37658,32 @@ const slideLabels = [
   null,
   'Human connection value question', //  1 cs-value-choice-image-annotated-pink
   '#1 predictor of a fulfilling life', //  2 cs-frontier-scale-pink-2
-  'The relationship graph is missing', //  3 cs-1m8
-  'Community technology is unsolved', //  4 cs-thegap
-  'Custom invitations are operationally hard', //  5 cs-invite-operational-insanity-pink
-  'NEPC proof / proving ground', //  6 cs-11e
-  'Rise of the personalized invitation feed', //  7 cs-gnr
-  'Pickleball pyramid / GnR wedge', //  8 cs-samecourt-pyramid-white2
-  'Referrals power the community sales engine', //  9 cs-invitation-word-of-mouth
-  'Programmable invitations train the graph', // 10 cs-programmable-invitations
-  'Feature ladder', // 11 cs-feature-stage-unlocks
-  '"Work"', // 12 cs-work-evolution-prelude
-  'Social pull market', // 13 cs-magnetic
-  'App store for people', // 14 cs-app-store-people
-  'Community intelligence flywheel', // 15 cs-fv6-img
-  'Founder wheelhouse', // 16 cs-18-vd4
-  'SameCourt paradigm flip', // 17 cs-samecourt
-  'Pickleball wedge', // 18 cs-wedgepb-codex
-  'Pickleball as wedge market', // 19 cs-wedge1
-  'Real-world communities', // 20 cs-2c
-  'Invisible layer of community value', // 21 cs-mv6-merge
-  'Drop into any pickleball community', // 22 cs-fw1
-  'Pickleball is silly', // 23 cs-pb-silliness-collage-main
-  'Pickleball silliness / section board', // 24 cs-pb-silliness-board-green
-  'Club owner offer', // 25 cs-club-os
-  'TeamReach vs GnR', // 26 cs-teamreach-referral-compare
-  'Brand promise', // 27 cs-brand-V8
+  'Trusted reciprocity', //  3 cs-trusted-reciprocity-works
+  'The relationship graph is missing', //  4 cs-1m8
+  'Community technology is unsolved', //  5 cs-thegap
+  'Custom invitations are operationally hard', //  6 cs-invite-operational-insanity-pink
+  'NEPC proof / proving ground', //  7 cs-11e
+  'Rise of the personalized invitation feed', //  8 cs-gnr
+  'Pickleball pyramid / GnR wedge', //  9 cs-samecourt-pyramid-white2
+  'Referrals power the community sales engine', // 10 cs-invitation-word-of-mouth
+  'Programmable invitations train the graph', // 11 cs-programmable-invitations
+  'Feature ladder', // 12 cs-feature-stage-unlocks
+  '"Work"', // 13 cs-work-evolution-prelude
+  'Social pull market', // 14 cs-magnetic
+  'App store for people', // 15 cs-app-store-people
+  'Community intelligence flywheel', // 16 cs-fv6-img
+  'Founder wheelhouse', // 17 cs-18-vd4
+  'SameCourt paradigm flip', // 18 cs-samecourt
+  'Pickleball wedge', // 19 cs-wedgepb-codex
+  'Pickleball as wedge market', // 20 cs-wedge1
+  'Real-world communities', // 21 cs-2c
+  'Invisible layer of community value', // 22 cs-mv6-merge
+  'Drop into any pickleball community', // 23 cs-fw1
+  'Pickleball is silly', // 24 cs-pb-silliness-collage-main
+  'Pickleball silliness / section board', // 25 cs-pb-silliness-board-green
+  'Club owner offer', // 26 cs-club-os
+  'TeamReach vs GnR', // 27 cs-teamreach-referral-compare
+  'Brand promise', // 28 cs-brand-V8
 ];
 
 // ─── Tooltip text resolver [Dave 2026-05-07] ────────────────────────────────
