@@ -26498,6 +26498,56 @@ window.csProgrammableInvitationsReverse = function() {
      paradigm flip, this slide does the marketplace proof of what the flip catches.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
+  #cs-feature-stage-unlocks{background:#f3ead8!important;overflow:hidden;color:#1a1612}
+  #cs-feature-stage-unlocks .fsu-paper{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,224,158,.48),transparent 48%),radial-gradient(ellipse at 50% 100%,rgba(184,149,74,.18),transparent 58%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%);z-index:0}
+  #cs-feature-stage-unlocks .fsu-paper:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.052) 1px,transparent 0);background-size:4px 4px;opacity:.58;mix-blend-mode:multiply}
+  #cs-feature-stage-unlocks .fsu-eyebrow{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
+  #cs-feature-stage-unlocks .fsu-stage{position:absolute;inset:0;z-index:2;padding:58px 62px 50px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px}
+  #cs-feature-stage-unlocks .fsu-title{margin:0;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.0rem,4.6vw,5.05rem);line-height:.94;font-weight:880;letter-spacing:0;color:#1a1612;text-shadow:0 2px 0 rgba(251,247,239,.88)}
+  #cs-feature-stage-unlocks .fsu-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:stretch;margin-top:6px}
+  #cs-feature-stage-unlocks .fsu-card{position:relative;min-height:322px;border:1.5px solid rgba(184,149,74,.40);border-radius:8px;background:rgba(251,247,239,.72);box-shadow:0 18px 46px rgba(26,22,18,.10),inset 0 0 0 1px rgba(255,255,255,.46);padding:24px 22px 22px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+  #cs-feature-stage-unlocks .fsu-card:not(:last-child):after{content:"";position:absolute;right:-24px;top:-32px;width:48px;height:30px;border-top:5px solid #c8462c;border-right:5px solid #c8462c;border-radius:0 22px 0 0;transform:rotate(18deg);opacity:.74}
+  #cs-feature-stage-unlocks .fsu-num{position:absolute;left:18px;top:18px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 28%,#f2c46b,#b8954a 68%,#8b682d);color:#fbf7ef;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2rem;font-weight:900;box-shadow:0 4px 12px rgba(26,22,18,.20)}
+  #cs-feature-stage-unlocks .fsu-icon{height:72px;margin-top:8px;margin-bottom:16px;color:#c8462c;display:grid;place-items:center}
+  #cs-feature-stage-unlocks .fsu-icon svg{width:68px;height:68px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  #cs-feature-stage-unlocks .fsu-card h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.54rem,1.75vw,2.05rem);line-height:1.05;font-weight:850;color:#1a1612;letter-spacing:0}
+  #cs-feature-stage-unlocks .fsu-card p{margin:14px 0 0;font-family:'Manrope',sans-serif;font-size:clamp(.82rem,.9vw,.98rem);line-height:1.34;font-weight:760;color:rgba(26,22,18,.72);max-width:260px}
+  #cs-feature-stage-unlocks .fsu-card strong{display:block;margin-top:auto;padding-top:18px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.12rem,1.3vw,1.44rem);line-height:1.15;font-weight:820;color:#c8462c}
+  #cs-feature-stage-unlocks .fsu-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;width:100%}
+  #cs-feature-stage-unlocks .fsu-metric{border:1px solid rgba(184,149,74,.38);border-radius:8px;background:rgba(184,149,74,.10);padding:10px 8px;font-family:'Manrope',sans-serif;font-size:.84rem;font-weight:850;line-height:1.2;color:#1a1612}
+  #cs-feature-stage-unlocks .fsu-metric b{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.34rem;line-height:1;color:#b8954a}
+  #cs-feature-stage-unlocks .fsu-table{margin-top:auto;border:1.5px solid rgba(184,149,74,.40);border-radius:8px;background:rgba(251,247,239,.66);box-shadow:0 16px 42px rgba(26,22,18,.08);overflow:hidden}
+  #cs-feature-stage-unlocks .fsu-row{display:grid;grid-template-columns:295px repeat(4,1fr);min-height:54px;border-bottom:1px solid rgba(184,149,74,.22)}
+  #cs-feature-stage-unlocks .fsu-row:last-child{border-bottom:0}
+  #cs-feature-stage-unlocks .fsu-cell{display:flex;align-items:center;justify-content:center;border-left:1px dashed rgba(184,149,74,.30);font-family:'Manrope',sans-serif;font-size:.86rem;font-weight:850;color:rgba(26,22,18,.72)}
+  #cs-feature-stage-unlocks .fsu-label{justify-content:flex-start;border-left:0;padding-left:28px;gap:12px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.38rem;font-weight:750;color:#1a1612}
+  #cs-feature-stage-unlocks .fsu-label i{font-style:normal;color:#c8462c;font-family:'Manrope',sans-serif;font-size:1.05rem;font-weight:950;width:22px;text-align:center}
+  #cs-feature-stage-unlocks .fsu-toggle{width:78px;height:28px;border-radius:999px;display:grid;place-items:center;background:rgba(184,149,74,.76);box-shadow:inset 0 0 0 1px rgba(139,104,45,.28)}
+  #cs-feature-stage-unlocks .fsu-toggle:after{content:"\2713";width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;color:#c8462c;font-size:1rem;font-weight:950;justify-self:end;margin-right:3px}
+  #cs-feature-stage-unlocks .fsu-toggle.off{background:rgba(184,149,74,.16)}
+  #cs-feature-stage-unlocks .fsu-toggle.off:after{content:"\00D7";color:rgba(26,22,18,.34);justify-self:start;margin-left:3px;margin-right:0;background:rgba(251,247,239,.70)}
+</style>
+<div class="casey-slide ds-focus" id="cs-feature-stage-unlocks" style="display:none" aria-label="Each feature unlocks the next stage">
+  <div class="fsu-paper" aria-hidden="true"></div>
+  <div class="fsu-eyebrow slide-eyebrow">Feature ladder</div>
+  <section class="fsu-stage">
+    <h1 class="fsu-title">Each feature unlocks the next stage</h1>
+    <div class="fsu-cards">
+      <article class="fsu-card"><div class="fsu-num">1</div><div class="fsu-icon"><svg viewBox="0 0 64 64"><rect x="15" y="14" width="34" height="38" rx="4"/><path d="M22 10v10M42 10v10M15 24h34M23 33h5M33 33h8M23 42h14"/><rect x="39" y="36" width="14" height="16" rx="2"/><path d="M43 36v-4a3 3 0 0 1 6 0v4"/></svg></div><h2>Invite-only<br>curated events</h2><p>Club-initiated. Club-gated.</p><div class="fsu-metrics"><div class="fsu-metric"><b>60</b>courts / week</div><div class="fsu-metric"><b>$210K</b>ARR</div></div></article>
+      <article class="fsu-card"><div class="fsu-num">2</div><div class="fsu-icon"><svg viewBox="0 0 64 64"><path d="M10 24l22 16 22-16"/><rect x="10" y="18" width="44" height="30" rx="4"/><circle cx="32" cy="22" r="8"/><path d="M26 38l16-10 10 12"/></svg></div><h2>Community events<br>+ referrals</h2><p>Club-initiated events where players can invite more players.</p><strong>Word of mouth<br>sales engine</strong></article>
+      <article class="fsu-card"><div class="fsu-num">3</div><div class="fsu-icon"><svg viewBox="0 0 64 64"><circle cx="29" cy="20" r="9"/><path d="M15 51c2-13 9-20 19-20 4 0 8 1 11 3"/><path d="M45 25l8 4v10c0 8-5 13-8 15-3-2-8-7-8-15V29l8-4z"/><path d="M42 39l3 3 6-7"/></svg></div><h2>Host-led<br>expansion</h2><p>Staff, pros, and trusted hosts can launch events under club rules.</p><strong>More supply.<br>More energy. More fill.</strong></article>
+      <article class="fsu-card"><div class="fsu-num">4</div><div class="fsu-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="8"/><circle cx="32" cy="10" r="4"/><circle cx="54" cy="32" r="4"/><circle cx="32" cy="54" r="4"/><circle cx="10" cy="32" r="4"/><circle cx="48" cy="16" r="4"/><circle cx="48" cy="48" r="4"/><circle cx="16" cy="48" r="4"/><circle cx="16" cy="16" r="4"/><path d="M32 18v6M40 32h6M32 40v6M18 32h6M38 26l6-6M38 38l6 6M26 38l-6 6M26 26l-6-6"/></svg></div><h2>Player-initiated<br>network</h2><p>Trusted players create demand and gather people.</p><strong>The community<br>runs itself</strong></article>
+    </div>
+    <div class="fsu-table" aria-label="Feature ladder capabilities by stage">
+      <div class="fsu-row"><div class="fsu-cell fsu-label"><i>01</i>Club initiated</div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div></div>
+      <div class="fsu-row"><div class="fsu-cell fsu-label"><i>02</i>Player referrals</div><div class="fsu-cell"><span class="fsu-toggle off"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div></div>
+      <div class="fsu-row"><div class="fsu-cell fsu-label"><i>03</i>Staff / pro initiated</div><div class="fsu-cell"><span class="fsu-toggle off"></span></div><div class="fsu-cell"><span class="fsu-toggle off"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div></div>
+      <div class="fsu-row"><div class="fsu-cell fsu-label"><i>04</i>Player initiated</div><div class="fsu-cell"><span class="fsu-toggle off"></span></div><div class="fsu-cell"><span class="fsu-toggle off"></span></div><div class="fsu-cell"><span class="fsu-toggle off"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div></div>
+      <div class="fsu-row"><div class="fsu-cell fsu-label"><i>05</i>Guardrails / approvals</div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div><div class="fsu-cell"><span class="fsu-toggle"></span></div></div>
+    </div>
+  </section>
+</div>
+<style>
   #cs-work-evolution-prelude{background:#f3ead8!important;overflow:hidden}
   #cs-work-evolution-prelude .worke-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   #cs-work-evolution-prelude .worke-eyebrow{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:none!important;color:#c8462c;z-index:3}
@@ -35610,7 +35660,7 @@ window.csA7m1Reverse = function() {
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // Codex 2026-06-07: annotation batch 11 order edits; Work alt/main sequence repaired.
+  // Codex 2026-06-07: feature ladder slide inserted before Work sequence.
   'cs-value-choice-image-annotated-pink',
   'cs-frontier-scale-pink-2',
   'cs-1m8',
@@ -35621,6 +35671,7 @@ const SLIDE_ORDER = [
   'cs-samecourt-pyramid-white2',
   'cs-invitation-word-of-mouth',
   'cs-programmable-invitations',
+  'cs-feature-stage-unlocks',
   'cs-work-evolution-prelude',
   'cs-magnetic',
   'cs-app-store-people',
@@ -35648,10 +35699,10 @@ const SLIDE_ALTS = {
   4: ['cs-optimus-party-overhead-pink'],
   5: ['cs-invite-dupr-vs-gnr-club-pink'],
   8: ['cs-samecourt-pyramid-blue-heart-base-01', 'cs-samecourt-pyramid-blue-heart-base-02', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  11: ['cs-real-world-measurable-market'],
-  12: ['cs-magnetic-human-value-market'],
-  21: ['cs-16'],
-  22: ['cs-pb-silliness-purple-net-apology', 'cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
+  12: ['cs-real-world-measurable-market'],
+  13: ['cs-magnetic-human-value-market'],
+  22: ['cs-16'],
+  23: ['cs-pb-silliness-purple-net-apology', 'cs-pb-lab-right-lab-pink', 'cs-pb-silliness-social-green', 'cs-pb-silliness-generated-kitchen-pink', 'cs-pb-silliness-generated-apology-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -37595,21 +37646,22 @@ const slideLabels = [
   'Pickleball pyramid / GnR wedge', //  8 cs-samecourt-pyramid-white2
   'Referrals power the community sales engine', //  9 cs-invitation-word-of-mouth
   'Programmable invitations train the graph', // 10 cs-programmable-invitations
-  '"Work"', // 11 cs-work-evolution-prelude
-  'Social pull market', // 12 cs-magnetic
-  'App store for people', // 13 cs-app-store-people
-  'Community intelligence flywheel', // 14 cs-fv6-img
-  'Founder wheelhouse', // 15 cs-18-vd4
-  'SameCourt paradigm flip', // 16 cs-samecourt
-  'Pickleball wedge', // 17 cs-wedgepb-codex
-  'Pickleball as wedge market', // 18 cs-wedge1
-  'Real-world communities', // 19 cs-2c
-  'Invisible layer of community value', // 20 cs-mv6-merge
-  'Drop into any pickleball community', // 21 cs-fw1
-  'Pickleball silliness / section board', // 22 cs-pb-silliness-board-green
-  'Club owner offer', // 23 cs-club-os
-  'TeamReach vs GnR', // 24 cs-teamreach-referral-compare
-  'Brand promise', // 25 cs-brand-V8
+  'Feature ladder', // 11 cs-feature-stage-unlocks
+  '"Work"', // 12 cs-work-evolution-prelude
+  'Social pull market', // 13 cs-magnetic
+  'App store for people', // 14 cs-app-store-people
+  'Community intelligence flywheel', // 15 cs-fv6-img
+  'Founder wheelhouse', // 16 cs-18-vd4
+  'SameCourt paradigm flip', // 17 cs-samecourt
+  'Pickleball wedge', // 18 cs-wedgepb-codex
+  'Pickleball as wedge market', // 19 cs-wedge1
+  'Real-world communities', // 20 cs-2c
+  'Invisible layer of community value', // 21 cs-mv6-merge
+  'Drop into any pickleball community', // 22 cs-fw1
+  'Pickleball silliness / section board', // 23 cs-pb-silliness-board-green
+  'Club owner offer', // 24 cs-club-os
+  'TeamReach vs GnR', // 25 cs-teamreach-referral-compare
+  'Brand promise', // 26 cs-brand-V8
 ];
 
 // ─── Tooltip text resolver [Dave 2026-05-07] ────────────────────────────────
