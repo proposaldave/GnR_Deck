@@ -106,6 +106,18 @@ Pickleball looks silly before it feels strategic. That is the point. The strange
 - Teach skill as generosity: better control makes the game more fun for partners and opponents.
 - Keep the class community-led, not status-led.
 
+### Event And Class Formats To Productize
+
+- Score-Help Social: for players who are uncomfortable keeping score. Staff leads approachable play, helps with the score, and makes the confusion normal.
+- Baby Block Class: players try to get the ball past the pro from kitchen line to kitchen line while the pro baby blocks and lets out-balls go.
+- Five-Hole Baby Block: players aim through the five-hole gap and learn that a tiny calm block can beat a big swing.
+- Dink Forever: players try to stay soft until someone gets impatient and rolls the dice too soon.
+- Pro Plays In: a pro joins member play and floats kitchen lobs so players get silly chances to finish easy balls.
+- Kitchen Sitter Lab: players practice the ball everyone thinks is automatic, then experience how often the easy ball still gets missed.
+- Middle Mystery: teams practice communication around "who's got middle?" and recover when both partners hesitate.
+- Wiffle Ball Weird Works: players earn points for awkward saves, mishits, chicken wings, tweeners, scorpions, resets, and ugly balls that stay alive.
+- Invitation Round: after the event, players get a simple prompt to invite the right friend into the next silly format. This is not itself the silly moment; it is the referral/sales layer built on top of the silly experience.
+
 ## Researched Possibly Silly To Add
 
 These are not canon yet. They are possible additions from online pickleball rules, glossary, and community term research.
