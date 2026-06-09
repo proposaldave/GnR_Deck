@@ -14233,126 +14233,6 @@ window.csInvitationWordOfMouthAdvance = function() {
   <div class="pbsc-edge" aria-hidden="true"></div>
   <div class="pbsc-guard">Let your guard down</div>
 </div>
-<style>
-  #cs-pb-silliness-memory-game{background:#f3ead8!important;overflow:hidden;color:#1a1612}
-  #cs-pb-silliness-memory-game .pbmem-paper{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,231,166,.58),transparent 42%),radial-gradient(ellipse at 92% 70%,rgba(91,143,212,.16),transparent 34%),radial-gradient(ellipse at 8% 82%,rgba(200,70,44,.12),transparent 32%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%);z-index:0}
-  #cs-pb-silliness-memory-game .pbmem-paper:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.05) 1px,transparent 0);background-size:4px 4px;opacity:.55;mix-blend-mode:multiply}
-  #cs-pb-silliness-memory-game .pbmem-eye{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
-  #cs-pb-silliness-memory-game .pbmem-stage{position:absolute;inset:0;z-index:2;padding:70px 82px 54px;box-sizing:border-box;display:grid;grid-template-columns:minmax(460px,.78fr) minmax(920px,1.22fr);gap:48px;align-items:center}
-  #cs-pb-silliness-memory-game .pbmem-copy{align-self:center;padding-top:14px}
-  #cs-pb-silliness-memory-game .pbmem-kicker{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;margin-bottom:20px}
-  #cs-pb-silliness-memory-game .pbmem-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.7rem,5.4vw,6.25rem);line-height:.92;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance}
-  #cs-pb-silliness-memory-game .pbmem-title em{display:block;color:#c8462c;font-style:italic;font-weight:780}
-  #cs-pb-silliness-memory-game .pbmem-sub{margin:24px 0 0;font-family:'Manrope',sans-serif;font-size:clamp(1.02rem,1.28vw,1.34rem);line-height:1.42;font-weight:760;color:rgba(26,22,18,.70);max-width:620px}
-  #cs-pb-silliness-memory-game .pbmem-progress{margin-top:34px;width:min(520px,100%);border:1.5px solid rgba(184,149,74,.38);border-radius:8px;background:rgba(251,247,239,.74);box-shadow:0 18px 42px rgba(26,22,18,.08);padding:18px 20px 20px}
-  #cs-pb-silliness-memory-game .pbmem-progress-top{display:flex;align-items:center;justify-content:space-between;gap:18px;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.58)}
-  #cs-pb-silliness-memory-game .pbmem-count{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.1rem;line-height:1;color:#b8954a;letter-spacing:0;text-transform:none;white-space:nowrap}
-  #cs-pb-silliness-memory-game .pbmem-bar{margin-top:12px;height:9px;border-radius:999px;background:rgba(184,149,74,.18);overflow:hidden}
-  #cs-pb-silliness-memory-game .pbmem-fill{height:100%;width:0%;background:linear-gradient(90deg,#5B8FD4,#b8954a,#c8462c);transition:width .32s ease}
-  #cs-pb-silliness-memory-game .pbmem-status{margin:13px 0 0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.3rem;line-height:1.18;font-style:italic;color:#1a1612}
-  #cs-pb-silliness-memory-game .pbmem-reset{margin-top:18px;border:1px solid rgba(200,70,44,.38);border-radius:999px;background:rgba(251,247,239,.82);padding:10px 16px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;cursor:pointer}
-  #cs-pb-silliness-memory-game .pbmem-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-self:center;perspective:1200px}
-  #cs-pb-silliness-memory-game .pbmem-card{position:relative;aspect-ratio:1.12/.78;border:0;background:transparent;padding:0;cursor:pointer;font:inherit;color:inherit;perspective:1000px;min-width:0}
-  #cs-pb-silliness-memory-game .pbmem-card-inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .42s cubic-bezier(.22,1,.36,1)}
-  #cs-pb-silliness-memory-game .pbmem-card.is-flipped .pbmem-card-inner,#cs-pb-silliness-memory-game .pbmem-card.is-matched .pbmem-card-inner{transform:rotateY(180deg)}
-  #cs-pb-silliness-memory-game .pbmem-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-radius:8px;border:1.5px solid rgba(184,149,74,.40);box-shadow:0 18px 34px rgba(26,22,18,.10),inset 0 0 0 1px rgba(255,255,255,.50);backface-visibility:hidden;overflow:hidden}
-  #cs-pb-silliness-memory-game .pbmem-front{background:linear-gradient(180deg,rgba(251,247,239,.90),rgba(251,247,239,.66));color:#1a1612}
-  #cs-pb-silliness-memory-game .pbmem-front:before{content:"";position:absolute;inset:12px;border:1px dashed rgba(200,70,44,.18);border-radius:6px}
-  #cs-pb-silliness-memory-game .pbmem-mark{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4rem;line-height:.8;color:#b8954a;font-weight:900}
-  #cs-pb-silliness-memory-game .pbmem-front span{margin-top:15px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:950;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.54)}
-  #cs-pb-silliness-memory-game .pbmem-back{transform:rotateY(180deg);background:linear-gradient(180deg,rgba(26,22,18,.96),rgba(26,22,18,.88));color:#fbf7ef;border-color:rgba(184,149,74,.72)}
-  #cs-pb-silliness-memory-game .pbmem-card.is-matched .pbmem-back{background:linear-gradient(180deg,#154a79,#0e3559);border-color:rgba(91,143,212,.72)}
-  #cs-pb-silliness-memory-game .pbmem-back b{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.18rem,1.48vw,1.62rem);line-height:1.02;font-weight:850;color:#fbf7ef;text-wrap:balance;max-width:86%}
-  #cs-pb-silliness-memory-game .pbmem-back span{margin-top:11px;max-width:84%;font-family:'Manrope',sans-serif;font-size:.66rem;line-height:1.22;font-weight:900;letter-spacing:.10em;text-transform:uppercase;color:#f7df9a}
-  html[data-export="1"] #cs-pb-silliness-memory-game .pbmem-card:nth-child(-n+4) .pbmem-card-inner{transform:rotateY(180deg)}
-</style>
-<div class="casey-slide ds-focus" id="cs-pb-silliness-memory-game" style="display:none" aria-label="Pickleball silliness memory game">
-  <div class="pbmem-paper" aria-hidden="true"></div>
-  <div class="pbmem-eye slide-eyebrow">Pickleball silliness as signal</div>
-  <section class="pbmem-stage">
-    <div class="pbmem-copy">
-      <div class="pbmem-kicker">Memory game</div>
-      <h1 class="pbmem-title">Match the silly.<em>Find the signal.</em></h1>
-      <p class="pbmem-sub">Each pair is one absurd pickleball ritual. When players laugh through the same ritual, the system learns who can relax together.</p>
-      <div class="pbmem-progress" aria-live="polite">
-        <div class="pbmem-progress-top"><span>Progress</span><span class="pbmem-count">0 / 6</span></div>
-        <div class="pbmem-bar"><div class="pbmem-fill"></div></div>
-        <p class="pbmem-status">Turn two cards. Same silliness means the connection is getting safer.</p>
-        <button class="pbmem-reset" type="button">Reset board</button>
-      </div>
-    </div>
-    <div class="pbmem-board" aria-label="Silliness memory cards">
-      <button class="pbmem-card" type="button" data-pair="score"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>The score</b><span>7-11-2 is a trust fall</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="dink"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>Dinking</b><span>adults softly tap forever</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="name"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>The name</b><span>pickleball disarms people</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="middle"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>Who's got middle?</b><span>confusion becomes coordination</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="kitchen"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>The kitchen</b><span>a silly boundary everyone obeys</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="net"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>Net-cord apology</b><span>luck turns into generosity</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="dink"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>Dinking</b><span>patience shows up in public</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="score"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>The score</b><span>everyone needs help remembering</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="middle"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>Who's got middle?</b><span>ego gets tested gently</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="name"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>The name</b><span>you cannot posture too hard</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="net"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>Net-cord apology</b><span>charm beats competitiveness</span></span></span></button>
-      <button class="pbmem-card" type="button" data-pair="kitchen"><span class="pbmem-card-inner"><span class="pbmem-face pbmem-front"><b class="pbmem-mark">?</b><span>tap to reveal</span></span><span class="pbmem-face pbmem-back"><b>The kitchen</b><span>shared absurd rules create belonging</span></span></span></button>
-    </div>
-  </section>
-</div>
-<script>
-(function(){
-  function initPbMemoryGame(){
-    var slide = document.getElementById('cs-pb-silliness-memory-game');
-    if (!slide || slide.dataset.pbmemInit === '1') return;
-    slide.dataset.pbmemInit = '1';
-    var cards = Array.prototype.slice.call(slide.querySelectorAll('.pbmem-card'));
-    var count = slide.querySelector('.pbmem-count');
-    var fill = slide.querySelector('.pbmem-fill');
-    var status = slide.querySelector('.pbmem-status');
-    var reset = slide.querySelector('.pbmem-reset');
-    var open = [];
-    var matched = 0;
-    var locked = false;
-    function render(message){
-      count.textContent = matched + ' / 6';
-      fill.style.width = Math.round((matched / 6) * 100) + '%';
-      if (message) status.textContent = message;
-    }
-    function clearBoard(){
-      open = [];
-      matched = 0;
-      locked = false;
-      cards.forEach(function(card){ card.classList.remove('is-flipped','is-matched'); card.disabled = false; });
-      render('Turn two cards. Same silliness means the connection is getting safer.');
-    }
-    cards.forEach(function(card){
-      card.addEventListener('click', function(){
-        if (locked || card.classList.contains('is-flipped') || card.classList.contains('is-matched')) return;
-        card.classList.add('is-flipped');
-        open.push(card);
-        if (open.length === 1) { render('Find the matching silly ritual.'); return; }
-        locked = true;
-        if (open[0].dataset.pair === open[1].dataset.pair) {
-          open.forEach(function(item){ item.classList.add('is-matched'); item.disabled = true; });
-          matched += 1;
-          open = [];
-          locked = false;
-          render(matched === 6 ? 'Board cleared: the silliness became a connection graph.' : 'Match made. The room is getting safer.');
-        } else {
-          render('Not the same ritual. Try another pair.');
-          setTimeout(function(){
-            open.forEach(function(item){ item.classList.remove('is-flipped'); });
-            open = [];
-            locked = false;
-            render('Turn two cards. Same silliness means the connection is getting safer.');
-          }, 820);
-        }
-      });
-    });
-    if (reset) reset.addEventListener('click', function(event){ event.stopPropagation(); clearBoard(); });
-    render();
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPbMemoryGame); else initPbMemoryGame();
-})();
-</script>
 <div class="casey-slide ds-focus psj-slide psg-slide psg-green" id="cs-pb-silliness-board-green" style="display:none">
   <div class="psg-eye slide-eyebrow">Pickleball silliness brings out Give n Receive</div>
   <div class="psg-board-rail"><span>Silly score</span><span>Wiffle ball</span><span>Dink kitchen</span><span>Weird form</span><span>Net apology</span></div>
@@ -35940,7 +35820,7 @@ const SLIDE_ALTS = {
   11: ['cs-real-world-measurable-market'],
   12: ['cs-magnetic-human-value-market'],
   21: ['cs-16'],
-  22: ['cs-pb-lab-right-lab-pink', 'cs-pb-silliness-memory-game'],
+  22: ['cs-pb-lab-right-lab-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -38078,7 +37958,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
     const isGeneratedSillinessPinkAlt = /^cs-pb-silliness-generated-/.test(altId);
     const isInvitationPinkAlt = /^cs-invite-/.test(altId);
-    const isPinkAlt = (altId === 'cs-pb-silliness-purple-net-apology' || isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-market-two-economics' || altId === 'cs-real-world-measurable-market' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-samecourt-pyramid-white2-pink' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-silliness-memory-game' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
+    const isPinkAlt = (altId === 'cs-pb-silliness-purple-net-apology' || isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-market-two-economics' || altId === 'cs-real-world-measurable-market' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-samecourt-pyramid-white2-pink' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-pb-silliness-purple-chaotic-bounce' || altId === 'cs-pb-silliness-purple-rotation-confusion' || altId === 'cs-pb-silliness-generated-sections-pink' || altId === 'cs-pb-silliness-generated-kitchen-pink' || altId === 'cs-pb-silliness-generated-apology-pink' || altId === 'cs-pb-silliness-generated-rotation-pink' || altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.

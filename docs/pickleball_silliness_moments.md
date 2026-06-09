@@ -79,6 +79,33 @@ Pickleball looks silly before it feels strategic. That is the point. The strange
 - Pro pop / kitchen-lob setup: a pro deliberately pops a super-high lob that lands in the kitchen so intermediate players get a chance to finish a ball that should be easy.
 - Easy-shot failure: a player has an overhead, sitter, or obviously easy ball and still misses it.
 
+## Silly Pickleball Academy - Core Community Classes And Drills
+
+### Community Play For Score-Unsure Players
+
+- Working class description: Are you uncomfortable keeping score, or do you just want approachable community play led by New England Pickleball Club staff who will help you with scoring and the basics? This play is for you.
+- Silliness angle: the class makes it socially safe to admit the score is confusing.
+- Community promise: nobody has to pretend they know the rules before they are allowed to belong.
+- GnR angle: the staff member is not only teaching scoring; they are lowering the barrier to first invitation, repeat play, and confidence in a group.
+
+### Core Community Class Themes
+
+- Positioning: learning where to stand so the point feels less chaotic and partners feel less abandoned.
+- Anticipation: reading what might happen next instead of reacting late and panicking.
+- Tic tac toe: using a simple grid/game frame to teach placement, patterns, and court awareness.
+- Cover the middle: reducing the classic "who's got middle?" confusion that creates blame and laughter.
+- Hit the feet: turning an easy-to-remember phrase into one of the simplest tactical goals.
+- Baby block: teaching players that not every ball needs a swing; sometimes the right move is a tiny calm block.
+- Simple Technique 4D: building enough range to hit soft when you want soft and hard when you want hard, instead of becoming a one-dimensional player who makes the game less fun for everyone.
+
+### Academy Design Principles
+
+- Make the first step socially safe.
+- Give each drill a memorable phrase that players can repeat on court.
+- Let silly names carry serious learning.
+- Teach skill as generosity: better control makes the game more fun for partners and opponents.
+- Keep the class community-led, not status-led.
+
 ## Researched Possibly Silly To Add
 
 These are not canon yet. They are possible additions from online pickleball rules, glossary, and community term research.
