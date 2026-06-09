@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GnR Deck Image Generation Style Reference</title>
+  <style>
+    @page { size: 16in 9in; margin: 0; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f3ead8;
+      color: #1a1612;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .page {
+      width: 16in;
+      height: 9in;
+      padding: .45in .55in;
+      page-break-after: always;
+      background:
+        radial-gradient(circle at 1px 1px, rgba(26,22,18,.045) 1px, transparent 0) 0 0 / 4px 4px,
+        linear-gradient(180deg, #fbf7ef 0%, #f3ead8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: .16in;
+      font-weight: 700;
+      color: #c8462c;
+      margin-bottom: .18in;
+    }
+    h1 {
+      font-size: .58in;
+      line-height: .95;
+      margin: 0 0 .18in;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    h1 em { color: #b8954a; }
+    .sub {
+      font-family: Arial, sans-serif;
+      font-size: .19in;
+      line-height: 1.35;
+      color: rgba(26,22,18,.72);
+      max-width: 10.5in;
+      margin-bottom: .26in;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: .28in;
+      align-items: start;
+    }
+    .card {
+      border: 1px solid rgba(184,149,74,.38);
+      border-radius: 8px;
+      background: rgba(251,247,239,.74);
+      padding: .16in;
+      box-shadow: 0 18px 44px rgba(26,22,18,.08);
+    }
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid rgba(184,149,74,.26);
+    }
+    .rules {
+      display: grid;
+      gap: .12in;
+      font-family: Arial, sans-serif;
+      font-size: .16in;
+      line-height: 1.28;
+    }
+    .rule {
+      padding: .13in .15in;
+      border: 1px solid rgba(184,149,74,.26);
+      border-radius: 8px;
+      background: rgba(251,247,239,.72);
+    }
+    .swatches {
+      display: flex;
+      gap: .12in;
+      margin: .2in 0 .16in;
+    }
+    .swatch {
+      width: .62in;
+      height: .62in;
+      border-radius: 8px;
+      border: 1px solid rgba(26,22,18,.18);
+    }
+    .prompt {
+      font-family: Arial, sans-serif;
+      white-space: pre-wrap;
+      font-size: .145in;
+      line-height: 1.28;
+      background: rgba(251,247,239,.78);
+      border: 1px solid rgba(184,149,74,.32);
+      border-radius: 8px;
+      padding: .18in;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="eyebrow">Give n Receive image generation reference</div>
+    <h1>Warm human value, <em>not generic tech.</em></h1>
+    <p class="sub">Use this visual sheet to keep ChatGPT-generated image slides aligned with the current GnR deck: warm paper, editorial scale, human community, measurable connection, and restrained gold/red/blue accents.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="recent-16x9-contact-sheet.jpg" alt="Recent GnR deck contact sheet">
+      </div>
+      <div>
+        <div class="swatches">
+          <div class="swatch" style="background:#fbf7ef"></div>
+          <div class="swatch" style="background:#1a1612"></div>
+          <div class="swatch" style="background:#b8954a"></div>
+          <div class="swatch" style="background:#c8462c"></div>
+          <div class="swatch" style="background:#5B8FD4"></div>
+        </div>
+        <div class="rules">
+          <div class="rule"><strong>Composition:</strong> one clear idea, generous negative space, no dense dashboards or tiny text.</div>
+          <div class="rule"><strong>Human tone:</strong> warm community scenes, reciprocity, contribution, invitation, connection.</div>
+          <div class="rule"><strong>Deck fit:</strong> preserve room for top-left eyebrow, large headline, right-side dots, and bottom-right controls.</div>
+          <div class="rule"><strong>Avoid:</strong> green, blue-purple SaaS gradients, generic AI glow, fake UI, warped logos, unreadable words.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page">
+    <div class="eyebrow">Reusable prompt</div>
+    <h1>Prompt ChatGPT like a <em>deck art director.</em></h1>
+    <div class="prompt">Create a text-free 16:9 bitmap background for the Give n Receive deck.
+Story beat: [human value / reciprocity / measurable connection / real-world community / pickleball silliness / invitation graph].
+Style: warm editorial watercolor/cinematic realism, cream paper, ink, gold/red/blue accents, restrained, premium investor deck.
+Avoid: green, generic SaaS/AI stock art, blue-purple gradients, fake app UI, dense text, tiny labels, warped logos.
+Leave safe blank space for HTML text and keep important visual content away from the right-side nav dots and bottom-right controls.
+
+If this is a flat image-only slide, use only the exact provided text, make it large and readable, and do not add extra microtext.</div>
+  </section>
+</body>
+</html>
