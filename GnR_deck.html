@@ -26689,49 +26689,13 @@ window.csProgrammableInvitationsReverse = function() {
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
   #cs-feature-stage-unlocks{background:#f3ead8!important;overflow:hidden;color:#1a1612}
-  #cs-feature-stage-unlocks .fsu-paper{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(251,247,239,.92),transparent 42%),radial-gradient(ellipse at 48% 82%,rgba(184,149,74,.22),transparent 54%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%);z-index:0}
-  #cs-feature-stage-unlocks .fsu-paper:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.045) 1px,transparent 0);background-size:4px 4px;opacity:.54;mix-blend-mode:multiply}
-  #cs-feature-stage-unlocks .fsu-eyebrow{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
-  #cs-feature-stage-unlocks .fsu-stage{position:absolute;inset:0;z-index:2;padding:72px 118px 70px;box-sizing:border-box;display:grid;grid-template-rows:auto 1fr auto;gap:34px;align-content:stretch}
-  #cs-feature-stage-unlocks .fsu-title{margin:0 auto;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.15rem,4.25vw,4.95rem);line-height:.96;font-weight:880;letter-spacing:0;color:#1a1612;text-shadow:0 2px 0 rgba(251,247,239,.90);max-width:1260px;text-wrap:balance}
-  #cs-feature-stage-unlocks .fsu-title em{font-style:italic;color:#b8954a;font-weight:820}
-  #cs-feature-stage-unlocks .fsu-cards{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;align-items:stretch;align-self:center;margin:0;min-height:0}
-  #cs-feature-stage-unlocks .fsu-cards:before{content:"";position:absolute;left:7%;right:7%;top:50%;height:2px;background:linear-gradient(90deg,transparent,rgba(184,149,74,.55),rgba(200,70,44,.30),rgba(184,149,74,.55),transparent);z-index:0}
-  #cs-feature-stage-unlocks .fsu-card{position:relative;min-height:278px;border:1.4px solid rgba(184,149,74,.40);border-radius:8px;background:linear-gradient(180deg,rgba(251,247,239,.90),rgba(251,247,239,.74));box-shadow:0 18px 44px rgba(26,22,18,.08),inset 0 0 0 1px rgba(255,255,255,.55);padding:28px 24px 24px;text-align:center;display:grid;grid-template-rows:auto auto 1fr auto;align-items:center;justify-items:center;overflow:visible;z-index:1}
-  #cs-feature-stage-unlocks .fsu-card:before{content:"";position:absolute;inset:12px;border:1px solid rgba(184,149,74,.16);border-radius:6px;pointer-events:none}
-  #cs-feature-stage-unlocks .fsu-card:not(:last-child):after{content:"";position:absolute;right:-18px;top:50%;width:14px;height:14px;border-top:2px solid #b8954a;border-right:2px solid #b8954a;transform:translateY(-50%) rotate(45deg);opacity:.75}
-  #cs-feature-stage-unlocks .fsu-num{position:absolute;left:18px;top:18px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 28%,#f0c56f,#b8954a 68%,#8b682d);color:#fbf7ef;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.68rem;font-weight:900;box-shadow:0 5px 14px rgba(26,22,18,.20);z-index:1}
-  #cs-feature-stage-unlocks .fsu-icon{height:54px;margin-top:4px;margin-bottom:18px;color:#c8462c;display:grid;place-items:center}
-  #cs-feature-stage-unlocks .fsu-icon svg{width:55px;height:55px;stroke:currentColor;fill:none;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round}
-  #cs-feature-stage-unlocks .fsu-card h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,1.68vw,2.02rem);line-height:1.02;font-weight:880;color:#1a1612;letter-spacing:0;text-wrap:balance}
-  #cs-feature-stage-unlocks .fsu-card p{margin:14px 0 0;font-family:'Manrope',sans-serif;font-size:.86rem;line-height:1.22;font-weight:850;letter-spacing:.06em;text-transform:uppercase;color:rgba(26,22,18,.56);max-width:220px}
-  #cs-feature-stage-unlocks .fsu-card strong{display:block;margin-top:16px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.02rem,1.12vw,1.26rem);line-height:1.12;font-weight:820;color:#c8462c;text-wrap:balance}
-  #cs-feature-stage-unlocks .fsu-metrics{display:flex;gap:8px;justify-content:center;margin-top:16px;width:100%}
-  #cs-feature-stage-unlocks .fsu-metric{min-width:92px;border:1px solid rgba(184,149,74,.34);border-radius:8px;background:rgba(184,149,74,.10);padding:8px 9px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.03em;text-transform:uppercase;line-height:1.08;color:rgba(26,22,18,.62)}
-  #cs-feature-stage-unlocks .fsu-metric b{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.22rem;line-height:1;color:#b8954a;letter-spacing:0;text-transform:none}
-  #cs-feature-stage-unlocks .fsu-signal{align-self:end;justify-self:center;width:min(1240px,100%);border:1.4px solid rgba(184,149,74,.38);border-radius:8px;background:rgba(251,247,239,.72);box-shadow:0 16px 38px rgba(26,22,18,.07),inset 0 0 0 1px rgba(255,255,255,.48);padding:21px 24px 22px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
-  #cs-feature-stage-unlocks .fsu-signal h3{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.72rem;line-height:1.02;font-weight:820;color:#1a1612;white-space:nowrap}
-  #cs-feature-stage-unlocks .fsu-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
-  #cs-feature-stage-unlocks .fsu-pill{border:1px solid rgba(184,149,74,.34);border-radius:999px;background:rgba(251,247,239,.82);padding:9px 15px;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:rgba(26,22,18,.70);white-space:nowrap}
-  #cs-feature-stage-unlocks .fsu-pill.hot{color:#c8462c;border-color:rgba(200,70,44,.34)}
+  #cs-feature-stage-unlocks .feature-stage-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:#fbf7ef;z-index:1}
+  body:has(#cs-feature-stage-unlocks.active) #gnr-mark{display:none!important}
 </style>
-<div class="casey-slide ds-focus" id="cs-feature-stage-unlocks" style="display:none" aria-label="Each stage adds signal to the invitation graph">
-  <div class="fsu-paper" aria-hidden="true"></div>
-  <div class="fsu-eyebrow slide-eyebrow">Feature ladder</div>
-  <section class="fsu-stage">
-    <h1 class="fsu-title">Each Feature Unlocks the Next Stage</h1>
-    <div class="fsu-cards">
-      <article class="fsu-card"><div class="fsu-num">1</div><div class="fsu-icon"><svg viewBox="0 0 64 64"><rect x="15" y="14" width="34" height="38" rx="4"/><path d="M22 10v10M42 10v10M15 24h34M23 33h5M33 33h8M23 42h14"/><rect x="39" y="36" width="14" height="16" rx="2"/><path d="M43 36v-4a3 3 0 0 1 6 0v4"/></svg></div><h2>Curated<br>Events</h2><p>Club starts</p><div class="fsu-metrics"><div class="fsu-metric"><b>60</b>courts / week</div><div class="fsu-metric"><b>$210K</b>ARR</div></div></article>
-      <article class="fsu-card"><div class="fsu-num">2</div><div class="fsu-icon"><svg viewBox="0 0 64 64"><path d="M10 24l22 16 22-16"/><rect x="10" y="18" width="44" height="30" rx="4"/><circle cx="32" cy="22" r="8"/><path d="M26 38l16-10 10 12"/></svg></div><h2>Open<br>Referrals</h2><p>Players pull players</p><strong>Word of mouth</strong></article>
-      <article class="fsu-card"><div class="fsu-num">3</div><div class="fsu-icon"><svg viewBox="0 0 64 64"><circle cx="29" cy="20" r="9"/><path d="M15 51c2-13 9-20 19-20 4 0 8 1 11 3"/><path d="M45 25l8 4v10c0 8-5 13-8 15-3-2-8-7-8-15V29l8-4z"/><path d="M42 39l3 3 6-7"/></svg></div><h2>Host-Led<br>Growth</h2><p>Trusted expansion</p><strong>More supply. More fill.</strong></article>
-      <article class="fsu-card"><div class="fsu-num">4</div><div class="fsu-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="8"/><circle cx="32" cy="10" r="4"/><circle cx="54" cy="32" r="4"/><circle cx="32" cy="54" r="4"/><circle cx="10" cy="32" r="4"/><circle cx="48" cy="16" r="4"/><circle cx="48" cy="48" r="4"/><circle cx="16" cy="48" r="4"/><circle cx="16" cy="16" r="4"/><path d="M32 18v6M40 32h6M32 40v6M18 32h6M38 26l6-6M38 38l6 6M26 38l-6 6M26 26l-6-6"/></svg></div><h2>Player<br>Network</h2><p>Demand gathers itself</p><strong>Community-led growth</strong></article>
-    </div>
-    <div class="fsu-signal" aria-label="Signals added by the feature ladder">
-      <h3>What compounds</h3>
-      <div class="fsu-pills"><span class="fsu-pill">Club supply</span><span class="fsu-pill hot">Referrals</span><span class="fsu-pill">Hosts</span><span class="fsu-pill">Player demand</span><span class="fsu-pill">Guardrails</span><span class="fsu-pill hot">Social signal</span></div>
-    </div>
-  </section>
-</div><style>
+<div class="casey-slide ds-focus" id="cs-feature-stage-unlocks" style="display:none" aria-label="Each Feature Unlocks the Next Stage">
+  <img class="feature-stage-img" src="assets/generated/feature-stage/feature-stage-unlocks-attached-2026-06-09.png" alt="Each Feature Unlocks the Next Stage feature ladder graphic."/>
+</div>
+<style>
   #cs-work-evolution-prelude{background:#f3ead8!important;overflow:hidden}
   #cs-work-evolution-prelude .worke-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   #cs-work-evolution-prelude .worke-eyebrow{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:none!important;color:#c8462c;z-index:3}
