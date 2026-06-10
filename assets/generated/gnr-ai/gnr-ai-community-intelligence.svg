@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Community intelligence invitation graph icon">
+  <defs>
+    <radialGradient id="paper" cx="50%" cy="45%" r="68%">
+      <stop offset="0" stop-color="#fff9ea"/>
+      <stop offset="0.62" stop-color="#fbf7ef"/>
+      <stop offset="1" stop-color="#efe1c7"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f6d77d" stop-opacity="0.95"/>
+      <stop offset="0.56" stop-color="#b8954a" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#b8954a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#1a1612" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <circle cx="128" cy="128" r="121" fill="url(#paper)"/>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#b8954a" stroke-width="2.5" stroke-opacity="0.44"/>
+  <circle cx="128" cy="128" r="66" fill="url(#glow)"/>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 62 C110 83 99 99 83 112" stroke="#b8954a" stroke-width="5" stroke-opacity="0.82"/>
+    <path d="M128 62 C146 83 157 99 173 112" stroke="#b8954a" stroke-width="5" stroke-opacity="0.82"/>
+    <path d="M83 112 C99 139 110 158 128 184" stroke="#5B8FD4" stroke-width="5" stroke-opacity="0.78"/>
+    <path d="M173 112 C157 139 146 158 128 184" stroke="#c8462c" stroke-width="5" stroke-opacity="0.78"/>
+    <path d="M66 158 C92 146 107 139 128 128 C149 117 164 110 190 98" stroke="#b8954a" stroke-width="3.5" stroke-dasharray="5 9" stroke-opacity="0.62"/>
+    <path d="M66 98 C92 110 107 117 128 128 C149 139 164 146 190 158" stroke="#b8954a" stroke-width="3.5" stroke-dasharray="5 9" stroke-opacity="0.62"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <circle cx="128" cy="128" r="35" fill="#fbf7ef" stroke="#b8954a" stroke-width="4"/>
+    <path d="M128 100 L136 120 L157 128 L136 136 L128 156 L120 136 L99 128 L120 120 Z" fill="#b8954a"/>
+    <circle cx="128" cy="128" r="8" fill="#1a1612" opacity="0.86"/>
+  </g>
+
+  <g fill="#fbf7ef" stroke-width="4" filter="url(#softShadow)">
+    <g stroke="#5B8FD4">
+      <circle cx="66" cy="98" r="17"/>
+      <path d="M42 135 C47 118 85 118 90 135" fill="none" stroke-linecap="round"/>
+    </g>
+    <g stroke="#c8462c">
+      <circle cx="190" cy="98" r="17"/>
+      <path d="M166 135 C171 118 209 118 214 135" fill="none" stroke-linecap="round"/>
+    </g>
+    <g stroke="#b8954a">
+      <circle cx="66" cy="158" r="17"/>
+      <path d="M42 195 C47 178 85 178 90 195" fill="none" stroke-linecap="round"/>
+    </g>
+    <g stroke="#b8954a">
+      <circle cx="190" cy="158" r="17"/>
+      <path d="M166 195 C171 178 209 178 214 195" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g fill="#b8954a">
+    <circle cx="128" cy="62" r="8"/>
+    <circle cx="128" cy="184" r="8"/>
+    <circle cx="101" cy="80" r="4" opacity="0.76"/>
+    <circle cx="155" cy="80" r="4" opacity="0.76"/>
+    <circle cx="101" cy="176" r="4" opacity="0.76"/>
+    <circle cx="155" cy="176" r="4" opacity="0.76"/>
+  </g>
+</svg>
