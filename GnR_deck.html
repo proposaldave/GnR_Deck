@@ -12161,6 +12161,9 @@ window.csInvitationWordOfMouthAdvance = function() {
   /* Initial state pre-replay so first paint isn't jarring */
   #cs-11 .cs11-invite { opacity: 0; }
   #cs-11 .cs11-group  { opacity: 0; }
+  /* Appendix/annotation repair 2026-06-11: if a flip-card back is visible outside the main replay path, keep its full content visible. */
+  #cs-11[data-left-flipped="1"] .cs11-invite,
+  #cs-11[data-right-flipped="1"] .cs11-group { opacity: 1; animation: none; }
 
   /* Replay class is toggled by JS each time cs-11 becomes the active slide. */
   #cs-11.cs11-replay .cs11-invite { animation: cs11InvitePop 0.45s cubic-bezier(.34,1.56,.64,1) both; }
