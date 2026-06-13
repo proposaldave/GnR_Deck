@@ -36047,7 +36047,6 @@ const SLIDE_ORDER = [
   'cs-gnr',
   'cs-samecourt-pyramid-white2',
   'cs-invitation-word-of-mouth',
-  'cs-work-evolution-prelude',
   'cs-work-measurable-market',
   'cs-magnetic',
   'cs-app-store-people',
@@ -36080,10 +36079,10 @@ const SLIDE_ALTS = {
   3: ['cs-optimus-party-overhead-pink'],
   4: ['cs-invite-dupr-vs-gnr-club-pink'],
   7: ['cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-map-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  10: [],
-  11: ['cs-magnetic-human-value-market'],
-  20: ['cs-16'],
-  21: ['cs-pb-lab-right-lab-pink'],
+  9: ['cs-work-evolution-prelude'],
+  10: ['cs-magnetic-human-value-market'],
+  19: ['cs-16'],
+  20: ['cs-pb-lab-right-lab-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -38036,26 +38035,25 @@ const slideLabels = [
   'Rise of the personalized invitation feed', //  6 cs-gnr
   'Pickleball pyramid / GnR wedge', //  7 cs-samecourt-pyramid-white2
   'Referrals power the community sales engine', //  8 cs-invitation-word-of-mouth
-  '"Work"', //  9 cs-work-evolution-prelude
-  'Next measurable market', // 10 cs-work-measurable-market
-  'Social pull market', // 11 cs-magnetic
-  'App store for people', // 12 cs-app-store-people
-  'Community intelligence flywheel', // 13 cs-fv6-img
-  'Founder wheelhouse', // 14 cs-18-vd4
-  'SameCourt paradigm flip', // 15 cs-samecourt
-  'Same courts / utilization / net profit', // 16 cs-revenue-util-profit-blue
-  'Pickleball wedge', // 17 cs-wedgepb-codex
-  'Pickleball as wedge market', // 18 cs-wedge1
-  'Real-world communities', // 19 cs-2c
-  'Invisible layer of community value', // 20 cs-mv6-merge
-  'Drop into any pickleball community', // 21 cs-fw1
-  'Pickleball is silly', // 22 cs-pb-silliness-collage-main
-  'Club owner offer', // 23 cs-club-os
-  'TeamReach vs GnR', // 24 cs-teamreach-referral-compare
-  'Programmable invitations train the graph', // 25 cs-programmable-invitations
-  'Feature ladder', // 26 cs-feature-stage-unlocks
-  'Brand promise', // 27 cs-brand-V8
-  'Five-star experience', // 28 cs-five-star-experience-final
+  'Next measurable market', //  9 cs-work-measurable-market
+  'Social pull market', // 10 cs-magnetic
+  'App store for people', // 11 cs-app-store-people
+  'Community intelligence flywheel', // 12 cs-fv6-img
+  'Founder wheelhouse', // 13 cs-18-vd4
+  'SameCourt paradigm flip', // 14 cs-samecourt
+  'Same courts / utilization / net profit', // 15 cs-revenue-util-profit-blue
+  'Pickleball wedge', // 16 cs-wedgepb-codex
+  'Pickleball as wedge market', // 17 cs-wedge1
+  'Real-world communities', // 18 cs-2c
+  'Invisible layer of community value', // 19 cs-mv6-merge
+  'Drop into any pickleball community', // 20 cs-fw1
+  'Pickleball is silly', // 21 cs-pb-silliness-collage-main
+  'Club owner offer', // 22 cs-club-os
+  'TeamReach vs GnR', // 23 cs-teamreach-referral-compare
+  'Programmable invitations train the graph', // 24 cs-programmable-invitations
+  'Feature ladder', // 25 cs-feature-stage-unlocks
+  'Brand promise', // 26 cs-brand-V8
+  'Five-star experience', // 27 cs-five-star-experience-final
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -38225,7 +38223,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
     const isGeneratedSillinessPinkAlt = /^cs-pb-silliness-generated-/.test(altId);
     const isInvitationPinkAlt = /^cs-invite-/.test(altId);
-    const isPinkAlt = (altId === 'cs-pb-silliness-purple-net-apology' || isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-market-two-economics' || altId === 'cs-real-world-measurable-market' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-samecourt-pyramid-previous-pink' || altId === 'cs-samecourt-pyramid-white2-pink' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
+    const isPinkAlt = (altId === 'cs-pb-silliness-purple-net-apology' || isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-work-evolution-prelude' || altId === 'cs-market-two-economics' || altId === 'cs-real-world-measurable-market' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-samecourt-pyramid-previous-pink' || altId === 'cs-samecourt-pyramid-white2-pink' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-pb-silliness-purple-chaotic-bounce' || altId === 'cs-pb-silliness-purple-rotation-confusion' || altId === 'cs-pb-silliness-generated-sections-pink' || altId === 'cs-pb-silliness-generated-kitchen-pink' || altId === 'cs-pb-silliness-generated-apology-pink' || altId === 'cs-pb-silliness-generated-rotation-pink' || altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
