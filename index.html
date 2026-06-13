@@ -39042,6 +39042,7 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareAdvance && window.csTeamreachCompareAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-brand-V8' && window.csBrandV8Advance && window.csBrandV8Advance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance()) {
       setTimeout(() => { wheelLock = false; }, 1000);
       return;
@@ -39216,6 +39217,7 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-brand-V8' && window.csBrandV8Reverse && window.csBrandV8Reverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
