@@ -1,4 +1,161 @@
 <!-- timestamp: 20260515-072455 | slide-id: cs-1bm1 | description: pre-quality-pass -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modern Life - Two Imbalances</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf7ef;
+    --ink: #1a1612;
+    --gold: #b8954a;
+    --blue: #5B8FD4;
+    --red: #c8462c;
+    --ui: 'Manrope', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: var(--ui);
+    overflow: hidden;
+  }
+
+  .casey-slide {
+    width: 100vw;
+    height: 100vh;
+    min-height: 720px;
+    background:
+      radial-gradient(circle at 50% 46%, rgba(255,255,255,0.78), rgba(255,255,255,0) 34%),
+      var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .casey-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(184,149,74,0.10) 0.75px, transparent 0.75px);
+    background-size: 6px 6px;
+    opacity: 0.28;
+  }
+
+  .inner {
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ti-flip-wrap,
+  .ti-flip-inner {
+    min-height: 408px;
+    height: 100%;
+  }
+
+  .ti-ph {
+    display: none !important;
+  }
+
+  .ti-card {
+    height: 100%;
+    min-height: 408px;
+    box-shadow: 0 18px 44px rgba(26,22,18,0.055);
+  }
+
+  .ti-card > div:first-child {
+    text-align: center;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .ti-bar-row {
+    display: grid;
+    align-items: center;
+    gap: 14px;
+    min-height: 38px;
+  }
+
+  .ti-tech-row {
+    grid-template-columns: 68px minmax(190px, 1fr) 132px;
+  }
+
+  .ti-val-row {
+    grid-template-columns: 116px minmax(210px, 1fr) 72px;
+  }
+
+  .ti-bar-track {
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(26,22,18,0.07);
+    border: 1px solid rgba(26,22,18,0.06);
+    overflow: hidden;
+  }
+
+  .ti-bar-fill {
+    height: 100%;
+    border-radius: inherit;
+    opacity: 0.92;
+  }
+
+  .ti-left .ti-bar-fill {
+    background: linear-gradient(90deg, rgba(91,143,212,0.35), rgba(91,143,212,0.9));
+  }
+
+  .ti-right .ti-bar-fill {
+    background: linear-gradient(90deg, rgba(200,70,44,0.30), rgba(200,70,44,0.84));
+  }
+
+  .ti-empty .ti-bar-track {
+    background: rgba(184,149,74,0.05);
+    border: 1.5px dashed rgba(184,149,74,0.48);
+  }
+
+  .ti-divider {
+    height: 1px;
+    margin: 13px 0 10px;
+    background: linear-gradient(90deg, transparent, rgba(184,149,74,0.5), transparent);
+  }
+
+  .ti-bottom {
+    margin-top: auto !important;
+    padding-top: 14px;
+  }
+
+  .ti-bridge {
+    min-height: 408px;
+  }
+
+  @media (max-width: 980px) {
+    body { overflow: auto; }
+    .casey-slide { height: auto; min-height: 100vh; overflow: visible; }
+    .inner { height: auto; min-height: 100vh; }
+    .inner > div:nth-child(2) {
+      grid-template-columns: 1fr !important;
+    }
+    .ti-bridge {
+      min-height: auto;
+      transform: rotate(90deg);
+      padding: 12px 0;
+    }
+  }
+</style>
+</head>
+<body>
 <div class="casey-slide ds-focus" id="cs-1bm1" data-left="0" data-right="0" style="cursor:default">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Modern life</div>
@@ -207,3 +364,5 @@
 </div>
 </section>
 </div>
+</body>
+</html>
