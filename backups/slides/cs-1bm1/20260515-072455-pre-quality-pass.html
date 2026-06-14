@@ -60,6 +60,12 @@
     display: block;
     filter: saturate(0.98) contrast(1.02);
     transform: scale(1.015);
+    transition: opacity 760ms cubic-bezier(.22,1,.36,1), filter 760ms cubic-bezier(.22,1,.36,1);
+  }
+
+  .casey-slide.cards-entered .modern-life-bg img {
+    opacity: 0.72;
+    filter: saturate(0.72) contrast(0.98);
   }
 
   .modern-life-bg::after {
@@ -69,6 +75,28 @@
     background:
       radial-gradient(ellipse at 52% 48%, rgba(251,247,239,0.80) 0%, rgba(251,247,239,0.54) 34%, rgba(251,247,239,0.20) 60%, rgba(251,247,239,0.08) 100%),
       linear-gradient(180deg, rgba(251,247,239,0.38) 0%, rgba(251,247,239,0.12) 45%, rgba(251,247,239,0.30) 100%);
+    pointer-events: none;
+    transition: background 760ms cubic-bezier(.22,1,.36,1);
+  }
+
+  .casey-slide.cards-entered .modern-life-bg::after {
+    background:
+      radial-gradient(ellipse at 50% 54%, rgba(251,247,239,0.96) 0%, rgba(251,247,239,0.92) 39%, rgba(251,247,239,0.72) 63%, rgba(251,247,239,0.32) 100%),
+      linear-gradient(90deg, rgba(251,247,239,0.70) 0%, rgba(251,247,239,0.48) 22%, rgba(251,247,239,0.88) 48%, rgba(251,247,239,0.48) 77%, rgba(251,247,239,0.70) 100%),
+      linear-gradient(180deg, rgba(251,247,239,0.34) 0%, rgba(251,247,239,0.18) 45%, rgba(251,247,239,0.40) 100%);
+  }
+
+  .casey-slide.cards-entered .modern-life-bg::before {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    top: 31%;
+    bottom: 14%;
+    z-index: 1;
+    border-radius: 38px;
+    background: rgba(251,247,239,0.56);
+    filter: blur(34px);
     pointer-events: none;
   }
 
