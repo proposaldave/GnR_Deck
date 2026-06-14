@@ -63,7 +63,7 @@
     transition: opacity 760ms cubic-bezier(.22,1,.36,1), filter 760ms cubic-bezier(.22,1,.36,1);
   }
 
-  .casey-slide.cards-entered .modern-life-bg img {
+  .casey-slide.bg-settled .modern-life-bg img {
     opacity: 0.72;
     filter: saturate(0.72) contrast(0.98);
   }
@@ -76,17 +76,17 @@
       radial-gradient(ellipse at 52% 48%, rgba(251,247,239,0.80) 0%, rgba(251,247,239,0.54) 34%, rgba(251,247,239,0.20) 60%, rgba(251,247,239,0.08) 100%),
       linear-gradient(180deg, rgba(251,247,239,0.38) 0%, rgba(251,247,239,0.12) 45%, rgba(251,247,239,0.30) 100%);
     pointer-events: none;
-    transition: background 760ms cubic-bezier(.22,1,.36,1);
+    transition: background 1050ms cubic-bezier(.22,1,.36,1);
   }
 
-  .casey-slide.cards-entered .modern-life-bg::after {
+  .casey-slide.bg-settled .modern-life-bg::after {
     background:
       radial-gradient(ellipse at 50% 54%, rgba(251,247,239,0.96) 0%, rgba(251,247,239,0.92) 39%, rgba(251,247,239,0.72) 63%, rgba(251,247,239,0.32) 100%),
       linear-gradient(90deg, rgba(251,247,239,0.70) 0%, rgba(251,247,239,0.48) 22%, rgba(251,247,239,0.88) 48%, rgba(251,247,239,0.48) 77%, rgba(251,247,239,0.70) 100%),
       linear-gradient(180deg, rgba(251,247,239,0.34) 0%, rgba(251,247,239,0.18) 45%, rgba(251,247,239,0.40) 100%);
   }
 
-  .casey-slide.cards-entered .modern-life-bg::before {
+  .casey-slide.bg-settled .modern-life-bg::before {
     content: "";
     position: absolute;
     left: 18%;
@@ -116,9 +116,9 @@
     position: relative;
     z-index: 2;
     opacity: 0;
-    transform: translateY(14px) scale(0.992);
+    transform: translateY(20px) scale(0.988);
     pointer-events: none;
-    transition: opacity 760ms cubic-bezier(.22,1,.36,1), transform 760ms cubic-bezier(.22,1,.36,1);
+    transition: opacity 1050ms cubic-bezier(.16,1,.3,1), transform 1050ms cubic-bezier(.16,1,.3,1);
   }
 
   .casey-slide.cards-entered .inner {
@@ -129,8 +129,8 @@
 
   .inner > div:first-child {
     opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 760ms cubic-bezier(.22,1,.36,1) 120ms, transform 760ms cubic-bezier(.22,1,.36,1) 120ms;
+    transform: translateY(12px);
+    transition: opacity 950ms cubic-bezier(.16,1,.3,1) 260ms, transform 950ms cubic-bezier(.16,1,.3,1) 260ms;
   }
 
   .casey-slide.cards-entered .inner > div:first-child {
@@ -140,8 +140,8 @@
 
   .inner > div:nth-child(2) {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 820ms cubic-bezier(.22,1,.36,1) 260ms, transform 820ms cubic-bezier(.22,1,.36,1) 260ms;
+    transform: translateY(24px) scale(0.985);
+    transition: opacity 1100ms cubic-bezier(.16,1,.3,1) 520ms, transform 1100ms cubic-bezier(.16,1,.3,1) 520ms;
   }
 
   .casey-slide.cards-entered .inner > div:nth-child(2) {
@@ -349,17 +349,29 @@
 
   function cs1bm1RevealCards() {
     var slide = document.getElementById('cs-1bm1');
-    if (slide && !slide.classList.contains('cards-entered')) {
+    if (!slide || slide.classList.contains('cards-entered') || slide.classList.contains('reveal-running')) return false;
+    slide.classList.add('reveal-running');
+    slide.classList.add('bg-settled');
+    window.setTimeout(function () {
       slide.classList.add('cards-entered');
-      return true;
-    }
-    return false;
+    }, 430);
+    return true;
+  }
+
+  function cs1bm1ForceCards() {
+    var slide = document.getElementById('cs-1bm1');
+    if (!slide) return;
+    slide.classList.add('bg-settled');
+    slide.classList.add('cards-entered');
   }
 
   window.addEventListener('DOMContentLoaded', function () {
     var params = new URLSearchParams(window.location.search);
     if (params.get('cards') === '1' || params.get('back') === '1') {
-      cs1bm1RevealCards();
+      cs1bm1ForceCards();
+    }
+    if (params.get('auto') === '1') {
+      window.setTimeout(cs1bm1RevealCards, 250);
     }
     if (params.get('back') === '1') {
       document.querySelectorAll('.ti-flip-inner').forEach(function (card) {
