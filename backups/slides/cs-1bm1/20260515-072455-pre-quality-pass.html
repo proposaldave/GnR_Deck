@@ -61,20 +61,40 @@
     z-index: 1;
   }
 
-  .ti-flip-wrap,
+  .ti-flip-wrap {
+    min-height: 408px;
+    height: 100%;
+    perspective: 1500px;
+  }
+
   .ti-flip-inner {
     min-height: 408px;
     height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 620ms cubic-bezier(.2,.72,.2,1);
   }
 
-  .ti-ph {
-    display: none !important;
+  .ti-flip-inner.is-flipped {
+    transform: rotateY(180deg);
   }
 
   .ti-card {
+    position: absolute;
+    inset: 0;
     height: 100%;
     min-height: 408px;
     box-shadow: 0 18px 44px rgba(26,22,18,0.055);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+  }
+
+  .ti-ph {
+    position: absolute;
+    inset: 0;
+    min-height: 408px;
+    backface-visibility: hidden;
+    box-shadow: 0 18px 44px rgba(26,22,18,0.045);
   }
 
   .ti-card > div:first-child {
@@ -132,8 +152,74 @@
   }
 
   .ti-bottom {
-    margin-top: auto !important;
-    padding-top: 14px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    margin-top: 0 !important;
+    padding-top: 0;
+    pointer-events: none;
+  }
+
+  .ti-orbit {
+    width: 180px !important;
+    height: 180px !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background:
+      radial-gradient(circle, rgba(255,255,255,0.92) 0 25%, rgba(255,255,255,0.54) 47%, rgba(255,255,255,0.1) 72%),
+      rgba(255,255,255,0.26) !important;
+    margin: 0 auto;
+  }
+
+  .ti-orbit::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    border-radius: 50%;
+    border: 1.5px dashed var(--orbit-color);
+    opacity: 0.55;
+  }
+
+  .ti-orbit::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(26,22,18,0.08);
+  }
+
+  .ti-orbit svg {
+    position: relative;
+    z-index: 1;
+    width: 96px;
+    height: 96px;
+  }
+
+  .ti-orbit-tech {
+    --orbit-color: rgba(91,143,212,0.58);
+  }
+
+  .ti-orbit-values {
+    --orbit-color: rgba(184,149,74,0.68);
+  }
+
+  .ti-bottom .ti-orbit {
+    width: 58px !important;
+    height: 58px !important;
+    opacity: 0.72;
+  }
+
+  .ti-bottom .ti-orbit::before {
+    inset: -5px;
+  }
+
+  .ti-bottom .ti-orbit svg {
+    width: 36px;
+    height: 36px;
   }
 
   .ti-bridge {
@@ -154,6 +240,20 @@
     }
   }
 </style>
+<script>
+  function cs1bm1Toggle(side) {
+    var card = document.querySelector('.ti-flip-' + side);
+    if (card) card.classList.toggle('is-flipped');
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    if (new URLSearchParams(window.location.search).get('back') === '1') {
+      document.querySelectorAll('.ti-flip-inner').forEach(function (card) {
+        card.classList.add('is-flipped');
+      });
+    }
+  });
+</script>
 </head>
 <body>
 <div class="casey-slide ds-focus" id="cs-1bm1" data-left="0" data-right="0" style="cursor:default">
@@ -228,7 +328,7 @@
         <!-- [Dave 2026-05-12] 'Technology imbalance' verdict kicker DELETED (top eyebrow now reads 'Technology: scroll alone.' so the verdict was redundant). Invisible spacer also dropped since right-card sub-eyebrow no longer needs compensation. -->
         <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;margin-top:32px">
           <!-- Scroll alone icon — replaced with EXACT cs-a7 graphic per Dave 2026-05-07 ("use that graphic for the tech imbalance graphic on the modern life slide") -->
-          <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
+          <div class="ti-orbit ti-orbit-tech" style="margin:6px 0 0">
             <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
               <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.35)"/>
               <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.3)" stroke-width="2" stroke-linecap="round"/>
@@ -242,8 +342,8 @@
         </div>
       </div>
       <!-- LEFT placeholder — back face (visible at step 0). Mirrors the cs-a7 stick-figure exactly per Dave 2026-05-07 -->
-      <div class="ti-ph ti-ph-left" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px dashed rgba(91,143,212,0.45);border-radius:12px;background:rgba(91,143,212,0.04);padding:40px 20px">
-        <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center">
+      <div class="ti-ph ti-ph-left" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px solid rgba(91,143,212,0.28);border-top:4px solid #5B8FD4;border-radius:12px;background:rgba(91,143,212,0.04);padding:40px 20px">
+        <div class="ti-orbit ti-orbit-tech">
           <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
             <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.35)"/>
             <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.3)" stroke-width="2" stroke-linecap="round"/>
@@ -320,38 +420,44 @@
         <!-- [Dave 2026-05-12] 'Values imbalance' verdict kicker DELETED (top eyebrow now reads 'Values: life's scorecard.' so the verdict was redundant). Invisible spacer also dropped. -->
         <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
           <!-- 3-figure community icon — matched exactly to placeholder back-face (90px white circle) per Dave 2026-04-30 PM -->
-          <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
+          <div class="ti-orbit ti-orbit-values" style="margin:6px 0 0">
             <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
-              <circle cx="26" cy="16" r="5" fill="rgba(200,70,44,0.55)"/>
-              <path d="M26 22 L26 38" stroke="rgba(200,70,44,0.5)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M22 30 L26 28 L30 30" stroke="rgba(200,70,44,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-              <path d="M22 38 L26 38 L30 38" stroke="rgba(200,70,44,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="14" cy="19" r="4" fill="rgba(200,70,44,0.42)"/>
-              <path d="M14 24 L14 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M11 38 L17 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.4" stroke-linecap="round"/>
-              <circle cx="38" cy="19" r="4" fill="rgba(200,70,44,0.42)"/>
-              <path d="M38 24 L38 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M35 38 L41 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M8 40 H44" stroke="rgba(184,149,74,0.42)" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="26" cy="14" r="6" fill="#b8954a"/>
+              <path d="M26 21 L26 38" stroke="#b8954a" stroke-width="3" stroke-linecap="round"/>
+              <path d="M17 27 L26 22 L35 27" stroke="#b8954a" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M18 40 L26 38 L34 40" stroke="#b8954a" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="12" cy="18" r="5" fill="#5B8FD4"/>
+              <path d="M12 24 L12 39" stroke="#5B8FD4" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M5 30 L12 25 L19 30" stroke="#5B8FD4" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <path d="M5 42 L12 39 L19 42" stroke="#5B8FD4" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="40" cy="18" r="5" fill="#c8462c"/>
+              <path d="M40 24 L40 39" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M33 30 L40 25 L47 30" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <path d="M33 42 L40 39 L47 42" stroke="#c8462c" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
         </div>
         <!-- [Dave 2026-05-12] Sources row 'SOURCES: HARVARD GRANT STUDY · HOLT-LUNSTAD · KIM · CHEN' DELETED per Dave: 'delete what i'm attaching'. -->
       </div>
       <!-- RIGHT placeholder — back face (visible until step 2) -->
-      <div class="ti-ph ti-ph-right" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px dashed rgba(200,70,44,0.45);border-radius:12px;background:rgba(200,70,44,0.04);padding:40px 20px">
+      <div class="ti-ph ti-ph-right" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px solid rgba(200,70,44,0.28);border-top:4px solid #c8462c;border-radius:12px;background:rgba(200,70,44,0.04);padding:40px 20px">
         <!-- 3-figure community teaser icon -->
-        <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center">
+        <div class="ti-orbit ti-orbit-values">
           <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
-            <circle cx="26" cy="16" r="5" fill="rgba(200,70,44,0.55)"/>
-            <path d="M26 22 L26 38" stroke="rgba(200,70,44,0.5)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M22 30 L26 28 L30 30" stroke="rgba(200,70,44,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M22 38 L26 38 L30 38" stroke="rgba(200,70,44,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="14" cy="19" r="4" fill="rgba(200,70,44,0.42)"/>
-            <path d="M14 24 L14 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M11 38 L17 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="38" cy="19" r="4" fill="rgba(200,70,44,0.42)"/>
-            <path d="M38 24 L38 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M35 38 L41 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M8 40 H44" stroke="rgba(184,149,74,0.42)" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="26" cy="14" r="6" fill="#b8954a"/>
+            <path d="M26 21 L26 38" stroke="#b8954a" stroke-width="3" stroke-linecap="round"/>
+            <path d="M17 27 L26 22 L35 27" stroke="#b8954a" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M18 40 L26 38 L34 40" stroke="#b8954a" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="12" cy="18" r="5" fill="#5B8FD4"/>
+            <path d="M12 24 L12 39" stroke="#5B8FD4" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M5 30 L12 25 L19 30" stroke="#5B8FD4" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <path d="M5 42 L12 39 L19 42" stroke="#5B8FD4" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="40" cy="18" r="5" fill="#c8462c"/>
+            <path d="M40 24 L40 39" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M33 30 L40 25 L47 30" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <path d="M33 42 L40 39 L47 42" stroke="#c8462c" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
