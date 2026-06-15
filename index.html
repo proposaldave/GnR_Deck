@@ -33640,7 +33640,15 @@ window.csA7m1Reverse = function() {
   }
 
   .ti-flip-inner.is-flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
+  }
+
+  .ti-flip-inner.is-flipped .ti-card {
+    transform: rotateY(0deg);
+  }
+
+  .ti-flip-inner.is-flipped .ti-ph {
+    transform: rotateY(-180deg);
   }
 
   .ti-card {
@@ -33661,13 +33669,6 @@ window.csA7m1Reverse = function() {
     transform: rotateY(0deg);
   }
 
-  .ti-flip-inner.is-flipped .ti-card {
-    transform: rotateY(180deg);
-  }
-
-  .ti-flip-inner.is-flipped .ti-ph {
-    transform: rotateY(0deg);
-  }
 
   .ti-card.ti-left,
   .ti-card.ti-right {
@@ -37089,21 +37090,48 @@ window.cs1bm1Toggle = function(side) {
 };
 window.cs1bm1RevealCards = function() {
   const slide = document.getElementById('cs-1bm1');
-  if (!slide || !slide.classList.contains('active') || slide.classList.contains('cards-entered') || slide.classList.contains('reveal-running')) return false;
-  slide.classList.add('reveal-running');
-  slide.classList.add('bg-settled');
-  window.setTimeout(function() { slide.classList.add('cards-entered'); }, 430);
-  return true;
+  if (!slide || !slide.classList.contains('active') || slide.classList.contains('reveal-running')) return false;
+  let stage = parseInt(slide.dataset.revealStage || '0', 10);
+  if (stage === 0 && slide.classList.contains('cards-entered')) {
+    slide.dataset.revealStage = '1';
+    stage = 1;
+  }
+  if (stage === 0) {
+    slide.classList.add('reveal-running');
+    slide.classList.add('bg-settled');
+    window.setTimeout(function() {
+      slide.classList.add('cards-entered');
+      slide.classList.remove('reveal-running');
+      slide.dataset.revealStage = '1';
+    }, 430);
+    return true;
+  }
+  if (stage === 1) {
+    const left = slide.querySelector('.ti-flip-left');
+    if (left) left.classList.add('is-flipped');
+    slide.dataset.revealStage = '2';
+    return true;
+  }
+  if (stage === 2) {
+    const right = slide.querySelector('.ti-flip-right');
+    if (right) right.classList.add('is-flipped');
+    slide.dataset.revealStage = '3';
+    return true;
+  }
+  return false;
 };
 window.cs1bm1ForceCards = function() {
   const slide = document.getElementById('cs-1bm1');
   if (!slide) return;
   slide.classList.add('bg-settled', 'cards-entered');
+  slide.querySelectorAll('.ti-flip-inner').forEach(function(card) { card.classList.add('is-flipped'); });
+  slide.dataset.revealStage = '3';
 };
 window.cs1bm1ResetInitialState = function() {
   const slide = document.getElementById('cs-1bm1');
   if (!slide) return;
   slide.classList.remove('bg-settled', 'cards-entered', 'reveal-running');
+  slide.dataset.revealStage = '0';
   slide.querySelectorAll('.ti-flip-inner').forEach(function(card) { card.classList.remove('is-flipped'); });
 };
 window.cs1bm1Advance = function() {
@@ -37111,9 +37139,25 @@ window.cs1bm1Advance = function() {
 };
 window.cs1bm1Reverse = function() {
   const slide = document.getElementById('cs-1bm1');
-  if (!slide || !slide.classList.contains('active') || !slide.classList.contains('cards-entered')) return false;
-  if (window.cs1bm1ResetInitialState) window.cs1bm1ResetInitialState();
-  return true;
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.revealStage || '0', 10);
+  if (stage >= 3) {
+    const right = slide.querySelector('.ti-flip-right');
+    if (right) right.classList.remove('is-flipped');
+    slide.dataset.revealStage = '2';
+    return true;
+  }
+  if (stage === 2) {
+    const left = slide.querySelector('.ti-flip-left');
+    if (left) left.classList.remove('is-flipped');
+    slide.dataset.revealStage = '1';
+    return true;
+  }
+  if (stage === 1) {
+    if (window.cs1bm1ResetInitialState) window.cs1bm1ResetInitialState();
+    return true;
+  }
+  return false;
 };
 document.addEventListener('DOMContentLoaded', function() {
   const slide = document.getElementById('cs-1bm1');
