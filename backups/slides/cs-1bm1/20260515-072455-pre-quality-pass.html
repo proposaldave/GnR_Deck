@@ -338,6 +338,29 @@
     opacity: 0.72;
   }
 
+  .ti-card-mini-orbit {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .ti-card-mini-orbit .ti-orbit {
+    width: 76px !important;
+    height: 76px !important;
+    opacity: 0.62;
+  }
+
+  .ti-card-mini-orbit .ti-orbit::before {
+    inset: -9px;
+    border-width: 1px;
+  }
+
+  .ti-card-mini-orbit .ti-orbit svg {
+    width: 40px;
+    height: 40px;
+  }
+
   .ti-bottom .ti-orbit::before {
     inset: -5px;
   }
@@ -486,6 +509,19 @@
             <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;color:rgba(26,22,18,0.7);text-align:left">intelligence</div>
           </div>
         </div>
+        <div class="ti-card-mini-orbit" aria-hidden="true">
+          <div class="ti-orbit ti-orbit-tech">
+            <svg viewBox="0 0 52 52" fill="none">
+              <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.35)"/>
+              <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.3)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M22 34 L26 34 L30 34" stroke="rgba(26,22,18,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="30" y="22" width="7" height="12" rx="1.5" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1"/>
+              <rect x="31.5" y="24" width="4" height="7" rx="0.5" fill="rgba(100,140,255,0.3)"/>
+              <circle cx="33.5" cy="27" r="8" fill="rgba(100,140,255,0.06)"/>
+            </svg>
+          </div>
+        </div>
         <!-- BOTTOM SECTION — fades in AFTER card flip [Dave 2026-04-30 PM] -->
         <!-- [Dave 2026-05-12] 'Technology imbalance' verdict kicker DELETED (top eyebrow now reads 'Technology: scroll alone.' so the verdict was redundant). Invisible spacer also dropped since right-card sub-eyebrow no longer needs compensation. -->
       </div>
@@ -554,6 +590,20 @@
             <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Nutrition</div>
             <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-4" style="width:28%"></div></div>
             <div></div>
+          </div>
+        </div>
+        <div class="ti-card-mini-orbit" aria-hidden="true">
+          <div class="ti-orbit ti-orbit-values">
+            <svg viewBox="0 0 52 52" fill="none">
+              <rect x="12" y="12" width="28" height="34" rx="3.5" fill="rgba(251,247,239,0.74)" stroke="#dc7b68" stroke-width="2.6"/>
+              <path d="M20 12.5 C20 10.6 21.5 9.2 23.3 9.2 H28.7 C30.5 9.2 32 10.6 32 12.5 V14.8 H20 Z" fill="#dc7b68"/>
+              <path d="M18 22 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 29 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 36 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="34.5" cy="22" r="2.4" fill="#dc7b68"/>
+              <circle cx="34.5" cy="29" r="2.4" fill="#dc7b68" opacity="0.78"/>
+              <circle cx="34.5" cy="36" r="2.4" fill="none" stroke="#e6a091" stroke-width="2"/>
+            </svg>
           </div>
         </div>
         <!-- [Dave 2026-05-14] Science evidence strip DELETED from cs-1bm1 — the science framing now lives entirely on slot-1 cs-frontier so this Values card stays focused on the chart. -->
