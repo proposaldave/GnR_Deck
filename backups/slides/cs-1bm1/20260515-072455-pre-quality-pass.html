@@ -123,10 +123,10 @@
   }
 
   .casey-slide.cards-entered .inner {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
     transform: none;
-    pointer-events: auto;
+    pointer-events: auto !important;
   }
 
   .inner > div:first-child {
@@ -457,9 +457,6 @@
         card.classList.remove('is-flipped');
       });
     }
-    if (params.get('auto') === '1') {
-      window.setTimeout(cs1bm1RevealCards, 250);
-    }
     if (params.get('back') === '1') {
       document.querySelectorAll('.ti-flip-inner').forEach(function (card) {
         card.classList.add('is-flipped');
@@ -485,7 +482,7 @@
   <img src="../../../assets/cs-1bm1-modern-life-wired-bg-v2.png" alt="">
 </div>
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Modern life</div>
-<div class="inner" style="padding:48px 48px 28px;max-width:1500px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:24px;min-height:100%;box-sizing:border-box">
+<div class="inner" style="padding:48px 48px 28px;max-width:1500px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:24px;min-height:100%;box-sizing:border-box;opacity:0;visibility:hidden;pointer-events:none">
 
   <div style="text-align:center">
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.8vw,3.1rem);font-weight:700;color:#1a1612;line-height:1.1;letter-spacing:-0.018em">
