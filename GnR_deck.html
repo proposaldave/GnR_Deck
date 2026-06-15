@@ -11919,7 +11919,7 @@ window.cs1m7Reverse = function() {
 
 <div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth" data-stage="0" onclick="if(window.csInvitationWordOfMouthAdvance && window.csInvitationWordOfMouthAdvance()) event.stopPropagation()">
   <img class="iwom-bg" src="assets/cs-invitation-word-of-mouth-glow-clinic-bg.png" alt="Text-free glow pickleball event and pro clinic referral background">
-  <div class="iwom-eye">Word of mouth, digitized for community and connection</div>
+  <div class="iwom-eye">Word of mouth</div>
   <section class="iwom-stage">
     <h1 class="iwom-title">Referrals <em>&rarr;</em> the community sales engine</h1>
     <p class="iwom-sub">Two use cases</p>
@@ -26906,6 +26906,15 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-work-measurable-market .worke-eyebrow{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:none!important;color:#c8462c;z-index:4}
   #cs-work-measurable-market .rwmm-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,247,239,.88) 0%,rgba(251,247,239,.68) 28%,rgba(251,247,239,.34) 56%,rgba(243,234,216,.42) 100%),radial-gradient(ellipse at 58% 45%,rgba(255,239,184,.20) 0%,rgba(251,247,239,.18) 44%,rgba(243,234,216,.20) 78%);z-index:1}
   #cs-work-measurable-market .rwmm-stage{position:absolute;inset:0;z-index:2;padding:88px 72px 54px;display:grid;grid-template-columns:minmax(620px,1fr) minmax(680px,1.02fr);gap:52px;align-items:center}
+  #cs-work-measurable-market .rwmm-wash{transition:opacity .45s ease}
+  #cs-work-measurable-market .rwmm-stage > div{transition:opacity .48s cubic-bezier(.22,1,.36,1),transform .48s cubic-bezier(.22,1,.36,1),visibility .48s}
+  #cs-work-measurable-market[data-reveal-stage="0"] .rwmm-wash{opacity:0}
+  #cs-work-measurable-market[data-reveal-stage="0"] .rwmm-stage > div,
+  #cs-work-measurable-market[data-reveal-stage="1"] .rwmm-stage > div:nth-child(2){opacity:0;visibility:hidden;pointer-events:none;transform:translateY(14px)}
+  #cs-work-measurable-market[data-reveal-stage="1"] .rwmm-stage > div:first-child,
+  #cs-work-measurable-market[data-reveal-stage="2"] .rwmm-stage > div{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  html[data-export="1"] #cs-work-measurable-market .rwmm-wash{opacity:1!important}
+  html[data-export="1"] #cs-work-measurable-market .rwmm-stage > div{opacity:1!important;visibility:visible!important;transform:none!important}
   #cs-work-measurable-market .rwmm-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.15rem,6.25vw,7.05rem);font-weight:850;line-height:.94;letter-spacing:-.026em;color:#1a1612;margin:0;max-width:910px;text-shadow:0 1px 0 rgba(251,247,239,.78)}
   #cs-work-measurable-market .rwmm-title em{font-style:italic;color:#b8954a;font-weight:850}
   #cs-work-measurable-market .rwmm-ledger{margin-top:42px;border:1px solid rgba(184,149,74,.34);border-radius:8px;background:linear-gradient(90deg,rgba(251,247,239,.84),rgba(251,247,239,.66));box-shadow:0 18px 50px rgba(26,22,18,.10), inset 0 0 0 1px rgba(255,255,255,.34);width:min(780px,100%);padding:4px 22px}
@@ -26928,7 +26937,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-work-measurable-market .rwmm-caption{position:absolute;left:58px;right:58px;bottom:30px;display:flex;justify-content:space-between;align-items:center;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.55);z-index:2}
   #cs-work-measurable-market .rwmm-caption strong{color:#c8462c}
 </style>
-<div class="casey-slide ds-focus" id="cs-work-measurable-market" style="display:none" aria-label="Work slide with next measurable market content">
+<div class="casey-slide ds-focus" id="cs-work-measurable-market" data-reveal-stage="0" style="display:none" aria-label="Work slide with next measurable market content">
   <img class="worke-bg" src="assets/generated/work-evolution/work-evolution-bg-v1.png" alt="" onerror="this.onerror=null;this.src='assets/generated/real-world-frontier/real-world-frontier-bg-v1.png'"/>
   <div class="worke-eyebrow slide-eyebrow">&quot;Work&quot;</div>
   <div class="rwmm-wash"></div>
@@ -26976,7 +26985,7 @@ window.csProgrammableInvitationsReverse = function() {
           <g transform="translate(150 270)"><circle r="34" fill="none" stroke="rgba(184,149,74,.54)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#b8954a"/><text y="55" font-size="18" fill="#b8954a">REFERRER</text></g>
           <g transform="translate(630 134)"><circle r="34" fill="none" stroke="rgba(91,143,212,.42)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#5B8FD4"/><text y="-42" font-size="18" fill="#5B8FD4">NEW REFERRAL</text></g>
           <g transform="translate(630 270)"><circle r="34" fill="none" stroke="rgba(200,70,44,.48)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#c8462c"/><text y="55" font-size="18" fill="#c8462c">REGULAR</text></g>
-          <g transform="translate(380 198)" aria-label="GnR invitation envelope"><circle r="76" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><rect x="-46" y="-28" width="92" height="62" rx="8" fill="rgba(251,247,239,.98)" stroke="#b8954a" stroke-width="5"/><path d="M-41 -23 L0 8 L41 -23" fill="none" stroke="#b8954a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M-41 29 L-7 2 M41 29 L7 2" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="0" y="23" text-anchor="middle" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="16" font-weight="800"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic">n</tspan><tspan fill="#c8462c">R</tspan></text></g>
+          <g transform="translate(380 198)" aria-label="GnR invitation envelope"><circle r="76" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><rect x="-46" y="-28" width="92" height="62" rx="8" fill="rgba(251,247,239,.98)" stroke="#b8954a" stroke-width="5"/><path d="M-41 -23 L0 8 L41 -23" fill="none" stroke="#b8954a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M-41 29 L-7 2 M41 29 L7 2" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
         </g>
       </svg>
       <div class="rwmm-caption"><span aria-hidden="true"></span><strong aria-hidden="true"></strong></div>
@@ -27065,7 +27074,7 @@ window.csProgrammableInvitationsReverse = function() {
           <g transform="translate(150 270)"><circle r="34" fill="none" stroke="rgba(184,149,74,.54)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#b8954a"/><text y="55" font-size="18" fill="#b8954a">REFERRER</text></g>
           <g transform="translate(630 134)"><circle r="34" fill="none" stroke="rgba(91,143,212,.42)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#5B8FD4"/><text y="-42" font-size="18" fill="#5B8FD4">NEW REFERRAL</text></g>
           <g transform="translate(630 270)"><circle r="34" fill="none" stroke="rgba(200,70,44,.48)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#c8462c"/><text y="55" font-size="18" fill="#c8462c">REGULAR</text></g>
-          <g transform="translate(380 198)" aria-label="GnR invitation envelope"><circle r="76" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><rect x="-46" y="-28" width="92" height="62" rx="8" fill="rgba(251,247,239,.98)" stroke="#b8954a" stroke-width="5"/><path d="M-41 -23 L0 8 L41 -23" fill="none" stroke="#b8954a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M-41 29 L-7 2 M41 29 L7 2" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="0" y="23" text-anchor="middle" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="16" font-weight="800"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic">n</tspan><tspan fill="#c8462c">R</tspan></text></g>
+          <g transform="translate(380 198)" aria-label="GnR invitation envelope"><circle r="76" fill="#fbf7ef" stroke="#b8954a" stroke-width="7"/><rect x="-46" y="-28" width="92" height="62" rx="8" fill="rgba(251,247,239,.98)" stroke="#b8954a" stroke-width="5"/><path d="M-41 -23 L0 8 L41 -23" fill="none" stroke="#b8954a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M-41 29 L-7 2 M41 29 L7 2" fill="none" stroke="#b8954a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
         </g>
       </svg>
       <div class="rwmm-caption"><span aria-hidden="true"></span><strong aria-hidden="true"></strong></div>
@@ -42737,6 +42746,9 @@ function closeSlideRevertPanel() {
 function buildBackupPreviewHtml(blockHtml) {
   const styles = Array.from(document.querySelectorAll('link[rel="stylesheet"], style')).map(node => node.outerHTML).join('\n');
   return '<!doctype html><html><head><meta charset="utf-8">' + styles + '<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#1a1612}.casey-slide{display:block!important;position:relative!important;inset:auto!important;width:1920px!important;height:1080px!important;transform-origin:top left!important;transform:scale(.218)!important;opacity:1!important;visibility:visible!important}.casey-slide *{animation:none!important;transition:none!important}</style></head><body>' + blockHtml + '</body></html>';
+})();
+</script>
+</body></html>';
 }
 
 function copyTextToClipboard(text) {
@@ -43551,5 +43563,66 @@ document.addEventListener('keydown', function(e){
 
 <!-- Product screenshots gallery removed 2026-05-15 (per Dave) — too visible bottom-left, distracted from slide. -->
 
+<script>
+(function(){
+  function setupWorkMeasurableMarketReveal(){
+    var slide=document.getElementById('cs-work-measurable-market');
+    if(!slide || slide.dataset.revealReady==='yes') return;
+    slide.dataset.revealReady='yes';
+    function isActive(){
+      return slide.style.display !== 'none' && !slide.hidden && window.getComputedStyle(slide).display !== 'none';
+    }
+    function advanceWorkMeasurableMarketReveal(){
+      if(!isActive()) return false;
+      var stage=parseInt(slide.dataset.revealStage || '0',10);
+      if(stage < 2){
+        slide.dataset.revealStage=String(stage+1);
+        return true;
+      }
+      return false;
+    }
+    window.advanceWorkMeasurableMarketReveal=advanceWorkMeasurableMarketReveal;
+    var wasActive=false;
+    function sync(){
+      var active=isActive();
+      if(active && !wasActive) slide.dataset.revealStage='0';
+      wasActive=active;
+    }
+    var observer=new MutationObserver(sync);
+    observer.observe(slide,{attributes:true,attributeFilter:['style','class','hidden']});
+    sync();
+    function isInteractive(target){
+      return target && target.closest && target.closest('input,textarea,button,a,[contenteditable="true"],.annotation-dot,.annotation-modal,.annotation-panel,.slide-search,.search-wrap,.slot-rail,.casey-nav,.casey-bar,.casey-count,.control,.controls');
+    }
+    document.addEventListener('keydown',function(event){
+      if(!isActive()) return;
+      if(['ArrowDown','ArrowRight','PageDown',' '].indexOf(event.key) === -1) return;
+      if(advanceWorkMeasurableMarketReveal()){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+    },true);
+    document.addEventListener('click',function(event){
+      if(!isActive() || isInteractive(event.target)) return;
+      if(advanceWorkMeasurableMarketReveal()){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+    },true);
+    document.addEventListener('wheel',function(event){
+      if(!isActive() || event.deltaY <= 0 || isInteractive(event.target)) return;
+      if(advanceWorkMeasurableMarketReveal()){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+    },{capture:true,passive:false});
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',setupWorkMeasurableMarketReveal);
+  }else{
+    setupWorkMeasurableMarketReveal();
+  }
+})();
+</script>
 </body>
 </html>
