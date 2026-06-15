@@ -1431,7 +1431,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
 /* [Dave 2026-05-14 PM v4] Nav dot strip CENTERED vertically between the GnR wordmark (top) and the bottom-right control cluster. Was top:90px (anchored just under GnR mark); now top:50% translateY(-50%) so the strip sits in the visual middle of the right column. max-height keeps it from overlapping either edge. */
-.casey-nav{position:fixed;top:50%;right:42px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:7px 4px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 220px);width:fit-content;overflow-y:auto;overflow-x:visible;scrollbar-width:none;overscroll-behavior:contain}
+.casey-nav{position:fixed;top:50%;right:42px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;z-index:999;background:rgba(0,0,0,0.13);backdrop-filter:blur(3px);padding:7px 4px;border-radius:10px;border:1px solid rgba(26,22,18,0.06);max-height:calc(100vh - 220px);width:fit-content;overflow-y:auto;overflow-x:visible;scrollbar-width:none;overscroll-behavior:contain}
 .casey-nav::-webkit-scrollbar{width:0;height:0}
 .casey-nav.appendix-mode{max-height:calc(100vh - 146px);padding:7px 4px 8px;gap:2px}
 .casey-nav.appendix-mode::before,.casey-nav.appendix-mode::after{content:"";position:sticky;left:0;width:100%;height:12px;flex:0 0 12px;pointer-events:none;z-index:2}
@@ -38069,6 +38069,7 @@ function caseyGo(n) {
       slide.classList.add('cs11-replay');
     }
   }
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -38174,6 +38175,7 @@ function appendixGo(n) {
   }
   if (targetId === 'cs-17') animateIntroExpansion();
   if (targetId === 'cs-4') animateIntroTeaser();
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -38223,6 +38225,7 @@ function enterTrash() {
     trashBtn.title = 'Back to Deck';
     trashBtn.onclick = exitTrash;
   }
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -38271,6 +38274,7 @@ function trashGo(n) {
     d.style.background = isOn ? '#c8462c' : 'rgba(200,70,44,0.32)';
   });
   requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -38305,6 +38309,7 @@ function conceptGo(n) {
   document.getElementById('ccount').textContent = 'Concept ' + n + ' / ' + CONCEPT_TOTAL;
   document.querySelectorAll('#cnav .casey-dot').forEach(d => d.classList.remove('on'));
   updateConceptDots(n);
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -38350,6 +38355,7 @@ function seedGo(n) {
   updateConceptDots(0);
   updateStaffDots(0);
   updateSeedDots(n);
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -38396,6 +38402,7 @@ function staffGo(n) {
   updateConceptDots(0);
   updateSeedDots(0);
   updateStaffDots(n);
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -38795,7 +38802,7 @@ function scrollActiveCaseyNavDotIntoView() {
 }
 for (let i = 1; i <= TOTAL; i++) {
   const wrap = document.createElement('div');
-  wrap.style.cssText = 'position:relative;display:inline-block';
+  wrap.style.cssText = 'position:relative;display:flex;justify-content:flex-end;align-items:center;width:104px;min-height:21px';
   const d = document.createElement('button');
   d.className = 'casey-dot' + (i === 1 ? ' on' : '');
   d.onclick = () => caseyGo(i);
@@ -38896,6 +38903,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
         document.querySelectorAll('.casey-dot').forEach(d => d.classList.remove('on'));
         altDot.classList.add('on');
       }
+      requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
     };
     wrap.appendChild(altDot);
   });
