@@ -1431,7 +1431,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 
 .casey-slide.active{opacity:1;visibility:visible;pointer-events:all;transition:opacity 0.18s ease, visibility 0s linear 0s}
 /* [Dave 2026-05-14 PM v4] Nav dot strip CENTERED vertically between the GnR wordmark (top) and the bottom-right control cluster. Was top:90px (anchored just under GnR mark); now top:50% translateY(-50%) so the strip sits in the visual middle of the right column. max-height keeps it from overlapping either edge. */
-.casey-nav{position:fixed;top:50%;right:42px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:7px 4px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 220px);width:fit-content}
+.casey-nav{position:fixed;top:50%;right:42px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;z-index:999;background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);padding:7px 4px;border-radius:10px;border:1px solid rgba(26,22,18,0.10);max-height:calc(100vh - 220px);width:fit-content;overflow-y:auto;overflow-x:visible;scrollbar-width:none;overscroll-behavior:contain}
+.casey-nav::-webkit-scrollbar{width:0;height:0}
+.casey-nav.appendix-mode{max-height:calc(100vh - 146px);padding:7px 4px 8px;gap:2px}
+.casey-nav.appendix-mode::before,.casey-nav.appendix-mode::after{content:"";position:sticky;left:0;width:100%;height:12px;flex:0 0 12px;pointer-events:none;z-index:2}
+.casey-nav.appendix-mode::before{top:-7px;margin-top:-7px;background:linear-gradient(180deg,rgba(0,0,0,.38),rgba(0,0,0,0))}
+.casey-nav.appendix-mode::after{bottom:-8px;margin-bottom:-8px;background:linear-gradient(0deg,rgba(0,0,0,.38),rgba(0,0,0,0))}
 /* [Dave 2026-05-12 v3] PRESENTER MODE — default ON. Hides ALL chrome (nav dots + presenter cog + speaker-notes + annotation buttons + slide counter + slide search) for a clean live investor pitch. Z key toggles. [Dave 2026-05-14 PM v4] Slide counter (.casey-count) and slide search (#slideSearch) added to the hide list — they should only appear when Z is pressed, just like the dots. */
 body.presenter-mode .casey-nav,
 body.presenter-mode .casey-staff-nav,
@@ -1471,6 +1476,8 @@ body.presenter-mode #slideSearch { display: none !important; }
 #slideHistoryOverlay .shv-badge kbd{background:rgba(251,247,239,0.16);border:1px solid rgba(251,247,239,0.32);border-radius:4px;padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:#fbf7ef}
 #slideHistoryOverlay .shv-badge .shv-sep{opacity:0.32}
 .casey-dot{width:9px;height:9px;border-radius:50%;background:rgba(26,22,18,0.20);border:none;padding:0;cursor:pointer;transition:all 0.3s ease;flex-shrink:0;position:relative}
+.casey-dot.appendix-dot,.casey-dot.trash-dot{width:7px;height:7px;min-height:7px}
+.casey-dot.appendix-dot.on,.casey-dot.trash-dot.on{height:18px}
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.3)}
 /* [Dave 2026-05-08] Custom tooltip — opens to the LEFT of the dot (away from viewport edge) since the nav strip lives at the right edge. Fixes 'Autonomous Community In...' cutoff issue Dave caught. */
 .casey-dot[data-tooltip]:hover::after{content:attr(data-tooltip);position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.88);color:#fff;font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;padding:6px 10px;border-radius:5px;white-space:nowrap;z-index:1001;pointer-events:none}
@@ -8180,26 +8187,28 @@ window.cs1m5Reverse = function() {
   #cs-frontier-scale-pink-2 .scale-paper{display:none}
   #cs-frontier-scale-pink-2 .scale-head{top:84px;z-index:4;text-shadow:0 2px 6px rgba(251,247,239,.72),0 12px 34px rgba(251,247,239,.54)}
   #cs-frontier-scale-pink-2 .scale-image-wrap{inset:0;width:auto;height:auto;z-index:1;box-shadow:none;background-color:#fbf7ef;background-size:cover;background-repeat:no-repeat;background-position:center center;filter:saturate(1.06) contrast(1.03)}
-  #cs-frontier-scale-pink-2 .scale-image-wrap:after{background:linear-gradient(180deg, rgba(251,247,239,.94) 0%, rgba(251,247,239,.88) 23%, rgba(251,247,239,.48) 37%, rgba(251,247,239,.05) 58%, rgba(251,247,239,.78) 100%)}
+  #cs-frontier-scale-pink-2 .scale-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;opacity:0;transition:opacity .42s cubic-bezier(.22,1,.36,1)}
+  #cs-frontier-scale-pink-2[data-bg-loaded="1"] .scale-bg-img{opacity:1}
+  #cs-frontier-scale-pink-2 .scale-image-wrap:after{z-index:1;background:linear-gradient(180deg, rgba(251,247,239,.94) 0%, rgba(251,247,239,.88) 23%, rgba(251,247,239,.48) 37%, rgba(251,247,239,.05) 58%, rgba(251,247,239,.78) 100%)}
   #cs-frontier-scale-pink-2 .scale-head span{display:block}
   #cs-frontier-scale-pink-2 .scale-head,#cs-frontier-scale-pink-2 .scale-mark,#cs-frontier-scale-pink-2 .scale-footer{opacity:0!important;visibility:hidden!important;transition:opacity .62s cubic-bezier(.22,1,.36,1),transform .62s cubic-bezier(.22,1,.36,1),visibility 0s linear .62s}
   #cs-frontier-scale-pink-2 .scale-head{top:74px;transform:translateX(-50%) translateY(12px)}
   #cs-frontier-scale-pink-2 .scale-mark{transform:translateY(10px)}
   #cs-frontier-scale-pink-2 .scale-footer{left:76.5%;bottom:126px !important;width:min(900px,46vw);z-index:8 !important;transform:translateX(-50%) translateY(10px);color:#c8462c;font-size:clamp(1.36rem,1.58vw,1.84rem);text-shadow:0 2px 8px rgba(251,247,239,.82)}
   #cs-frontier-scale-pink-2 .scale-eye{top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
-  #cs-frontier-scale-pink-2[data-stage="1"] .scale-head,#cs-frontier-scale-pink-2[data-stage="1"] .scale-mark,#cs-frontier-scale-pink-2[data-stage="2"] .scale-head,#cs-frontier-scale-pink-2[data-stage="2"] .scale-mark{opacity:1!important;visibility:visible!important;transition-delay:.04s, .04s, 0s}
+  #cs-frontier-scale-pink-2[data-stage="1"][data-bg-loaded="1"] .scale-head,#cs-frontier-scale-pink-2[data-stage="1"][data-bg-loaded="1"] .scale-mark,#cs-frontier-scale-pink-2[data-stage="2"][data-bg-loaded="1"] .scale-head,#cs-frontier-scale-pink-2[data-stage="2"][data-bg-loaded="1"] .scale-mark{opacity:1!important;visibility:visible!important;transition-delay:.26s, .26s, 0s}
   #cs-frontier-scale-pink-2[data-stage="1"] .scale-head,#cs-frontier-scale-pink-2[data-stage="2"] .scale-head{transform:translateX(-50%) translateY(0)}
   #cs-frontier-scale-pink-2[data-stage="1"] .scale-mark,#cs-frontier-scale-pink-2[data-stage="2"] .scale-mark{transform:translateY(0)}
-  #cs-frontier-scale-pink-2[data-stage="2"] .scale-footer{opacity:1!important;visibility:visible!important;transform:translateX(-50%) translateY(0);transition-delay:.1s, .1s, 0s}
+  #cs-frontier-scale-pink-2[data-stage="2"][data-bg-loaded="1"] .scale-footer{opacity:1!important;visibility:visible!important;transform:translateX(-50%) translateY(0);transition-delay:.32s, .32s, 0s}
 </style>
 
-<div class="casey-slide ds-focus scale-option-slide" id="cs-frontier-scale-pink-2" data-stage="1" onclick="if(window.csFrontierScalePink2Advance && window.csFrontierScalePink2Advance()) event.stopPropagation()" style="display:none;cursor:pointer">
+<div class="casey-slide ds-focus scale-option-slide" id="cs-frontier-scale-pink-2" data-stage="1" data-bg-loaded="0" onclick="if(window.csFrontierScalePink2Advance && window.csFrontierScalePink2Advance()) event.stopPropagation()" style="display:none;cursor:pointer">
   <div class="scale-paper"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMIOLOGY</div>
   <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
   <section class="scale-stage">
     <h1 class="scale-head"><span>The <em>#1 predictor</em> of a fulfilling life</span><span>is still invisible to technology.</span></h1>
-    <div class="scale-image-wrap" style="background-image:url('assets/cs-frontier-scale-pink-2-recreated.png')" aria-label="Technology metrics balanced against real human connection"></div>
+    <div class="scale-image-wrap" style="background-image:url('assets/cs-frontier-scale-pink-2-recreated.png')" aria-label="Technology metrics balanced against real human connection"><img class="scale-bg-img" src="assets/cs-frontier-scale-pink-2-recreated.png" alt="" onload="this.closest('#cs-frontier-scale-pink-2').dataset.bgLoaded='1'" onerror="this.closest('#cs-frontier-scale-pink-2').dataset.bgLoaded='1'"></div>
   </section>
 </div>
 
@@ -8343,7 +8352,7 @@ window.cs1m5Reverse = function() {
   <section class="imo-stage">
     <div class="imo-copy">
       <h1 class="imo-title">The <em>invitation graph</em></h1>
-      <p class="imo-sub">Who invites whom. Who refers whom. Who RSVPs based on who signs up.</p>
+      <p class="imo-sub">Who invites whom. Who refers whom. Who chooses to spend time with who.</p>
       <div class="imo-mark" aria-label="GnR"><span class="imo-g">G</span><span class="imo-n">n</span><span class="imo-r">R</span></div>
     </div>
   </section>
@@ -8430,9 +8439,12 @@ window.cs1m5Reverse = function() {
   #cs-trusted-reciprocity-works{background:#f3ead8!important;overflow:hidden}
   #cs-trusted-reciprocity-works .trw-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0}
   #cs-trusted-reciprocity-works .trw-edge{position:absolute;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(184,149,74,.18),inset 0 0 80px rgba(26,22,18,.07)}
+  #cs-trusted-reciprocity-works .trw-community-label{position:absolute;right:6.8%;bottom:154px;z-index:2;width:32.5%;height:120px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,3vw,3.55rem);font-weight:850;line-height:.92;letter-spacing:-.018em;color:#1a1612;text-shadow:0 1px 0 rgba(251,247,239,.88),0 8px 20px rgba(251,247,239,.58);background:radial-gradient(ellipse at 50% 56%,rgba(247,230,188,.96) 0%,rgba(244,220,170,.90) 42%,rgba(244,220,170,.42) 72%,rgba(244,220,170,0) 100%);pointer-events:none}
+  #cs-trusted-reciprocity-works .trw-community-label span{display:block}
 </style>
 <div class="casey-slide ds-focus appendix-slide" id="cs-trusted-reciprocity-works" style="display:none" aria-label="Trusted Give n Receive reciprocity is how human connection works">
-  <img class="trw-img" src="assets/generated/reciprocity/trusted-reciprocity-works-v1.png" alt="Trusted Give n Receive reciprocity is how human connection works: relationship works naturally, close friendships compound, community is still unsolved."/>
+  <img class="trw-img" src="assets/generated/reciprocity/trusted-reciprocity-works-v1.png" alt="Trusted Give n Receive reciprocity is how human connection works: relationship works naturally, close friendships compound, community networked reciprocity is still unsolved."/>
+  <div class="trw-community-label" aria-hidden="true"><span>Community Networked<br>Reciprocity</span></div>
   <div class="trw-edge" aria-hidden="true"></div>
 </div>
 <div class="casey-slide ds-measure" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
@@ -8565,6 +8577,55 @@ window.cs1m5Reverse = function() {
   </div>
 </div>
 <script>
+(function createInviteEngineFlowPink(){
+  const source = document.getElementById('cs-1m8');
+  if (!source || document.getElementById('cs-invite-engine-flow-pink')) return;
+  const style = document.createElement('style');
+  style.textContent = Array.from(document.querySelectorAll('style'))
+    .map(tag => tag.textContent || '')
+    .filter(css => css.includes('#cs-1m8'))
+    .join('\n')
+    .split('#cs-1m8').join('#cs-invite-engine-flow-pink') + `
+      #cs-invite-engine-flow-pink .m8-flow-line{
+        font-family:'Fraunces','Playfair Display',Georgia,serif;
+        font-size:clamp(1.05rem,1.42vw,1.46rem);
+        font-weight:650;
+        line-height:1.26;
+        letter-spacing:0;
+        max-width:1120px;
+        margin:-6px auto 22px;
+        color:rgba(26,22,18,.78);
+        opacity:1;
+        visibility:visible;
+        transform:none;
+        transition:opacity .45s ease,transform .45s ease,visibility 0s linear 0s;
+      }
+      #cs-invite-engine-flow-pink .m8-flow-line b{font-weight:850;color:#1a1612}
+      #cs-invite-engine-flow-pink .m8-flow-line .blue{color:#5B8FD4;font-weight:850}
+      #cs-invite-engine-flow-pink .m8-flow-line .gold{color:#b8954a;font-weight:850}
+      #cs-invite-engine-flow-pink .m8-flow-line .red{color:#c8462c;font-weight:850}
+      #cs-invite-engine-flow-pink:not([data-stage="0"]) .m8-flow-line{opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s}
+      html[data-export="1"] #cs-invite-engine-flow-pink .m8-flow-line{display:block!important;opacity:1!important;visibility:visible!important;transform:none!important}
+    `;
+  document.head.appendChild(style);
+  const clone = source.cloneNode(true);
+  clone.id = 'cs-invite-engine-flow-pink';
+  clone.dataset.stage = '0';
+  clone.style.display = 'none';
+  clone.setAttribute('aria-label', 'Pink-dot alternative: invitation engine flow for real communities');
+  clone.setAttribute('onclick', 'window.csInviteEngineFlowPinkAdvance && window.csInviteEngineFlowPinkAdvance(); event.stopPropagation()');
+  const title = clone.querySelector('.m8-autonomous');
+  if (title) {
+    title.classList.add('m8-autonomous-in');
+    title.textContent = 'The invitation engine for real communities';
+    const flow = document.createElement('div');
+    flow.className = 'm8-flow-line';
+    flow.innerHTML = '<b>Community builders</b> create the room <span class="gold">&rarr;</span> <span class="blue">Followers invited</span> <span class="gold">&rarr;</span> <span class="red">Referral sales engine</span> <span class="gold">&rarr;</span> <b>Community invitation graph.</b>';
+    title.insertAdjacentElement('afterend', flow);
+  }
+  source.insertAdjacentElement('afterend', clone);
+})();
+</script><script>
 // [Dave 2026-05-11 LATE] cs-1m8 expanded to 4 stages (0/1/2/3): wordmark ? +LEFT cap ? +network line ? +RIGHT cap.
 window.cs1m8Advance = function() {
   const s = document.getElementById('cs-1m8');
@@ -8590,7 +8651,22 @@ window.cs1m8BgRevealPinkAdvance = function() {
   s.dataset.stage = String(stage + 1);
   return true;
 };
-window.cs1m8BgRevealPinkReverse = function() {
+window.csInviteEngineFlowPinkAdvance = function() {
+  const s = document.getElementById('cs-invite-engine-flow-pink');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage >= 3) return false;
+  s.dataset.stage = String(stage + 1);
+  return true;
+};
+window.csInviteEngineFlowPinkReverse = function() {
+  const s = document.getElementById('cs-invite-engine-flow-pink');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage <= 0) return false;
+  s.dataset.stage = String(stage - 1);
+  return true;
+};window.cs1m8BgRevealPinkReverse = function() {
   const s = document.getElementById('cs-1m8-bg-reveal-pink');
   if (!s) return false;
   const stage = parseInt(s.dataset.stage) || 0;
@@ -11612,7 +11688,7 @@ window.cs1m7Reverse = function() {
   </section>
 </div>
 
-<!-- cs-bh-v3 (.local variant) DELETED Dave 2026-05-03 PM — headline "Your impressions are a database. It just can't leave the host." preserved in text_archive for future use. -->
+<!-- cs-bh-v3 (.local variant) DELETED Dave 2026-05-03 PM — headline "Your impressions are a database. It just can't leave the community builder." preserved in text_archive for future use. -->
 <style>
   /* (deleted) */
 </style>
@@ -11622,7 +11698,7 @@ window.cs1m7Reverse = function() {
     <div class="db-stage">
       <div class="db-eye">Today &middot; The data lives at .local</div>
       <div class="db-head">
-        Your impressions are a database.<br>It just <em>can't leave the host</em>.
+        Your impressions are a database.<br>It just <em>can't leave the community builder</em>.
       </div>
       <div class="db-svg">
         <svg viewBox="0 0 940 380" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
@@ -11939,7 +12015,7 @@ window.cs1m7Reverse = function() {
         <div class="iwom-visual">
           <div class="iwom-phone"><b>Nina's referral</b><div class="iwom-phone-art iwom-clinic-art" aria-label="Coach Caleb pro clinic graphic"><i class="iwom-coach"></i><i class="iwom-player c1"></i><i class="iwom-player c2"></i><i class="iwom-player c3"></i></div><strong>Caleb Pro Clinic</strong><span>Sat 9:00 AM</span><div class="iwom-cta">Join us</div></div>
           <div class="iwom-line l1"></div><div class="iwom-line l2"></div><div class="iwom-line l3"></div>
-          <div class="iwom-people"><div class="iwom-invite-line to-mark"></div><div class="iwom-invite-line to-taylor"></div><div class="iwom-invite-line to-ali"></div><div class="iwom-person iwom-p1">Nina<small>host</small></div><div class="iwom-person iwom-p2">Mark</div><div class="iwom-person iwom-p3">Taylor</div><div class="iwom-person iwom-p4">Ali</div></div>
+          <div class="iwom-people"><div class="iwom-invite-line to-mark"></div><div class="iwom-invite-line to-taylor"></div><div class="iwom-invite-line to-ali"></div><div class="iwom-person iwom-p1">Nina<small>community builder</small></div><div class="iwom-person iwom-p2">Mark</div><div class="iwom-person iwom-p3">Taylor</div><div class="iwom-person iwom-p4">Ali</div></div>
         </div>
         <div class="iwom-note">One motivated player fills Caleb's clinic by recruiting Taylor, Mark, and Ali.</div>
       </div>
@@ -15877,7 +15953,7 @@ window.csInvitationWordOfMouthAdvance = function() {
         <p>Pros and magnetic members create events, invite their people, and earn rewards when they generate demand.</p>
         <div class="rbm-metrics">
           <div class="rbm-metric"><span>Revenue</span><b>shared take</b></div>
-          <div class="rbm-metric"><span>User</span><b>host</b></div>
+          <div class="rbm-metric"><span>User</span><b>community builder</b></div>
           <div class="rbm-metric"><span>Why big</span><b>viral</b></div>
         </div>
       </div>
@@ -16396,7 +16472,7 @@ window.csInvitationWordOfMouthAdvance = function() {
         <p>Pros and magnetic members create events, invite their people, and earn rewards when they generate demand.</p>
         <div class="rbm-metrics">
           <div class="rbm-metric"><span>Revenue</span><b>shared take</b></div>
-          <div class="rbm-metric"><span>User</span><b>host</b></div>
+          <div class="rbm-metric"><span>User</span><b>community builder</b></div>
           <div class="rbm-metric"><span>Why big</span><b>viral</b></div>
         </div>
       </div>
@@ -16782,7 +16858,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   <div class="invp-eye slide-eyebrow">Custom invitations &rarr; operationally insane</div>
   <section class="invp-stage">
     <div class="invp-wrap">
-      <h1 class="invp-title">Why don't social clubs do invitation-matchmaking?</h1>
+      <h1 class="invp-title">Why don't clubs coordinate via custom personalized invitations?</h1>
       <div class="invp-arrows" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="invp-grid">
         <div class="invp-card"><div class="invp-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="6" cy="17" r="2.2"/><circle cx="18" cy="17" r="2.2"/><path d="M8.2 7h7.6M8.2 17h7.6M6 9.2v4.6M18 9.2v4.6"/><path d="M10 12h4"/></svg></div><b>Who fits where?</b><span>Imagine 500+ members &rarr; who plays with who, and when, every week?</span></div>
@@ -22936,7 +23012,7 @@ window.csBrandV8Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-app-store-people" style="display:none">
   <img class="asp-bg" src="assets/cs-app-store-people-pickleball-bg.png" alt="">
   <div class="asp-wash" aria-hidden="true"></div>
-  <div class="asp-eye">There are communities that desperately need this new paradigm</div>
+  <div class="asp-eye">Social pickleball communities based on competitive ratings desperately need this new paradigm</div>
   <section class="asp-stage">
     <div class="asp-copy">
       <h1 class="asp-quote">&ldquo;I envision an app store for <em>people.</em>&rdquo;</h1>
@@ -25323,6 +25399,66 @@ window.csBrandV8Reverse = function() {
   html[data-export="1"] #cs-samecourt-pink3 .scf3-bg { opacity:0.78 !important; }
 </style>
 <style>
+  #cs-serious-vs-silly-bridge{background:#fbf7ef!important;overflow:hidden;color:#1a1612}
+  #cs-serious-vs-silly-bridge:before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 78% 60%,rgba(91,143,212,.18),transparent 34%),radial-gradient(circle at 38% 68%,rgba(184,149,74,.20),transparent 38%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%)}
+  #cs-serious-vs-silly-bridge .svs-paper{position:absolute;inset:0;z-index:1;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.045) 1px,transparent 0);background-size:5px 5px;opacity:.52;pointer-events:none;mix-blend-mode:multiply}
+  #cs-serious-vs-silly-bridge .svs-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
+  #cs-serious-vs-silly-bridge .svs-stage{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:.82fr 1.04fr .82fr;gap:34px;align-items:center;padding:96px 76px 64px;box-sizing:border-box}
+  #cs-serious-vs-silly-bridge .svs-copy{align-self:center}
+  #cs-serious-vs-silly-bridge .svs-kicker{font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:950;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;margin-bottom:16px}
+  #cs-serious-vs-silly-bridge .svs-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,6.7vw,7.6rem);line-height:.88;font-weight:900;letter-spacing:-.018em;color:#1a1612}
+  #cs-serious-vs-silly-bridge .svs-title .serious{color:#c8462c}
+  #cs-serious-vs-silly-bridge .svs-title .vs{display:block;font-size:.34em;line-height:1.25;font-family:'Manrope',sans-serif;font-weight:950;letter-spacing:.16em;color:rgba(26,22,18,.42);text-transform:uppercase;margin:.14em 0}
+  #cs-serious-vs-silly-bridge .svs-title .silly{color:#5B8FD4;font-style:italic}
+  #cs-serious-vs-silly-bridge .svs-sub{margin:28px 0 0;max-width:540px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.18rem,1.48vw,1.55rem);line-height:1.22;font-weight:650;color:rgba(26,22,18,.72)}
+  #cs-serious-vs-silly-bridge .svs-sub strong{font-weight:900;color:#1a1612}
+  #cs-serious-vs-silly-bridge .svs-pyramid-wrap{position:relative;height:760px;display:grid;place-items:center}
+  #cs-serious-vs-silly-bridge .svs-pyramid{position:relative;width:min(650px,100%);height:690px;filter:drop-shadow(0 30px 55px rgba(26,22,18,.14))}
+  #cs-serious-vs-silly-bridge .svs-apex{position:absolute;left:31%;right:31%;top:52px;height:188px;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(26,22,18,.84),rgba(200,70,44,.72));display:grid;place-items:end center;padding:0 20px 30px;color:#fbf7ef;text-align:center}
+  #cs-serious-vs-silly-bridge .svs-base{position:absolute;left:4%;right:4%;bottom:64px;height:454px;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);background:radial-gradient(circle at 50% 58%,rgba(251,247,239,.34),transparent 28%),linear-gradient(180deg,rgba(91,143,212,.84),rgba(184,149,74,.72));display:grid;place-items:center;color:#fbf7ef;text-align:center;overflow:hidden}
+  #cs-serious-vs-silly-bridge .svs-base:before{content:"";position:absolute;inset:19% 8% 13%;background:radial-gradient(circle at 15% 42%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 28% 65%,#fbf7ef 0 8px,transparent 9px),radial-gradient(circle at 43% 38%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 61% 62%,#fbf7ef 0 8px,transparent 9px),radial-gradient(circle at 78% 40%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 88% 68%,#fbf7ef 0 7px,transparent 8px);opacity:.88}
+  #cs-serious-vs-silly-bridge .svs-band-title{position:relative;z-index:2;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,3.2vw,3.5rem);line-height:.95;font-weight:900;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 3px 18px rgba(26,22,18,.30)}
+  #cs-serious-vs-silly-bridge .svs-band-title span{display:block;margin-top:10px;font-family:'Manrope',sans-serif;font-size:.30em;line-height:1.15;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,247,239,.88)}
+  #cs-serious-vs-silly-bridge .svs-axis{position:absolute;left:50%;top:260px;bottom:96px;width:2px;background:linear-gradient(180deg,rgba(200,70,44,.45),rgba(251,247,239,.35),rgba(91,143,212,.45));transform:translateX(-50%);z-index:3}
+  #cs-serious-vs-silly-bridge .svs-axis:before,#cs-serious-vs-silly-bridge .svs-axis:after{content:"";position:absolute;left:50%;width:14px;height:14px;border-radius:50%;transform:translateX(-50%);background:#fbf7ef;border:2px solid currentColor;box-shadow:0 0 0 6px rgba(251,247,239,.42)}
+  #cs-serious-vs-silly-bridge .svs-axis:before{top:-8px;color:#c8462c}#cs-serious-vs-silly-bridge .svs-axis:after{bottom:-8px;color:#5B8FD4}
+  #cs-serious-vs-silly-bridge .svs-cardstack{display:grid;gap:16px}
+  #cs-serious-vs-silly-bridge .svs-card{position:relative;padding:22px 24px 22px 26px;border-radius:8px;background:rgba(251,247,239,.78);border:1.4px solid rgba(26,22,18,.12);box-shadow:0 18px 48px rgba(26,22,18,.09);backdrop-filter:blur(5px)}
+  #cs-serious-vs-silly-bridge .svs-card:before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:5px;border-radius:99px;background:#b8954a}
+  #cs-serious-vs-silly-bridge .svs-card.serious:before{background:#c8462c}#cs-serious-vs-silly-bridge .svs-card.silly:before{background:#5B8FD4}
+  #cs-serious-vs-silly-bridge .svs-card h2{margin:0 0 9px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.28rem,1.65vw,1.75rem);line-height:1.02;font-weight:900;color:#1a1612}
+  #cs-serious-vs-silly-bridge .svs-card h2 em{font-style:italic;color:#b8954a}
+  #cs-serious-vs-silly-bridge .svs-card p{margin:0;font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.9vw,.96rem);line-height:1.3;font-weight:780;color:rgba(26,22,18,.68)}
+  #cs-serious-vs-silly-bridge .svs-chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  #cs-serious-vs-silly-bridge .svs-chip{padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.48);border:1px solid rgba(26,22,18,.09);font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,22,18,.58)}
+  #cs-serious-vs-silly-bridge .svs-close{position:absolute;left:50%;bottom:30px;z-index:3;transform:translateX(-50%);width:min(1280px,86vw);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.28rem,1.75vw,1.95rem);line-height:1.13;font-weight:760;color:#1a1612}
+  #cs-serious-vs-silly-bridge .svs-close em{font-style:italic;color:#5B8FD4;font-weight:900}
+</style>
+<div class="casey-slide ds-focus" id="cs-serious-vs-silly-bridge" style="display:none" aria-label="Serious versus silly bridge slide before the pickleball pyramid">
+  <div class="svs-paper" aria-hidden="true"></div>
+  <div class="svs-eye slide-eyebrow">serious vs silly</div>
+  <section class="svs-stage">
+    <div class="svs-copy">
+      <div class="svs-kicker">the emotional wedge</div>
+      <h1 class="svs-title"><span class="serious">SERIOUS</span><span class="vs">vs</span><span class="silly">SILLY</span></h1>
+      <p class="svs-sub">Modern life keeps wiring us toward seriousness. But humans are wired for <strong>connection, play, laughter, and belonging.</strong></p>
+    </div>
+    <div class="svs-pyramid-wrap" aria-hidden="true">
+      <div class="svs-pyramid">
+        <div class="svs-apex"><div class="svs-band-title">SERIOUS<span>narrow measurable apex</span></div></div>
+        <div class="svs-base"><div class="svs-band-title">SILLY<span>broad human connection base</span></div></div>
+        <div class="svs-axis"></div>
+      </div>
+    </div>
+    <div class="svs-cardstack">
+      <article class="svs-card serious"><h2>The world over-measures the serious.</h2><p>Status, productivity, ratings, optimization, performance. Important, but not why people feel alive together.</p><div class="svs-chiprow"><span class="svs-chip">status</span><span class="svs-chip">fitness</span><span class="svs-chip">ratings</span><span class="svs-chip">output</span></div></article>
+      <article class="svs-card silly"><h2>Pickleball grew because it made connection easy.</h2><p>Plastic ball. Kitchen rules. Net cords. Paddle taps. Rotating partners. It is silly enough to lower the social cost of belonging.</p><div class="svs-chiprow"><span class="svs-chip">laughing</span><span class="svs-chip">welcoming</span><span class="svs-chip">returning</span><span class="svs-chip">referring</span></div></article>
+      <article class="svs-card"><h2>Even inside pickleball: <em>serious vs silly.</em></h2><p>The top wants ratings and tournaments. The much larger base wants the feeling: right people, right room, right invitation.</p></article>
+    </div>
+  </section>
+  <div class="svs-close">The investable market is not only better competition. It is making the <em>silly human base</em> measurable and repeatable.</div>
+</div>
+<style>
   #cs-samecourt-pyramid-white1,
   #cs-samecourt-pyramid-white2{background:#fbf7ef!important;overflow:hidden}
   .scpyr-slide .scpyr-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block}
@@ -25895,6 +26031,59 @@ window.csBrandV8Reverse = function() {
   </section>
 </div>
 
+
+<style>
+  #cs-connection-economy-breakthrough{background:#f3ead8!important;overflow:hidden;color:#1a1612}
+  #cs-connection-economy-breakthrough .ce-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.03) contrast(1.03)}
+  #cs-connection-economy-breakthrough .ce-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.82) 29%,rgba(251,247,239,.42) 54%,rgba(251,247,239,.08) 100%),linear-gradient(180deg,rgba(251,247,239,.40) 0%,rgba(251,247,239,.05) 52%,rgba(26,22,18,.18) 100%)}
+  #cs-connection-economy-breakthrough .ce-eye{position:absolute;top:28px;left:48px;z-index:3;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:850;letter-spacing:.24em;text-transform:uppercase;color:#c8462c}
+  #cs-connection-economy-breakthrough .ce-stage{position:absolute;inset:0;z-index:2;padding:90px 78px 58px;box-sizing:border-box;display:grid;grid-template-columns:minmax(700px,900px) 1fr;grid-template-rows:auto 1fr auto;gap:26px 40px}
+  #cs-connection-economy-breakthrough .ce-copy{grid-column:1;grid-row:1;align-self:start;max-width:900px}
+  #cs-connection-economy-breakthrough .ce-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.1rem,6.4vw,7.2rem);font-weight:880;line-height:.91;letter-spacing:-.026em;color:#1a1612;margin:0;text-shadow:0 2px 0 rgba(251,247,239,.72),0 20px 44px rgba(251,247,239,.52)}
+  #cs-connection-economy-breakthrough .ce-title em{display:block;font-style:italic;color:#b8954a;font-weight:850}
+  #cs-connection-economy-breakthrough .ce-sub{margin:24px 0 0;width:min(790px,100%);font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.22vw,1.34rem);line-height:1.34;font-weight:780;color:rgba(26,22,18,.70);text-shadow:0 1px 0 rgba(251,247,239,.72)}
+  #cs-connection-economy-breakthrough .ce-quote{grid-column:1;grid-row:2;align-self:end;width:min(680px,100%);border-left:3px solid rgba(184,149,74,.72);padding-left:18px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.4vw,1.5rem);line-height:1.18;font-weight:760;color:rgba(26,22,18,.74);text-shadow:0 1px 0 rgba(251,247,239,.72)}
+  #cs-connection-economy-breakthrough .ce-quote span{display:block;margin-top:10px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;color:#b8954a}
+  #cs-connection-economy-breakthrough .ce-system{grid-column:1 / 3;grid-row:3;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;width:min(1320px,92vw);align-self:end;border:1px solid rgba(184,149,74,.42);border-radius:8px;background:rgba(251,247,239,.82);box-shadow:0 24px 70px rgba(26,22,18,.15),inset 0 1px 0 rgba(255,255,255,.48);overflow:hidden}
+  #cs-connection-economy-breakthrough .ce-step{position:relative;min-height:138px;padding:24px 30px 22px;box-sizing:border-box;border-right:1px solid rgba(184,149,74,.28);display:grid;grid-template-columns:42px 1fr;column-gap:16px;align-items:start}
+  #cs-connection-economy-breakthrough .ce-step:last-child{border-right:0}
+  #cs-connection-economy-breakthrough .ce-num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1.5px solid currentColor;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.08em;color:#5B8FD4;background:rgba(91,143,212,.08)}
+  #cs-connection-economy-breakthrough .ce-step:nth-child(2) .ce-num{color:#b8954a;background:rgba(184,149,74,.10)}
+  #cs-connection-economy-breakthrough .ce-step:nth-child(3) .ce-num{color:#c8462c;background:rgba(200,70,44,.08)}
+  #cs-connection-economy-breakthrough .ce-step h2{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,1.62vw,1.85rem);font-weight:850;line-height:1.02;margin:0 0 7px;color:#1a1612}
+  #cs-connection-economy-breakthrough .ce-step p{font-family:'Manrope',sans-serif;font-size:.86rem;line-height:1.32;font-weight:750;color:rgba(26,22,18,.62);margin:0;max-width:330px}
+  #cs-connection-economy-breakthrough .ce-punch{position:absolute;right:78px;bottom:220px;width:min(520px,33vw);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.2vw,2.5rem);line-height:1.08;font-weight:850;color:#fbf7ef;text-align:right;text-shadow:0 4px 24px rgba(26,22,18,.72),0 1px 0 rgba(26,22,18,.45)}
+  #cs-connection-economy-breakthrough .ce-punch em{font-style:italic;color:#ffd981}
+</style>
+<div class="casey-slide ds-focus" id="cs-connection-economy-breakthrough" style="display:none" aria-label="Measured human connection becomes a connection economy">
+  <img class="ce-bg" src="assets/generated/connection-economy/measured-connection-market-bg-v1.png" alt="Golden-hour pickleball community scene with glowing invitation paths connecting real people from courts to social tables."/>
+  <div class="ce-wash"></div>
+  <div class="ce-eye slide-eyebrow">Connection economy</div>
+  <section class="ce-stage">
+    <div class="ce-copy">
+      <h1 class="ce-title">Attention concentrates.<em>Connection distributes.</em></h1>
+      <p class="ce-sub">The next internet market is not more screen time. It is real-world connection measured through invitations, referrals, events, and the people who make rooms come alive.</p>
+    </div>
+    <div class="ce-quote">&ldquo;Getting people connecting in the real world is the ultimate promise of the internet.&rdquo;<span>Brian Chesky</span></div>
+    <div class="ce-punch">If we can measure real connection, <em>we can make it abundant.</em></div>
+    <div class="ce-system" aria-label="Measure market compound system">
+      <div class="ce-step"><div class="ce-num">01</div><div><h2>Measure</h2><p>Who matters to whom. Who chooses to spend time with who.</p></div></div>
+      <div class="ce-step"><div class="ce-num">02</div><div><h2>Market</h2><p>Events, referrals, careers, and invisible community labor.</p></div></div>
+      <div class="ce-step"><div class="ce-num">03</div><div><h2>Compound</h2><p>The invitation graph learns, fills rooms, and self-improves.</p></div></div>
+    </div>
+  </section>
+</div>
+<!-- cs-invite-graph-import-pink - pink-dot imported image concept for active cs-programmable-invitations [Codex 2026-06-15] -->
+<style>
+  #cs-invite-graph-import-pink{background:#f3ead8!important;overflow:hidden;color:#1a1612}
+  #cs-invite-graph-import-pink .igip-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;filter:saturate(.98) contrast(1.02)}
+  #cs-invite-graph-import-pink .igip-edge{position:absolute;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(184,149,74,.20),inset 0 -80px 120px rgba(243,234,216,.10)}
+</style>
+<div class="casey-slide ds-focus" id="cs-invite-graph-import-pink" style="display:none" aria-label="Pink-dot imported invitation graph concept showing how community builder and attendance choices shape yes responses">
+  <img class="igip-img" src="assets/imported/invitation-graph-chatgpt-2026-06-15.png" alt="The invitation graph: who says yes depends on the community builder and who else is going, shown as a warm pickleball community graph."/>
+  <div class="igip-edge" aria-hidden="true"></div>
+</div>
+
 <!-- ===== cs-programmable-invitations · main-flow slot 6 [Codex 2026-06-03] ===== -->
 <style>
   #cs-programmable-invitations{background:#fbf7ef!important;color:#1a1612;overflow:hidden}
@@ -25976,11 +26165,11 @@ window.csBrandV8Reverse = function() {
       </article>
       <div class="pi-center">
         <div class="pi-engine">
-          <div class="pi-engine-label">GnR invitation engine</div>
+          <div class="pi-engine-label">Scheduling = measuring</div>
           <div class="pi-flow">
             <div class="pi-step">
               <div class="pi-face" style="--img:url('assets/cs-app-store-people-bg.png')"></div>
-              <div class="pi-num">1</div><h3>Community builder</h3><p>The trusted host defines the room before the first text goes out.</p>
+              <div class="pi-num">1</div><h3>Community builder</h3><p>The trusted community builder defines the room before the first text goes out.</p>
             </div>
             <div class="pi-step">
               <div class="pi-face" style="--img:url('assets/cs-optimus-party-pink1.png')"></div>
@@ -26000,7 +26189,7 @@ window.csBrandV8Reverse = function() {
           <div class="pi-chip"><svg viewBox="0 0 24 24"><path d="M4 6h12"/><path d="M4 12h16"/><path d="M4 18h10"/><path d="M18 6l2 2-2 2"/></svg><span>Sequential</span></div>
           <div class="pi-chip"><svg viewBox="0 0 24 24"><path d="M4 5h16l-6 7v6l-4 2v-8L4 5z"/></svg><span>Criteria-based</span></div>
           <div class="pi-chip"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2-5 5-5s5 2 5 5"/><path d="M13 20c0-3 2-5 5-5"/><path d="M18 16v4h3"/></svg><span>Referrals</span></div>
-          <div class="pi-chip"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 6.3L20 10l-6.3 1.7L12 18l-1.7-6.3L4 10l6.3-1.7L12 2z"/></svg><span>Invitation graph</span></div>
+          <div class="pi-chip"><svg viewBox="0 0 24 24"><path d="M12 2l1.7 6.3L20 10l-6.3 1.7L12 18l-1.7-6.3L4 10l6.3-1.7L12 2z"/></svg><span>Community-invitation graph</span></div>
         </div>
         <p class="pi-footer"><strong>Invitations can be molded before the first text goes out</strong> - from elite curated play to open community fun.</p>
       </div>
@@ -26015,7 +26204,7 @@ window.csBrandV8Reverse = function() {
       <article class="pi-side pi-right-bottom">
         <div class="pi-side-head">
           <div class="pi-icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5-4.7-4.6 6.5-.9L12 3z"/></svg></div>
-          <h2>4. Invitation graph</h2>
+          <h2>4. Community-invitation graph</h2>
         </div>
         <p class="pi-rule">The graph learns who pulls who in, who follows through, and who makes the room work.</p>
         <div class="pi-mini"><span class="pi-dot" style="--img:url('assets/cs-fv6-community-intelligence-hero.png')"></span><span class="pi-dot" style="--img:url('assets/gnr_vnext_community_builders.png')"></span><span class="pi-dot" style="--img:url('assets/cs-brand-promise-community-bg.png')"></span><div class="pi-status"><svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3"/><rect x="5" y="11" width="14" height="10" rx="2"/></svg></div></div>
@@ -26344,7 +26533,7 @@ window.csProgrammableInvitationsReverse = function() {
           <path d="M226 306 L586 306"/>
         </g>
       </svg>
-      <div class="graph-node node-host"><span><strong>1</strong>Host invite</span></div>
+      <div class="graph-node node-host"><span><strong>1</strong>Community builder invite</span></div>
       <div class="graph-node node-guest"><span><strong>2</strong>Trusted guest</span></div>
       <div class="graph-node node-match"><span><strong>3</strong>Better match</span></div>
       <div class="graph-node node-data"><span><strong>4</strong>Next group</span></div>
@@ -26504,7 +26693,7 @@ window.csProgrammableInvitationsReverse = function() {
       </div>
     </div>
     <div class="referral-flow">
-      <div class="flow-node tmref-panel tmref-anim tmref-d1"><div class="flow-num">01</div><h2>Leader creates event</h2><p>One trusted host starts the room.</p></div>
+      <div class="flow-node tmref-panel tmref-anim tmref-d1"><div class="flow-num">01</div><h2>Leader creates event</h2><p>One trusted community builder starts the room.</p></div>
       <div class="flow-node tmref-panel tmref-anim tmref-d2"><div class="flow-num">02</div><h2>Invites a few</h2><p>The first people are picked with judgment.</p></div>
       <div class="flow-node tmref-panel tmref-anim tmref-d3"><div class="flow-num">03</div><h2>They refer friends</h2><p>The graph expands through real relationships.</p></div>
       <div class="flow-node tmref-panel tmref-anim tmref-d4"><div class="flow-num">04</div><h2>Right people arrive</h2><p>The room gets warmer and easier to join.</p></div>
@@ -26830,7 +27019,7 @@ window.csProgrammableInvitationsReverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-work-evolution-prelude" data-shown="0" onclick="csWorkEvolutionAdvance();event.stopPropagation()" style="display:none;cursor:pointer">
   <img class="worke-bg" src="assets/generated/work-evolution/work-evolution-bg-v1.png" alt="" onerror="this.onerror=null;this.src='assets/generated/real-world-frontier/real-world-frontier-bg-v1.png'"/>
-  <div class="worke-eyebrow slide-eyebrow">&quot;Work&quot;</div>
+  <div class="worke-eyebrow slide-eyebrow">&quot;Work&quot; &rarr; new career path</div>
   <section class="worke-reveal" aria-label="Community work becomes measurable">
     <div class="worke-copy">
       <h1 class="worke-title">Every contribution<br><em>becomes community value.</em></h1>
@@ -26855,7 +27044,7 @@ window.csProgrammableInvitationsReverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-work-social-pull" style="display:none" aria-label="Work slide with social pull value map">
   <img class="worke-bg" src="assets/generated/work-evolution/work-evolution-bg-v1.png" alt="" onerror="this.onerror=null;this.src='assets/generated/real-world-frontier/real-world-frontier-bg-v1.png'"/>
-  <div class="worke-eyebrow slide-eyebrow">&quot;Work&quot;</div>
+  <div class="worke-eyebrow slide-eyebrow">&quot;Work&quot; &rarr; new career path</div>
   <div class="wsp-wash"></div>
   <div class="rwmm-panel">
     <div class="rwmm-note">The next frontier makes real-world human and community value measurable</div>
@@ -26893,7 +27082,7 @@ window.csProgrammableInvitationsReverse = function() {
       </g>
       <text x="105" y="88" font-family="Manrope" font-size="26" font-weight="800" letter-spacing="2" fill="#5B8FD4">VIBES ANCHOR</text>
       <text x="116" y="342" font-family="Manrope" font-size="25" font-weight="800" letter-spacing="2" fill="#b8954a">REFERRER</text>
-      <text x="568" y="88" font-family="Manrope" font-size="26" font-weight="800" letter-spacing="2" fill="#5B8FD4">NEW REFERRAL</text>
+      <text x="662" y="88" font-family="Manrope" font-size="26" font-weight="800" letter-spacing="2" fill="#5B8FD4" text-anchor="middle">FOLLOWER</text>
       <text x="610" y="342" font-family="Manrope" font-size="25" font-weight="800" letter-spacing="2" fill="#d2442f">REGULAR</text>
     </svg>
   </div>
@@ -26929,7 +27118,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-work-measurable-market .rwmm-market{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.62);text-align:right;text-shadow:0 1px 0 rgba(251,247,239,.82)}
   #cs-work-measurable-market .rwmm-panel{position:relative;min-height:690px;border:2px solid rgba(184,149,74,.54);border-radius:8px;background:rgba(251,247,239,.55);box-shadow:0 28px 70px rgba(26,22,18,.10), inset 0 0 0 1px rgba(255,255,255,.35);overflow:hidden}
   #cs-work-measurable-market .rwmm-panel::before{content:"";position:absolute;inset:34px 40px;border:1.5px solid rgba(184,149,74,.36);border-radius:4px}
-  #cs-work-measurable-market .rwmm-panel-title{position:absolute;top:38px;left:50%;transform:translateX(-50%);width:min(620px,82%);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,3.05vw,3.6rem);font-weight:900;line-height:.96;letter-spacing:-.024em;color:#1a1612;z-index:2;text-shadow:0 1px 0 rgba(251,247,239,.70)}
+  #cs-work-measurable-market .rwmm-panel-title{position:absolute;top:38px;left:50%;transform:translateX(-50%);width:min(720px,92%);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.05vw,2.55rem);font-weight:900;line-height:.98;letter-spacing:-.018em;color:#1a1612;z-index:2;text-shadow:0 1px 0 rgba(251,247,239,.70)}
   #cs-work-measurable-market .rwmm-panel-title em{font-style:italic;color:#b8954a}
   #cs-work-measurable-market .rwmm-court{position:absolute;left:54px;right:54px;bottom:70px;height:392px;z-index:2}
   #cs-work-measurable-market .rwmm-note{position:absolute;left:50%;top:150px;transform:translateX(-50%);width:min(560px,78%);font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;line-height:1.38;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.55);text-align:center;z-index:2}
@@ -26938,7 +27127,7 @@ window.csProgrammableInvitationsReverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-work-measurable-market" data-reveal-stage="0" style="display:none" aria-label="Work slide with next measurable market content">
   <img class="worke-bg" src="assets/generated/work-evolution/work-evolution-bg-v1.png" alt="" onerror="this.onerror=null;this.src='assets/generated/real-world-frontier/real-world-frontier-bg-v1.png'"/>
-  <div class="worke-eyebrow slide-eyebrow">&quot;Work&quot;</div>
+  <div class="worke-eyebrow slide-eyebrow">&quot;Work&quot; &rarr; new career path</div>
   <div class="rwmm-wash"></div>
   <section class="rwmm-stage">
     <div>
@@ -26957,7 +27146,7 @@ window.csProgrammableInvitationsReverse = function() {
       </div>
     </div>
     <div class="rwmm-panel">
-      <div class="rwmm-panel-title">Social <em>pull</em></div>
+      <div class="rwmm-panel-title">Social <em>pull</em> &rarr; measured &rarr; market</div>
       <div class="rwmm-note">The next frontier makes real-world human and community value measurable</div>
       <svg class="rwmm-court" viewBox="0 0 760 392" role="img" aria-label="Social pull turns local connection into a measurable market">
         <defs>
@@ -27012,7 +27201,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-real-world-measurable-market .rwmm-market{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.42);text-align:right}
   #cs-real-world-measurable-market .rwmm-panel{position:relative;min-height:690px;border:2px solid rgba(184,149,74,.54);border-radius:8px;background:rgba(251,247,239,.55);box-shadow:0 28px 70px rgba(26,22,18,.10), inset 0 0 0 1px rgba(255,255,255,.35);overflow:hidden}
   #cs-real-world-measurable-market .rwmm-panel::before{content:"";position:absolute;inset:34px 40px;border:1.5px solid rgba(184,149,74,.36);border-radius:4px}
-  #cs-real-world-measurable-market .rwmm-panel-title{position:absolute;top:38px;left:50%;transform:translateX(-50%);width:min(620px,82%);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,3.05vw,3.6rem);font-weight:900;line-height:.96;letter-spacing:-.024em;color:#1a1612;z-index:2;text-shadow:0 1px 0 rgba(251,247,239,.70)}
+  #cs-real-world-measurable-market .rwmm-panel-title{position:absolute;top:38px;left:50%;transform:translateX(-50%);width:min(720px,92%);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.05vw,2.55rem);font-weight:900;line-height:.98;letter-spacing:-.018em;color:#1a1612;z-index:2;text-shadow:0 1px 0 rgba(251,247,239,.70)}
   #cs-real-world-measurable-market .rwmm-panel-title em{font-style:italic;color:#b8954a}
   #cs-real-world-measurable-market .rwmm-court{position:absolute;left:54px;right:54px;bottom:70px;height:392px;z-index:2}
   #cs-real-world-measurable-market .rwmm-note{position:absolute;left:50%;top:150px;transform:translateX(-50%);width:min(560px,78%);font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;line-height:1.38;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.55);text-align:center;z-index:2}
@@ -27046,7 +27235,7 @@ window.csProgrammableInvitationsReverse = function() {
       </div>
     </div>
     <div class="rwmm-panel">
-      <div class="rwmm-panel-title">Social <em>pull</em></div>
+      <div class="rwmm-panel-title">Social <em>pull</em> &rarr; measured &rarr; market</div>
       <div class="rwmm-note">The next frontier makes real-world human and community value measurable</div>
       <svg class="rwmm-court" viewBox="0 0 760 392" role="img" aria-label="Social pull turns local connection into a measurable market">
         <defs>
@@ -29786,7 +29975,7 @@ window.csProgrammableInvitationsReverse = function() {
   html[data-export="1"] #cs-twoops .to-mid,
   html[data-export="1"] #cs-twoops .to-closer { opacity:1 !important;transform:none !important;transition:none !important }
 </style>
-<div class="casey-slide ds-focus" id="cs-twoops">
+<div class="casey-slide ds-focus trash-slide" id="cs-twoops" data-deleted="1" style="display:none">
   <div class="to-amb"></div>
   <div class="to-dots"></div>
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Convergent Evolution</div>
@@ -30014,7 +30203,7 @@ window.csProgrammableInvitationsReverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;max-width:880px;line-height:1.4">Humanity's Endgame</div>
   <section class="mv6-stage">
 
-    <h1 class="mv6-head">The most incredible <em>technology revolution</em>.</h1>
+    <h1 class="mv6-head">The most incredible <em>technology revolution</em>, ever</h1>
     <!-- [Dave 2026-05-14 PM v4 c] Sub-line 'Each layer built on the last...' DELETED per Dave. -->
 
 
@@ -32680,7 +32869,7 @@ window.csA7m1Reverse = function() {
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">autonomous social coordination</div>
 <div class="inner" style="padding-top:48px;text-align:center;max-width:1700px;margin:0 auto">
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1300px;margin:0 auto 32px">
-    Technology that maximizes the connection we feel in our communities is unsolved
+    human connection technology for communities is unsolved
   </div>
 
   <div class="c2c-grid">
@@ -32904,8 +33093,8 @@ window.csA7m1Reverse = function() {
     "hobbies": {
       "kicker": "Hobbies",
       "title": "Interest becomes <em>a group.</em>",
-      "sub": "GnR finds the person, host, and next meetup.",
-      "steps": [["Know","Interest. skill. pace."],["Invite","Peer or host."],["Return","Habit forms."]],
+      "sub": "GnR finds the person, community builder, and next meetup.",
+      "steps": [["Know","Interest. skill. pace."],["Invite","Peer or community builder."],["Return","Habit forms."]],
       "profile": ["interest","skill","pace"],
       "feed": [["Start","Beginner table"],["Guide","Mentor"],["Share","Meetup"]],
       "moments": ["learn","make","teach","return"],
@@ -32957,8 +33146,8 @@ window.csA7m1Reverse = function() {
       "sub": "GnR turns needs and gifts into simple care invites.",
       "steps": [["See","Need. gift. season."],["Invite","Care team."],["Welcome","People noticed."]],
       "profile": ["need","gift","season"],
-      "feed": [["Care","Meal train"],["Serve","Right team"],["Host","Small table"]],
-      "moments": ["care","serve","host","welcome"],
+      "feed": [["Care","Meal train"],["Serve","Right team"],["Community builder","Small table"]],
+      "moments": ["care","serve","community builder","welcome"],
       "proof": "Faith communities <strong>route care.</strong>"
     },
     "country-clubs": {
@@ -33295,135 +33484,449 @@ window.csA7m1Reverse = function() {
 </div>
 
 
-<!-- ===== cs-1bm1 — MERGED VARIANT 1: Two Imbalances · harmonized charts · click-reveal [Dave 2026-04-30 PM] ===== -->
+<!-- timestamp: 20260515-072455 | slide-id: cs-1bm1 | description: pre-quality-pass | imported 2026-06-15 -->
 <style>
-  /* Card-flip reveal: placeholder is back face, content is front face (pre-rotated 180deg).
-     Click rotates the inner container 180deg, flipping placeholder away and content in.
-     [Dave 2026-05-07 PM iPad bug fix]: when right card flipped on iPad, content disappeared.
-     Root cause: Safari iOS loses 3D depth + height when an absolutely-positioned 3D-flipped child renders inside a grid stretch context.
-     Fix: lock height explicitly, propagate preserve-3d to the wrapper, force GPU layer with translateZ + will-change. */
-  /* [Dave 2026-05-14] Simple slide-entrance animation per Dave. Headline fades up first, then the card grid follows with a 350ms stagger. */
-  #cs-1bm1 .inner > div:nth-child(1),
-  #cs-1bm1 .inner > div:nth-child(2) {
+
+  #cs-1bm1 {
+    --paper: #fbf7ef;
+    --ink: #1a1612;
+    --gold: #b8954a;
+    --blue: #5B8FD4;
+    --red: #c8462c;
+    --ui: 'Manrope', sans-serif;
+  }
+
+  #cs-1bm1, #cs-1bm1 * { box-sizing: border-box; }
+#cs-1bm1 {
+    width: 1920px;
+    height: 1080px;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cs-1bm1 .modern-life-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  #cs-1bm1 .modern-life-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    filter: saturate(0.98) contrast(1.02);
+    transform: scale(1.015);
+    transition: opacity 760ms cubic-bezier(.22,1,.36,1), filter 760ms cubic-bezier(.22,1,.36,1);
+  }
+
+  #cs-1bm1.bg-settled .modern-life-bg img {
+    opacity: 0.94;
+    filter: saturate(0.92) contrast(1.01);
+  }
+
+  #cs-1bm1 .modern-life-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 52% 48%, rgba(251,247,239,0.80) 0%, rgba(251,247,239,0.54) 34%, rgba(251,247,239,0.20) 60%, rgba(251,247,239,0.08) 100%),
+      linear-gradient(180deg, rgba(251,247,239,0.38) 0%, rgba(251,247,239,0.12) 45%, rgba(251,247,239,0.30) 100%);
+    pointer-events: none;
+    transition: background 1050ms cubic-bezier(.22,1,.36,1);
+  }
+
+  #cs-1bm1.bg-settled .modern-life-bg::after {
+    background:
+      radial-gradient(ellipse at 50% 54%, rgba(251,247,239,0.70) 0%, rgba(251,247,239,0.48) 36%, rgba(251,247,239,0.22) 64%, rgba(251,247,239,0.10) 100%),
+      linear-gradient(90deg, rgba(251,247,239,0.38) 0%, rgba(251,247,239,0.22) 22%, rgba(251,247,239,0.48) 48%, rgba(251,247,239,0.22) 77%, rgba(251,247,239,0.38) 100%),
+      linear-gradient(180deg, rgba(251,247,239,0.24) 0%, rgba(251,247,239,0.10) 45%, rgba(251,247,239,0.26) 100%);
+  }
+
+  #cs-1bm1.bg-settled .modern-life-bg::before {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    top: 31%;
+    bottom: 14%;
+    z-index: 1;
+    border-radius: 38px;
+    background: rgba(251,247,239,0.20);
+    filter: blur(42px);
+    pointer-events: none;
+  }
+
+  #cs-1bm1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(184,149,74,0.10) 0.75px, transparent 0.75px);
+    background-size: 6px 6px;
+    opacity: 0.28;
+  }
+
+  #cs-1bm1 .inner {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.988);
+    pointer-events: none;
+    transition: opacity 1050ms cubic-bezier(.16,1,.3,1), transform 1050ms cubic-bezier(.16,1,.3,1);
+  }
+
+  #cs-1bm1.cards-entered .inner {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(156px);
+    pointer-events: auto !important;
+  }
+
+  #cs-1bm1 .inner > div:first-child {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1);
+    transition: opacity 950ms cubic-bezier(.16,1,.3,1) 260ms, transform 950ms cubic-bezier(.16,1,.3,1) 260ms;
   }
-  #cs-1bm1.casey-entered .inner > div:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.1s; }
-  #cs-1bm1.casey-entered .inner > div:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.45s; }
-  html[data-export="1"] #cs-1bm1 .inner > div { opacity: 1 !important; transform: none !important; transition: none !important; }
-  #cs-1bm1 .ti-flip-wrap { perspective: 1500px; min-height: 480px; height: 480px; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; position: relative; }
-  #cs-1bm1 .ti-flip-inner { position: relative; width: 100%; height: 100%; min-height: 480px; transition: transform 0.85s cubic-bezier(.45,.05,.18,1); transform-style: preserve-3d; -webkit-transform-style: preserve-3d; will-change: transform; transform: translateZ(0); }
-  #cs-1bm1[data-left="1"] .ti-flip-left { transform: translateZ(0) rotateY(180deg); }
-  #cs-1bm1[data-right="1"] .ti-flip-right { transform: translateZ(0) rotateY(180deg); }
-  #cs-1bm1 .ti-card,
-  #cs-1bm1 .ti-ph { backface-visibility: hidden; -webkit-backface-visibility: hidden; position: absolute !important; inset: 0; width: 100%; margin: 0; }
-  #cs-1bm1 .ti-card { transform: rotateY(180deg); }
-  /* iOS Safari fix 2026-05-01: backface-visibility leaks text through on iOS. Belt-and-suspenders opacity hide. */
-  #cs-1bm1 .ti-card { opacity: 0; transition: opacity 0.35s ease; }
-  #cs-1bm1 .ti-ph   { opacity: 1; transition: opacity 0.35s 0.45s ease; }
-  #cs-1bm1[data-left="1"]  .ti-flip-left  .ti-card { opacity: 1; transition: opacity 0.35s 0.45s ease; }
-  #cs-1bm1[data-left="1"]  .ti-flip-left  .ti-ph   { opacity: 0; transition: opacity 0.35s ease; }
-  #cs-1bm1[data-right="1"] .ti-flip-right .ti-card { opacity: 1; transition: opacity 0.35s 0.45s ease; }
-  /* [Dave 2026-05-09] Visual swap — values card on LEFT, tech card on RIGHT. Done via CSS order so HTML, classes, and click handlers stay intact. The .ti-flip-right wrap (values content, originally HTML position 2) gets order:1 ? renders as 1st grid item (left). The .ti-flip-left wrap (tech content, originally HTML position 1) gets order:3 ? renders as 3rd grid item (right). Bridge stays middle (order:2). */
-  #cs-1bm1 .ti-flip-wrap:nth-of-type(1) { order: 3 }
-  #cs-1bm1 .ti-bridge { order: 2 }
-  #cs-1bm1 .ti-flip-wrap:nth-of-type(2) { order: 1 }
-  /* [Dave 2026-05-17] Per-card entry stagger — VALUES (visual LEFT, source LAST .ti-flip-wrap)
-     animates FIRST; bridge second; TECHNOLOGY (visual RIGHT, source FIRST .ti-flip-wrap) third.
-     Rationale: life's scorecard is the foundational driver — values-wiring pushes people
-     toward self-rating regardless of tech; technology then amplifies the isolation. Reading
-     left-to-right reinforces that causal order.
-     [Dave 2026-05-17 LATE BUG FIX] First attempt used :nth-of-type(2) for Values which
-     silently matched nothing (because the grid is div.ti-flip-wrap, div.ti-bridge,
-     div.ti-flip-wrap — :nth-of-type counts among ALL divs, so the Values card is actually
-     nth-of-type(3), and (2) lands on .ti-bridge which lacks .ti-flip-wrap). Result: Values
-     card stayed at opacity:0 forever. Switched to :first-of-type / :last-of-type which match
-     unambiguously regardless of intervening sibling types. */
-  #cs-1bm1 .ti-flip-wrap, #cs-1bm1 .ti-bridge { opacity: 0; transform: translateY(14px); transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
-  #cs-1bm1.casey-entered .ti-flip-wrap:last-of-type  { opacity: 1; transform: none; transition-delay: 0.55s; }
-  #cs-1bm1.casey-entered .ti-bridge                  { opacity: 1; transform: none; transition-delay: 0.95s; }
-  #cs-1bm1.casey-entered .ti-flip-wrap:first-of-type { opacity: 1; transform: none; transition-delay: 1.25s; }
-  html[data-export="1"] #cs-1bm1 .ti-flip-wrap,
-  html[data-export="1"] #cs-1bm1 .ti-bridge { opacity: 1 !important; transform: none !important; transition: none !important; }
-  #cs-1bm1[data-right="1"] .ti-flip-right .ti-ph   { opacity: 0; transition: opacity 0.35s ease; }
-  html[data-export="1"] #cs-1bm1 .ti-card { opacity: 1 !important; transition: none !important; }
-  html[data-export="1"] #cs-1bm1 .ti-ph   { opacity: 0 !important; transition: none !important; }
-  /* Per-card flip state — each card independently togglable via mouse click [Dave 2026-04-30 PM]. translateZ(0) added 2026-05-07 PM for iPad fix (forces GPU layer, preserves 3D context). */
-  #cs-1bm1[data-left="1"] .ti-flip-left { transform: translateZ(0) rotateY(180deg) !important; }
-  #cs-1bm1[data-right="1"] .ti-flip-right { transform: translateZ(0) rotateY(180deg) !important; }
-  html[data-export="1"] #cs-1bm1 .ti-flip-inner { transform: rotateY(180deg) !important; }
 
-  /* PROGRESSIVE REVEAL — bars appear first (with the card flip), bottom section (headline + icon + sources) fades in after the flip completes [Dave 2026-04-30 PM] */
-  #cs-1bm1 .ti-bottom { opacity: 0; transform: translateY(10px); transition: opacity 0.65s ease, transform 0.65s ease; transition-delay: 0s; }
-  #cs-1bm1[data-left="1"] .ti-flip-left .ti-bottom { opacity: 1; transform: translateY(0); transition-delay: 0.85s; }
-  #cs-1bm1[data-right="1"] .ti-flip-right .ti-bottom { opacity: 1; transform: translateY(0); transition-delay: 0.85s; }
-  html[data-export="1"] #cs-1bm1 .ti-bottom { opacity: 1 !important; transform: none !important; }
-  @keyframes tiHintPulse { 0%,100% { opacity:.6 } 50% { opacity:1 } }
-
-  /* HARMONIZED BAR CHART STYLES — both charts share the same bar treatment */
-  /* [Dave 2026-05-08] Row margin tightened 9?6px to free vertical space — Work added a 6th row + Sources strip was getting cut off at card bottom. */
-  #cs-1bm1 .ti-bar-row { display: grid; align-items: center; gap: 12px; margin-bottom: 6px; }
-  #cs-1bm1 .ti-bar-row.ti-tech-row { grid-template-columns: 110px 1fr 130px; }
-  #cs-1bm1 .ti-bar-row.ti-val-row  { grid-template-columns: 110px 1fr 130px; }
-  /* [Dave 2026-05-12 v2] .ti-sci-chip removed — chip pill approach replaced with inline middot-separated caps for a cleaner, quieter sources line. */
-  #cs-1bm1 .ti-bar-track { position: relative; height: 10px; background: transparent; border-radius: 2px; }
-  #cs-1bm1 .ti-bar-fill  { height: 100%; background: rgba(26,22,18,0.5); border-radius: 2px; }
-  /* Hero row (Connection #1 in Values) — gold gradient pulse, bigger */
-  #cs-1bm1 .ti-bar-row.ti-hero { margin-top: 6px; }
-  #cs-1bm1 .ti-bar-row.ti-hero .ti-bar-track { height: 22px; background: transparent; }
-  #cs-1bm1 .ti-bar-row.ti-hero .ti-bar-fill { width: 100%; background: linear-gradient(90deg,#d4a853,#e88a4a,#d4a853); box-shadow: 0 0 24px rgba(212,168,83,0.45); animation: pinkPulse 3s ease-in-out infinite; border-radius: 5px; }
-  /* Empty row (No human connection tech in Tech) — dashed gold, same height as hero for symmetry */
-  #cs-1bm1 .ti-bar-row.ti-empty { margin-top: 6px; }
-  #cs-1bm1 .ti-bar-row.ti-empty .ti-bar-track { height: 22px; background: transparent; border: 1.75px dashed rgba(184,149,74,0.72); border-radius: 5px; box-shadow: inset 0 0 10px rgba(184,149,74,0.08); display:flex;align-items:center;justify-content:center; }
-  #cs-1bm1 .ti-empty-label { font-family:'Manrope',sans-serif;font-size:.54rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(138,100,32,0.70);line-height:1; }
-  #cs-1bm1 .ti-bar-row.ti-empty .ti-bar-fill { display: none; }
-  #cs-1bm1 .ti-divider { height: 1px; background: linear-gradient(90deg,transparent,rgba(184,149,74,0.45),transparent); margin: 4px 0 2px; }
-
-  /* DATA BAR FILL ANIMATION — bars scale from 0 to full width with stagger when card is flipped [Dave 2026-04-30 PM] */
-  #cs-1bm1 .ti-bar-fill { transform-origin: left; transform: scaleX(0); transition: transform 0.85s cubic-bezier(.45,.05,.18,1); }
-  #cs-1bm1[data-left="1"]  .ti-flip-left  .ti-bar-fill,
-  #cs-1bm1[data-right="1"] .ti-flip-right .ti-bar-fill { transform: scaleX(1); }
-  #cs-1bm1 .ti-bar-fill.ti-bf-1 { transition-delay: 0.95s; }
-  #cs-1bm1 .ti-bar-fill.ti-bf-2 { transition-delay: 1.10s; }
-  #cs-1bm1 .ti-bar-fill.ti-bf-3 { transition-delay: 1.25s; }
-  #cs-1bm1 .ti-bar-fill.ti-bf-4 { transition-delay: 1.40s; }
-  html[data-export="1"] #cs-1bm1 .ti-bar-fill { transform: scaleX(1) !important; transition: none !important; }
-
-  /* EMPTY BAR PULSE — both gold dashed bars (Real human connection tech LEFT, Connection with others RIGHT) pulse softly [Dave 2026-04-30 PM] */
-  @keyframes tiEmptyPulse {
-    0%, 100% { border-color: rgba(184,149,74,0.72); box-shadow: inset 0 0 10px rgba(184,149,74,0.08); }
-    50%      { border-color: rgba(184,149,74,0.98); box-shadow: inset 0 0 16px 0 rgba(184,149,74,0.22), 0 0 20px 0 rgba(184,149,74,0.22); }
+  #cs-1bm1.cards-entered .inner > div:first-child {
+    opacity: 1;
+    transform: none;
   }
-  #cs-1bm1[data-left="1"]  .ti-flip-left  .ti-bar-row.ti-empty .ti-bar-track,
-  #cs-1bm1[data-right="1"] .ti-flip-right .ti-bar-row.ti-empty .ti-bar-track {
-    animation: tiEmptyPulse 2.6s ease-in-out infinite;
-    animation-delay: 1.6s;
+
+  #cs-1bm1 .inner > div:nth-child(2) {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+    transition: opacity 1100ms cubic-bezier(.16,1,.3,1) 520ms, transform 1100ms cubic-bezier(.16,1,.3,1) 520ms;
   }
-  html[data-export="1"] #cs-1bm1 .ti-bar-row.ti-empty .ti-bar-track { animation: none !important; }
+
+  #cs-1bm1.cards-entered .inner > div:nth-child(2) {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ti-flip-wrap {
+    min-height: 476px;
+    height: 100%;
+    perspective: 1500px;
+  }
+
+  .ti-flip-wrap:has(.ti-flip-right) {
+    order: 3;
+  }
+
+  .ti-bridge {
+    order: 2;
+  }
+
+  .ti-flip-wrap:has(.ti-flip-left) {
+    order: 1;
+  }
+
+  .ti-flip-inner {
+    min-height: 476px;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 620ms cubic-bezier(.2,.72,.2,1);
+  }
+
+  .ti-flip-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+
+  .ti-card {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    min-height: 476px;
+    box-shadow: 0 18px 44px rgba(26,22,18,0.055);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+  }
+
+  .ti-flip-inner:not(.is-flipped) .ti-card {
+    transform: rotateY(180deg);
+  }
+
+  .ti-flip-inner:not(.is-flipped) .ti-ph {
+    transform: rotateY(0deg);
+  }
+
+  .ti-flip-inner.is-flipped .ti-card {
+    transform: rotateY(180deg);
+  }
+
+  .ti-flip-inner.is-flipped .ti-ph {
+    transform: rotateY(0deg);
+  }
+
+  .ti-card.ti-left,
+  .ti-card.ti-right {
+    justify-content: flex-start;
+  }
+
+  .ti-card.ti-left > div:nth-child(2),
+  .ti-card.ti-right > div:nth-child(2) {
+    margin-top: 12px !important;
+  }
+
+  .ti-card.ti-left,
+  .ti-ph-left {
+    background:
+      linear-gradient(180deg, rgba(91,143,212,0.075), rgba(251,247,239,0.90) 34%, rgba(251,247,239,0.84)) !important;
+  }
+
+  .ti-card.ti-right,
+  .ti-ph-right {
+    background:
+      linear-gradient(180deg, rgba(200,70,44,0.075), rgba(251,247,239,0.90) 34%, rgba(251,247,239,0.84)) !important;
+  }
+
+  .ti-ph {
+    position: absolute;
+    inset: 0;
+    min-height: 476px;
+    backface-visibility: hidden;
+    box-shadow: 0 18px 44px rgba(26,22,18,0.045);
+    backdrop-filter: blur(2px);
+  }
+
+  .ti-card > div:first-child {
+    text-align: center;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .ti-bar-row {
+    display: grid;
+    align-items: center;
+    gap: 15px;
+    min-height: 36px;
+  }
+
+  .ti-tech-row {
+    grid-template-columns: 74px minmax(210px, 1fr) 146px;
+  }
+
+  .ti-val-row {
+    grid-template-columns: 126px minmax(228px, 1fr) 78px;
+  }
+
+  .ti-bar-track {
+    height: 13px;
+    border-radius: 999px;
+    background: rgba(26,22,18,0.07);
+    border: 1px solid rgba(26,22,18,0.06);
+    overflow: hidden;
+  }
+
+  .ti-bar-fill {
+    height: 100%;
+    border-radius: inherit;
+    opacity: 0.92;
+  }
+
+  .ti-left .ti-bar-fill {
+    background: linear-gradient(90deg, rgba(91,143,212,0.35), rgba(91,143,212,0.9));
+  }
+
+  .ti-right .ti-bar-fill {
+    background: linear-gradient(90deg, rgba(200,70,44,0.30), rgba(200,70,44,0.84));
+  }
+
+  .ti-empty .ti-bar-track {
+    background: rgba(184,149,74,0.05);
+    border: 1.5px dashed rgba(184,149,74,0.48);
+  }
+
+  .ti-not-measured-row {
+    display: grid;
+    grid-template-columns: 126px minmax(228px, 1fr) 146px;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(184,149,74,0.22);
+  }
+
+  .ti-connection-label {
+    font-family: 'Fraunces','Playfair Display',Georgia,serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #b8954a;
+  }
+
+  .ti-not-measured-track {
+    height: 18px;
+    border-radius: 999px;
+    border: 1.5px dashed rgba(184,149,74,0.56);
+    background: rgba(184,149,74,0.045);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope',sans-serif;
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: rgba(184,149,74,0.78);
+  }
+
+  .ti-divider {
+    height: 1px;
+    margin: 13px 0 10px;
+    background: linear-gradient(90deg, transparent, rgba(184,149,74,0.5), transparent);
+  }
+
+  .ti-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    margin-top: 0 !important;
+    padding-top: 0;
+    pointer-events: none;
+  }
+
+  .ti-orbit {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background:
+      radial-gradient(circle, rgba(255,255,255,0.92) 0 25%, rgba(255,255,255,0.54) 47%, rgba(255,255,255,0.1) 72%),
+      rgba(255,255,255,0.26) !important;
+    margin: 0 auto;
+  }
+
+  .ti-orbit::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    border-radius: 50%;
+    border: 1.5px dashed var(--orbit-color);
+    opacity: 0.55;
+  }
+
+  .ti-orbit::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(26,22,18,0.08);
+  }
+
+  .ti-orbit svg {
+    position: relative;
+    z-index: 1;
+    width: 106px;
+    height: 106px;
+  }
+
+  .ti-orbit-tech {
+    --orbit-color: rgba(91,143,212,0.58);
+  }
+
+  .ti-orbit-values {
+    --orbit-color: rgba(184,149,74,0.68);
+  }
+
+  .ti-bottom .ti-orbit {
+    width: 58px !important;
+    height: 58px !important;
+    opacity: 0.72;
+  }
+
+  .ti-card-mini-orbit {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .ti-card-mini-orbit .ti-orbit {
+    width: 80px !important;
+    height: 80px !important;
+    opacity: 0.66;
+  }
+
+  .ti-card-mini-orbit .ti-orbit::before {
+    inset: -7px;
+    border-width: 1px;
+  }
+
+  .ti-card-mini-orbit .ti-orbit svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .ti-bottom .ti-orbit::before {
+    inset: -5px;
+  }
+
+  .ti-bottom .ti-orbit svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ti-bridge {
+    min-height: 476px;
+  }
+
+  .ti-card > div:first-child {
+    font-size: 1rem !important;
+  }
+
+  .ti-card [style*="font-size:0.85rem"] {
+    font-size: 0.93rem !important;
+  }
+
+  .ti-card [style*="font-size:.62rem"] {
+    font-size: 0.68rem !important;
+  }
+
+  .ti-card [style*="font-size:1.25rem"] {
+    font-size: 1.34rem !important;
+  }
+
+
 </style>
 <div class="casey-slide ds-focus" id="cs-1bm1" data-left="0" data-right="0" style="cursor:default">
 <section style="position:relative;min-height:100%;width:100%">
-<!-- [Dave 2026-05-18 LATEST] Eyebrow renamed per Dave 'top left label of the "Modern life wires us for everything except a fulfilling life." slide should be "Unfulfilled"'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Unfulfilled</div>
-<div class="inner" style="padding:48px 48px 28px;max-width:1500px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:24px;min-height:100%;box-sizing:border-box">
+<div class="modern-life-bg" aria-hidden="true">
+  <img src="assets/cs-1bm1-modern-life-wired-bg-v2.png" alt="">
+</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Modern life</div>
+<div class="inner" style="padding:52px 58px 34px;max-width:1590px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:28px;min-height:100%;box-sizing:border-box;opacity:0;visibility:hidden;pointer-events:none">
 
   <div style="text-align:center">
-    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,2.8vw,2.55rem);font-weight:750;color:#1a1612;line-height:1.14;letter-spacing:-0.018em;max-width:1280px;margin:0 auto">
-      Modern life wires us for <em style="font-style:italic;font-weight:500;color:#b8954a">everything except feeling fulfilled</em>.
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.05rem,4vw,3.35rem);font-weight:700;color:#1a1612;line-height:1.08;letter-spacing:-0.018em">
+      Modern life wires us for everything except <em style="font-style:italic;font-weight:500;color:#b8954a">feeling fulfilled.</em>
     </div>
   </div>
 
-  <!-- [Dave 2026-05-18 LATEST] Bridge column narrowed further 56?24px per Dave 'move these cards a little closer together'. Two narrowings now: 92 ? 56 ? 24px. -->
-  <div style="display:grid;grid-template-columns:1fr 24px 1fr;gap:14px;align-items:stretch;position:relative">
+  <div style="display:grid;grid-template-columns:1fr 98px 1fr;gap:16px;align-items:stretch;position:relative">
 
     <!-- LEFT slot (Tech card moved RIGHT per friend feedback 2026-05-04) -->
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('left');event.stopPropagation()" style="cursor:pointer">
      <div class="ti-flip-inner ti-flip-left">
-      <div class="ti-card ti-left" style="background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);border-top:4px solid #5B8FD4;border-radius:12px;padding:22px 20px 26px;display:flex;flex-direction:column;align-items:center;gap:12px">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#5B8FD4">Technology wiring &rarr; screen time</div>
+      <div class="ti-card ti-left" style="background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);border-top:4px solid #5B8FD4;border-radius:12px;padding:25px 24px 28px;display:flex;flex-direction:column;align-items:center;gap:13px">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#3a7da3">Attention</div>
         <!-- Tech-era stack chart -->
-        <div style="width:100%;max-width:540px;margin-top:4px">
+        <div style="width:100%;max-width:585px;margin-top:4px">
           <div class="ti-bar-row ti-tech-row">
             <div style="text-align:right">
               <svg viewBox="0 0 24 24" width="26" height="26">
@@ -33464,20 +33967,15 @@ window.csA7m1Reverse = function() {
             <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-3" style="width:58%"></div></div>
             <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;color:rgba(26,22,18,0.7);text-align:left">intelligence</div>
           </div>
-          <div class="ti-divider"></div>
-          <!-- EMPTY GAP ROW — no human connection tech yet -->
-          <div class="ti-bar-row ti-tech-row ti-empty">
-            <div style="text-align:right;font-family:'Playfair Display',serif;font-size:1.55rem;color:#8a6420;font-weight:600">?</div>
-            <div class="ti-bar-track"><span class="ti-empty-label">not measured</span></div>
-            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.94rem;font-weight:850;color:#8a6420;text-align:left;line-height:1.16">real human<br>connection</div>
+          <div class="ti-not-measured-row">
+            <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:800;color:#b8954a;text-align:right">?</div>
+            <div class="ti-not-measured-track">NOT MEASURED</div>
+            <div class="ti-connection-label">real human<br>connection</div>
           </div>
         </div>
-        <!-- BOTTOM SECTION — fades in AFTER card flip [Dave 2026-04-30 PM] -->
-        <!-- [Dave 2026-05-12] 'Technology imbalance' verdict kicker DELETED (top eyebrow now reads 'Technology: scroll alone.' so the verdict was redundant). Invisible spacer also dropped since right-card sub-eyebrow no longer needs compensation. -->
-        <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;margin-top:32px">
-          <!-- Scroll alone icon — replaced with EXACT cs-a7 graphic per Dave 2026-05-07 ("use that graphic for the tech imbalance graphic on the modern life slide") -->
-          <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
-            <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
+        <div class="ti-card-mini-orbit" aria-hidden="true">
+          <div class="ti-orbit ti-orbit-tech">
+            <svg viewBox="0 0 52 52" fill="none">
               <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.35)"/>
               <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.3)" stroke-width="2" stroke-linecap="round"/>
               <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
@@ -33488,11 +33986,13 @@ window.csA7m1Reverse = function() {
             </svg>
           </div>
         </div>
+        <!-- BOTTOM SECTION — fades in AFTER card flip [Dave 2026-04-30 PM] -->
+        <!-- [Dave 2026-05-12] 'Technology imbalance' verdict kicker DELETED (top eyebrow now reads 'Technology: scroll alone.' so the verdict was redundant). Invisible spacer also dropped since right-card sub-eyebrow no longer needs compensation. -->
       </div>
       <!-- LEFT placeholder — back face (visible at step 0). Mirrors the cs-a7 stick-figure exactly per Dave 2026-05-07 -->
-      <div class="ti-ph ti-ph-left" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px dashed rgba(91,143,212,0.45);border-radius:12px;background:rgba(91,143,212,0.04);padding:40px 20px">
-        <div style="width:160px;height:160px;border-radius:50%;border:1.5px solid rgba(26,22,18,0.14);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center">
-          <svg width="108" height="108" viewBox="0 0 52 52" fill="none">
+      <div class="ti-ph ti-ph-left" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px solid rgba(91,143,212,0.28);border-top:4px solid #5B8FD4;border-radius:12px;background:rgba(91,143,212,0.04);padding:46px 26px">
+        <div class="ti-orbit ti-orbit-tech">
+          <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
             <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.35)"/>
             <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.3)" stroke-width="2" stroke-linecap="round"/>
             <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
@@ -33506,16 +34006,22 @@ window.csA7m1Reverse = function() {
      </div>
     </div>
 
-    <!-- CENTER BRIDGE — line REMOVED per Dave 2026-05-17 ('remove the dotted line between the two cards'). Empty spacer column retained so the 1fr / 92px / 1fr grid keeps its breathing room. -->
-    <div class="ti-bridge" style="pointer-events:none" aria-hidden="true"></div>
+    <!-- CENTER BRIDGE — single gold double-arrow [order:2 to stay in middle after Values moved left, Dave 2026-05-04] -->
+    <div class="ti-bridge" style="display:flex;align-items:center;justify-content:center;pointer-events:none">
+      <svg width="86" height="22" viewBox="0 0 86 22" style="display:block">
+        <line x1="11" y1="11" x2="75" y2="11" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+        <path d="M16 5 L9 11 L16 17" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 5 L77 11 L70 17" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
 
     <!-- RIGHT slot (Values card moved LEFT per friend feedback 2026-05-04 — values is the lead beat) -->
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('right');event.stopPropagation()" style="cursor:pointer">
      <div class="ti-flip-inner ti-flip-right">
-      <div class="ti-card ti-right" style="background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.22);border-top:4px solid #c8462c;border-radius:12px;padding:18px 20px 22px;display:flex;flex-direction:column;align-items:center;gap:8px;overflow:hidden">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#c8462c">Values wiring &rarr; life&rsquo;s scorecard</div>
+      <div class="ti-card ti-right" style="background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.22);border-top:4px solid #c8462c;border-radius:12px;padding:21px 24px 26px;display:flex;flex-direction:column;align-items:center;gap:9px">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#c8462c">Life&rsquo;s scorecard</div>
         <!-- Values chart: what culture values (filled bars) ? Human Connection EMPTY void at bottom -->
-        <div style="width:100%;max-width:560px;margin-top:4px">
+        <div style="width:100%;max-width:605px;margin-top:4px">
           <!-- "Ourselves" leads — the biggest cultural obsession. Sets up the contrast with "Connection with others" below. [Dave 2026-04-30 PM] -->
           <div class="ti-bar-row ti-val-row">
             <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Me</div>
@@ -33549,64 +34055,44 @@ window.csA7m1Reverse = function() {
             <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-4" style="width:28%"></div></div>
             <div></div>
           </div>
-          <div class="ti-divider"></div>
-          <!-- VOID ROW — Human connection at bottom, EMPTY dashed gold (mirrors Tech side's void) -->
-          <div class="ti-bar-row ti-val-row ti-empty">
-            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.94rem;color:#8a6420;text-align:right;font-weight:850;line-height:1.16">real human<br>connection</div>
-            <div class="ti-bar-track"><span class="ti-empty-label">not measured</span></div>
+          <div class="ti-not-measured-row">
+            <div class="ti-connection-label" style="text-align:right">real human<br>connection</div>
+            <div class="ti-not-measured-track">NOT MEASURED</div>
             <div></div>
+          </div>
+        </div>
+        <div class="ti-card-mini-orbit" aria-hidden="true">
+          <div class="ti-orbit ti-orbit-values">
+            <svg viewBox="0 0 52 52" fill="none">
+              <rect x="12" y="12" width="28" height="34" rx="3.5" fill="rgba(251,247,239,0.74)" stroke="#dc7b68" stroke-width="2.6"/>
+              <path d="M20 12.5 C20 10.6 21.5 9.2 23.3 9.2 H28.7 C30.5 9.2 32 10.6 32 12.5 V14.8 H20 Z" fill="#dc7b68"/>
+              <path d="M18 22 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 29 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 36 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="34.5" cy="22" r="2.4" fill="#dc7b68"/>
+              <circle cx="34.5" cy="29" r="2.4" fill="#dc7b68" opacity="0.78"/>
+              <circle cx="34.5" cy="36" r="2.4" fill="none" stroke="#e6a091" stroke-width="2"/>
+            </svg>
           </div>
         </div>
         <!-- [Dave 2026-05-14] Science evidence strip DELETED from cs-1bm1 — the science framing now lives entirely on slot-1 cs-frontier so this Values card stays focused on the chart. -->
         <!-- BOTTOM SECTION — fades in AFTER right card flip [Dave 2026-04-30 PM] -->
         <!-- [Dave 2026-05-12] 'Values imbalance' verdict kicker DELETED (top eyebrow now reads 'Values: life's scorecard.' so the verdict was redundant). Invisible spacer also dropped. -->
-        <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
-          <!-- 3-figure community icon — matched exactly to placeholder back-face (90px white circle) per Dave 2026-04-30 PM -->
-          <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
-            <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
-              <circle cx="26" cy="16" r="5" fill="rgba(200,70,44,0.55)"/>
-              <path d="M26 22 L26 38" stroke="rgba(200,70,44,0.5)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M22 30 L26 28 L30 30" stroke="rgba(200,70,44,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-              <path d="M22 38 L26 38 L30 38" stroke="rgba(200,70,44,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="14" cy="19" r="4" fill="rgba(200,70,44,0.42)"/>
-              <path d="M14 24 L14 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M11 38 L17 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.4" stroke-linecap="round"/>
-              <circle cx="38" cy="19" r="4" fill="rgba(200,70,44,0.42)"/>
-              <path d="M38 24 L38 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M35 38 L41 38" stroke="rgba(200,70,44,0.42)" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
         <!-- [Dave 2026-05-12] Sources row 'SOURCES: HARVARD GRANT STUDY · HOLT-LUNSTAD · KIM · CHEN' DELETED per Dave: 'delete what i'm attaching'. -->
       </div>
       <!-- RIGHT placeholder — back face (visible until step 2) -->
-      <div class="ti-ph ti-ph-right" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px dashed rgba(200,70,44,0.45);border-radius:12px;background:rgba(200,70,44,0.04);padding:40px 20px">
-        <!-- [Dave 2026-05-17] 3-figure community icon SWAPPED for a SCORECARD/CLIPBOARD per
-             "left graphic needs to represent scorecard / life scorecard". The card itself is
-             titled "Values wiring ? life's scorecard" — the icon now matches that frame:
-             a clipboard with metric rows and rating dots, evoking the cultural rating-the-self
-             pattern the card critiques. -->
-        <div style="width:160px;height:160px;border-radius:50%;border:1.5px solid rgba(26,22,18,0.14);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center">
-          <svg width="108" height="108" viewBox="0 0 52 52" fill="none">
-            <!-- Clip at top of clipboard -->
-            <rect x="20" y="6" width="12" height="5" rx="1.3" fill="rgba(200,70,44,0.7)"/>
-            <!-- Clipboard body -->
-            <rect x="13" y="9" width="26" height="36" rx="2.2" fill="rgba(255,255,255,0.85)" stroke="rgba(200,70,44,0.6)" stroke-width="1.4"/>
-            <!-- Header line (scorecard title bar) -->
-            <line x1="17" y1="15" x2="35" y2="15" stroke="rgba(200,70,44,0.6)" stroke-width="1.3" stroke-linecap="round"/>
-            <!-- 4 metric rows: label line on left + score dot on right -->
-            <!-- Row 1 -->
-            <line x1="17" y1="21" x2="27" y2="21" stroke="rgba(200,70,44,0.45)" stroke-width="1.1" stroke-linecap="round"/>
-            <circle cx="32" cy="21" r="1.6" fill="rgba(200,70,44,0.78)"/>
-            <!-- Row 2 -->
-            <line x1="17" y1="27" x2="27" y2="27" stroke="rgba(200,70,44,0.45)" stroke-width="1.1" stroke-linecap="round"/>
-            <circle cx="32" cy="27" r="1.6" fill="rgba(200,70,44,0.78)"/>
-            <!-- Row 3 -->
-            <line x1="17" y1="33" x2="27" y2="33" stroke="rgba(200,70,44,0.45)" stroke-width="1.1" stroke-linecap="round"/>
-            <circle cx="32" cy="33" r="1.6" fill="rgba(200,70,44,0.55)"/>
-            <!-- Row 4 (empty/dimmed — the missing one) -->
-            <line x1="17" y1="39" x2="27" y2="39" stroke="rgba(200,70,44,0.28)" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="2 2"/>
-            <circle cx="32" cy="39" r="1.6" fill="none" stroke="rgba(200,70,44,0.4)" stroke-width="1"/>
+      <div class="ti-ph ti-ph-right" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px solid rgba(200,70,44,0.28);border-top:4px solid #c8462c;border-radius:12px;background:rgba(200,70,44,0.04);padding:46px 26px">
+        <!-- Checklist / life's scorecard teaser icon -->
+        <div class="ti-orbit ti-orbit-values">
+          <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
+            <rect x="12" y="12" width="28" height="34" rx="3.5" fill="rgba(251,247,239,0.74)" stroke="#dc7b68" stroke-width="2.6"/>
+            <path d="M20 12.5 C20 10.6 21.5 9.2 23.3 9.2 H28.7 C30.5 9.2 32 10.6 32 12.5 V14.8 H20 Z" fill="#dc7b68"/>
+            <path d="M18 22 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 29 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 36 H29.5" stroke="#e6a091" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="34.5" cy="22" r="2.4" fill="#dc7b68"/>
+            <circle cx="34.5" cy="29" r="2.4" fill="#dc7b68" opacity="0.78"/>
+            <circle cx="34.5" cy="36" r="2.4" fill="none" stroke="#e6a091" stroke-width="2"/>
           </svg>
         </div>
       </div>
@@ -33619,7 +34105,6 @@ window.csA7m1Reverse = function() {
 </div>
 </section>
 </div>
-
 
 <!-- ===== cs-1bm2 — MERGED VARIANT 2: Two Imbalances + cs-a7 3-icon flow on Tech side ===== -->
 <!-- ARCHIVED slide cs-1bm2 [auto-cleanup 2026-05-11]: HTML in git history before this commit -->
@@ -35870,7 +36355,7 @@ window.csA7m1Reverse = function() {
   html[data-export="1"] .optimus-party-slide .op-tag { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 
-<div class="casey-slide ds-focus optimus-party-slide appendix-slide" id="cs-optimus-party-host-pink" style="display:none">
+<div class="casey-slide ds-focus optimus-party-slide appendix-slide trash-slide" id="cs-optimus-party-host-pink" data-deleted="1" style="display:none !important">
   <img class="op-bg" src="assets/cs-optimus-party-pink1.png" alt="Image-generated split pickleball club scene: quiet empty courts on the left, joyful social club on the right, and a warm Optimus-style robot with a glowing heart creating connection." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
   <div class="op-scrim" aria-hidden="true"></div>
   <div class="op-eye slide-eyebrow">An open heart</div>
@@ -35881,7 +36366,7 @@ window.csA7m1Reverse = function() {
   <img class="op-bg" src="assets/cs-optimus-party-pink2.png" alt="Image-generated overhead pickleball club scene: empty courts on the left and full warm social play on the right around an Optimus-style robot with a glowing heart." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
   <div class="op-scrim" aria-hidden="true"></div>
   <div class="op-eye slide-eyebrow">social pull</div>
-  <div class="op-copy"><h1>What if the club had a <em>heart?</em></h1><p>The future is not a robot host. It is the people who already create belonging.</p></div>
+  <div class="op-copy"><h1>What if the club had a <em>heart?</em></h1><p>The future is not a robot community builder. It is the people who already create belonging.</p></div>
   <div class="op-tag">attempt 2 / aerial contrast</div>
 </div>
 
@@ -35890,7 +36375,7 @@ window.csA7m1Reverse = function() {
   <div class="op-scrim" aria-hidden="true"></div>
   <div class="op-eye slide-eyebrow">social pull</div>
   <div class="op-copy"><h1>The impossible version makes the real one <em>obvious.</em></h1><p>Every community already has humans with social pull. GnR gives them leverage.</p></div>
-  <div class="op-tag">attempt 3 / club host</div>
+  <div class="op-tag">attempt 3 / community builder</div>
 </div>
 
 <div class="casey-slide ds-focus optimus-party-slide" id="cs-optimus-party-beacon-pink" style="display:none">
@@ -36130,6 +36615,7 @@ window.csA7m1Reverse = function() {
 
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
+  'cs-1bm1',
   'cs-1m8',
   'cs-thegap',
   'cs-invite-operational-insanity-pink',
@@ -36143,6 +36629,7 @@ const SLIDE_ORDER = [
   'cs-18-vd4',
   'cs-samecourt',
   'cs-revenue-util-profit-blue',
+  'cs-serious-vs-silly-bridge',
   'cs-samecourt-pyramid-white2',
   'cs-wedgepb-codex',
   'cs-wedge1',
@@ -36152,6 +36639,7 @@ const SLIDE_ORDER = [
   'cs-pb-silliness-collage-main',
   'cs-club-os',
   'cs-teamreach-referral-compare',
+  'cs-connection-economy-breakthrough',
   'cs-programmable-invitations',
   'cs-feature-stage-unlocks',
   'cs-brand-V8',
@@ -36165,13 +36653,14 @@ const TOTAL = SLIDE_ORDER.length;
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
   1: ['cs-value-choice-image-annotated-pink'],
-  2: ['cs-invite-matchmaking-opener-pink'],
-  3: ['cs-optimus-party-overhead-pink'],
-  4: ['cs-invite-dupr-vs-gnr-club-pink'],
-  8: ['cs-magnetic', 'cs-magnetic-human-value-market', 'cs-work-evolution-prelude'],
-  15: ['cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  18: ['cs-16'],
-  19: ['cs-pb-lab-right-lab-pink'],
+  3: ['cs-invite-matchmaking-opener-pink', 'cs-invite-engine-flow-pink'],
+  4: ['cs-optimus-party-overhead-pink'],
+  5: ['cs-invite-dupr-vs-gnr-club-pink'],
+  9: ['cs-magnetic', 'cs-magnetic-human-value-market', 'cs-work-evolution-prelude'],
+  17: ['cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
+  20: ['cs-16'],
+  21: ['cs-pb-lab-right-lab-pink'],
+  27: ['cs-invite-graph-import-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -36274,10 +36763,8 @@ const APPENDIX_ORDER = [
   'cs-a7m1',
   'cs-appx-andreessen',
   'cs-appx-aiheart',
-  'cs-optimus-party-host-pink',
   'cs-mv6',
   'cs-intro5',
-  'cs-twoops',
   'cs-incentive',
   'cs-hc8',
   'cs-1s2a',
@@ -36337,6 +36824,10 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  // Codex 2026-06-15: Dave requested deleting the open-heart robot slide; retained for recovery.
+  'cs-optimus-party-host-pink',
+  // Codex 2026-06-15: Dave requested moving the Two operators / Same insight slide to trash.
+  'cs-twoops',
   // Codex 2026-06-14: Dave requested moving the 7/27 alt-d pyramid market-map slide to trash.
   'cs-samecourt-pyramid-map-pink',
   // Codex 2026-06-07: annotation batch 9 explicit delete requests; retained for recovery.
@@ -36387,9 +36878,7 @@ const TRASH_ORDER = [
   // Codex publish repair 2026-06-04: explicit Dave request moved attached invitation alts to trash.
   'cs-community-business',
   'cs-brand-codex',
-  'cs-frontier-pink1',
-  'cs-1bm1',
-  'cs-ask',
+  'cs-frontier-pink1',  'cs-ask',
   'cs-ask-coasts',
   'cs-hct-system',
   'cs-hct-system-pink1',
@@ -36587,32 +37076,50 @@ window.cs12m2Reverse = function() {
   return true;
 };
 
-// [Dave 2026-05-09] Keyboard reveal order swapped — data-right reveals FIRST (values card, now visually on LEFT after CSS-order swap), then data-left (tech card, now visually on RIGHT). Matches visual left-to-right reading order.
-window.cs1bm1Advance = function() {
-  const slide = document.getElementById('cs-1bm1');
-  if (!slide || !slide.classList.contains('active')) return false;
-  const left = slide.dataset.left === '1';
-  const right = slide.dataset.right === '1';
-  if (!right) { slide.dataset.right = '1'; return true; }
-  if (!left)  { slide.dataset.left  = '1'; return true; }
-  return false;
-};
-window.cs1bm1Reverse = function() {
-  const slide = document.getElementById('cs-1bm1');
-  if (!slide || !slide.classList.contains('active')) return false;
-  const left = slide.dataset.left === '1';
-  const right = slide.dataset.right === '1';
-  if (left)  { slide.dataset.left  = '0'; return true; }
-  if (right) { slide.dataset.right = '0'; return true; }
-  return false;
-};
+// cs-1bm1 backup import 2026-06-15: preserve the standalone pre-quality-pass reveal model.
 window.cs1bm1Toggle = function(side) {
   const slide = document.getElementById('cs-1bm1');
   if (!slide || !slide.classList.contains('active')) return;
-  const key = side === 'left' ? 'left' : 'right';
-  slide.dataset[key] = slide.dataset[key] === '1' ? '0' : '1';
+  const card = slide.querySelector('.ti-flip-' + side);
+  if (card) card.classList.toggle('is-flipped');
 };
-// cs-thegap click-to-reveal [Dave 2026-05-07 PM]: on load only show 'Communities don't have a like button.' + FB icon.
+window.cs1bm1RevealCards = function() {
+  const slide = document.getElementById('cs-1bm1');
+  if (!slide || !slide.classList.contains('active') || slide.classList.contains('cards-entered') || slide.classList.contains('reveal-running')) return false;
+  slide.classList.add('reveal-running');
+  slide.classList.add('bg-settled');
+  window.setTimeout(function() { slide.classList.add('cards-entered'); }, 430);
+  return true;
+};
+window.cs1bm1ForceCards = function() {
+  const slide = document.getElementById('cs-1bm1');
+  if (!slide) return;
+  slide.classList.add('bg-settled', 'cards-entered');
+};
+window.cs1bm1ResetInitialState = function() {
+  const slide = document.getElementById('cs-1bm1');
+  if (!slide) return;
+  slide.classList.remove('bg-settled', 'cards-entered', 'reveal-running');
+  slide.querySelectorAll('.ti-flip-inner').forEach(function(card) { card.classList.remove('is-flipped'); });
+};
+window.cs1bm1Advance = function() {
+  return window.cs1bm1RevealCards ? window.cs1bm1RevealCards() : false;
+};
+window.cs1bm1Reverse = function() {
+  const slide = document.getElementById('cs-1bm1');
+  if (!slide || !slide.classList.contains('active') || !slide.classList.contains('cards-entered')) return false;
+  if (window.cs1bm1ResetInitialState) window.cs1bm1ResetInitialState();
+  return true;
+};
+document.addEventListener('DOMContentLoaded', function() {
+  const slide = document.getElementById('cs-1bm1');
+  if (!slide) return;
+  slide.addEventListener('click', function(event) {
+    if (!slide.classList.contains('active')) return;
+    if (event.target.closest('.ti-flip-wrap')) return;
+    if (window.cs1bm1RevealCards && window.cs1bm1RevealCards()) event.stopPropagation();
+  });
+});// cs-thegap click-to-reveal [Dave 2026-05-07 PM]: on load only show 'Communities don't have a like button.' + FB icon.
 // [Dave 2026-05-17 LATER] Click-staging RESTORED:
 //   data-shown="0" (slide load) ? "trapped thoughts" graphic visible. 3 panels hidden.
 //   data-shown="1" (first click) ? trapped graphic fades out; 3 diagnostic panels fade in together.
@@ -36853,8 +37360,8 @@ window.C2C_STORIES = {
   "hobbies": {
     "kicker": "Hobbies",
     "title": "Interest becomes <em>shared momentum.</em>",
-    "sub": "Beginners, guides, peers, projects, and hosts find each other faster.",
-    "steps": [["Learn","Taste. skill. goals."],["Gather","Guide, peer, host."],["Repeat","Interest turns into habit."]],
+    "sub": "Beginners, guides, peers, projects, and community builders find each other faster.",
+    "steps": [["Learn","Taste. skill. goals."],["Gather","Guide, peer, community builder."],["Repeat","Interest turns into habit."]],
     "profile": ["taste","skill","project","pace"],
     "feed": [["Start","Beginner circle"],["Guide","Mentor maker"],["Share","Show-and-tell night"]],
     "moments": ["learn","make","teach","return"],
@@ -36903,11 +37410,11 @@ window.C2C_STORIES = {
   "faith": {
     "kicker": "Faith communities",
     "title": "Care finds the <em>person who needs it.</em>",
-    "sub": "Gifts, needs, hosts, service, and small groups route to the right invitation.",
-    "steps": [["See","Needs and gifts."],["Invite","Care. serve. host."],["Welcome","People are noticed sooner."]],
+    "sub": "Gifts, needs, community builders, service, and small groups route to the right invitation.",
+    "steps": [["See","Needs and gifts."],["Invite","Care. serve. community builder."],["Welcome","People are noticed sooner."]],
     "profile": ["season","need","gift","capacity"],
-    "feed": [["Care","Meal train"],["Serve","Right team"],["Host","Small group table"]],
-    "moments": ["care","serve","host","welcome"],
+    "feed": [["Care","Meal train"],["Serve","Right team"],["Community builder","Small group table"]],
+    "moments": ["care","serve","community builder","welcome"],
     "proof": "The future faith community does not rely on memory. <strong>It routes care.</strong>"
   },
   "country-clubs": {
@@ -37463,7 +37970,11 @@ function caseyGo(n) {
     target.querySelectorAll('[data-flipped]').forEach(el => { el.dataset.flipped = '0'; });
     target.querySelectorAll('[data-shown]').forEach(el => { el.dataset.shown = '0'; });
     if (target.hasAttribute('data-stage'))    target.dataset.stage = '0';
-    if (targetId === 'cs-frontier-scale-pink-2' && target) target.dataset.stage = '1';
+    if (targetId === 'cs-frontier-scale-pink-2' && target) {
+      target.dataset.stage = '1';
+      const openerBg = target.querySelector('.scale-bg-img');
+      target.dataset.bgLoaded = (openerBg && openerBg.complete) ? '1' : '0';
+    }
     if (target.hasAttribute('data-shown'))    target.dataset.shown = '0';
     if (target.hasAttribute('data-revealed')) target.dataset.revealed = '0';
     if (target.hasAttribute('data-left'))     target.dataset.left = '0';
@@ -37490,7 +38001,7 @@ function caseyGo(n) {
   if (targetId === 'cs-2b'   && target) target.dataset.shown = '0';
   if (targetId === 'cs-3'    && target) target.dataset.shown = '0';
   if (targetId === 'cs-fw1'  && target) target.dataset.stage = '0';
-  if (targetId === 'cs-1bm1' && target) { target.dataset.left = '0'; target.dataset.right = '0'; }
+  if (targetId === 'cs-1bm1' && target && window.cs1bm1ResetInitialState) window.cs1bm1ResetInitialState();
   if (targetId === 'cs-thegap' && target) target.dataset.shown = '0';
   if (targetId === 'cs-11d'  && target) { target.dataset.left = '0'; target.dataset.right = '0'; }
   // V15 click-to-reveal: reset all three reveal classes on slide entry so each visit starts fresh [Dave 2026-05-07 PM]
@@ -37540,11 +38051,6 @@ function caseyGo(n) {
     // Reset stage on each entry to cs-12m2 [Dave 2026-05-07] — networks + reciprocity arrow + closer hidden until clicks
     target.dataset.stage = '0';
   }
-  if (targetId === 'cs-1bm1') {
-    // Reset per-card flip state on each entry [Dave 2026-04-30 PM]
-    target.dataset.left = '0';
-    target.dataset.right = '0';
-  }
   if (targetId === 'cs-11d') {
     // Reset per-card flip state on each entry [Dave 2026-04-30 PM]
     target.dataset.left = '0';
@@ -37585,6 +38091,7 @@ function enterAppendix() {
   document.getElementById('ccount').textContent = 'A1 / ' + APPENDIX_TOTAL;
   // Hide main-deck dots, generate appendix dots [Dave 2026-04-30 PM]
   const nav = document.getElementById('cnav');
+  nav.classList.add('appendix-mode');
   nav.querySelectorAll('.casey-dot').forEach(d => d.style.display = 'none');
   // Remove any prior appendix dots
   nav.querySelectorAll('.casey-dot.appendix-dot').forEach(d => d.remove());
@@ -37597,6 +38104,7 @@ function enterAppendix() {
     dot.onclick = () => appendixGo(i + 1);
     nav.appendChild(dot);
   });
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   // [Dave 2026-05-08 v4] In appendix mode, button becomes a back-arrow icon (matches the icon-only style of normal mode).
   document.getElementById('appendixBtn').innerHTML = '<svg width="11" height="11" viewBox="0 0 12 12" style="display:block"><path d="M9 2 L4 6 L9 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   document.getElementById('appendixBtn').title = 'Back to Deck';
@@ -37613,6 +38121,7 @@ function exitAppendix() {
   document.querySelectorAll('.appendix-slide').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
   document.getElementById('cbar').style.background = 'linear-gradient(90deg,#d4a853,#e04040,#3dff7a)';
   const nav = document.getElementById('cnav');
+  nav.classList.remove('appendix-mode');
   // Remove appendix dots, show main-deck dots
   nav.querySelectorAll('.casey-dot.appendix-dot').forEach(d => d.remove());
   nav.querySelectorAll('.casey-dot').forEach(d => d.style.display = '');
@@ -37654,6 +38163,7 @@ function appendixGo(n) {
     d.classList.toggle('on', isOn);
     d.style.background = isOn ? '#e04040' : 'rgba(224,64,64,0.32)';
   });
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   // Per-slide animation triggers (Dave 2026-04-29)
   if (targetId === 'cs-a2') animateCsa2Expansion();
   // FIX 2026-04-30 PM: cs-9 (Invitation-Feed orbital) is in appendix now —
@@ -37687,6 +38197,7 @@ function enterTrash() {
   document.getElementById('cbar').style.width = TRASH_TOTAL ? ((1 / TRASH_TOTAL) * 100) + '%' : '0%';
   document.getElementById('ccount').textContent = 'Trash 1 / ' + TRASH_TOTAL;
   const nav = document.getElementById('cnav');
+  nav.classList.add('appendix-mode');
   nav.querySelectorAll('.casey-dot').forEach(d => d.style.display = 'none');
   nav.querySelectorAll('.casey-dot.appendix-dot,.casey-dot.trash-dot').forEach(d => d.remove());
   TRASH_ORDER.forEach((id, i) => {
@@ -37697,6 +38208,7 @@ function enterTrash() {
     dot.onclick = () => trashGo(i + 1);
     nav.appendChild(dot);
   });
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   const appendixBtn = document.getElementById('appendixBtn');
   if (appendixBtn) {
     appendixBtn.innerHTML = '<svg width="9" height="9" viewBox="0 0 12 12" style="display:block"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display:block;width:5px;height:5px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 7px rgba(255,77,143,0.85);margin-top:3px;animation:pinkPulse 2.2s ease-in-out infinite"></span>';
@@ -37720,6 +38232,7 @@ function exitTrash() {
   document.querySelectorAll('.trash-slide').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
   document.getElementById('cbar').style.background = 'linear-gradient(90deg,#d4a853,#e04040,#3dff7a)';
   const nav = document.getElementById('cnav');
+  nav.classList.remove('appendix-mode');
   nav.querySelectorAll('.casey-dot.trash-dot').forEach(d => d.remove());
   nav.querySelectorAll('.casey-dot').forEach(d => d.style.display = '');
   const appendixBtn = document.getElementById('appendixBtn');
@@ -37757,6 +38270,7 @@ function trashGo(n) {
     d.classList.toggle('on', isOn);
     d.style.background = isOn ? '#c8462c' : 'rgba(200,70,44,0.32)';
   });
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
@@ -38119,12 +38633,12 @@ function animateCsa2Expansion() {
 const slideLabels = [
   null,
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
-  'The relationship graph is missing', //  2 cs-1m8
-  'Community technology is unsolved', //  3 cs-thegap
-  'Custom invitations are operationally hard', //  4 cs-invite-operational-insanity-pink
-  'NEPC proof / proving ground', //  5 cs-11e
-  'Rise of the personalized invitation feed', //  6 cs-gnr
-  'Pickleball pyramid / GnR wedge', //  7 cs-samecourt-pyramid-white2
+  'Modern life wires us away from fulfillment', //  2 cs-1bm1
+  'The relationship graph is missing', //  3 cs-1m8
+  'Community technology is unsolved', //  4 cs-thegap
+  'Custom invitations are operationally hard', //  5 cs-invite-operational-insanity-pink
+  'NEPC proof / proving ground', //  6 cs-11e
+  'Rise of the personalized invitation feed', //  7 cs-gnr
   'Referrals power the community sales engine', //  8 cs-invitation-word-of-mouth
   'Next measurable market', //  9 cs-work-measurable-market
   'Social pull value map', // 10 cs-work-social-pull
@@ -38133,18 +38647,21 @@ const slideLabels = [
   'Founder wheelhouse', // 13 cs-18-vd4
   'SameCourt paradigm flip', // 14 cs-samecourt
   'Same courts / utilization / net profit', // 15 cs-revenue-util-profit-blue
-  'Pickleball wedge', // 16 cs-wedgepb-codex
-  'Pickleball as wedge market', // 17 cs-wedge1
-  'Real-world communities', // 18 cs-2c
-  'Invisible layer of community value', // 19 cs-mv6-merge
-  'Drop into any pickleball community', // 20 cs-fw1
-  'Pickleball is silly', // 21 cs-pb-silliness-collage-main
-  'Club owner offer', // 22 cs-club-os
-  'TeamReach vs GnR', // 23 cs-teamreach-referral-compare
-  'Programmable invitations train the graph', // 24 cs-programmable-invitations
-  'Feature ladder', // 25 cs-feature-stage-unlocks
-  'Brand promise', // 26 cs-brand-V8
-  'Five-star experience', // 27 cs-five-star-experience-final
+  'Serious vs silly', // 16 cs-serious-vs-silly-bridge
+  'Pickleball pyramid / GnR wedge', // 17 cs-samecourt-pyramid-white2
+  'Pickleball wedge', // 18 cs-wedgepb-codex
+  'Pickleball as wedge market', // 19 cs-wedge1
+  'Real-world communities', // 20 cs-2c
+  'Invisible layer of community value', // 21 cs-mv6-merge
+  'Drop into any pickleball community', // 22 cs-fw1
+  'Pickleball is silly', // 23 cs-pb-silliness-collage-main
+  'Club owner offer', // 24 cs-club-os
+  'TeamReach vs GnR', // 25 cs-teamreach-referral-compare
+  'Connection economy breakthrough', // 26 cs-connection-economy-breakthrough
+  'Programmable invitations train the graph', // 27 cs-programmable-invitations
+  'Feature ladder', // 28 cs-feature-stage-unlocks
+  'Brand promise', // 29 cs-brand-V8
+  'Five-star experience', // 30 cs-five-star-experience-final
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -38266,6 +38783,16 @@ function syncCaseyDotHighlightToActiveSlide() {
 
 // Build nav dots
 const nav = document.getElementById('cnav');
+function scrollActiveCaseyNavDotIntoView() {
+  const rail = document.getElementById('cnav');
+  const activeDot = rail && rail.querySelector('.casey-dot.on');
+  if (!rail || !activeDot || activeDot.style.display === 'none') return;
+  const railRect = rail.getBoundingClientRect();
+  const dotRect = activeDot.getBoundingClientRect();
+  if (dotRect.top < railRect.top + 22 || dotRect.bottom > railRect.bottom - 22) {
+    activeDot.scrollIntoView({ block: 'center', inline: 'nearest' });
+  }
+}
 for (let i = 1; i <= TOTAL; i++) {
   const wrap = document.createElement('div');
   wrap.style.cssText = 'position:relative;display:inline-block';
@@ -38718,6 +39245,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-1m7': 'cs1m7Advance',
     'cs-1m8': 'cs1m8Advance',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkAdvance',
+    'cs-invite-engine-flow-pink': 'csInviteEngineFlowPinkAdvance',
     'cs-1m8-black-backup': 'cs1m8BlackBackupAdvance',
     'cs-1m9': 'cs1m9Advance',
     'cs-1m8-title-A': 'csM8TitleAAdvance',
@@ -38776,6 +39304,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m7': 'cs1m7Reverse',
     'cs-1m8': 'cs1m8Reverse',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkReverse',
+    'cs-invite-engine-flow-pink': 'csInviteEngineFlowPinkReverse',
     'cs-1m8-black-backup': 'cs1m8BlackBackupReverse',
     'cs-1m9': 'cs1m9Reverse',
     'cs-1m8-title-A': 'csM8TitleAReverse',
@@ -39017,6 +39546,10 @@ document.addEventListener('wheel', e => {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
+      if (activeAlt && activeAlt.id === 'cs-invite-engine-flow-pink' && window.csInviteEngineFlowPinkAdvance && window.csInviteEngineFlowPinkAdvance()) {
+        setTimeout(() => { wheelLock = false; }, 400);
+        return;
+      }
       if (activeAlt && activeAlt.id === 'cs-1m8-bg-reveal-pink' && window.cs1m8BgRevealPinkAdvance && window.cs1m8BgRevealPinkAdvance()) {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
@@ -39200,6 +39733,10 @@ document.addEventListener('wheel', e => {
         return;
       }
       if (activeAlt && activeAlt.id === 'cs-1m8-black-backup' && window.cs1m8BlackBackupReverse && window.cs1m8BlackBackupReverse()) {
+        setTimeout(() => { wheelLock = false; }, 400);
+        return;
+      }
+      if (activeAlt && activeAlt.id === 'cs-invite-engine-flow-pink' && window.csInviteEngineFlowPinkReverse && window.csInviteEngineFlowPinkReverse()) {
         setTimeout(() => { wheelLock = false; }, 400);
         return;
       }
