@@ -159,7 +159,7 @@
   }
 
   .ti-flip-wrap {
-    min-height: 408px;
+    min-height: 500px;
     height: 100%;
     perspective: 1500px;
   }
@@ -177,7 +177,7 @@
   }
 
   .ti-flip-inner {
-    min-height: 408px;
+    min-height: 500px;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
@@ -192,7 +192,7 @@
     position: absolute;
     inset: 0;
     height: 100%;
-    min-height: 408px;
+    min-height: 500px;
     box-shadow: 0 18px 44px rgba(26,22,18,0.055);
     backface-visibility: hidden;
     transform: rotateY(180deg);
@@ -221,7 +221,7 @@
 
   .ti-card.ti-left > div:nth-child(2),
   .ti-card.ti-right > div:nth-child(2) {
-    margin-top: 8px !important;
+    margin-top: 12px !important;
   }
 
   .ti-card.ti-left,
@@ -239,7 +239,7 @@
   .ti-ph {
     position: absolute;
     inset: 0;
-    min-height: 408px;
+    min-height: 500px;
     backface-visibility: hidden;
     box-shadow: 0 18px 44px rgba(26,22,18,0.045);
     backdrop-filter: blur(2px);
@@ -254,20 +254,20 @@
   .ti-bar-row {
     display: grid;
     align-items: center;
-    gap: 14px;
-    min-height: 32px;
+    gap: 16px;
+    min-height: 38px;
   }
 
   .ti-tech-row {
-    grid-template-columns: 68px minmax(190px, 1fr) 132px;
+    grid-template-columns: 78px minmax(220px, 1fr) 154px;
   }
 
   .ti-val-row {
-    grid-template-columns: 116px minmax(210px, 1fr) 72px;
+    grid-template-columns: 132px minmax(240px, 1fr) 82px;
   }
 
   .ti-bar-track {
-    height: 12px;
+    height: 14px;
     border-radius: 999px;
     background: rgba(26,22,18,0.07);
     border: 1px solid rgba(26,22,18,0.06);
@@ -295,17 +295,17 @@
 
   .ti-not-measured-row {
     display: grid;
-    grid-template-columns: 116px minmax(210px, 1fr) 132px;
+    grid-template-columns: 132px minmax(240px, 1fr) 154px;
     align-items: center;
-    gap: 14px;
-    margin-top: 8px;
-    padding-top: 9px;
+    gap: 16px;
+    margin-top: 12px;
+    padding-top: 12px;
     border-top: 1px solid rgba(184,149,74,0.22);
   }
 
   .ti-connection-label {
     font-family: 'Fraunces','Playfair Display',Georgia,serif;
-    font-size: 0.92rem;
+    font-size: 1.06rem;
     font-style: italic;
     font-weight: 800;
     line-height: 1.05;
@@ -313,7 +313,7 @@
   }
 
   .ti-not-measured-track {
-    height: 16px;
+    height: 19px;
     border-radius: 999px;
     border: 1.5px dashed rgba(184,149,74,0.56);
     background: rgba(184,149,74,0.045);
@@ -321,7 +321,7 @@
     align-items: center;
     justify-content: center;
     font-family: 'Manrope',sans-serif;
-    font-size: 0.58rem;
+    font-size: 0.66rem;
     font-weight: 800;
     letter-spacing: 0.14em;
     color: rgba(184,149,74,0.78);
@@ -344,8 +344,8 @@
   }
 
   .ti-orbit {
-    width: 180px !important;
-    height: 180px !important;
+    width: 212px !important;
+    height: 212px !important;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -377,8 +377,8 @@
   .ti-orbit svg {
     position: relative;
     z-index: 1;
-    width: 96px;
-    height: 96px;
+    width: 112px;
+    height: 112px;
   }
 
   .ti-orbit-tech {
@@ -396,15 +396,15 @@
   }
 
   .ti-card-mini-orbit {
-    margin-top: 9px;
+    margin-top: 12px;
     display: flex;
     justify-content: center;
     pointer-events: none;
   }
 
   .ti-card-mini-orbit .ti-orbit {
-    width: 74px !important;
-    height: 74px !important;
+    width: 86px !important;
+    height: 86px !important;
     opacity: 0.66;
   }
 
@@ -414,8 +414,8 @@
   }
 
   .ti-card-mini-orbit .ti-orbit svg {
-    width: 41px;
-    height: 41px;
+    width: 48px;
+    height: 48px;
   }
 
   .ti-bottom .ti-orbit::before {
@@ -428,7 +428,23 @@
   }
 
   .ti-bridge {
-    min-height: 408px;
+    min-height: 500px;
+  }
+
+  .ti-card > div:first-child {
+    font-size: 1.06rem !important;
+  }
+
+  .ti-card [style*="font-size:0.85rem"] {
+    font-size: 0.98rem !important;
+  }
+
+  .ti-card [style*="font-size:.62rem"] {
+    font-size: 0.72rem !important;
+  }
+
+  .ti-card [style*="font-size:1.25rem"] {
+    font-size: 1.42rem !important;
   }
 
 </style>
@@ -522,23 +538,23 @@
   <img src="../../../assets/cs-1bm1-modern-life-wired-bg-v2.png" alt="">
 </div>
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Modern life</div>
-<div class="inner" style="padding:48px 48px 28px;max-width:1500px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:24px;min-height:100%;box-sizing:border-box;opacity:0;visibility:hidden;pointer-events:none">
+<div class="inner" style="padding:52px 58px 34px;max-width:1660px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:30px;min-height:100%;box-sizing:border-box;opacity:0;visibility:hidden;pointer-events:none">
 
   <div style="text-align:center">
-    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.8vw,3.1rem);font-weight:700;color:#1a1612;line-height:1.1;letter-spacing:-0.018em">
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,4.3vw,3.55rem);font-weight:700;color:#1a1612;line-height:1.08;letter-spacing:-0.018em">
       Modern life wires us for everything except <em style="font-style:italic;font-weight:500;color:#b8954a">feeling fulfilled.</em>
     </div>
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr 92px 1fr;gap:14px;align-items:stretch;position:relative">
+  <div style="display:grid;grid-template-columns:1fr 104px 1fr;gap:18px;align-items:stretch;position:relative">
 
     <!-- LEFT slot (Tech card moved RIGHT per friend feedback 2026-05-04) -->
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('left');event.stopPropagation()" style="cursor:pointer">
      <div class="ti-flip-inner ti-flip-left">
-      <div class="ti-card ti-left" style="background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);border-top:4px solid #5B8FD4;border-radius:12px;padding:22px 20px 26px;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <div class="ti-card ti-left" style="background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);border-top:4px solid #5B8FD4;border-radius:12px;padding:27px 26px 30px;display:flex;flex-direction:column;align-items:center;gap:14px">
         <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#3a7da3">Attention</div>
         <!-- Tech-era stack chart -->
-        <div style="width:100%;max-width:540px;margin-top:4px">
+        <div style="width:100%;max-width:610px;margin-top:4px">
           <div class="ti-bar-row ti-tech-row">
             <div style="text-align:right">
               <svg viewBox="0 0 24 24" width="26" height="26">
@@ -602,7 +618,7 @@
         <!-- [Dave 2026-05-12] 'Technology imbalance' verdict kicker DELETED (top eyebrow now reads 'Technology: scroll alone.' so the verdict was redundant). Invisible spacer also dropped since right-card sub-eyebrow no longer needs compensation. -->
       </div>
       <!-- LEFT placeholder — back face (visible at step 0). Mirrors the cs-a7 stick-figure exactly per Dave 2026-05-07 -->
-      <div class="ti-ph ti-ph-left" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px solid rgba(91,143,212,0.28);border-top:4px solid #5B8FD4;border-radius:12px;background:rgba(91,143,212,0.04);padding:40px 20px">
+      <div class="ti-ph ti-ph-left" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px solid rgba(91,143,212,0.28);border-top:4px solid #5B8FD4;border-radius:12px;background:rgba(91,143,212,0.04);padding:46px 26px">
         <div class="ti-orbit ti-orbit-tech">
           <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
             <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.35)"/>
@@ -630,10 +646,10 @@
     <!-- RIGHT slot (Values card moved LEFT per friend feedback 2026-05-04 — values is the lead beat) -->
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('right');event.stopPropagation()" style="cursor:pointer">
      <div class="ti-flip-inner ti-flip-right">
-      <div class="ti-card ti-right" style="background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.22);border-top:4px solid #c8462c;border-radius:12px;padding:18px 20px 22px;display:flex;flex-direction:column;align-items:center;gap:8px">
+      <div class="ti-card ti-right" style="background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.22);border-top:4px solid #c8462c;border-radius:12px;padding:23px 26px 28px;display:flex;flex-direction:column;align-items:center;gap:10px">
         <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#c8462c">Life&rsquo;s scorecard</div>
         <!-- Values chart: what culture values (filled bars) → Human Connection EMPTY void at bottom -->
-        <div style="width:100%;max-width:560px;margin-top:4px">
+        <div style="width:100%;max-width:635px;margin-top:4px">
           <!-- "Ourselves" leads — the biggest cultural obsession. Sets up the contrast with "Connection with others" below. [Dave 2026-04-30 PM] -->
           <div class="ti-bar-row ti-val-row">
             <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Me</div>
@@ -693,7 +709,7 @@
         <!-- [Dave 2026-05-12] Sources row 'SOURCES: HARVARD GRANT STUDY · HOLT-LUNSTAD · KIM · CHEN' DELETED per Dave: 'delete what i'm attaching'. -->
       </div>
       <!-- RIGHT placeholder — back face (visible until step 2) -->
-      <div class="ti-ph ti-ph-right" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px solid rgba(200,70,44,0.28);border-top:4px solid #c8462c;border-radius:12px;background:rgba(200,70,44,0.04);padding:40px 20px">
+      <div class="ti-ph ti-ph-right" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1.5px solid rgba(200,70,44,0.28);border-top:4px solid #c8462c;border-radius:12px;background:rgba(200,70,44,0.04);padding:46px 26px">
         <!-- Checklist / life's scorecard teaser icon -->
         <div class="ti-orbit ti-orbit-values">
           <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
