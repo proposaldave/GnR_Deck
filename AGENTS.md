@@ -77,6 +77,37 @@ Generated images must be:
 - inserted only after active-slide/source path is identified
 - rendered text separately in HTML, never baked into the image
 
+### Automatic Deck Request Routing
+
+Dave does not need to name the lane. Codex must infer the safest lane from the request and state `DECISION: Fast Lane`, `DECISION: Worktree Lane`, or `DECISION: Publish-Control Lane` before acting.
+
+Use Fast Lane for:
+
+- exact copy/text replacements on a proven active slide selector
+- tiny CSS/layout/position/color/readability fixes on a known active slide
+- small batches of independent text/CSS edits that do not touch slide inventory, alt rails, images/assets, JS navigation, publish queue, or exports
+
+Fast Lane execution:
+
+- batch related tiny edits in one pass
+- use targeted source search, selector-exact verification when copy changes, `git diff --check`, one commit/push, and at most one live/cache check when publishing
+- skip full branch audit, full visual QA, PDF export, Slack, and repeated Chrome opens unless the request itself requires them
+
+Use Worktree Lane automatically for:
+
+- isolated edit requests that Dave should review before publish
+- experimental visual/layout/image variants
+- parallel edit sessions that should produce a local `deck/*` branch and commit without pushing
+
+Use Publish-Control Lane automatically for:
+
+- `publish now`, worktree integration, `deck/*` branches, JSON annotation queues, or any missed/unpublished/stale branch concern
+- slide deletes, trash, appendix, moves, restores, `SLIDE_ORDER`, `SLIDE_ALTS`, active/alt rail changes, or anything that can lose a slide
+- image generation/replacement, new assets, PDF/export, broad visual QA, GitHub Pages mismatch, or "make sure everything is published/live"
+- "didn't I ask..." / missed visible result reports that require branch/source audit
+
+If a request mixes lanes, use the highest-risk lane unless the risky work can be cleanly deferred and the remaining edits are independent Fast Lane edits.
+
 ### Speed rules
 
 - Assume the main deck HTML file is expensive to process.

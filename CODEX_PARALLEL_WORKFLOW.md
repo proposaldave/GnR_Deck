@@ -1,5 +1,15 @@
 # Codex Parallel Deck Workflow
 
+## Automatic Request Routing
+
+Dave does not need to choose the workflow lane. Codex must classify the request before acting and state `DECISION: Fast Lane`, `DECISION: Worktree Lane`, or `DECISION: Publish-Control Lane`.
+
+- Use `Fast Lane` for exact copy replacements, tiny CSS/layout/readability fixes, and small independent batches that do not touch slide order, alt rails, images/assets, exports, worktrees, or publish state.
+- Use `Worktree Lane` for one isolated edit request that should become a local `deck/*` branch and commit, especially visual/layout/image variants Dave may review before publish.
+- Use `Publish-Control Lane` for `publish now`, JSON annotation queues, worktree integration, branch audits, slide delete/move/trash/appendix/restore, `SLIDE_ORDER`/`SLIDE_ALTS`, asset replacement, PDF/export, or missed/unpublished branch concerns.
+
+If a request mixes lanes, use the highest-risk lane unless the risky work can be deferred cleanly and the remaining edits are independent Fast Lane edits.
+
 ## Edit Sessions
 
 1. Use Worktree mode only.

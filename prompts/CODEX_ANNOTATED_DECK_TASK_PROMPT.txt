@@ -3,6 +3,9 @@ You are editing the Give n Receive investor deck from Dave's in-deck annotation 
 Read and follow exactly:
 prompts/CODEX_PARALLEL_DECK_TASK_PROMPT.txt
 
+ROUTING:
+Annotation JSON is Publish-Control Lane unless Dave explicitly requests a local-only worktree queue. Do not treat JSON as Fast Lane because annotations can target stale slides, alts, deletes, assets, and unpublished branches. Direct one-line copy/CSS edits outside JSON may use Fast Lane from `AGENTS.md`.
+
 ANNOTATION INTAKE MODE
 - Dave may paste JSON from the local deck annotation tool: `Copy current`, `Copy all`, or `gnr-annotations.json`.
 - Treat each annotation `text` value as Dave's exact edit request.

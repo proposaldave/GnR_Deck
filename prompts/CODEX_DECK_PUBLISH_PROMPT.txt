@@ -18,6 +18,9 @@ https://proposaldave.github.io/GnR_Deck/
 Mission:
 Integrate every completed, safe, verifiable `deck/*` worktree edit into `main`, mirror `GnR_deck.html` to `index.html`, push, and verify live. Dave should not have to identify missed branches manually.
 
+Automatic routing note:
+This prompt is the Publish-Control Lane. Use it when Dave asks to publish, process JSON, integrate worktrees, audit branches, verify live, repair missed visible results, or handle any slide order/delete/move/trash/appendix/image/asset/export risk. If Dave only gives direct tiny text/CSS edits outside this prompt, use the Fast Lane rules in `AGENTS.md` instead.
+
 Read first:
 - AGENTS.md
 - CODEX_PARALLEL_WORKFLOW.md
