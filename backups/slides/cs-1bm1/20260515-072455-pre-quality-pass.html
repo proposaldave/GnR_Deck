@@ -270,6 +270,40 @@
     border: 1.5px dashed rgba(184,149,74,0.48);
   }
 
+  .ti-not-measured-row {
+    display: grid;
+    grid-template-columns: 116px minmax(210px, 1fr) 132px;
+    align-items: center;
+    gap: 14px;
+    margin-top: 12px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(184,149,74,0.22);
+  }
+
+  .ti-connection-label {
+    font-family: 'Fraunces','Playfair Display',Georgia,serif;
+    font-size: 0.92rem;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #b8954a;
+  }
+
+  .ti-not-measured-track {
+    height: 16px;
+    border-radius: 999px;
+    border: 1.5px dashed rgba(184,149,74,0.56);
+    background: rgba(184,149,74,0.045);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope',sans-serif;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: rgba(184,149,74,0.78);
+  }
+
   .ti-divider {
     height: 1px;
     margin: 13px 0 10px;
@@ -339,15 +373,15 @@
   }
 
   .ti-card-mini-orbit {
-    margin-top: 16px;
+    margin-top: 12px;
     display: flex;
     justify-content: center;
     pointer-events: none;
   }
 
   .ti-card-mini-orbit .ti-orbit {
-    width: 76px !important;
-    height: 76px !important;
+    width: 68px !important;
+    height: 68px !important;
     opacity: 0.62;
   }
 
@@ -357,8 +391,8 @@
   }
 
   .ti-card-mini-orbit .ti-orbit svg {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .ti-bottom .ti-orbit::before {
@@ -508,6 +542,11 @@
             <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-3" style="width:58%"></div></div>
             <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;color:rgba(26,22,18,0.7);text-align:left">intelligence</div>
           </div>
+          <div class="ti-not-measured-row">
+            <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:800;color:#b8954a;text-align:right">?</div>
+            <div class="ti-not-measured-track">NOT MEASURED</div>
+            <div class="ti-connection-label">real human<br>connection</div>
+          </div>
         </div>
         <div class="ti-card-mini-orbit" aria-hidden="true">
           <div class="ti-orbit ti-orbit-tech">
@@ -589,6 +628,11 @@
           <div class="ti-bar-row ti-val-row">
             <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Nutrition</div>
             <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-4" style="width:28%"></div></div>
+            <div></div>
+          </div>
+          <div class="ti-not-measured-row">
+            <div class="ti-connection-label" style="text-align:right">real human<br>connection</div>
+            <div class="ti-not-measured-track">NOT MEASURED</div>
             <div></div>
           </div>
         </div>
