@@ -462,21 +462,33 @@
     slide.classList.add('cards-entered');
   }
 
+  function cs1bm1ResetInitialState() {
+    var slide = document.getElementById('cs-1bm1');
+    if (!slide) return;
+    slide.classList.remove('bg-settled', 'cards-entered', 'reveal-running');
+    document.querySelectorAll('.ti-flip-inner').forEach(function (card) {
+      card.classList.remove('is-flipped');
+    });
+  }
+
   window.addEventListener('DOMContentLoaded', function () {
     var params = new URLSearchParams(window.location.search);
     if (params.get('cards') === '1' || params.get('back') === '1') {
       cs1bm1ForceCards();
     } else {
-      var slide = document.getElementById('cs-1bm1');
-      if (slide) slide.classList.remove('bg-settled', 'cards-entered', 'reveal-running');
-      document.querySelectorAll('.ti-flip-inner').forEach(function (card) {
-        card.classList.remove('is-flipped');
-      });
+      cs1bm1ResetInitialState();
     }
     if (params.get('back') === '1') {
       document.querySelectorAll('.ti-flip-inner').forEach(function (card) {
         card.classList.add('is-flipped');
       });
+    }
+  });
+
+  window.addEventListener('pageshow', function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('cards') !== '1' && params.get('back') !== '1') {
+      cs1bm1ResetInitialState();
     }
   });
 
