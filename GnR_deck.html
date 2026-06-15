@@ -27125,7 +27125,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-work-measurable-market .rwmm-caption{position:absolute;left:58px;right:58px;bottom:30px;display:flex;justify-content:space-between;align-items:center;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.55);z-index:2}
   #cs-work-measurable-market .rwmm-caption strong{color:#c8462c}
 </style>
-<div class="casey-slide ds-focus" id="cs-work-measurable-market" data-reveal-stage="0" style="display:none" aria-label="Work slide with next measurable market content">
+<div class="casey-slide ds-focus trash-slide" id="cs-work-measurable-market" data-reveal-stage="0" data-deleted="1" style="display:none !important" aria-label="Work slide with next measurable market content">
   <img class="worke-bg" src="assets/generated/work-evolution/work-evolution-bg-v1.png" alt="" onerror="this.onerror=null;this.src='assets/generated/real-world-frontier/real-world-frontier-bg-v1.png'"/>
   <div class="worke-eyebrow slide-eyebrow">New career paths</div>
   <div class="rwmm-wash"></div>
@@ -36622,7 +36622,6 @@ const SLIDE_ORDER = [
   'cs-11e',
   'cs-gnr',
   'cs-invitation-word-of-mouth',
-  'cs-work-measurable-market',
   'cs-app-store-people',
   'cs-fv6-img',
   'cs-18-vd4',
@@ -36655,11 +36654,10 @@ const SLIDE_ALTS = {
   3: ['cs-invite-matchmaking-opener-pink', 'cs-invite-engine-flow-pink'],
   4: ['cs-optimus-party-overhead-pink'],
   5: ['cs-invite-dupr-vs-gnr-club-pink'],
-  9: ['cs-magnetic', 'cs-magnetic-human-value-market', 'cs-work-evolution-prelude'],
-  16: ['cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  19: ['cs-16'],
-  20: ['cs-pb-lab-right-lab-pink'],
-  26: ['cs-invite-graph-import-pink'],
+  15: ['cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
+  18: ['cs-16'],
+  19: ['cs-pb-lab-right-lab-pink'],
+  25: ['cs-invite-graph-import-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -36823,6 +36821,8 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  // Codex 2026-06-15: Dave requested deleting the Next measurable market court slide.
+  'cs-work-measurable-market',
   // Codex 2026-06-15: Dave requested moving the Social pull value map slide to trash.
   'cs-work-social-pull',
   // Codex 2026-06-15: Dave requested deleting the open-heart robot slide; retained for recovery.
@@ -38648,7 +38648,6 @@ const slideLabels = [
   'NEPC proof / proving ground', //  6 cs-11e
   'Rise of the personalized invitation feed', //  7 cs-gnr
   'Referrals power the community sales engine', //  8 cs-invitation-word-of-mouth
-  'Next measurable market', //  9 cs-work-measurable-market
   'App store for people', // 11 cs-app-store-people
   'Community intelligence flywheel', // 12 cs-fv6-img
   'Founder wheelhouse', // 13 cs-18-vd4
