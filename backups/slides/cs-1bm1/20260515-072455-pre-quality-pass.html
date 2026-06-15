@@ -191,6 +191,22 @@
     transform: rotateY(180deg);
   }
 
+  .ti-flip-inner:not(.is-flipped) .ti-card {
+    transform: rotateY(180deg);
+  }
+
+  .ti-flip-inner:not(.is-flipped) .ti-ph {
+    transform: rotateY(0deg);
+  }
+
+  .ti-flip-inner.is-flipped .ti-card {
+    transform: rotateY(180deg);
+  }
+
+  .ti-flip-inner.is-flipped .ti-ph {
+    transform: rotateY(0deg);
+  }
+
   .ti-card.ti-left,
   .ti-card.ti-right {
     justify-content: flex-start;
