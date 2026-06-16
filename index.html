@@ -15708,16 +15708,15 @@ window.csInvitationWordOfMouthAdvance = function() {
        Each envelope: SVG with body rect + triangular flap + seal. Click flips the flap UP
        (scaleY 0 from top origin) and reveals the letter content underneath. -->
   <style>
-    #cs-gnr .gnr-env-grid { position:relative;width:100%;max-width:1080px;margin:24px auto 0;display:grid;grid-template-columns:220px 260px 260px;grid-template-rows:136px 136px;gap:8px 26px;align-items:center;justify-content:center; }
-    #cs-gnr .gnr-env-grid::before { content:'TWO WAYS IN'; position:absolute; left:80px; top:-18px; font-family:'Manrope',sans-serif; font-size:.46rem; font-weight:950; letter-spacing:.22em; text-transform:uppercase; color:rgba(184,149,74,.82); }
-    #cs-gnr .gnr-env-grid::after { content:''; position:absolute; left:244px; top:50%; width:54px; border-top:2px solid rgba(184,149,74,.42); transform:translateY(-50%); }
+    #cs-gnr .gnr-env-grid { position:relative;width:100%;max-width:1120px;margin:24px auto 0;display:grid;grid-template-columns:260px 260px 260px;grid-template-rows:160px 160px;gap:8px 26px;align-items:center;justify-content:center; }
+    #cs-gnr .gnr-env-grid::before { content:'TWO WAYS IN'; position:absolute; left:104px; top:-18px; font-family:'Manrope',sans-serif; font-size:.46rem; font-weight:950; letter-spacing:.22em; text-transform:uppercase; color:rgba(184,149,74,.82); }
+    #cs-gnr .gnr-env-grid::after { content:''; position:absolute; left:284px; top:50%; width:54px; border-top:2px solid rgba(184,149,74,.42); transform:translateY(-50%); }
     #cs-gnr .env-card { position:relative; padding:4px 12px; text-align:center; cursor:pointer; }
     #cs-gnr .env-start-a { grid-column:1; grid-row:1; }
     #cs-gnr .env-start-b { grid-column:1; grid-row:2; }
     #cs-gnr .env-flow-a { grid-column:2; grid-row:1 / span 2; align-self:center; }
     #cs-gnr .env-flow-b { grid-column:3; grid-row:1 / span 2; align-self:center; }
     #cs-gnr .env-svg { display:block; width:100%; max-width:236px; height:auto; margin:0 auto; filter:drop-shadow(0 6px 16px rgba(184,149,74,0.18)); }
-    #cs-gnr .env-start-a .env-svg, #cs-gnr .env-start-b .env-svg { max-width:200px; }
 
     /* Flap: rotates open from top edge */
     #cs-gnr .env-flap { transform-box:fill-box; transform-origin:50% 0%; transform:scaleY(1); transition:transform 0.65s cubic-bezier(.45,.05,.18,1); }
