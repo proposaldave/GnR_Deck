@@ -43472,9 +43472,6 @@ function closeSlideRevertPanel() {
 function buildBackupPreviewHtml(blockHtml) {
   const styles = Array.from(document.querySelectorAll('link[rel="stylesheet"], style')).map(node => node.outerHTML).join('\n');
   return '<!doctype html><html><head><meta charset="utf-8">' + styles + '<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#1a1612}.casey-slide{display:block!important;position:relative!important;inset:auto!important;width:1920px!important;height:1080px!important;transform-origin:top left!important;transform:scale(.218)!important;opacity:1!important;visibility:visible!important}.casey-slide *{animation:none!important;transition:none!important}</style></head><body>' + blockHtml + '</body></html>';
-})();
-</script>
-</body></html>';
 }
 
 function copyTextToClipboard(text) {
