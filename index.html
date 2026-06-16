@@ -8776,17 +8776,12 @@ window.csVd4Advance = function() {
   if (!slide || !slide.classList.contains('active')) return false;
   if (!window._cs18vd4EnterAt) window._cs18vd4EnterAt = Date.now();
   const elapsed = Date.now() - window._cs18vd4EnterAt;
-  // Entry pillars finish at about 4.0s. Hold navigation until then, then use scroll/click to flip each pillar.
+  // Entry pillars finish at about 4.0s. Hold navigation until then; cards flip only from direct card clicks.
   if (elapsed < 4200) return true;
-  const next = Array.from(slide.querySelectorAll('.v5-pillar')).find(p => p.dataset.flipped !== '1');
-  if (next) { next.dataset.flipped = '1'; return true; }
   return false;
 };
 window.csVd4Reverse = function() {
-  const slide = document.getElementById('cs-18-vd4');
-  if (!slide || !slide.classList.contains('active')) return false;
-  const flipped = Array.from(slide.querySelectorAll('.v5-pillar')).reverse().find(p => p.dataset.flipped === '1');
-  if (flipped) { flipped.dataset.flipped = '0'; return true; }
+  // Cards on this slide flip only from direct card clicks; reverse navigation should not unflip them.
   return false;
 };
 (function installVd4EntryStamp() {
