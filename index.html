@@ -16763,7 +16763,7 @@ window.csInvitationWordOfMouthAdvance = function() {
 <style>
   @keyframes c11eFadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
   #cs-11e .c11e-anim { opacity: 0; }
-  #cs-11e.active .c11e-anim { animation: c11eFadeUp 0.65s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-11e.active[data-shown="1"] .c11e-anim { animation: c11eFadeUp 0.65s cubic-bezier(.45,.05,.18,1) forwards; }
   #cs-11e.active .c11e-logo     { animation-delay: 0.05s; }
   #cs-11e.active .c11e-headline { animation-delay: 0.30s; }
   #cs-11e.active .c11e-before   { animation-delay: 0.65s; }
@@ -16774,18 +16774,23 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-11e.active .c11e-q3       { animation-delay: 1.95s; }
   #cs-11e { overflow:hidden; }
   #cs-11e .c11e-bg { position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#f3ead8; }
-  #cs-11e .c11e-bg img { position:absolute;top:0;height:100%;object-fit:cover;opacity:.60;filter:saturate(.92) contrast(.98) brightness(1.02); }
+  #cs-11e .c11e-bg img { position:absolute;top:0;height:100%;object-fit:cover;opacity:.60;filter:saturate(.92) contrast(.98) brightness(1.02);transition:opacity .55s cubic-bezier(.22,1,.36,1),filter .55s cubic-bezier(.22,1,.36,1); }
   #cs-11e .c11e-bg-left { left:0;width:62%;object-position:center center; }
   #cs-11e .c11e-bg-right { right:0;width:50%;object-position:center center;clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);opacity:.56!important; }
-  #cs-11e .c11e-bg::before { content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(243,234,216,.12) 0%,rgba(243,234,216,.40) 50%,rgba(243,234,216,.06) 100%),linear-gradient(108deg,transparent 0 52%,rgba(251,247,239,.54) 52.2% 56%,transparent 56.2% 100%); }
-  #cs-11e .c11e-bg::after { content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(251,247,239,.82) 0%,rgba(251,247,239,.68) 42%,rgba(251,247,239,.36) 72%,rgba(251,247,239,.24) 100%),radial-gradient(circle at 70% 42%,rgba(26,22,18,.18),transparent 50%); }
+  #cs-11e .c11e-bg::before { content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(243,234,216,.12) 0%,rgba(243,234,216,.40) 50%,rgba(243,234,216,.06) 100%),linear-gradient(108deg,transparent 0 52%,rgba(251,247,239,.54) 52.2% 56%,transparent 56.2% 100%);transition:opacity .55s cubic-bezier(.22,1,.36,1); }
+  #cs-11e .c11e-bg::after { content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(251,247,239,.82) 0%,rgba(251,247,239,.68) 42%,rgba(251,247,239,.36) 72%,rgba(251,247,239,.24) 100%),radial-gradient(circle at 70% 42%,rgba(26,22,18,.18),transparent 50%);transition:opacity .55s cubic-bezier(.22,1,.36,1); }
+  #cs-11e[data-shown="0"] .c11e-content{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px)}
+  #cs-11e[data-shown="1"] .c11e-content{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  #cs-11e[data-shown="0"] .c11e-bg img{opacity:.94!important;filter:saturate(1.03) contrast(1.03) brightness(1.02)!important}
+  #cs-11e[data-shown="0"] .c11e-bg::before,#cs-11e[data-shown="0"] .c11e-bg::after{opacity:0!important}
+  html[data-export="1"] #cs-11e .c11e-content{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important}
   html[data-export="1"] #cs-11e .c11e-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-11e">
+<div class="casey-slide ds-focus" id="cs-11e" data-shown="0" onclick="cs11eAdvance();event.stopPropagation()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div class="c11e-bg" aria-hidden="true"><img class="c11e-bg-left" src="assets/founder-built-communities/nepc-wide-courts.png" alt=""><img class="c11e-bg-right" src="assets/founder-built-communities/nepc-logo-courts.png" alt=""></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;z-index:10;">Custom invitations live at founder-built communities</div>
-  <div style="position:relative;z-index:2;padding:32px 48px 80px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#C8462C;z-index:10;">Custom invitations live at founder-built communities</div>
+  <div class="c11e-content" style="position:relative;z-index:2;padding:32px 48px 80px;text-align:center;max-width:1180px;margin:0 auto;width:100%;transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1),visibility .55s">
     <!-- Big NEPC logo so the audience knows we're talking about New England Pickleball Club -->
     <img class="c11e-anim c11e-logo" src="nepc-logo.png" alt="New England Pickleball Club" style="display:block;margin:0 auto 18px;width:clamp(220px,26vw,320px);height:auto;mix-blend-mode:multiply"/>
     <div class="c11e-anim c11e-headline" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.5rem);color:#1a1612;line-height:1.18;font-weight:700;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
@@ -37865,6 +37870,21 @@ window.csWorkEvolutionReverse = function() {
   return true;
 };
 
+window.cs11eAdvance = function() {
+  const slide = document.getElementById('cs-11e');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.cs11eReverse = function() {
+  const slide = document.getElementById('cs-11e');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+
 window.csRwmmAdvance = function() {
   const slide = document.getElementById('cs-real-world-measurable-market');
   if (!slide || !slide.classList.contains('active')) return false;
@@ -39561,6 +39581,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-4': 'cs4Advance',
     'cs-3': 'cs3Advance',
     'cs-11d': 'cs11dAdvance',
+    'cs-11e': 'cs11eAdvance',
     'cs-11': 'cs11Advance',
     'cs-fw1': 'csFw1Advance',
     'cs-12m2': 'cs12m2Advance',
@@ -39619,6 +39640,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-4': 'cs4Reverse',
     'cs-3': 'cs3Reverse',
     'cs-11d': 'cs11dReverse',
+    'cs-11e': 'cs11eReverse',
     'cs-11': 'cs11Reverse',
     'cs-fw1': 'csFw1Reverse',
     'cs-12m2': 'cs12m2Reverse',
