@@ -38064,6 +38064,11 @@ function caseyGo(n) {
   const targetId = SLIDE_ORDER[n - 1];
   const target = document.getElementById(targetId);
   if (target) {
+    // [Codex 2026-06-15] Reset stateful animation attributes before the slide becomes visible.
+    // This prevents one-frame flashes from slides that were previously left in a revealed state.
+    target.querySelectorAll('[data-flipped]').forEach(el => { el.dataset.flipped = '0'; });
+    target.querySelectorAll('[data-shown]').forEach(el => { el.dataset.shown = '0'; });
+    if (target.hasAttribute('data-shown')) target.dataset.shown = '0';
     target.style.display = '';
     target.classList.add('active');
     // [Dave 2026-05-14 PM v3] Universal state reset on slide re-entry — Dave: 'if I leave a slide (after everything is animated) and go back to that slide, the slide should start at the beginning in terms of animations.' Reset stateful UI attributes BEFORE the casey-entered replay so click-reveal slides + flippable cards always start fresh on every visit. Existing per-slide resets below still apply (and now act as redundant safety nets).
