@@ -33689,7 +33689,8 @@ window.csA7m1Reverse = function() {
   .ti-flip-wrap {
     min-height: 476px;
     height: 100%;
-    perspective: 1500px;
+    perspective: 1800px;
+    perspective-origin: 50% 50%;
   }
 
   .ti-flip-wrap:has(.ti-flip-right) {
@@ -33709,19 +33710,18 @@ window.csA7m1Reverse = function() {
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 620ms cubic-bezier(.2,.72,.2,1);
-  }
-
-  .ti-flip-inner.is-flipped {
     transform: rotateY(0deg);
+    transform-origin: center center;
+    transition: transform 760ms cubic-bezier(.18,.82,.22,1);
+    will-change: transform;
   }
 
-  .ti-flip-inner.is-flipped .ti-card {
-    transform: rotateY(0deg);
-  }
-
-  .ti-flip-inner.is-flipped .ti-ph {
+  .ti-flip-inner.is-flipped.ti-flip-left {
     transform: rotateY(-180deg);
+  }
+
+  .ti-flip-inner.is-flipped.ti-flip-right {
+    transform: rotateY(180deg);
   }
 
   .ti-card {
@@ -33731,15 +33731,9 @@ window.csA7m1Reverse = function() {
     min-height: 476px;
     box-shadow: 0 18px 44px rgba(26,22,18,0.055);
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     transform: rotateY(180deg);
-  }
-
-  .ti-flip-inner:not(.is-flipped) .ti-card {
-    transform: rotateY(180deg);
-  }
-
-  .ti-flip-inner:not(.is-flipped) .ti-ph {
-    transform: rotateY(0deg);
+    transform-style: preserve-3d;
   }
 
 
@@ -33770,6 +33764,9 @@ window.csA7m1Reverse = function() {
     inset: 0;
     min-height: 476px;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
     box-shadow: 0 18px 44px rgba(26,22,18,0.045);
     backdrop-filter: blur(2px);
   }
