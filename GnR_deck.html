@@ -34190,6 +34190,63 @@ window.csA7m1Reverse = function() {
 
 
 <!-- ===== APPENDIX cs-a13 — Business Model · 10% rev share + $199/mo. Paper-mode. Dave 2026-04-29 ===== -->
+
+<!-- Codex 2026-06-16: new main-flow connection gravity slide. -->
+<style>
+  #cs-connection-choice{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;background:#f3ead8!important;color:#1a1612}
+  #cs-connection-choice .cc-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0;filter:saturate(1.04) contrast(1.02)}
+  #cs-connection-choice .cc-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.98) 0%,rgba(251,247,239,.94) 23%,rgba(251,247,239,.68) 42%,rgba(251,247,239,.18) 62%,rgba(251,247,239,0) 82%),linear-gradient(180deg,rgba(251,247,239,.26) 0%,rgba(251,247,239,0) 46%,rgba(243,234,216,.18) 100%)}
+  #cs-connection-choice .cc-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.045) 1px,transparent 0);background-size:5px 5px;opacity:.30;mix-blend-mode:multiply}
+  #cs-connection-choice .cc-brand{position:absolute;top:28px;right:44px;z-index:5;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:850;line-height:1;letter-spacing:-.03em;text-shadow:0 1px 0 rgba(251,247,239,.72)}
+  #cs-connection-choice .cc-brand .g{color:#5B8FD4}#cs-connection-choice .cc-brand .n{color:#b8954a;font-style:italic}#cs-connection-choice .cc-brand .r{color:#c8462c}
+  #cs-connection-choice .cc-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.78);border:1px solid rgba(184,149,74,.24);border-radius:3px;padding:7px 10px;box-shadow:0 10px 28px rgba(26,22,18,.09)}
+  #cs-connection-choice .cc-stage{position:absolute;inset:0;z-index:3;display:grid;grid-template-columns:minmax(600px,.46fr) minmax(620px,.54fr);align-items:center;padding:92px 72px 72px;box-sizing:border-box}
+  #cs-connection-choice .cc-copy{max-width:790px;padding-left:8px;transform:translateY(10px);opacity:0;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1)}
+  #cs-connection-choice.casey-entered .cc-copy{opacity:1;transform:none;transition-delay:.16s}
+  #cs-connection-choice .cc-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.25rem,6.05vw,7.05rem);font-weight:900;line-height:.95;letter-spacing:-.026em;color:#1a1612;text-wrap:balance;text-shadow:0 1px 0 rgba(251,247,239,.88),0 14px 32px rgba(251,247,239,.40)}
+  #cs-connection-choice .cc-title em{font-style:italic;font-weight:850;color:#b8954a}
+  #cs-connection-choice .cc-title .cc-red{color:#c8462c;font-style:italic;font-weight:850}
+  #cs-connection-choice .cc-rule{width:116px;height:2px;margin:34px 0 24px;background:linear-gradient(90deg,#c8462c,#b8954a,rgba(184,149,74,0));border-radius:999px}
+  #cs-connection-choice .cc-sub{margin:0;font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.18vw,1.34rem);font-weight:780;line-height:1.45;color:rgba(26,22,18,.68);max-width:650px}
+  #cs-connection-choice .cc-gravity{align-self:end;justify-self:start;display:flex;gap:12px;flex-wrap:wrap;max-width:690px;margin-top:34px;opacity:0;transform:translateY(10px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-connection-choice.casey-entered .cc-gravity{opacity:1;transform:none;transition-delay:.52s}
+  #cs-connection-choice .cc-chip{display:inline-flex;align-items:center;gap:9px;border-radius:999px;border:1px solid rgba(184,149,74,.34);background:rgba(251,247,239,.78);box-shadow:0 14px 34px rgba(26,22,18,.08),inset 0 1px 0 rgba(255,255,255,.68);padding:10px 14px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.64);backdrop-filter:blur(4px)}
+  #cs-connection-choice .cc-chip i{display:block;width:9px;height:9px;border-radius:50%;background:#b8954a;box-shadow:0 0 0 5px rgba(184,149,74,.14)}
+  #cs-connection-choice .cc-chip:nth-child(2) i{background:#5B8FD4;box-shadow:0 0 0 5px rgba(91,143,212,.14)}
+  #cs-connection-choice .cc-chip:nth-child(3) i{background:#c8462c;box-shadow:0 0 0 5px rgba(200,70,44,.13)}
+  #cs-connection-choice .cc-visual{position:relative;min-height:620px;align-self:center;justify-self:stretch;pointer-events:none}
+  #cs-connection-choice .cc-orbit{position:absolute;right:4%;top:50%;width:520px;height:520px;transform:translateY(-50%);border-radius:50%;border:1.5px solid rgba(251,247,239,.48);box-shadow:0 0 80px rgba(255,212,124,.12),inset 0 0 80px rgba(255,255,255,.08);opacity:0;transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
+  #cs-connection-choice.casey-entered .cc-orbit{opacity:.78;transform:translateY(-50%) scale(1);transition-delay:.32s}
+  #cs-connection-choice .cc-orbit:before,#cs-connection-choice .cc-orbit:after{content:"";position:absolute;border-radius:50%;border:1px dashed rgba(255,235,170,.42)}
+  #cs-connection-choice .cc-orbit:before{inset:72px}#cs-connection-choice .cc-orbit:after{inset:146px}
+  #cs-connection-choice .cc-pull{position:absolute;right:18%;bottom:18%;width:230px;height:72px;border-radius:999px;background:rgba(26,22,18,.58);border:1px solid rgba(255,235,190,.38);box-shadow:0 22px 56px rgba(26,22,18,.22);display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:#fbf7ef;opacity:0;transform:translateY(16px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-connection-choice.casey-entered .cc-pull{opacity:1;transform:none;transition-delay:.74s}
+  html[data-export="1"] #cs-connection-choice .cc-copy,html[data-export="1"] #cs-connection-choice .cc-gravity,html[data-export="1"] #cs-connection-choice .cc-orbit,html[data-export="1"] #cs-connection-choice .cc-pull{opacity:1!important;transform:none!important;transition:none!important}
+  html[data-export="1"] #cs-connection-choice .cc-orbit{transform:translateY(-50%)!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-connection-choice" style="display:none">
+  <img class="cc-bg" src="assets/generated/connection-choice/humans-spend-time-connection-bg-v1.png" alt="Warm pickleball community gathering with glowing connection arcs"/>
+  <div class="cc-wash" aria-hidden="true"></div>
+  <div class="cc-paper" aria-hidden="true"></div>
+  <div class="cc-eye slide-eyebrow">Connection gravity</div>
+  <div class="cc-brand" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section class="cc-stage">
+    <div class="cc-copy">
+      <h1 class="cc-title">Humans spend time where they feel the <em>most</em> <span class="cc-red">connection.</span></h1>
+      <div class="cc-rule"></div>
+      <p class="cc-sub">The strongest signal is not attention. It is where people keep choosing to show up, return, invite, and belong.</p>
+      <div class="cc-gravity" aria-hidden="true">
+        <span class="cc-chip"><i></i>show up</span>
+        <span class="cc-chip"><i></i>return</span>
+        <span class="cc-chip"><i></i>belong</span>
+      </div>
+    </div>
+    <div class="cc-visual" aria-hidden="true">
+      <div class="cc-orbit"></div>
+      <div class="cc-pull">social pull</div>
+    </div>
+  </section>
+</div>
 <div class="casey-slide ds-focus appendix-slide" id="cs-a13" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Business Model</div>
@@ -36685,6 +36742,7 @@ window.csA7m1Reverse = function() {
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
   'cs-1bm1',
+  'cs-connection-choice',
   'cs-1m8',
   'cs-real-world-measurable-market',
   'cs-thegap',
@@ -36720,12 +36778,12 @@ const TOTAL = SLIDE_ORDER.length;
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
   1: ['cs-value-choice-image-annotated-pink'],
-  3: ['cs-invite-matchmaking-opener-pink'],
-  4: ['cs-optimus-party-overhead-pink'],
-  5: ['cs-invite-dupr-vs-gnr-club-pink'],
-  15: ['cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
-  18: ['cs-16'],
-  25: ['cs-invite-graph-import-pink'],
+  4: ['cs-invite-matchmaking-opener-pink'],
+  5: ['cs-optimus-party-overhead-pink'],
+  6: ['cs-invite-dupr-vs-gnr-club-pink'],
+  16: ['cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
+  19: ['cs-16'],
+  26: ['cs-invite-graph-import-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -38765,6 +38823,7 @@ const slideLabels = [
   null,
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
   'Modern life wires us away from fulfillment', //  2 cs-1bm1
+  'Connection gravity', //  3 cs-connection-choice
   'The relationship graph is missing', //  3 cs-1m8
   'Community technology is unsolved', //  4 cs-thegap
   'Custom invitations are operationally hard', //  5 cs-invite-operational-insanity-pink
