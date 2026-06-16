@@ -25408,7 +25408,13 @@ window.csBrandV8Reverse = function() {
   #cs-serious-vs-silly-bridge .svs-sub{margin:28px 0 0;max-width:540px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.18rem,1.48vw,1.55rem);line-height:1.22;font-weight:650;color:rgba(26,22,18,.72)}
   #cs-serious-vs-silly-bridge .svs-sub strong{font-weight:900;color:#1a1612}
   #cs-serious-vs-silly-bridge .svs-pyramid-wrap{position:relative;height:760px;display:grid;place-items:center}
-  #cs-serious-vs-silly-bridge .svs-pyramid{position:relative;width:min(650px,100%);height:690px;filter:drop-shadow(0 30px 55px rgba(26,22,18,.14))}
+  #cs-serious-vs-silly-bridge .svs-pyramid{position:relative;width:min(760px,100%);height:690px;filter:drop-shadow(0 30px 55px rgba(26,22,18,.14))}
+  #cs-serious-vs-silly-bridge .svs-pyramid-img{position:absolute;inset:-18px -32px 0;width:calc(100% + 64px);height:100%;object-fit:contain;object-position:center center;display:block;z-index:1}
+  #cs-serious-vs-silly-bridge .svs-img-label{position:absolute;left:50%;z-index:3;transform:translateX(-50%);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:900;line-height:.92;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 2px 12px rgba(251,247,239,.78),0 8px 24px rgba(26,22,18,.18);pointer-events:none}
+  #cs-serious-vs-silly-bridge .svs-img-label.serious{top:154px;font-size:clamp(1.28rem,1.75vw,2.05rem);color:#c8462c}
+  #cs-serious-vs-silly-bridge .svs-img-label.silly{top:390px;font-size:clamp(2.5rem,4vw,4.35rem);color:#5B8FD4;font-style:italic}
+  #cs-serious-vs-silly-bridge .svs-img-label span{display:block;margin-top:9px;font-family:'Manrope',sans-serif;font-size:.28em;line-height:1.12;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.58);font-style:normal}
+  #cs-serious-vs-silly-bridge .svs-apex,#cs-serious-vs-silly-bridge .svs-base,#cs-serious-vs-silly-bridge .svs-axis{display:none!important}
   #cs-serious-vs-silly-bridge .svs-apex{position:absolute;left:31%;right:31%;top:52px;height:188px;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(26,22,18,.84),rgba(200,70,44,.72));display:grid;place-items:end center;padding:0 20px 30px;color:#fbf7ef;text-align:center}
   #cs-serious-vs-silly-bridge .svs-base{position:absolute;left:4%;right:4%;bottom:64px;height:454px;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);background:radial-gradient(circle at 50% 58%,rgba(251,247,239,.34),transparent 28%),linear-gradient(180deg,rgba(91,143,212,.84),rgba(184,149,74,.72));display:grid;place-items:center;color:#fbf7ef;text-align:center;overflow:hidden}
   #cs-serious-vs-silly-bridge .svs-base:before{content:"";position:absolute;inset:19% 8% 13%;background:radial-gradient(circle at 15% 42%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 28% 65%,#fbf7ef 0 8px,transparent 9px),radial-gradient(circle at 43% 38%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 61% 62%,#fbf7ef 0 8px,transparent 9px),radial-gradient(circle at 78% 40%,#fbf7ef 0 9px,transparent 10px),radial-gradient(circle at 88% 68%,#fbf7ef 0 7px,transparent 8px);opacity:.88}
@@ -25440,9 +25446,9 @@ window.csBrandV8Reverse = function() {
     </div>
     <div class="svs-pyramid-wrap" aria-hidden="true">
       <div class="svs-pyramid">
-        <div class="svs-apex"><div class="svs-band-title">SERIOUS<span>narrow measurable apex</span></div></div>
-        <div class="svs-base"><div class="svs-band-title">SILLY<span>broad human connection base</span></div></div>
-        <div class="svs-axis"></div>
+        <img class="svs-pyramid-img" src="assets/generated/serious-silly-bridge/serious-silly-pyramid-v1.png" alt="Glass pyramid showing a narrow serious competitive pickleball top over a much larger joyful social-community pickleball base."/>
+        <div class="svs-img-label serious">SERIOUS<span>narrow measurable top</span></div>
+        <div class="svs-img-label silly">SILLY<span>broad human connection base</span></div>
       </div>
     </div>
     <div class="svs-cardstack">
