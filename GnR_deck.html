@@ -44,7 +44,7 @@
   .club-build-chip.hot { border-color:rgba(200,70,44,.58); background:rgba(200,70,44,.08); color:#c8462c; }
   .club-build-chip.blue { border-color:rgba(91,143,212,.48); background:rgba(91,143,212,.08); color:#335f95; }
   .club-build-mark { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.15rem; font-weight:900; line-height:1; letter-spacing:0; }
-  .club-build-mark .g { color:#5B8FD4; } .club-build-mark .n { color:#b8954a; font-style:italic; font-weight:650; } .club-build-mark .r { color:#c8462c; }
+  .club-build-mark .g { color:#5B8FD4; } .club-build-mark .n { color:#1a1612; font-style:italic; font-weight:650; } .club-build-mark .r { color:#c8462c; }
   .club-build-anim { opacity:0; transform:translateY(14px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
   .casey-entered .club-build-anim { opacity:1; transform:none; }
   .casey-entered .club-build-anim:nth-child(2) { transition-delay:.12s; }
@@ -602,7 +602,7 @@
     line-height: 1;
   }
   .gnr-rotate-prompt .gnr-rp-mark .g { color: #5B8FD4; }
-  .gnr-rotate-prompt .gnr-rp-mark .n { color: #b8954a; font-style: italic; font-weight: 500; font-size: 0.78em; padding: 0 0.04em; }
+  .gnr-rotate-prompt .gnr-rp-mark .n { color:#1a1612; font-style: italic; font-weight: 500; font-size: 0.78em; padding: 0 0.04em; }
   .gnr-rotate-prompt .gnr-rp-mark .r { color: #c8462c; }
   .gnr-rotate-prompt .gnr-rp-icon {
     width: 88px; height: 88px;
@@ -6608,7 +6608,7 @@ html, body, html body{
 <!-- [Dave 2026-05-15] Persistent GnR brand mark, visible on every slide. SWAPPED with slide counter — GnR now sits at top:12px (was 54px), counter moved down to top:48px (was 12px). Blue G + cream italic n + burgundy R. -->
 <div id="gnr-mark" aria-hidden="true" style="position:fixed;top:12px;right:24px;z-index:60;display:flex;align-items:baseline;font-family:'Playfair Display',Georgia,serif;line-height:1;letter-spacing:-0.01em;opacity:0.78;pointer-events:none;user-select:none">
   <span style="font-size:17px;font-weight:600;color:#5B8FD4">G</span>
-  <span style="font-size:15px;font-weight:400;font-style:italic;color:#b8954a;padding:0 1.5px">n</span>
+  <span style="font-size:15px;font-weight:400;font-style:italic;color:#1a1612;padding:0 1.5px">n</span>
   <span style="font-size:17px;font-weight:600;color:#c8462c">R</span>
 </div>
 <style>
@@ -6618,7 +6618,7 @@ html, body, html body{
   /* Brand-name rule: when rendering Give n Receive or GnR as styled deck copy, use this inline mark. */
   .gnr-inline-brand{display:inline-flex;align-items:baseline;font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-0.015em;white-space:nowrap}
   .gnr-inline-brand .gnr-g{color:#5B8FD4}
-  .gnr-inline-brand .gnr-n{color:#b8954a;font-style:italic;padding:0 .05em;font-weight:500}
+  .gnr-inline-brand .gnr-n{color:#1a1612;font-style:italic;padding:0 .05em;font-weight:500}
   .gnr-inline-brand .gnr-r{color:#c8462c}
 </style>
 
@@ -6771,7 +6771,7 @@ html, body, html body{
   #cs-1m5 .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
   #cs-1m5 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
   #cs-1m5 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform var(--m5-dur) var(--m5-ease);will-change:transform }
-  #cs-1m5 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#b8954a;line-height:1 }
+  #cs-1m5 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1 }
   #cs-1m5 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
   #cs-1m5 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   /* Gold arc above n — now positioned inside wm-n-wrap so it tracks the n exactly. Dave: 'the graphic above the black n should be perfectly centered above the black n'. wm-n-wrap is position:relative, so absolute children align to its box. left:50% of n_wrap puts arc at the n's center (n is centered in n_wrap by padding 0 40px). top:8% puts it above the n's top stem. */
@@ -6844,7 +6844,7 @@ html, body, html body{
   #cs-1m9 .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
   #cs-1m9 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
   #cs-1m9 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform var(--m9-dur) var(--m9-ease);will-change:transform }
-  #cs-1m9 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#b8954a;line-height:1 }
+  #cs-1m9 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1 }
   #cs-1m9 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
   #cs-1m9 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   #cs-1m9 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition:transform var(--m9-dur) var(--m9-ease);will-change:transform }
@@ -7072,7 +7072,7 @@ window.cs1m5Reverse = function() {
   #cs-appx-andreessen .av-tie strong { color:#c8462c;font-weight:850;font-style:normal; }
   #cs-appx-andreessen .av-tie .gnr-mark { font-style:normal;font-weight:800; }
   #cs-appx-andreessen .av-tie .gnr-mark .g { color:#5B8FD4; }
-  #cs-appx-andreessen .av-tie .gnr-mark .n { color:#b8954a;font-style:italic;font-weight:500;padding:0 1px; }
+  #cs-appx-andreessen .av-tie .gnr-mark .n { color:#1a1612;font-style:italic;font-weight:500;padding:0 1px; }
   #cs-appx-andreessen .av-tie .gnr-mark .r { color:#c8462c; }
   @keyframes avFadeUp { from { opacity:0;transform:translateY(8px); } to { opacity:1;transform:translateY(0); } }
   #cs-appx-andreessen .av-headline, #cs-appx-andreessen .av-sub, #cs-appx-andreessen .av-frame, #cs-appx-andreessen .av-cap, #cs-appx-andreessen .av-tie { opacity:0; }
@@ -7117,7 +7117,7 @@ window.cs1m5Reverse = function() {
   /* Brand mark in upper-right corner */
   #cs-appx-aiheart .aih-mark { position:absolute; top:34px; right:48px; z-index:5; font-family:'Playfair Display',Georgia,serif; font-size:1.05rem; font-weight:850; letter-spacing:-0.012em; }
   #cs-appx-aiheart .aih-mark .g { color:#5B8FD4; }
-  #cs-appx-aiheart .aih-mark .n { color:#b8954a; font-style:italic; font-weight:500; font-size:0.86em; padding:0 0.04em; }
+  #cs-appx-aiheart .aih-mark .n { color:#1a1612; font-style:italic; font-weight:500; font-size:0.86em; padding:0 0.04em; }
   #cs-appx-aiheart .aih-mark .r { color:#c8462c; }
   /* Entry stagger */
   #cs-appx-aiheart .aih-bg, #cs-appx-aiheart .aih-eyebrow, #cs-appx-aiheart .aih-head, #cs-appx-aiheart .aih-sub { opacity:0; transform:translateY(8px); transition: opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1); }
@@ -7277,7 +7277,7 @@ window.cs1m5Reverse = function() {
   #cs-1m8 .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
   #cs-1m8 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
   #cs-1m8 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform 1.4s cubic-bezier(.22,1,.36,1) }
-  #cs-1m8 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#b8954a;line-height:1 }
+  #cs-1m8 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1 }
   #cs-1m8 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
   #cs-1m8 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   #cs-1m8 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
@@ -7421,7 +7421,7 @@ window.cs1m5Reverse = function() {
   #cs-1m8-black-backup .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
   #cs-1m8-black-backup .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
   #cs-1m8-black-backup .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform 1.4s cubic-bezier(.22,1,.36,1) }
-  #cs-1m8-black-backup .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#b8954a;line-height:1 }
+  #cs-1m8-black-backup .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1 }
   #cs-1m8-black-backup .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
   #cs-1m8-black-backup .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   #cs-1m8-black-backup .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
@@ -8001,7 +8001,7 @@ window.cs1m5Reverse = function() {
   /* [Dave 2026-05-15] Removed rendered GnR mark overlay because the selected Human Constellation artwork already carries the mark; no duplicate logos on opener. */
   #cs-frontier-iconic .fi-mark, #cs-frontier-pink1 .fi-mark, #cs-frontier-pink2 .fi-mark { display:none; position:absolute; top:32px; right:42px; z-index:4; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.08rem; font-weight:800; letter-spacing:-0.035em; opacity:.86; text-shadow:0 1px 2px rgba(255,255,255,.36); }
   #cs-frontier-iconic .fi-mark .g, #cs-frontier-pink1 .fi-mark .g, #cs-frontier-pink2 .fi-mark .g { color:#5B8FD4; }
-  #cs-frontier-iconic .fi-mark .n, #cs-frontier-pink1 .fi-mark .n, #cs-frontier-pink2 .fi-mark .n { color:#b8954a; font-style:italic; font-weight:650; padding:0 .03em; }
+  #cs-frontier-iconic .fi-mark .n, #cs-frontier-pink1 .fi-mark .n, #cs-frontier-pink2 .fi-mark .n { color:#1a1612; font-style:italic; font-weight:650; padding:0 .03em; }
   #cs-frontier-iconic .fi-mark .r, #cs-frontier-pink1 .fi-mark .r, #cs-frontier-pink2 .fi-mark .r { color:#c8462c; }
   /* Entry animation — image settles in, headline lands over the negative space. */
   @keyframes fiArrowIn { 0% { opacity:0; transform:translate(-12px,18px); } 100% { opacity:1; transform:translate(0,0); } }
@@ -8103,7 +8103,7 @@ window.cs1m5Reverse = function() {
     #cs-frontier-pink1 .ms-footer{position:absolute;left:50%;bottom:46px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:28px;width:min(1180px,74vw);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.0rem,2.55vw,2.6rem);font-weight:850;line-height:1.05;color:#1a1612;text-align:center;z-index:3}
     #cs-frontier-pink1 .ms-footer:before,#cs-frontier-pink1 .ms-footer:after{content:"";height:1px;flex:1;background:linear-gradient(90deg, transparent, rgba(184,149,74,.55))}
     #cs-frontier-pink1 .ms-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.55), transparent)}
-    #cs-frontier-pink1 .ms-footer .g{color:#5B8FD4}#cs-frontier-pink1 .ms-footer .n{color:#b8954a;font-style:italic}#cs-frontier-pink1 .ms-footer .r{color:#c8462c}#cs-frontier-pink1 .ms-footer em{font-style:italic;color:#b8954a}
+    #cs-frontier-pink1 .ms-footer .g{color:#5B8FD4}#cs-frontier-pink1 .ms-footer .n{color:#1a1612;font-style:italic}#cs-frontier-pink1 .ms-footer .r{color:#c8462c}#cs-frontier-pink1 .ms-footer em{font-style:italic;color:#1a1612}
     #cs-frontier-pink1 .ms-stage{display:block;padding:58px 74px 42px}
     #cs-frontier-pink1 .ms-paper{opacity:.34;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.035) 1px, transparent 0)}
     #cs-frontier-pink1 .ms-glow{background:radial-gradient(circle at 72% 46%, rgba(184,149,74,.16), transparent 32%),radial-gradient(circle at 20% 50%, rgba(91,143,212,.08), transparent 30%)}
@@ -8174,7 +8174,7 @@ window.cs1m5Reverse = function() {
   .scale-option-slide .scale-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.036) 1px, transparent 0);background-size:4px 4px;opacity:.34;pointer-events:none}
   .scale-option-slide .scale-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
   .scale-option-slide .scale-mark{position:absolute;top:28px;right:44px;z-index:5;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.04rem;font-weight:850;line-height:1}
-  .scale-option-slide .scale-mark .g{color:#5B8FD4}.scale-option-slide .scale-mark .n{color:#b8954a;font-style:italic}.scale-option-slide .scale-mark .r{color:#c8462c}
+  .scale-option-slide .scale-mark .g{color:#5B8FD4}.scale-option-slide .scale-mark .n{color:#1a1612;font-style:italic}.scale-option-slide .scale-mark .r{color:#c8462c}
   .scale-option-slide .scale-stage{position:absolute;inset:0;color:#1a1612}
   .scale-option-slide .scale-head{position:absolute;left:50%;top:62px;z-index:3;transform:translateX(-50%);width:min(1410px,84vw);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.9rem,5.25vw,6rem);font-weight:850;line-height:.95;letter-spacing:0;text-align:center;color:#1a1612}
   .scale-option-slide .scale-head em{font-style:italic;color:#b8954a;font-weight:850}
@@ -8347,7 +8347,7 @@ window.cs1m5Reverse = function() {
   #cs-invite-matchmaking-opener-pink .imo-sub{margin:28px 0 0;max-width:720px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2vw,2rem);line-height:1.18;font-weight:650;color:rgba(26,22,18,.78);text-shadow:0 1px 10px rgba(251,247,239,.68)}
   #cs-invite-matchmaking-opener-pink .imo-mark{margin-top:34px;display:inline-flex;align-items:baseline;gap:1px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.1rem;font-weight:900;line-height:1;background:rgba(251,247,239,.72);border:1px solid rgba(184,149,74,.34);border-radius:8px;padding:12px 20px 16px;box-shadow:0 18px 46px rgba(26,22,18,.10)}
   #cs-invite-matchmaking-opener-pink .imo-g{color:#5B8FD4}
-  #cs-invite-matchmaking-opener-pink .imo-n{color:#b8954a;font-style:italic;font-weight:650}
+  #cs-invite-matchmaking-opener-pink .imo-n{color:#1a1612;font-style:italic;font-weight:650}
   #cs-invite-matchmaking-opener-pink .imo-r{color:#c8462c}
 </style>
 <div class="casey-slide ds-focus" id="cs-invite-matchmaking-opener-pink" style="display:none" aria-label="Pink-dot invitation matchmaking background option for relationship graph opener">
@@ -8377,7 +8377,7 @@ window.cs1m5Reverse = function() {
     #cs-1m8-bg-reveal-pink .wm-G,#cs-1m8-bg-reveal-pink .wm-ive{font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px}
     #cs-1m8-bg-reveal-pink .wm-R,#cs-1m8-bg-reveal-pink .wm-eceive{font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px}
     #cs-1m8-bg-reveal-pink .wm-n-wrap{display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px}
-    #cs-1m8-bg-reveal-pink .wm-n{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#b8954a;line-height:1}
+    #cs-1m8-bg-reveal-pink .wm-n{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1}
     #cs-1m8-bg-reveal-pink .wm-arc{position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none}
     #cs-1m8-bg-reveal-pink .wm-letter,#cs-1m8-bg-reveal-pink .wm-n-wrap,#cs-1m8-bg-reveal-pink .wm-arc{transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .55s cubic-bezier(.45,.05,.18,1);will-change:transform,opacity;backface-visibility:hidden}
     #cs-1m8-bg-reveal-pink:not([data-stage="0"]) .wm-ive,#cs-1m8-bg-reveal-pink:not([data-stage="0"]) .wm-eceive{opacity:0;transform:scaleX(0)}
@@ -8863,7 +8863,7 @@ window.csVd4Reverse = function() {
   #cs-1m8-fuels .pf-R { right:2%; color:#c94d32; text-shadow:0 8px 50px rgba(201,77,50,0.45); }
   #cs-1m8-fuels .pf-ncell { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; width:clamp(180px,15vw,220px); height:clamp(180px,15vw,220px); flex-shrink:0; z-index:5; margin:0 -2%; }
   #cs-1m8-fuels .pf-ncell::before { content:''; position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle,rgba(255,250,240,0.95) 0%, rgba(243,234,216,0.55) 55%, rgba(243,234,216,0) 100%); box-shadow:inset 0 0 60px rgba(184,149,74,0.3), 0 0 80px rgba(184,149,74,0.25); z-index:-1; }
-  #cs-1m8-fuels .pf-n { font-family:'Playfair Display',serif; font-style:italic; font-weight:500; color:#b8954a; font-size:clamp(4rem,7vw,6rem); line-height:0.9; z-index:3; }
+  #cs-1m8-fuels .pf-n { font-family:'Playfair Display',serif; font-style:italic; font-weight:500; color:#1a1612; font-size:clamp(4rem,7vw,6rem); line-height:0.9; z-index:3; }
   #cs-1m8-fuels .pf-n-label { font-family:'Manrope',sans-serif; font-size:clamp(.62rem,.72vw,.78rem); font-weight:800; letter-spacing:.42em; text-transform:uppercase; color:#b8954a; text-align:center; line-height:1.3; margin-top:6px; z-index:3; }
   #cs-1m8-fuels .pf-n-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.15vw,1.15rem); font-weight:500; font-style:italic; color:#b8954a; line-height:1.3; text-align:center; margin-top:4px; z-index:3; }
   /* Bottom caption row — cs-1m8's left+right captions adapted for the broader galaxy width. */
@@ -8985,14 +8985,14 @@ window.csVd4Reverse = function() {
   #cs-1m6 .m6-letter-cell { text-align:center;position:relative }
   #cs-1m6 .m6-letter { font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:500;line-height:0.9;letter-spacing:-0.04em;display:block }
   #cs-1m6 .m6-letter.g { font-size:clamp(8rem,14vw,12rem);color:#5B8FD4 }
-  #cs-1m6 .m6-letter.n { font-size:clamp(6rem,10vw,9rem);font-style:italic;color:#b8954a;font-weight:400 }
+  #cs-1m6 .m6-letter.n { font-size:clamp(6rem,10vw,9rem);font-style:italic;color:#1a1612;font-weight:400 }
   #cs-1m6 .m6-letter.r { font-size:clamp(8rem,14vw,12rem);color:#c8462c }
   /* Arc sits over the italic n's VISUAL center, not geometric center. The italic slant (~12°) pushes the visible top of the n right of the bounding-box midpoint. Same +10px shift as cs-1 wordmark uses (Dave 2026-05-06 PM rule). */
   #cs-1m6 .m6-arc { position:absolute;top:8%;left:calc(50% + 10px);transform:translateX(-50%);width:clamp(70px,8vw,110px);height:30px;pointer-events:none }
   #cs-1m6 .m6-cap { margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:4px }
   #cs-1m6 .m6-cap-eye { font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.92rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;line-height:1.3 }
   #cs-1m6 .m6-cap-eye.g { color:#3a73b8 }
-  #cs-1m6 .m6-cap-eye.n { color:#b8954a }
+  #cs-1m6 .m6-cap-eye.n { color:#1a1612 }
   #cs-1m6 .m6-cap-eye.r { color:#c94d32 }
   #cs-1m6 .m6-cap-body { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.35vw,1.35rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3 }
   #cs-1m6 .m6-cap-body em { font-style:italic;font-weight:700 }
@@ -9062,7 +9062,7 @@ window.csVd4Reverse = function() {
   #cs-1m7 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
   /* [Dave 2026-05-09] padding bumped 12px ? 40px each side so the italic n has more breathing room from the 'e' of Give and the 'R' of Receive at large display sizes */
   #cs-1m7 .wm-n-wrap { display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transform-origin:center bottom;transition:transform 1.4s cubic-bezier(.22,1,.36,1) }
-  #cs-1m7 .wm-n { font-size:128px;font-weight:400;font-style:italic;color:#b8954a;padding:0;transform-origin:center bottom }
+  #cs-1m7 .wm-n { font-size:128px;font-weight:400;font-style:italic;color:#1a1612;padding:0;transform-origin:center bottom }
   #cs-1m7 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   #cs-1m7 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   /* Gold arc — absolutely positioned over the n's center, scales with n */
@@ -9138,7 +9138,7 @@ window.cs1m7Reverse = function() {
   .s2alt-stage:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 52%,rgba(184,149,74,.13),transparent 40%);pointer-events:none}
   .s2alt-wrap{position:relative;z-index:1;width:min(1260px,100%);margin:0 auto}.s2alt-kicker{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,22,18,.45);margin-bottom:18px}.s2alt-head{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.25rem,4.5vw,4.2rem);font-weight:850;line-height:1.04;letter-spacing:-.035em;color:#1a1612;max-width:1120px;margin:0 auto}.s2alt-head em{font-style:italic;color:#b8954a;font-weight:850}.s2alt-sub{font-family:'Playfair Display',serif;font-size:clamp(1.05rem,1.55vw,1.36rem);font-style:italic;font-weight:650;color:rgba(26,22,18,.68);line-height:1.4;max-width:900px;margin:22px auto 0}
   #cs-1s2a .s2a-visual{height:250px;margin:36px auto 0;position:relative;max-width:860px}#cs-1s2a .s2a-person{position:absolute;top:78px;width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:rgba(251,247,239,.78);border:1.4px solid rgba(184,149,74,.36);box-shadow:0 16px 40px rgba(26,22,18,.05)}#cs-1s2a .p1{left:54px;color:#5B8FD4}#cs-1s2a .p2{left:244px;color:#b8954a}#cs-1s2a .p3{right:244px;color:#49b4a0}#cs-1s2a .p4{right:54px;color:#c8462c}#cs-1s2a .s2a-person svg{width:42px;height:42px;stroke:currentColor;fill:none;stroke-width:1.7}#cs-1s2a .s2a-card{position:absolute;left:50%;top:26px;transform:translateX(-50%);width:280px;padding:20px 24px;border-radius:12px;background:linear-gradient(180deg,#fcf6e8,#f3ead8);border:1.5px solid rgba(184,149,74,.5);box-shadow:0 24px 62px rgba(184,149,74,.17);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.28rem;font-weight:850;color:#1a1612}.s2a-line{position:absolute;inset:0;pointer-events:none}.s2a-line path{fill:none;stroke:#b8954a;stroke-width:1.2;opacity:.56}
-  #cs-1s2b .s2b-grid{margin:42px auto 0;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px;align-items:center;max-width:1120px}.s2b-panel{min-height:172px;padding:24px 22px;border-radius:10px;background:rgba(251,247,239,.64);border:1.2px solid rgba(184,149,74,.30);box-shadow:0 14px 40px rgba(26,22,18,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.s2b-panel .label{font-family:'Manrope',sans-serif;font-size:.56rem;font-weight:900;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,22,18,.45)}.s2b-panel .big{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2vw,1.85rem);font-weight:850;color:#1a1612;line-height:1.1}.s2b-panel .big em{font-style:italic;color:#b8954a}.s2b-core{height:230px;display:grid;place-items:center;position:relative}.s2b-core:before,.s2b-core:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(184,149,74,.32)}.s2b-core:before{width:220px;height:220px;border-style:dashed}.s2b-core:after{width:138px;height:138px;background:rgba(184,149,74,.06)}.s2b-mark{position:relative;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.2rem;font-weight:900}.s2b-mark .g{color:#5B8FD4}.s2b-mark .n{font-style:italic;font-size:.7em}.s2b-mark .r{color:#c8462c}
+  #cs-1s2b .s2b-grid{margin:42px auto 0;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px;align-items:center;max-width:1120px}.s2b-panel{min-height:172px;padding:24px 22px;border-radius:10px;background:rgba(251,247,239,.64);border:1.2px solid rgba(184,149,74,.30);box-shadow:0 14px 40px rgba(26,22,18,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.s2b-panel .label{font-family:'Manrope',sans-serif;font-size:.56rem;font-weight:900;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,22,18,.45)}.s2b-panel .big{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2vw,1.85rem);font-weight:850;color:#1a1612;line-height:1.1}.s2b-panel .big em{font-style:italic;color:#1a1612}.s2b-core{height:230px;display:grid;place-items:center;position:relative}.s2b-core:before,.s2b-core:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(184,149,74,.32)}.s2b-core:before{width:220px;height:220px;border-style:dashed}.s2b-core:after{width:138px;height:138px;background:rgba(184,149,74,.06)}.s2b-mark{position:relative;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.2rem;font-weight:900}.s2b-mark .g{color:#5B8FD4}.s2b-mark .n{font-style:italic;font-size:.7em}.s2b-mark .r{color:#c8462c}
 </style>
 <div class="casey-slide ds-measure appendix-slide" id="cs-1s2a" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">The future of real-world communities</div>
@@ -9983,7 +9983,7 @@ window.cs1m7Reverse = function() {
       <div class="uw-row uw-gnr">
         <div class="uw-logo">
           <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;letter-spacing:-0.01em;line-height:1;display:inline-flex;align-items:baseline">
-            <span style="color:#5B8FD4;font-weight:600">Give</span><span style="color:#b8954a;font-style:italic;font-weight:400;padding:0 4px">n</span><span style="color:#c8462c;font-weight:600">Receive</span>
+            <span style="color:#5B8FD4;font-weight:600">Give</span><span style="color:#1a1612;font-style:italic;font-weight:400;padding:0 4px">n</span><span style="color:#c8462c;font-weight:600">Receive</span>
           </span>
         </div>
         <div class="uw-track"><div class="uw-bar" style="width:100%"></div></div>
@@ -10225,7 +10225,7 @@ window.cs1m7Reverse = function() {
   #cs-emotion-graph::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 73% 52%, rgba(184,149,74,.22) 0%, rgba(184,149,74,.06) 34%, transparent 62%), radial-gradient(ellipse at 18% 48%, rgba(91,143,212,.12) 0%, rgba(91,143,212,.03) 42%, transparent 68%); pointer-events:none; }
   #cs-emotion-graph .eg-eye { position:absolute; top:28px; left:48px; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#5B8FD4; z-index:6; }
   #cs-emotion-graph .eg-brand { position:absolute; top:26px; right:48px; z-index:6; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.08rem; font-weight:900; letter-spacing:.03em; }
-  #cs-emotion-graph .eg-brand .g { color:#5B8FD4; } #cs-emotion-graph .eg-brand .n { color:#b8954a; font-style:italic; padding:0 .03em; } #cs-emotion-graph .eg-brand .r { color:#c8462c; }
+  #cs-emotion-graph .eg-brand .g { color:#5B8FD4; } #cs-emotion-graph .eg-brand .n { color:#1a1612; font-style:italic; padding:0 .03em; } #cs-emotion-graph .eg-brand .r { color:#c8462c; }
   #cs-emotion-graph .eg-stage { position:absolute; inset:0; display:grid; grid-template-rows:auto 1fr auto; padding:78px 70px 54px; z-index:2; }
   #cs-emotion-graph .eg-title { align-self:start; justify-self:center; max-width:1320px; margin:0; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.65rem,4.75vw,5.1rem); line-height:.98; letter-spacing:-.032em; font-weight:900; color:#fbf7ef; text-shadow:0 14px 46px rgba(0,0,0,.32); }
   #cs-emotion-graph .eg-title em { color:#f2c56f; font-style:italic; font-weight:900; }
@@ -11428,7 +11428,7 @@ window.cs1m7Reverse = function() {
   #cs-bh2 .bh2-head em { font-style:italic; font-weight:600; color:#b8954a; }
   #cs-bh2 .bh2-head .gnr-mark { font-family:'Playfair Display',serif; font-style:normal; }
   #cs-bh2 .bh2-head .gnr-mark .g { color:#5B8FD4; font-weight:700; }
-  #cs-bh2 .bh2-head .gnr-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.06em; }
+  #cs-bh2 .bh2-head .gnr-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.06em; }
   #cs-bh2 .bh2-head .gnr-mark .r { color:#c8462c; font-weight:700; }
   #cs-bh2 .bh2-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(1.35rem,1.95vw,1.7rem); color:rgba(26,22,18,0.78); line-height:1.45; max-width:1380px; margin-top:8px; }
   #cs-bh2 .bh2-foot em { font-style:italic; color:#b8954a; font-weight:600; }
@@ -15268,7 +15268,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-gnr .gnr-eyebrow { display:flex; align-items:center; justify-content:space-between; margin-bottom: 14px; }
   #cs-gnr .gnr-eyebrow-left { display:flex; align-items:center; gap:10px; font-family:'Manrope',sans-serif; font-size:.55rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:rgba(26,22,18,0.55); }
   #cs-gnr .gnr-mark-sm { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; letter-spacing:0; }
-  #cs-gnr .gnr-mark-sm .g { color:#4d82c6; } #cs-gnr .gnr-mark-sm .n { color:#b8954a; font-style:italic; font-size:0.72em; padding:0 0.04em; } #cs-gnr .gnr-mark-sm .r { color:#c94d32; }
+  #cs-gnr .gnr-mark-sm .g { color:#4d82c6; } #cs-gnr .gnr-mark-sm .n { color:#1a1612; font-style:italic; font-size:0.72em; padding:0 0.04em; } #cs-gnr .gnr-mark-sm .r { color:#c94d32; }
   #cs-gnr .gnr-foryou { display:inline-flex; align-items:center; gap:7px; padding:4px 11px; background:linear-gradient(180deg,rgba(184,149,74,0.18),rgba(184,149,74,0.10)); border:1px solid rgba(184,149,74,0.55); border-radius:99px; font-family:'Manrope',sans-serif; font-size:.5rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:#8a6a2a; }
   #cs-gnr .gnr-foryou-dot { width:14px; height:14px; border-radius:50%; background:linear-gradient(135deg,#b8954a,#8a6a2a); border:1.5px solid #faf0d6; box-shadow:0 0 0 1px rgba(184,149,74,0.55); }
 
@@ -16639,7 +16639,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   <div style="position:relative;z-index:1;padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <!-- Promoted to slide headline: 'Honest feedback · about other players' is now the main header [Dave 2026-04-30 PM] -->
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:36px;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.018em">
-      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#b8954a;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> learns <em style="font-style:italic;font-weight:500;color:#b8954a">what we'd never say out loud</em>
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> learns <em style="font-style:italic;font-weight:500;color:#1a1612">what we'd never say out loud</em>
     </div>
 
     <!-- 3-column grid: LEFT card | ? | RIGHT card -->
@@ -16722,11 +16722,11 @@ window.csInvitationWordOfMouthAdvance = function() {
          Court utilization was an internal ops metric — court-fee revenue is the metric investors care about.
          Italic sub-line removed Dave 2026-05-06 PM v2 — hero stat stands alone. -->
     <div class="c11e-anim c11e-hero" style="margin:0 auto 36px;max-width:760px;padding:46px 56px;border-radius:18px;background:linear-gradient(180deg,rgba(184,149,74,0.14) 0%,rgba(184,149,74,0.04) 100%);border:1.5px solid rgba(184,149,74,0.50);text-align:center;box-shadow:0 0 44px rgba(184,149,74,0.20);position:relative">
-      <div style="font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:12px">Annual court fees powered by <span style="text-transform:none;white-space:nowrap"><span style="color:#5B8FD4">G</span><span style="color:#B8954A;font-style:italic">n</span><span style="color:#C8462C">R</span></span> invitations</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#1a1612;margin-bottom:12px">Annual court fees powered by <span style="text-transform:none;white-space:nowrap"><span style="color:#5B8FD4">G</span><span style="color:#1A1612;font-style:italic">n</span><span style="color:#C8462C">R</span></span> invitations</div>
       <div style="font-family:'Playfair Display',serif;font-size:clamp(4.5rem,9.5vw,7.2rem);font-weight:900;color:#b8954a;line-height:1;letter-spacing:-0.04em;text-shadow:0 0 38px rgba(184,149,74,0.30)">+$210K</div>
       <!-- [Dave 2026-05-14 PM v3] Volume context per Dave — 60 GnR courts/week is the proof of what's generating the $210K. Sub-stat lands directly below the hero number. -->
       <!-- [Dave 2026-05-14 PM v4] '60' recolored green -> ink, then ink -> gold per Dave's second 'no green text here please' (matches the surrounding GnR brand gold, removes any residual green-cache ambiguity). -->
-      <div style="margin-top:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1rem,1.4vw,1.25rem);font-weight:600;color:rgba(26,22,18,0.78);letter-spacing:-0.005em"><strong style="font-style:normal;font-weight:850;color:#b8954a;letter-spacing:0">60</strong> <span style="color:#5B8FD4">G</span><span style="text-transform:none;font-style:italic;font-weight:500;color:#b8954a">n</span><span style="color:#c8462c">R</span> courts / week</div>
+      <div style="margin-top:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1rem,1.4vw,1.25rem);font-weight:600;color:rgba(26,22,18,0.78);letter-spacing:-0.005em"><strong style="font-style:normal;font-weight:850;color:#1a1612;letter-spacing:0">60</strong> <span style="color:#5B8FD4">G</span><span style="text-transform:none;font-style:italic;font-weight:500;color:#1a1612">n</span><span style="color:#c8462c">R</span> courts / week</div>
     </div>
     <!-- Three quotes -->
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;max-width:1080px;margin:0 auto">
@@ -17015,7 +17015,7 @@ window.csInvitationWordOfMouthAdvance = function() {
     <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:18px 16px;border-radius:14px;background:rgba(184,149,74,0.06);border:1px solid rgba(184,149,74,0.32)">
       <div style="font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;margin-bottom:6px">Throughput</div>
       <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.2vw,2.9rem);font-weight:900;color:#b8954a;line-height:1;letter-spacing:-0.03em">60<span style="font-size:0.5em">/wk</span></div>
-      <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:600;color:rgba(26,22,18,0.72);margin-top:6px"><span style="color:#4d82c6">G</span><span style="color:#b8954a;font-style:italic;padding:0 0.04em">n</span><span style="color:#c94d32">R</span> invitation<br>courts</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:600;color:rgba(26,22,18,0.72);margin-top:6px"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;padding:0 0.04em">n</span><span style="color:#c94d32">R</span> invitation<br>courts</div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:18px 16px;border-radius:14px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.32)">
       <div style="font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#3a7da3;margin-bottom:6px">Signal Density</div>
@@ -17136,7 +17136,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   @keyframes aiSpin{to{transform:rotate(360deg)}}
   html[data-export="1"] #cs-16 .ai-orbit.o1{animation:none!important}
   #cs-16 .ai-mark{position:relative;width:136px;height:136px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fbf7ef 0%,#f3ead8 68%);border:2px solid rgba(184,149,74,.62);box-shadow:0 0 0 16px rgba(184,149,74,.06),0 28px 70px rgba(184,149,74,.18)}
-  #cs-16 .ai-word{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:48px;font-weight:900;line-height:1}.ai-word .g{color:#5B8FD4}.ai-word .n{font-size:.72em;font-style:italic;color:#b8954a}.ai-word .r{color:#c8462c}
+  #cs-16 .ai-word{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:48px;font-weight:900;line-height:1}.ai-word .g{color:#5B8FD4}.ai-word .n{font-size:.72em;font-style:italic;color:#1a1612}.ai-word .r{color:#c8462c}
   #cs-16 .ai-core-label{position:absolute;bottom:87px;left:0;right:0;font-family:'Manrope',sans-serif;font-size:.56rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:#b8954a}
   #cs-16 .ai-lines{position:absolute;inset:0;pointer-events:none;z-index:0}
   /* Data-flow animation: small dash segment travels along each connector path
@@ -17234,7 +17234,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-16old .o16-orb::after { inset:18px;border-style:dotted;opacity:0.55 }
   #cs-16old .o16-orb-inner { position:relative;width:62%;aspect-ratio:1/1;border-radius:50%;border:1.4px solid rgba(184,149,74,0.55);background:radial-gradient(circle, rgba(255,250,240,0.85) 30%, rgba(243,234,216,0.4) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 0 0 4px rgba(184,149,74,0.06), 0 8px 28px rgba(184,149,74,0.18) }
   #cs-16old .o16-orb-mark { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.4rem;font-weight:800;line-height:1;letter-spacing:-0.02em }
-  #cs-16old .o16-orb-mark .g { color:#5B8FD4 } #cs-16old .o16-orb-mark .n { color:#b8954a;font-style:italic;font-weight:500;font-size:0.78em } #cs-16old .o16-orb-mark .r { color:#c8462c }
+  #cs-16old .o16-orb-mark .g { color:#5B8FD4 } #cs-16old .o16-orb-mark .n { color:#1a1612;font-style:italic;font-weight:500;font-size:0.78em } #cs-16old .o16-orb-mark .r { color:#c8462c }
   #cs-16old .o16-orb-sub { font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a }
   /* Compass cross over orb */
   #cs-16old .o16-cross { position:absolute;inset:0;pointer-events:none;color:rgba(184,149,74,0.55) }
@@ -17411,7 +17411,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-funnel .cf-head em { font-style:italic; font-weight:850; color:#b8954a; }
   #cs-funnel .cf-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.3vw,1.2rem); font-style:italic; font-weight:500; color:rgba(26,22,18,0.7); max-width:1000px; }
   #cs-funnel .cf-sub .gnr-mark .g { color:#5B8FD4; font-weight:850; font-style:normal; }
-  #cs-funnel .cf-sub .gnr-mark .n { color:#b8954a; font-style:italic; font-weight:500; font-size:.86em; padding:0 .04em; }
+  #cs-funnel .cf-sub .gnr-mark .n { color:#1a1612; font-style:italic; font-weight:500; font-size:.86em; padding:0 .04em; }
   #cs-funnel .cf-sub .gnr-mark .r { color:#c8462c; font-weight:850; font-style:normal; }
   #cs-funnel .cf-canvas { width:min(1320px,96%); margin:6px auto 0; }
   #cs-funnel .cf-canvas svg { width:100%; height:auto; display:block; max-height:64vh; }
@@ -17501,7 +17501,7 @@ window.csInvitationWordOfMouthAdvance = function() {
         <!-- ---- STAGE 2 — GnR INTELLIGENCE (middle, narrower) ---- -->
         <g class="cf-stage-shape" data-i="2">
           <polygon points="250,280 1150,280 970,480 430,480" fill="url(#cfMid)" stroke="#b8954a" stroke-width="2" stroke-linejoin="round"/>
-          <text x="700" y="338" text-anchor="middle" font-family="Manrope,sans-serif" font-size="20" font-weight="900" letter-spacing="5.4" fill="#b8954a">G<tspan font-style="italic" font-size=".82em">n</tspan>R INTELLIGENCE</text>
+          <text x="700" y="338" text-anchor="middle" font-family="Manrope,sans-serif" font-size="20" font-weight="900" letter-spacing="5.4" fill="#1a1612">G<tspan font-style="italic" font-size=".82em">n</tspan>R INTELLIGENCE</text>
           <text x="700" y="368" text-anchor="middle" font-family="Fraunces,Playfair Display,serif" font-size="16" font-style="italic" font-weight="600" fill="rgba(26,22,18,0.78)">Qualifies every signal into <tspan font-weight="800" fill="#b8954a">human value</tspan></text>
           <!-- Three pillars of intelligence -->
           <g font-family="Manrope,sans-serif" font-size="12" font-weight="800" letter-spacing="1" fill="#1a1612">
@@ -18369,7 +18369,7 @@ window.csInvitationWordOfMouthAdvance = function() {
                     <circle cx="20" cy="26" r="1.4"/>
                   </g>
                   <!-- G·n·R brand wordmark at center -->
-                  <text x="34" y="51" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="19" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic" font-weight="500" dx="-0.5">n</tspan><tspan fill="#c8462c" dx="-0.5">R</tspan></text>
+                  <text x="34" y="51" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="19" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#1a1612" font-style="italic" font-weight="500" dx="-0.5">n</tspan><tspan fill="#c8462c" dx="-0.5">R</tspan></text>
                   <!-- Growth arc rising from upper-right of ball into mission node top-right -->
                   <path d="M 53 28 Q 64 16 73 9" stroke="#b8954a" stroke-width="2.0" fill="none" stroke-linecap="round"/>
                   <!-- Arrowhead -->
@@ -18396,7 +18396,7 @@ window.csInvitationWordOfMouthAdvance = function() {
                     <circle cx="20" cy="26" r="1.4"/>
                   </g>
                   <!-- G·n·R brand wordmark at center -->
-                  <text x="34" y="51" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="19" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic" font-weight="500" dx="-0.5">n</tspan><tspan fill="#c8462c" dx="-0.5">R</tspan></text>
+                  <text x="34" y="51" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="19" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#1a1612" font-style="italic" font-weight="500" dx="-0.5">n</tspan><tspan fill="#c8462c" dx="-0.5">R</tspan></text>
                   <!-- Growth arc rising from upper-right of ball into mission node top-right -->
                   <path d="M 53 28 Q 64 16 73 9" stroke="#b8954a" stroke-width="2.0" fill="none" stroke-linecap="round"/>
                   <!-- Arrowhead -->
@@ -18409,7 +18409,7 @@ window.csInvitationWordOfMouthAdvance = function() {
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">03</div>
               <!-- [Dave 2026-05-18 LATEST v4] Re-ordered per Dave: "GnR Growth & Mission" ? "GnR Mission & Growth". Mission lands first (the why), Growth second (the consequence). -->
-              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Mission &amp; Growth</div>
+              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#1a1612;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Mission &amp; Growth</div>
               <div class="v5-body"><em>We&rsquo;re wired to give &amp; receive.</em></div>
               <div class="v5-meta">Live it &middot; Face of it &middot; Club owner sales<br>Network &amp; podcasts &middot; Silly Pickleball</div>
             </div>
@@ -18541,7 +18541,7 @@ window.csInvitationWordOfMouthAdvance = function() {
               </div>
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">03</div>
-              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Growth &amp; Mission</div>
+              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#1a1612;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Growth &amp; Mission</div>
               <div class="v5-body"><em>We&rsquo;re wired to give first.</em></div>
               <div class="v5-meta">Live it &middot; Face of it &middot; Club owner sales<br>Network &amp; podcasts &middot; 4D play-style</div>
             </div>
@@ -19426,7 +19426,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-givefirst-brand .gfb-credit { display:flex; align-items:center; gap:18px; }
   #cs-givefirst-brand .gfb-mark { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.0rem,2.8vw,2.5rem); font-weight:850; line-height:1; letter-spacing:-0.02em; display:inline-flex; align-items:baseline; }
   #cs-givefirst-brand .gfb-mark .g { color:#5B8FD4; }
-  #cs-givefirst-brand .gfb-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.06em; }
+  #cs-givefirst-brand .gfb-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.06em; }
   #cs-givefirst-brand .gfb-mark .r { color:#c8462c; }
   #cs-givefirst-brand .gfb-tag { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:#a87a35; padding-left:18px; border-left:1.5px solid rgba(184,149,74,0.45); line-height:1.4; }
   /* Entry stagger */
@@ -19944,7 +19944,7 @@ window.csInvitationWordOfMouthAdvance = function() {
 <div class="casey-slide ds-focus" id="cs-19">
 <section style="position:relative;min-height:100%;width:100%">
 <!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'change Transform your community / GnR handles the complexity of people ? GnR handles the complexity of people. And make sure that text is same exact font as the other top left text on all of the other slides.' Returns to the standard Manrope eyebrow voice used across the deck — small-caps, .22em tracking, brand red. "GnR" kept inline brand-colored so the wordmark still pops without breaking the uppercase eyebrow voice. -->
-<div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10"><span style="color:#5B8FD4">G</span><span style="color:#b8954a">n</span><span style="color:#c8462c">R</span> handles the complexity of people</div>
+<div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10"><span style="color:#5B8FD4">G</span><span style="color:#1a1612">n</span><span style="color:#c8462c">R</span> handles the complexity of people</div>
 <div class="inner" style="padding-top:84px;text-align:center;max-width:1180px">
   <!-- Headline simplified 2026-05-07 PM per Dave: '3× your community' is the umbrella claim. Bars below ($70K ? $155K ? $300K profit ladder, 33% ? 40% ? 48% margin) tell the financial story underneath. Honest economics retained from earlier audit. -->
   <!-- [Dave 2026-05-18 LATEST] Headline retitled per Dave 'change "3× community value" to "~3× your community's value"'. Adds the "~" hedge (honest economics signal — not a fixed multiple, an approximation) and personalizes the noun phrase ("your community's"). -->
@@ -20790,7 +20790,7 @@ window.csInvitationWordOfMouthAdvance = function() {
               <div class="m3-icon" style="background:rgba(200,70,44,0.10);border:1.5px solid rgba(200,70,44,0.45)">
                 <svg width="24" height="24" viewBox="0 0 34 34" fill="none" stroke="#c8462c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="22" height="22" rx="2"/><line x1="6" y1="13" x2="28" y2="13"/><line x1="13" y1="13" x2="13" y2="28"/><line x1="21" y1="13" x2="21" y2="28"/><line x1="6" y1="20" x2="28" y2="20"/></svg>
               </div>
-              <div class="m3-card-text" style="color:#c8462c;font-style:italic;font-weight:600">Desperately needs <span style="color:#5B8FD4;font-style:normal;font-weight:900">G</span><span style="color:#b8954a;font-style:italic;font-weight:600">n</span><span style="color:#c8462c;font-style:normal;font-weight:900">R</span> paradigm.</div>
+              <div class="m3-card-text" style="color:#c8462c;font-style:italic;font-weight:600">Desperately needs <span style="color:#5B8FD4;font-style:normal;font-weight:900">G</span><span style="color:#1a1612;font-style:italic;font-weight:600">n</span><span style="color:#c8462c;font-style:normal;font-weight:900">R</span> paradigm.</div>
               <div class="m3-flip-hint">&#x21BB; flip</div>
             </div>
             <div class="m3-card-back" style="background:linear-gradient(180deg,rgba(200,70,44,0.08) 0%,rgba(200,70,44,0.03) 100%);border:1px solid rgba(200,70,44,0.36)">
@@ -22140,7 +22140,7 @@ window.csBrandV8Reverse = function() {
   #cs-genbrand .gb-card.gb-gnr .gb-decade { color:#a87a35; }
   #cs-genbrand .gb-card.gb-gnr .gb-name { font-style:normal; font-weight:850; font-size:clamp(1.55rem, 1.95vw, 1.90rem); }
   #cs-genbrand .gb-card.gb-gnr .gb-name .g { color:#5B8FD4; }
-  #cs-genbrand .gb-card.gb-gnr .gb-name .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.03em; }
+  #cs-genbrand .gb-card.gb-gnr .gb-name .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.03em; }
   #cs-genbrand .gb-card.gb-gnr .gb-name .r { color:#c8462c; }
   #cs-genbrand .gb-card.gb-gnr .gb-truth { color:#7d5a1f; font-weight:600; }
   #cs-genbrand .gb-card.gb-gnr::after { content:"NOW"; position:absolute; top:-9px; right:10px; font-family:'Manrope',sans-serif; font-size:.50rem; font-weight:900; letter-spacing:.30em; color:#fbf7ef; background:#c8462c; padding:3px 9px; border-radius:99px; box-shadow:0 4px 10px rgba(200,70,44,0.32); }
@@ -22269,7 +22269,7 @@ window.csBrandV8Reverse = function() {
           <span class="gb-ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12 H15"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg></span>
           Brand mark
         </div>
-        <div class="gb-pillar-head"><span style="color:#5B8FD4;font-style:normal;font-weight:850">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .04em">n</span><span style="color:#c8462c;font-style:normal;font-weight:850">R</span> — the only mark that means &ldquo;I open first.&rdquo;</div>
+        <div class="gb-pillar-head"><span style="color:#5B8FD4;font-style:normal;font-weight:850">G</span><span style="color:#1a1612;font-style:italic;font-weight:500;padding:0 .04em">n</span><span style="color:#c8462c;font-style:normal;font-weight:850">R</span> — the only mark that means &ldquo;I open first.&rdquo;</div>
         <div class="gb-pillar-body">An <em>iconic</em> typographic mark built into every invite, every match, every ritual. The arc between G and R is the brand promise: <em>your give comes back to you.</em></div>
       </div>
 
@@ -22319,7 +22319,7 @@ window.csBrandV8Reverse = function() {
   #cs-brand-att1 .b1-rule { width:64px; height:1px; background:linear-gradient(90deg, rgba(184,149,74,0) 0%, #b8954a 50%, rgba(184,149,74,0) 100%); }
   #cs-brand-att1 .b1-wordmark { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.55rem; font-weight:850; letter-spacing:-0.012em; }
   #cs-brand-att1 .b1-wordmark .g { color:#5B8FD4; }
-  #cs-brand-att1 .b1-wordmark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
+  #cs-brand-att1 .b1-wordmark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; }
   #cs-brand-att1 .b1-wordmark .r { color:#c8462c; }
   #cs-brand-att1 .b1-footer { font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:700; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.42); margin-top:14px; }
   #cs-brand-att1 .b1-eye, #cs-brand-att1 .b1-q, #cs-brand-att1 .b1-mark, #cs-brand-att1 .b1-footer { opacity:0; transform:translateY(10px); transition:opacity 0.85s cubic-bezier(.22,1,.36,1), transform 0.85s cubic-bezier(.22,1,.36,1); }
@@ -22751,7 +22751,7 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice .vc-gnr-line { display:flex; align-items:baseline; gap:8px; min-width:0; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:850; letter-spacing:.20em; text-transform:uppercase; color:rgba(251,247,239,0.56); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   #cs-value-choice .vc-gnr-mark { display:inline-flex; align-items:baseline; flex:0 0 auto; font-family:'Playfair Display',Georgia,serif; font-size:.82rem; font-weight:700; letter-spacing:-0.015em; line-height:1; text-transform:none; }
   #cs-value-choice .vc-gnr-mark .g { color:#5B8FD4; }
-  #cs-value-choice .vc-gnr-mark .n { color:#b8954a; font-style:italic; padding:0 .04em; font-weight:500; }
+  #cs-value-choice .vc-gnr-mark .n { color:#1a1612; font-style:italic; padding:0 .04em; font-weight:500; }
   #cs-value-choice .vc-gnr-mark .r { color:#c8462c; }
   #cs-value-choice .vc-dollars { font-size:.64rem; font-weight:950; letter-spacing:.16em; text-transform:uppercase; color:#b8954a; text-align:right; white-space:nowrap; }
   #cs-value-choice .vc-icon { width:46px; height:46px; border-radius:7px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; flex:0 0 auto; font-family:'Manrope',sans-serif; font-weight:950; letter-spacing:0; color:#fbf7ef; background:rgba(251,247,239,0.12); box-shadow:inset 0 0 0 1px rgba(251,247,239,0.14); }
@@ -23237,7 +23237,7 @@ window.csBrandV8Reverse = function() {
   /* HERO wordmark — the brand mark IS the slide */
   #cs-brand-mono .bm-mark { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(8rem,15vw,15.5rem); font-weight:850; line-height:0.92; letter-spacing:-0.04em; display:flex; align-items:baseline; gap:0; margin:0; }
   #cs-brand-mono .bm-mark .g { color:#5B8FD4; text-shadow:0 8px 28px rgba(91,143,212,0.20); }
-  #cs-brand-mono .bm-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 8px 28px rgba(184,149,74,0.20); font-size:0.82em; transform:translateY(-0.06em); }
+  #cs-brand-mono .bm-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 8px 28px rgba(184,149,74,0.20); font-size:0.82em; transform:translateY(-0.06em); }
   #cs-brand-mono .bm-mark .r { color:#c8462c; text-shadow:0 8px 28px rgba(200,70,44,0.20); }
   /* Tagline beneath the wordmark */
   #cs-brand-mono .bm-tag { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,2.85vw,2.55rem); font-weight:600; font-style:italic; line-height:1.10; letter-spacing:-0.018em; color:#1a1612; text-align:center; margin:0; max-width:1280px; }
@@ -23281,7 +23281,7 @@ window.csBrandV8Reverse = function() {
   .hct-system-slide .hcts-shade { position:absolute; inset:0; z-index:2; pointer-events:none; background:radial-gradient(ellipse at 50% 46%, rgba(251,247,239,0.22) 0%, rgba(251,247,239,0.02) 46%, rgba(26,22,18,0.24) 100%); }
   .hct-system-slide .hcts-eye { position:absolute; top:28px; left:48px; z-index:8; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
   .hct-system-slide .hcts-mark { position:absolute; top:24px; right:42px; z-index:8; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.08rem; font-weight:850; letter-spacing:-.04em; }
-  .hct-system-slide .hcts-mark .g { color:#5B8FD4; } .hct-system-slide .hcts-mark .n { color:#b8954a; font-style:italic; font-weight:600; } .hct-system-slide .hcts-mark .r { color:#c8462c; }
+  .hct-system-slide .hcts-mark .g { color:#5B8FD4; } .hct-system-slide .hcts-mark .n { color:#1a1612; font-style:italic; font-weight:600; } .hct-system-slide .hcts-mark .r { color:#c8462c; }
   .hct-system-slide .hcts-stage { position:absolute; inset:0; z-index:4; }
   .hct-system-slide .hcts-opening { position:absolute; left:50%; top:45%; transform:translate(-50%,-50%); width:min(1240px,86vw); text-align:center; opacity:1; transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1); }
   .hct-system-slide .hcts-opening h1 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4rem,7.2vw,7rem); line-height:.98; font-weight:880; letter-spacing:-.045em; color:#1a1612; text-shadow:0 1px 6px rgba(251,247,239,.72),0 18px 60px rgba(251,247,239,.45); }
@@ -23551,7 +23551,7 @@ window.csBrandV8Reverse = function() {
     position:relative; z-index:2;
   }
   #cs-brand-codex .bc-env-mark .g { color:#5B8FD4; }
-  #cs-brand-codex .bc-env-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
+  #cs-brand-codex .bc-env-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; }
   #cs-brand-codex .bc-env-mark .r { color:#c8462c; }
   #cs-brand-codex .bc-env-title {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
@@ -23817,7 +23817,7 @@ window.csBrandV8Reverse = function() {
     margin:0 0 6px; display:inline-flex; align-items:baseline; justify-content:center;
   }
   #cs-1m8-envelopes .ev-wordmark .g { color:#5B8FD4; text-shadow:0 6px 24px rgba(91,143,212,0.20); }
-  #cs-1m8-envelopes .ev-wordmark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 6px 24px rgba(184,149,74,0.20); }
+  #cs-1m8-envelopes .ev-wordmark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 6px 24px rgba(184,149,74,0.20); }
   #cs-1m8-envelopes .ev-wordmark .r { color:#c8462c; text-shadow:0 6px 24px rgba(200,70,44,0.20); }
   #cs-1m8-envelopes .ev-wordmark-label {
     font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900;
@@ -23987,7 +23987,7 @@ window.csBrandV8Reverse = function() {
     margin:0; display:inline-flex; align-items:baseline; justify-content:center;
   }
   .tt-slide .tt-mark .g { color:#5B8FD4; text-shadow:0 6px 24px rgba(91,143,212,0.20); }
-  .tt-slide .tt-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 6px 24px rgba(184,149,74,0.20); }
+  .tt-slide .tt-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 6px 24px rgba(184,149,74,0.20); }
   .tt-slide .tt-mark .r { color:#c8462c; text-shadow:0 6px 24px rgba(200,70,44,0.20); }
   /* Left "Social media…" tablet — same recipe as cs-1m8-codexmerge. */
   .tt-slide .tt-left-quote {
@@ -24169,7 +24169,7 @@ window.csBrandV8Reverse = function() {
     font-size:1.35em; vertical-align:-0.04em; padding:0 0.16em;
   }
   #cs-1m8-title-C .tt-eyebrow-mark .g { color:#5B8FD4; }
-  #cs-1m8-title-C .tt-eyebrow-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
+  #cs-1m8-title-C .tt-eyebrow-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; }
   #cs-1m8-title-C .tt-eyebrow-mark .r { color:#c8462c; }
 </style>
 <div class="casey-slide ds-focus tt-slide trash-slide" id="cs-1m8-title-A" data-stage="0" onclick="if(window.csM8TitleAAdvance) window.csM8TitleAAdvance(); event.stopPropagation()" style="display:none;cursor:pointer">
@@ -24339,7 +24339,7 @@ window.csBrandV8Reverse = function() {
   :is(#cs-ask,#cs-ask-coasts) .ask-headline em { font-style:italic; font-weight:850; color:#b8954a; }
   :is(#cs-ask,#cs-ask-coasts) .ask-gnr { font-style:normal; font-weight:850; padding:0 0.04em; }
   :is(#cs-ask,#cs-ask-coasts) .ask-gnr .g { color:#5B8FD4; }
-  :is(#cs-ask,#cs-ask-coasts) .ask-gnr .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
+  :is(#cs-ask,#cs-ask-coasts) .ask-gnr .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; }
   :is(#cs-ask,#cs-ask-coasts) .ask-gnr .r { color:#c8462c; }
   :is(#cs-ask,#cs-ask-coasts) .ask-sub {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
@@ -24857,7 +24857,7 @@ window.csBrandV8Reverse = function() {
   /* [Dave 2026-05-14 PM v4 — JAW-DROPPING UPGRADE] Behavior dashes now have a small iconic glyph BEFORE each line — adds visual texture + recognition for each behavior. Icons are small and quiet so they don't compete with the typography. */
   #cs-samecourt .sc-item{display:flex;align-items:center;gap:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(1.45rem,2.3vw,2.05rem);line-height:1.32;color:#1a1612;letter-spacing:-0.012em}
   #cs-samecourt .sc-brand-words .give{color:#5B8FD4}
-  #cs-samecourt .sc-brand-words .n{color:#b8954a;font-style:italic;font-weight:800}
+  #cs-samecourt .sc-brand-words .n{color:#1a1612;font-style:italic;font-weight:800}
   #cs-samecourt .sc-brand-words .receive{color:#c8462c}
   #cs-samecourt .sc-item .dash{display:inline-block;flex-shrink:0;font-weight:300}
   #cs-samecourt .sc-item-icon{flex-shrink:0;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.78}
@@ -25726,7 +25726,7 @@ window.csBrandV8Reverse = function() {
   #cs-samecourt-pyramid-white2 .wedge-rule:after{content:"";position:absolute;left:50%;top:50%;width:12px;height:12px;border-radius:50%;background:#8f231e;transform:translate(-50%,-50%)}
   #cs-samecourt-pyramid-white2 .wedge-pyramid{position:absolute;inset:0;z-index:1;filter:saturate(1.04) contrast(1.03)}
   #cs-samecourt-pyramid-white2 .wedge-pyramid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
-  #cs-samecourt-pyramid-white2 .wedge-logo{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(251,247,239,.82);border:3px solid rgba(26,22,18,.70);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.15rem;line-height:1;box-shadow:0 12px 28px rgba(26,22,18,.18);z-index:4}#cs-samecourt-pyramid-white2 .wedge-logo .g{color:#5B8FD4}#cs-samecourt-pyramid-white2 .wedge-logo .n{color:#b8954a;font-style:italic;font-size:.82em}#cs-samecourt-pyramid-white2 .wedge-logo .r{color:#c8462c}
+  #cs-samecourt-pyramid-white2 .wedge-logo{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(251,247,239,.82);border:3px solid rgba(26,22,18,.70);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.15rem;line-height:1;box-shadow:0 12px 28px rgba(26,22,18,.18);z-index:4}#cs-samecourt-pyramid-white2 .wedge-logo .g{color:#5B8FD4}#cs-samecourt-pyramid-white2 .wedge-logo .n{color:#1a1612;font-style:italic;font-size:.82em}#cs-samecourt-pyramid-white2 .wedge-logo .r{color:#c8462c}
   #cs-samecourt-pyramid-white2 .dupr{position:absolute;z-index:4;font-family:'Manrope',sans-serif;font-weight:900;color:#0f4f86;text-align:center;line-height:1.06;font-size:1.22rem;text-shadow:0 1px 0 rgba(251,247,239,.78)}
   #cs-samecourt-pyramid-white2 .dupr b{display:block;font-size:1.36rem}#cs-samecourt-pyramid-white2 .dupr.d1{left:762px;top:112px}#cs-samecourt-pyramid-white2 .dupr.d2{left:896px;top:82px}#cs-samecourt-pyramid-white2 .dupr.d3{left:1042px;top:82px}#cs-samecourt-pyramid-white2 .dupr.d4{left:1180px;top:112px}
   #cs-samecourt-pyramid-white2 .wedge-flow{position:absolute;z-index:4;width:32px;height:144px;top:382px}#cs-samecourt-pyramid-white2 .wedge-flow.left{left:725px}#cs-samecourt-pyramid-white2 .wedge-flow.right{left:1168px}#cs-samecourt-pyramid-white2 .wedge-flow:before,#cs-samecourt-pyramid-white2 .wedge-flow:after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:8px;height:110px}#cs-samecourt-pyramid-white2 .wedge-flow:before{top:0;background:#0f62a3}#cs-samecourt-pyramid-white2 .wedge-flow:after{bottom:0;background:#9c241f}#cs-samecourt-pyramid-white2 .wedge-flow i:before,#cs-samecourt-pyramid-white2 .wedge-flow i:after{content:"";position:absolute;left:50%;transform:translateX(-50%);border-left:16px solid transparent;border-right:16px solid transparent}#cs-samecourt-pyramid-white2 .wedge-flow i:before{top:-8px;border-bottom:28px solid #0f62a3}#cs-samecourt-pyramid-white2 .wedge-flow i:after{bottom:-8px;border-top:28px solid #9c241f}
@@ -26255,7 +26255,7 @@ window.csProgrammableInvitationsReverse = function() {
   .refalt-slide .refalt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;display:block}
   .refalt-slide .refalt-eyebrow{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10}
   .refalt-slide .refalt-brand{position:absolute;right:54px;bottom:38px;z-index:8;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:850}
-  .refalt-slide .refalt-brand .rb-g{color:#5B8FD4}.refalt-slide .refalt-brand .rb-n{color:#b8954a;font-style:italic;font-weight:650}.refalt-slide .refalt-brand .rb-r{color:#c8462c}
+  .refalt-slide .refalt-brand .rb-g{color:#5B8FD4}.refalt-slide .refalt-brand .rb-n{color:#1a1612;font-style:italic;font-weight:650}.refalt-slide .refalt-brand .rb-r{color:#c8462c}
   .refalt-slide .refalt-wash{position:absolute;inset:0;background:radial-gradient(circle at 72% 36%,rgba(184,149,74,.13),rgba(184,149,74,0) 30%),radial-gradient(circle at 18% 75%,rgba(91,143,212,.10),rgba(91,143,212,0) 32%);z-index:0}
   .refalt-slide .refalt-stage{position:absolute;inset:0;z-index:1;padding:92px 84px 70px;box-sizing:border-box}
   .refalt-slide .refalt-kicker{font-family:'Manrope',sans-serif;font-size:.74rem;font-weight:900;text-transform:uppercase;color:#b8954a;margin:0 0 16px}
@@ -26587,7 +26587,7 @@ window.csProgrammableInvitationsReverse = function() {
   .tmref-slide{position:absolute;inset:0;color:#1a1612}
   .tmref-slide .tmref-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;display:block}
   .tmref-slide .tmref-brand{position:absolute;right:54px;bottom:38px;z-index:8;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:850}
-  .tmref-slide .tmref-brand .tb-g{color:#5B8FD4}.tmref-slide .tmref-brand .tb-n{color:#b8954a;font-style:italic;font-weight:650}.tmref-slide .tmref-brand .tb-r{color:#c8462c}
+  .tmref-slide .tmref-brand .tb-g{color:#5B8FD4}.tmref-slide .tmref-brand .tb-n{color:#1a1612;font-style:italic;font-weight:650}.tmref-slide .tmref-brand .tb-r{color:#c8462c}
   .tmref-slide .tmref-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.82) 42%,rgba(251,247,239,.58) 72%,rgba(251,247,239,.76) 100%)}
   .tmref-slide .tmref-stage{position:absolute;inset:0;z-index:2;padding:86px 78px 64px;box-sizing:border-box}
   .tmref-slide .tmref-kicker{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;letter-spacing:.19em;text-transform:uppercase;color:#b8954a;margin:0 0 14px}
@@ -27823,7 +27823,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-incentive .gni-eye{font-family:'Manrope',sans-serif;font-size:clamp(.72rem,.95vw,.92rem);font-weight:800;letter-spacing:.44em;text-transform:uppercase;color:#b8954a;margin-bottom:34px}
   #cs-incentive .gni-mark{font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:850;font-size:clamp(3.6rem,7.2vw,6.6rem);line-height:1;letter-spacing:-0.03em;color:#1a1612;margin-bottom:22px}
   #cs-incentive .gni-mark .g{color:#5B8FD4}
-  #cs-incentive .gni-mark .n{font-style:italic;font-weight:500;color:#b8954a;font-size:0.78em;padding:0 0.04em}
+  #cs-incentive .gni-mark .n{font-style:italic;font-weight:500;color:#1a1612;font-size:0.78em;padding:0 0.04em}
   #cs-incentive .gni-mark .r{color:#c8462c}
   #cs-incentive .gni-mark .quot{color:#1a1612;font-style:italic;font-weight:500}
   #cs-incentive .gni-incentive{font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.04;letter-spacing:-0.02em;color:#1a1612;margin-bottom:38px}
@@ -28333,7 +28333,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-brand-V19 .v19-claim { display:grid;grid-template-columns:auto 1fr;gap:18px 36px;align-items:baseline;font-family:'Fraunces','Playfair Display',serif;font-size:clamp(1.7rem,2.4vw,2.4rem);font-weight:700;color:#1a1612;line-height:1.3;max-width:1180px; }
   #cs-brand-V19 .v19-claim .name { font-family:'Playfair Display',serif;font-size:clamp(2.2rem,3.2vw,3.2rem);font-weight:900;color:#1a1612;letter-spacing:-0.02em;text-align:right; }
   #cs-brand-V19 .v19-claim .name .g { color:#4d82c6; }
-  #cs-brand-V19 .v19-claim .name .n { color:#b8954a;font-style:italic;font-weight:500;font-size:.7em; }
+  #cs-brand-V19 .v19-claim .name .n { color:#1a1612;font-style:italic;font-weight:500;font-size:.7em; }
   #cs-brand-V19 .v19-claim .name .r { color:#c94d32; }
   #cs-brand-V19 .v19-claim em { font-style:italic;font-weight:600;color:#b8954a; }
   #cs-brand-V19 .v19-tag { font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.92vw,.92rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;display:flex;align-items:center;gap:18px; }
@@ -28354,7 +28354,7 @@ window.csProgrammableInvitationsReverse = function() {
   /* Wordmark restrained — signature size, not hero size */
   #cs-brand-V20 .v20-mark { display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(3rem,5vw,4.5rem);line-height:0.9;letter-spacing:-0.04em; }
   #cs-brand-V20 .v20-mark .g { color:#4d82c6; }
-  #cs-brand-V20 .v20-mark .n { color:#b8954a;font-style:italic;font-weight:500;font-size:.75em;padding:0 4px; }
+  #cs-brand-V20 .v20-mark .n { color:#1a1612;font-style:italic;font-weight:500;font-size:.75em;padding:0 4px; }
   #cs-brand-V20 .v20-mark .r { color:#c94d32; }
   #cs-brand-V20 .v20-label { font-family:'Manrope',sans-serif;font-size:clamp(.65rem,.78vw,.82rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3; }
 </style>
@@ -28374,7 +28374,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-brand-A .ba-eye { font-family:'Manrope',sans-serif;font-size:0.85rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:#b8954a; }
   #cs-brand-A .ba-mark { font-family:'Playfair Display',serif;font-size:clamp(8rem,16vw,15rem);font-weight:900;line-height:0.95;letter-spacing:-0.04em;display:flex;align-items:center;justify-content:center;gap:18px; }
   #cs-brand-A .ba-mark .g { color:#4d82c6; }
-  #cs-brand-A .ba-mark .n { color:#b8954a;font-style:italic;font-weight:500;font-size:0.62em; }
+  #cs-brand-A .ba-mark .n { color:#1a1612;font-style:italic;font-weight:500;font-size:0.62em; }
   #cs-brand-A .ba-mark .r { color:#c94d32; }
   #cs-brand-A .ba-decode { display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:36px;width:min(1380px,96%);align-items:start;margin-top:8px; }
   #cs-brand-A .ba-decode .col { text-align:center;padding:18px 14px; }
@@ -28416,7 +28416,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-brand-B .bb-divider .ln { width:64px;height:1px;background:rgba(26,22,18,0.35); }
   #cs-brand-B .bb-mark { font-family:'Playfair Display',serif;font-size:clamp(7rem,13vw,12rem);font-weight:900;letter-spacing:-0.04em;display:flex;align-items:center;justify-content:center;gap:14px;line-height:0.95; }
   #cs-brand-B .bb-mark .g { color:#4d82c6; }
-  #cs-brand-B .bb-mark .n { color:#b8954a;font-style:italic;font-weight:500;font-size:0.62em;position:relative; }
+  #cs-brand-B .bb-mark .n { color:#1a1612;font-style:italic;font-weight:500;font-size:0.62em;position:relative; }
   #cs-brand-B .bb-mark .r { color:#c94d32; }
   #cs-brand-B .bb-key { font-family:'Manrope',sans-serif;font-size:1.05rem;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:#1a1612;margin-top:-6px; }
   #cs-brand-B .bb-key span { color:rgba(26,22,18,0.55); }
@@ -28457,7 +28457,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-brand-C .bc-eq .glyph { font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,4.6rem);font-weight:900;color:rgba(184,149,74,0.7);letter-spacing:-0.04em; }
   #cs-brand-C .bc-eq .term-mid .mark { font-family:'Playfair Display',serif;font-size:clamp(3.5rem,6.5vw,5.4rem);font-weight:900;letter-spacing:-0.04em;line-height:0.95;display:flex;justify-content:center;align-items:center;gap:6px;margin-bottom:6px; }
   #cs-brand-C .bc-eq .term-mid .mark .g { color:#4d82c6; }
-  #cs-brand-C .bc-eq .term-mid .mark .n { color:#b8954a;font-style:italic;font-weight:500;font-size:0.62em; }
+  #cs-brand-C .bc-eq .term-mid .mark .n { color:#1a1612;font-style:italic;font-weight:500;font-size:0.62em; }
   #cs-brand-C .bc-eq .term-mid .mark .r { color:#c94d32; }
   #cs-brand-C .bc-foot { font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.2rem,1.7vw,1.5rem);color:rgba(26,22,18,0.7);margin-top:8px;max-width:1200px;line-height:1.5; }
   #cs-brand-C .bc-foot strong { color:#1a1612;font-style:normal;font-weight:700; }
@@ -28504,7 +28504,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-brand-D .bd-mark { display:flex;align-items:center;justify-content:center;gap:18px;margin-top:12px; }
   #cs-brand-D .bd-mark .gnr { font-family:'Playfair Display',serif;font-size:clamp(5rem,9vw,7.5rem);font-weight:900;letter-spacing:-0.04em;line-height:0.95;display:flex;align-items:center;gap:6px; }
   #cs-brand-D .bd-mark .gnr .g { color:#4d82c6; }
-  #cs-brand-D .bd-mark .gnr .n { color:#b8954a;font-style:italic;font-weight:500;font-size:0.62em; }
+  #cs-brand-D .bd-mark .gnr .n { color:#1a1612;font-style:italic;font-weight:500;font-size:0.62em; }
   #cs-brand-D .bd-mark .gnr .r { color:#c94d32; }
   #cs-brand-D .bd-mark-foot { font-family:'Manrope',sans-serif;font-size:0.95rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:rgba(26,22,18,0.55);text-align:left; }
   #cs-brand-D .bd-mark-foot strong { color:#1a1612; }
@@ -28573,7 +28573,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-hc8 .ai8-closer { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.55vw,1.3rem);font-weight:600;color:rgba(26,22,18,0.78);max-width:1000px;margin-top:6px;line-height:1.45 }
   #cs-hc8 .ai8-closer em { font-style:italic;color:#b8954a;font-weight:800 }
   #cs-hc8 .ai8-closer .gnr-inline .g { color:#5B8FD4;font-weight:800 }
-  #cs-hc8 .ai8-closer .gnr-inline .n { color:#b8954a;font-style:italic;font-weight:600 }
+  #cs-hc8 .ai8-closer .gnr-inline .n { color:#1a1612;font-style:italic;font-weight:600 }
   #cs-hc8 .ai8-closer .gnr-inline .r { color:#c8462c;font-weight:800 }
 </style>
 <div class="casey-slide ds-focus hc-slide" id="cs-hc8">
@@ -29524,7 +29524,7 @@ window.csProgrammableInvitationsReverse = function() {
   /* [Dave 2026-05-10 PM] Center sun replaced with explicit GnR orb (Dave: 'i have no idea what the thing in the center is'). Now clearly shows GnR mark + 'the engine' label. */
   #cs-future .f2-sun{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:144px;height:144px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:radial-gradient(circle,#fff7e8 0%,#f3ead8 70%);border:2px solid #b8954a;box-shadow:0 0 0 16px rgba(184,149,74,.07),0 0 0 32px rgba(184,149,74,.04),0 0 70px rgba(184,149,74,.32)}
   #cs-future .f2-sun .gnr-mark{font-family:'Fraunces','Playfair Display',serif;font-size:2.4rem;font-weight:850;line-height:1;letter-spacing:-.02em}
-  #cs-future .f2-sun .gnr-mark .g{color:#5B8FD4} #cs-future .f2-sun .gnr-mark .n{color:#b8954a;font-style:italic;font-weight:600;font-size:.78em} #cs-future .f2-sun .gnr-mark .r{color:#c8462c}
+  #cs-future .f2-sun .gnr-mark .g{color:#5B8FD4} #cs-future .f2-sun .gnr-mark .n{color:#1a1612;font-style:italic;font-weight:600;font-size:.78em} #cs-future .f2-sun .gnr-mark .r{color:#c8462c}
   #cs-future .f2-sun .gnr-tag{font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-top:2px}
   /* [Dave 2026-05-10 PM] Each verb card now has a graphical icon on top (Dave: 'each of these needs graphical icons'). Cards taller to fit icon + key + verb. */
   #cs-future .f2-node{position:absolute;width:170px;height:124px;padding:14px 14px 12px;border-radius:11px;background:rgba(251,247,239,.85);border:1.2px solid rgba(184,149,74,.36);box-shadow:0 14px 34px rgba(26,22,18,.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
@@ -29555,7 +29555,7 @@ window.csProgrammableInvitationsReverse = function() {
         <div class="gnr-tag">The Engine</div>
       </div>
     </div>
-    <div class="f2-close">The end state is not better scheduling. <strong>It is more human connection, more <span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:700">n</span><span style="color:#c8462c">R</span>, than the community could create by hand.</strong></div>
+    <div class="f2-close">The end state is not better scheduling. <strong>It is more human connection, more <span style="color:#5B8FD4">G</span><span style="color:#1a1612;font-style:italic;font-weight:700">n</span><span style="color:#c8462c">R</span>, than the community could create by hand.</strong></div>
   </div>
 </section>
 </div>
@@ -29568,7 +29568,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-26 .cl-line    { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.4rem,5.4vw,4.8rem); font-weight:700; line-height:1.06; letter-spacing:-0.025em; color:#1a1612; max-width:1240px; opacity:0; transform:translateY(14px); transition:opacity 1.1s 0.65s cubic-bezier(.45,.05,.18,1), transform 1.1s 0.65s cubic-bezier(.45,.05,.18,1); }
   #cs-26 .cl-line .cl-mark { font-family:'Playfair Display',serif; font-style:normal; }
   #cs-26 .cl-line .cl-mark .g { color:#4d82c6; font-weight:700; }
-  #cs-26 .cl-line .cl-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
+  #cs-26 .cl-line .cl-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; }
   #cs-26 .cl-line .cl-mark .r { color:#c94d32; font-weight:700; }
   #cs-26 .cl-line em { font-style:italic; font-weight:500; color:#b8954a; }
   #cs-26 .cl-divider { display:flex; align-items:center; justify-content:center; gap:14px; opacity:0; transition:opacity 0.6s 1.50s ease; }
@@ -30867,7 +30867,7 @@ window.csProgrammableInvitationsReverse = function() {
           <g transform="translate(1480, 22)">
             <rect x="-36" y="-18" width="72" height="40" rx="7" fill="rgba(251,247,239,0.98)" stroke="#b8954a" stroke-width="1.6"/>
             <text x="0" y="10" text-anchor="middle" font-family="Fraunces,'Playfair Display',Georgia,serif" font-weight="900" font-size="26" letter-spacing="-0.02em">
-              <tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic" font-weight="500" font-size="22" dx="1">n</tspan><tspan fill="#c8462c" dx="1">R</tspan>
+              <tspan fill="#5B8FD4">G</tspan><tspan fill="#1a1612" font-style="italic" font-weight="500" font-size="22" dx="1">n</tspan><tspan fill="#c8462c" dx="1">R</tspan>
             </text>
           </g>
           <!-- Endpoint dot ON the curve (matches the other milestone dots; the chip sits above like Microsoft/Google/etc.) -->
@@ -31165,7 +31165,7 @@ window.csProgrammableInvitationsReverse = function() {
           <g transform="translate(1480, 22)">
             <rect x="-36" y="-18" width="72" height="40" rx="7" fill="rgba(251,247,239,0.98)" stroke="#b8954a" stroke-width="1.6"/>
             <text x="0" y="10" text-anchor="middle" font-family="Fraunces,'Playfair Display',Georgia,serif" font-weight="900" font-size="26" letter-spacing="-0.02em">
-              <tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic" font-weight="500" font-size="22" dx="1">n</tspan><tspan fill="#c8462c" dx="1">R</tspan>
+              <tspan fill="#5B8FD4">G</tspan><tspan fill="#1a1612" font-style="italic" font-weight="500" font-size="22" dx="1">n</tspan><tspan fill="#c8462c" dx="1">R</tspan>
             </text>
           </g>
           <circle class="mgp-end-pt" cx="1480" cy="46" r="8" fill="#b8954a"/>
@@ -31859,7 +31859,7 @@ window.csProgrammableInvitationsReverse = function() {
 <div class="inner" style="padding:50px 32px 24px;text-align:center;max-width:1180px;margin:0 auto">
 
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,3.2vw,2.5rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:0 auto">
-    Imagine dropping <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;font-size:0.78em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> into any pickleball community.<br>
+    Imagine dropping <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-weight:500;font-size:0.78em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> into any pickleball community.<br>
     <em style="font-style:italic;font-weight:500;color:#b8954a">And it just works &mdash; compounding forever &mdash; at AI speed.</em>
   </div>
 
@@ -32156,7 +32156,7 @@ window.csProgrammableInvitationsReverse = function() {
     <div style="display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,rgba(74,140,94,0.06),rgba(184,149,74,0.10),rgba(74,140,94,0.06));border:1px solid rgba(74,140,94,0.30);border-radius:999px;padding:10px 22px;box-shadow:0 0 32px rgba(74,140,94,0.10)">
       <span style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.55rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#2d5a3d">The Goal</span>
       <span style="width:1px;height:14px;background:rgba(45,90,61,0.3)"></span>
-      <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1a1612">Drop <span style="font-family:'Playfair Display',serif"><span style="color:#4d82c6">G</span><span style="color:#b8954a;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> into any pickleball club &mdash; <em style="font-style:italic;color:#b8954a">it just works.</em></span>
+      <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1a1612">Drop <span style="font-family:'Playfair Display',serif"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> into any pickleball club &mdash; <em style="font-style:italic;color:#1a1612">it just works.</em></span>
     </div>
     <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-style:italic;color:#2d5a3d;letter-spacing:0.02em">Runaway autonomous human connection.</div>
   </div>
@@ -34215,7 +34215,7 @@ window.csA7m1Reverse = function() {
   #cs-connection-choice .cc-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.98) 0%,rgba(251,247,239,.94) 23%,rgba(251,247,239,.68) 42%,rgba(251,247,239,.18) 62%,rgba(251,247,239,0) 82%),linear-gradient(180deg,rgba(251,247,239,.26) 0%,rgba(251,247,239,0) 46%,rgba(243,234,216,.18) 100%)}
   #cs-connection-choice .cc-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.045) 1px,transparent 0);background-size:5px 5px;opacity:.30;mix-blend-mode:multiply}
   #cs-connection-choice .cc-brand{position:absolute;top:28px;right:44px;z-index:5;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:850;line-height:1;letter-spacing:-.03em;text-shadow:0 1px 0 rgba(251,247,239,.72)}
-  #cs-connection-choice .cc-brand .g{color:#5B8FD4}#cs-connection-choice .cc-brand .n{color:#b8954a;font-style:italic}#cs-connection-choice .cc-brand .r{color:#c8462c}
+  #cs-connection-choice .cc-brand .g{color:#5B8FD4}#cs-connection-choice .cc-brand .n{color:#1a1612;font-style:italic}#cs-connection-choice .cc-brand .r{color:#c8462c}
   #cs-connection-choice .cc-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.78);border:1px solid rgba(184,149,74,.24);border-radius:3px;padding:7px 10px;box-shadow:0 10px 28px rgba(26,22,18,.09)}
   #cs-connection-choice .cc-stage{position:absolute;inset:0;z-index:3;display:grid;grid-template-columns:minmax(600px,.46fr) minmax(620px,.54fr);align-items:center;padding:92px 72px 72px;box-sizing:border-box}
   #cs-connection-choice .cc-copy{max-width:790px;padding-left:8px;transform:translateY(10px);opacity:0;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1)}
@@ -34347,7 +34347,7 @@ window.csA7m1Reverse = function() {
 
   <!-- Center GnT mark -->
   <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center">
-    <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;letter-spacing:0.08em;color:#1a1612"><span style="color:#5B8FD4">G</span><span style="font-style:italic;color:#b8954a">n</span><span style="color:#c8462c">R</span></div>
+    <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;letter-spacing:0.08em;color:#1a1612"><span style="color:#5B8FD4">G</span><span style="font-style:italic;color:#1a1612">n</span><span style="color:#c8462c">R</span></div>
     <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.5rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.5);margin-top:2px">the convergence</div>
   </div>
 
