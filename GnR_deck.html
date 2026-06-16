@@ -27222,34 +27222,33 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-stage{animation:rwmmStageIn .72s cubic-bezier(.22,1,.36,1) .42s both;pointer-events:auto}
   #cs-real-world-measurable-market[data-shown="0"] .rwmm-stage{opacity:0!important;visibility:hidden!important;pointer-events:none!important;animation:none!important}
   @keyframes rwmmStageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  /* [Codex 2026-06-15] Large court reveal choreography: borrowed from cs-magnetic's role-by-role pull animation. */
+  /* [Codex 2026-06-15] Large court reveal choreography, learned from cs-magnetic: court first, roles second, relationship paths last. */
   @keyframes rwmmCourtPartIn{0%{opacity:0;filter:blur(3px)}100%{opacity:1;filter:none}}
-  @keyframes rwmmRolePartIn{0%{opacity:0;filter:blur(4px)}100%{opacity:1;filter:none}}
-  @keyframes rwmmPullPathIn{0%{opacity:0;stroke-dashoffset:46}100%{opacity:.50;stroke-dashoffset:0}}
-  @keyframes rwmmPullFlash{0%{stroke-opacity:0;stroke-width:3}35%{stroke-opacity:.95;stroke-width:5}100%{stroke-opacity:0;stroke-width:3}}
-  @keyframes rwmmInviteCenterPulse{0%{opacity:0;filter:blur(3px)}72%{opacity:1;filter:drop-shadow(0 0 24px rgba(184,149,74,.30))}100%{opacity:1;filter:none}}
-  @keyframes rwmmInviteFlight{0%{opacity:0;transform:translate(150px,270px) scale(.72)}12%{opacity:1}84%{opacity:1;transform:translate(630px,134px) scale(1)}100%{opacity:0;transform:translate(630px,134px) scale(.92)}}
-  #cs-real-world-measurable-market .rwmm-glow,#cs-real-world-measurable-market .rwmm-court-frame,#cs-real-world-measurable-market .rwmm-pull-web,#cs-real-world-measurable-market .rwmm-role,#cs-real-world-measurable-market .rwmm-center-invite,#cs-real-world-measurable-market .rwmm-pull-edge,#cs-real-world-measurable-market .rwmm-flying-invite,
-  #cs-work-measurable-market .rwmm-glow,#cs-work-measurable-market .rwmm-court-frame,#cs-work-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-role,#cs-work-measurable-market .rwmm-center-invite,#cs-work-measurable-market .rwmm-pull-edge,#cs-work-measurable-market .rwmm-flying-invite{opacity:0;will-change:opacity,filter,stroke-dashoffset,transform}
-  #cs-real-world-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-pull-web{stroke-dashoffset:46}
+  @keyframes rwmmRolePartIn{0%{opacity:0;transform:scale(.76);filter:blur(3px)}100%{opacity:1;transform:scale(1);filter:none}}
+  @keyframes rwmmPullPathIn{0%{opacity:0;stroke-dashoffset:52}100%{opacity:.50;stroke-dashoffset:0}}
+  @keyframes rwmmPullFlash{0%{stroke-opacity:0;stroke-width:3}32%{stroke-opacity:.9;stroke-width:5}100%{stroke-opacity:0;stroke-width:3}}
+  @keyframes rwmmRingBreathe{0%,100%{opacity:.46}50%{opacity:.72}}
+  #cs-real-world-measurable-market .rwmm-glow,#cs-real-world-measurable-market .rwmm-court-frame,#cs-real-world-measurable-market .rwmm-pull-web,#cs-real-world-measurable-market .rwmm-role,#cs-real-world-measurable-market .rwmm-pull-edge,
+  #cs-work-measurable-market .rwmm-glow,#cs-work-measurable-market .rwmm-court-frame,#cs-work-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-role,#cs-work-measurable-market .rwmm-pull-edge{opacity:0;will-change:opacity,filter,stroke-dashoffset,transform}
+  #cs-real-world-measurable-market .rwmm-center-invite,#cs-real-world-measurable-market .rwmm-flying-invite,#cs-work-measurable-market .rwmm-center-invite,#cs-work-measurable-market .rwmm-flying-invite{display:none!important}
+  #cs-real-world-measurable-market .rwmm-role,#cs-work-measurable-market .rwmm-role{transform-box:fill-box;transform-origin:center center}
+  #cs-real-world-measurable-market .rwmm-role > circle:first-child,#cs-work-measurable-market .rwmm-role > circle:first-child{transform-box:fill-box;transform-origin:center center}
+  #cs-real-world-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-pull-web{stroke-dashoffset:52}
   #cs-real-world-measurable-market .rwmm-pull-edge,#cs-work-measurable-market .rwmm-pull-edge{stroke-opacity:0}
-  #cs-real-world-measurable-market .rwmm-flying-invite,#cs-work-measurable-market .rwmm-flying-invite{transform-box:view-box;transform-origin:0 0}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-glow,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-glow{animation:rwmmCourtPartIn .62s cubic-bezier(.22,1,.36,1) .08s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-court-frame,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-court-frame{animation:rwmmCourtPartIn .72s cubic-bezier(.22,1,.36,1) .18s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-center-invite,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-center-invite{animation:rwmmInviteCenterPulse .76s cubic-bezier(.22,1,.36,1) .48s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-anchor,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-anchor{animation:rwmmRolePartIn .52s cubic-bezier(.22,1,.36,1) .74s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-pull-web,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-pull-web{animation:rwmmPullPathIn .9s cubic-bezier(.22,1,.36,1) .92s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-anchor-regular,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-edge-anchor-regular{animation:rwmmPullFlash .68s cubic-bezier(.22,1,.36,1) 1.04s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-regular,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-regular{animation:rwmmRolePartIn .52s cubic-bezier(.22,1,.36,1) 1.28s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-anchor-referrer,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-edge-anchor-referrer{animation:rwmmPullFlash .68s cubic-bezier(.22,1,.36,1) 1.54s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referrer,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-referrer{animation:rwmmRolePartIn .52s cubic-bezier(.22,1,.36,1) 1.78s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-referrer-referral,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-edge-referrer-referral{animation:rwmmPullFlash .78s cubic-bezier(.22,1,.36,1) 2.04s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-flying-invite,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-flying-invite{animation:rwmmInviteFlight .84s cubic-bezier(.45,.05,.55,.95) 2.04s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referral,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-referral{animation:rwmmRolePartIn .52s cubic-bezier(.22,1,.36,1) 2.58s both}
-  html[data-export="1"] #cs-real-world-measurable-market .rwmm-glow,html[data-export="1"] #cs-real-world-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-real-world-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-real-world-measurable-market .rwmm-role,html[data-export="1"] #cs-real-world-measurable-market .rwmm-center-invite,
-  html[data-export="1"] #cs-work-measurable-market .rwmm-glow,html[data-export="1"] #cs-work-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-work-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-work-measurable-market .rwmm-role,html[data-export="1"] #cs-work-measurable-market .rwmm-center-invite{opacity:1!important;filter:none!important;animation:none!important;stroke-dashoffset:0!important}
-  html[data-export="1"] #cs-real-world-measurable-market .rwmm-pull-edge,html[data-export="1"] #cs-real-world-measurable-market .rwmm-flying-invite,html[data-export="1"] #cs-work-measurable-market .rwmm-pull-edge,html[data-export="1"] #cs-work-measurable-market .rwmm-flying-invite{opacity:0!important;animation:none!important;stroke-opacity:0!important}
-  html[data-export="1"] #cs-real-world-measurable-market .rwmm-stage{opacity:1!important;transform:none!important;animation:none!important}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-glow,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-glow{animation:rwmmCourtPartIn .60s cubic-bezier(.22,1,.36,1) .06s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-court-frame,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-court-frame{animation:rwmmCourtPartIn .70s cubic-bezier(.22,1,.36,1) .16s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-anchor,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-anchor{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) .58s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-anchor-regular,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-edge-anchor-regular{animation:rwmmPullFlash .62s cubic-bezier(.22,1,.36,1) .92s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-regular,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-regular{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 1.06s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-anchor-referrer,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-edge-anchor-referrer{animation:rwmmPullFlash .62s cubic-bezier(.22,1,.36,1) 1.34s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referrer,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-referrer{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 1.48s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-referrer-referral,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-edge-referrer-referral{animation:rwmmPullFlash .72s cubic-bezier(.22,1,.36,1) 1.82s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referral,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-referral{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 2.02s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-pull-web,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-pull-web{animation:rwmmPullPathIn .95s cubic-bezier(.22,1,.36,1) 2.22s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role > circle:first-child,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role > circle:first-child{animation:rwmmRingBreathe 2.2s ease-in-out 3.05s infinite}
+  html[data-export="1"] #cs-real-world-measurable-market .rwmm-glow,html[data-export="1"] #cs-real-world-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-real-world-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-real-world-measurable-market .rwmm-role,
+  html[data-export="1"] #cs-work-measurable-market .rwmm-glow,html[data-export="1"] #cs-work-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-work-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-work-measurable-market .rwmm-role{opacity:1!important;filter:none!important;animation:none!important;stroke-dashoffset:0!important;transform:none!important}
+  html[data-export="1"] #cs-real-world-measurable-market .rwmm-pull-edge,html[data-export="1"] #cs-work-measurable-market .rwmm-pull-edge{opacity:0!important;animation:none!important;stroke-opacity:0!important}`r`n  html[data-export="1"] #cs-real-world-measurable-market .rwmm-stage{opacity:1!important;transform:none!important;animation:none!important}
 </style>
 <!-- [Codex 2026-06-11] cs-real-world-measurable-market DELETED per Dave screenshot request; removed from SLIDE_ALTS[11] and retained hidden as rollback source. -->
 <div class="casey-slide ds-focus trash-slide" id="cs-real-world-measurable-market" data-shown="0" data-deleted="1" onclick="csRwmmAdvance();event.stopPropagation()" style="display:none !important;cursor:pointer">
