@@ -2,3 +2,4 @@ desktop.ini
 *.backup-*
 deck_archive/snapshots/*
 !deck_archive/snapshots/.gitkeep
+deck_archive/qa/*
