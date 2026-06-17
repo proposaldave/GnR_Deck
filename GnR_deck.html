@@ -22974,6 +22974,19 @@ window.csBrandV8Reverse = function() {
   #cs-value-screen .room-person.p7 { left:54px; top:84px; background:#fbf7ef; }
   #cs-value-screen .screen-core { position:absolute; left:43%; top:50%; transform:translate(-50%,-50%); width:245px; min-height:122px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.18rem; font-style:italic; font-weight:850; line-height:1.03; color:#fbf7ef; text-shadow:0 2px 18px rgba(0,0,0,.46); z-index:2; }
 
+  #cs-app-store-people-blue{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
+  #cs-app-store-people-blue .apb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.02) contrast(1.02)}
+  #cs-app-store-people-blue .apb-eye{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;background:rgba(251,247,239,.72);padding:8px 10px;border-radius:2px;box-shadow:0 10px 26px rgba(26,22,18,.06)}
+  #cs-app-store-people-blue .apb-brand{position:absolute;top:30px;right:42px;z-index:4;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1rem;font-weight:850;letter-spacing:-.015em}.apb-brand .g{color:#5B8FD4}.apb-brand .n{color:#1a1612;font-style:italic;font-weight:500}.apb-brand .r{color:#c8462c}
+  #cs-app-store-people-blue .apb-stage{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:flex-start;padding:96px 88px 72px;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s}
+  #cs-app-store-people-blue[data-shown="1"] .apb-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-app-store-people-blue .apb-copy{max-width:790px}
+  #cs-app-store-people-blue .apb-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.7rem,6vw,6.35rem);line-height:.96;font-weight:900;letter-spacing:-.025em;color:#1a1612;text-wrap:balance;text-shadow:0 12px 34px rgba(251,247,239,.72)}
+  #cs-app-store-people-blue .apb-title em{font-style:italic;color:#b8954a}
+  #cs-app-store-people-blue .apb-rule{width:118px;height:2px;margin:34px 0 26px;background:linear-gradient(90deg,#5B8FD4,#b8954a,rgba(184,149,74,0));border-radius:999px}
+  #cs-app-store-people-blue .apb-sub{margin:0;max-width:650px;font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.3vw,1.38rem);font-weight:780;line-height:1.42;color:rgba(26,22,18,.68)}
+  #cs-app-store-people-blue .apb-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.apb-tag{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(184,149,74,.34);background:rgba(251,247,239,.76);border-radius:999px;padding:10px 14px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.66);box-shadow:0 14px 34px rgba(26,22,18,.08)}.apb-tag i{display:block;width:9px;height:9px;border-radius:50%;background:#5B8FD4;box-shadow:0 0 0 5px rgba(91,143,212,.14)}.apb-tag:nth-child(2) i{background:#b8954a;box-shadow:0 0 0 5px rgba(184,149,74,.14)}.apb-tag:nth-child(3) i{background:#c8462c;box-shadow:0 0 0 5px rgba(200,70,44,.13)}
+  html[data-export="1"] #cs-app-store-people-blue .apb-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
   #cs-app-store-people { background:#1a1612 !important; overflow:hidden; }
   #cs-app-store-people .asp-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.96) contrast(1.03); z-index:0; }
   #cs-app-store-people .asp-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.80) 32%, rgba(251,247,239,.36) 61%, rgba(26,22,18,.20) 100%), linear-gradient(180deg, rgba(251,247,239,.58) 0%, rgba(251,247,239,.08) 58%, rgba(26,22,18,.34) 100%); }
@@ -23094,6 +23107,23 @@ window.csBrandV8Reverse = function() {
   </section>
 </div>
 
+<div class="casey-slide ds-focus" id="cs-app-store-people-blue" data-shown="0" onclick="csAppStorePeopleBlueAdvance();event.stopPropagation()" style="display:none" aria-label="Blue-dot candidate for people marketplace slide">
+  <img class="apb-bg" src="assets/cs-app-store-people-blue-bg.png" alt="Watercolor community marketplace background with pickleball players, real-world introductions, and human connection cards">
+  <div class="apb-eye">human connection marketplace</div>
+  <div class="apb-brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section class="apb-stage">
+    <div class="apb-copy">
+      <h1 class="apb-title">Ratings tell you how people play.<br><em>GnR learns why people belong.</em></h1>
+      <div class="apb-rule"></div>
+      <p class="apb-sub">Who welcomes. Who refers. Who brings the room back.</p>
+      <div class="apb-tags" aria-hidden="true"><span class="apb-tag"><i></i>fit</span><span class="apb-tag"><i></i>trust</span><span class="apb-tag"><i></i>referrals</span></div>
+    </div>
+  </section>
+</div>
+<script>
+window.csAppStorePeopleBlueAdvance = function(){ const s=document.getElementById('cs-app-store-people-blue'); if(!s || s.getAttribute('data-shown')==='1') return false; s.setAttribute('data-shown','1'); return true; };
+window.csAppStorePeopleBlueReverse = function(){ const s=document.getElementById('cs-app-store-people-blue'); if(!s || s.getAttribute('data-shown')!=='1') return false; s.setAttribute('data-shown','0'); return true; };
+</script>
 <div class="casey-slide ds-focus" id="cs-app-store-people" style="display:none">
   <img class="asp-bg" src="assets/cs-app-store-people-pickleball-bg.png" alt="">
   <div class="asp-wash" aria-hidden="true"></div>
@@ -36889,6 +36919,7 @@ const SLIDE_ALTS = {
   3: ['cs-1m8-invite-graph-blue', 'cs-invite-matchmaking-opener-pink'],
   4: ['cs-optimus-party-overhead-pink'],
   5: ['cs-invite-dupr-vs-gnr-club-pink'],
+  10: ['cs-app-store-people-blue'],
   16: ['cs-samecourt-pyramid-white2', 'cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
   19: ['cs-16'],
   26: ['cs-invite-graph-import-pink'],
@@ -39169,7 +39200,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-pb-silliness-purple-chaotic-bounce' || altId === 'cs-pb-silliness-purple-rotation-confusion' || altId === 'cs-pb-silliness-generated-sections-pink' || altId === 'cs-pb-silliness-generated-kitchen-pink' || altId === 'cs-pb-silliness-generated-apology-pink' || altId === 'cs-pb-silliness-generated-rotation-pink' || altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
-    const isBlueAlt = (/^cs-samecourt-pyramid-blue-/.test(altId) || altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social' || altId === 'cs-revenue-util-profit-blue' || altId === 'cs-1m8-invite-graph-blue');
+    const isBlueAlt = (/^cs-samecourt-pyramid-blue-/.test(altId) || altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social' || altId === 'cs-revenue-util-profit-blue' || altId === 'cs-1m8-invite-graph-blue' || altId === 'cs-app-store-people-blue');
     const isWhiteAlt = (altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market' || altId === 'cs-pb-silliness-white-mosaic' || altId === 'cs-pb-silliness-white-social-test');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     const isGreenAlt = /^cs-pb-silliness-.*-green$/.test(altId) || (Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId));
@@ -39592,6 +39623,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-2b': 'cs2bAdvance',
     'cs-2c': 'cs2cAdvance',
     'cs-connection-choice': 'csConnectionChoiceAdvance',
+    'cs-app-store-people-blue': 'csAppStorePeopleBlueAdvance',
     'cs-gnr': 'csGnrAdvance',
     'cs-gnr-connected-pink': 'csGnrConnectedAdvance',
     'cs-invitation-word-of-mouth': 'csInvitationWordOfMouthAdvance',
@@ -39654,6 +39686,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-2b': 'cs2bReverse',
     'cs-2c': 'cs2cReverse',
     'cs-connection-choice': 'csConnectionChoiceReverse',
+    'cs-app-store-people-blue': 'csAppStorePeopleBlueReverse',
     'cs-gnr': 'csGnrReverse',
     'cs-gnr-connected-pink': 'csGnrConnectedReverse',
     'cs-pbfirst': 'csPbfirstReverse',
