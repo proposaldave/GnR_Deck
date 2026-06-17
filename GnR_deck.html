@@ -8544,6 +8544,57 @@ window.cs1m5Reverse = function() {
 </script>
 
 
+
+
+<!-- cs-community-builder-product - main-deck product definition [Codex 2026-06-17] -->
+<style>
+  #cs-community-builder-product{background:#f3ead8!important;overflow:hidden;cursor:pointer}
+  #cs-community-builder-product .cbp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;opacity:.98;filter:saturate(1.04) contrast(1.02);z-index:0}
+  #cs-community-builder-product .cbp-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.04) 1px,transparent 0);background-size:4px 4px;opacity:.22;pointer-events:none;mix-blend-mode:multiply;z-index:1}
+  #cs-community-builder-product .cbp-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,234,216,.80) 0%,rgba(243,234,216,.62) 26%,rgba(243,234,216,.30) 48%,rgba(243,234,216,.03) 78%);pointer-events:none;z-index:1}
+  #cs-community-builder-product .cbp-eye{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:5;background:rgba(251,247,239,.72);padding:7px 10px;border-radius:2px;box-shadow:0 8px 24px rgba(26,22,18,.06)}
+  #cs-community-builder-product .cbp-content{position:absolute;left:78px;top:186px;width:min(850px,48vw);z-index:3;color:#1a1612;padding:34px 38px 36px;border-left:4px solid #c8462c;background:linear-gradient(90deg,rgba(251,247,239,.86),rgba(251,247,239,.66));box-shadow:0 24px 70px rgba(26,22,18,.10);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s}
+  #cs-community-builder-product[data-stage="1"] .cbp-content{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-community-builder-product .cbp-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4rem,5.85vw,6.65rem);line-height:.94;font-weight:860;letter-spacing:0;color:#1a1612;text-wrap:balance;text-shadow:0 2px 0 rgba(251,247,239,.92),0 12px 34px rgba(251,247,239,.84);margin:0 0 28px}
+  #cs-community-builder-product .cbp-title em{font-style:italic;color:#b8954a;font-weight:720}
+  #cs-community-builder-product .cbp-sub{font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.28vw,1.34rem);line-height:1.52;font-weight:820;color:rgba(26,22,18,.84);max-width:720px;margin:0 0 30px;text-wrap:balance;text-shadow:0 5px 28px rgba(251,247,239,.78)}
+  #cs-community-builder-product .cbp-chips{display:flex;flex-wrap:wrap;gap:12px;max-width:760px}
+  #cs-community-builder-product .cbp-chip{display:flex;align-items:center;gap:10px;padding:12px 15px;border:1px solid rgba(184,149,74,.30);background:rgba(251,247,239,.78);border-radius:999px;box-shadow:0 14px 36px rgba(26,22,18,.07);font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#1a1612;white-space:nowrap}
+  #cs-community-builder-product .cbp-dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:#b8954a;box-shadow:0 0 0 5px rgba(184,149,74,.13)}
+  #cs-community-builder-product .cbp-chip:nth-child(2) .cbp-dot{background:#5b8fd4;box-shadow:0 0 0 5px rgba(91,143,212,.13)}
+  #cs-community-builder-product .cbp-chip:nth-child(3) .cbp-dot{background:#c8462c;box-shadow:0 0 0 5px rgba(200,70,44,.13)}
+  #cs-community-builder-product .cbp-hint{position:absolute;left:50%;bottom:46px;transform:translateX(-50%);z-index:4;color:#b8954a;opacity:.9;transition:opacity .35s ease}
+  #cs-community-builder-product[data-stage="1"] .cbp-hint{opacity:0}
+  html[data-export="1"] #cs-community-builder-product .cbp-content{opacity:1!important;visibility:visible!important;transform:none!important}
+  html[data-export="1"] #cs-community-builder-product .cbp-hint{display:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-community-builder-product" data-stage="0" onclick="if(window.csCommunityBuilderProductAdvance&&window.csCommunityBuilderProductAdvance()) event.stopPropagation()" style="display:none" aria-label="GnR helps community builders turn a room into a community">
+  <img class="cbp-bg" src="assets/cs-referral-network-plate-pink.png" alt="Pickleball community network map around courts and community builders"/>
+  <div class="cbp-paper" aria-hidden="true"></div>
+  <div class="cbp-wash" aria-hidden="true"></div>
+  <div class="cbp-eye">Community builder product</div>
+  <div class="cbp-content">
+    <h1 class="cbp-title">GnR helps community builders turn a room into a <em>community.</em></h1>
+    <p class="cbp-sub">Not another feed. The invitation engine for the people responsible for who belongs, who returns, and who brings the next person in.</p>
+    <div class="cbp-chips" aria-label="Community builder outcomes">
+      <div class="cbp-chip"><span class="cbp-dot"></span>Build the room</div>
+      <div class="cbp-chip"><span class="cbp-dot"></span>Welcome the right people</div>
+      <div class="cbp-chip"><span class="cbp-dot"></span>Make belonging repeatable</div>
+    </div>
+  </div>
+  <div class="cbp-hint" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><path d="M 14 4 L 14 22 M 14 22 L 6 14 M 14 22 L 22 14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+</div>
+<script>
+(function(){
+  const id='cs-community-builder-product';
+  function slide(){return document.getElementById(id)}
+  window.csCommunityBuilderProductAdvance=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage==='1')return false;s.dataset.stage='1';return true};
+  window.csCommunityBuilderProductReverse=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage!=='1')return false;s.dataset.stage='0';return true};
+  function boot(){const s=slide();if(!s)return;new MutationObserver(function(){if(!s.classList.contains('active'))s.dataset.stage='0'}).observe(s,{attributes:true,attributeFilter:['class']})}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+
 <style>
   #cs-1m8-invite-graph-blue{cursor:pointer;background:radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%)!important;overflow:hidden}
   #cs-1m8-invite-graph-blue .igb-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.05) 1px,transparent 0);background-size:4px 4px;opacity:.55;pointer-events:none;mix-blend-mode:multiply}
@@ -36939,6 +36990,7 @@ const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
   'cs-1bm1',
   'cs-1m8',
+  'cs-community-builder-product',
   'cs-real-world-measurable-market',
   'cs-thegap',
   'cs-invite-operational-insanity-pink',
@@ -39049,7 +39101,8 @@ const slideLabels = [
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
   'Modern life wires us away from fulfillment', //  2 cs-1bm1
   'The relationship graph is missing', //  3 cs-1m8
-  'Real-world measurable market', //  4 cs-real-world-measurable-market
+  'Community builder product', //  4 cs-community-builder-product
+  'Real-world measurable market', //  5 cs-real-world-measurable-market
   'Community technology is unsolved', //  5 cs-thegap
   'Custom invitations are operationally hard', //  6 cs-invite-operational-insanity-pink
   'NEPC proof / proving ground', //  7 cs-11e
@@ -39659,6 +39712,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-1m8': 'cs1m8Advance',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkAdvance',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueAdvance',
+    'cs-community-builder-product': 'csCommunityBuilderProductAdvance',
     'cs-invite-engine-flow-pink': 'csInviteEngineFlowPinkAdvance',
     'cs-1m8-black-backup': 'cs1m8BlackBackupAdvance',
     'cs-1m9': 'cs1m9Advance',
@@ -39722,6 +39776,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m8': 'cs1m8Reverse',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkReverse',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueReverse',
+    'cs-community-builder-product': 'csCommunityBuilderProductReverse',
     'cs-invite-engine-flow-pink': 'csInviteEngineFlowPinkReverse',
     'cs-1m8-black-backup': 'cs1m8BlackBackupReverse',
     'cs-1m9': 'cs1m9Reverse',
@@ -40067,6 +40122,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-community-builder-product' && window.csCommunityBuilderProductAdvance && window.csCommunityBuilderProductAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // [Dave 2026-05-18 LATEST] cs-samecourt (left = 'I'm a 3.9' card · right = 'I'm part of building my community' card) — scroll-down reveals the sc-item bullet stacks before next-slide nav.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) {
       setTimeout(() => { wheelLock = false; }, 600);
@@ -40402,6 +40461,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-community-builder-product' && window.csCommunityBuilderProductAdvance && window.csCommunityBuilderProductAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Advance && window.csFv6Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -40433,6 +40493,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-community-builder-product' && window.csCommunityBuilderProductReverse && window.csCommunityBuilderProductReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Reverse && window.csFv6Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
