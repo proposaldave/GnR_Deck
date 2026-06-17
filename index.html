@@ -34306,10 +34306,12 @@ window.csA7m1Reverse = function() {
   #cs-connection-choice .cc-title .cc-red{color:#c8462c;font-style:italic;font-weight:850}
   #cs-connection-choice .cc-rule{width:116px;height:2px;margin:34px 0 24px;background:linear-gradient(90deg,#c8462c,#b8954a,rgba(184,149,74,0));border-radius:999px}
   #cs-connection-choice .cc-sub{margin:0;font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.18vw,1.34rem);font-weight:780;line-height:1.45;color:rgba(26,22,18,.68);max-width:650px}
-  #cs-connection-choice .cc-gravity{align-self:end;justify-self:start;display:flex;gap:12px;flex-wrap:wrap;max-width:690px;margin-top:34px;opacity:0;transform:translateY(10px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-connection-choice .cc-gravity{align-self:end;justify-self:start;display:grid;grid-template-columns:1fr;gap:10px;max-width:650px;margin-top:30px;opacity:0;transform:translateY(10px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
   #cs-connection-choice[data-shown="1"].casey-entered .cc-gravity{opacity:1;transform:none;transition-delay:.52s}
-  #cs-connection-choice .cc-chip{display:inline-flex;align-items:center;gap:9px;border-radius:999px;border:1px solid rgba(184,149,74,.34);background:rgba(251,247,239,.78);box-shadow:0 14px 34px rgba(26,22,18,.08),inset 0 1px 0 rgba(255,255,255,.68);padding:10px 14px;font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.64);backdrop-filter:blur(4px)}
+  #cs-connection-choice .cc-chip{display:grid;grid-template-columns:11px minmax(128px,auto) 1fr;align-items:center;gap:12px;border-radius:13px;border:1px solid rgba(184,149,74,.34);background:rgba(251,247,239,.82);box-shadow:0 14px 34px rgba(26,22,18,.08),inset 0 1px 0 rgba(255,255,255,.70);padding:11px 15px;font-family:'Manrope',sans-serif;color:rgba(26,22,18,.72);backdrop-filter:blur(4px)}
   #cs-connection-choice .cc-chip i{display:block;width:9px;height:9px;border-radius:50%;background:#b8954a;box-shadow:0 0 0 5px rgba(184,149,74,.14)}
+  #cs-connection-choice .cc-chip strong{font-size:.66rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.72);white-space:nowrap}
+  #cs-connection-choice .cc-chip b{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.02rem;font-weight:850;letter-spacing:0;color:#1a1612;line-height:1.05}
   #cs-connection-choice .cc-chip:nth-child(2) i{background:#5B8FD4;box-shadow:0 0 0 5px rgba(91,143,212,.14)}
   #cs-connection-choice .cc-chip:nth-child(3) i{background:#c8462c;box-shadow:0 0 0 5px rgba(200,70,44,.13)}
   #cs-connection-choice .cc-visual{position:relative;min-height:620px;align-self:center;justify-self:stretch;pointer-events:none}
@@ -34343,9 +34345,9 @@ window.csA7m1Reverse = function() {
       <h1 class="cc-title">Humans will spend their time wherever they feel the <em>most</em> <span class="cc-red">connection</span></h1>
       <div class="cc-rule"></div>
       <div class="cc-gravity" aria-hidden="true">
-        <span class="cc-chip"><i></i>show up</span>
-        <span class="cc-chip"><i></i>return</span>
-        <span class="cc-chip"><i></i>belong</span>
+        <span class="cc-chip"><i></i><strong>Invited</strong><b>&rarr; you belong</b></span>
+        <span class="cc-chip"><i></i><strong>Feel welcomed</strong><b>+ grow connection</b></span>
+        <span class="cc-chip"><i></i><strong>Give + refer others</strong><b>&rarr; feel part of the community</b></span>
       </div>
     </div>
     <div class="cc-visual" aria-hidden="true">
@@ -39953,6 +39955,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-choice' && window.csConnectionChoiceAdvance && window.csConnectionChoiceAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -40143,6 +40149,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-choice' && window.csConnectionChoiceReverse && window.csConnectionChoiceReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -40296,6 +40306,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-onandoff' && window.csOnandoffAdvance && window.csOnandoffAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-lab' && window.csLabAdvance && window.csLabAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-connection-choice' && window.csConnectionChoiceAdvance && window.csConnectionChoiceAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
@@ -40326,6 +40337,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-onandoff' && window.csOnandoffReverse && window.csOnandoffReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-lab' && window.csLabReverse && window.csLabReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-connection-choice' && window.csConnectionChoiceReverse && window.csConnectionChoiceReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
