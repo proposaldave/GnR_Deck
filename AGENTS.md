@@ -38,6 +38,16 @@ This repo contains a large single-file HTML investor pitch deck. Treat every dec
 - Before committing or publishing any change that touches `SLIDE_ORDER`, compare before/after order and report `ADDED_SLIDES`, `REMOVED_SLIDES`, and the reason for every removed slide. If an active slide disappeared without explicit request, restore it before `DONE`.
 - For mirror files, identify the canonical deck file first, edit canonical first, then mirror to the existing GitHub Pages files such as `sites/GnR_Deck/GnR_deck.html` and `sites/GnR_Deck/index.html` if that is the repo's established workflow. Do not hand-edit mirrors differently from canonical.
 
+### Archive / rollback
+
+- Git commits are the permanent archive. Every completed edit batch must be committed and pushed.
+- Before risky visual, animation, slide-order, asset, or multi-slide edits, create a local snapshot:
+  `powershell -ExecutionPolicy Bypass -File tools/archive_deck_snapshot.ps1 -Reason "short reason"`
+- Local snapshots live in `deck_archive/snapshots/`, are ignored by Git, and contain `GnR_deck.html`, `index.html`, and `metadata.json`.
+- To restore a local snapshot, run:
+  `powershell -ExecutionPolicy Bypass -File tools/restore_deck_snapshot.ps1 -Snapshot "deck_archive/snapshots/<snapshot-folder>"`
+- After restoring, open Chrome, inspect the deck, then commit and push only if Dave accepts the restored direction.
+
 ### Brand rules
 
 - Brand abbreviation is `GnR`.
