@@ -25517,20 +25517,21 @@ window.csAppStorePeopleBlueReverse = function(){ const s=document.getElementById
 </style>
 <style>
   #cs-serious-vs-silly-bridge{background:#fbf7ef!important;overflow:hidden;color:#1a1612}
-  #cs-serious-vs-silly-bridge:before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 78% 60%,rgba(91,143,212,.18),transparent 34%),radial-gradient(circle at 38% 68%,rgba(184,149,74,.20),transparent 38%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%)}
-  #cs-serious-vs-silly-bridge .svs-paper{position:absolute;inset:0;z-index:1;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.045) 1px,transparent 0);background-size:5px 5px;opacity:.52;pointer-events:none;mix-blend-mode:multiply}
+  #cs-serious-vs-silly-bridge .svs-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;filter:saturate(1.04) contrast(1.03) brightness(1.03)}
+  #cs-serious-vs-silly-bridge:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(251,247,239,.88) 0%,rgba(251,247,239,.48) 22%,rgba(251,247,239,.12) 49%,rgba(251,247,239,.58) 78%,rgba(251,247,239,.88) 100%),linear-gradient(180deg,rgba(251,247,239,.34),rgba(243,234,216,.42));pointer-events:none}
+  #cs-serious-vs-silly-bridge .svs-paper{position:absolute;inset:0;z-index:2;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.045) 1px,transparent 0);background-size:5px 5px;opacity:.30;pointer-events:none;mix-blend-mode:multiply}
   #cs-serious-vs-silly-bridge .svs-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
-  #cs-serious-vs-silly-bridge .svs-stage{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:.82fr 1.04fr .82fr;gap:34px;align-items:center;padding:96px 76px 64px;box-sizing:border-box}
-  #cs-serious-vs-silly-bridge .svs-copy{align-self:center}
+  #cs-serious-vs-silly-bridge .svs-stage{position:absolute;inset:0;z-index:3;display:grid;grid-template-columns:.78fr 1fr .78fr;gap:30px;align-items:center;padding:98px 74px 78px;box-sizing:border-box}
+  #cs-serious-vs-silly-bridge .svs-copy{align-self:center;padding:26px 28px 30px;border-radius:8px;background:rgba(251,247,239,.74);border:1px solid rgba(184,149,74,.18);box-shadow:0 22px 60px rgba(26,22,18,.08);backdrop-filter:blur(3px)}
   #cs-serious-vs-silly-bridge .svs-kicker{font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:950;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;margin-bottom:16px}
   #cs-serious-vs-silly-bridge .svs-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,6.7vw,7.6rem);line-height:.88;font-weight:900;letter-spacing:-.018em;color:#1a1612}
   #cs-serious-vs-silly-bridge .svs-title .serious{color:#c8462c}
   #cs-serious-vs-silly-bridge .svs-title .vs{display:block;font-size:.34em;line-height:1.25;font-family:'Manrope',sans-serif;font-weight:950;letter-spacing:.16em;color:rgba(26,22,18,.42);text-transform:uppercase;margin:.14em 0}
   #cs-serious-vs-silly-bridge .svs-title .silly{color:#5B8FD4;font-style:italic}
-  #cs-serious-vs-silly-bridge .svs-sub{margin:28px 0 0;max-width:540px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.18rem,1.48vw,1.55rem);line-height:1.22;font-weight:650;color:rgba(26,22,18,.72)}
+  #cs-serious-vs-silly-bridge .svs-sub{margin:24px 0 0;max-width:540px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.14rem,1.4vw,1.46rem);line-height:1.22;font-weight:650;color:rgba(26,22,18,.74)}
   #cs-serious-vs-silly-bridge .svs-sub strong{font-weight:900;color:#1a1612}
-  #cs-serious-vs-silly-bridge .svs-pyramid-wrap{position:relative;height:760px;display:grid;place-items:center}
-  #cs-serious-vs-silly-bridge .svs-pyramid{position:relative;width:min(760px,100%);height:690px;filter:drop-shadow(0 30px 55px rgba(26,22,18,.14))}
+  #cs-serious-vs-silly-bridge .svs-pyramid-wrap{position:relative;height:760px;display:block;pointer-events:none}
+  #cs-serious-vs-silly-bridge .svs-pyramid{display:none!important}
   #cs-serious-vs-silly-bridge .svs-pyramid-img{position:absolute;inset:-18px -32px 0;width:calc(100% + 64px);height:100%;object-fit:contain;object-position:center center;display:block;z-index:1}
   #cs-serious-vs-silly-bridge .svs-img-label{position:absolute;left:50%;z-index:3;transform:translateX(-50%);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:900;line-height:.92;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 2px 12px rgba(251,247,239,.78),0 8px 24px rgba(26,22,18,.18);pointer-events:none}
   #cs-serious-vs-silly-bridge .svs-img-label.serious{top:154px;font-size:clamp(1.28rem,1.75vw,2.05rem);color:#c8462c}
@@ -25546,7 +25547,7 @@ window.csAppStorePeopleBlueReverse = function(){ const s=document.getElementById
   #cs-serious-vs-silly-bridge .svs-axis:before,#cs-serious-vs-silly-bridge .svs-axis:after{content:"";position:absolute;left:50%;width:14px;height:14px;border-radius:50%;transform:translateX(-50%);background:#fbf7ef;border:2px solid currentColor;box-shadow:0 0 0 6px rgba(251,247,239,.42)}
   #cs-serious-vs-silly-bridge .svs-axis:before{top:-8px;color:#c8462c}#cs-serious-vs-silly-bridge .svs-axis:after{bottom:-8px;color:#5B8FD4}
   #cs-serious-vs-silly-bridge .svs-cardstack{display:grid;gap:16px}
-  #cs-serious-vs-silly-bridge .svs-card{position:relative;padding:22px 24px 22px 26px;border-radius:8px;background:rgba(251,247,239,.78);border:1.4px solid rgba(26,22,18,.12);box-shadow:0 18px 48px rgba(26,22,18,.09);backdrop-filter:blur(5px)}
+  #cs-serious-vs-silly-bridge .svs-card{position:relative;padding:20px 22px 20px 24px;border-radius:8px;background:rgba(251,247,239,.76);border:1.4px solid rgba(26,22,18,.12);box-shadow:0 18px 48px rgba(26,22,18,.10);backdrop-filter:blur(4px)}
   #cs-serious-vs-silly-bridge .svs-card:before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:5px;border-radius:99px;background:#b8954a}
   #cs-serious-vs-silly-bridge .svs-card.serious:before{background:#c8462c}#cs-serious-vs-silly-bridge .svs-card.silly:before{background:#5B8FD4}
   #cs-serious-vs-silly-bridge .svs-card h2{margin:0 0 9px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.28rem,1.65vw,1.75rem);line-height:1.02;font-weight:900;color:#1a1612}
@@ -25554,10 +25555,11 @@ window.csAppStorePeopleBlueReverse = function(){ const s=document.getElementById
   #cs-serious-vs-silly-bridge .svs-card p{margin:0;font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.9vw,.96rem);line-height:1.3;font-weight:780;color:rgba(26,22,18,.68)}
   #cs-serious-vs-silly-bridge .svs-chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
   #cs-serious-vs-silly-bridge .svs-chip{padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.48);border:1px solid rgba(26,22,18,.09);font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,22,18,.58)}
-  #cs-serious-vs-silly-bridge .svs-close{position:absolute;left:50%;bottom:30px;z-index:3;transform:translateX(-50%);width:min(1280px,86vw);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.28rem,1.75vw,1.95rem);line-height:1.13;font-weight:760;color:#1a1612}
+  #cs-serious-vs-silly-bridge .svs-close{position:absolute;left:50%;bottom:28px;z-index:4;transform:translateX(-50%);width:min(1260px,84vw);padding:12px 18px;border-radius:8px;background:rgba(251,247,239,.72);border:1px solid rgba(184,149,74,.16);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.18rem,1.55vw,1.72rem);line-height:1.13;font-weight:760;color:#1a1612;backdrop-filter:blur(3px)}
   #cs-serious-vs-silly-bridge .svs-close em{font-style:italic;color:#5B8FD4;font-weight:900}
 </style>
 <div class="casey-slide ds-focus" id="cs-serious-vs-silly-bridge" style="display:none" aria-label="Serious versus silly bridge slide before the pickleball pyramid">
+  <img class="svs-bg" src="assets/generated/serious-silly-bridge/serious-silly-pyramid-v1.png" alt="Glass pyramid showing a narrow serious competitive pickleball top over a much larger joyful social-community pickleball base." aria-hidden="true">
   <div class="svs-paper" aria-hidden="true"></div>
   <div class="svs-eye slide-eyebrow">serious vs silly</div>
   <section class="svs-stage">
