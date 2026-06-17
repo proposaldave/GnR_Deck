@@ -8226,18 +8226,19 @@ window.cs1m5Reverse = function() {
 <!-- cs-revenue-util-profit-blue - blue-dot proof alt beside title slide [Codex 2026-06-10] -->
 <style>
   #cs-revenue-util-profit-blue{background:#f3ead8!important;overflow:hidden;color:#1a1612}
-  #cs-revenue-util-profit-blue:before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 50% 24%,rgba(184,149,74,.16),transparent 34%),radial-gradient(circle at 22% 62%,rgba(91,143,212,.10),transparent 36%),linear-gradient(180deg,rgba(251,247,239,.98),rgba(243,234,216,.95));pointer-events:none}
-  #cs-revenue-util-profit-blue .rup-paper{position:absolute;inset:0;z-index:1;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.04) 1px,transparent 0);background-size:4px 4px;opacity:.48;pointer-events:none;mix-blend-mode:multiply}
+  #cs-revenue-util-profit-blue .rup-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;filter:saturate(1.03) contrast(1.03) brightness(1.04);opacity:.86}
+  #cs-revenue-util-profit-blue:before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 50% 22%,rgba(251,247,239,.62),rgba(251,247,239,.34) 28%,transparent 50%),linear-gradient(90deg,rgba(243,234,216,.92) 0%,rgba(243,234,216,.74) 18%,rgba(243,234,216,.48) 45%,rgba(243,234,216,.66) 100%),linear-gradient(180deg,rgba(251,247,239,.74),rgba(243,234,216,.82));pointer-events:none}
+  #cs-revenue-util-profit-blue .rup-paper{position:absolute;inset:0;z-index:2;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.04) 1px,transparent 0);background-size:4px 4px;opacity:.30;pointer-events:none;mix-blend-mode:multiply}
   #cs-revenue-util-profit-blue .rup-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
-  #cs-revenue-util-profit-blue .rup-shell{position:absolute;inset:0;z-index:2;padding:84px 112px 58px;display:grid;grid-template-rows:auto 1fr auto;gap:24px;box-sizing:border-box}
+  #cs-revenue-util-profit-blue .rup-shell{position:absolute;inset:0;z-index:3;padding:84px 112px 58px;display:grid;grid-template-rows:auto 1fr auto;gap:24px;box-sizing:border-box}
   #cs-revenue-util-profit-blue .rup-title{margin:0 auto;text-align:center;max-width:1510px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.35rem,5.05vw,5.55rem);line-height:.98;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance}
   #cs-revenue-util-profit-blue .rup-title em{font-style:italic;color:#b8954a;text-shadow:0 12px 30px rgba(184,149,74,.16)}
   #cs-revenue-util-profit-blue .rup-grid{display:grid;grid-template-columns:.98fr .98fr 1.18fr;gap:18px;align-items:stretch;max-width:1510px;width:100%;margin:0 auto}
-  #cs-revenue-util-profit-blue .rup-card{position:relative;min-height:486px;padding:30px 30px 28px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(184,149,74,.28);background:linear-gradient(180deg,rgba(251,247,239,.86),rgba(247,239,224,.68));box-shadow:0 26px 68px rgba(54,41,22,.10),inset 0 1px 0 rgba(255,255,255,.68);box-sizing:border-box;overflow:hidden}
+  #cs-revenue-util-profit-blue .rup-card{position:relative;min-height:486px;padding:30px 30px 28px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(184,149,74,.32);background:linear-gradient(180deg,rgba(251,247,239,.82),rgba(247,239,224,.64));box-shadow:0 26px 68px rgba(54,41,22,.12),inset 0 1px 0 rgba(255,255,255,.70);box-sizing:border-box;overflow:hidden;backdrop-filter:blur(2px)}
   #cs-revenue-util-profit-blue .rup-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,rgba(91,143,212,.65),rgba(184,149,74,.62));opacity:.9}
   #cs-revenue-util-profit-blue .rup-card:after{content:"";position:absolute;inset:auto 22px 22px 22px;height:1px;background:linear-gradient(90deg,transparent,rgba(184,149,74,.42),transparent);pointer-events:none}
   #cs-revenue-util-profit-blue .rup-card.blue{border-color:rgba(91,143,212,.36)}
-  #cs-revenue-util-profit-blue .rup-card.red{border-color:rgba(200,70,44,.34);background:linear-gradient(180deg,rgba(251,247,239,.90),rgba(249,231,219,.66));box-shadow:0 30px 76px rgba(200,70,44,.10),0 18px 48px rgba(54,41,22,.10),inset 0 1px 0 rgba(255,255,255,.68)}
+  #cs-revenue-util-profit-blue .rup-card.red{border-color:rgba(200,70,44,.36);background:linear-gradient(180deg,rgba(251,247,239,.86),rgba(249,231,219,.64));box-shadow:0 30px 76px rgba(200,70,44,.11),0 18px 48px rgba(54,41,22,.12),inset 0 1px 0 rgba(255,255,255,.70)}
   #cs-revenue-util-profit-blue .rup-card.red:before{background:linear-gradient(90deg,rgba(200,70,44,.80),rgba(184,149,74,.64))}
   #cs-revenue-util-profit-blue .rup-label{margin-bottom:12px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#5B8FD4}
   #cs-revenue-util-profit-blue .rup-card.red .rup-label{color:#c8462c}
@@ -8261,6 +8262,7 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-revenue-util-profit-blue *{animation:none!important;opacity:1!important;transform:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-revenue-util-profit-blue" style="display:none" aria-label="Blue-dot proof slide showing utilization lift, revenue lift, and 3x net profit">
+  <img class="rup-bg" src="assets/cs-samecourt-bg.png" alt="New England Pickleball Club courts filled with connected groups and community activity" aria-hidden="true">
   <div class="rup-paper" aria-hidden="true"></div>
   <div class="rup-eye">NEPC proof / revenue engine</div>
   <section class="rup-shell">
