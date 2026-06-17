@@ -27218,6 +27218,80 @@ window.csProgrammableInvitationsReverse = function() {
      punctuation. Sits in main flow right after cs-samecourt: samecourt does the
      paradigm flip, this slide does the marketplace proof of what the flip catches.
      --------------------------------------------------------------------------- -->
+<!-- ===== Feature-stage redesign pink-dot alternatives [Codex 2026-06-17] ===== -->
+<style>
+  .fsred-slide{background:#f3ead8!important;overflow:hidden;color:#1a1612}
+  .fsred-slide .fsred-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.03) contrast(1.02)}
+  .fsred-slide .fsred-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(251,247,239,.94) 0%,rgba(251,247,239,.80) 32%,rgba(251,247,239,.46) 62%,rgba(251,247,239,.20) 100%),radial-gradient(ellipse at 52% 47%,rgba(251,247,239,.76),rgba(243,234,216,.20) 62%,rgba(26,22,18,.08) 100%);pointer-events:none}
+  .fsred-slide .slide-eyebrow{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.88);padding:7px 10px;border-radius:2px;box-shadow:0 8px 22px rgba(26,22,18,.08)}
+  .fsred-slide .fsred-copy{position:absolute;z-index:3;left:76px;top:112px;width:690px}
+  .fsred-slide h1{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.25rem,5.1vw,5.55rem);line-height:.98;letter-spacing:-.018em;font-weight:850;color:#1a1612;text-shadow:0 1px 2px rgba(251,247,239,.86)}
+  .fsred-slide h1 em{font-style:italic;color:#b8954a;font-weight:850}
+  .fsred-slide .fsred-sub{margin:22px 0 0;font-family:'Manrope',sans-serif;font-size:1.05rem;line-height:1.45;font-weight:760;color:rgba(26,22,18,.70);max-width:560px}
+  .fsred-stage{position:absolute;z-index:3;left:76px;right:76px;bottom:72px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .fsred-card{min-height:222px;border:1px solid rgba(184,149,74,.34);background:rgba(251,247,239,.82);box-shadow:0 24px 58px rgba(54,41,22,.13);border-radius:8px;padding:26px 24px 24px;position:relative;overflow:hidden}
+  .fsred-card::before{content:attr(data-step);position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#b8954a;color:#fbf7ef;font-family:'Manrope',sans-serif;font-weight:900;font-size:.9rem;box-shadow:0 10px 22px rgba(184,149,74,.25)}
+  .fsred-card b{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.72rem;line-height:1.02;font-weight:850;color:#1a1612;max-width:250px}
+  .fsred-card span{display:block;margin-top:16px;font-family:'Manrope',sans-serif;font-size:.78rem;line-height:1.35;font-weight:820;letter-spacing:.08em;text-transform:uppercase;color:#c8462c}
+  .fsred-card p{margin:18px 0 0;font-family:'Manrope',sans-serif;font-size:.9rem;line-height:1.36;font-weight:700;color:rgba(26,22,18,.64)}
+  #cs-invite-stage-builder-ladder-pink .fsred-bg{object-position:center 52%}
+  #cs-invite-stage-builder-ladder-pink .fsred-wash{background:linear-gradient(90deg,rgba(251,247,239,.95) 0%,rgba(251,247,239,.72) 44%,rgba(251,247,239,.24) 100%)}
+  #cs-invite-stage-permission-map-pink .fsred-copy{width:740px}
+  #cs-invite-stage-permission-map-pink .fsred-bg{object-position:center center;filter:saturate(1.05) contrast(1.04) brightness(1.02)}
+  #cs-invite-stage-permission-map-pink .fsred-wash{background:linear-gradient(90deg,rgba(251,247,239,.93) 0%,rgba(251,247,239,.66) 40%,rgba(251,247,239,.16) 100%)}
+  #cs-invite-stage-permission-map-pink .fsred-map{position:absolute;right:98px;top:158px;width:720px;height:600px;z-index:3}
+  #cs-invite-stage-permission-map-pink .fsred-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:178px;height:178px;border-radius:50%;background:rgba(251,247,239,.90);border:3px solid #b8954a;box-shadow:0 24px 70px rgba(54,41,22,.18);display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.55rem;font-weight:850;line-height:.95;color:#1a1612}
+  #cs-invite-stage-permission-map-pink .fsred-node{position:absolute;width:210px;min-height:116px;border-radius:8px;background:rgba(251,247,239,.88);border:1px solid rgba(184,149,74,.34);box-shadow:0 20px 50px rgba(54,41,22,.12);padding:18px 18px;font-family:'Manrope',sans-serif;font-weight:820;color:rgba(26,22,18,.72)}
+  #cs-invite-stage-permission-map-pink .fsred-node b{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.3rem;color:#1a1612;margin-bottom:8px}
+  #cs-invite-stage-permission-map-pink .n1{left:0;top:0}.fsred-map .n2{right:0;top:0}.fsred-map .n3{left:0;bottom:0}.fsred-map .n4{right:0;bottom:0}
+  #cs-invite-stage-permission-map-pink svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:-1}
+  #cs-invite-stage-referral-loop-pink .fsred-bg{object-position:center 52%}
+  #cs-invite-stage-referral-loop-pink .fsred-wash{background:linear-gradient(90deg,rgba(251,247,239,.94) 0%,rgba(251,247,239,.70) 38%,rgba(251,247,239,.20) 100%)}
+  #cs-invite-stage-referral-loop-pink .loop-wrap{position:absolute;right:110px;top:168px;width:680px;height:610px;z-index:3}
+  #cs-invite-stage-referral-loop-pink .loop-ring{position:absolute;inset:38px;border:2px dashed rgba(184,149,74,.62);border-radius:50%;box-shadow:0 0 0 32px rgba(251,247,239,.16)}
+  #cs-invite-stage-referral-loop-pink .loop-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:230px;height:230px;border-radius:50%;background:rgba(251,247,239,.90);border:3px solid #c8462c;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2rem;line-height:.95;font-weight:850;color:#1a1612;box-shadow:0 26px 70px rgba(54,41,22,.16)}
+  #cs-invite-stage-referral-loop-pink .loop-node{position:absolute;width:172px;height:112px;border-radius:8px;background:rgba(251,247,239,.88);border:1px solid rgba(184,149,74,.36);box-shadow:0 20px 44px rgba(54,41,22,.12);display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Manrope',sans-serif;font-size:.82rem;line-height:1.25;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#c8462c}
+  #cs-invite-stage-referral-loop-pink .l1{left:254px;top:0}.loop-wrap .l2{right:0;top:254px}.loop-wrap .l3{left:254px;bottom:0}.loop-wrap .l4{left:0;top:254px}
+</style>
+<div class="casey-slide ds-focus fsred-slide" id="cs-invite-stage-builder-ladder-pink" style="display:none" aria-label="Community builder growth ladder redesign">
+  <img class="fsred-bg" src="assets/cs-invite-atomic-operating-layer-bg.png" alt=""/>
+  <div class="fsred-wash"></div>
+  <div class="slide-eyebrow">COMMUNITY BUILDER GROWTH LADDER</div>
+  <div class="fsred-copy"><h1>Each permission unlocks <em>the next room.</em></h1><p class="fsred-sub">The point is not a feature list. It is a controlled path from one curated event to a community-powered sales engine.</p></div>
+  <div class="fsred-stage">
+    <div class="fsred-card" data-step="1"><b>Invite-only events</b><span>Start with trust</span><p>The builder chooses the room before software scales it.</p></div>
+    <div class="fsred-card" data-step="2"><b>Trusted referrals</b><span>Word of mouth</span><p>Attendees become a sales channel only when the builder allows it.</p></div>
+    <div class="fsred-card" data-step="3"><b>Host-led expansion</b><span>More rooms</span><p>Pros, staff, and trusted hosts create more supply without losing quality.</p></div>
+    <div class="fsred-card" data-step="4"><b>Player network</b><span>Self-propelling demand</span><p>The community starts gathering itself around the right people.</p></div>
+  </div>
+</div>
+<div class="casey-slide ds-focus fsred-slide" id="cs-invite-stage-permission-map-pink" style="display:none" aria-label="Invitation permissions map redesign">
+  <img class="fsred-bg" src="assets/cs-referral-network-plate-pink.png" alt=""/>
+  <div class="fsred-wash"></div>
+  <div class="slide-eyebrow">INVITATION PERMISSIONS</div>
+  <div class="fsred-copy"><h1>Who can invite whom becomes <em>the growth engine.</em></h1><p class="fsred-sub">GnR gives the community builder the controls: who starts, who refers, who hosts, and when the network can run.</p></div>
+  <div class="fsred-map">
+    <svg viewBox="0 0 720 600" aria-hidden="true"><g fill="none" stroke-linecap="round"><path d="M138 86 C260 160 314 220 360 300" stroke="#5B8FD4" stroke-width="4" opacity=".58"/><path d="M582 86 C460 160 406 220 360 300" stroke="#B8954A" stroke-width="4" opacity=".62"/><path d="M138 514 C260 440 314 380 360 300" stroke="#C8462C" stroke-width="4" opacity=".58"/><path d="M582 514 C460 440 406 380 360 300" stroke="#1A1612" stroke-width="4" opacity=".30"/></g></svg>
+    <div class="fsred-hub">Community<br>builder</div>
+    <div class="fsred-node n1"><b>Builder invites</b>Curated first room.</div>
+    <div class="fsred-node n2"><b>Friends refer</b>Growth with trust attached.</div>
+    <div class="fsred-node n3"><b>Hosts expand</b>More rooms under rules.</div>
+    <div class="fsred-node n4"><b>Players gather</b>Demand starts compounding.</div>
+  </div>
+</div>
+<div class="casey-slide ds-focus fsred-slide" id="cs-invite-stage-referral-loop-pink" style="display:none" aria-label="Referral loop redesign">
+  <img class="fsred-bg" src="assets/cs-invitation-word-of-mouth-glow-clinic-bg.png" alt=""/>
+  <div class="fsred-wash"></div>
+  <div class="slide-eyebrow">REFERRAL SALES ENGINE</div>
+  <div class="fsred-copy"><h1>Great rooms create referrals. <em>Referrals create the next room.</em></h1><p class="fsred-sub">The roadmap should feel like a loop, not a checklist: curate the room, make people feel welcome, let trusted referrals in, repeat.</p></div>
+  <div class="loop-wrap">
+    <div class="loop-ring"></div><div class="loop-center">The room<br>gets better</div>
+    <div class="loop-node l1">Curate the first room</div>
+    <div class="loop-node l2">People feel they belong</div>
+    <div class="loop-node l3">Trusted referrals arrive</div>
+    <div class="loop-node l4">Demand compounds</div>
+  </div>
+</div>
 <style>
   #cs-feature-stage-unlocks{background:#f3ead8!important;overflow:hidden;color:#1a1612}
   #cs-feature-stage-unlocks .feature-stage-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:#fbf7ef;z-index:1}
@@ -37083,7 +37157,7 @@ const SLIDE_ALTS = {
   13: ['cs-fv6-referral-engine-blue'],
   17: ['cs-samecourt-pyramid-white2', 'cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
   20: ['cs-16'],
-  27: ['cs-invite-graph-import-pink'],
+  27: ['cs-invite-stage-builder-ladder-pink', 'cs-invite-stage-permission-map-pink', 'cs-invite-stage-referral-loop-pink', 'cs-invite-graph-import-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
