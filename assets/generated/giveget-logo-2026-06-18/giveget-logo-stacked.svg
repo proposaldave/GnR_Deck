@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 760" role="img" aria-label="Stacked GiveGet logo">
+  <rect width="740" height="760" fill="#fbf7ef"/>
+  <g transform="translate(290 86) scale(1.08)">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M104 32c-25-18-64-6-77 24-15 35 10 76 48 78" stroke="#1a1612" stroke-width="10"/>
+      <path d="M55 128c28 16 66 1 78-31 13-36-15-74-54-73" stroke="#b8954a" stroke-width="10"/>
+      <path d="M45 58c17-25 55-27 75-4" stroke="#c8462c" stroke-width="10"/>
+      <path d="M116 98c-18 24-56 24-75 1" stroke="#5B8FD4" stroke-width="10"/>
+    </g>
+    <circle cx="80" cy="80" r="7" fill="#c8462c"/>
+    <circle cx="106" cy="99" r="6" fill="#b8954a"/>
+  </g>
+  <text x="370" y="356" text-anchor="middle" fill="#1a1612" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="108" font-weight="900" letter-spacing="0">Give<tspan fill="#c8462c">Get</tspan></text>
+  <text x="370" y="416" text-anchor="middle" fill="#1a1612" opacity="0.66" font-family="Manrope, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="0">spoken: Give n Get</text>
+  <path d="M160 468H580" stroke="#b8954a" stroke-width="2" opacity="0.38"/>
+  <text x="370" y="535" text-anchor="middle" fill="#1a1612" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="40" font-weight="850" letter-spacing="0">
+    <tspan x="370" dy="0">Give more to your community.</tspan>
+    <tspan x="370" dy="52" fill="#c8462c">Get more back.</tspan>
+  </text>
+  <text x="370" y="650" text-anchor="middle" fill="#1a1612" opacity="0.68" font-family="Manrope, Arial, sans-serif" font-size="23" font-weight="800" letter-spacing="0">That's GiveGet.</text>
+</svg>

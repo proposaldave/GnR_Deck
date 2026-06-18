@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 300" role="img" aria-label="GiveGet logo with deck line">
+  <rect width="1180" height="300" fill="#fbf7ef"/>
+  <g transform="translate(52 54)">
+    <circle cx="88" cy="88" r="76" fill="#fffaf0" stroke="#b8954a" stroke-width="2"/>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M115 36c-28-19-70-5-85 28-17 39 12 82 54 84" stroke="#1a1612" stroke-width="11"/>
+      <path d="M60 142c31 18 74 1 87-35 15-40-17-82-60-81" stroke="#b8954a" stroke-width="11"/>
+      <path d="M49 65c19-28 62-30 84-4" stroke="#c8462c" stroke-width="11"/>
+      <path d="M129 110c-21 27-63 27-85 1" stroke="#5B8FD4" stroke-width="11"/>
+    </g>
+    <circle cx="88" cy="88" r="7" fill="#c8462c"/>
+  </g>
+  <text x="250" y="128" fill="#1a1612" font-family="Fraunces, 'Playfair Display', Georgia, serif" font-size="96" font-weight="900" letter-spacing="0">Give<tspan fill="#c8462c">Get</tspan></text>
+  <text x="255" y="184" fill="#1a1612" opacity="0.76" font-family="Manrope, Arial, sans-serif" font-size="27" font-weight="750" letter-spacing="0">Give more to your community. Get more from it.</text>
+  <path d="M255 214H954" stroke="#b8954a" stroke-width="2" opacity="0.38"/>
+</svg>

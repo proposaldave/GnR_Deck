@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1120" role="img" aria-label="GiveGet logo board">
+  <rect width="1600" height="1120" fill="#fbf7ef"/>
+  <style>
+    .label{font-family:Manrope,Arial,sans-serif;font-size:22px;font-weight:800;fill:#c8462c}
+    .note{font-family:Manrope,Arial,sans-serif;font-size:18px;font-weight:650;fill:rgba(26,22,18,.66)}
+    .word{font-family:Fraunces,'Playfair Display',Georgia,serif;font-size:92px;font-weight:900;letter-spacing:0;fill:#1a1612}
+    .sans{font-family:Manrope,Arial,sans-serif;font-weight:750;letter-spacing:0;fill:#1a1612}
+    .panel{fill:#fffaf0;stroke:rgba(184,149,74,.34);stroke-width:2}
+  </style>
+  <defs>
+    <g id="mark">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M104 32c-25-18-64-6-77 24-15 35 10 76 48 78" stroke="#1a1612" stroke-width="10"/>
+        <path d="M55 128c28 16 66 1 78-31 13-36-15-74-54-73" stroke="#b8954a" stroke-width="10"/>
+        <path d="M45 58c17-25 55-27 75-4" stroke="#c8462c" stroke-width="10"/>
+        <path d="M116 98c-18 24-56 24-75 1" stroke="#5B8FD4" stroke-width="10"/>
+      </g>
+      <circle cx="80" cy="80" r="7" fill="#c8462c"/>
+      <circle cx="106" cy="99" r="6" fill="#b8954a"/>
+    </g>
+  </defs>
+
+  <text x="80" y="74" class="label">GiveGet logo board</text>
+  <text x="80" y="108" class="note">Actual vector lockups. Text is editable; no generated-image lettering.</text>
+
+  <rect class="panel" x="80" y="150" width="680" height="250" rx="10"/>
+  <text x="112" y="192" class="label">01 Primary</text>
+  <use href="#mark" transform="translate(116 220) scale(.86)"/>
+  <text x="280" y="302" class="word">Give<tspan fill="#c8462c">Get</tspan></text>
+  <text x="284" y="344" class="sans" font-size="23">Where what you give comes back.</text>
+
+  <rect class="panel" x="840" y="150" width="680" height="250" rx="10"/>
+  <text x="872" y="192" class="label">02 Deck line</text>
+  <use href="#mark" transform="translate(876 220) scale(.82)"/>
+  <text x="1032" y="296" class="word">Give<tspan fill="#c8462c">Get</tspan></text>
+  <text x="1036" y="340" class="sans" font-size="22">Give more to your community. Get more from it.</text>
+
+  <rect class="panel" x="80" y="455" width="680" height="250" rx="10"/>
+  <text x="112" y="497" class="label">03 Spoken support</text>
+  <text x="150" y="596" class="word">Give<tspan fill="#c8462c">Get</tspan></text>
+  <text x="154" y="642" class="sans" font-size="24" fill-opacity=".72">spoken: Give n Get</text>
+
+  <rect class="panel" x="840" y="455" width="680" height="250" rx="10"/>
+  <text x="872" y="497" class="label">04 Mark only</text>
+  <use href="#mark" transform="translate(1098 518) scale(1.12)"/>
+  <text x="1190" y="676" text-anchor="middle" class="note">return-loop mark</text>
+
+  <rect class="panel" x="80" y="760" width="680" height="280" rx="10"/>
+  <text x="112" y="802" class="label">05 Naked brand expression</text>
+  <text x="150" y="900" class="word">Give<tspan fill="#c8462c">Get</tspan></text>
+  <text x="154" y="958" class="sans" font-size="44">Give more. Get more.</text>
+
+  <rect class="panel" x="840" y="760" width="680" height="280" rx="10"/>
+  <text x="872" y="802" class="label">06 Deck close</text>
+  <text x="900" y="890" class="word" font-size="76">Give<tspan fill="#c8462c">Get</tspan></text>
+  <text x="904" y="950" class="sans" font-size="34">Give more to your community.</text>
+  <text x="904" y="996" class="sans" font-size="34" fill="#c8462c">Get more back.</text>
+</svg>
