@@ -40562,6 +40562,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-community-reciprocity-problem' && window.csCommunityReciprocityProblemAdvance && window.csCommunityReciprocityProblemAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // [Dave 2026-05-18 LATEST] cs-18-vd4 — wheel-block until pillars finish entering.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-18-vd4' && window.csVd4Advance && window.csVd4Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -40765,6 +40769,10 @@ document.addEventListener('wheel', e => {
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-giving-visible-world' && window.csGivingVisibleWorldReverse && window.csGivingVisibleWorldReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-community-reciprocity-problem' && window.csCommunityReciprocityProblemReverse && window.csCommunityReciprocityProblemReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
