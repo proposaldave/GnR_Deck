@@ -1,0 +1,7 @@
+Prompt archive for the new "giving visible" slide background.
+
+Create a warm, investor-grade 16:9 background image for a Give n Receive pitch deck slide.
+No text, no logos, no embedded words.
+Scene: real-world community value becoming visible. A warm pickleball/community gathering at dusk, people around a table and courts, open-hearted giving and referral paths represented as subtle glowing lines moving between people. A soft smartphone/social-graph layer fades in from the left but the real-world community remains the emotional center. Leave clean cream negative space in the upper-left and center-left for slide text. Palette: cream paper, warm gold, restrained red, soft blue, ink. Premium editorial watercolor-meets-cinematic style, clear humans, no fantasy symbols, no clutter.
+
+The generated image tool returned unrelated visuals during this session, so the shipped deck asset is a deterministic SVG built from this concept for reliability and editable layout control.

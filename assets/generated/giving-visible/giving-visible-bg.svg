@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Warm community network background">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf7ef"/>
+      <stop offset=".42" stop-color="#f3ead8"/>
+      <stop offset="1" stop-color="#e8d7b5"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx=".67" cy=".48" r=".58">
+      <stop offset="0" stop-color="#fff5d6" stop-opacity=".9"/>
+      <stop offset=".42" stop-color="#f3c96e" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#f3c96e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="softBlue" cx=".17" cy=".58" r=".42">
+      <stop offset="0" stop-color="#5b8fd4" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#5b8fd4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur24">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1a1612" flood-opacity=".16"/>
+    </filter>
+    <pattern id="grain" width="72" height="72" patternUnits="userSpaceOnUse">
+      <circle cx="9" cy="15" r="1.2" fill="#1a1612" opacity=".045"/>
+      <circle cx="47" cy="31" r="1" fill="#b8954a" opacity=".08"/>
+      <circle cx="61" cy="64" r=".8" fill="#c8462c" opacity=".045"/>
+    </pattern>
+    <style>
+      .ink{fill:#1a1612}
+      .gold{fill:#b8954a}
+      .red{fill:#c8462c}
+      .blue{fill:#5b8fd4}
+      .mint{fill:#49b4a0}
+      .line{fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .wire{fill:none;stroke:#f2d27e;stroke-width:3.2;stroke-linecap:round;opacity:.72}
+      .wire2{fill:none;stroke:#5b8fd4;stroke-width:2.2;stroke-dasharray:8 13;stroke-linecap:round;opacity:.35}
+      .wire3{fill:none;stroke:#c8462c;stroke-width:2.2;stroke-dasharray:3 13;stroke-linecap:round;opacity:.28}
+      .humanHead{fill:#f4c57a}
+      .humanBody{fill:#315f85}
+      .humanBody2{fill:#a64734}
+      .humanBody3{fill:#9d7a31}
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#paper)"/>
+  <rect width="1920" height="1080" fill="url(#grain)" opacity=".6"/>
+  <rect width="1920" height="1080" fill="url(#warmGlow)"/>
+  <rect width="1920" height="1080" fill="url(#softBlue)"/>
+  <path d="M0 0h920c-170 132-278 306-318 522-41 219-164 391-349 516H0Z" fill="#fbf7ef" opacity=".63"/>
+  <path d="M0 0h870c-154 126-247 278-284 457-45 218-174 375-392 470H0Z" fill="#fbf7ef" opacity=".55"/>
+
+  <g opacity=".42">
+    <path class="line" d="M108 892C375 695 643 586 913 566s520-8 750-161" stroke="#b8954a" stroke-width="1.4"/>
+    <path class="line" d="M152 816c268-148 533-220 795-216 260 4 432 66 706-60" stroke="#5b8fd4" stroke-width="1.2"/>
+    <path class="line" d="M221 962c249-183 493-284 732-302 239-17 510 26 736-126" stroke="#c8462c" stroke-width="1.2"/>
+  </g>
+
+  <g transform="translate(1150 626)" opacity=".82">
+    <path d="M-402 130C-324 30-154-39 52-37c235 2 403 102 398 225-5 125-185 220-422 213-227-7-393-116-430-271Z" fill="#d0b061" opacity=".14"/>
+    <ellipse cx="0" cy="132" rx="340" ry="86" fill="#9b6d38" opacity=".16"/>
+    <ellipse cx="0" cy="100" rx="278" ry="72" fill="#7b512b" opacity=".20"/>
+    <ellipse cx="0" cy="72" rx="218" ry="52" fill="#5e3c24" opacity=".22"/>
+  </g>
+
+  <g transform="translate(1170 625)" filter="url(#shadow)">
+    <ellipse cx="0" cy="132" rx="310" ry="70" fill="#6f4a27" opacity=".55"/>
+    <ellipse cx="0" cy="106" rx="260" ry="58" fill="#9c6a34" opacity=".42"/>
+    <path d="M-264 98c113 39 424 39 528 0" class="line" stroke="#f0cc82" stroke-width="8" opacity=".25"/>
+  </g>
+
+  <g transform="translate(1170 650)">
+    <path class="wire" d="M-417-60C-299-174-143-222 0-172 147-224 301-174 420-61"/>
+    <path class="wire" d="M-420 38C-287-50-132-65 0-4 146-71 287-48 414 40"/>
+    <path class="wire" d="M-352 170C-230 98-95 90 0 136 94 93 229 99 352 169"/>
+    <path class="wire2" d="M-368 20C-280 69-209 106-147 175"/>
+    <path class="wire2" d="M335 22C260 72 188 118 143 179"/>
+    <path class="wire3" d="M-94-191C-64-86-39 10-8 137"/>
+    <path class="wire3" d="M124-190C89-82 54 22 18 138"/>
+    <circle cx="0" cy="-173" r="12" class="gold"/>
+    <circle cx="-416" cy="-60" r="10" class="blue"/>
+    <circle cx="420" cy="-61" r="10" class="red"/>
+    <circle cx="-420" cy="38" r="10" class="gold"/>
+    <circle cx="414" cy="40" r="10" class="blue"/>
+    <circle cx="-352" cy="170" r="9" class="red"/>
+    <circle cx="352" cy="169" r="9" class="gold"/>
+    <circle cx="0" cy="136" r="15" class="mint"/>
+  </g>
+
+  <g id="people" transform="translate(1170 650)">
+    <g transform="translate(-286 -18)"><circle class="humanHead" cx="0" cy="-34" r="17"/><path class="humanBody" d="M-25 35c4-44 46-44 50 0Z"/><path class="line" d="M-13-7c-31 13-58 26-81 45" stroke="#f2d27e" stroke-width="6"/><path class="line" d="M12-5c32 13 58 29 80 47" stroke="#f2d27e" stroke-width="6"/></g>
+    <g transform="translate(-148 -76)"><circle class="humanHead" cx="0" cy="-31" r="16"/><path class="humanBody2" d="M-24 36c4-43 44-43 48 0Z"/><path class="line" d="M-9-7c-23 16-42 33-58 52" stroke="#f2d27e" stroke-width="5"/><path class="line" d="M13-8c25 16 48 34 70 54" stroke="#f2d27e" stroke-width="5"/></g>
+    <g transform="translate(2 -96)"><circle class="humanHead" cx="0" cy="-34" r="18"/><path class="humanBody3" d="M-28 40c4-47 52-47 56 0Z"/><path class="line" d="M-12-5c-30 12-54 27-75 45" stroke="#f2d27e" stroke-width="6"/><path class="line" d="M15-7c31 13 57 30 79 52" stroke="#f2d27e" stroke-width="6"/></g>
+    <g transform="translate(146 -78)"><circle class="humanHead" cx="0" cy="-31" r="16"/><path class="humanBody" d="M-24 36c4-43 44-43 48 0Z"/><path class="line" d="M-14-6c-28 14-52 30-71 50" stroke="#f2d27e" stroke-width="5"/><path class="line" d="M13-6c26 15 47 32 64 50" stroke="#f2d27e" stroke-width="5"/></g>
+    <g transform="translate(291 -16)"><circle class="humanHead" cx="0" cy="-34" r="17"/><path class="humanBody2" d="M-25 35c4-44 46-44 50 0Z"/><path class="line" d="M-13-7c-31 13-58 26-81 45" stroke="#f2d27e" stroke-width="6"/><path class="line" d="M12-5c32 13 58 29 80 47" stroke="#f2d27e" stroke-width="6"/></g>
+    <g transform="translate(-214 118)"><circle class="humanHead" cx="0" cy="-32" r="16"/><path class="humanBody3" d="M-25 37c4-44 46-44 50 0Z"/></g>
+    <g transform="translate(-74 152)"><circle class="humanHead" cx="0" cy="-32" r="16"/><path class="humanBody" d="M-25 37c4-44 46-44 50 0Z"/></g>
+    <g transform="translate(79 151)"><circle class="humanHead" cx="0" cy="-32" r="16"/><path class="humanBody2" d="M-25 37c4-44 46-44 50 0Z"/></g>
+    <g transform="translate(218 118)"><circle class="humanHead" cx="0" cy="-32" r="16"/><path class="humanBody3" d="M-25 37c4-44 46-44 50 0Z"/></g>
+  </g>
+
+  <g transform="translate(1264 214)" opacity=".62">
+    <path d="M0 0h468l54 248H54Z" fill="#d8c08a" opacity=".24"/>
+    <path d="M53 248 0 0h468l54 248Z" class="line" stroke="#b8954a" stroke-width="4" opacity=".42"/>
+    <path d="M64 60h424M77 122h426M91 184h425M112 12l54 232M236 9l36 239M359 8l18 240" class="line" stroke="#5b8fd4" stroke-width="2.4" opacity=".32"/>
+  </g>
+
+  <g transform="translate(334 660)" opacity=".58">
+    <rect x="-120" y="-186" width="206" height="360" rx="38" fill="#1a1612" opacity=".32"/>
+    <rect x="-96" y="-150" width="158" height="282" rx="18" fill="#f3ead8" opacity=".58"/>
+    <circle cx="-17" cy="151" r="12" fill="#f3ead8" opacity=".70"/>
+    <path class="wire2" d="M-10-110C93-136 174-97 235-7M-32-60C74-34 148 13 209 83M-49 18C57 71 125 120 171 176"/>
+    <circle cx="226" cy="-8" r="11" class="gold"/>
+    <circle cx="205" cy="83" r="9" class="blue"/>
+    <circle cx="168" cy="176" r="9" class="red"/>
+  </g>
+
+  <g opacity=".74">
+    <circle cx="980" cy="620" r="34" fill="#f2d27e" opacity=".26"/>
+    <circle cx="980" cy="620" r="20" fill="#f2d27e" opacity=".66"/>
+    <path d="M980 664c-34 0-66 20-82 53h164c-16-33-48-53-82-53Z" fill="#f2d27e" opacity=".6"/>
+    <path d="M980 586V278M980 586l-180-225M980 586l192-251M980 586l310-116M980 586l-346 92M980 586l190 245M980 586l-18 328" class="line" stroke="#b8954a" stroke-width="3" opacity=".43"/>
+    <circle cx="980" cy="278" r="9" class="gold"/>
+    <circle cx="800" cy="361" r="8" class="blue"/>
+    <circle cx="1172" cy="335" r="8" class="red"/>
+    <circle cx="1290" cy="470" r="8" class="mint"/>
+    <circle cx="634" cy="678" r="8" class="gold"/>
+    <circle cx="1170" cy="831" r="9" class="blue"/>
+    <circle cx="962" cy="914" r="7" class="red"/>
+  </g>
+
+  <g filter="url(#blur24)" opacity=".58">
+    <circle cx="1342" cy="775" r="122" fill="#f2d27e"/>
+    <circle cx="1556" cy="350" r="98" fill="#f2d27e"/>
+    <circle cx="430" cy="714" r="92" fill="#5b8fd4" opacity=".45"/>
+  </g>
+  <rect width="1920" height="1080" fill="none" stroke="#f3ead8" stroke-width="34" opacity=".55"/>
+</svg>
