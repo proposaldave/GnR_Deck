@@ -8223,6 +8223,59 @@ window.cs1m5Reverse = function() {
   </section>
 </div>
 
+<!-- cs-community-reciprocity-problem - early problem framing [Codex 2026-06-17] -->
+<style>
+  #cs-community-reciprocity-problem{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
+  #cs-community-reciprocity-problem .crp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;filter:saturate(1.04) contrast(1.03) brightness(1.02)}
+  #cs-community-reciprocity-problem .crp-paper{position:absolute;inset:0;z-index:1;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.045) 1px,transparent 0);background-size:4px 4px;opacity:.18;mix-blend-mode:multiply;pointer-events:none}
+  #cs-community-reciprocity-problem .crp-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(243,234,216,.34) 0%,rgba(243,234,216,.18) 32%,rgba(243,234,216,.04) 62%,rgba(243,234,216,.00) 100%),linear-gradient(180deg,rgba(251,247,239,.20),rgba(243,234,216,.10) 42%,rgba(243,234,216,.40) 100%);pointer-events:none}
+  #cs-community-reciprocity-problem .crp-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.78);padding:7px 10px;border-radius:2px;box-shadow:0 8px 24px rgba(26,22,18,.06)}
+  #cs-community-reciprocity-problem .crp-content{position:absolute;left:78px;top:150px;width:min(860px,48vw);z-index:3;display:block;overflow:visible;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s}
+  #cs-community-reciprocity-problem[data-stage="1"] .crp-content{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-community-reciprocity-problem .crp-head{margin:0 0 22px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.0rem,6.0vw,6.7rem);font-weight:890;line-height:.94;letter-spacing:0;color:#1a1612;text-wrap:balance;text-shadow:0 2px 0 rgba(251,247,239,.94),0 16px 42px rgba(251,247,239,.86)}
+  #cs-community-reciprocity-problem .crp-head em{font-style:italic;color:#b8954a;font-weight:850}
+  #cs-community-reciprocity-problem .crp-sub{margin:0 0 28px;max-width:760px;font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.28vw,1.34rem);line-height:1.48;font-weight:820;color:rgba(26,22,18,.82);text-shadow:0 2px 0 rgba(251,247,239,.90),0 12px 30px rgba(251,247,239,.78)}
+  #cs-community-reciprocity-problem .crp-flow{display:grid;grid-template-columns:1fr;gap:12px;width:min(740px,100%)}
+  #cs-community-reciprocity-problem .crp-row{display:grid;grid-template-columns:168px 1fr;align-items:center;gap:14px;padding:13px 16px;border:1px solid rgba(184,149,74,.28);background:rgba(251,247,239,.76);box-shadow:0 18px 46px rgba(26,22,18,.08),inset 0 1px 0 rgba(255,255,255,.76);backdrop-filter:blur(2px)}
+  #cs-community-reciprocity-problem .crp-label{font-family:'Manrope',sans-serif;font-size:.74rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#5b8fd4;white-space:nowrap}
+  #cs-community-reciprocity-problem .crp-row:nth-child(2) .crp-label{color:#c8462c}
+  #cs-community-reciprocity-problem .crp-text{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.18rem,1.52vw,1.56rem);font-weight:760;line-height:1.13;color:#1a1612}
+  #cs-community-reciprocity-problem .crp-kicker{margin-top:18px;display:inline-block;font-family:'Manrope',sans-serif;font-size:.76rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.82);border:1px solid rgba(200,70,44,.24);padding:11px 14px;box-shadow:0 14px 34px rgba(26,22,18,.08)}
+  #cs-community-reciprocity-problem .crp-hint{position:absolute;left:50%;bottom:46px;z-index:4;transform:translateX(-50%);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.2rem;color:#b8954a;line-height:1;opacity:.76;transition:opacity .35s ease}
+  #cs-community-reciprocity-problem[data-stage="1"] .crp-hint{opacity:0}
+  html[data-export="1"] #cs-community-reciprocity-problem .crp-content{opacity:1!important;visibility:visible!important;transform:none!important}
+  html[data-export="1"] #cs-community-reciprocity-problem .crp-hint{display:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-community-reciprocity-problem" data-stage="0" onclick="if(window.csCommunityReciprocityProblemAdvance && window.csCommunityReciprocityProblemAdvance()) event.stopPropagation()" style="display:none">
+  <img class="crp-bg" src="assets/generated/wired-for-this/wired-for-this-community-bg-v1.png" alt="">
+  <div class="crp-paper"></div>
+  <div class="crp-wash"></div>
+  <div class="crp-eye">THE RECIPROCITY PROBLEM</div>
+  <div class="crp-content">
+    <h1 class="crp-head">The missing layer is <em>reciprocal fit.</em></h1>
+    <p class="crp-sub">How do people get the most out of a community, while the community gets the most out of each person?</p>
+    <div class="crp-flow" aria-label="Reciprocal fit problem">
+      <div class="crp-row"><div class="crp-label">You receive</div><div class="crp-text">right people &bull; right room &bull; right invitation</div></div>
+      <div class="crp-row"><div class="crp-label">You give</div><div class="crp-text">welcome &bull; refer &bull; host &bull; energize</div></div>
+    </div>
+    <div class="crp-kicker">Today, that matching is invisible and mostly left to chance.</div>
+  </div>
+  <div class="crp-hint" aria-hidden="true">&darr;</div>
+</div>
+<script>
+  window.csCommunityReciprocityProblemAdvance = function(){
+    const slide = document.getElementById('cs-community-reciprocity-problem');
+    if (!slide) return false;
+    if (slide.dataset.stage !== '1') { slide.dataset.stage = '1'; return true; }
+    return false;
+  };
+  window.csCommunityReciprocityProblemReverse = function(){
+    const slide = document.getElementById('cs-community-reciprocity-problem');
+    if (!slide) return false;
+    if (slide.dataset.stage === '1') { slide.dataset.stage = '0'; return true; }
+    return false;
+  };
+</script>
 <!-- cs-revenue-util-profit-blue - blue-dot proof alt beside title slide [Codex 2026-06-10] -->
 <style>
   #cs-revenue-util-profit-blue{background:#f3ead8!important;overflow:hidden;color:#1a1612}
@@ -37112,6 +37165,7 @@ window.csA7m1Reverse = function() {
 
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
+  'cs-community-reciprocity-problem',
   'cs-1bm1',
   'cs-1m8',
   'cs-community-builder-product',
@@ -39855,6 +39909,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-frontier': 'csFrontierAdvance',
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgAdvance',
     'cs-frontier-scale-pink-2': 'csFrontierScalePink2Advance',
+    'cs-community-reciprocity-problem': 'csCommunityReciprocityProblemAdvance',
     'cs-measure': 'csMeasureAdvance',
     'cs-byproduct': 'csByproductAdvance',
     'cs-onandoff': 'csOnandoffAdvance',
@@ -39920,6 +39975,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-frontier': 'csFrontierReverse',
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgReverse',
     'cs-frontier-scale-pink-2': 'csFrontierScalePink2Reverse',
+    'cs-community-reciprocity-problem': 'csCommunityReciprocityProblemReverse',
     'cs-measure': 'csMeasureReverse',
     'cs-byproduct': 'csByproductReverse',
     'cs-onandoff': 'csOnandoffReverse',
