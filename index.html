@@ -23006,6 +23006,7 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice.casey-entered .vc-list { animation-delay:.18s; }
   #cs-value-choice.casey-entered .vc-right { animation-delay:.35s; }
   @keyframes vcRise { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+  @keyframes vcCenterRise { from { opacity:0; transform:translate(-50%,12px); } to { opacity:1; transform:translate(-50%,0); } }
   html[data-export="1"] #cs-value-choice .vc-question, html[data-export="1"] #cs-value-choice .vc-list, html[data-export="1"] #cs-value-choice .vc-right { opacity:1 !important; transform:none !important; animation:none !important; }
 
   #cs-value-choice-image-only-pink { background:#1a1612 !important; overflow:hidden; }
@@ -23068,6 +23069,10 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice-image-annotated-pink .vcio-ai-copy b{display:block;font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:#fbf7ef;line-height:1.1}
   #cs-value-choice-image-annotated-pink .vcio-ai-copy small{display:block;margin-top:3px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#b8954a;line-height:1.15}
   #cs-value-choice-image-annotated-pink .vcio-clean-note{position:absolute;left:50%;bottom:7.8%;transform:translateX(-50%);z-index:3;width:min(760px,70%);text-align:center;font-family:'Manrope',sans-serif;font-size:.74rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,247,239,.82);text-shadow:0 2px 10px rgba(0,0,0,.50)}
+  #cs-value-choice-image-annotated-pink .vcio-main-copy{position:absolute;left:50%;top:88px;transform:translateX(-50%);z-index:5;width:min(820px,58vw);text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,3.05vw,3.45rem);font-weight:850;line-height:1.04;letter-spacing:0;color:#fbf7ef;text-shadow:0 3px 20px rgba(0,0,0,.76),0 0 42px rgba(26,22,18,.78)}
+  #cs-value-choice-image-annotated-pink .vcio-main-copy em{font-style:italic;color:#b8954a}
+  #cs-value-choice-image-annotated-pink.casey-entered .vcio-main-copy{animation:vcCenterRise .7s cubic-bezier(.22,1,.36,1) both}
+  html[data-export="1"] #cs-value-choice-image-annotated-pink .vcio-main-copy{opacity:1!important;transform:translate(-50%,0)!important;animation:none!important}
   #cs-value-choice-image-receipts-pink .vcio-question { color:#b8954a; }
   #cs-value-choice-image-receipts-pink .vcio-caption { position:absolute; left:50%; bottom:44px; transform:translateX(-50%); z-index:4; display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:7px; border:1px solid rgba(184,149,74,.48); background:rgba(26,22,18,.68); box-shadow:0 18px 44px rgba(0,0,0,.28); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.34rem; font-weight:850; font-style:italic; color:#fbf7ef; white-space:nowrap; }
   #cs-value-choice-image-receipts-pink .vcio-caption em { color:#c8462c; font-style:italic; }
@@ -23190,6 +23195,7 @@ window.csBrandV8Reverse = function() {
 
 <div class="casey-slide ds-focus" id="cs-value-choice-image-annotated-pink" style="display:none" aria-label="Annotated product value visual concept">
   <div class="vcio-eye">What technology still cannot see</div>
+  <div class="vcio-main-copy">Products make us feel better for a moment.<br><em>People make life feel meaningful.</em></div>
   <img class="vcio-bg" src="assets/cs-value-choice-chatgpt-2026-06-09.png" alt="Visual hierarchy of valuable products orbiting a brighter human connection circle."/>
   <div class="vcio-scrim" aria-hidden="true"></div>
   <div class="vcio-question">Which product is most valuable to you?</div>
