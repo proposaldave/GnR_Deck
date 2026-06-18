@@ -8293,6 +8293,67 @@ window.cs1m5Reverse = function() {
     return false;
   };
 </script>
+<!-- cs-giving-visible-world - inversion thesis after loneliness problem [Codex 2026-06-18] -->
+<style>
+  #cs-giving-visible-world{background:#f3ead8!important;color:#1a1612;overflow:hidden;cursor:pointer}
+  #cs-giving-visible-world .gv-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block}
+  #cs-giving-visible-world:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .72s cubic-bezier(.22,1,.36,1);background:linear-gradient(90deg,rgba(251,247,239,.74) 0%,rgba(251,247,239,.45) 29%,rgba(251,247,239,.10) 62%,rgba(251,247,239,0) 100%),radial-gradient(ellipse at 36% 22%,rgba(251,247,239,.74),rgba(251,247,239,.16) 54%,rgba(251,247,239,0) 76%)}
+  #cs-giving-visible-world[data-stage="1"]:after{opacity:1}
+  #cs-giving-visible-world .gv-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.82);padding:7px 10px;border-radius:2px;box-shadow:0 8px 24px rgba(26,22,18,.06)}
+  #cs-giving-visible-world .gv-content{position:absolute;display:block;left:82px;top:132px;width:min(980px,52vw);z-index:3;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .76s cubic-bezier(.22,1,.36,1),transform .76s cubic-bezier(.22,1,.36,1),visibility 0s linear .76s}
+  #cs-giving-visible-world[data-stage="1"] .gv-content{opacity:1;visibility:visible;transform:none;transition:opacity .86s cubic-bezier(.22,1,.36,1),transform .86s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-giving-visible-world .gv-title{margin:0;max-width:900px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4rem,5.75vw,6.5rem);font-weight:900;line-height:.9;letter-spacing:0;color:#1a1612;text-wrap:balance;text-shadow:0 2px 0 rgba(251,247,239,.92),0 22px 48px rgba(251,247,239,.78)}
+  #cs-giving-visible-world .gv-title em{font-style:italic;color:#c8462c;font-weight:850}
+  #cs-giving-visible-world .gv-sub{margin:24px 0 0;max-width:750px;font-family:'Manrope',sans-serif;font-size:clamp(1.03rem,1.25vw,1.38rem);font-weight:820;line-height:1.42;color:rgba(26,22,18,.78);text-shadow:0 2px 0 rgba(251,247,239,.86),0 14px 32px rgba(251,247,239,.65)}
+  #cs-giving-visible-world .gv-system{margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(210px,1fr));gap:14px;max-width:660px}
+  #cs-giving-visible-world .gv-step{position:relative;min-height:86px;padding:17px 20px 15px 54px;border:1px solid rgba(184,149,74,.26);background:rgba(251,247,239,.74);box-shadow:0 18px 44px rgba(26,22,18,.08),inset 0 1px 0 rgba(255,255,255,.65);backdrop-filter:blur(2px)}
+  #cs-giving-visible-world .gv-step:before{content:"";position:absolute;left:21px;top:24px;width:13px;height:13px;border-radius:50%;background:#b8954a;box-shadow:0 0 0 8px rgba(184,149,74,.11)}
+  #cs-giving-visible-world .gv-step:nth-child(2):before{background:#5b8fd4;box-shadow:0 0 0 8px rgba(91,143,212,.10)}
+  #cs-giving-visible-world .gv-step:nth-child(3):before{background:#c8462c;box-shadow:0 0 0 8px rgba(200,70,44,.10)}
+  #cs-giving-visible-world .gv-step:nth-child(4):before{background:#49b4a0;box-shadow:0 0 0 8px rgba(73,180,160,.10)}
+  #cs-giving-visible-world .gv-step strong{display:block;margin:0 0 6px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.08rem,1.16vw,1.36rem);font-weight:900;line-height:.98;color:#1a1612}
+  #cs-giving-visible-world .gv-step span{display:block;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;line-height:1.34;color:rgba(26,22,18,.56)}
+  #cs-giving-visible-world .gv-bottom{position:absolute;left:82px;bottom:62px;z-index:3;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1) .12s,transform .72s cubic-bezier(.22,1,.36,1) .12s,visibility 0s linear .84s;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,1.86vw,2.12rem);font-weight:830;line-height:1.05;color:#1a1612;text-shadow:0 2px 0 rgba(251,247,239,.88)}
+  #cs-giving-visible-world[data-stage="1"] .gv-bottom{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1) .24s,transform .82s cubic-bezier(.22,1,.36,1) .24s,visibility 0s linear 0s}
+  #cs-giving-visible-world .gv-bottom em{font-style:italic;color:#b8954a}
+  html[data-export="1"] #cs-giving-visible-world:after{opacity:1!important}
+  html[data-export="1"] #cs-giving-visible-world .gv-content,html[data-export="1"] #cs-giving-visible-world .gv-bottom{opacity:1!important;visibility:visible!important;transform:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-giving-visible-world" data-stage="0" onclick="if(window.csGivingVisibleWorldAdvance && window.csGivingVisibleWorldAdvance()) event.stopPropagation()" style="display:none" aria-label="A world where giving is no longer invisible">
+  <img class="gv-bg" src="assets/generated/giving-visible/giving-visible-bg.svg" alt="" loading="lazy">
+  <div class="gv-eye">Open-hearted value</div>
+  <section class="gv-content" aria-hidden="false">
+    <h1 class="gv-title">A world where giving is no longer <em>invisible.</em></h1>
+    <p class="gv-sub">The thing humans are most wired for becomes visible enough to be trusted, reciprocated, and returned.</p>
+    <div class="gv-system" aria-label="Inversion system">
+      <div class="gv-step"><strong>Open heart</strong><span>Connection first</span></div>
+      <div class="gv-step"><strong>Visible value</strong><span>Giving is seen</span></div>
+      <div class="gv-step"><strong>Reciprocity</strong><span>Trust returns</span></div>
+      <div class="gv-step"><strong>Market</strong><span>A new system</span></div>
+    </div>
+  </section>
+  <div class="gv-bottom">Not life's scorecard. <em>A better incentive system.</em></div>
+</div>
+<script>
+  window.csGivingVisibleWorldAdvance = function(){
+    const slide = document.getElementById('cs-giving-visible-world');
+    if(!slide) return false;
+    if((slide.dataset.stage || '0') === '0'){
+      slide.dataset.stage = '1';
+      return true;
+    }
+    return false;
+  };
+  window.csGivingVisibleWorldReverse = function(){
+    const slide = document.getElementById('cs-giving-visible-world');
+    if(!slide) return false;
+    if((slide.dataset.stage || '0') !== '0'){
+      slide.dataset.stage = '0';
+      return true;
+    }
+    return false;
+  };
+</script>
 <!-- cs-community-reciprocity-problem - early problem framing [Codex 2026-06-17] -->
 <style>
   #cs-community-reciprocity-problem{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
@@ -37369,6 +37430,7 @@ window.csA7m1Reverse = function() {
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
   'cs-loneliness-epidemic',
+  'cs-giving-visible-world',
   'cs-feeling-economy',
   'cs-feeling-source',
   'cs-feeling-beyond-brand',
@@ -39487,6 +39549,7 @@ const slideLabels = [
   null,
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
   'Loneliness epidemic',
+  'Giving is no longer invisible',
   'The Feeling Economy',
   'The Source',
   'Beyond Brand',
@@ -40145,6 +40208,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgAdvance',
     'cs-frontier-scale-pink-2': 'csFrontierScalePink2Advance',
     'cs-loneliness-epidemic': 'csLonelinessEpidemicAdvance',
+    'cs-giving-visible-world': 'csGivingVisibleWorldAdvance',
     'cs-community-reciprocity-problem': 'csCommunityReciprocityProblemAdvance',
     'cs-measure': 'csMeasureAdvance',
     'cs-byproduct': 'csByproductAdvance',
@@ -40216,6 +40280,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgReverse',
     'cs-frontier-scale-pink-2': 'csFrontierScalePink2Reverse',
     'cs-loneliness-epidemic': 'csLonelinessEpidemicReverse',
+    'cs-giving-visible-world': 'csGivingVisibleWorldReverse',
     'cs-community-reciprocity-problem': 'csCommunityReciprocityProblemReverse',
     'cs-measure': 'csMeasureReverse',
     'cs-byproduct': 'csByproductReverse',
@@ -40493,6 +40558,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-giving-visible-world' && window.csGivingVisibleWorldAdvance && window.csGivingVisibleWorldAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // [Dave 2026-05-18 LATEST] cs-18-vd4 — wheel-block until pillars finish entering.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-18-vd4' && window.csVd4Advance && window.csVd4Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -40692,6 +40761,10 @@ document.addEventListener('wheel', e => {
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-frontier-scale-pink-2' && window.csFrontierScalePink2Reverse && window.csFrontierScalePink2Reverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-giving-visible-world' && window.csGivingVisibleWorldReverse && window.csGivingVisibleWorldReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
