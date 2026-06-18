@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Warm human circle background">
+  <defs>
+    <radialGradient id="centerWarm" cx="50%" cy="54%" r="58%">
+      <stop offset="0" stop-color="#E8C36B" stop-opacity=".64"/>
+      <stop offset=".24" stop-color="#B8954A" stop-opacity=".36"/>
+      <stop offset=".66" stop-color="#1A1612" stop-opacity=".88"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+    <radialGradient id="personGlow" cx="50%" cy="50%" r="52%">
+      <stop offset="0" stop-color="#F3EAD8"/>
+      <stop offset=".55" stop-color="#B8954A"/>
+      <stop offset="1" stop-color="#B8954A" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sourceBlur" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="11"/></filter>
+    <filter id="grain"><feTurbulence baseFrequency=".64" numOctaves="3" seed="31"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .11"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1920" height="1080" fill="#060504"/>
+  <rect width="1920" height="1080" fill="url(#centerWarm)"/>
+  <rect width="1920" height="1080" filter="url(#grain)" opacity=".5"/>
+  <g fill="none" stroke="#B8954A" stroke-opacity=".28" stroke-width="2">
+    <circle cx="960" cy="578" r="238"/>
+    <circle cx="960" cy="578" r="330" stroke-dasharray="7 16"/>
+    <circle cx="960" cy="578" r="430" stroke-opacity=".16"/>
+  </g>
+  <g stroke="#F3EAD8" stroke-opacity=".25" stroke-width="2" fill="none">
+    <path d="M960 578 C770 464 640 452 512 560"/>
+    <path d="M960 578 C1154 462 1286 458 1414 568"/>
+    <path d="M960 578 C824 760 674 794 492 750"/>
+    <path d="M960 578 C1114 760 1266 792 1440 748"/>
+  </g>
+  <g opacity=".95">
+    <g transform="translate(960 578)">
+      <circle r="62" fill="#F3EAD8" opacity=".12" filter="url(#sourceBlur)"/>
+      <circle r="19" fill="#F3EAD8"/>
+      <path d="M-45 58 C-38 22 -14 10 0 10 C14 10 38 22 45 58" fill="#F3EAD8" opacity=".9"/>
+    </g>
+    <g fill="#1A1612" opacity=".92">
+      <g transform="translate(960 272)"><circle r="17"/><path d="M-42 54 C-34 21 -13 10 0 10 C13 10 34 21 42 54"/></g>
+      <g transform="translate(1176 362)"><circle r="17"/><path d="M-42 54 C-34 21 -13 10 0 10 C13 10 34 21 42 54"/></g>
+      <g transform="translate(1264 578)"><circle r="17"/><path d="M-42 54 C-34 21 -13 10 0 10 C13 10 34 21 42 54"/></g>
+      <g transform="translate(1176 794)"><circle r="17"/><path d="M-42 54 C-34 21 -13 10 0 10 C13 10 34 21 42 54"/></g>
+      <g transform="translate(960 884)"><circle r="17"/><path d="M-42 54 C-34 21 -13 10 0 10 C13 10 34 21 42 54"/></g>
+      <g transform="translate(744 794)"><circle r="17"/><path d="M-42 54 C-34 21 -13 10 0 10 C13 10 34 21 42 54"/></g>
+      <g transform="translate(656 578)"><circle r="17"/><path d="M-42 54 C-34 21 -13 10 0 10 C13 10 34 21 42 54"/></g>
+      <g transform="translate(744 362)"><circle r="17"/><path d="M-42 54 C-34 21 -13 10 0 10 C13 10 34 21 42 54"/></g>
+    </g>
+  </g>
+  <g filter="url(#sourceBlur)" opacity=".85">
+    <circle cx="960" cy="578" r="12" fill="#F3EAD8"/>
+    <circle cx="744" cy="362" r="9" fill="#ff5aa5"/>
+    <circle cx="1176" cy="362" r="9" fill="#ff5aa5"/>
+    <circle cx="656" cy="578" r="9" fill="#ff5aa5"/>
+    <circle cx="1264" cy="578" r="9" fill="#ff5aa5"/>
+    <circle cx="744" cy="794" r="9" fill="#ff5aa5"/>
+    <circle cx="1176" cy="794" r="9" fill="#ff5aa5"/>
+  </g>
+  <g opacity=".16" fill="#F3EAD8">
+    <rect x="92" y="110" width="250" height="150" rx="18"/>
+    <rect x="1532" y="132" width="260" height="158" rx="18"/>
+    <rect x="116" y="806" width="282" height="162" rx="18"/>
+    <rect x="1502" y="804" width="284" height="164" rx="18"/>
+  </g>
+</svg>

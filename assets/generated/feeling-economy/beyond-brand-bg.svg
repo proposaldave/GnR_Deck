@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Invitation behavior network background">
+  <defs>
+    <radialGradient id="bbBg" cx="52%" cy="50%" r="68%">
+      <stop offset="0" stop-color="#B8954A" stop-opacity=".42"/>
+      <stop offset=".35" stop-color="#34261a" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="paper" x1="0" x2="1">
+      <stop offset="0" stop-color="#F3EAD8" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#B8954A" stop-opacity=".28"/>
+    </linearGradient>
+    <filter id="bbGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="13"/></filter>
+    <filter id="grain"><feTurbulence baseFrequency=".78" numOctaves="3" seed="47"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .12"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1920" height="1080" fill="#050505"/>
+  <rect width="1920" height="1080" fill="url(#bbBg)"/>
+  <rect width="1920" height="1080" filter="url(#grain)" opacity=".46"/>
+  <g stroke="#B8954A" stroke-opacity=".24" stroke-width="2" fill="none">
+    <path d="M276 244 C520 190 724 272 924 420 C1118 568 1314 636 1638 586"/>
+    <path d="M244 806 C534 680 736 682 960 550 C1216 404 1436 324 1712 378"/>
+    <path d="M476 526 C708 456 858 460 1014 554 C1178 652 1346 732 1578 804"/>
+  </g>
+  <g opacity=".92">
+    <g transform="translate(210 180) rotate(-8)">
+      <rect width="310" height="190" rx="14" fill="url(#paper)" stroke="#F3EAD8" stroke-opacity=".28"/>
+      <path d="M0 0 L155 104 L310 0" fill="none" stroke="#B8954A" stroke-width="5" opacity=".7"/>
+      <circle cx="155" cy="106" r="26" fill="#1A1612" opacity=".82"/>
+    </g>
+    <g transform="translate(1340 178) rotate(7)">
+      <rect width="310" height="190" rx="14" fill="url(#paper)" stroke="#F3EAD8" stroke-opacity=".28"/>
+      <path d="M0 0 L155 104 L310 0" fill="none" stroke="#C8462C" stroke-width="5" opacity=".65"/>
+      <circle cx="155" cy="106" r="26" fill="#C8462C" opacity=".8"/>
+    </g>
+    <g transform="translate(486 724) rotate(5)">
+      <rect width="310" height="190" rx="14" fill="url(#paper)" stroke="#F3EAD8" stroke-opacity=".28"/>
+      <path d="M0 0 L155 104 L310 0" fill="none" stroke="#5B8FD4" stroke-width="5" opacity=".65"/>
+      <circle cx="155" cy="106" r="26" fill="#5B8FD4" opacity=".82"/>
+    </g>
+    <g transform="translate(1116 700) rotate(-5)">
+      <rect width="310" height="190" rx="14" fill="url(#paper)" stroke="#F3EAD8" stroke-opacity=".28"/>
+      <path d="M0 0 L155 104 L310 0" fill="none" stroke="#49B4A0" stroke-width="5" opacity=".62"/>
+      <circle cx="155" cy="106" r="26" fill="#49B4A0" opacity=".78"/>
+    </g>
+  </g>
+  <g fill="#F3EAD8" opacity=".78">
+    <g transform="translate(960 540)"><circle r="22"/><path d="M-52 66 C-42 28 -16 13 0 13 C16 13 42 28 52 66"/></g>
+    <g transform="translate(830 448)"><circle r="16"/><path d="M-38 48 C-30 20 -12 10 0 10 C12 10 30 20 38 48"/></g>
+    <g transform="translate(1090 448)"><circle r="16"/><path d="M-38 48 C-30 20 -12 10 0 10 C12 10 30 20 38 48"/></g>
+    <g transform="translate(824 632)"><circle r="16"/><path d="M-38 48 C-30 20 -12 10 0 10 C12 10 30 20 38 48"/></g>
+    <g transform="translate(1096 632)"><circle r="16"/><path d="M-38 48 C-30 20 -12 10 0 10 C12 10 30 20 38 48"/></g>
+  </g>
+  <g filter="url(#bbGlow)">
+    <circle cx="276" cy="244" r="10" fill="#ff5aa5"/>
+    <circle cx="924" cy="420" r="10" fill="#ff5aa5"/>
+    <circle cx="960" cy="550" r="14" fill="#F3EAD8"/>
+    <circle cx="1346" cy="732" r="10" fill="#ff5aa5"/>
+    <circle cx="1638" cy="586" r="10" fill="#ff5aa5"/>
+    <circle cx="724" cy="272" r="8" fill="#B8954A"/>
+    <circle cx="1216" cy="404" r="8" fill="#B8954A"/>
+  </g>
+</svg>

@@ -23088,6 +23088,33 @@ window.csBrandV8Reverse = function() {
   html[data-export="1"] #cs-value-choice-image-receipts-pink .vcio-receipt,
   html[data-export="1"] #cs-value-choice-image-receipts-pink .vcio-caption { opacity:1 !important; transform:none !important; animation:none !important; }
 
+
+  .gnr-feeling-slide{background:#050505!important;overflow:hidden;color:#fbf7ef}
+  .gnr-feeling-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.04) contrast(1.04)}
+  .gnr-feeling-slide::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle at 50% 50%,rgba(5,5,5,0) 0 38%,rgba(5,5,5,.34) 78%,rgba(5,5,5,.64) 100%),linear-gradient(90deg,rgba(5,5,5,.38),rgba(5,5,5,0) 34%,rgba(5,5,5,.28) 100%)}
+  .gnr-feeling-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#B8954A;text-shadow:0 2px 14px rgba(0,0,0,.78)}
+  .gnr-feeling-copy{position:absolute;z-index:3;opacity:0;transform:translateY(16px);transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .68s cubic-bezier(.22,1,.36,1)}
+  .gnr-feeling-slide[data-stage="1"] .gnr-feeling-copy{opacity:1;transform:none}
+  .gnr-feeling-head{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.8rem,5.5vw,6.4rem);font-weight:850;line-height:.98;letter-spacing:0;text-wrap:balance;color:#fbf7ef;text-shadow:0 4px 30px rgba(0,0,0,.82),0 0 1px rgba(251,247,239,.45)}
+  .gnr-feeling-head em{font-style:italic;color:#B8954A}
+  .gnr-feeling-sub{margin-top:22px;max-width:760px;font-family:'Manrope',sans-serif;font-size:1.08rem;font-weight:800;line-height:1.38;letter-spacing:.02em;color:rgba(251,247,239,.82);text-shadow:0 2px 18px rgba(0,0,0,.72)}
+  .gnr-feeling-mini{margin-top:30px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#C8462C}
+  .gnr-feeling-motif{position:absolute;z-index:2;display:flex;gap:12px;opacity:0;transform:translateY(16px);transition:opacity .68s cubic-bezier(.22,1,.36,1) .16s,transform .68s cubic-bezier(.22,1,.36,1) .16s}
+  .gnr-feeling-slide[data-stage="1"] .gnr-feeling-motif{opacity:1;transform:none}
+  .gnr-feeling-chip{min-width:116px;padding:12px 14px;border-radius:7px;border:1px solid rgba(251,247,239,.16);background:rgba(26,22,18,.56);box-shadow:0 20px 42px rgba(0,0,0,.26);font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#fbf7ef;text-align:center;backdrop-filter:blur(7px)}
+  .gnr-feeling-chip::before{content:"";display:block;width:11px;height:11px;margin:0 auto 8px;border-radius:50%;background:#ff5aa5;box-shadow:0 0 18px rgba(255,90,165,.72)}
+  #cs-feeling-economy .gnr-feeling-copy{left:92px;top:228px;max-width:940px}
+  #cs-feeling-economy .gnr-feeling-motif{left:96px;bottom:104px}
+  #cs-feeling-source .gnr-feeling-copy{left:50%;top:172px;width:min(1160px,76vw);transform:translate(-50%,16px);text-align:center}
+  #cs-feeling-source[data-stage="1"] .gnr-feeling-copy{transform:translate(-50%,0)}
+  #cs-feeling-source .gnr-feeling-sub{margin-left:auto;margin-right:auto}
+  #cs-feeling-source .gnr-feeling-motif{left:50%;bottom:92px;transform:translate(-50%,16px)}
+  #cs-feeling-source[data-stage="1"] .gnr-feeling-motif{transform:translate(-50%,0)}
+  #cs-feeling-beyond-brand .gnr-feeling-copy{right:86px;top:214px;max-width:900px;text-align:right}
+  #cs-feeling-beyond-brand .gnr-feeling-sub{margin-left:auto}
+  #cs-feeling-beyond-brand .gnr-feeling-motif{right:92px;bottom:112px}
+  html[data-export="1"] .gnr-feeling-copy,html[data-export="1"] .gnr-feeling-motif{opacity:1!important;transform:none!important}
+
   .value-brainstorm { background:#fbf7ef !important; overflow:hidden; }
   .value-brainstorm .vb-stage { position:absolute; inset:0; display:grid; align-items:center; padding:92px 74px 58px; z-index:2; }
   .value-brainstorm .vb-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3rem, 4.75vw, 5.15rem); font-weight:850; line-height:1.02; letter-spacing:-0.026em; color:#1a1612; margin:0; text-wrap:balance; }
@@ -23209,6 +23236,49 @@ window.csBrandV8Reverse = function() {
   <div class="vcio-label cola"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
 </div>
 
+<div class="casey-slide ds-focus gnr-feeling-slide" id="cs-feeling-economy" data-stage="0" style="display:none" aria-label="The Feeling Economy">
+  <img class="gnr-feeling-bg" src="assets/generated/feeling-economy/feeling-economy-bg.svg" alt="Dark feeling economy background with product objects, memory halos, gold lines, and pink signal dots."/>
+  <div class="slide-eyebrow gnr-feeling-eye">The Feeling Economy</div>
+  <div class="gnr-feeling-copy">
+    <div class="gnr-feeling-head">Ads borrow feeling.<br>Products repeat it.<br><em>Brands give it memory.</em></div>
+    <div class="gnr-feeling-sub">But the strongest feelings do not come from things. They happen between people.</div>
+  </div>
+  <div class="gnr-feeling-motif" aria-hidden="true">
+    <div class="gnr-feeling-chip">Borrow</div>
+    <div class="gnr-feeling-chip">Repeat</div>
+    <div class="gnr-feeling-chip">Remember</div>
+  </div>
+</div>
+
+<div class="casey-slide ds-focus gnr-feeling-slide" id="cs-feeling-source" data-stage="0" style="display:none" aria-label="The Source">
+  <img class="gnr-feeling-bg" src="assets/generated/feeling-economy/feeling-source-bg.svg" alt="Warm human circle background with people connected by gold lines and pink signal dots."/>
+  <div class="slide-eyebrow gnr-feeling-eye">The Source</div>
+  <div class="gnr-feeling-copy">
+    <div class="gnr-feeling-head">Products make us feel better for a moment.<br><em>People make life feel meaningful.</em></div>
+    <div class="gnr-feeling-sub">Being wanted. Being known. Being useful to others. Getting value back from the community you give value to.</div>
+  </div>
+  <div class="gnr-feeling-motif" aria-hidden="true">
+    <div class="gnr-feeling-chip">Wanted</div>
+    <div class="gnr-feeling-chip">Known</div>
+    <div class="gnr-feeling-chip">Useful</div>
+  </div>
+</div>
+
+<div class="casey-slide ds-focus gnr-feeling-slide" id="cs-feeling-beyond-brand" data-stage="0" style="display:none" aria-label="Beyond Brand">
+  <img class="gnr-feeling-bg" src="assets/generated/feeling-economy/beyond-brand-bg.svg" alt="Invitation behavior network background with cards, people, gold connection lines, and pink signal nodes."/>
+  <div class="slide-eyebrow gnr-feeling-eye">Beyond Brand</div>
+  <div class="gnr-feeling-copy">
+    <div class="gnr-feeling-head">A brand lives in memory.<br><em>GnR lives in behavior.</em></div>
+    <div class="gnr-feeling-sub">Every invitation, RSVP, show-up, referral, and correction becomes a signal: who gives value, who receives it, and where connection should happen next.</div>
+    <div class="gnr-feeling-mini">Real human connection, finally coordinated.</div>
+  </div>
+  <div class="gnr-feeling-motif" aria-hidden="true">
+    <div class="gnr-feeling-chip">Invite</div>
+    <div class="gnr-feeling-chip">Show Up</div>
+    <div class="gnr-feeling-chip">Refer</div>
+    <div class="gnr-feeling-chip">Reciprocate</div>
+  </div>
+</div>
 <div class="casey-slide ds-focus" id="cs-value-choice-image-receipts-pink" style="display:none" aria-label="Receipts-led product value visual concept">
   <img class="vcio-bg" src="assets/cs-value-choice-image-only-pink.png" alt="Human connection circle with branded product receipts."/>
   <div class="vcio-scrim" aria-hidden="true"></div>
@@ -37171,6 +37241,9 @@ window.csA7m1Reverse = function() {
 
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
+  'cs-feeling-economy',
+  'cs-feeling-source',
+  'cs-feeling-beyond-brand',
   'cs-community-reciprocity-problem',
   'cs-1bm1',
   'cs-1m8',
@@ -39284,6 +39357,9 @@ function animateCsa2Expansion() {
 const slideLabels = [
   null,
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
+  'The Feeling Economy',
+  'The Source',
+  'Beyond Brand',
   'Modern life wires us away from fulfillment', //  2 cs-1bm1
   'The relationship graph is missing', //  3 cs-1m8
   'Community builder product', //  4 cs-community-builder-product
@@ -39888,6 +39964,24 @@ window.navigateDotHorizontal = function(direction) {
 // so it must consume every unfinished animation beat before moving to the next main slide.
 // Keep this aligned with wheel/touch reveal handlers, but key off the actually active slide
 // so promoted slides, retained alts, and reshuffled SLIDE_ORDER entries do not drift.
+window.csFeelingAdvance = function() {
+  const slide = document.querySelector('.casey-slide.active.gnr-feeling-slide');
+  if (!slide) return false;
+  if ((slide.dataset.stage || '0') === '0') {
+    slide.dataset.stage = '1';
+    return true;
+  }
+  return false;
+};
+window.csFeelingReverse = function() {
+  const slide = document.querySelector('.casey-slide.active.gnr-feeling-slide');
+  if (!slide) return false;
+  if ((slide.dataset.stage || '0') !== '0') {
+    slide.dataset.stage = '0';
+    return true;
+  }
+  return false;
+};
 window.caseyAdvanceActiveReveal = function() {
   if (inAppendix || inTrash || inStaff || inSeed || inConcept) return false;
   const active = document.querySelector('.casey-slide.active');
@@ -39896,6 +39990,9 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-1m5': 'cs1m5Advance',
     'cs-1m7': 'cs1m7Advance',
     'cs-1m8': 'cs1m8Advance',
+    'cs-feeling-economy': 'csFeelingAdvance',
+    'cs-feeling-source': 'csFeelingAdvance',
+    'cs-feeling-beyond-brand': 'csFeelingAdvance',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkAdvance',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueAdvance',
     'cs-community-builder-product': 'csCommunityBuilderProductAdvance',
@@ -39962,6 +40059,9 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m5': 'cs1m5Reverse',
     'cs-1m7': 'cs1m7Reverse',
     'cs-1m8': 'cs1m8Reverse',
+    'cs-feeling-economy': 'csFeelingReverse',
+    'cs-feeling-source': 'csFeelingReverse',
+    'cs-feeling-beyond-brand': 'csFeelingReverse',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkReverse',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueReverse',
     'cs-community-builder-product': 'csCommunityBuilderProductReverse',
