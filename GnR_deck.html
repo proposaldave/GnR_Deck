@@ -8223,6 +8223,76 @@ window.cs1m5Reverse = function() {
   </section>
 </div>
 
+<!-- cs-loneliness-epidemic - early public-health problem framing [Codex 2026-06-18] -->
+<style>
+  #cs-loneliness-epidemic{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
+  #cs-loneliness-epidemic .lonely-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;filter:saturate(1.04) contrast(1.03) brightness(.99)}
+  #cs-loneliness-epidemic .lonely-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.78);padding:7px 10px;border-radius:2px;box-shadow:0 8px 24px rgba(26,22,18,.06)}
+  #cs-loneliness-epidemic .lonely-content{position:absolute;left:82px;right:82px;top:128px;bottom:82px;z-index:3;display:grid;grid-template-columns:minmax(520px,.92fr) minmax(620px,1.08fr);gap:42px;align-items:center;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .74s cubic-bezier(.22,1,.36,1),transform .74s cubic-bezier(.22,1,.36,1),visibility 0s linear .74s}
+  #cs-loneliness-epidemic[data-stage="1"] .lonely-content{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-loneliness-epidemic .lonely-head{margin:0 0 24px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.65rem,5.25vw,6.08rem);font-weight:890;line-height:.93;letter-spacing:0;color:#1a1612;text-wrap:balance;text-shadow:0 2px 0 rgba(251,247,239,.94),0 18px 42px rgba(251,247,239,.82)}
+  #cs-loneliness-epidemic .lonely-head em{font-style:italic;color:#c8462c;font-weight:860}
+  #cs-loneliness-epidemic .lonely-sub{max-width:760px;margin:0;font-family:'Manrope',sans-serif;font-size:clamp(1.04rem,1.28vw,1.32rem);font-weight:840;line-height:1.48;color:rgba(26,22,18,.80);text-shadow:0 2px 0 rgba(251,247,239,.92),0 12px 28px rgba(251,247,239,.78)}
+  #cs-loneliness-epidemic .lonely-proof{display:grid;grid-template-rows:auto auto;gap:18px}
+  #cs-loneliness-epidemic .lonely-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  #cs-loneliness-epidemic .lonely-stat,#cs-loneliness-epidemic .lonely-chart{background:rgba(251,247,239,.78);border:1px solid rgba(184,149,74,.24);box-shadow:0 20px 52px rgba(26,22,18,.10),inset 0 1px 0 rgba(255,255,255,.68);backdrop-filter:blur(2px)}
+  #cs-loneliness-epidemic .lonely-stat{min-height:138px;padding:23px 24px 21px;display:flex;flex-direction:column;justify-content:center}
+  #cs-loneliness-epidemic .lonely-num{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.05rem,4.25vw,4.92rem);font-weight:900;line-height:.86;color:#b8954a;letter-spacing:0}
+  #cs-loneliness-epidemic .lonely-stat:nth-child(2) .lonely-num{color:#5b8fd4}
+  #cs-loneliness-epidemic .lonely-stat span:last-child{margin-top:13px;font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;line-height:1.45;color:rgba(26,22,18,.68)}
+  #cs-loneliness-epidemic .lonely-chart{padding:24px 26px 22px}
+  #cs-loneliness-epidemic .lonely-chart-title{margin-bottom:16px;font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:950;letter-spacing:.2em;text-transform:uppercase;color:#c8462c}
+  #cs-loneliness-epidemic .lonely-bar-row{display:grid;grid-template-columns:132px 1fr 56px;align-items:center;gap:14px;margin:13px 0;font-family:'Manrope',sans-serif}
+  #cs-loneliness-epidemic .lonely-bar-label{font-size:.74rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.62)}
+  #cs-loneliness-epidemic .lonely-track{height:18px;border-radius:999px;background:rgba(26,22,18,.08);overflow:hidden;box-shadow:inset 0 1px 2px rgba(26,22,18,.08)}
+  #cs-loneliness-epidemic .lonely-fill{display:block;height:100%;border-radius:999px;background:#b8954a;box-shadow:0 6px 18px rgba(184,149,74,.20)}
+  #cs-loneliness-epidemic .lonely-fill.hot{background:#c8462c;box-shadow:0 6px 18px rgba(200,70,44,.20)}
+  #cs-loneliness-epidemic .lonely-val{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.18rem;font-weight:870;color:#1a1612}
+  #cs-loneliness-epidemic .lonely-source{margin-top:18px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:rgba(26,22,18,.46)}
+  #cs-loneliness-epidemic .lonely-hint{position:absolute;left:50%;bottom:44px;z-index:4;transform:translateX(-50%);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.2rem;color:#b8954a;line-height:1;opacity:.75;transition:opacity .35s ease}
+  #cs-loneliness-epidemic[data-stage="1"] .lonely-hint{opacity:0}
+  html[data-export="1"] #cs-loneliness-epidemic .lonely-content{opacity:1!important;visibility:visible!important;transform:none!important}
+  html[data-export="1"] #cs-loneliness-epidemic .lonely-hint{display:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-loneliness-epidemic" data-stage="0" onclick="if(window.csLonelinessEpidemicAdvance && window.csLonelinessEpidemicAdvance()) event.stopPropagation()" style="display:none">
+  <img class="lonely-bg" src="assets/generated/loneliness-epidemic/loneliness-epidemic-bg.svg" alt="">
+  <div class="lonely-eye">LONELINESS EPIDEMIC</div>
+  <div class="lonely-content">
+    <section>
+      <h1 class="lonely-head">America is losing its <em>close-friend layer.</em></h1>
+      <p class="lonely-sub">Loneliness is not just a feeling. It is the signal that real-life connection is not being coordinated.</p>
+    </section>
+    <section class="lonely-proof" aria-label="Loneliness evidence">
+      <div class="lonely-stats">
+        <div class="lonely-stat"><span class="lonely-num">1 in 3</span><span>U.S. adults report loneliness</span></div>
+        <div class="lonely-stat"><span class="lonely-num">30%</span><span>Feel lonely weekly; 10% daily</span></div>
+      </div>
+      <div class="lonely-chart" aria-label="Close friendships declined from 1990 to 2021">
+        <div class="lonely-chart-title">Close friendships are thinning</div>
+        <div class="lonely-bar-row"><div class="lonely-bar-label">1990 no close friends</div><div class="lonely-track"><span class="lonely-fill" style="width:6.1%"></span></div><div class="lonely-val">3%</div></div>
+        <div class="lonely-bar-row"><div class="lonely-bar-label">2021 no close friends</div><div class="lonely-track"><span class="lonely-fill hot" style="width:24.5%"></span></div><div class="lonely-val">12%</div></div>
+        <div class="lonely-bar-row"><div class="lonely-bar-label">1990 3 or fewer</div><div class="lonely-track"><span class="lonely-fill" style="width:55.1%"></span></div><div class="lonely-val">27%</div></div>
+        <div class="lonely-bar-row"><div class="lonely-bar-label">2021 3 or fewer</div><div class="lonely-track"><span class="lonely-fill hot" style="width:100%"></span></div><div class="lonely-val">49%</div></div>
+        <div class="lonely-source">Sources: CDC, APA Healthy Minds poll 2024, Survey Center on American Life</div>
+      </div>
+    </section>
+  </div>
+  <div class="lonely-hint" aria-hidden="true">&darr;</div>
+</div>
+<script>
+  window.csLonelinessEpidemicAdvance = function(){
+    const slide = document.getElementById('cs-loneliness-epidemic');
+    if (!slide) return false;
+    if (slide.dataset.stage !== '1') { slide.dataset.stage = '1'; return true; }
+    return false;
+  };
+  window.csLonelinessEpidemicReverse = function(){
+    const slide = document.getElementById('cs-loneliness-epidemic');
+    if (!slide) return false;
+    if (slide.dataset.stage === '1') { slide.dataset.stage = '0'; return true; }
+    return false;
+  };
+</script>
 <!-- cs-community-reciprocity-problem - early problem framing [Codex 2026-06-17] -->
 <style>
   #cs-community-reciprocity-problem{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
@@ -37241,6 +37311,7 @@ window.csA7m1Reverse = function() {
 
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
+  'cs-loneliness-epidemic',
   'cs-feeling-economy',
   'cs-feeling-source',
   'cs-feeling-beyond-brand',
@@ -39357,9 +39428,11 @@ function animateCsa2Expansion() {
 const slideLabels = [
   null,
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
+  'Loneliness epidemic',
   'The Feeling Economy',
   'The Source',
   'Beyond Brand',
+  'Core problem: reciprocal community fit',
   'Modern life wires us away from fulfillment', //  2 cs-1bm1
   'The relationship graph is missing', //  3 cs-1m8
   'Community builder product', //  4 cs-community-builder-product
@@ -40012,6 +40085,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-frontier': 'csFrontierAdvance',
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgAdvance',
     'cs-frontier-scale-pink-2': 'csFrontierScalePink2Advance',
+    'cs-loneliness-epidemic': 'csLonelinessEpidemicAdvance',
     'cs-community-reciprocity-problem': 'csCommunityReciprocityProblemAdvance',
     'cs-measure': 'csMeasureAdvance',
     'cs-byproduct': 'csByproductAdvance',
@@ -40081,6 +40155,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-frontier': 'csFrontierReverse',
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgReverse',
     'cs-frontier-scale-pink-2': 'csFrontierScalePink2Reverse',
+    'cs-loneliness-epidemic': 'csLonelinessEpidemicReverse',
     'cs-community-reciprocity-problem': 'csCommunityReciprocityProblemReverse',
     'cs-measure': 'csMeasureReverse',
     'cs-byproduct': 'csByproductReverse',
