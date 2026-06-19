@@ -1439,6 +1439,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-nav.appendix-mode::after{bottom:-8px;margin-bottom:-8px;background:linear-gradient(0deg,rgba(0,0,0,.38),rgba(0,0,0,0))}
 /* [Dave 2026-05-12 v3] PRESENTER MODE — default ON. Hides ALL chrome (nav dots + presenter cog + speaker-notes + annotation buttons + slide counter + slide search) for a clean live investor pitch. Z key toggles. [Dave 2026-05-14 PM v4] Slide counter (.casey-count) and slide search (#slideSearch) added to the hide list — they should only appear when Z is pressed, just like the dots. */
 body.presenter-mode .casey-nav,
+body.presenter-mode .casey-mini-nav,
 body.presenter-mode .casey-staff-nav,
 body.presenter-mode #presenterToggle,
 body.presenter-mode #speakerNotesBtn,
@@ -35686,6 +35687,12 @@ window.csA7m1Reverse = function() {
   .casey-dot.staff-dot.on { height:18px; border-radius:4px; background:#49b4a0 !important; box-shadow:0 0 14px rgba(73,180,160,.92) !important; }
   body.presenter-mode .casey-staff-nav { display:none !important; }
   html[data-export="1"] .casey-staff-nav, html[data-pdf="1"] .casey-staff-nav { display:none !important; }
+  /* Investor mini-deck rail: live links to selected source slides, no main-deck reorder. */
+  .casey-mini-nav { position:fixed; top:50%; right:110px; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:4px; z-index:1001; background:rgba(26,22,18,.50); backdrop-filter:blur(8px); padding:8px 5px; border-radius:10px; border:1px solid rgba(184,149,74,.44); max-height:calc(100vh - 220px); width:fit-content; }
+  .casey-dot.mini-dot { background:#b8954a !important; border:1px solid rgba(184,149,74,.98) !important; box-shadow:0 0 8px rgba(184,149,74,.52) !important; width:8px; height:8px; }
+  .casey-dot.mini-dot.on { height:20px; border-radius:4px; background:#c8462c !important; border-color:rgba(200,70,44,.98) !important; box-shadow:0 0 16px rgba(200,70,44,.92) !important; }
+  body.presenter-mode .casey-mini-nav { display:none !important; }
+  html[data-export="1"] .casey-mini-nav, html[data-pdf="1"] .casey-mini-nav { display:none !important; }
   .staff-slide { background:#fbf7ef !important; color:#1a1612 !important; }
   .staff-shell { position:relative; min-height:100%; height:100%; width:100%; overflow:hidden; padding:74px 92px 62px; box-sizing:border-box; background:radial-gradient(circle at 78% 24%, rgba(73,180,160,.16), transparent 34%),radial-gradient(circle at 17% 78%, rgba(184,149,74,.15), transparent 34%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%) !important; }
   .staff-shell.dark { background:radial-gradient(circle at 76% 30%, rgba(73,180,160,.28), transparent 36%),radial-gradient(circle at 22% 68%, rgba(184,149,74,.20), transparent 33%),linear-gradient(180deg,#101714 0%,#1a1612 100%) !important; color:#fbf7ef; }
@@ -35956,6 +35963,7 @@ window.csA7m1Reverse = function() {
   .casey-concept-nav { right:30px !important; }
   .casey-staff-nav { right:54px !important; }
   .casey-nav { right:82px !important; }
+  .casey-mini-nav { right:112px !important; }
 
 
   .concept-mini-label { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:850; letter-spacing:.2em; text-transform:uppercase; color:#b8954a; }
@@ -37670,6 +37678,7 @@ window.csA7m1Reverse = function() {
 <nav class="casey-concept-nav" id="conceptNav" aria-label="Concept review slides"></nav>
 <nav class="casey-seed-nav" id="seedNav" aria-label="Seed investor deck slides"></nav>
 <nav class="casey-staff-nav" id="staffNav" aria-label="NEPC staff Give and Receive story slides"></nav>
+<nav class="casey-mini-nav" id="miniInvestorNav" aria-label="Investor mini deck slides"></nav>
 
 <!-- cs-a19 ("What Runs the World" · Land/Labor/Capital/Information/Attention/Intelligence ? Human Connection)
      ? DELETED 2026-05-02 per Dave (duplicate of cs-mv7 which was already removed). Slide div fully removed. -->
@@ -38058,6 +38067,16 @@ const STAFF_ORDER = [
 ];
 const STAFF_TOTAL = STAFF_ORDER.length;
 
+// Investor mini deck: five live source slides, no main-deck reorder.
+const MINI_INVESTOR_ORDER = [
+  { id: 'cs-frontier-scale-pink-2', label: 'Title' },
+  { id: 'cs-brand-problem', label: 'Problem' },
+  { id: 'cs-community-builder-product', label: 'Solution' },
+  { id: 'cs-referral-business-model', label: 'Business model' },
+  { id: 'cs-revenue-util-profit-blue', label: 'Proof' }
+];
+const MINI_INVESTOR_TOTAL = MINI_INVESTOR_ORDER.length;
+
 
 let current = 1;
 let inAppendix = false;
@@ -38070,6 +38089,8 @@ let inSeed = false;
 let seedCurrent = 1;
 let inStaff = false;
 let staffCurrent = 1;
+let inMiniInvestor = false;
+let miniInvestorCurrent = 1;
 
 window.csWedgepbCodexAdvance = function() {
   const slide = document.getElementById('cs-wedgepb-codex');
@@ -39589,6 +39610,81 @@ function exitStaff() {
   caseyGo(current);
 }
 
+function updateMiniInvestorDots(activeIndex) {
+  const miniNav = document.getElementById('miniInvestorNav');
+  if (!miniNav) return;
+  miniNav.querySelectorAll('.mini-dot').forEach((d, i) => {
+    d.classList.toggle('on', activeIndex === i + 1);
+  });
+}
+
+function showMiniInvestorStandaloneSlide(targetId) {
+  document.querySelectorAll('.casey-slide').forEach(s => {
+    s.classList.remove('active');
+    s.classList.remove('casey-entered');
+    s.style.display = 'none';
+  });
+  const target = document.getElementById(targetId);
+  if (target) {
+    target.style.display = '';
+    target.classList.add('active');
+    void target.offsetWidth;
+    target.classList.add('casey-entered');
+  }
+}
+
+function miniInvestorGo(n) {
+  if (n < 1 || n > MINI_INVESTOR_TOTAL) return;
+  inMiniInvestor = true;
+  miniInvestorCurrent = n;
+  inAppendix = false;
+  inTrash = false;
+  inConcept = false;
+  inSeed = false;
+  inStaff = false;
+  const targetId = MINI_INVESTOR_ORDER[n - 1].id;
+  const mainIndex = SLIDE_ORDER.indexOf(targetId);
+  if (mainIndex >= 0) {
+    caseyGo(mainIndex + 1);
+  } else {
+    showMiniInvestorStandaloneSlide(targetId);
+    document.querySelectorAll('#cnav .casey-dot').forEach(d => d.classList.remove('on'));
+    updateConceptDots(0);
+    updateSeedDots(0);
+    updateStaffDots(0);
+  }
+  inMiniInvestor = true;
+  miniInvestorCurrent = n;
+  const cbar = document.getElementById('cbar');
+  if (cbar) {
+    cbar.style.background = 'linear-gradient(90deg,#b8954a,#c8462c)';
+    cbar.style.width = ((n / MINI_INVESTOR_TOTAL) * 100) + '%';
+  }
+  const ccount = document.getElementById('ccount');
+  if (ccount) ccount.textContent = 'Mini ' + n + ' / ' + MINI_INVESTOR_TOTAL;
+  updateMiniInvestorDots(n);
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
+  if (window.updateAnnotationBadge) updateAnnotationBadge();
+  if (window.renderAnnotationMarkers) renderAnnotationMarkers();
+}
+
+function miniInvestorAdvance() {
+  if (!inMiniInvestor) return false;
+  if (window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return true;
+  if (miniInvestorCurrent < MINI_INVESTOR_TOTAL) miniInvestorGo(miniInvestorCurrent + 1);
+  return true;
+}
+
+function miniInvestorReverse() {
+  if (!inMiniInvestor) return false;
+  if (window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return true;
+  if (miniInvestorCurrent > 1) miniInvestorGo(miniInvestorCurrent - 1);
+  return true;
+}
+
+window.miniInvestorGo = miniInvestorGo;
+window.miniInvestorAdvance = miniInvestorAdvance;
+window.miniInvestorReverse = miniInvestorReverse;
 // ===== cs-a2 concentric-ring expansion (paper-mode port of intro_deck slide6, +Padel) =====
 // cs-36 (10-Year North Star) concentric expansion — same design as cs-a2 but with year-stage labels [Dave 2026-04-30 PM]
 function animateCs36Expansion() {
@@ -40194,9 +40290,66 @@ if (staffNav && Array.isArray(STAFF_ORDER)) {
   });
 }
 
+// Build separate investor-mini-deck rail. Dots point at live source slides.
+const miniInvestorNav = document.getElementById('miniInvestorNav');
+if (miniInvestorNav && Array.isArray(MINI_INVESTOR_ORDER)) {
+  MINI_INVESTOR_ORDER.forEach((item, i) => {
+    const d = document.createElement('button');
+    d.className = 'casey-dot mini-dot';
+    const label = item.label || getSlideEyebrowText(item.id) || ('Mini ' + (i + 1));
+    d.title = label + ' - investor mini deck slide ' + (i + 1);
+    d.setAttribute('data-tooltip', 'Mini ' + (i + 1) + ': ' + label);
+    d.onclick = (e) => {
+      e.stopPropagation();
+      miniInvestorGo(i + 1);
+    };
+    miniInvestorNav.appendChild(d);
+  });
+}
+
 document.getElementById('cbar').style.width = ((1/TOTAL)*100) + '%';
 document.getElementById('ccount').textContent = '1 / ' + TOTAL;
 
+// Mini investor deck mode: after a mini dot is clicked, scroll/click/down-arrow stays inside the five-slide path.
+function consumeMiniInvestorEvent(e, direction) {
+  if (!inMiniInvestor) return false;
+  const target = e.target;
+  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.annotation-marker')) return false;
+  const handled = direction > 0 ? miniInvestorAdvance() : miniInvestorReverse();
+  if (handled) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+  }
+  return handled;
+}
+
+document.addEventListener('keydown', e => {
+  if (!inMiniInvestor) return;
+  if (e.key === 'Escape') {
+    inMiniInvestor = false;
+    updateMiniInvestorDots(0);
+    return;
+  }
+  if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ' || e.key === 'Enter') consumeMiniInvestorEvent(e, 1);
+  if (e.key === 'ArrowUp' || e.key === 'PageUp') consumeMiniInvestorEvent(e, -1);
+}, true);
+
+document.addEventListener('wheel', e => {
+  if (!inMiniInvestor || e.deltaY === 0) return;
+  consumeMiniInvestorEvent(e, e.deltaY > 0 ? 1 : -1);
+}, { capture:true, passive:false });
+
+document.addEventListener('click', e => {
+  if (!inMiniInvestor) return;
+  const target = e.target;
+  if (target && target.closest && target.closest('.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav') && !target.closest('.casey-mini-nav')) {
+    inMiniInvestor = false;
+    updateMiniInvestorDots(0);
+    return;
+  }
+  consumeMiniInvestorEvent(e, 1);
+}, true);
 // Keyboard nav
 // [Dave 2026-05-12 LATEST] Keyboard rewrite. New mapping per Dave:
 //   ArrowDown   ? next MAIN slide (top?bottom dot column)
@@ -41206,7 +41359,7 @@ document.addEventListener('touchend', e => {
     const now = Date.now();
     const tapGap = now - presenterLastTapTime;
     const tapMove = Math.hypot(touch.clientX - presenterLastTapX, touch.clientY - presenterLastTapY);
-    const uiTarget = e.target && e.target.closest && e.target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.annotation-marker');
+    const uiTarget = e.target && e.target.closest && e.target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.annotation-marker');
     if (!uiTarget && tapGap > 0 && tapGap < 360 && tapMove < 44 && window.togglePresenterMode) {
       e.preventDefault();
       e.stopPropagation();
@@ -44526,7 +44679,7 @@ function renderAnnotationMarkers() {
 
 function handleAnnotationCapture(event) {
   if (!annotationsAllowedHere()) return;
-  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,#trashBtn,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.annotation-marker');
+  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,#trashBtn,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.annotation-marker');
   if (ui || !annotationPickModeActive) return;
   const slide = event.target.closest('.casey-slide.active');
   if (!slide) return;
