@@ -27890,24 +27890,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referral,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-referral{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 2.02s both}
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-pull-web,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-pull-web{animation:rwmmPullPathIn .95s cubic-bezier(.22,1,.36,1) 2.22s both}
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-role > circle:first-child,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role > circle:first-child{animation:rwmmRingBreathe 2.2s ease-in-out 3.05s infinite}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-glow{animation:rwmmCourtPartIn .60s cubic-bezier(.22,1,.36,1) .82s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-court-frame{animation:rwmmCourtPartIn .70s cubic-bezier(.22,1,.36,1) .94s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-anchor{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 1.24s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-anchor-regular{animation:rwmmPullFlash .62s cubic-bezier(.22,1,.36,1) 1.58s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-regular{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 1.72s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-anchor-referrer{animation:rwmmPullFlash .62s cubic-bezier(.22,1,.36,1) 2.00s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referrer{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 2.14s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-referrer-referral{animation:rwmmPullFlash .72s cubic-bezier(.22,1,.36,1) 2.48s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referral{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 2.68s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-pull-web{animation:rwmmPullPathIn .95s cubic-bezier(.22,1,.36,1) 2.88s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role > circle:first-child{animation:rwmmRingBreathe 2.2s ease-in-out 3.72s infinite}
-  /* [Codex 2026-06-16] Fix court disappearing in live deck: once this slide is revealed, the meaningful court content must stay visible instead of depending on long delayed SVG animations. */
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-glow,
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-court-frame,
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-pull-web,
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role{opacity:1!important;filter:none!important;stroke-dashoffset:0!important;animation:none!important}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-pull-web{stroke-opacity:.55!important}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role > circle:first-child{opacity:.62!important}
+  /* [Codex 2026-06-19] Work slide now intentionally uses the shared court choreography above, matching cs-work-measurable-market instead of forcing the court static. */
   html[data-export="1"] #cs-real-world-measurable-market .rwmm-glow,html[data-export="1"] #cs-real-world-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-real-world-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-real-world-measurable-market .rwmm-role,
   html[data-export="1"] #cs-work-measurable-market .rwmm-glow,html[data-export="1"] #cs-work-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-work-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-work-measurable-market .rwmm-role{opacity:1!important;filter:none!important;animation:none!important;stroke-dashoffset:0!important;transform:none!important}
   html[data-export="1"] #cs-real-world-measurable-market .rwmm-pull-edge,html[data-export="1"] #cs-work-measurable-market .rwmm-pull-edge{opacity:0!important;animation:none!important;stroke-opacity:0!important}
