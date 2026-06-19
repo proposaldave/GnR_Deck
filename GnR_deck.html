@@ -26230,6 +26230,62 @@ window.csAppStorePeopleBlueReverse = function(){ const s=document.getElementById
   };
 </script>
 <style>
+  #cs-old-new-paradigm{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
+  #cs-old-new-paradigm .onp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;filter:saturate(1.02) contrast(1.02)}
+  #cs-old-new-paradigm:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(243,234,216,.32) 0%,rgba(243,234,216,.62) 31%,rgba(243,234,216,.76) 50%,rgba(243,234,216,.40) 72%,rgba(243,234,216,.18) 100%),radial-gradient(ellipse at 50% 50%,rgba(251,247,239,.82) 0%,rgba(251,247,239,.58) 38%,rgba(251,247,239,.10) 70%)}
+  #cs-old-new-paradigm .onp-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.04) 1px,transparent 0);background-size:5px 5px;opacity:.25;mix-blend-mode:multiply}
+  #cs-old-new-paradigm .onp-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.82);padding:7px 10px;border-radius:2px;box-shadow:0 8px 24px rgba(26,22,18,.06)}
+  #cs-old-new-paradigm .onp-stage{display:block!important;position:absolute;inset:0;z-index:3;padding:116px 74px 70px;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .72s cubic-bezier(.22,1,.36,1),visibility .72s,transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-old-new-paradigm[data-stage="1"] .onp-stage{opacity:1;visibility:visible;transform:none}
+  #cs-old-new-paradigm .onp-head{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:24px;align-items:end;margin:0 auto 30px;width:1500px;max-width:100%}
+  #cs-old-new-paradigm .onp-kicker{font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:950;letter-spacing:.24em;text-transform:uppercase;color:#b8954a;margin:0 0 10px}
+  #cs-old-new-paradigm .onp-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.3rem,5.1vw,5.8rem);line-height:.94;font-weight:880;letter-spacing:0;color:#1a1612;text-wrap:balance}
+  #cs-old-new-paradigm .onp-title em{font-style:italic;color:#c8462c;font-weight:900}
+  #cs-old-new-paradigm .onp-arrow{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;align-self:center;margin-top:22px;background:#fbf7ef;border:1.5px solid rgba(184,149,74,.48);box-shadow:0 18px 48px rgba(26,22,18,.10);color:#b8954a}
+  #cs-old-new-paradigm .onp-arrow svg{width:44px;height:44px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  #cs-old-new-paradigm .onp-board{width:1500px;max-width:100%;margin:0 auto;display:grid;gap:12px}
+  #cs-old-new-paradigm .onp-row{display:grid;grid-template-columns:minmax(0,1fr) 76px minmax(0,1.25fr);align-items:center;width:100%;box-sizing:border-box;min-height:104px;border-radius:8px;background:rgba(251,247,239,.80);border:1px solid rgba(184,149,74,.24);box-shadow:0 18px 48px rgba(26,22,18,.085);backdrop-filter:blur(5px);overflow:hidden;opacity:0;transform:translateY(10px)}
+  #cs-old-new-paradigm[data-stage="1"].casey-entered .onp-row{animation:onpRowIn .62s cubic-bezier(.22,1,.36,1) forwards}
+  #cs-old-new-paradigm[data-stage="1"].casey-entered .onp-row:nth-child(1){animation-delay:.04s}
+  #cs-old-new-paradigm[data-stage="1"].casey-entered .onp-row:nth-child(2){animation-delay:.12s}
+  #cs-old-new-paradigm[data-stage="1"].casey-entered .onp-row:nth-child(3){animation-delay:.20s}
+  #cs-old-new-paradigm[data-stage="1"].casey-entered .onp-row:nth-child(4){animation-delay:.28s}
+  #cs-old-new-paradigm .onp-cell{height:100%;display:flex;align-items:center;padding:22px 28px;box-sizing:border-box;position:relative}
+  #cs-old-new-paradigm .onp-old{justify-content:flex-end;text-align:right;color:rgba(26,22,18,.55);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.8rem,2.6vw,2.7rem);line-height:1.02;font-weight:760;background:linear-gradient(90deg,rgba(91,143,212,.10),rgba(251,247,239,.50))}
+  #cs-old-new-paradigm .onp-new{justify-content:flex-start;text-align:left;color:#1a1612;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.05rem,3.0vw,3.1rem);line-height:1.0;font-weight:900;background:linear-gradient(90deg,rgba(251,247,239,.54),rgba(200,70,44,.09))}
+  #cs-old-new-paradigm .onp-new em{font-style:italic;color:#c8462c;font-weight:900}
+  #cs-old-new-paradigm .onp-mid{height:100%;display:grid;place-items:center;background:linear-gradient(180deg,rgba(184,149,74,.08),rgba(184,149,74,.18));border-left:1px solid rgba(184,149,74,.18);border-right:1px solid rgba(184,149,74,.18)}
+  #cs-old-new-paradigm .onp-mid svg{width:35px;height:35px;stroke:#b8954a;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  #cs-old-new-paradigm .onp-foot{margin:22px auto 0;width:1500px;max-width:100%;display:flex;align-items:center;justify-content:center;gap:14px;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#1a1612}
+  #cs-old-new-paradigm .onp-foot span{padding:9px 14px;border-radius:999px;background:rgba(251,247,239,.78);border:1px solid rgba(184,149,74,.28);box-shadow:0 10px 28px rgba(26,22,18,.06)}
+  #cs-old-new-paradigm .onp-foot .hot{color:#c8462c;border-color:rgba(200,70,44,.36);background:rgba(200,70,44,.07)}
+  @keyframes onpRowIn{to{opacity:1;transform:none}}
+  html[data-export="1"] #cs-old-new-paradigm .onp-stage,html[data-export="1"] #cs-old-new-paradigm .onp-row{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-old-new-paradigm" data-stage="0" onclick="if(window.csOldNewParadigmAdvance&&window.csOldNewParadigmAdvance()) event.stopPropagation()" style="display:none">
+  <img class="onp-bg" src="assets/generated/paradigm-shift/old-new-paradigm-bg-2026-06-19.png" alt="Old community software paradigm dissolving into a new invitation engine and relationship graph paradigm."/>
+  <div class="onp-paper" aria-hidden="true"></div>
+  <div class="onp-eye slide-eyebrow">old paradigm &rarr; new paradigm</div>
+  <section class="onp-stage" aria-label="Old paradigm to new paradigm">
+    <div class="onp-head">
+      <div><div class="onp-kicker">Legacy stack</div><h1 class="onp-title">Optimizes the <em>transaction.</em></h1></div>
+      <div class="onp-arrow" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 24h30"/><path d="M28 13l11 11-11 11"/></svg></div>
+      <div><div class="onp-kicker">GnR paradigm</div><h1 class="onp-title">Grows the <em>community.</em></h1></div>
+    </div>
+    <div class="onp-board">
+      <div class="onp-row"><div class="onp-cell onp-old">Booking calendar</div><div class="onp-mid"><svg viewBox="0 0 40 40"><path d="M7 20h24"/><path d="M22 11l9 9-9 9"/></svg></div><div class="onp-cell onp-new"><em>Invitation</em>&nbsp;engine</div></div>
+      <div class="onp-row"><div class="onp-cell onp-old">Player ratings data</div><div class="onp-mid"><svg viewBox="0 0 40 40"><path d="M7 20h24"/><path d="M22 11l9 9-9 9"/></svg></div><div class="onp-cell onp-new">Player&nbsp;<em>relationships</em>&nbsp;data</div></div>
+      <div class="onp-row"><div class="onp-cell onp-old">Operators are the customer</div><div class="onp-mid"><svg viewBox="0 0 40 40"><path d="M7 20h24"/><path d="M22 11l9 9-9 9"/></svg></div><div class="onp-cell onp-new"><em>Community builders</em>&nbsp;are the customer</div></div>
+      <div class="onp-row"><div class="onp-cell onp-old">Match-first serious players</div><div class="onp-mid"><svg viewBox="0 0 40 40"><path d="M7 20h24"/><path d="M22 11l9 9-9 9"/></svg></div><div class="onp-cell onp-new">Connection-first&nbsp;<em>silly</em>&nbsp;players</div></div>
+    </div>
+    <div class="onp-foot"><span>calendar &rarr; invitation</span><span>ratings &rarr; relationships</span><span class="hot">operator tool &rarr; builder engine</span></div>
+  </section>
+</div>
+<script>
+window.csOldNewParadigmAdvance=function(){const s=document.getElementById('cs-old-new-paradigm');if(!s)return false;if(s.dataset.stage!=='1'){s.dataset.stage='1';return true;}return false;};
+window.csOldNewParadigmReverse=function(){const s=document.getElementById('cs-old-new-paradigm');if(!s)return false;if(s.dataset.stage==='1'){s.dataset.stage='0';return true;}return false;};
+</script>
+<style>
   #cs-samecourt-pyramid-white1,
   #cs-samecourt-pyramid-white2{background:#fbf7ef!important;overflow:hidden}
   .scpyr-slide .scpyr-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block}
@@ -37652,6 +37708,7 @@ const SLIDE_ORDER = [
   'cs-revenue-util-profit-blue',
   'cs-serious-vs-silly-bridge',
   'cs-social-pickleball-paradigm',
+  'cs-old-new-paradigm',
   'cs-wedgepb-codex',
   'cs-fw1',
   'cs-wedge1',
@@ -39781,6 +39838,7 @@ const slideLabels = [
   'Same courts / utilization / net profit', // 16 cs-revenue-util-profit-blue
   'Serious vs silly', // 17 cs-serious-vs-silly-bridge
   'Social pickleball needs a new paradigm', // 18 cs-social-pickleball-paradigm
+  'Old paradigm to new paradigm', // cs-old-new-paradigm
   'Pickleball wedge', // 19 cs-wedgepb-codex
   'Drop into any pickleball community', // 19 cs-fw1
   'Pickleball as wedge market', // 20 cs-wedge1
@@ -40437,6 +40495,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-pbfirst': 'csPbfirstAdvance',
     'cs-samecourt': 'csSamecourtAdvance',
     'cs-social-pickleball-paradigm': 'csSocialPickleballParadigmAdvance',
+    'cs-old-new-paradigm': 'csOldNewParadigmAdvance',
     'cs-wedgepb-codex': 'csWedgepbCodexAdvance',
     'cs-4': 'cs4Advance',
     'cs-3': 'cs3Advance',
@@ -40510,6 +40569,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-pbfirst': 'csPbfirstReverse',
     'cs-samecourt': 'csSamecourtReverse',
     'cs-social-pickleball-paradigm': 'csSocialPickleballParadigmReverse',
+    'cs-old-new-paradigm': 'csOldNewParadigmReverse',
     'cs-wedgepb-codex': 'csWedgepbCodexReverse',
     'cs-4': 'cs4Reverse',
     'cs-3': 'cs3Reverse',
@@ -40857,6 +40917,7 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-old-new-paradigm' && window.csOldNewParadigmAdvance && window.csOldNewParadigmAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexAdvance && window.csWedgepbCodexAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -41050,6 +41111,7 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 600);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-old-new-paradigm' && window.csOldNewParadigmReverse && window.csOldNewParadigmReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexReverse && window.csWedgepbCodexReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
