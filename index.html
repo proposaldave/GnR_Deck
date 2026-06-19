@@ -38470,15 +38470,22 @@ window.csWorkEvolutionReverse = function() {
 window.cs11eAdvance = function() {
   const slide = document.getElementById('cs-11e');
   if (!slide || !slide.classList.contains('active')) return false;
-  if (slide.dataset.shown === '1') return false;
-  slide.dataset.shown = '1';
-  return true;
+  const now = performance.now ? performance.now() : Date.now();
+  if (slide.dataset.shown !== '1') {
+    slide.dataset.shown = '1';
+    slide.dataset.revealStarted = String(now);
+    return true;
+  }
+  const started = parseFloat(slide.dataset.revealStarted || '0') || now;
+  if (now - started < 2700) return true;
+  return false;
 };
 window.cs11eReverse = function() {
   const slide = document.getElementById('cs-11e');
   if (!slide || !slide.classList.contains('active')) return false;
   if (slide.dataset.shown !== '1') return false;
   slide.dataset.shown = '0';
+  delete slide.dataset.revealStarted;
   return true;
 };
 
@@ -40591,6 +40598,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11e' && window.cs11eAdvance && window.cs11eAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-once' && window.csOnceAdvance && window.csOnceAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -40796,6 +40807,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11e' && window.cs11eReverse && window.cs11eReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-once' && window.csOnceReverse && window.csOnceReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -40978,6 +40993,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-community-builder-product' && window.csCommunityBuilderProductAdvance && window.csCommunityBuilderProductAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-engine' && window.csCommunityBuilderEngineAdvance && window.csCommunityBuilderEngineAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-11e' && window.cs11eAdvance && window.cs11eAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Advance && window.csFv6Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-teamreach-referral-compare' && window.csTeamreachCompareAdvance && window.csTeamreachCompareAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -41011,6 +41027,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-community-builder-product' && window.csCommunityBuilderProductReverse && window.csCommunityBuilderProductReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-engine' && window.csCommunityBuilderEngineReverse && window.csCommunityBuilderEngineReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-11e' && window.cs11eReverse && window.cs11eReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Reverse && window.csFv6Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
