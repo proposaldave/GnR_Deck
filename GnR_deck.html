@@ -22452,6 +22452,78 @@ window.csInvitationWordOfMouthAdvance = function() {
   html[data-export="1"] #cs-brand-V8 .v8-particles g { opacity:1 !important; transform: translateX(0) !important; animation:none !important; }
   html[data-export="1"] #cs-brand-V8 .v8-particles circle { animation:none !important; }
 
+
+  /* Duplicate of cs-brand-V8 for early problem framing. */
+  #cs-brand-problem { overflow:hidden;cursor:pointer; }
+  #cs-brand-problem .v8-bg { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;opacity:.54;filter:saturate(.92) contrast(.98);pointer-events:none; }
+  #cs-brand-problem .v8-bg-wash { position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%);pointer-events:none; }
+  #cs-brand-problem .v8-stage { position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 50px;width:100%;gap:18px;opacity:0 !important;pointer-events:none !important;transform:translateY(34px) scale(.982) !important;filter:blur(8px);animation:none !important;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),filter .82s cubic-bezier(.22,1,.36,1); }
+  #cs-brand-problem[data-stage="1"] .v8-stage { opacity:1 !important;pointer-events:auto !important;transform:none !important;filter:none; }
+  #cs-brand-problem .v8-header, #cs-brand-problem .v8-galaxy-row, #cs-brand-problem .v8-caption-row, #cs-brand-problem .v8-contact { opacity:0;transform:translateY(20px); }
+  #cs-brand-problem[data-stage="1"].casey-entered .v8-header { animation:v8RevealLift .78s cubic-bezier(.22,1,.36,1) .05s forwards; }
+  #cs-brand-problem[data-stage="1"].casey-entered .v8-galaxy-row { animation:v8RevealSurge .95s cubic-bezier(.16,1,.3,1) .18s forwards; }
+  #cs-brand-problem[data-stage="1"].casey-entered .v8-caption-row { animation:v8RevealLift .72s cubic-bezier(.22,1,.36,1) .62s forwards; }
+  #cs-brand-problem[data-stage="1"].casey-entered .v8-contact { animation:v8RevealLift .65s cubic-bezier(.22,1,.36,1) .82s forwards; }
+  #cs-brand-problem .v8-hero { font-family:'Manrope',sans-serif;font-size:clamp(.95rem,1.2vw,1.2rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;text-align:center; }
+  #cs-brand-problem .v8-claim { font-family:'Manrope',sans-serif;font-size:clamp(.92rem,1.05vw,1.1rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.78);text-align:center;line-height:1.7;margin-top:6px; }
+  #cs-brand-problem .v8-galaxy-row { position:relative;display:flex;align-items:center;justify-content:center;width:min(1700px,98%);margin-top:8px; }
+  /* Particle galaxies — left blue, right red, both fading IN/OUT toward the center n */
+  #cs-brand-problem .v8-particles { width:42%;height:clamp(280px,28vw,400px); }
+  /* Big G and R letters anchoring the galaxies [Dave 2026-05-07: 'where's the big G and where's the big R?']
+     Positioned at the OUTER ends of each particle field so the particles read as flowing FROM G ? into n ? out to R. */
+  #cs-brand-problem .v8-G, #cs-brand-problem .v8-R { position:absolute;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(7rem,11vw,10rem);line-height:0.9;letter-spacing:-0.04em;z-index:2;pointer-events:none; }
+  #cs-brand-problem .v8-G { left:2%;color:#4d82c6;text-shadow:0 8px 50px rgba(77,130,198,0.45); }
+  #cs-brand-problem .v8-R { right:2%;color:#c94d32;text-shadow:0 8px 50px rgba(201,77,50,0.45); }
+  /* Center N orb */
+  #cs-brand-problem .v8-ncell { position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:clamp(180px,15vw,220px);height:clamp(180px,15vw,220px);flex-shrink:0;z-index:5;margin:0 -2%; }
+  #cs-brand-problem .v8-ncell::before { content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(255,250,240,0.95) 0%,rgba(243,234,216,0.55) 55%,rgba(243,234,216,0) 100%);box-shadow:inset 0 0 60px rgba(184,149,74,0.3),0 0 80px rgba(184,149,74,0.25);z-index:-1; }
+  #cs-brand-problem .v8-n { font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:#b8954a;font-size:clamp(4rem,7vw,6rem);line-height:0.9;z-index:3; }
+  #cs-brand-problem .v8-n-label { font-family:'Manrope',sans-serif;font-size:clamp(.62rem,.72vw,.78rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3;margin-top:6px;z-index:3; }
+  /* Caption rows (left + right under the galaxies) */
+  #cs-brand-problem .v8-caption-row { display:grid;grid-template-columns:1fr auto 1fr;gap:48px;width:min(1500px,96%);align-items:start;margin-top:8px; }
+  /* Caption eyebrow + body pattern [Dave 2026-05-07 PM]: replaced single-line shouty caps with structured eyebrow (small caps colored) + body (Playfair italic).
+     Mirrors V15/V9 caption rhythm. Three captions on this slide (LEFT, CENTER under n, RIGHT) all use the same eyebrow/body grammar. */
+  #cs-brand-problem .v8-cap-eye { font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.92rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;line-height:1.3;margin-bottom:8px; }
+  #cs-brand-problem .v8-cap-body { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.25vw,1.25rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.35; }
+  #cs-brand-problem .v8-cap-body em { font-style:italic;font-weight:700; }
+  #cs-brand-problem .v8-cap-l { text-align:center; }
+  #cs-brand-problem .v8-cap-r { text-align:center; }
+  #cs-brand-problem .v8-cap-l .v8-cap-eye { color:#3a73b8; }
+  #cs-brand-problem .v8-cap-r .v8-cap-eye { color:#c94d32; }
+  #cs-brand-problem .v8-cap-spacer { width:clamp(180px,15vw,220px);flex-shrink:0; }
+  #cs-brand-problem .v8-tag { margin-top:16px;display:flex;align-items:center;gap:18px;font-family:'Manrope',sans-serif;font-size:.95rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a; }
+  #cs-brand-problem .v8-tag .ln { width:80px;height:1px;background:rgba(184,149,74,0.55); }
+  /* Pulse on the n */
+  @keyframes v8Pulse { 0%,100% { box-shadow:inset 0 0 60px rgba(184,149,74,0.3),0 0 80px rgba(184,149,74,0.25); } 50% { box-shadow:inset 0 0 80px rgba(184,149,74,0.45),0 0 110px rgba(184,149,74,0.4); } }
+  #cs-brand-problem .v8-ncell::before { animation:v8Pulse 4s ease-in-out infinite; }
+
+  /* Particle galaxy entrance animations [Dave 2026-05-07 PM]: dots flow into the n on slide load.
+     Blue galaxy (left) drifts left?right (toward n from the give side).
+     Red galaxy (right) drifts right?left (toward n from the receive side).
+     Replays each visit via .casey-entered class. */
+  #cs-brand-problem .v8-particles g { opacity: 0; }
+  #cs-brand-problem .v8-galaxy-row svg.v8-particles:first-of-type g { transform: translateX(-44px); }
+  #cs-brand-problem .v8-galaxy-row svg.v8-particles:last-of-type  g { transform: translateX(44px); }
+  #cs-brand-problem[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:first-of-type g { animation: v8GalaxyInL 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  #cs-brand-problem[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  g { animation: v8GalaxyInR 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  @keyframes v8GalaxyInL { from { opacity:0; transform: translateX(-44px); } to { opacity:1; transform: translateX(0); } }
+  @keyframes v8GalaxyInR { from { opacity:0; transform: translateX(44px);  } to { opacity:1; transform: translateX(0); } }
+  @keyframes v8RevealLift { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes v8RevealSurge { from { opacity:0; transform:translateY(28px) scale(.94); } to { opacity:1; transform:translateY(0) scale(1); } }
+  /* Each individual dot drifts subtly + continuously (atmospheric, not spinny) */
+  @keyframes v8DotDriftR { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+  @keyframes v8DotDriftL { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-6px); } }
+  #cs-brand-problem[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:first-of-type circle { animation: v8DotDriftR 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
+  #cs-brand-problem[data-stage="1"].casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  circle { animation: v8DotDriftL 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
+  /* Stagger the per-dot drift so the galaxy feels alive, not synchronized */
+  #cs-brand-problem.casey-entered .v8-particles circle:nth-child(3n+1)  { animation-delay: 2.2s; }
+  #cs-brand-problem.casey-entered .v8-particles circle:nth-child(3n+2)  { animation-delay: 2.6s; animation-duration: 5.6s; }
+  #cs-brand-problem.casey-entered .v8-particles circle:nth-child(3n)    { animation-delay: 3.0s; animation-duration: 6.2s; }
+  /* Export mode (PDF) shows final state instantly */
+  html[data-export="1"] #cs-brand-problem .v8-stage, html[data-export="1"] #cs-brand-problem .v8-header, html[data-export="1"] #cs-brand-problem .v8-galaxy-row, html[data-export="1"] #cs-brand-problem .v8-caption-row, html[data-export="1"] #cs-brand-problem .v8-contact { opacity:1 !important;transform:none !important;filter:none !important;animation:none !important; }
+  html[data-export="1"] #cs-brand-problem .v8-particles g { opacity:1 !important; transform: translateX(0) !important; animation:none !important; }
+  html[data-export="1"] #cs-brand-problem .v8-particles circle { animation:none !important; }
+
   .brand-bg-story { background:#1a1612 !important; overflow:hidden; color:#fbf7ef; }
   .brand-bg-story .bbs-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:0; opacity:.96; filter:saturate(1.08) contrast(1.08) brightness(.74); transform:scale(1.012); pointer-events:none; }
   .brand-bg-story .bbs-wash { position:absolute; inset:0; z-index:1; background:
@@ -22497,6 +22569,20 @@ window.csBrandV8Advance = function() {
 };
 window.csBrandV8Reverse = function() {
   const s = document.getElementById('cs-brand-V8');
+  if (!s) return false;
+  if ((parseInt(s.dataset.stage) || 0) <= 0) return false;
+  s.dataset.stage = '0';
+  return true;
+};
+window.csBrandProblemAdvance = function() {
+  const s = document.getElementById('cs-brand-problem');
+  if (!s) return false;
+  if ((parseInt(s.dataset.stage) || 0) >= 1) return false;
+  s.dataset.stage = '1';
+  return true;
+};
+window.csBrandProblemReverse = function() {
+  const s = document.getElementById('cs-brand-problem');
   if (!s) return false;
   if ((parseInt(s.dataset.stage) || 0) <= 0) return false;
   s.dataset.stage = '0';
@@ -23617,6 +23703,86 @@ window.csAppStorePeopleBlueReverse = function(){ const s=document.getElementById
     <div class="v8-stage">
       <!-- [Dave 2026-05-18 LATEST v3] Header rewritten per Dave: '"A life of autonomous, abundant connection." ? "Brand ? live a life of abundant, autonomous connection."'. The "Brand ?" prefix makes the slide self-identify even more clearly; word order flipped to "abundant, autonomous" per the new copy. -->
       <h1 class="v8-header" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.0rem,3.2vw,2.95rem);font-weight:850;line-height:1.04;letter-spacing:-0.026em;color:#1a1612;text-align:center;margin:0 0 6px;max-width:1560px">Live a life of <em style="font-style:italic;font-weight:850;color:#b8954a">abundant connection</em></h1>
+      <div class="v8-galaxy-row">
+        <!-- Big G anchor on far left -->
+        <span class="v8-G">G</span>
+        <!-- LEFT particle galaxy (blue) — densest near center, fading outward -->
+        <svg class="v8-particles" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+          <g fill="#4d82c6">
+            <circle cx="600" cy="200" r="6" opacity="0.92"/>
+            <circle cx="560" cy="170" r="5.4" opacity="0.85"/><circle cx="560" cy="230" r="5.4" opacity="0.85"/>
+            <circle cx="520" cy="140" r="4.8" opacity="0.78"/><circle cx="520" cy="200" r="4.8" opacity="0.82"/><circle cx="520" cy="260" r="4.8" opacity="0.78"/>
+            <circle cx="480" cy="110" r="4.4" opacity="0.72"/><circle cx="480" cy="180" r="4.4" opacity="0.75"/><circle cx="480" cy="220" r="4.4" opacity="0.75"/><circle cx="480" cy="290" r="4.4" opacity="0.72"/>
+            <circle cx="440" cy="80"  r="4" opacity="0.65"/><circle cx="440" cy="160" r="4" opacity="0.68"/><circle cx="440" cy="200" r="4" opacity="0.72"/><circle cx="440" cy="240" r="4" opacity="0.68"/><circle cx="440" cy="320" r="4" opacity="0.65"/>
+            <circle cx="400" cy="60" r="3.6" opacity="0.55"/><circle cx="400" cy="130" r="3.6" opacity="0.6"/><circle cx="400" cy="200" r="3.6" opacity="0.65"/><circle cx="400" cy="270" r="3.6" opacity="0.6"/><circle cx="400" cy="340" r="3.6" opacity="0.55"/>
+            <circle cx="350" cy="50" r="3.2" opacity="0.5"/><circle cx="350" cy="110" r="3.2" opacity="0.52"/><circle cx="350" cy="180" r="3.2" opacity="0.58"/><circle cx="350" cy="220" r="3.2" opacity="0.58"/><circle cx="350" cy="290" r="3.2" opacity="0.52"/><circle cx="350" cy="350" r="3.2" opacity="0.5"/>
+            <circle cx="300" cy="80" r="2.8" opacity="0.42"/><circle cx="300" cy="150" r="2.8" opacity="0.46"/><circle cx="300" cy="200" r="2.8" opacity="0.5"/><circle cx="300" cy="250" r="2.8" opacity="0.46"/><circle cx="300" cy="320" r="2.8" opacity="0.42"/>
+            <circle cx="250" cy="100" r="2.4" opacity="0.36"/><circle cx="250" cy="200" r="2.4" opacity="0.42"/><circle cx="250" cy="300" r="2.4" opacity="0.36"/>
+            <circle cx="200" cy="130" r="2" opacity="0.3"/><circle cx="200" cy="200" r="2" opacity="0.34"/><circle cx="200" cy="270" r="2" opacity="0.3"/>
+            <circle cx="150" cy="160" r="1.7" opacity="0.24"/><circle cx="150" cy="240" r="1.7" opacity="0.24"/>
+            <circle cx="100" cy="200" r="1.5" opacity="0.18"/>
+            <circle cx="50"  cy="180" r="1.2" opacity="0.12"/><circle cx="50"  cy="220" r="1.2" opacity="0.12"/>
+          </g>
+        </svg>
+
+        <!-- CENTER n orb [Dave 2026-05-07 PM]: replaced 'Networked / Reciprocity' label with 'THE NETWORK / sees. measures.' eyebrow+body pattern, parallel to the left/right captions. -->
+        <div class="v8-ncell">
+          <span class="v8-n">n</span>
+          <div class="v8-n-label" style="margin-top:8px">The Network</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.95rem,1.15vw,1.15rem);font-weight:500;font-style:italic;color:#b8954a;line-height:1.3;text-align:center;margin-top:4px;z-index:3">Feels. Measures. Reciprocates.</div>
+        </div>
+
+        <!-- RIGHT particle galaxy (red) — mirrors left -->
+        <svg class="v8-particles" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+          <g fill="#c94d32">
+            <circle cx="0" cy="200" r="6" opacity="0.92"/>
+            <circle cx="40" cy="170" r="5.4" opacity="0.85"/><circle cx="40" cy="230" r="5.4" opacity="0.85"/>
+            <circle cx="80" cy="140" r="4.8" opacity="0.78"/><circle cx="80" cy="200" r="4.8" opacity="0.82"/><circle cx="80" cy="260" r="4.8" opacity="0.78"/>
+            <circle cx="120" cy="110" r="4.4" opacity="0.72"/><circle cx="120" cy="180" r="4.4" opacity="0.75"/><circle cx="120" cy="220" r="4.4" opacity="0.75"/><circle cx="120" cy="290" r="4.4" opacity="0.72"/>
+            <circle cx="160" cy="80"  r="4" opacity="0.65"/><circle cx="160" cy="160" r="4" opacity="0.68"/><circle cx="160" cy="200" r="4" opacity="0.72"/><circle cx="160" cy="240" r="4" opacity="0.68"/><circle cx="160" cy="320" r="4" opacity="0.65"/>
+            <circle cx="200" cy="60" r="3.6" opacity="0.55"/><circle cx="200" cy="130" r="3.6" opacity="0.6"/><circle cx="200" cy="200" r="3.6" opacity="0.65"/><circle cx="200" cy="270" r="3.6" opacity="0.6"/><circle cx="200" cy="340" r="3.6" opacity="0.55"/>
+            <circle cx="250" cy="50" r="3.2" opacity="0.5"/><circle cx="250" cy="110" r="3.2" opacity="0.52"/><circle cx="250" cy="180" r="3.2" opacity="0.58"/><circle cx="250" cy="220" r="3.2" opacity="0.58"/><circle cx="250" cy="290" r="3.2" opacity="0.52"/><circle cx="250" cy="350" r="3.2" opacity="0.5"/>
+            <circle cx="300" cy="80" r="2.8" opacity="0.42"/><circle cx="300" cy="150" r="2.8" opacity="0.46"/><circle cx="300" cy="200" r="2.8" opacity="0.5"/><circle cx="300" cy="250" r="2.8" opacity="0.46"/><circle cx="300" cy="320" r="2.8" opacity="0.42"/>
+            <circle cx="350" cy="100" r="2.4" opacity="0.36"/><circle cx="350" cy="200" r="2.4" opacity="0.42"/><circle cx="350" cy="300" r="2.4" opacity="0.36"/>
+            <circle cx="400" cy="130" r="2" opacity="0.3"/><circle cx="400" cy="200" r="2" opacity="0.34"/><circle cx="400" cy="270" r="2" opacity="0.3"/>
+            <circle cx="450" cy="160" r="1.7" opacity="0.24"/><circle cx="450" cy="240" r="1.7" opacity="0.24"/>
+            <circle cx="500" cy="200" r="1.5" opacity="0.18"/>
+            <circle cx="550" cy="180" r="1.2" opacity="0.12"/><circle cx="550" cy="220" r="1.2" opacity="0.12"/>
+          </g>
+        </svg>
+        <!-- Big R anchor on far right -->
+        <span class="v8-R">R</span>
+      </div>
+
+      <!-- [Dave 2026-05-12 LATEST] Captions swapped to the cs-prom promise lines; bottom "From invisible to invaluable." tag REMOVED. The galaxy visual now carries the brand thesis; the diptych below carries the promise. -->
+      <div class="v8-caption-row">
+        <div class="v8-cap-l">
+          <div class="v8-cap-body" style="text-align:center"><span style="color:#5B8FD4;font-style:normal;font-weight:800">Your community</span> gets the most out of <em>you</em>.</div>
+        </div>
+        <div class="v8-cap-spacer"></div>
+        <div class="v8-cap-r">
+          <div class="v8-cap-body" style="text-align:center"><span style="color:#c8462c;font-style:normal;font-weight:800">You</span> get the most out of <em>your community</em>.</div>
+        </div>
+      </div>
+
+      <!-- [Dave 2026-05-18 LATEST v2] 'Most human value is invisible. So it never returns.' kicker DELETED per Dave 'delete this text'. The header + galaxy + diptych carry the brand thesis on their own. HTML retained as silent backup. -->
+      <!-- <div class="v8-claim" style="margin-top:34px;padding-top:24px;border-top:1px solid rgba(184,149,74,0.32);max-width:980px;align-self:center;width:100%">Most human value is invisible.<br>So it never returns.</div> -->
+
+      <!-- [Dave 2026-05-26] Contact restored because cs-brand-V8 is now the closing slide immediately after Steve Callan. -->
+
+    </div>
+  </section>
+</div>
+
+
+<!-- cs-brand-problem - duplicated from cs-brand-V8 per Dave 2026-06-19; original brand promise slide remains unchanged. -->
+<div class="casey-slide ds-focus" id="cs-brand-problem" data-stage="0" onclick="if(window.csBrandProblemAdvance&&window.csBrandProblemAdvance()) event.stopPropagation()" style="display:none">
+  <img class="v8-bg" src="assets/cs-brand-promise-community-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-brand-codex.png';this.onerror=function(){this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'}"/>
+  <div class="v8-bg-wash" aria-hidden="true"></div>
+  <!-- Eyebrow history: "Brand" ? "Introducing Give n Receive". [Dave 2026-05-18 LATEST v3]: ? 'Brand ? live a life of abundant, autonomous connection.' per Dave's latest positioning eyebrow. Same mixed-case treatment as cs-1m8 above so the two slides share an identical eyebrow voice. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">the problem</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+    <div class="v8-stage">
       <div class="v8-galaxy-row">
         <!-- Big G anchor on far left -->
         <span class="v8-G">G</span>
@@ -37470,6 +37636,7 @@ const SLIDE_ORDER = [
   'cs-feeling-beyond-brand',
   'cs-1bm1',
   'cs-1m8',
+  'cs-brand-problem',
   'cs-community-reciprocity-problem',
   'cs-community-builder-product',
   'cs-community-builder-engine',
@@ -39598,6 +39765,7 @@ const slideLabels = [
   'Beyond Brand',
   'Modern life wires us away from fulfillment', //  2 cs-1bm1
   'The relationship graph is missing', //  3 cs-1m8
+  'The problem', // cs-brand-problem
   'Core problem: reciprocal community fit',
   'A product to empower community builders', //  5 cs-community-builder-product
   'Community builder engine', //  6 cs-community-builder-engine
@@ -40241,6 +40409,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-1m8-title-A': 'csM8TitleAAdvance',
     'cs-1m8-title-B': 'csM8TitleBAdvance',
     'cs-brand-V8': 'csBrandV8Advance',
+    'cs-brand-problem': 'csBrandProblemAdvance',
     'cs-18-vd4': 'csVd4Advance',
     'cs-1': 'cs1Advance',
     'cs-1bm1': 'cs1bm1Advance',
@@ -40315,6 +40484,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m8-title-A': 'csM8TitleAReverse',
     'cs-1m8-title-B': 'csM8TitleBReverse',
     'cs-brand-V8': 'csBrandV8Reverse',
+    'cs-brand-problem': 'csBrandProblemReverse',
     'cs-1': 'cs1Reverse',
     'cs-1bm1': 'cs1bm1Reverse',
     'cs-thegap': 'csThegapReverse',
@@ -40705,6 +40875,7 @@ document.addEventListener('wheel', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeAdvance && window.csMv6MergeAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareAdvance && window.csTeamreachCompareAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-brand-V8' && window.csBrandV8Advance && window.csBrandV8Advance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-brand-problem' && window.csBrandProblemAdvance && window.csBrandProblemAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance()) {
       setTimeout(() => { wheelLock = false; }, 1000);
       return;
@@ -40900,6 +41071,7 @@ document.addEventListener('wheel', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-brand-V8' && window.csBrandV8Reverse && window.csBrandV8Reverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-brand-problem' && window.csBrandProblemReverse && window.csBrandProblemReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && document.querySelector('#cs-community-builder-product-heart-pink.active') && window.csCommunityBuilderProductHeartPinkReverse && window.csCommunityBuilderProductHeartPinkReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
