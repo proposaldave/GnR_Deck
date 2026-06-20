@@ -8932,11 +8932,12 @@ window.cs1m5Reverse = function() {
 </script>
 
 <style>
-  #cs-1m8-invite-graph-blue{cursor:pointer;background:radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%)!important;overflow:hidden}
-  #cs-1m8-invite-graph-blue .igb-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.05) 1px,transparent 0);background-size:4px 4px;opacity:.55;pointer-events:none;mix-blend-mode:multiply}
-  #cs-1m8-invite-graph-blue .igb-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(184,149,74,.10),transparent 55%);pointer-events:none}
-  #cs-1m8-invite-graph-blue .igb-eye{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10}
-  #cs-1m8-invite-graph-blue .igb-stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#1a1612;padding:0 60px;box-sizing:border-box;z-index:3}
+  #cs-1m8-invite-graph-blue{cursor:pointer;background:#f3ead8!important;overflow:hidden}
+  #cs-1m8-invite-graph-blue .igb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.86;filter:saturate(.96) contrast(.96)}
+  #cs-1m8-invite-graph-blue .igb-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.045) 1px,transparent 0);background-size:4px 4px;opacity:.26;pointer-events:none;mix-blend-mode:multiply;z-index:1}
+  #cs-1m8-invite-graph-blue .igb-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 44%,rgba(251,247,239,.46),rgba(251,247,239,.16) 34%,transparent 64%);pointer-events:none;z-index:2}
+  #cs-1m8-invite-graph-blue .igb-eye{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10}
+  #cs-1m8-invite-graph-blue .igb-stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#1a1612;padding:0 60px;box-sizing:border-box;z-index:4}
   #cs-1m8-invite-graph-blue .m8-wordmark{position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto 32px;line-height:1;text-shadow:0 8px 34px rgba(251,247,239,.84)}
   #cs-1m8-invite-graph-blue .wm-letter{display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .55s cubic-bezier(.45,.05,.18,1);will-change:transform,opacity;backface-visibility:hidden}
   #cs-1m8-invite-graph-blue .wm-G,#cs-1m8-invite-graph-blue .wm-ive{font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px}
@@ -8945,7 +8946,7 @@ window.cs1m5Reverse = function() {
   #cs-1m8-invite-graph-blue .wm-n{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1}
   #cs-1m8-invite-graph-blue .wm-arc{position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .55s cubic-bezier(.45,.05,.18,1)}
   #cs-1m8-invite-graph-blue .igb-sub{font-family:'Manrope',sans-serif;font-size:clamp(.76rem,.96vw,.98rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-top:-14px;margin-bottom:22px;text-shadow:0 4px 24px rgba(251,247,239,.92)}
-  #cs-1m8-invite-graph-blue .igb-graph-line{opacity:0;visibility:hidden;transform:translateY(10px);max-width:1180px;margin-top:10px;padding:18px 28px 20px;border:1px solid rgba(184,149,74,.28);background:rgba(251,247,239,.62);box-shadow:0 18px 46px rgba(26,22,18,.08);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1),visibility 0s linear .65s}
+  #cs-1m8-invite-graph-blue .igb-graph-line{opacity:0;visibility:hidden;transform:translateY(10px);max-width:1180px;margin-top:10px;padding:18px 28px 20px;border:1px solid rgba(184,149,74,.30);background:rgba(251,247,239,.80);box-shadow:0 18px 46px rgba(26,22,18,.08);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1),visibility 0s linear .65s}
   #cs-1m8-invite-graph-blue[data-stage="1"] .igb-graph-line{opacity:1;visibility:visible;transform:none;transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
   #cs-1m8-invite-graph-blue .igb-graph-line p{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.72rem,2.75vw,3.05rem);line-height:1.06;font-weight:760;letter-spacing:-.018em;color:#1a1612;text-wrap:balance}
   #cs-1m8-invite-graph-blue .igb-graph-line em{font-style:italic;color:#b8954a;font-weight:650}
@@ -8958,6 +8959,7 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-1m8-invite-graph-blue .igb-hint{display:none!important}
 </style>
 <div class="casey-slide ds-measure" id="cs-1m8-invite-graph-blue" data-stage="0" onclick="window.cs1m8InviteGraphBlueAdvance && window.cs1m8InviteGraphBlueAdvance(); event.stopPropagation()" style="display:none">
+  <img class="igb-bg" src="assets/generated/invite-graph/invite-graph-envelope-network-bg-v3.png" alt="" aria-hidden="true">
   <div class="igb-paper"></div>
   <div class="igb-glow"></div>
   <div class="igb-eye">a new type of coordination system for real communities</div>

@@ -1,0 +1,67 @@
+<style>
+  #cs-1m8-invite-graph-blue{cursor:pointer;background:radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%)!important;overflow:hidden}
+  #cs-1m8-invite-graph-blue .igb-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.05) 1px,transparent 0);background-size:4px 4px;opacity:.55;pointer-events:none;mix-blend-mode:multiply}
+  #cs-1m8-invite-graph-blue .igb-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(184,149,74,.10),transparent 55%);pointer-events:none}
+  #cs-1m8-invite-graph-blue .igb-eye{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10}
+  #cs-1m8-invite-graph-blue .igb-stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#1a1612;padding:0 60px;box-sizing:border-box;z-index:3}
+  #cs-1m8-invite-graph-blue .m8-wordmark{position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto 32px;line-height:1;text-shadow:0 8px 34px rgba(251,247,239,.84)}
+  #cs-1m8-invite-graph-blue .wm-letter{display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .55s cubic-bezier(.45,.05,.18,1);will-change:transform,opacity;backface-visibility:hidden}
+  #cs-1m8-invite-graph-blue .wm-G,#cs-1m8-invite-graph-blue .wm-ive{font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px}
+  #cs-1m8-invite-graph-blue .wm-R,#cs-1m8-invite-graph-blue .wm-eceive{font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px}
+  #cs-1m8-invite-graph-blue .wm-n-wrap{display:inline-flex;position:relative;align-items:baseline;justify-content:center;padding:0 40px;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .55s cubic-bezier(.45,.05,.18,1);will-change:transform,opacity;backface-visibility:hidden}
+  #cs-1m8-invite-graph-blue .wm-n{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1}
+  #cs-1m8-invite-graph-blue .wm-arc{position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .55s cubic-bezier(.45,.05,.18,1)}
+  #cs-1m8-invite-graph-blue .igb-sub{font-family:'Manrope',sans-serif;font-size:clamp(.76rem,.96vw,.98rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-top:-14px;margin-bottom:22px;text-shadow:0 4px 24px rgba(251,247,239,.92)}
+  #cs-1m8-invite-graph-blue .igb-graph-line{opacity:0;visibility:hidden;transform:translateY(10px);max-width:1180px;margin-top:10px;padding:18px 28px 20px;border:1px solid rgba(184,149,74,.28);background:rgba(251,247,239,.62);box-shadow:0 18px 46px rgba(26,22,18,.08);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1),visibility 0s linear .65s}
+  #cs-1m8-invite-graph-blue[data-stage="1"] .igb-graph-line{opacity:1;visibility:visible;transform:none;transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-1m8-invite-graph-blue .igb-graph-line p{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.72rem,2.75vw,3.05rem);line-height:1.06;font-weight:760;letter-spacing:-.018em;color:#1a1612;text-wrap:balance}
+  #cs-1m8-invite-graph-blue .igb-graph-line em{font-style:italic;color:#b8954a;font-weight:650}
+  #cs-1m8-invite-graph-blue .igb-hint{display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transition:opacity .4s ease,visibility 0s linear 0s}
+  #cs-1m8-invite-graph-blue[data-stage="1"] .igb-hint{opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s linear .4s}
+  #cs-1m8-invite-graph-blue .igb-hint svg{animation:m8HintBob 2.2s ease-in-out infinite}
+  #cs-1m8-invite-graph-blue[data-stage="1"] .igb-hint svg{animation:none}
+  #cs-1m8-invite-graph-blue .igb-contact{position:absolute;bottom:30px;left:36px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.72);font-weight:500;line-height:1.85;z-index:10}
+  html[data-export="1"] #cs-1m8-invite-graph-blue .igb-graph-line{opacity:1!important;visibility:visible!important;transform:none!important}
+  html[data-export="1"] #cs-1m8-invite-graph-blue .igb-hint{display:none!important}
+</style>
+<div class="casey-slide ds-measure" id="cs-1m8-invite-graph-blue" data-stage="0" onclick="window.cs1m8InviteGraphBlueAdvance && window.cs1m8InviteGraphBlueAdvance(); event.stopPropagation()" style="display:none">
+  <div class="igb-paper"></div>
+  <div class="igb-glow"></div>
+  <div class="igb-eye">a new type of coordination system for real communities</div>
+  <div class="igb-stage">
+    <div class="m8-wordmark" aria-label="Give n Receive">
+      <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
+    </div>
+    <div class="igb-sub">The invitation engine for real communities</div>
+    <div class="igb-graph-line">
+      <p>Who <em>invites</em> whom. Who <em>refers</em> whom. Who chooses to spend time with whom.</p>
+    </div>
+    <div class="igb-hint">
+      <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><path d="M 14 4 L 14 22 M 14 22 L 6 14 M 14 22 L 22 14" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+  <div class="igb-contact">
+    <div style="color:#1a1612;font-weight:700">Dave Velardo</div>
+    <div style="color:rgba(26,22,18,.62)">Founder &amp; CEO</div>
+    <div><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,.78);text-decoration:none;border-bottom:1px solid rgba(184,149,74,.55)">dave@givenreceive.com</a></div>
+    <div>978-604-0223</div>
+  </div>
+</div>
+<script>
+window.cs1m8InviteGraphBlueAdvance = function(){
+  const s = document.getElementById('cs-1m8-invite-graph-blue');
+  if (!s) return false;
+  const n = parseInt(s.dataset.stage || '0', 10);
+  if (n >= 1) return false;
+  s.dataset.stage = String(n + 1);
+  return true;
+};
+window.cs1m8InviteGraphBlueReverse = function(){
+  const s = document.getElementById('cs-1m8-invite-graph-blue');
+  if (!s) return false;
+  const n = parseInt(s.dataset.stage || '0', 10);
+  if (n <= 0) return false;
+  s.dataset.stage = String(n - 1);
+  return true;
+};
+</script>
