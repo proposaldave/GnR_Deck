@@ -8880,6 +8880,58 @@ window.cs1m5Reverse = function() {
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
+
+<!-- cs-networked-reciprocity - connection behavior becomes a measurable value graph [Codex 2026-06-19] -->
+<style>
+  #cs-networked-reciprocity{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1A1612}
+  #cs-networked-reciprocity .nrb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;filter:saturate(1.02) contrast(1.02)}
+  #cs-networked-reciprocity .nrb-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(243,234,216,.20) 0%,rgba(243,234,216,.06) 42%,rgba(26,22,18,.16) 74%,rgba(26,22,18,.30) 100%);pointer-events:none}
+  #cs-networked-reciprocity .nrb-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#C8462C;text-shadow:0 1px 0 rgba(251,247,239,.92),0 10px 24px rgba(26,22,18,.12)}
+  #cs-networked-reciprocity .nrb-content{position:absolute;left:76px;top:148px;width:min(760px,43vw);z-index:4;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
+  #cs-networked-reciprocity[data-stage="1"] .nrb-content,html[data-export="1"] #cs-networked-reciprocity .nrb-content{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-networked-reciprocity .nrb-kicker{margin:0 0 18px;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#B8954A}
+  #cs-networked-reciprocity .nrb-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4rem,5.4vw,6.35rem);line-height:.94;font-weight:900;letter-spacing:0;color:#1A1612;text-wrap:balance;text-shadow:0 12px 34px rgba(251,247,239,.70)}
+  #cs-networked-reciprocity .nrb-title em{font-style:italic;color:#C8462C}
+  #cs-networked-reciprocity .nrb-sub{margin:24px 0 0;max-width:690px;font-family:'Manrope',sans-serif;font-size:clamp(1rem,1.22vw,1.28rem);line-height:1.42;font-weight:780;color:rgba(26,22,18,.72);text-shadow:0 2px 16px rgba(251,247,239,.64)}
+  #cs-networked-reciprocity .nrb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;max-width:660px}
+  #cs-networked-reciprocity .nrb-card{min-height:80px;border:1px solid rgba(184,149,74,.28);background:rgba(251,247,239,.78);box-shadow:0 18px 38px rgba(26,22,18,.08);padding:14px 15px 13px;border-radius:7px;backdrop-filter:blur(4px)}
+  #cs-networked-reciprocity .nrb-card b{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.28rem;line-height:1.02;color:#1A1612;margin-bottom:6px}
+  #cs-networked-reciprocity .nrb-card span{display:block;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:rgba(26,22,18,.58);line-height:1.38}
+  #cs-networked-reciprocity .nrb-card:nth-child(1){border-top:4px solid #5B8FD4}
+  #cs-networked-reciprocity .nrb-card:nth-child(2){border-top:4px solid #B8954A}
+  #cs-networked-reciprocity .nrb-card:nth-child(3){border-top:4px solid #C8462C}
+  #cs-networked-reciprocity .nrb-card:nth-child(4){border-top:4px solid #49B4A0}
+  #cs-networked-reciprocity .nrb-hint{position:absolute;left:50%;bottom:32px;z-index:5;transform:translateX(-50%);width:50px;height:7px;border-radius:999px;background:rgba(26,22,18,.42);opacity:.72;transition:opacity .35s ease}
+  #cs-networked-reciprocity[data-stage="1"] .nrb-hint{opacity:0}
+</style>
+<div class="casey-slide ds-focus" id="cs-networked-reciprocity" data-stage="0" onclick="if(window.csNetworkedReciprocityAdvance&&window.csNetworkedReciprocityAdvance()) event.stopPropagation()" style="display:none" aria-label="Connection behavior becomes a measurable value graph">
+  <img class="nrb-bg" src="assets/generated/networked-reciprocity/networked-reciprocity-experience-graph-bg-v2.png" alt="A host-created real-world experience becoming invitations, RSVPs, referrals, repeat groups, and decline signals."/>
+  <div class="nrb-wash"></div>
+  <div class="nrb-eye">Networked reciprocity</div>
+  <div class="nrb-content">
+    <p class="nrb-kicker">The breakthrough</p>
+    <h1 class="nrb-title">Connection creates <em>the graph.</em></h1>
+    <p class="nrb-sub">Every invite, RSVP, referral, repeat group, and decline teaches GnT who creates value and where connection should happen next.</p>
+    <div class="nrb-grid" aria-hidden="true">
+      <div class="nrb-card"><b>Create connection</b><span>hosts make rooms people love</span></div>
+      <div class="nrb-card"><b>Measure value</b><span>behavior becomes signal</span></div>
+      <div class="nrb-card"><b>Route better</b><span>next invitations improve</span></div>
+      <div class="nrb-card"><b>Reward builders</b><span>value creators get seen</span></div>
+    </div>
+  </div>
+  <div class="nrb-hint" aria-hidden="true"></div>
+</div>
+<script>
+(function(){
+  const id='cs-networked-reciprocity';
+  function slide(){return document.getElementById(id)}
+  window.csNetworkedReciprocityAdvance=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage==='1')return false;s.dataset.stage='1';return true};
+  window.csNetworkedReciprocityReverse=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage!=='1')return false;s.dataset.stage='0';return true};
+  function boot(){const s=slide();if(!s)return;new MutationObserver(function(){if(!s.classList.contains('active'))s.dataset.stage='0'}).observe(s,{attributes:true,attributeFilter:['class']})}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+
 <style>
   #cs-1m8-invite-graph-blue{cursor:pointer;background:radial-gradient(ellipse at 50% 42%,#fbf7ef 0%,#f3ead8 65%,#e9dcc4 100%)!important;overflow:hidden}
   #cs-1m8-invite-graph-blue .igb-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.05) 1px,transparent 0);background-size:4px 4px;opacity:.55;pointer-events:none;mix-blend-mode:multiply}
@@ -37697,6 +37749,7 @@ const SLIDE_ORDER = [
   'cs-1m8',
   'cs-community-builder-product',
   'cs-community-builder-engine',
+  'cs-networked-reciprocity',
   'cs-real-world-measurable-market',
   'cs-thegap',
   'cs-invite-operational-insanity-pink',
@@ -39899,35 +39952,37 @@ function animateCsa2Expansion() {
 const slideLabels = [
   null,
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
-  'Modern life wires us away from fulfillment', //  2 cs-1bm1
-  'The relationship graph is missing', //  3 cs-1m8
-  'Community builder product', //  4 cs-community-builder-product
-  'Community builder engine', //  5 cs-community-builder-engine
-  'Real-world measurable market', //  5 cs-real-world-measurable-market
-  'Community technology is unsolved', //  6 cs-thegap
-  'Custom invitations are operationally hard', //  7 cs-invite-operational-insanity-pink
-  'NEPC proof / proving ground', //  8 cs-11e
-  'Rise of the personalized invitation feed', //  9 cs-gnr
-  'Referrals power the community sales engine', // 10 cs-invitation-word-of-mouth
-  'App store for people', // 11 cs-app-store-people
-  'the next frontier in human connection technology', // 12 cs-connection-choice
-  'Community intelligence flywheel', // 13 cs-fv6-img
-  'Founder wheelhouse', // 14 cs-18-vd4
-  'SameCourt paradigm flip', // 15 cs-samecourt
-  'Same courts / utilization / net profit', // 16 cs-revenue-util-profit-blue
-  'Serious vs silly', // 17 cs-serious-vs-silly-bridge
-  'Pickleball wedge', // 18 cs-wedgepb-codex
-  'Drop into any pickleball community', // 19 cs-fw1
-  'Pickleball as wedge market', // 20 cs-wedge1
-  'Real-world communities', // 21 cs-2c
-  'Invisible layer of community value', // 22 cs-mv6-merge
-  'Community builder invitation engine', // 23 cs-club-os
-  'TeamReach vs GnR', // 24 cs-teamreach-referral-compare
-  'Connection economy breakthrough', // 25 cs-connection-economy-breakthrough
-  'Programmable invitations train the graph', // 26 cs-programmable-invitations
-  'Feature ladder', // 27 cs-feature-stage-unlocks
-  'Brand promise', // 28 cs-brand-V8
-  'Five-star experience', // 29 cs-five-star-experience-final
+  'Core problem: reciprocal community fit', //  2 cs-community-reciprocity-problem
+  'Modern life wires us away from fulfillment', //  3 cs-1bm1
+  'The relationship graph is missing', //  4 cs-1m8
+  'Community builder product', //  5 cs-community-builder-product
+  'Community builder engine', //  6 cs-community-builder-engine
+  'Networked reciprocity breakthrough', //  7 cs-networked-reciprocity
+  'Real-world measurable market', //  8 cs-real-world-measurable-market
+  'Community technology is unsolved', //  9 cs-thegap
+  'Custom invitations are operationally hard', // 10 cs-invite-operational-insanity-pink
+  'NEPC proof / proving ground', // 11 cs-11e
+  'Rise of the personalized invitation feed', // 12 cs-gnr
+  'Referrals power the community sales engine', // 13 cs-invitation-word-of-mouth
+  'App store for people', // 14 cs-app-store-people
+  'the next frontier in human connection technology', // 15 cs-connection-choice
+  'Community intelligence flywheel', // 16 cs-fv6-img
+  'Founder wheelhouse', // 17 cs-18-vd4
+  'SameCourt paradigm flip', // 18 cs-samecourt
+  'Same courts / utilization / net profit', // 19 cs-revenue-util-profit-blue
+  'Serious vs silly', // 20 cs-serious-vs-silly-bridge
+  'Pickleball wedge', // 21 cs-wedgepb-codex
+  'Drop into any pickleball community', // 22 cs-fw1
+  'Pickleball as wedge market', // 23 cs-wedge1
+  'Real-world communities', // 24 cs-2c
+  'Invisible layer of community value', // 25 cs-mv6-merge
+  'Community builder invitation engine', // 26 cs-club-os
+  'TeamReach vs GnR', // 27 cs-teamreach-referral-compare
+  'Connection economy breakthrough', // 28 cs-connection-economy-breakthrough
+  'Programmable invitations train the graph', // 29 cs-programmable-invitations
+  'Feature ladder', // 30 cs-feature-stage-unlocks
+  'Brand promise', // 31 cs-brand-V8
+  'Five-star experience', // 32 cs-five-star-experience-final
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -40595,6 +40650,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-community-builder-product': 'csCommunityBuilderProductAdvance',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkAdvance',
     'cs-community-builder-engine': 'csCommunityBuilderEngineAdvance',
+    'cs-networked-reciprocity': 'csNetworkedReciprocityAdvance',
     'cs-invite-engine-flow-pink': 'csInviteEngineFlowPinkAdvance',
     'cs-1m8-black-backup': 'cs1m8BlackBackupAdvance',
     'cs-1m9': 'cs1m9Advance',
@@ -40671,6 +40727,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-community-builder-product': 'csCommunityBuilderProductReverse',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkReverse',
     'cs-community-builder-engine': 'csCommunityBuilderEngineReverse',
+    'cs-networked-reciprocity': 'csNetworkedReciprocityReverse',
     'cs-invite-engine-flow-pink': 'csInviteEngineFlowPinkReverse',
     'cs-1m8-black-backup': 'cs1m8BlackBackupReverse',
     'cs-1m9': 'cs1m9Reverse',
@@ -41042,6 +41099,7 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-networked-reciprocity' && window.csNetworkedReciprocityAdvance && window.csNetworkedReciprocityAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-community-builder-engine' && window.csCommunityBuilderEngineAdvance && window.csCommunityBuilderEngineAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -41264,6 +41322,7 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-networked-reciprocity' && window.csNetworkedReciprocityReverse && window.csNetworkedReciprocityReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-brand-V8' && window.csBrandV8Reverse && window.csBrandV8Reverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
@@ -41400,6 +41459,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && document.querySelector('#cs-community-builder-product-heart-pink.active') && window.csCommunityBuilderProductHeartPinkAdvance && window.csCommunityBuilderProductHeartPinkAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-product' && window.csCommunityBuilderProductAdvance && window.csCommunityBuilderProductAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-networked-reciprocity' && window.csNetworkedReciprocityAdvance && window.csNetworkedReciprocityAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-engine' && window.csCommunityBuilderEngineAdvance && window.csCommunityBuilderEngineAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11e' && window.cs11eAdvance && window.cs11eAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -41435,6 +41495,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && document.querySelector('#cs-community-builder-product-heart-pink.active') && window.csCommunityBuilderProductHeartPinkReverse && window.csCommunityBuilderProductHeartPinkReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-product' && window.csCommunityBuilderProductReverse && window.csCommunityBuilderProductReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-networked-reciprocity' && window.csNetworkedReciprocityReverse && window.csNetworkedReciprocityReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-engine' && window.csCommunityBuilderEngineReverse && window.csCommunityBuilderEngineReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11e' && window.cs11eReverse && window.cs11eReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
