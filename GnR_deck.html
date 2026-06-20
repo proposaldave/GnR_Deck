@@ -21500,7 +21500,7 @@ window.csInvitationWordOfMouthAdvance = function() {
   #cs-wedge1.casey-entered .wd-slack-proof { opacity:1; transform:none; transition-delay:0.85s; }
   html[data-export="1"] #cs-wedge1 .wd-slack-proof { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-wedge1">
+<div class="casey-slide ds-focus appendix-slide" id="cs-wedge1" style="display:none">
   <!-- [Dave 2026-05-09] Eyebrow + hero refocused from 'human connection' to 'real-world social communities'. Sub line + Workplaces + Dating + Family icons + '? The Network That Wins' DELETED. Pickleball court fixed to proper 44:20 (220:100) ratio with proper kitchen/net/centerline. Padel/Tennis/Golf/Social Sports added as expansion siblings beneath pickleball. -->
   <!-- [Dave 2026-05-17 v8] Eyebrow forced to single line per Dave 'the text below should fit on one line'. White-space:nowrap + slightly tighter letter-spacing so the full sentence reads on one row at 1920 width. -->
   <!-- [Dave 2026-05-18 LATEST] Eyebrow promoted to carry "The next great network..." line per Dave 'make the current top/header of the slide move that to be the top left label of the slide'. Mixed-case set instead of upper-case so the long sentence still reads as a typographic eyebrow without overwhelming the slot. -->
@@ -37900,7 +37900,6 @@ const SLIDE_ORDER = [
   'cs-serious-vs-silly-bridge',
   'cs-wedgepb-codex',
   'cs-fw1',
-  'cs-wedge1',
   'cs-2c',
   'cs-mv6-merge',
   'cs-club-os',
@@ -38025,6 +38024,8 @@ const APPENDIX_ORDER = [
   'cs-pb-silliness-collage-main',
   'cs-brand-att5',
   'cs-brand-bg-story-os',
+  // Codex 2026-06-20: Dave moved the Every community is already a network slide from main deck to appendix.
+  'cs-wedge1',
   'cs-referral-roadmap-pink',
   'cs-frontier',
   'cs-intro6',
@@ -40116,18 +40117,17 @@ const slideLabels = [
   'Serious vs silly', // 19 cs-serious-vs-silly-bridge
   'Pickleball wedge', // 20 cs-wedgepb-codex
   'Drop into any pickleball community', // 21 cs-fw1
-  'Pickleball as wedge market', // 22 cs-wedge1
-  'Real-world communities', // 23 cs-2c
-  'Invisible layer of community value', // 24 cs-mv6-merge
-  'Community builder invitation engine', // 25 cs-club-os
-  'TeamReach vs GnR', // 26 cs-teamreach-referral-compare
-  'Connection economy breakthrough', // 27 cs-connection-economy-breakthrough
-  'Programmable invitations train the graph', // 28 cs-programmable-invitations
-  'Feature ladder', // 29 cs-feature-stage-unlocks
-  'Brand promise', // 30 cs-brand-V8
-  'Five-star experience', // 31 cs-five-star-experience-final
-  'Modern life wires us away from fulfillment', // 32 cs-1bm1
-  'Networked reciprocity breakthrough', // 33 cs-networked-reciprocity
+  'Real-world communities', // 22 cs-2c
+  'Invisible layer of community value', // 23 cs-mv6-merge
+  'Community builder invitation engine', // 24 cs-club-os
+  'TeamReach vs GnR', // 25 cs-teamreach-referral-compare
+  'Connection economy breakthrough', // 26 cs-connection-economy-breakthrough
+  'Programmable invitations train the graph', // 27 cs-programmable-invitations
+  'Feature ladder', // 28 cs-feature-stage-unlocks
+  'Brand promise', // 29 cs-brand-V8
+  'Five-star experience', // 30 cs-five-star-experience-final
+  'Modern life wires us away from fulfillment', // 31 cs-1bm1
+  'Networked reciprocity breakthrough', // 32 cs-networked-reciprocity
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
