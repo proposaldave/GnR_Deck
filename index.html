@@ -37838,7 +37838,7 @@ window.csA7m1Reverse = function() {
 <nav class="casey-concept-nav" id="conceptNav" aria-label="Concept review slides"></nav>
 <nav class="casey-seed-nav" id="seedNav" aria-label="Seed investor deck slides"></nav>
 <nav class="casey-staff-nav" id="staffNav" aria-label="NEPC staff Give and Receive story slides"></nav>
-<nav class="casey-mini-nav" id="miniInvestorNav" aria-label="Investor mini deck slides"></nav>
+<nav class="casey-mini-nav" id="miniInvestorNav" aria-label="Investor mini deck slides" style="display:none!important"></nav>
 
 <!-- cs-a19 ("What Runs the World" · Land/Labor/Capital/Information/Attention/Intelligence ? Human Connection)
      ? DELETED 2026-05-02 per Dave (duplicate of cs-mv7 which was already removed). Slide div fully removed. -->
@@ -38067,6 +38067,12 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  // Codex 2026-06-20: Dave moved the five-slide investor mini deck here and removed its separate dot rail.
+  'cs-frontier-scale-pink-2',
+  'cs-brand-problem',
+  'cs-community-builder-product',
+  'cs-referral-business-model',
+  'cs-revenue-util-profit-blue',
   // Codex 2026-06-20: Dave requested moving the ratings/belonging blue-dot slide to trash.
   'cs-app-store-people-blue',
   // Codex 2026-06-15: Dave requested moving the Give n Receive flow alt to trash.
@@ -38222,14 +38228,9 @@ const STAFF_ORDER = [
 ];
 const STAFF_TOTAL = STAFF_ORDER.length;
 
-// Investor mini deck: five live source slides, no main-deck reorder.
-const MINI_INVESTOR_ORDER = [
-  { id: 'cs-frontier-scale-pink-2', label: 'Title' },
-  { id: 'cs-brand-problem', label: 'Problem' },
-  { id: 'cs-community-builder-product', label: 'Solution' },
-  { id: 'cs-referral-business-model', label: 'Business model' },
-  { id: 'cs-revenue-util-profit-blue', label: 'Proof' }
-];
+// Codex 2026-06-20: Dave moved the five-slide investor mini deck to trash and removed its dot rail.
+// Keep the array empty so the main deck order remains untouched.
+const MINI_INVESTOR_ORDER = [];
 const MINI_INVESTOR_TOTAL = MINI_INVESTOR_ORDER.length;
 
 
