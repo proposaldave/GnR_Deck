@@ -23670,7 +23670,7 @@ window.csBrandProblemReverse = function() {
   </section>
 </div>
 
-<div class="casey-slide ds-focus" id="cs-app-store-people-blue" data-shown="0" onclick="csAppStorePeopleBlueAdvance();event.stopPropagation()" style="display:none" aria-label="Blue-dot candidate for people marketplace slide">
+<div class="casey-slide ds-focus trash-slide" id="cs-app-store-people-blue" data-shown="0" data-deleted="1" onclick="csAppStorePeopleBlueAdvance();event.stopPropagation()" style="display:none" aria-label="Blue-dot candidate for people marketplace slide">
   <img class="apb-bg" src="assets/cs-app-store-people-blue-bg.png" alt="Watercolor community marketplace background with pickleball players, real-world introductions, and human connection cards">
   <div class="apb-eye">human connection marketplace</div>
 
@@ -37822,7 +37822,6 @@ const SLIDE_ALTS = {
   1: ['cs-value-choice-image-annotated-pink'],
   2: ['cs-1m8'],
   3: ['cs-optimus-party-overhead-pink'],
-  10: ['cs-app-store-people-blue'],
   12: ['cs-fv6-referral-engine-blue'],
   16: ['cs-samecourt-pyramid-white2', 'cs-samecourt-pyramid-previous-pink', 'cs-samecourt-pyramid-blue-two-section-02', 'cs-invite-atomic-unit-pink', 'cs-samecourt-pyramid-image-led-pink', 'cs-market-two-economics'],
   19: ['cs-16'],
@@ -37993,6 +37992,8 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  // Codex 2026-06-20: Dave requested moving the ratings/belonging blue-dot slide to trash.
+  'cs-app-store-people-blue',
   // Codex 2026-06-15: Dave requested moving the Give n Receive flow alt to trash.
   'cs-invite-engine-flow-pink',
   // Codex 2026-06-15: Dave requested moving the former measurable-market alt slides to trash.
