@@ -30384,35 +30384,48 @@ window.csProgrammableInvitationsReverse = function() {
      creates belonging first; GnR then measures, graphs, reciprocates, predicts, compounds to abundance. -->
 <style>
   #cs-fv6-host-abundance-pink{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#1a1612!important;color:#fbf7ef;cursor:pointer}
-  #cs-fv6-host-abundance-pink .fh-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.04) contrast(1.02) brightness(.92)}
-  #cs-fv6-host-abundance-pink .fh-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,20,34,.94) 0%,rgba(10,20,34,.78) 31%,rgba(10,20,34,.22) 59%,rgba(10,20,34,.02) 100%),radial-gradient(ellipse at 70% 38%,rgba(184,149,74,.22),rgba(184,149,74,0) 46%),linear-gradient(180deg,rgba(26,22,18,.06),rgba(26,22,18,.34))}
-  #cs-fv6-host-abundance-pink .fh-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.90);padding:8px 10px;border-radius:2px;box-shadow:0 12px 28px rgba(26,22,18,.18)}
-  #cs-fv6-host-abundance-pink .fh-stage{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:minmax(500px,.40fr) minmax(960px,.60fr);gap:34px;align-items:end;padding:112px 62px 72px 82px;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear .78s}
+  #cs-fv6-host-abundance-pink .fh-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.06) contrast(1.06) brightness(.88)}
+  #cs-fv6-host-abundance-pink .fh-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,20,34,.94) 0%,rgba(10,20,34,.76) 30%,rgba(10,20,34,.26) 56%,rgba(10,20,34,.08) 100%),radial-gradient(ellipse at 72% 42%,rgba(184,149,74,.26),rgba(184,149,74,0) 44%),linear-gradient(180deg,rgba(26,22,18,.04),rgba(26,22,18,.42))}
+  #cs-fv6-host-abundance-pink .fh-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;text-shadow:0 2px 16px rgba(251,247,239,.35)}
+  #cs-fv6-host-abundance-pink .fh-stage{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:minmax(500px,.42fr) minmax(900px,.58fr);gap:42px;align-items:center;padding:112px 68px 72px 82px;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear .78s}
   #cs-fv6-host-abundance-pink[data-shown="1"] .fh-stage{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
-  #cs-fv6-host-abundance-pink .fh-copy{align-self:center;max-width:760px;text-shadow:0 22px 54px rgba(0,0,0,.42)}
-  #cs-fv6-host-abundance-pink .fh-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,5.9vw,6.65rem);line-height:.92;font-weight:900;letter-spacing:-.026em;color:#fbf7ef;text-wrap:balance}
+  #cs-fv6-host-abundance-pink .fh-copy{align-self:center;max-width:740px;text-shadow:0 24px 58px rgba(0,0,0,.48)}
+  #cs-fv6-host-abundance-pink .fh-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.05rem,5.65vw,6.45rem);line-height:.92;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance}
   #cs-fv6-host-abundance-pink .fh-title em{display:block;margin-top:.08em;font-style:italic;color:#f0d27f;font-weight:850}
-  #cs-fv6-host-abundance-pink .fh-sub{margin:26px 0 0;max-width:650px;font-family:'Manrope',sans-serif;font-size:clamp(1rem,1.24vw,1.28rem);line-height:1.42;font-weight:820;color:rgba(251,247,239,.80)}
+  #cs-fv6-host-abundance-pink .fh-sub{margin:26px 0 0;max-width:650px;font-family:'Manrope',sans-serif;font-size:clamp(1rem,1.2vw,1.26rem);line-height:1.42;font-weight:820;color:rgba(251,247,239,.80)}
   #cs-fv6-host-abundance-pink .fh-sub b{color:#ffffff;font-weight:900}
-  #cs-fv6-host-abundance-pink .fh-system{align-self:end;border:1px solid rgba(251,247,239,.24);background:linear-gradient(135deg,rgba(251,247,239,.90),rgba(251,247,239,.72));box-shadow:0 36px 98px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.72);border-radius:8px;padding:28px 28px 30px;color:#1a1612;backdrop-filter:blur(4px)}
-  #cs-fv6-host-abundance-pink .fh-kicker{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.23em;text-transform:uppercase;color:#c8462c;margin-bottom:18px;text-align:center}
-  #cs-fv6-host-abundance-pink .fh-lanes{display:grid;gap:18px}
-  #cs-fv6-host-abundance-pink .fh-lane{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:center}
-  #cs-fv6-host-abundance-pink .fh-lane-label{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.48);text-align:right}
-  #cs-fv6-host-abundance-pink .fh-steps{display:flex;align-items:stretch;gap:7px;min-width:0}
-  #cs-fv6-host-abundance-pink .fh-step{position:relative;flex:1;min-width:0;min-height:88px;box-sizing:border-box;border:1px solid rgba(184,149,74,.34);background:rgba(255,251,243,.88);border-radius:7px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px 7px;box-shadow:0 12px 24px rgba(26,22,18,.06);overflow:visible}
-  #cs-fv6-host-abundance-pink .fh-step:not(:last-child)::after{content:"";position:absolute;right:-8px;top:50%;width:8px;height:2px;background:rgba(184,149,74,.68);transform:translateY(-50%)}
-  #cs-fv6-host-abundance-pink .fh-num{font-family:'Manrope',sans-serif;font-size:.54rem;font-weight:950;letter-spacing:.12em;color:#c8462c;margin-bottom:6px}
-  #cs-fv6-host-abundance-pink .fh-word{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.80rem,.92vw,1rem);font-weight:900;line-height:1.02;color:#1a1612}#cs-fv6-host-abundance-pink .fh-intel .fh-word{font-size:clamp(.70rem,.76vw,.88rem)}
-  #cs-fv6-host-abundance-pink .fh-host .fh-step:first-child{border-color:rgba(200,70,44,.38);background:rgba(255,246,240,.94)}
+  #cs-fv6-host-abundance-pink .fh-system{position:relative;align-self:center;min-height:610px;border:1px solid rgba(251,247,239,.30);background:linear-gradient(135deg,rgba(251,247,239,.94),rgba(243,234,216,.78));box-shadow:0 42px 104px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.78);border-radius:8px;padding:28px 30px 30px;color:#1a1612;backdrop-filter:blur(5px);overflow:hidden}
+  #cs-fv6-host-abundance-pink .fh-system:before{content:"";position:absolute;inset:18px;border:1px solid rgba(184,149,74,.18);border-radius:6px;pointer-events:none}
+  #cs-fv6-host-abundance-pink .fh-system:after{content:"";position:absolute;right:-40px;top:-54px;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(184,149,74,.18),rgba(184,149,74,.05) 42%,rgba(184,149,74,0) 70%);pointer-events:none}
+  #cs-fv6-host-abundance-pink .fh-kicker{position:relative;z-index:2;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.23em;text-transform:uppercase;color:#c8462c;margin-bottom:22px;text-align:center}
+  #cs-fv6-host-abundance-pink .fh-map{position:relative;z-index:2;min-height:520px;display:grid;grid-template-rows:auto 1fr auto;gap:18px}
+  #cs-fv6-host-abundance-pink .fh-brand{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:220px;height:220px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 50% 44%,rgba(251,247,239,.98),rgba(251,247,239,.78));border:1px solid rgba(184,149,74,.42);box-shadow:0 30px 78px rgba(26,22,18,.20),0 0 0 12px rgba(184,149,74,.08);z-index:1}
+  #cs-fv6-host-abundance-pink .fh-brand-word{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.2rem;font-weight:900;letter-spacing:.04em;line-height:1;color:#1a1612}
+  #cs-fv6-host-abundance-pink .fh-brand-word .g{color:#5B8FD4}.fh-brand-word .n{color:#1a1612;font-style:italic;font-weight:600}.fh-brand-word .r{color:#C8462C}
+  #cs-fv6-host-abundance-pink .fh-brand-sub{margin-top:8px;font-family:'Manrope',sans-serif;font-size:.54rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#b8954a;text-align:center}
+  #cs-fv6-host-abundance-pink .fh-brand svg{position:absolute;inset:-40px;width:312px;height:312px;overflow:visible;z-index:-1}
+  #cs-fv6-host-abundance-pink .fh-brand path{fill:none;stroke:#b8954a;stroke-width:2;stroke-linecap:round;opacity:.56}.fh-brand circle{fill:#fbf7ef;stroke-width:3}
+  #cs-fv6-host-abundance-pink .fh-lane{position:relative;z-index:2;display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:center}#cs-fv6-host-abundance-pink .fh-host{grid-row:1}#cs-fv6-host-abundance-pink .fh-intel{grid-row:3}
+  #cs-fv6-host-abundance-pink .fh-lane-label{font-family:'Manrope',sans-serif;font-size:.60rem;font-weight:950;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.46);text-align:right;line-height:1.35}
+  #cs-fv6-host-abundance-pink .fh-steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;min-width:0}
+  #cs-fv6-host-abundance-pink .fh-step{position:relative;min-width:0;min-height:112px;box-sizing:border-box;border:1px solid rgba(184,149,74,.34);background:rgba(255,251,243,.88);border-radius:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:12px 8px;box-shadow:0 14px 28px rgba(26,22,18,.07);overflow:hidden}
+  #cs-fv6-host-abundance-pink .fh-step:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--fh-accent,#b8954a);opacity:.78}
+  #cs-fv6-host-abundance-pink .fh-step:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:10px;height:2px;background:rgba(184,149,74,.70);transform:translateY(-50%);z-index:4}
+  #cs-fv6-host-abundance-pink .fh-host .fh-step{--fh-accent:#b8954a}.fh-host .fh-step:first-child{--fh-accent:#c8462c;background:rgba(255,246,240,.96);border-color:rgba(200,70,44,.42)}
+  #cs-fv6-host-abundance-pink .fh-intel .fh-step:nth-child(1){--fh-accent:#5B8FD4}.fh-intel .fh-step:nth-child(2){--fh-accent:#5B8FD4}.fh-intel .fh-step:nth-child(3){--fh-accent:#B8954A}.fh-intel .fh-step:nth-child(4){--fh-accent:#C8462C}.fh-intel .fh-step:nth-child(5){--fh-accent:#C8462C}.fh-intel .fh-step:nth-child(6){--fh-accent:#B8954A}
+  #cs-fv6-host-abundance-pink .fh-icon{width:34px;height:34px;margin-bottom:8px;border-radius:50%;display:grid;place-items:center;background:rgba(251,247,239,.78);color:var(--fh-accent,#b8954a);box-shadow:0 0 0 1px rgba(184,149,74,.16) inset}
+  #cs-fv6-host-abundance-pink .fh-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  #cs-fv6-host-abundance-pink .fh-num{font-family:'Manrope',sans-serif;font-size:.52rem;font-weight:950;letter-spacing:.14em;color:#c8462c;margin-bottom:5px}
+  #cs-fv6-host-abundance-pink .fh-word{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.86rem,.98vw,1.08rem);font-weight:900;line-height:1.02;color:#1a1612;text-wrap:balance}
   #cs-fv6-host-abundance-pink .fh-host .fh-step:first-child .fh-word{color:#c8462c;font-style:italic}
-  #cs-fv6-host-abundance-pink .fh-intel .fh-step:nth-child(2) .fh-word{color:#5B8FD4}
-  #cs-fv6-host-abundance-pink .fh-intel .fh-step:nth-child(4) .fh-word{color:#c8462c}
-  #cs-fv6-host-abundance-pink .fh-intel .fh-step:last-child{background:#1a1612;border-color:rgba(26,22,18,.75);box-shadow:0 20px 46px rgba(26,22,18,.24),0 0 0 5px rgba(200,70,44,.08)}
+  #cs-fv6-host-abundance-pink .fh-intel .fh-word{font-size:clamp(.74rem,.82vw,.94rem)}
+  #cs-fv6-host-abundance-pink .fh-intel .fh-step:last-child{background:#1a1612;border-color:rgba(26,22,18,.78);box-shadow:0 22px 52px rgba(26,22,18,.28),0 0 0 5px rgba(200,70,44,.08)}
   #cs-fv6-host-abundance-pink .fh-intel .fh-step:last-child .fh-num{color:#b8954a}
   #cs-fv6-host-abundance-pink .fh-intel .fh-step:last-child .fh-word{color:#fbf7ef;font-style:italic}
-  #cs-fv6-host-abundance-pink .fh-bridge{position:relative;margin:2px auto;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.19em;text-transform:uppercase;color:#b8954a;text-align:center}
-  #cs-fv6-host-abundance-pink .fh-bridge::before,#cs-fv6-host-abundance-pink .fh-bridge::after{content:"";display:inline-block;width:82px;height:1px;background:rgba(184,149,74,.42);vertical-align:middle;margin:0 12px}
+  #cs-fv6-host-abundance-pink .fh-intel .fh-step:last-child .fh-icon{background:rgba(251,247,239,.08);color:#f0d27f;box-shadow:0 0 0 1px rgba(240,210,127,.18) inset}
+  #cs-fv6-host-abundance-pink .fh-bridge{position:absolute;left:50%;top:68%;z-index:3;margin:0;padding:10px 18px;border-radius:999px;background:rgba(26,22,18,.90);box-shadow:0 20px 42px rgba(26,22,18,.20);font-family:'Manrope',sans-serif;font-size:.60rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#f0d27f;text-align:center;width:max-content;white-space:nowrap;transform:translateX(-50%)}
+  #cs-fv6-host-abundance-pink .fh-bridge:before,#cs-fv6-host-abundance-pink .fh-bridge:after{content:"";position:absolute;top:50%;width:126px;height:1px;background:linear-gradient(90deg,rgba(184,149,74,0),rgba(184,149,74,.60));transform:translateY(-50%)}
+  #cs-fv6-host-abundance-pink .fh-bridge:before{right:100%}#cs-fv6-host-abundance-pink .fh-bridge:after{left:100%;transform:translateY(-50%) scaleX(-1)}
   html[data-export="1"] #cs-fv6-host-abundance-pink .fh-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6-host-abundance-pink" data-shown="0" onclick="csFv6Advance();event.stopPropagation()" style="display:none" aria-label="Pink-dot candidate starting the real human connection technology flywheel with an open-hearted host">
@@ -30426,35 +30439,38 @@ window.csProgrammableInvitationsReverse = function() {
     </div>
     <div class="fh-system">
       <div class="fh-kicker">Host-led belonging becomes intelligence</div>
-      <div class="fh-lanes">
+      <div class="fh-map">
+        <div class="fh-brand" aria-hidden="true">
+          <svg viewBox="0 0 312 312"><path d="M156 156 C84 122 82 65 136 45"/><path d="M156 156 C226 114 240 68 198 40"/><path d="M156 156 C80 188 76 246 130 270"/><path d="M156 156 C234 194 242 248 188 272"/><circle cx="136" cy="45" r="10" stroke="#5B8FD4"/><circle cx="198" cy="40" r="10" stroke="#B8954A"/><circle cx="130" cy="270" r="10" stroke="#C8462C"/><circle cx="188" cy="272" r="10" stroke="#49B4A0"/></svg>
+          <div><div class="fh-brand-word"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div><div class="fh-brand-sub">learns the room</div></div>
+        </div>
         <div class="fh-lane fh-host">
-          <div class="fh-lane-label">Host loop</div>
+          <div class="fh-lane-label">Host<br>loop</div>
           <div class="fh-steps">
-            <div class="fh-step"><div class="fh-num">01</div><div class="fh-word">Open heart</div></div>
-            <div class="fh-step"><div class="fh-num">02</div><div class="fh-word">Belonging</div></div>
-            <div class="fh-step"><div class="fh-num">03</div><div class="fh-word">Stay connected</div></div>
-            <div class="fh-step"><div class="fh-num">04</div><div class="fh-word">Fill</div></div>
-            <div class="fh-step"><div class="fh-num">05</div><div class="fh-word">Referrals</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.2-7-10.1C5 6.7 7.4 5 9.7 5c1.4 0 2.4.7 2.9 1.6C13.1 5.7 14.1 5 15.5 5 17.8 5 20 6.7 20 9.9 20 15.8 12 20 12 20Z"/></svg></div><div class="fh-num">01</div><div class="fh-word">Open heart</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M4 19c1-4 7-4 8 0M12 19c1-4 7-4 8 0"/></svg></div><div class="fh-num">02</div><div class="fh-word">Belonging</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/><circle cx="12" cy="12" r="8"/></svg></div><div class="fh-num">03</div><div class="fh-word">Stay connected</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg></div><div class="fh-num">04</div><div class="fh-word">Fill</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><path d="M5 12h11"/><path d="M13 8l4 4-4 4"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><div class="fh-num">05</div><div class="fh-word">Referrals</div></div>
           </div>
         </div>
         <div class="fh-bridge">GnR learns the room</div>
         <div class="fh-lane fh-intel">
-          <div class="fh-lane-label">GnR layer</div>
+          <div class="fh-lane-label">GnR<br>layer</div>
           <div class="fh-steps">
-            <div class="fh-step"><div class="fh-num">06</div><div class="fh-word">Measure</div></div>
-            <div class="fh-step"><div class="fh-num">07</div><div class="fh-word">Graph</div></div>
-            <div class="fh-step"><div class="fh-num">08</div><div class="fh-word">Coordinate</div></div>
-            <div class="fh-step"><div class="fh-num">09</div><div class="fh-word">Reciprocate</div></div>
-            <div class="fh-step"><div class="fh-num">10</div><div class="fh-word">Predict</div></div>
-            <div class="fh-step"><div class="fh-num">11</div><div class="fh-word">Compound</div></div>
-            <div class="fh-step"><div class="fh-num">12</div><div class="fh-word">Abundance</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="4"/><path d="M7 10v3M12 10v3M17 10v3"/></svg></div><div class="fh-num">06</div><div class="fh-word">Measure</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M11 8 7 16M13 8l4 8M8 18h8"/></svg></div><div class="fh-num">07</div><div class="fh-word">Graph</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><div class="fh-num">08</div><div class="fh-word">Coordinate</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><path d="M5 8h13M15 5l3 3-3 3M19 16H6M9 13l-3 3 3 3"/></svg></div><div class="fh-num">09</div><div class="fh-word">Reciprocate</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><path d="M4 17c4-7 8-3 12-10"/><path d="M13 7h3v3"/><circle cx="6" cy="17" r="1.8"/><circle cx="12" cy="13" r="1.8"/></svg></div><div class="fh-num">10</div><div class="fh-word">Predict</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><path d="M5 17c4-5 8-6 14-8"/><path d="M15 6l4 3-3 4"/><circle cx="6" cy="17" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="9" r="1.6"/></svg></div><div class="fh-num">11</div><div class="fh-word">Compound</div></div>
+            <div class="fh-step"><div class="fh-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div><div class="fh-num">12</div><div class="fh-word">Abundance</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </div>
-
 
 <!-- ---------------------------------------------------------------------------
      cs-fv6-pink · PINK-DOT ALT of cs-fv6-img [Dave 2026-05-17 LATEST]
