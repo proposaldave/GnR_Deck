@@ -28130,9 +28130,21 @@ window.csProgrammableInvitationsReverse = function() {
           <path class="rwmm-pull-edge rwmm-edge-anchor-referrer" d="M150 134 L150 270" stroke="#b8954a"/>
           <path class="rwmm-pull-edge rwmm-edge-referrer-referral" d="M150 270 C298 218 480 176 630 134" stroke="#5B8FD4"/>
         </g>
-        <g class="rwmm-flying-invite" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="2.5">
-          <rect x="-16" y="-10" width="32" height="20" rx="3"/>
-          <path d="M-16 -10 L0 1 L16 -10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="rwmm-invite-motion" aria-label="Animated invitations and referrals moving through the court">
+          <g class="rwmm-envelope rwmm-envelope-primary" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="2.5">
+            <circle class="rwmm-envelope-halo" r="24" fill="rgba(91,143,212,.18)" stroke="none"/>
+            <rect x="-18" y="-11" width="36" height="22" rx="4"/>
+            <path d="M-18 -11 L0 2 L18 -11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M-18 10 L-4 0 M18 10 L4 0" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".62"/>
+          </g>
+          <g class="rwmm-envelope rwmm-envelope-trail-a" fill="#fbf7ef" stroke="#b8954a" stroke-width="2.1">
+            <rect x="-13" y="-8" width="26" height="16" rx="3"/>
+            <path d="M-13 -8 L0 1 L13 -8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g class="rwmm-envelope rwmm-envelope-trail-b" fill="#fbf7ef" stroke="#C8462C" stroke-width="2.1">
+            <rect x="-13" y="-8" width="26" height="16" rx="3"/>
+            <path d="M-13 -8 L0 1 L13 -8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
         </g>
         <g filter="url(#rwmmWorkShadow)" font-family="Manrope,sans-serif" font-weight="950" letter-spacing=".08em" text-anchor="middle">
           <g class="rwmm-role rwmm-role-anchor" transform="translate(150 134)"><circle r="34" fill="none" stroke="rgba(91,143,212,.54)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#5B8FD4"/><text y="-42" font-size="18" fill="#5B8FD4">HOST</text></g>
@@ -28189,9 +28201,18 @@ window.csProgrammableInvitationsReverse = function() {
   @keyframes rwmmPullPathIn{0%{opacity:0;stroke-dashoffset:52}100%{opacity:.50;stroke-dashoffset:0}}
   @keyframes rwmmPullFlash{0%{stroke-opacity:0;stroke-width:3}32%{stroke-opacity:.9;stroke-width:5}100%{stroke-opacity:0;stroke-width:3}}
   @keyframes rwmmRingBreathe{0%,100%{opacity:.46}50%{opacity:.72}}
-  #cs-real-world-measurable-market .rwmm-glow,#cs-real-world-measurable-market .rwmm-court-frame,#cs-real-world-measurable-market .rwmm-pull-web,#cs-real-world-measurable-market .rwmm-role,#cs-real-world-measurable-market .rwmm-pull-edge,
-  #cs-work-measurable-market .rwmm-glow,#cs-work-measurable-market .rwmm-court-frame,#cs-work-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-role,#cs-work-measurable-market .rwmm-pull-edge{opacity:0;will-change:opacity,filter,stroke-dashoffset,transform}
-  #cs-real-world-measurable-market .rwmm-center-invite,#cs-real-world-measurable-market .rwmm-flying-invite,#cs-work-measurable-market .rwmm-center-invite,#cs-work-measurable-market .rwmm-flying-invite{display:none!important}
+  @keyframes rwmmInviteLoop{0%,7%{opacity:0;transform:translate(150px,134px) scale(.92)}9%,18%{opacity:1;transform:translate(150px,134px) scale(1)}29%{opacity:1;transform:translate(150px,270px) scale(1)}45%{opacity:1;transform:translate(630px,134px) scale(1)}61%{opacity:1;transform:translate(630px,270px) scale(1)}77%{opacity:1;transform:translate(150px,134px) scale(1)}88%,100%{opacity:0;transform:translate(150px,134px) scale(.92)}}
+  @keyframes rwmmReferralPulse{0%,30%{opacity:0;transform:translate(150px,270px) scale(.76)}36%,48%{opacity:.96;transform:translate(150px,270px) scale(.88)}66%{opacity:.96;transform:translate(630px,134px) scale(.88)}76%,100%{opacity:0;transform:translate(630px,134px) scale(.76)}}
+  @keyframes rwmmInviteGlow{0%,100%{opacity:.28}50%{opacity:.72}}
+  #cs-real-world-measurable-market .rwmm-glow,#cs-real-world-measurable-market .rwmm-court-frame,#cs-real-world-measurable-market .rwmm-pull-web,#cs-real-world-measurable-market .rwmm-role,#cs-real-world-measurable-market .rwmm-pull-edge,#cs-real-world-measurable-market .rwmm-invite-motion,
+  #cs-work-measurable-market .rwmm-glow,#cs-work-measurable-market .rwmm-court-frame,#cs-work-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-role,#cs-work-measurable-market .rwmm-pull-edge,#cs-work-measurable-market .rwmm-invite-motion{opacity:0;will-change:opacity,filter,stroke-dashoffset,transform}
+  #cs-real-world-measurable-market .rwmm-center-invite,#cs-work-measurable-market .rwmm-center-invite{display:none!important}
+  #cs-real-world-measurable-market .rwmm-invite-motion,#cs-work-measurable-market .rwmm-invite-motion{overflow:visible;pointer-events:none}
+  #cs-real-world-measurable-market .rwmm-envelope,#cs-work-measurable-market .rwmm-envelope{opacity:0;transform-box:view-box;transform-origin:0 0;filter:drop-shadow(0 8px 10px rgba(26,22,18,.18))}
+  #cs-real-world-measurable-market .rwmm-envelope-primary,#cs-work-measurable-market .rwmm-envelope-primary{animation:rwmmInviteLoop 5.4s cubic-bezier(.45,.05,.18,1) 3.02s infinite}
+  #cs-real-world-measurable-market .rwmm-envelope-trail-a,#cs-work-measurable-market .rwmm-envelope-trail-a{animation:rwmmReferralPulse 5.4s cubic-bezier(.45,.05,.18,1) 3.42s infinite}
+  #cs-real-world-measurable-market .rwmm-envelope-trail-b,#cs-work-measurable-market .rwmm-envelope-trail-b{animation:rwmmReferralPulse 5.4s cubic-bezier(.45,.05,.18,1) 3.86s infinite}
+  #cs-real-world-measurable-market .rwmm-envelope-halo,#cs-work-measurable-market .rwmm-envelope-halo{animation:rwmmInviteGlow 1.15s ease-in-out infinite}
   #cs-real-world-measurable-market .rwmm-role,#cs-work-measurable-market .rwmm-role{transform-box:fill-box;transform-origin:center center}
   #cs-real-world-measurable-market .rwmm-role > circle:first-child,#cs-work-measurable-market .rwmm-role > circle:first-child{transform-box:fill-box;transform-origin:center center}
   #cs-real-world-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-pull-web{stroke-dashoffset:52}
@@ -28206,6 +28227,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-edge-referrer-referral,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-edge-referrer-referral{animation:rwmmPullFlash .72s cubic-bezier(.22,1,.36,1) 1.82s both}
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referral,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-referral{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 2.02s both}
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-pull-web,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-pull-web{animation:rwmmPullPathIn .95s cubic-bezier(.22,1,.36,1) 2.22s both}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-invite-motion,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-invite-motion{animation:rwmmCourtPartIn .42s cubic-bezier(.22,1,.36,1) 2.72s both}
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-role > circle:first-child,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role > circle:first-child{animation:rwmmRingBreathe 2.2s ease-in-out 3.05s infinite}
   /* [Codex 2026-06-19] Work slide now intentionally uses the shared court choreography above, matching cs-work-measurable-market instead of forcing the court static. */
   html[data-export="1"] #cs-real-world-measurable-market .rwmm-glow,html[data-export="1"] #cs-real-world-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-real-world-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-real-world-measurable-market .rwmm-role,
@@ -28265,9 +28287,21 @@ window.csProgrammableInvitationsReverse = function() {
           <path class="rwmm-pull-edge rwmm-edge-anchor-referrer" d="M150 134 L150 270" stroke="#b8954a"/>
           <path class="rwmm-pull-edge rwmm-edge-referrer-referral" d="M150 270 C298 218 480 176 630 134" stroke="#5B8FD4"/>
         </g>
-        <g class="rwmm-flying-invite" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="2.5">
-          <rect x="-16" y="-10" width="32" height="20" rx="3"/>
-          <path d="M-16 -10 L0 1 L16 -10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="rwmm-invite-motion" aria-label="Animated invitations and referrals moving through the court">
+          <g class="rwmm-envelope rwmm-envelope-primary" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="2.5">
+            <circle class="rwmm-envelope-halo" r="24" fill="rgba(91,143,212,.18)" stroke="none"/>
+            <rect x="-18" y="-11" width="36" height="22" rx="4"/>
+            <path d="M-18 -11 L0 2 L18 -11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M-18 10 L-4 0 M18 10 L4 0" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".62"/>
+          </g>
+          <g class="rwmm-envelope rwmm-envelope-trail-a" fill="#fbf7ef" stroke="#b8954a" stroke-width="2.1">
+            <rect x="-13" y="-8" width="26" height="16" rx="3"/>
+            <path d="M-13 -8 L0 1 L13 -8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g class="rwmm-envelope rwmm-envelope-trail-b" fill="#fbf7ef" stroke="#C8462C" stroke-width="2.1">
+            <rect x="-13" y="-8" width="26" height="16" rx="3"/>
+            <path d="M-13 -8 L0 1 L13 -8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
         </g>
         <g filter="url(#rwmmShadow)" font-family="Manrope,sans-serif" font-weight="950" letter-spacing=".08em" text-anchor="middle">
           <g class="rwmm-role rwmm-role-anchor" transform="translate(150 134)"><circle r="34" fill="none" stroke="rgba(91,143,212,.54)" stroke-width="5" stroke-dasharray="8 8"/><circle r="25" fill="#5B8FD4"/><text y="-42" font-size="18" fill="#5B8FD4">HOST</text></g>
