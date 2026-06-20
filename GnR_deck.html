@@ -28200,18 +28200,19 @@ window.csProgrammableInvitationsReverse = function() {
   @keyframes rwmmPullPathIn{0%{opacity:0;stroke-dashoffset:52}100%{opacity:.50;stroke-dashoffset:0}}
   @keyframes rwmmPullFlash{0%{stroke-opacity:0;stroke-width:3}32%{stroke-opacity:.9;stroke-width:5}100%{stroke-opacity:0;stroke-width:3}}
   @keyframes rwmmRingBreathe{0%,100%{opacity:.46}50%{opacity:.72}}
-  @keyframes rwmmInviteLoop{0%,7%{opacity:0;transform:translate(150px,134px) scale(.92)}9%,18%{opacity:1;transform:translate(150px,134px) scale(1)}29%{opacity:1;transform:translate(150px,270px) scale(1)}45%{opacity:1;transform:translate(630px,134px) scale(1)}61%{opacity:1;transform:translate(630px,270px) scale(1)}77%{opacity:1;transform:translate(150px,134px) scale(1)}88%,100%{opacity:0;transform:translate(150px,134px) scale(.92)}}
-  @keyframes rwmmReferralPulse{0%,30%{opacity:0;transform:translate(150px,270px) scale(.76)}36%,48%{opacity:.96;transform:translate(150px,270px) scale(.88)}66%{opacity:.96;transform:translate(630px,134px) scale(.88)}76%,100%{opacity:0;transform:translate(630px,134px) scale(.76)}}
+  @keyframes rwmmInviteHostToRegular{0%,10%{opacity:0;transform:translate(150px,134px) scale(.88)}16%{opacity:1;transform:translate(150px,134px) scale(1)}78%{opacity:1;transform:translate(630px,270px) scale(1)}100%{opacity:0;transform:translate(630px,270px) scale(.90)}}
+  @keyframes rwmmInviteHostToReferrer{0%,12%{opacity:0;transform:translate(150px,134px) scale(.78)}20%{opacity:.96;transform:translate(150px,134px) scale(.88)}78%{opacity:.96;transform:translate(150px,270px) scale(.88)}100%{opacity:0;transform:translate(150px,270px) scale(.76)}}
+  @keyframes rwmmInviteHostToGrowth{0%,12%{opacity:0;transform:translate(150px,134px) scale(.78)}20%{opacity:.96;transform:translate(150px,134px) scale(.88)}78%{opacity:.96;transform:translate(630px,134px) scale(.88)}100%{opacity:0;transform:translate(630px,134px) scale(.76)}}
   @keyframes rwmmInviteGlow{0%,100%{opacity:.28}50%{opacity:.72}}
   #cs-real-world-measurable-market .rwmm-glow,#cs-real-world-measurable-market .rwmm-court-frame,#cs-real-world-measurable-market .rwmm-pull-web,#cs-real-world-measurable-market .rwmm-role,#cs-real-world-measurable-market .rwmm-pull-edge,#cs-real-world-measurable-market .rwmm-invite-motion,
   #cs-work-measurable-market .rwmm-glow,#cs-work-measurable-market .rwmm-court-frame,#cs-work-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-role,#cs-work-measurable-market .rwmm-pull-edge,#cs-work-measurable-market .rwmm-invite-motion{opacity:0;will-change:opacity,filter,stroke-dashoffset,transform}
   #cs-real-world-measurable-market .rwmm-center-invite,#cs-work-measurable-market .rwmm-center-invite{display:none!important}
   #cs-real-world-measurable-market .rwmm-invite-motion,#cs-work-measurable-market .rwmm-invite-motion{overflow:visible;pointer-events:none}
   #cs-real-world-measurable-market .rwmm-envelope,#cs-work-measurable-market .rwmm-envelope{opacity:0;transform-box:view-box;transform-origin:0 0;filter:drop-shadow(0 8px 10px rgba(26,22,18,.18))}
-  #cs-real-world-measurable-market .rwmm-envelope-primary,#cs-work-measurable-market .rwmm-envelope-primary{animation:rwmmInviteLoop 5.4s cubic-bezier(.45,.05,.18,1) 3.02s infinite}
-  #cs-real-world-measurable-market .rwmm-envelope-trail-a,#cs-work-measurable-market .rwmm-envelope-trail-a{animation:rwmmReferralPulse 5.4s cubic-bezier(.45,.05,.18,1) 3.42s infinite}
-  #cs-real-world-measurable-market .rwmm-envelope-trail-b,#cs-work-measurable-market .rwmm-envelope-trail-b{animation:rwmmReferralPulse 5.4s cubic-bezier(.45,.05,.18,1) 3.86s infinite}
-  #cs-real-world-measurable-market .rwmm-envelope-halo,#cs-work-measurable-market .rwmm-envelope-halo{animation:rwmmInviteGlow 1.15s ease-in-out infinite}
+  #cs-real-world-measurable-market .rwmm-envelope-primary,#cs-work-measurable-market .rwmm-envelope-primary{animation:rwmmInviteHostToRegular 2.65s cubic-bezier(.45,.05,.18,1) 3.02s 1 both}
+  #cs-real-world-measurable-market .rwmm-envelope-trail-a,#cs-work-measurable-market .rwmm-envelope-trail-a{animation:rwmmInviteHostToReferrer 2.15s cubic-bezier(.45,.05,.18,1) 3.36s 1 both}
+  #cs-real-world-measurable-market .rwmm-envelope-trail-b,#cs-work-measurable-market .rwmm-envelope-trail-b{animation:rwmmInviteHostToGrowth 2.35s cubic-bezier(.45,.05,.18,1) 3.66s 1 both}
+  #cs-real-world-measurable-market .rwmm-envelope-halo,#cs-work-measurable-market .rwmm-envelope-halo{animation:rwmmInviteGlow 1.15s ease-in-out 3}
   #cs-real-world-measurable-market .rwmm-role,#cs-work-measurable-market .rwmm-role{transform-box:fill-box;transform-origin:center center}
   #cs-real-world-measurable-market .rwmm-role > circle:first-child,#cs-work-measurable-market .rwmm-role > circle:first-child{transform-box:fill-box;transform-origin:center center}
   #cs-real-world-measurable-market .rwmm-pull-web,#cs-work-measurable-market .rwmm-pull-web{stroke-dashoffset:52}
@@ -28227,7 +28228,7 @@ window.csProgrammableInvitationsReverse = function() {
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-role-referral,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role-referral{animation:rwmmRolePartIn .58s cubic-bezier(.22,1,.36,1) 2.02s both}
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-pull-web,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-pull-web{animation:rwmmPullPathIn .95s cubic-bezier(.22,1,.36,1) 2.22s both}
   #cs-real-world-measurable-market[data-shown="1"] .rwmm-invite-motion,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-invite-motion{animation:rwmmCourtPartIn .42s cubic-bezier(.22,1,.36,1) 2.72s both}
-  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role > circle:first-child,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role > circle:first-child{animation:rwmmRingBreathe 2.2s ease-in-out 3.05s infinite}
+  #cs-real-world-measurable-market[data-shown="1"] .rwmm-role > circle:first-child,#cs-work-measurable-market[data-reveal-stage="2"] .rwmm-role > circle:first-child{animation:rwmmRingBreathe 2.2s ease-in-out 3.05s 2 both}
   /* [Codex 2026-06-19] Work slide now intentionally uses the shared court choreography above, matching cs-work-measurable-market instead of forcing the court static. */
   html[data-export="1"] #cs-real-world-measurable-market .rwmm-glow,html[data-export="1"] #cs-real-world-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-real-world-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-real-world-measurable-market .rwmm-role,
   html[data-export="1"] #cs-work-measurable-market .rwmm-glow,html[data-export="1"] #cs-work-measurable-market .rwmm-court-frame,html[data-export="1"] #cs-work-measurable-market .rwmm-pull-web,html[data-export="1"] #cs-work-measurable-market .rwmm-role{opacity:1!important;filter:none!important;animation:none!important;stroke-dashoffset:0!important}
