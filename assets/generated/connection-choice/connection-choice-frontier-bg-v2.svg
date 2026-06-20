@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="The next frontier in human connection technology, shown as real-world groups forming a luminous connection field">
+  <defs>
+    <radialGradient id="paper" cx="58%" cy="46%" r="78%">
+      <stop offset="0" stop-color="#fff7df"/>
+      <stop offset=".52" stop-color="#F3EAD8"/>
+      <stop offset="1" stop-color="#ddc9a4"/>
+    </radialGradient>
+    <radialGradient id="frontierGlow" cx="68%" cy="50%" r="44%">
+      <stop offset="0" stop-color="#fff1b8" stop-opacity=".98"/>
+      <stop offset=".38" stop-color="#B8954A" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#B8954A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="heartGlow" cx="50%" cy="45%" r="62%">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset=".60" stop-color="#f5df9d"/>
+      <stop offset="1" stop-color="#B8954A"/>
+    </radialGradient>
+    <linearGradient id="blueRed" x1="230" y1="780" x2="1540" y2="275" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5B8FD4"/>
+      <stop offset=".50" stop-color="#B8954A"/>
+      <stop offset="1" stop-color="#C8462C"/>
+    </linearGradient>
+    <filter id="lift" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#1A1612" flood-opacity=".16"/>
+    </filter>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".65" fill="#1A1612" opacity=".035"/>
+    </pattern>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#paper)"/>
+  <rect width="1920" height="1080" fill="url(#grain)" opacity=".62"/>
+
+  <g opacity=".16" stroke="#B8954A" stroke-width="2" fill="none">
+    <path d="M70 260H1848M70 540H1848M70 820H1848"/>
+    <path d="M390 90V1000M720 90V1000M1050 90V1000M1380 90V1000M1710 90V1000"/>
+  </g>
+
+  <ellipse cx="1320" cy="540" rx="560" ry="410" fill="url(#frontierGlow)" filter="url(#blur)"/>
+
+  <g opacity=".28" fill="none" stroke="#1A1612" stroke-width="1.6">
+    <rect x="1116" y="184" width="470" height="276" rx="22"/>
+    <path d="M1351 184v276M1116 322h470M1229 184v276M1474 184v276"/>
+    <rect x="1098" y="642" width="484" height="284" rx="22"/>
+    <path d="M1340 642v284M1098 784h484M1218 642v284M1462 642v284"/>
+    <rect x="1510" y="432" width="274" height="214" rx="22"/>
+    <path d="M1647 432v214M1510 539h274"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M250 830 C460 650 642 568 820 540 C1030 507 1198 428 1376 304" stroke="url(#blueRed)" stroke-width="10" opacity=".86"/>
+    <path d="M365 246 C610 332 780 430 943 526 C1135 638 1300 760 1515 840" stroke="#5B8FD4" stroke-width="5" opacity=".44" stroke-dasharray="16 20"/>
+    <path d="M456 884 C786 954 1128 906 1454 690 C1606 589 1692 472 1748 300" stroke="#B8954A" stroke-width="4" opacity=".50"/>
+    <path d="M764 242 C976 220 1205 261 1420 383 C1580 474 1668 602 1694 760" stroke="#C8462C" stroke-width="4" opacity=".42" stroke-dasharray="18 18"/>
+    <path d="M850 680 C1004 766 1165 780 1328 712 C1474 651 1564 536 1616 405" stroke="#49B4A0" stroke-width="5" opacity=".48" stroke-dasharray="12 18"/>
+  </g>
+
+  <g opacity=".62" fill="none" stroke="#B8954A" stroke-width="2">
+    <ellipse cx="1350" cy="542" rx="402" ry="292"/>
+    <ellipse cx="1350" cy="542" rx="286" ry="206"/>
+    <ellipse cx="1350" cy="542" rx="168" ry="122"/>
+  </g>
+
+  <g filter="url(#lift)">
+    <g transform="translate(1376 304)">
+      <circle r="72" fill="#fffaf0" stroke="#5B8FD4" stroke-width="8"/>
+      <circle cy="-18" r="16" fill="#1A1612"/>
+      <path d="M-36 42 C-16 2 16 2 36 42" fill="none" stroke="#1A1612" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1515 840)">
+      <circle r="72" fill="#fffaf0" stroke="#C8462C" stroke-width="8"/>
+      <circle cy="-18" r="16" fill="#1A1612"/>
+      <path d="M-36 42 C-16 2 16 2 36 42" fill="none" stroke="#1A1612" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(250 830)">
+      <circle r="58" fill="#fffaf0" stroke="#B8954A" stroke-width="7"/>
+      <circle cy="-14" r="13" fill="#1A1612"/>
+      <path d="M-29 36 C-13 3 13 3 29 36" fill="none" stroke="#1A1612" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(365 246)">
+      <circle r="58" fill="#fffaf0" stroke="#49B4A0" stroke-width="7"/>
+      <circle cy="-14" r="13" fill="#1A1612"/>
+      <path d="M-29 36 C-13 3 13 3 29 36" fill="none" stroke="#1A1612" stroke-width="8" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g filter="url(#lift)">
+    <circle cx="1162" cy="542" r="132" fill="url(#heartGlow)" stroke="#B8954A" stroke-width="8"/>
+    <path d="M1112 526 C1112 484 1152 472 1162 512 C1173 472 1214 484 1214 526 C1214 578 1162 607 1162 607 C1162 607 1112 578 1112 526Z" fill="#C8462C"/>
+    <circle cx="1162" cy="542" r="166" fill="none" stroke="#B8954A" stroke-width="3" stroke-dasharray="13 16" opacity=".72"/>
+  </g>
+
+  <g opacity=".95">
+    <circle cx="820" cy="540" r="14" fill="#B8954A"/>
+    <circle cx="943" cy="526" r="12" fill="#5B8FD4"/>
+    <circle cx="1328" cy="712" r="13" fill="#49B4A0"/>
+    <circle cx="1454" cy="690" r="11" fill="#C8462C"/>
+    <circle cx="1420" cy="383" r="11" fill="#B8954A"/>
+    <circle cx="1694" cy="760" r="9" fill="#5B8FD4"/>
+    <circle cx="764" cy="242" r="9" fill="#C8462C"/>
+  </g>
+
+  <g transform="translate(110 214)" opacity=".34">
+    <rect width="302" height="560" rx="44" fill="#fffaf0" stroke="#B8954A" stroke-width="3"/>
+    <rect x="44" y="82" width="214" height="54" rx="18" fill="none" stroke="#5B8FD4" stroke-width="3"/>
+    <rect x="44" y="168" width="214" height="54" rx="18" fill="none" stroke="#B8954A" stroke-width="3"/>
+    <rect x="44" y="254" width="214" height="54" rx="18" fill="none" stroke="#C8462C" stroke-width="3"/>
+    <path d="M72 404H230M72 442H196M72 480H218" stroke="#1A1612" stroke-width="3" stroke-linecap="round" opacity=".32"/>
+  </g>
+
+  <path d="M470 74 C730 178 936 290 1110 470" fill="none" stroke="#B8954A" stroke-width="2.5" opacity=".36"/>
+  <path d="M820 1008 C1030 942 1225 846 1390 708" fill="none" stroke="#5B8FD4" stroke-width="2.5" opacity=".30"/>
+</svg>
