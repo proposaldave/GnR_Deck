@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a1612">
+  <title>PPBROA Turnaround Gameplan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..900,25..100,0..1&family=Manrope:wght@500;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fbf7ef;
+      --paper: #f3ead8;
+      --ink: #1a1612;
+      --gold: #b8954a;
+      --blue: #5B8FD4;
+      --rust: #c8462c;
+      --muted: rgba(251, 247, 239, .78);
+      --line: rgba(251, 247, 239, .34);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--ink); color: var(--cream); }
+    body {
+      font-family: "Manrope", sans-serif;
+      overflow: hidden;
+    }
+
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: var(--ink);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: minmax(56px, 6vw) minmax(0, 1fr) minmax(56px, 6vw);
+      grid-template-rows: 1fr;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(28px);
+      transition: opacity .34s ease, transform .34s ease;
+      background: var(--ink);
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(.92) contrast(1.03);
+      transform: scale(1.02);
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(26, 22, 18, .92) 0%, rgba(26, 22, 18, .68) 38%, rgba(26, 22, 18, .16) 72%, rgba(26, 22, 18, .64) 100%),
+        radial-gradient(circle at 78% 22%, rgba(91, 143, 212, .24), transparent 34%),
+        radial-gradient(circle at 24% 78%, rgba(200, 70, 44, .22), transparent 32%);
+    }
+
+    .slide.light::before {
+      background:
+        linear-gradient(90deg, rgba(251, 247, 239, .94) 0%, rgba(251, 247, 239, .78) 42%, rgba(251, 247, 239, .18) 72%, rgba(26, 22, 18, .54) 100%),
+        radial-gradient(circle at 78% 22%, rgba(91, 143, 212, .20), transparent 34%),
+        radial-gradient(circle at 18% 82%, rgba(200, 70, 44, .18), transparent 32%);
+    }
+
+    .slide.center::before {
+      background:
+        linear-gradient(180deg, rgba(26, 22, 18, .82), rgba(26, 22, 18, .44) 48%, rgba(26, 22, 18, .88)),
+        radial-gradient(circle at 50% 45%, rgba(184, 149, 74, .16), transparent 44%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      grid-column: 2;
+      align-self: center;
+      width: min(1220px, 100%);
+      padding: 86px 0 72px;
+    }
+
+    .content.right {
+      justify-self: end;
+      width: min(1040px, 74%);
+    }
+
+    .content.centered {
+      justify-self: center;
+      text-align: center;
+      width: min(1180px, 100%);
+    }
+
+    .light { color: var(--ink); }
+    .eyebrow {
+      position: absolute;
+      top: 28px;
+      left: 48px;
+      z-index: 3;
+      font-family: "Manrope", sans-serif;
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--rust);
+    }
+
+    .light .eyebrow { color: var(--rust); }
+    .gold { color: var(--gold); }
+    .blue { color: var(--blue); }
+    .rust { color: var(--rust); }
+
+    .mark {
+      position: absolute;
+      top: 31px;
+      right: 48px;
+      z-index: 3;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-size: 2.3rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      line-height: 1;
+      color: var(--cream);
+      text-shadow: 0 2px 18px rgba(26, 22, 18, .30);
+    }
+    .light .mark { color: var(--ink); text-shadow: none; }
+    .mark .g { color: var(--blue); }
+    .mark .n { color: var(--cream); font-style: italic; font-weight: 650; }
+    .light .mark .n { color: var(--ink); }
+    .mark .r { color: var(--rust); }
+
+    h1, h2, h3, p { margin: 0; }
+    h1, h2 {
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 1000px;
+      font-size: 7.4rem;
+      line-height: .91;
+    }
+
+    h2 {
+      max-width: 1040px;
+      font-size: 5.65rem;
+      line-height: .95;
+    }
+
+    .dek {
+      margin-top: 26px;
+      max-width: 880px;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1.18;
+      font-weight: 660;
+      color: rgba(251, 247, 239, .82);
+      text-wrap: balance;
+    }
+    .light .dek { color: rgba(26, 22, 18, .78); }
+
+    .source {
+      position: absolute;
+      left: 48px;
+      bottom: 32px;
+      z-index: 3;
+      max-width: 760px;
+      font-size: .64rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(251, 247, 239, .60);
+    }
+    .light .source { color: rgba(26, 22, 18, .54); }
+
+    .big-number {
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+      margin: 30px 0 14px;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+    }
+    .big-number strong {
+      font-size: 9.6rem;
+      line-height: .78;
+      color: var(--rust);
+      text-shadow: 0 8px 30px rgba(26, 22, 18, .28);
+    }
+    .big-number span {
+      max-width: 490px;
+      font-size: 2.15rem;
+      line-height: 1.03;
+      font-weight: 850;
+      color: rgba(251, 247, 239, .82);
+    }
+    .light .big-number span { color: rgba(26, 22, 18, .72); }
+
+    .panel {
+      display: grid;
+      gap: 22px;
+      padding: 30px;
+      border: 1px solid rgba(251, 247, 239, .24);
+      border-left: 7px solid var(--gold);
+      background: rgba(26, 22, 18, .58);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 24px 80px rgba(26, 22, 18, .20);
+    }
+
+    .light .panel {
+      background: rgba(251, 247, 239, .80);
+      border-color: rgba(184, 149, 74, .34);
+      box-shadow: 0 24px 80px rgba(26, 22, 18, .12);
+    }
+
+    .panel h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .panel p, .panel li {
+      font-size: 1.28rem;
+      line-height: 1.34;
+      font-weight: 780;
+      color: rgba(251, 247, 239, .86);
+    }
+    .light .panel p, .light .panel li { color: rgba(26, 22, 18, .78); }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .tile {
+      min-height: 174px;
+      padding: 22px 22px 20px;
+      border: 1px solid rgba(251, 247, 239, .24);
+      background: rgba(26, 22, 18, .58);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 14px 38px rgba(26, 22, 18, .16);
+    }
+    .light .tile {
+      border-color: rgba(184, 149, 74, .34);
+      background: rgba(251, 247, 239, .78);
+    }
+
+    .tile b {
+      display: block;
+      margin-bottom: 11px;
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .tile strong {
+      display: block;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-size: 2.22rem;
+      line-height: 1.02;
+      letter-spacing: 0;
+      color: var(--cream);
+    }
+    .light .tile strong { color: var(--ink); }
+
+    .tile p {
+      margin-top: 12px;
+      font-size: .98rem;
+      line-height: 1.35;
+      font-weight: 760;
+      color: rgba(251, 247, 239, .72);
+    }
+    .light .tile p { color: rgba(26, 22, 18, .64); }
+
+    .offer {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+
+    .price {
+      display: flex;
+      min-height: 360px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 38px;
+      color: var(--ink);
+      background: var(--cream);
+      border-left: 9px solid var(--rust);
+      box-shadow: 0 30px 80px rgba(26, 22, 18, .24);
+    }
+    .price small {
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: var(--rust);
+    }
+    .price strong {
+      margin-top: 18px;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-size: 8.6rem;
+      line-height: .78;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+    .price span {
+      margin-top: 18px;
+      max-width: 420px;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-size: 1.7rem;
+      line-height: 1.08;
+      font-weight: 760;
+      color: rgba(26, 22, 18, .70);
+    }
+
+    .model-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .model-list .tile { min-height: 172px; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 36px;
+      align-items: stretch;
+    }
+
+    .step {
+      min-height: 230px;
+      padding: 22px 18px;
+      border-top: 6px solid var(--gold);
+      background: rgba(251, 247, 239, .84);
+      color: var(--ink);
+      box-shadow: 0 18px 45px rgba(26, 22, 18, .16);
+    }
+    .step:nth-child(2), .step:nth-child(4) { border-color: var(--blue); }
+    .step:nth-child(3), .step:nth-child(5) { border-color: var(--rust); }
+    .step b {
+      display: block;
+      margin-bottom: 16px;
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(26, 22, 18, .54);
+    }
+    .step strong {
+      display: block;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-size: 2.05rem;
+      line-height: 1.02;
+      color: var(--ink);
+    }
+    .step span {
+      display: block;
+      margin-top: 12px;
+      font-size: .92rem;
+      line-height: 1.34;
+      font-weight: 760;
+      color: rgba(26, 22, 18, .66);
+    }
+
+    .deal-stack {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+      margin-top: 34px;
+      align-items: stretch;
+    }
+    .stack-list {
+      display: grid;
+      gap: 12px;
+    }
+    .stack-item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: center;
+      min-height: 74px;
+      padding: 12px 18px;
+      border: 1px solid rgba(251, 247, 239, .28);
+      background: rgba(26, 22, 18, .58);
+      backdrop-filter: blur(8px);
+    }
+    .stack-item i {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--cream);
+      color: var(--rust);
+      font-style: normal;
+      font-weight: 900;
+    }
+    .stack-item strong {
+      font-size: 1.08rem;
+      line-height: 1.16;
+      color: var(--cream);
+    }
+
+    .axis {
+      position: relative;
+      min-height: 400px;
+      border: 1px solid rgba(251, 247, 239, .26);
+      background: rgba(26, 22, 18, .58);
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+    }
+    .axis::before, .axis::after {
+      content: "";
+      position: absolute;
+      background: rgba(251, 247, 239, .30);
+    }
+    .axis::before { left: 50%; top: 28px; bottom: 28px; width: 1px; }
+    .axis::after { left: 28px; right: 28px; top: 50%; height: 1px; }
+    .axis-label {
+      position: absolute;
+      font-size: .58rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(251, 247, 239, .62);
+    }
+    .axis-label.top { top: 18px; left: 50%; transform: translateX(-50%); }
+    .axis-label.bottom { bottom: 18px; left: 50%; transform: translateX(-50%); }
+    .axis-label.left { left: 18px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+    .axis-label.right { right: 18px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+    .dot {
+      position: absolute;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      padding: 14px;
+      text-align: center;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-size: 1.2rem;
+      line-height: 1.02;
+      font-weight: 850;
+      color: var(--ink);
+      background: var(--cream);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .24);
+    }
+    .dot.red { left: 16%; bottom: 15%; border: 7px solid var(--rust); }
+    .dot.gold { right: 13%; bottom: 16%; border: 7px solid var(--gold); }
+    .dot.blue { right: 14%; top: 15%; border: 7px solid var(--blue); }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 38px;
+    }
+    .phase {
+      min-height: 326px;
+      padding: 26px;
+      background: rgba(251, 247, 239, .86);
+      color: var(--ink);
+      border-top: 8px solid var(--gold);
+      box-shadow: 0 24px 70px rgba(26, 22, 18, .20);
+    }
+    .phase:nth-child(2) { border-color: var(--blue); }
+    .phase:nth-child(3) { border-color: var(--rust); }
+    .phase b {
+      display: block;
+      margin-bottom: 18px;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: rgba(26, 22, 18, .56);
+    }
+    .phase strong {
+      display: block;
+      margin-bottom: 18px;
+      font-family: "Fraunces", "Playfair Display", Georgia, serif;
+      font-size: 2.25rem;
+      line-height: 1.02;
+    }
+    .phase span {
+      display: block;
+      font-size: 1.02rem;
+      line-height: 1.36;
+      font-weight: 760;
+      color: rgba(26, 22, 18, .68);
+    }
+
+    .pager {
+      position: absolute;
+      right: 48px;
+      bottom: 30px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(251, 247, 239, .76);
+    }
+    .pager button {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(251, 247, 239, .34);
+      border-radius: 50%;
+      background: rgba(26, 22, 18, .34);
+      color: var(--cream);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .pager span {
+      min-width: 52px;
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+    }
+
+    .notes { display: none; }
+
+    .compact .content { padding-top: 72px; padding-bottom: 60px; }
+    .compact h2 { font-size: 5.15rem; }
+    .compact .big-number { margin-top: 20px; }
+    .compact .tile { min-height: 148px; padding: 19px 20px 18px; }
+    .compact .tile strong { font-size: 1.92rem; }
+    .compact .tile p { font-size: .90rem; }
+
+    @media (max-width: 1200px) {
+      h1 { font-size: 5.9rem; }
+      h2 { font-size: 4.55rem; }
+      .dek { font-size: 1.72rem; }
+      .tile strong { font-size: 1.9rem; }
+      .big-number strong { font-size: 7.6rem; }
+      .big-number span { font-size: 1.75rem; }
+      .price strong { font-size: 6.8rem; }
+      .step strong { font-size: 1.74rem; }
+      .flow { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+      .step { padding: 18px 14px; }
+    }
+
+    @media (max-width: 900px) {
+      body { overflow: auto; }
+      .deck { height: auto; }
+      .slide {
+        position: relative;
+        min-height: 100svh;
+        display: grid;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+      }
+      .slide:not(.active) { display: none; }
+      .content, .content.right { width: 100%; padding: 110px 0 92px; }
+      h1 { font-size: 3.8rem; }
+      h2 { font-size: 3.1rem; }
+      .dek { font-size: 1.36rem; }
+      .big-number { align-items: flex-start; flex-direction: column; gap: 6px; }
+      .big-number strong { font-size: 5.3rem; }
+      .big-number span { font-size: 1.42rem; }
+      .tile strong { font-size: 1.7rem; }
+      .price strong { font-size: 5rem; }
+      .step strong { font-size: 1.55rem; }
+      .grid-2, .grid-3, .grid-4, .offer, .deal-stack, .timeline { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .step, .phase { min-height: auto; }
+      .eyebrow { left: 28px; }
+      .mark { right: 28px; }
+      .source { left: 28px; right: 28px; }
+      .pager { right: 28px; }
+    }
+
+    @media print {
+      html, body { background: white; overflow: visible; }
+      .deck { height: auto; background: white; }
+      .slide {
+        position: relative;
+        opacity: 1 !important;
+        transform: none !important;
+        page-break-after: always;
+        width: 100vw;
+        height: 100vh;
+      }
+      .pager { display: none; }
+    }
+
+    body.print {
+      overflow: auto;
+    }
+    body.print .deck {
+      height: auto;
+    }
+    body.print .slide {
+      position: relative;
+      opacity: 1 !important;
+      transform: none !important;
+      pointer-events: auto;
+      height: 100vh;
+    }
+    body.print .pager {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-label="PPBROA Turnaround Gameplan">
+    <section class="slide active center" data-title="Turnaround">
+      <div class="bg" style="background-image:url('assets/cs-mv6-humans.png')"></div>
+      <div class="eyebrow">PPBROA RE-BRAND</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content centered">
+        <h1>Turn PPBROA into the turnaround playbook.</h1>
+        <p class="dek">Not a rescue charity. A low-friction membership engine, powered by social matchmaking, that can be repeated at distressed pickleball facilities across North America.</p>
+      </div>
+      <div class="source">Based on June 19, 2026 baseline assessment memo</div>
+    </section>
+
+    <section class="slide compact" data-title="The clock">
+      <div class="bg" style="background-image:url('assets/inkind/visuals/court_credit_offer.png')"></div>
+      <div class="eyebrow">THE OPENING</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>Financial distress creates the opening. It is not the strategy.</h2>
+        <div class="big-number">
+          <strong>6</strong>
+          <span>months to sell, transfer control, or face shutdown risk under the memo's baseline read.</span>
+        </div>
+        <div class="grid-3">
+          <div class="tile"><b>Status</b><strong>Desperate financial straits</strong><p>The current model is not creating enough recurring demand.</p></div>
+          <div class="tile"><b>Near term</b><strong>July 1 reboot is not sustainable</strong><p>A relaunch without a new operating model just delays the same math.</p></div>
+          <div class="tile"><b>Backstop</b><strong>March 31, 2027 closure risk</strong><p>The plan has to move before the facility loses leverage.</p></div>
+        </div>
+      </div>
+      <div class="source">Memo language: "sell or transfer control" within 6 months or close by March 31, 2027</div>
+    </section>
+
+    <section class="slide light" data-title="Wrong customer">
+      <div class="bg" style="background-image:url('assets/explorations/cs-samecourt-v1-split-court-values.png')"></div>
+      <div class="eyebrow">THE REAL PROBLEM</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>The old club model waits for the wrong customer.</h2>
+        <p class="dek">PPBROA should stop optimizing for the narrow peak-hour player and go after the huge beginner and recreational base already playing at the YMCA and public outdoor courts.</p>
+        <div class="grid-2">
+          <div class="panel"><h3>Current trap</h3><p>High-friction membership, empty off-peak inventory, manual programming, and no software layer that manufactures the next right group.</p></div>
+          <div class="panel"><h3>New target</h3><p>Warm bodies in the building first. Skill growth, social fit, and paid peak play second. The mass base makes the economics possible.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="600 members">
+      <div class="bg" style="background-image:url('assets/cs-frontier-pink1.png')"></div>
+      <div class="eyebrow">THE WEDGE</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>Win by becoming the obvious place to play.</h2>
+        <div class="big-number">
+          <strong>600</strong>
+          <span>members is the first operating target, because density is what makes matchmaking, events, and utilization work.</span>
+        </div>
+        <div class="panel">
+          <h3>Strategy</h3>
+          <p>Make the membership fee low enough that recreational players join before they overthink it. Then use programming and matchmaking to make PPBROA feel easier, warmer, and more alive than public courts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide light" data-title="The offer">
+      <div class="bg" style="background-image:url('assets/generated/silliness-signal/final.png')"></div>
+      <div class="eyebrow">THE NEW OFFER</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>Low fee. Free off-peak. Paid scarcity.</h2>
+        <div class="offer">
+          <div class="price">
+            <small>Entry price</small>
+            <strong>$19.99</strong>
+            <span>per month to build the member base fast.</span>
+          </div>
+          <div class="model-list">
+            <div class="tile"><b>Included</b><strong>Matchmaking software</strong><p>Skill level plus social compatibility, not just a rating number.</p></div>
+            <div class="tile"><b>Off peak</b><strong>Unlimited free open play</strong><p>Turn dead inventory into habit, density, and community.</p></div>
+            <div class="tile"><b>Peak</b><strong>$6/hour per player</strong><p>Scarce hours monetize without making the front door expensive.</p></div>
+            <div class="tile"><b>Members</b><strong>Private group reservations</strong><p>Up to 14 days ahead, with a reason to invite friends inside.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Software layer">
+      <div class="bg" style="background-image:url('assets/generated/wired-for-this/wired-for-this-community-bg-v1.png')"></div>
+      <div class="eyebrow">THE SOFTWARE LAYER</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>Matchmaking is the management system.</h2>
+        <p class="dek">The memo's core insight is that social engineered matchmaking can change both facility economics and player experience.</p>
+        <div class="grid-4">
+          <div class="tile"><b>Skill</b><strong>Right level</strong><p>Players trust that the session will fit.</p></div>
+          <div class="tile"><b>Social</b><strong>Right people</strong><p>Compatibility becomes part of the product.</p></div>
+          <div class="tile"><b>Timing</b><strong>Right hour</strong><p>Dead periods get routed demand.</p></div>
+          <div class="tile"><b>Format</b><strong>Right event</strong><p>Open play, King/Queen, clinics, and private groups all become programmable.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide light" data-title="Utilization">
+      <div class="bg" style="background-image:url('assets/cs-pb-silliness-image-open-play.png')"></div>
+      <div class="eyebrow">THE UTILIZATION ENGINE</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content right">
+        <h2>Do not sell courts. Manufacture reasons to show up.</h2>
+        <div class="flow">
+          <div class="step"><b>01</b><strong>Recruit the base</strong><span>Beginner and recreational players join because the price is easy.</span></div>
+          <div class="step"><b>02</b><strong>Route the match</strong><span>Software proposes people, level, time, and format.</span></div>
+          <div class="step"><b>03</b><strong>Fill the off-peak</strong><span>Free access turns empty court hours into member habit.</span></div>
+          <div class="step"><b>04</b><strong>Charge the peak</strong><span>Scarce hours monetize cleanly at $6/hour per player.</span></div>
+          <div class="step"><b>05</b><strong>Compound events</strong><span>Structured play creates social proof and repeat visits.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Ops model">
+      <div class="bg" style="background-image:url('assets/cs-2c-v2-community-listening.png')"></div>
+      <div class="eyebrow">THE OPERATING MODEL</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>Lean management. Contract pros. Programmed demand.</h2>
+        <div class="grid-3">
+          <div class="tile"><b>Management</b><strong>Efficient and tech-enabled</strong><p>Run the room with software, templates, and fewer manual decisions.</p></div>
+          <div class="tile"><b>Teaching</b><strong>Contract professionals</strong><p>Pros become demand nodes, not fixed overhead.</p></div>
+          <div class="tile"><b>Programming</b><strong>Dave and Don lead the value-add</strong><p>Events make membership feel alive before the old economics break.</p></div>
+        </div>
+        <div class="panel" style="margin-top:22px;">
+          <h3>Operating principle</h3>
+          <p>Every hour needs a designed reason to exist: free habit, paid scarcity, structured play, clinic, private group, or social event.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Deal mechanics">
+      <div class="bg" style="background-image:url('assets/gnr_vnext_openness_room.png')"></div>
+      <div class="eyebrow">THE DEAL THAT HAS TO HAPPEN</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>The turnaround only works if the old cap table stops pretending.</h2>
+        <div class="deal-stack">
+          <div class="stack-list">
+            <div class="stack-item"><i>1</i><strong>Write off existing debt: Greg, Kevin, and Lee.</strong></div>
+            <div class="stack-item"><i>2</i><strong>Renegotiate the master lease with the landlord.</strong></div>
+            <div class="stack-item"><i>3</i><strong>Renegotiate the Volleyball sublease.</strong></div>
+            <div class="stack-item"><i>4</i><strong>Move Lee into minority common stock through Series B.</strong></div>
+            <div class="stack-item"><i>5</i><strong>Wipe out equity investors that are already functionally impaired.</strong></div>
+          </div>
+          <div class="panel">
+            <h3>Hard truth</h3>
+            <p>This is precarious even if executed well. If the financial reset is cosmetic, the operating plan cannot outrun the lease, debt, and equity baggage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Where PPBROA wins">
+      <div class="bg" style="background-image:url('assets/cs-fv6-community-intelligence-hero.png')"></div>
+      <div class="eyebrow">WHERE IT WINS</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>PPBROA has to move up and right: high joy, high system.</h2>
+        <div class="deal-stack">
+          <div class="axis" aria-label="Facility model matrix">
+            <div class="axis-label top">More system</div>
+            <div class="axis-label bottom">Less system</div>
+            <div class="axis-label left">Less joy</div>
+            <div class="axis-label right">More joy</div>
+            <div class="dot red">Distressed club</div>
+            <div class="dot gold">Public courts</div>
+            <div class="dot blue">PPBROA 2.0</div>
+          </div>
+          <div class="panel">
+            <h3>The position</h3>
+            <p>Public courts have demand but no system. Traditional clubs have courts but not enough warmth or recurring reasons to show up. PPBROA 2.0 has to combine a low-friction front door with a software layer that keeps the room alive.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide light" data-title="First 90 days">
+      <div class="bg" style="background-image:url('assets/cs-pb-silliness-image-net-tap.png')"></div>
+      <div class="eyebrow">FIRST 90 DAYS</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>Prove the model before anyone falls in love with the rescue.</h2>
+        <div class="timeline">
+          <div class="phase"><b>Days 1-30</b><strong>Reset the deal</strong><span>Debt, lease, sublease, asset control, minority position, and proforma assumptions get made explicit.</span></div>
+          <div class="phase"><b>Days 31-60</b><strong>Launch the base</strong><span>$19.99 early tranche, off-peak open play, first structured events, and matchmaking intake.</span></div>
+          <div class="phase"><b>Days 61-90</b><strong>Measure repeat demand</strong><span>Track member growth, off-peak utilization, paid peak conversion, event fill, and who comes back.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="National playbook">
+      <div class="bg" style="background-image:url('assets/cs-mv6-networked-reciprocity.png')"></div>
+      <div class="eyebrow">THE BIGGER GAME</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content">
+        <h2>This is not one Roanoke facility. It is a distressed-club operating thesis.</h2>
+        <p class="dek">If PPBROA works, the asset is not just the club. The asset is the playbook for dozens, then hundreds, of facilities with the same broken economics.</p>
+        <div class="grid-3">
+          <div class="tile"><b>Local proof</b><strong>Save the facility</strong><p>Use local support and better programming to prevent closure.</p></div>
+          <div class="tile"><b>Model proof</b><strong>Show the math</strong><p>Membership density plus software utilization beats court rental alone.</p></div>
+          <div class="tile"><b>Category proof</b><strong>Repeat the turnaround</strong><p>Apply the same low-fee, high-system model to the next distressed club.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide center" data-title="Close">
+      <div class="bg" style="background-image:url('assets/cs-brand-promise-community-bg.png')"></div>
+      <div class="eyebrow">THE CALL</div>
+      <div class="mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <div class="content centered">
+        <h2>Meet next week. Decide if the plan has legs. Then make the reset real.</h2>
+        <p class="dek">Kevin and Greg validate the financial reset. Chris and the local group validate the operating path. Dave brings the social matchmaking thesis. If there is buy-in, capital and lease risk can follow the plan.</p>
+      </div>
+      <div class="source">Next artifact: one-page meeting brief plus first proforma assumptions</div>
+    </section>
+  </main>
+
+  <div class="pager" aria-label="Slide navigation">
+    <button type="button" id="prev" aria-label="Previous slide">&#8249;</button>
+    <span id="count">1 / 13</span>
+    <button type="button" id="next" aria-label="Next slide">&#8250;</button>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const count = document.getElementById("count");
+    let current = 0;
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle("active", i === current));
+      count.textContent = `${current + 1} / ${slides.length}`;
+      const title = slides[current].dataset.title || `Slide ${current + 1}`;
+      history.replaceState(null, "", `#${current + 1}-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`);
+    }
+
+    document.getElementById("prev").addEventListener("click", () => show(current - 1));
+    document.getElementById("next").addEventListener("click", () => show(current + 1));
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") show(current + 1);
+      if (event.key === "ArrowLeft" || event.key === "PageUp") show(current - 1);
+      if (event.key === "Home") show(0);
+      if (event.key === "End") show(slides.length - 1);
+    });
+
+    const hashMatch = window.location.hash.match(/^#(\d+)/);
+    if (hashMatch) {
+      const requested = Number(hashMatch[1]) - 1;
+      if (!Number.isNaN(requested) && requested >= 0 && requested < slides.length) show(requested);
+    }
+
+    if (new URLSearchParams(window.location.search).get("pdf") === "1") {
+      slides.forEach(slide => slide.classList.add("active"));
+      document.body.classList.add("print");
+    }
+  </script>
+</body>
+</html>
