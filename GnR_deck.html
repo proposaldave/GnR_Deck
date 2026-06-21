@@ -148,7 +148,7 @@
     position:absolute; top:28px; left:48px; z-index:10;
     font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c;
   }
-  #cs-teamreach-referral-compare .trc-stage { position:absolute; inset:0; z-index:2; box-sizing:border-box; padding:88px 76px 58px; display:flex; flex-direction:column; gap:26px; }
+  #cs-teamreach-referral-compare .trc-stage { position:absolute; inset:0; z-index:2; box-sizing:border-box; padding:88px 76px 58px; display:flex; flex-direction:column; gap:26px; opacity:1; visibility:visible; transition:opacity .45s cubic-bezier(.22,1,.36,1); }
   #cs-teamreach-referral-compare .trc-head { text-align:center; max-width:1320px; margin:0 auto; }
   #cs-teamreach-referral-compare .trc-kicker { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#b8954a; margin-bottom:16px; }
   #cs-teamreach-referral-compare .trc-title { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.55rem,5.55vw,6.25rem); line-height:.96; font-weight:900; letter-spacing:0; color:#1a1612; text-wrap:balance; }
@@ -177,10 +177,12 @@
   #cs-teamreach-referral-compare .trc-chip.blue { border-color:rgba(91,143,212,.48); background:rgba(91,143,212,.08); color:#335f95; }
   #cs-teamreach-referral-compare .trc-chip.hot { border-color:rgba(200,70,44,.58); background:rgba(200,70,44,.08); color:#c8462c; }
   #cs-teamreach-referral-compare .trc-anim { opacity:0; transform:translateY(14px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
+  #cs-teamreach-referral-compare[data-shown="0"] .trc-stage { opacity:0!important;visibility:hidden!important;pointer-events:none!important;transition:none!important; }
   #cs-teamreach-referral-compare[data-shown="1"] .trc-anim { opacity:1; transform:none; }
   #cs-teamreach-referral-compare[data-shown="1"] .trc-anim:nth-child(2) { transition-delay:.14s; }
   #cs-teamreach-referral-compare[data-shown="1"] .trc-anim:nth-child(3) { transition-delay:.28s; }
   #cs-teamreach-referral-compare[data-shown="0"] .trc-anim { opacity:0!important;visibility:hidden!important;pointer-events:none!important;transition:none!important; }
+  html[data-export="1"] #cs-teamreach-referral-compare .trc-stage { opacity:1 !important; visibility:visible !important; pointer-events:auto !important; transition:none !important; }
   html[data-export="1"] #cs-teamreach-referral-compare .trc-anim { opacity:1 !important; transform:none !important; transition:none !important; }
 
   #cs-club-anti-dupr .cco-stage { display:flex; flex-direction:column; justify-content:center; gap:36px; }
