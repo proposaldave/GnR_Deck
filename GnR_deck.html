@@ -36041,6 +36041,23 @@ window.csA7m1Reverse = function() {
   .casey-slide.concept-dark .concept-card .small { color:rgba(251,247,239,.64); }
   .casey-slide.concept-dark .concept-foot { color:#fbf7ef; background:rgba(5,8,13,.38); border-color:rgba(255,122,26,.38); }
   .casey-slide.concept-dark .concept-pill { background:rgba(251,247,239,.06); color:#fbf7ef; border-color:rgba(91,143,212,.38); }
+  .concept-slide.concept-bg-first { background:#1a1612 !important; position:relative; overflow:hidden; }
+  .concept-slide.concept-bg-first::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background-image:linear-gradient(90deg,rgba(243,234,216,.86) 0%,rgba(243,234,216,.56) 28%,rgba(243,234,216,.10) 58%,rgba(26,22,18,.08) 100%),var(--concept-bg); background-size:cover; background-position:center center; transform:scale(1.01); }
+  .concept-slide.concept-bg-first::after { content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background:radial-gradient(circle at 11% 10%,rgba(243,234,216,.62),transparent 28%),linear-gradient(180deg,rgba(251,247,239,.10),rgba(26,22,18,.10)); }
+  .concept-slide.concept-bg-first > section { position:relative; z-index:2; min-height:100%; width:100%; }
+  .concept-slide.concept-bg-first .concept-eyebrow { position:absolute !important; top:28px !important; left:48px !important; z-index:10 !important; font-family:'Manrope',sans-serif !important; font-size:.58rem !important; font-weight:700 !important; letter-spacing:.22em !important; text-transform:uppercase !important; color:#b8954a !important; background:rgba(251,247,239,.74); padding:7px 10px; border-radius:2px; box-shadow:0 10px 30px rgba(26,22,18,.06); }
+  .concept-slide.concept-bg-first > section > .phone-bg,
+  .concept-slide.concept-bg-first > section > .elo-bg,
+  .concept-slide.concept-bg-first > section > .map-bg,
+  .concept-slide.concept-bg-first > section > .invite-bg,
+  .concept-slide.concept-bg-first > section > .hb-paper,
+  .concept-slide.concept-bg-first > section > .hct-bg,
+  .concept-slide.concept-bg-first > section > .coord-bg,
+  .concept-slide.concept-bg-first > section > .lg-bg,
+  .concept-slide.concept-bg-first > section > .scale-bg { display:none !important; }
+  .concept-slide.concept-bg-first > section > *:not(.concept-eyebrow):not(.phone-bg):not(.elo-bg):not(.map-bg):not(.invite-bg):not(.hb-paper):not(.hct-bg):not(.coord-bg):not(.lg-bg):not(.scale-bg) { position:relative; z-index:3; opacity:0; visibility:hidden; pointer-events:none; transform:translateY(18px) scale(.992); filter:blur(4px); transition:opacity .58s ease,transform .58s ease,filter .58s ease,visibility 0s linear .58s; }
+  .concept-slide.concept-bg-first[data-shown="1"]::after { background:linear-gradient(90deg,rgba(243,234,216,.88) 0%,rgba(243,234,216,.46) 38%,rgba(243,234,216,.16) 70%,rgba(26,22,18,.12) 100%); }
+  .concept-slide.concept-bg-first[data-shown="1"] > section > *:not(.concept-eyebrow):not(.phone-bg):not(.elo-bg):not(.map-bg):not(.invite-bg):not(.hb-paper):not(.hct-bg):not(.coord-bg):not(.lg-bg):not(.scale-bg) { opacity:1; visibility:visible; pointer-events:auto; transform:none; filter:none; transition:opacity .58s ease,transform .58s ease,filter .58s ease,visibility 0s; }
   .concept-metric { width:220px; height:220px; border-radius:50%; display:grid; place-items:center; text-align:center; background:radial-gradient(circle,#fffaf0,rgba(184,149,74,.16)); border:1.8px solid rgba(184,149,74,.56); box-shadow:0 0 0 8px rgba(184,149,74,.08),0 26px 70px rgba(184,149,74,.18); }
   .concept-metric b { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:5.7rem; line-height:.9; color:#c8462c; }
   .concept-metric span { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:850; letter-spacing:.18em; text-transform:uppercase; color:#b8954a; }
@@ -37112,11 +37129,14 @@ window.csA7m1Reverse = function() {
       font-size: 3rem !important;
     }
   }
+  .casey-slide.concept-slide.concept-bg-first::before { content:"" !important; position:absolute !important; inset:0 !important; z-index:0 !important; pointer-events:none !important; display:block !important; opacity:1 !important; mix-blend-mode:normal !important; background-image:linear-gradient(90deg,rgba(243,234,216,.86) 0%,rgba(243,234,216,.56) 28%,rgba(243,234,216,.10) 58%,rgba(26,22,18,.08) 100%),var(--concept-bg) !important; background-size:cover !important; background-position:center center !important; transform:scale(1.01) !important; }
+  .casey-slide.concept-slide.concept-bg-first::after { content:"" !important; position:absolute !important; inset:0 !important; z-index:1 !important; pointer-events:none !important; display:block !important; background:radial-gradient(circle at 11% 10%,rgba(243,234,216,.62),transparent 28%),linear-gradient(180deg,rgba(251,247,239,.10),rgba(26,22,18,.10)) !important; }
+  .casey-slide.concept-slide.concept-bg-first[data-shown="1"]::after { background:linear-gradient(90deg,rgba(243,234,216,.88) 0%,rgba(243,234,216,.46) 38%,rgba(243,234,216,.16) 70%,rgba(26,22,18,.12) 100%) !important; }
   /* [/Dave 2026-05-21] Concept rail design-system normalization */
 
 </style>
 
-<div class="casey-slide concept-slide" id="cs-concept-skill-wrong" style="display:none">
+<div class="casey-slide concept-slide concept-bg-first" id="cs-concept-skill-wrong" data-bg-first="1" style="display:none;--concept-bg:url('assets/generated/concept-rail/concept-skill-wrong-bg-v1.png')">
 <section style="position:relative;min-height:100%;width:100%">
   <div class="concept-eyebrow">Concept rail - skill-rating thesis</div>
   <div class="concept-stage">
@@ -37153,7 +37173,7 @@ window.csA7m1Reverse = function() {
 </section>
 </div>
 
-<div class="casey-slide concept-slide" id="cs-concept-match-people" style="display:none">
+<div class="casey-slide concept-slide concept-bg-first" id="cs-concept-match-people" data-bg-first="1" style="display:none;--concept-bg:url('assets/generated/concept-rail/concept-match-people-bg-v1.png')">
 <section style="position:relative;min-height:100%;width:100%">
   <div class="concept-eyebrow">Concept rail - old paradigm vs new paradigm</div>
   <div class="concept-stage">
@@ -37221,7 +37241,7 @@ window.csA7m1Reverse = function() {
 </section>
 </div>
 
-<div class="casey-slide concept-slide" id="cs-concept-core-assumption" style="display:none">
+<div class="casey-slide concept-slide concept-bg-first" id="cs-concept-core-assumption" data-bg-first="1" style="display:none;--concept-bg:url('assets/generated/concept-rail/concept-core-assumption-bg-v1.png')">
 <section style="position:relative;min-height:100%;width:100%">
   <div class="concept-eyebrow">Concept rail - core assumption</div>
   <div class="ca-stage">
@@ -37282,7 +37302,7 @@ window.csA7m1Reverse = function() {
   #cs-concept-club-value-system .club-final { position:absolute; left:50%; bottom:82px; transform:translateX(-50%); margin:0; width:min(1660px,90vw); text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.8rem,2.45vw,2.52rem); line-height:1.02; letter-spacing:-.04em; font-weight:850; color:#1a1612; }
   #cs-concept-club-value-system .club-final em { font-style:italic; color:#b8954a; }
 </style>
-<div class="casey-slide concept-slide" id="cs-concept-club-value-system" style="display:none">
+<div class="casey-slide concept-slide concept-bg-first" id="cs-concept-club-value-system" data-bg-first="1" style="display:none;--concept-bg:url('assets/generated/concept-rail/concept-club-value-system-bg-v1.png')">
 <section style="position:relative;min-height:100%;width:100%">
   <div class="concept-eyebrow">Concept rail - club thesis</div>
   <div class="club-thesis-stage">
@@ -37372,7 +37392,7 @@ window.csA7m1Reverse = function() {
   #cs-concept-watch-closely .signal-foot { position:absolute; left:50%; bottom:104px; transform:translateX(-50%); margin:0; width:min(1500px,86vw); text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,2.65vw,2.85rem); line-height:1.03; font-weight:850; letter-spacing:-.035em; color:#1a1612; }
   #cs-concept-watch-closely .signal-foot em { color:#b8954a; font-style:italic; }
 </style>
-<div class="casey-slide concept-slide" id="cs-concept-watch-closely" style="display:none">
+<div class="casey-slide concept-slide concept-bg-first" id="cs-concept-watch-closely" data-bg-first="1" style="display:none;--concept-bg:url('assets/generated/concept-rail/concept-watch-closely-bg-v1.png')">
 <section style="position:relative;min-height:100%;width:100%">
   <div class="concept-eyebrow">Concept rail - visible signal</div>
   <div class="signal-stage">
@@ -37471,7 +37491,7 @@ window.csA7m1Reverse = function() {
 </section>
 </div>
 
-<div class="casey-slide concept-slide phone-concept" id="cs-concept-natural-conversation-signal" style="display:none">
+<div class="casey-slide concept-slide phone-concept concept-bg-first" id="cs-concept-natural-conversation-signal" data-bg-first="1" style="display:none;--concept-bg:url('assets/generated/concept-rail/concept-natural-conversation-signal-bg-v1.png')">
 <section style="position:relative;min-height:100%;width:100%">
   <div class="phone-bg"></div>
   <div class="concept-eyebrow">phone calls / signal capture</div>
@@ -39936,6 +39956,7 @@ function conceptGo(n) {
   inStaff = false;
   conceptCurrent = n;
   document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); s.classList.remove('casey-entered'); s.style.display = 'none'; });
+  document.querySelectorAll('.concept-slide[data-bg-first="1"]').forEach(s => { s.dataset.shown = '0'; });
   const targetId = CONCEPT_ORDER[n - 1];
   const target = document.getElementById(targetId);
   if (target) {
@@ -39953,6 +39974,34 @@ function conceptGo(n) {
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
 }
+
+function getActiveConceptBgFirstSlide() {
+  return document.querySelector('.concept-slide.active[data-bg-first="1"]');
+}
+
+window.conceptBgFirstAdvance = function() {
+  const slide = getActiveConceptBgFirstSlide();
+  if (!slide || slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+
+window.conceptBgFirstReverse = function() {
+  const slide = getActiveConceptBgFirstSlide();
+  if (!slide || slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+
+document.addEventListener('click', e => {
+  if (!inConcept || !(window.conceptBgFirstAdvance && window.conceptBgFirstAdvance)) return;
+  const target = e.target;
+  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.annotation-marker')) return;
+  if (window.conceptBgFirstAdvance()) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }
+}, true);
 
 function exitConcept() {
   if (!inConcept) return;
@@ -41218,6 +41267,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowDown') {
     e.preventDefault();
     if (!inStaff && !inSeed && !inAppendix && !inTrash && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
+    if (inConcept && window.conceptBgFirstAdvance && window.conceptBgFirstAdvance()) return;
     window.altIndex = 0;
     if (inStaff) staffGo(staffCurrent + 1); else if (inSeed) seedGo(seedCurrent + 1); else if (inConcept) conceptGo(conceptCurrent + 1); else if (inTrash) trashGo(trashCurrent + 1); else if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     return;
@@ -41226,6 +41276,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowUp') {
     e.preventDefault();
     if (!inStaff && !inSeed && !inAppendix && !inTrash && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
+    if (inConcept && window.conceptBgFirstReverse && window.conceptBgFirstReverse()) return;
     window.altIndex = 0;
     if (inStaff) staffGo(staffCurrent - 1); else if (inSeed) seedGo(seedCurrent - 1); else if (inConcept) conceptGo(conceptCurrent - 1); else if (inTrash) trashGo(trashCurrent - 1); else if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     return;
@@ -41246,7 +41297,7 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     if (inStaff) { staffGo(staffCurrent + 1); return; }
     if (inSeed) { seedGo(seedCurrent + 1); return; }
-    if (inConcept) { conceptGo(conceptCurrent + 1); return; }
+    if (inConcept) { if (window.conceptBgFirstAdvance && window.conceptBgFirstAdvance()) return; conceptGo(conceptCurrent + 1); return; }
     if (inTrash) { trashGo(trashCurrent + 1); return; }
     if (!inAppendix && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) return;
@@ -41289,7 +41340,7 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     if (inStaff) { staffGo(staffCurrent - 1); return; }
     if (inSeed) { seedGo(seedCurrent - 1); return; }
-    if (inConcept) { conceptGo(conceptCurrent - 1); return; }
+    if (inConcept) { if (window.conceptBgFirstReverse && window.conceptBgFirstReverse()) return; conceptGo(conceptCurrent - 1); return; }
     if (inTrash) { trashGo(trashCurrent - 1); return; }
     if (!inAppendix && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) return;
@@ -41350,8 +41401,11 @@ document.addEventListener('wheel', e => {
     return;
   }
   if (inConcept) {
-    if (e.deltaY > 0) conceptGo(conceptCurrent + 1);
-    else if (e.deltaY < 0) conceptGo(conceptCurrent - 1);
+    if (e.deltaY > 0) {
+      if (!(window.conceptBgFirstAdvance && window.conceptBgFirstAdvance())) conceptGo(conceptCurrent + 1);
+    } else if (e.deltaY < 0) {
+      if (!(window.conceptBgFirstReverse && window.conceptBgFirstReverse())) conceptGo(conceptCurrent - 1);
+    }
     setTimeout(() => { wheelLock = false; }, 400);
     return;
   }
@@ -41825,6 +41879,16 @@ document.addEventListener('touchend', e => {
   if (inSeed) {
     const forward = ady > adx ? (dy < 0) : (dx < 0);
     if (forward) seedGo(seedCurrent + 1); else seedGo(seedCurrent - 1);
+    setTimeout(() => { touchLock = false; }, 400);
+    return;
+  }
+  if (inConcept) {
+    const forward = ady > adx ? (dy < 0) : (dx < 0);
+    if (forward) {
+      if (!(window.conceptBgFirstAdvance && window.conceptBgFirstAdvance())) conceptGo(conceptCurrent + 1);
+    } else if (!(window.conceptBgFirstReverse && window.conceptBgFirstReverse())) {
+      conceptGo(conceptCurrent - 1);
+    }
     setTimeout(() => { touchLock = false; }, 400);
     return;
   }
