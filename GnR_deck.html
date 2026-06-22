@@ -28564,6 +28564,49 @@ window.csFeatureStageUnlocksAdvance=function(){const s=document.getElementById('
   </section>
 </div>
 
+<!-- cs-connection-workout-high - main-deck connection high versus workout high [Codex 2026-06-22] -->
+<style>
+  #cs-connection-workout-high{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#fbf7ef}
+  #cs-connection-workout-high .cwh-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;filter:saturate(1.05) contrast(1.04)}
+  #cs-connection-workout-high .cwh-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(2,9,16,.44) 0%,rgba(2,9,16,.28) 30%,rgba(2,9,16,.08) 54%,rgba(2,9,16,.03) 100%),linear-gradient(180deg,rgba(3,7,11,.04) 0%,rgba(3,7,11,.18) 100%)}
+  #cs-connection-workout-high .cwh-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#B8954A;text-shadow:0 2px 14px rgba(0,0,0,.42)}
+  #cs-connection-workout-high .cwh-stage{position:absolute;left:72px;top:186px;width:min(840px,46vw);z-index:4;display:block!important;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
+  #cs-connection-workout-high[data-stage="1"] .cwh-stage,html[data-export="1"] #cs-connection-workout-high .cwh-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-connection-workout-high .cwh-title{display:block;width:min(820px,100%);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4rem,5.4vw,6.18rem);line-height:.92;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance;text-shadow:0 10px 34px rgba(0,0,0,.70)}
+  #cs-connection-workout-high .cwh-title em{font-style:italic;color:#B8954A;font-weight:820}
+  #cs-connection-workout-high .cwh-sub{display:block;width:min(760px,100%);margin:28px 0 0;font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.28vw,1.34rem);line-height:1.43;font-weight:820;color:rgba(251,247,239,.88);text-wrap:balance;text-shadow:0 5px 24px rgba(0,0,0,.66)}
+  #cs-connection-workout-high .cwh-proof{display:flex;flex-wrap:wrap;width:min(780px,100%);gap:10px;margin-top:32px}
+  #cs-connection-workout-high .cwh-chip{display:inline-flex;align-items:center;min-height:42px;padding:10px 14px;border:1px solid rgba(251,247,239,.22);background:rgba(5,15,25,.58);border-radius:999px;font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:#fbf7ef;box-shadow:0 16px 38px rgba(0,0,0,.24);backdrop-filter:blur(4px)}
+  #cs-connection-workout-high .cwh-chip:nth-child(1){border-color:rgba(91,143,212,.48);color:#dbe9ff}
+  #cs-connection-workout-high .cwh-chip:nth-child(2){border-color:rgba(184,149,74,.52);color:#f0d89b}
+  #cs-connection-workout-high .cwh-chip:nth-child(3){border-color:rgba(200,70,44,.48);color:#ffd7cf}
+  html[data-export="1"] #cs-connection-workout-high .cwh-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-connection-workout-high" data-stage="0" onclick="if(window.csConnectionWorkoutHighAdvance&&window.csConnectionWorkoutHighAdvance()) event.stopPropagation()" style="display:none" aria-label="Workout high is real. Connection high is social.">
+  <img class="cwh-bg" src="assets/generated/connection-high/workout-high-connection-high-bg-v1.png" alt="A solo athlete glowing after a workout beside a joyful community sharing a connection high after play."/>
+  <div class="cwh-wash" aria-hidden="true"></div>
+  <div class="cwh-eye">Connection high</div>
+  <section class="cwh-stage">
+    <h1 class="cwh-title">Workout high is real.<br><em>Connection high is social.</em></h1>
+    <p class="cwh-sub">Both can last for hours. One leaves you proud and alone; the other sends everyone home more alive.</p>
+    <div class="cwh-proof" aria-hidden="true">
+      <div class="cwh-chip">Afterglow</div>
+      <div class="cwh-chip">Open heart</div>
+      <div class="cwh-chip">Shared energy</div>
+    </div>
+  </section>
+</div>
+<script>
+(function(){
+  const id='cs-connection-workout-high';
+  function slide(){return document.getElementById(id)}
+  window.csConnectionWorkoutHighAdvance=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage==='1')return false;s.dataset.stage='1';return true};
+  window.csConnectionWorkoutHighReverse=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage!=='1')return false;s.dataset.stage='0';return true};
+  function boot(){const s=slide();if(!s)return;new MutationObserver(function(){if(!s.classList.contains('active'))s.dataset.stage='0'}).observe(s,{attributes:true,attributeFilter:['class']})}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+
 <style>
   #cs-magnetic .mg-stage{position:relative;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 56px 44px;text-align:center;gap:18px}
   /* [Dave 2026-05-14 PM v3] Master header restored per Dave — names the category ('human value marketplace') so the twin courts read as the proof of that claim. Eyebrow 'SOCIAL PULL' remains as section tag; this is the slide's headline. */
@@ -38200,6 +38243,7 @@ const SLIDE_ORDER = [
   'cs-community-builder-engine',
   'cs-old-new-paradigm',
   'cs-real-world-measurable-market',
+  'cs-connection-workout-high',
   'cs-11e',
   'cs-18-vd4',
   'cs-invitation-word-of-mouth',
@@ -40459,15 +40503,16 @@ const slideLabels = [
   'Community builder engine', //  9 cs-community-builder-engine
   'Old paradigm to new paradigm', // 10 cs-old-new-paradigm
   'Connection market', // 11 cs-real-world-measurable-market
-  'NEPC proof / proving ground', // 12 cs-11e
-  'Dave Velardo - Founder - CEO', // 13 cs-18-vd4
-  'Referrals power the community sales engine', // 14 cs-invitation-word-of-mouth
-  'Host sparks feeling; GnR compounds it', // 15 cs-fv6-host-abundance-pink
-  'Same courts / utilization / net profit', // 16 cs-revenue-util-profit-blue
-  'Pyramid: competitive apex / social base', // 17 cs-samecourt-pyramid-image-led-pink
-  'Connection value has no ceiling', // 18 cs-connection-value-ladder-pink
-  'Networked reciprocity breakthrough', // 19 cs-networked-reciprocity
-  'Mission: abundant connection', // 20 cs-mv6-merge
+  'Connection high vs workout high', // 12 cs-connection-workout-high
+  'NEPC proof / proving ground', // 13 cs-11e
+  'Dave Velardo - Founder - CEO', // 14 cs-18-vd4
+  'Referrals power the community sales engine', // 15 cs-invitation-word-of-mouth
+  'Host sparks feeling; GnR compounds it', // 16 cs-fv6-host-abundance-pink
+  'Same courts / utilization / net profit', // 17 cs-revenue-util-profit-blue
+  'Pyramid: competitive apex / social base', // 18 cs-samecourt-pyramid-image-led-pink
+  'Connection value has no ceiling', // 19 cs-connection-value-ladder-pink
+  'Networked reciprocity breakthrough', // 20 cs-networked-reciprocity
+  'Mission: abundant connection', // 21 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -41189,6 +41234,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-mv6': 'cs_mv6_Advance',
     'cs-work-evolution-prelude': 'csWorkEvolutionAdvance',
     'cs-real-world-measurable-market': 'csRwmmAdvance',
+    'cs-connection-workout-high': 'csConnectionWorkoutHighAdvance',
     'cs-mv6-merge': 'csMv6MergeAdvance',
     'cs-teamreach-referral-compare': 'csTeamreachCompareAdvance',
     'cs-a7m1': 'csA7m1Advance'
@@ -41269,6 +41315,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-mv6': 'cs_mv6_Reverse',
     'cs-work-evolution-prelude': 'csWorkEvolutionReverse',
     'cs-real-world-measurable-market': 'csRwmmReverse',
+    'cs-connection-workout-high': 'csConnectionWorkoutHighReverse',
     'cs-mv6-merge': 'csMv6MergeReverse',
     'cs-teamreach-referral-compare': 'csTeamreachCompareReverse',
     'cs-a7m1': 'csA7m1Reverse'
