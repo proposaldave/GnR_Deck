@@ -8880,14 +8880,14 @@ window.cs1m5Reverse = function() {
 <!-- cs-community-builder-engine - main-deck community builder engine slide [Codex 2026-06-17] -->
 <style>
   #cs-community-builder-engine{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1A1612}
-  #cs-community-builder-engine .cbe-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.02) contrast(1.02)}
-  #cs-community-builder-engine .cbe-softwash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(243,234,216,.90) 0%,rgba(243,234,216,.62) 33%,rgba(243,234,216,.18) 58%,rgba(243,234,216,.02) 100%);pointer-events:none}
+  #cs-community-builder-engine .cbe-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.05) contrast(1.05)}
+  #cs-community-builder-engine .cbe-softwash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(243,234,216,.92) 0%,rgba(243,234,216,.70) 31%,rgba(243,234,216,.24) 55%,rgba(243,234,216,.03) 100%);pointer-events:none}
   #cs-community-builder-engine .cbe-eye{position:absolute;top:28px;left:48px;z-index:6;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#C8462C;text-shadow:0 1px 0 rgba(251,247,239,.92),0 8px 22px rgba(26,22,18,.12)}
-  #cs-community-builder-engine .cbe-content{position:absolute;left:72px;top:150px;width:min(900px,47vw);z-index:4;opacity:0;transform:translateY(18px);transition:opacity .72s ease,transform .72s ease}
+  #cs-community-builder-engine .cbe-content{position:absolute;left:72px;top:214px;width:min(900px,47vw);z-index:4;opacity:0;transform:translateY(18px);transition:opacity .72s ease,transform .72s ease}
   #cs-community-builder-engine[data-stage="1"] .cbe-content,html[data-export="1"] #cs-community-builder-engine .cbe-content{opacity:1;transform:translateY(0)}
-  #cs-community-builder-engine .cbe-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:800;font-size:clamp(2.75rem,3.15vw,3.75rem);line-height:1;letter-spacing:0;margin:0;max-width:880px;text-wrap:balance;text-shadow:0 2px 18px rgba(255,252,244,.38)}
+  #cs-community-builder-engine .cbe-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(4rem,5.35vw,6.2rem);line-height:.94;letter-spacing:0;margin:0;max-width:880px;text-wrap:balance;text-shadow:0 2px 18px rgba(255,252,244,.38)}
   #cs-community-builder-engine .cbe-title em{font-style:italic;color:#C8462C}
-  #cs-community-builder-engine .cbe-sub{font-family:'Manrope',sans-serif;font-size:1.06rem;line-height:1.48;font-weight:760;color:rgba(26,22,18,.78);max-width:650px;margin:24px 0 0}
+  #cs-community-builder-engine .cbe-sub{font-family:'Manrope',sans-serif;font-size:clamp(1.08rem,1.26vw,1.3rem);line-height:1.42;font-weight:820;color:rgba(26,22,18,.74);max-width:690px;margin:28px 0 0}
   #cs-community-builder-engine .cbe-flow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px;max-width:650px}
   #cs-community-builder-engine .cbe-card{min-height:112px;background:rgba(255,252,244,.82);border:1px solid rgba(184,149,74,.27);box-shadow:0 22px 42px rgba(40,32,18,.08);padding:17px 18px 18px;border-radius:7px;backdrop-filter:blur(5px)}
   #cs-community-builder-engine .cbe-card b{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.42rem;line-height:1.04;color:#1A1612;margin-bottom:8px}
@@ -8899,19 +8899,13 @@ window.cs1m5Reverse = function() {
   #cs-community-builder-engine .cbe-hint{position:absolute;left:50%;bottom:32px;z-index:5;transform:translateX(-50%);width:50px;height:7px;border-radius:999px;background:rgba(26,22,18,.42);opacity:.72;transition:opacity .35s ease}
   #cs-community-builder-engine[data-stage="1"] .cbe-hint{opacity:0}
 </style>
-<div class="casey-slide ds-focus" id="cs-community-builder-engine" data-stage="0" onclick="if(window.csCommunityBuilderEngineAdvance&&window.csCommunityBuilderEngineAdvance()) event.stopPropagation()" style="display:none" aria-label="Your community&rsquo;s coordination stack, rewired for human connection, becomes its social network.">
-  <img class="cbe-bg" src="assets/generated/hybrid-social-networking/hybrid-social-network-bg-v7.png" alt="Cinematic pickleball community scene where live groups, invitations, referrals, and repeat connections form a hybrid social network" />
+<div class="casey-slide ds-focus" id="cs-community-builder-engine" data-stage="0" onclick="if(window.csCommunityBuilderEngineAdvance&&window.csCommunityBuilderEngineAdvance()) event.stopPropagation()" style="display:none" aria-label="Legacy systems book courts and rank players. GnR builds the room.">
+  <img class="cbe-bg" src="assets/generated/hybrid-social-networking/legacy-coordination-stack-bg-v1.png" alt="Legacy calendar booking grids and competitive rating ladders dissolving into a warm human invitation graph at a pickleball club" />
   <div class="cbe-softwash"></div>
-  <div class="cbe-eye">Hybrid social networking</div>
-  <div class="cbe-content">
-    <h1 class="cbe-title">Your community&rsquo;s coordination stack, rewired for human connection, becomes its social network.</h1>
-    <p class="cbe-sub">A host starts the room. GnR turns every invite, RSVP, referral, repeat group, and decline into signal for the next better experience.</p>
-    <div class="cbe-flow" aria-hidden="true">
-      <div class="cbe-card"><b>Publish the feed</b><span>Host-led invitations</span></div>
-      <div class="cbe-card"><b>Fill live groups</b><span>RSVPs, repeats, declines</span></div>
-      <div class="cbe-card"><b>Route referrals</b><span>Who brings value back</span></div>
-      <div class="cbe-card"><b>Improve the graph</b><span>Better rooms compound</span></div>
-    </div>
+  <div class="cbe-eye">Legacy coordination stack</div>
+    <div class="cbe-content">
+    <h1 class="cbe-title">Legacy tools book courts. <em>GnR builds the room.</em></h1>
+    <p class="cbe-sub">Calendars know slots. Ratings know rank. GnR learns who should be together.</p>
   </div>
   <div class="cbe-hint" aria-hidden="true"></div>
 </div>
@@ -8929,7 +8923,7 @@ window.cs1m5Reverse = function() {
 <!-- cs-networked-reciprocity - connection behavior becomes a measurable reciprocity system [Codex 2026-06-19] -->
 <style>
   #cs-networked-reciprocity{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1A1612}
-  #cs-networked-reciprocity .nrb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;filter:saturate(1.02) contrast(1.02)}
+  #cs-networked-reciprocity .nrb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;filter:saturate(1.05) contrast(1.05)}
   #cs-networked-reciprocity .nrb-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(243,234,216,.20) 0%,rgba(243,234,216,.06) 42%,rgba(26,22,18,.16) 74%,rgba(26,22,18,.30) 100%);pointer-events:none}
   #cs-networked-reciprocity .nrb-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#C8462C;text-shadow:0 1px 0 rgba(251,247,239,.92),0 10px 24px rgba(26,22,18,.12)}
   #cs-networked-reciprocity .nrb-content{position:absolute;left:76px;top:148px;width:min(760px,43vw);z-index:4;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
@@ -14554,7 +14548,7 @@ window.csInvitationWordOfMouthAdvance = function() {
     object-fit:cover;
     object-position:center center;
     z-index:0;
-    filter:saturate(1.02) contrast(1.02);
+    filter:saturate(1.05) contrast(1.05);
   }
   #cs-pb-silliness-feature .silliness-scrim {
     position:absolute;
@@ -23375,7 +23369,7 @@ window.csBrandProblemReverse = function() {
   html[data-export="1"] #cs-value-choice .vc-question, html[data-export="1"] #cs-value-choice .vc-list, html[data-export="1"] #cs-value-choice .vc-right { opacity:1 !important; transform:none !important; animation:none !important; }
 
   #cs-value-choice-image-only-pink { background:#1a1612 !important; overflow:hidden; }
-  #cs-value-choice-image-only-pink .vcio-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:saturate(1.02) contrast(1.02); }
+  #cs-value-choice-image-only-pink .vcio-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:saturate(1.05) contrast(1.05); }
   #cs-value-choice-image-only-pink.casey-entered .vcio-bg { animation:vcRise .75s cubic-bezier(.22,1,.36,1) both; }
   html[data-export="1"] #cs-value-choice-image-only-pink .vcio-bg { opacity:1 !important; transform:none !important; animation:none !important; }
   #cs-value-choice-image-annotated-pink,
@@ -23554,7 +23548,7 @@ window.csBrandProblemReverse = function() {
   #cs-tesla-community-value-appx .tcva-title em{font-style:italic;color:#b8954a;font-weight:760}
   #cs-tesla-community-value-appx .tcva-sub{display:block;width:min(720px,100%);margin:26px 0 0;max-width:none;font-family:'Manrope',sans-serif;font-size:clamp(.98rem,1.14vw,1.2rem);font-weight:780;line-height:1.42;color:rgba(26,22,18,.68)}
   #cs-app-store-people-blue{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
-  #cs-app-store-people-blue .apb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.02) contrast(1.02)}
+  #cs-app-store-people-blue .apb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.05) contrast(1.05)}
   #cs-app-store-people-blue .apb-eye{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;background:rgba(251,247,239,.72);padding:8px 10px;border-radius:2px;box-shadow:0 10px 26px rgba(26,22,18,.06)}
 
   #cs-app-store-people-blue .apb-stage{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:flex-start;padding:96px 88px 72px;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s}
