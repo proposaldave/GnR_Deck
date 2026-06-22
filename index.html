@@ -8833,6 +8833,50 @@ window.cs1m5Reverse = function() {
 })();
 </script>
 
+<!-- cs-community-builder-leaders - main-deck leader-led community market bridge [Codex 2026-06-22] -->
+<style>
+  #cs-community-builder-leaders{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#fbf7ef}
+  #cs-community-builder-leaders .cbl-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;filter:saturate(1.04) contrast(1.04)}
+  #cs-community-builder-leaders .cbl-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(5,11,18,.76) 0%,rgba(5,11,18,.55) 35%,rgba(5,11,18,.18) 63%,rgba(5,11,18,.04) 100%),radial-gradient(ellipse at 24% 34%,rgba(91,143,212,.18) 0%,rgba(91,143,212,.05) 36%,rgba(5,11,18,0) 68%),linear-gradient(180deg,rgba(3,7,11,.02) 0%,rgba(3,7,11,.20) 100%)}
+  #cs-community-builder-leaders .cbl-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#B8954A;text-shadow:0 2px 14px rgba(0,0,0,.44)}
+  #cs-community-builder-leaders .cbl-stage{position:absolute;left:72px;top:238px;width:min(910px,49vw);z-index:4;display:block!important;box-sizing:border-box;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
+  #cs-community-builder-leaders[data-stage="1"] .cbl-stage,html[data-export="1"] #cs-community-builder-leaders .cbl-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-community-builder-leaders .cbl-title{display:block;width:min(850px,100%);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.85rem,5.2vw,6rem);line-height:.91;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance;text-shadow:0 10px 36px rgba(0,0,0,.76)}
+  #cs-community-builder-leaders .cbl-title em{font-style:italic;color:#B8954A;font-weight:820}
+  #cs-community-builder-leaders .cbl-sub{display:block;width:min(760px,100%);margin:26px 0 0;font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.26vw,1.32rem);line-height:1.46;font-weight:820;color:rgba(251,247,239,.86);text-wrap:balance;text-shadow:0 5px 26px rgba(0,0,0,.68)}
+  #cs-community-builder-leaders .cbl-flow{display:flex;flex-wrap:wrap;width:min(820px,100%);gap:10px;margin-top:32px}
+  #cs-community-builder-leaders .cbl-chip{display:inline-flex;align-items:center;min-height:42px;padding:10px 14px;border:1px solid rgba(251,247,239,.20);background:rgba(6,15,26,.58);border-radius:999px;font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:#fbf7ef;box-shadow:0 16px 38px rgba(0,0,0,.24);backdrop-filter:blur(4px)}
+  #cs-community-builder-leaders .cbl-chip:nth-child(1){border-color:rgba(91,143,212,.44);color:#dbe9ff}
+  #cs-community-builder-leaders .cbl-chip:nth-child(2){border-color:rgba(184,149,74,.48);color:#f0d89b}
+  #cs-community-builder-leaders .cbl-chip:nth-child(3){border-color:rgba(200,70,44,.46);color:#ffd7cf}
+  #cs-community-builder-leaders .cbl-chip:nth-child(4){border-color:rgba(73,180,160,.45);color:#c9fff2}
+  html[data-export="1"] #cs-community-builder-leaders .cbl-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-community-builder-leaders" data-stage="0" onclick="if(window.csCommunityBuilderLeadersAdvance&&window.csCommunityBuilderLeadersAdvance()) event.stopPropagation()" style="display:none" aria-label="Community builders are the new clubs.">
+  <img class="cbl-bg" src="assets/generated/community-builder-leaders/community-builder-leaders-bg-v1.png" alt="A community leader on a country club patio stage turning followers into an intimate live room, with referral arcs bringing friends into the event."/>
+  <div class="cbl-wash" aria-hidden="true"></div>
+  <div class="cbl-eye">Community builders</div>
+  <section class="cbl-stage">
+    <h1 class="cbl-title">Community builders <em>are the new clubs.</em></h1>
+    <p class="cbl-sub">Comedians, coaches, hosts, founders: they already have followers. GnR helps them turn attention into rooms, referrals, and repeat connection.</p>
+    <div class="cbl-flow" aria-hidden="true">
+      <div class="cbl-chip">Followers</div>
+      <div class="cbl-chip">Warm invites</div>
+      <div class="cbl-chip">Live room</div>
+      <div class="cbl-chip">Referral loop</div>
+    </div>
+  </section>
+</div>
+<script>
+(function(){
+  const id='cs-community-builder-leaders';
+  function slide(){return document.getElementById(id)}
+  window.csCommunityBuilderLeadersAdvance=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage==='1')return false;s.dataset.stage='1';return true};
+  window.csCommunityBuilderLeadersReverse=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage!=='1')return false;s.dataset.stage='0';return true};
+  function boot(){const s=slide();if(!s)return;new MutationObserver(function(){if(!s.classList.contains('active'))s.dataset.stage='0'}).observe(s,{attributes:true,attributeFilter:['class']})}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
 <!-- cs-community-builder-engine - main-deck community builder engine slide [Codex 2026-06-17] -->
 <style>
   #cs-community-builder-engine{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1A1612}
@@ -38152,6 +38196,7 @@ const SLIDE_ORDER = [
   'cs-invite-operational-insanity-pink',
   'cs-gnr',
   'cs-community-builder-product',
+  'cs-community-builder-leaders',
   'cs-community-builder-engine',
   'cs-old-new-paradigm',
   'cs-real-world-measurable-market',
@@ -40410,18 +40455,19 @@ const slideLabels = [
   'Custom invitations don\'t scale.', //  5 cs-invite-operational-insanity-pink
   'The rise of the personalized invitation feed', //  6 cs-gnr
   'Community builder product', //  7 cs-community-builder-product
-  'Community builder engine', //  8 cs-community-builder-engine
-  'Old paradigm to new paradigm', //  9 cs-old-new-paradigm
-  'Connection market', // 10 cs-real-world-measurable-market
-  'NEPC proof / proving ground', // 11 cs-11e
-  'Dave Velardo - Founder - CEO', // 12 cs-18-vd4
-  'Referrals power the community sales engine', // 13 cs-invitation-word-of-mouth
-  'Host sparks feeling; GnR compounds it', // 14 cs-fv6-host-abundance-pink
-  'Same courts / utilization / net profit', // 15 cs-revenue-util-profit-blue
-  'Pyramid: competitive apex / social base', // 16 cs-samecourt-pyramid-image-led-pink
-  'Connection value has no ceiling', // 17 cs-connection-value-ladder-pink
-  'Networked reciprocity breakthrough', // 18 cs-networked-reciprocity
-  'Mission: abundant connection', // 19 cs-mv6-merge
+  'Community builders are the new clubs', //  8 cs-community-builder-leaders
+  'Community builder engine', //  9 cs-community-builder-engine
+  'Old paradigm to new paradigm', // 10 cs-old-new-paradigm
+  'Connection market', // 11 cs-real-world-measurable-market
+  'NEPC proof / proving ground', // 12 cs-11e
+  'Dave Velardo - Founder - CEO', // 13 cs-18-vd4
+  'Referrals power the community sales engine', // 14 cs-invitation-word-of-mouth
+  'Host sparks feeling; GnR compounds it', // 15 cs-fv6-host-abundance-pink
+  'Same courts / utilization / net profit', // 16 cs-revenue-util-profit-blue
+  'Pyramid: competitive apex / social base', // 17 cs-samecourt-pyramid-image-led-pink
+  'Connection value has no ceiling', // 18 cs-connection-value-ladder-pink
+  'Networked reciprocity breakthrough', // 19 cs-networked-reciprocity
+  'Mission: abundant connection', // 20 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -41087,6 +41133,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkAdvance',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueAdvance',
     'cs-community-builder-product': 'csCommunityBuilderProductAdvance',
+    'cs-community-builder-leaders': 'csCommunityBuilderLeadersAdvance',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkAdvance',
     'cs-community-builder-engine': 'csCommunityBuilderEngineAdvance',
     'cs-networked-reciprocity': 'csNetworkedReciprocityAdvance',
@@ -41168,6 +41215,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkReverse',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueReverse',
     'cs-community-builder-product': 'csCommunityBuilderProductReverse',
+    'cs-community-builder-leaders': 'csCommunityBuilderLeadersReverse',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkReverse',
     'cs-community-builder-engine': 'csCommunityBuilderEngineReverse',
     'cs-networked-reciprocity': 'csNetworkedReciprocityReverse',
