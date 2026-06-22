@@ -23498,6 +23498,14 @@ window.csBrandProblemReverse = function() {
   #cs-tesla-community-value-pink .tcv-card-price em{display:block;font-style:italic;color:#b8954a;font-size:.54em;font-weight:720;margin-top:8px}
   #cs-tesla-community-value-pink .tcv-card-foot{margin-top:14px;font-family:'Manrope',sans-serif;font-size:.56rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase;line-height:1.38;color:rgba(26,22,18,.52)}
   html[data-export="1"] #cs-tesla-community-value-pink .tcv-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+  #cs-tesla-community-value-appx{background:#f3ead8!important;overflow:hidden;color:#1a1612}
+  #cs-tesla-community-value-appx .tcva-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.08) contrast(1.08)}
+  #cs-tesla-community-value-appx .tcva-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(243,234,216,.84) 0%,rgba(243,234,216,.68) 31%,rgba(243,234,216,.20) 58%,rgba(26,22,18,.05) 100%),radial-gradient(ellipse at 18% 20%,rgba(243,234,216,.62) 0%,rgba(243,234,216,.34) 28%,rgba(243,234,216,0) 54%)}
+  #cs-tesla-community-value-appx .tcva-eye{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;background:rgba(243,234,216,.76);padding:8px 10px;border-radius:2px;box-shadow:0 10px 28px rgba(26,22,18,.07)}
+  #cs-tesla-community-value-appx .tcva-copy{position:absolute;left:78px;top:300px;z-index:3;width:min(1180px,72vw);display:flex;flex-direction:column;align-items:flex-start;text-shadow:0 14px 38px rgba(243,234,216,.82)}
+  #cs-tesla-community-value-appx .tcva-title{display:block;width:100%;margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.55vw,5.1rem);line-height:.98;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance}
+  #cs-tesla-community-value-appx .tcva-title em{font-style:italic;color:#b8954a;font-weight:760}
+  #cs-tesla-community-value-appx .tcva-sub{display:block;width:min(720px,100%);margin:26px 0 0;max-width:none;font-family:'Manrope',sans-serif;font-size:clamp(.98rem,1.14vw,1.2rem);font-weight:780;line-height:1.42;color:rgba(26,22,18,.68)}
   #cs-app-store-people-blue{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
   #cs-app-store-people-blue .apb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.02) contrast(1.02)}
   #cs-app-store-people-blue .apb-eye{position:absolute;top:28px;left:48px;z-index:4;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;background:rgba(251,247,239,.72);padding:8px 10px;border-radius:2px;box-shadow:0 10px 26px rgba(26,22,18,.06)}
@@ -23573,13 +23581,22 @@ window.csBrandProblemReverse = function() {
 </div>
 
 <div class="casey-slide ds-focus" id="cs-tesla-community-value-pink" data-stage="0" onclick="if(this.dataset.stage==='0'){this.dataset.stage='1';event.stopPropagation();}" style="display:none" aria-label="People spend fortunes trying to feel alive; the real high comes from people">
-  <img class="tcv-bg" src="assets/generated/tesla-community-value/tesla-community-value-bg-v1.png" alt="Text-free editorial split scene of an expensive self-driving electric car beside a warm pickleball community high-five after play."/>
+  <img class="tcv-bg" src="assets/generated/human-value-copy/human-value-no-car-bg-v1.png" alt="Text-free editorial split scene of expensive ways people try to feel alive beside a warm pickleball community high-five after play."/>
   <div class="tcv-wash" aria-hidden="true"></div>
   <div class="slide-eyebrow tcv-eye">Human value</div>
   <section class="tcv-stage">
     <div class="tcv-copy">
       <h1 class="tcv-head">People spend fortunes trying to feel alive.<br><em>The real high comes from people.</em></h1>
     </div>
+  </section>
+</div>
+<div class="casey-slide ds-focus appendix-slide" id="cs-tesla-community-value-appx" style="display:none" aria-label="Appendix: product love beside repeatable human connection">
+  <img class="tcva-bg" src="assets/generated/tesla-community-value/tesla-community-value-bg-v1.png" alt="Editorial split scene of an expensive self-driving electric car beside a warm pickleball community high-five after play."/>
+  <div class="tcva-wash" aria-hidden="true"></div>
+  <div class="slide-eyebrow tcva-eye">Appendix / product love</div>
+  <section class="tcva-copy">
+    <h1 class="tcva-title">Some products feel miraculous.<br><em>People make life feel bigger.</em></h1>
+    <p class="tcva-sub">The market is not the object. It is reliable, repeatable human connection.</p>
   </section>
 </div>
 <div class="casey-slide ds-focus gnr-feeling-slide" id="cs-feeling-economy" data-stage="0" style="display:none" aria-label="The Feeling Economy">
@@ -38219,6 +38236,7 @@ const LOCKED_POSITIONS = [];
 const APPENDIX_ORDER = [
   'cs-invite-dupr-vs-gnr-club-pink',
   'cs-app-store-people',
+  'cs-tesla-community-value-appx',
   'cs-samecourt',
   'cs-fw1',
   'cs-2c',
