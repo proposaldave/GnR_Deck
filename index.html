@@ -23627,7 +23627,7 @@ window.csBrandProblemReverse = function() {
   <div class="vcio-label cola"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
 </div>
 
-<div class="casey-slide ds-focus" id="cs-tesla-community-value-pink" data-stage="0" onclick="if(this.dataset.stage==='0'){this.dataset.stage='1';event.stopPropagation();}" style="display:none" aria-label="People spend fortunes trying to feel alive; the real high comes from people">
+<div class="casey-slide ds-focus" id="cs-tesla-community-value-pink" data-stage="0" onclick="if(window.csTeslaCommunityValueAdvance&&window.csTeslaCommunityValueAdvance()) event.stopPropagation()" style="display:none" aria-label="People spend fortunes trying to feel alive; the real high comes from people">
   <img class="tcv-bg" src="assets/generated/human-value-copy/human-value-no-car-bg-v1.png" alt="Text-free editorial split scene of expensive ways people try to feel alive beside a warm pickleball community high-five after play."/>
   <div class="tcv-wash" aria-hidden="true"></div>
   <div class="slide-eyebrow tcv-eye">Market size</div>
@@ -23637,6 +23637,10 @@ window.csBrandProblemReverse = function() {
     </div>
   </section>
 </div>
+<script>
+window.csTeslaCommunityValueAdvance=function(){const s=document.getElementById('cs-tesla-community-value-pink');if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage==='1')return false;s.dataset.stage='1';return true;};
+window.csTeslaCommunityValueReverse=function(){const s=document.getElementById('cs-tesla-community-value-pink');if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage!=='1')return false;s.dataset.stage='0';return true;};
+</script>
 <div class="casey-slide ds-focus appendix-slide" id="cs-tesla-community-value-appx" style="display:none" aria-label="Appendix: product love beside repeatable human connection">
   <img class="tcva-bg" src="assets/generated/tesla-community-value/tesla-community-value-bg-v1.png" alt="Editorial split scene of an expensive self-driving electric car beside a warm pickleball community high-five after play."/>
   <div class="tcva-wash" aria-hidden="true"></div>
@@ -38276,6 +38280,7 @@ window.csA7m1Reverse = function() {
 
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
+  'cs-tesla-community-value-pink',
   'cs-1m8-invite-graph-blue',
   'cs-community-reciprocity-problem',
   'cs-thegap',
@@ -38305,12 +38310,12 @@ const TOTAL = SLIDE_ORDER.length;
 // Alt dots at REVIEW_POSITION render RED (matching primary review dot) — these are
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
-  1: ['cs-value-choice-image-annotated-pink', 'cs-tesla-community-value-pink'],
-  2: ['cs-1m8'],
-  3: ['cs-p10x-community-problem'],
-  13: ['cs-fv6-referral-engine-blue'],
-  14: ['cs-fv6-img'],
-  17: ['cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
+  1: ['cs-value-choice-image-annotated-pink'],
+  3: ['cs-1m8'],
+  4: ['cs-p10x-community-problem'],
+  14: ['cs-fv6-referral-engine-blue'],
+  15: ['cs-fv6-img'],
+  18: ['cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -40537,27 +40542,28 @@ function animateCsa2Expansion() {
 const slideLabels = [
   null,
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
-  'The invitation engine for community builders', //  2 cs-1m8-invite-graph-blue
-  'Core problem: reciprocal community fit', //  3 cs-community-reciprocity-problem
-  'The most networkable, untapped dataset on the planet', //  4 cs-thegap
-  'Custom invitations don\'t scale.', //  5 cs-invite-operational-insanity-pink
-  'The rise of the personalized invitation feed', //  6 cs-gnr
-  'Community builder product', //  7 cs-community-builder-product
-  'Community builders are the new clubs', //  8 cs-community-builder-leaders
-  'Community builder engine', //  9 cs-community-builder-engine
-  'Old paradigm to new paradigm', // 10 cs-old-new-paradigm
-  'Connection market', // 11 cs-real-world-measurable-market
-  'Connection high vs workout high', // 12 cs-connection-workout-high
-  'Social fitness habit', // 13 cs-social-fitness-high
-  'NEPC proof / proving ground', // 14 cs-11e
-  'Dave Velardo - Founder - CEO', // 15 cs-18-vd4
-  'Referrals power the community sales engine', // 16 cs-invitation-word-of-mouth
-  'Host sparks feeling; GnR compounds it', // 17 cs-fv6-host-abundance-pink
-  'Same courts / utilization / net profit', // 18 cs-revenue-util-profit-blue
-  'Pyramid: competitive apex / social base', // 19 cs-samecourt-pyramid-image-led-pink
-  'Connection value has no ceiling', // 20 cs-connection-value-ladder-pink
-  'Networked reciprocity breakthrough', // 21 cs-networked-reciprocity
-  'Mission: abundant connection', // 22 cs-mv6-merge
+  'Market size: people spend fortunes trying to feel alive', //  2 cs-tesla-community-value-pink
+  'The invitation engine for community builders', //  3 cs-1m8-invite-graph-blue
+  'Core problem: reciprocal community fit', //  4 cs-community-reciprocity-problem
+  'The most networkable, untapped dataset on the planet', //  5 cs-thegap
+  'Custom invitations don\'t scale.', //  6 cs-invite-operational-insanity-pink
+  'The rise of the personalized invitation feed', //  7 cs-gnr
+  'Community builder product', //  8 cs-community-builder-product
+  'Community builders are the new clubs', //  9 cs-community-builder-leaders
+  'Community builder engine', // 10 cs-community-builder-engine
+  'Old paradigm to new paradigm', // 11 cs-old-new-paradigm
+  'Connection market', // 12 cs-real-world-measurable-market
+  'Connection high vs workout high', // 13 cs-connection-workout-high
+  'Social fitness habit', // 14 cs-social-fitness-high
+  'NEPC proof / proving ground', // 15 cs-11e
+  'Dave Velardo - Founder - CEO', // 16 cs-18-vd4
+  'Referrals power the community sales engine', // 17 cs-invitation-word-of-mouth
+  'Host sparks feeling; GnR compounds it', // 18 cs-fv6-host-abundance-pink
+  'Same courts / utilization / net profit', // 19 cs-revenue-util-profit-blue
+  'Pyramid: competitive apex / social base', // 20 cs-samecourt-pyramid-image-led-pink
+  'Connection value has no ceiling', // 21 cs-connection-value-ladder-pink
+  'Networked reciprocity breakthrough', // 22 cs-networked-reciprocity
+  'Mission: abundant connection', // 23 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -41222,6 +41228,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-feeling-beyond-brand': 'csFeelingAdvance',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkAdvance',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueAdvance',
+    'cs-tesla-community-value-pink': 'csTeslaCommunityValueAdvance',
     'cs-community-builder-product': 'csCommunityBuilderProductAdvance',
     'cs-community-builder-leaders': 'csCommunityBuilderLeadersAdvance',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkAdvance',
@@ -41306,6 +41313,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-feeling-beyond-brand': 'csFeelingReverse',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkReverse',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueReverse',
+    'cs-tesla-community-value-pink': 'csTeslaCommunityValueReverse',
     'cs-community-builder-product': 'csCommunityBuilderProductReverse',
     'cs-community-builder-leaders': 'csCommunityBuilderLeadersReverse',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkReverse',
