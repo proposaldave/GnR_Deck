@@ -38271,6 +38271,45 @@ window.csA7m1Reverse = function() {
 <!-- cs-a19 ("What Runs the World" · Land/Labor/Capital/Information/Attention/Intelligence ? Human Connection)
      ? DELETED 2026-05-02 per Dave (duplicate of cs-mv7 which was already removed). Slide div fully removed. -->
 
+<style>
+  .simple-white-slide{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
+  .simple-white-slide .sws-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.04) contrast(1.04) brightness(.96)}
+  .simple-white-slide .sws-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.78) 34%,rgba(251,247,239,.28) 61%,rgba(26,22,18,.10) 100%),linear-gradient(180deg,rgba(251,247,239,.12),rgba(26,22,18,.16))}
+  .simple-white-slide .sws-eye{position:absolute;top:28px;left:48px;z-index:3;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.72);padding:8px 10px;border-radius:2px;box-shadow:0 10px 26px rgba(26,22,18,.06)}
+  .simple-white-slide .sws-copy{position:absolute;left:78px;top:122px;z-index:3;width:min(930px,49vw);text-shadow:0 1px 0 rgba(251,247,239,.88),0 20px 52px rgba(251,247,239,.56)}
+  .simple-white-slide .sws-copy h1{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.05rem,5.6vw,6.45rem);font-weight:900;line-height:.94;letter-spacing:0;color:#1a1612;text-wrap:balance}
+  .simple-white-slide .sws-copy h1 em{display:block;font-style:italic;color:#b8954a;font-weight:850}
+  .simple-white-slide.sws-dark .sws-wash{background:linear-gradient(90deg,rgba(10,8,6,.70) 0%,rgba(10,8,6,.56) 42%,rgba(10,8,6,.24) 69%,rgba(10,8,6,.54) 100%),radial-gradient(ellipse at 20% 48%,rgba(251,247,239,.10),rgba(251,247,239,0) 48%)}
+  .simple-white-slide.sws-dark .sws-eye{background:transparent;box-shadow:none;color:#c8462c;text-shadow:none}
+  .simple-white-slide.sws-dark .sws-copy{text-shadow:0 4px 28px rgba(0,0,0,.76)}
+  .simple-white-slide.sws-dark .sws-copy h1{color:#fbf7ef}
+  .simple-white-slide.sws-dark .sws-copy h1 em{color:#c8462c}
+  .simple-white-slide.sws-right .sws-copy{left:auto;right:78px;text-align:right}.simple-white-slide.sws-right .sws-copy h1 em{display:inline}
+</style>
+<div class="casey-slide ds-focus simple-white-slide" id="cs-community-reciprocity-simple-white" style="display:none" aria-label="White-dot simplified core problem slide">
+  <img class="sws-bg" src="assets/generated/core-problem/core-problem-reciprocity-bg-v2.png" alt="Trusted small-circle reciprocity breaking as a larger community scales beyond close friends.">
+  <div class="sws-wash"></div>
+  <div class="sws-eye slide-eyebrow">The core problem</div>
+  <section class="sws-copy"><h1>The room knows who should meet. <em>The system doesn&rsquo;t.</em></h1></section>
+</div>
+<div class="casey-slide ds-focus simple-white-slide sws-dark" id="cs-old-new-paradigm-simple-white" style="display:none" aria-label="White-dot simplified old paradigm to new paradigm slide">
+  <img class="sws-bg" src="assets/generated/paradigm-shift/old-new-paradigm-bg-v2.png" alt="Old transactional club software fading into host-led invitation engine and relationship graph community energy.">
+  <div class="sws-wash"></div>
+  <div class="sws-eye slide-eyebrow">Category shift</div>
+  <section class="sws-copy"><h1>Old software books courts. <em>GnR creates pull.</em></h1></section>
+</div>
+<div class="casey-slide ds-focus simple-white-slide" id="cs-connection-market-simple-white" style="display:none" aria-label="White-dot simplified connection market slide">
+  <img class="sws-bg" src="assets/generated/connection-economy/measured-connection-market-bg-v1.png" alt="Pickleball courts and warm community energy as the visible wedge into the broader connection market.">
+  <div class="sws-wash"></div>
+  <div class="sws-eye slide-eyebrow">Connection market</div>
+  <section class="sws-copy"><h1>Pickleball is the wedge. <em>Connection is the market.</em></h1></section>
+</div>
+<div class="casey-slide ds-focus simple-white-slide" id="cs-host-abundance-simple-white" style="display:none" aria-label="White-dot simplified host abundance slide">
+  <img class="sws-bg" src="assets/generated/community-builder/community-builder-host-court-landing-seed-v1.jpg" alt="Open-hearted pickleball host welcoming a group at a night court community event.">
+  <div class="sws-wash"></div>
+  <div class="sws-eye slide-eyebrow">Connection engine</div>
+  <section class="sws-copy"><h1>The host creates the spark. <em>GnR makes it repeatable.</em></h1></section>
+</div>
 <script>
 // Slide nav order.
 // ACT 1 (universal truth + gap): cs-1 Title ? cs-1a Science ? cs-1b Missing Category ? cs-2 Previous Era
@@ -38312,10 +38351,12 @@ const TOTAL = SLIDE_ORDER.length;
 const SLIDE_ALTS = {
   1: ['cs-value-choice-image-annotated-pink'],
   3: ['cs-1m8'],
-  4: ['cs-p10x-community-problem'],
+  4: ['cs-community-reciprocity-simple-white', 'cs-p10x-community-problem'],
+  11: ['cs-old-new-paradigm-simple-white'],
+  12: ['cs-connection-market-simple-white'],
   14: ['cs-fv6-referral-engine-blue'],
   15: ['cs-fv6-img'],
-  18: ['cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
+  18: ['cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -40749,7 +40790,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isPurpleAlt = (/^cs-p10x-/.test(altId) || altId === 'cs-pb-silliness-purple-chaotic-bounce' || altId === 'cs-pb-silliness-purple-rotation-confusion' || altId === 'cs-pb-silliness-generated-sections-pink' || altId === 'cs-pb-silliness-generated-kitchen-pink' || altId === 'cs-pb-silliness-generated-apology-pink' || altId === 'cs-pb-silliness-generated-rotation-pink' || altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
     const isBlueAlt = (/^cs-samecourt-pyramid-blue-/.test(altId) || altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social' || altId === 'cs-revenue-util-profit-blue' || altId === 'cs-1m8-invite-graph-blue' || altId === 'cs-fv6-referral-engine-blue' || altId === 'cs-app-store-people-blue');
-    const isWhiteAlt = (altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market' || altId === 'cs-pb-silliness-white-mosaic' || altId === 'cs-pb-silliness-white-social-test');
+    const isWhiteAlt = (altId === 'cs-community-reciprocity-simple-white' || altId === 'cs-old-new-paradigm-simple-white' || altId === 'cs-connection-market-simple-white' || altId === 'cs-host-abundance-simple-white' || altId === 'cs-referral-product-spec-white' || altId === 'cs-magnetic-reciprocity-system' || altId === 'cs-magnetic-human-value-market' || altId === 'cs-pb-silliness-white-mosaic' || altId === 'cs-pb-silliness-white-social-test');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     const isGreenAlt = /^cs-pb-silliness-.*-green$/.test(altId) || (Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId));
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
