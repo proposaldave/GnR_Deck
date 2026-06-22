@@ -30761,7 +30761,89 @@ window.csFeatureStageUnlocksAdvance=function(){const s=document.getElementById('
   </section>
 </div>
 
-<!-- cs-referral-community-intelligence - MERGED MAIN slide: referral sales engine + community intelligence [Codex 2026-06-22] -->
+<!-- cs-referral-community-fullbleed - MAIN review run: full-slide referral engine + community intelligence backgrounds [Codex 2026-06-22] -->
+<style>
+  .rci-fullbleed{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#1a1612!important;color:#fbf7ef;cursor:pointer}
+  .rci-fullbleed .rcif-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.03) contrast(1.04) brightness(.95)}
+  .rci-fullbleed .rcif-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,14,25,.76) 0%,rgba(6,14,25,.52) 27%,rgba(6,14,25,.12) 49%,rgba(26,22,18,.04) 76%,rgba(26,22,18,.15) 100%),linear-gradient(180deg,rgba(26,22,18,.02),rgba(26,22,18,.16));pointer-events:none}
+  .rci-fullbleed .rcif-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;text-shadow:0 2px 16px rgba(251,247,239,.25)}
+  .rci-fullbleed .rcif-stage{position:absolute;inset:0;z-index:3;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .74s cubic-bezier(.22,1,.36,1),transform .74s cubic-bezier(.22,1,.36,1),visibility 0s linear .74s;pointer-events:none}
+  .rci-fullbleed[data-shown="1"] .rcif-stage{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  .rci-fullbleed .rcif-title{position:absolute;left:70px;top:320px;width:min(660px,36vw);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.1rem,5.55vw,6.15rem);line-height:.92;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance;text-shadow:0 24px 58px rgba(0,0,0,.56)}
+  .rci-fullbleed .rcif-title em{display:block;margin-top:.08em;font-style:italic;color:#f0d27f;font-weight:850}
+  .rci-fullbleed .rcif-chip{position:absolute;z-index:4;display:grid;place-items:center;min-width:190px;min-height:72px;padding:18px 22px;box-sizing:border-box;border:1px solid rgba(184,149,74,.38);background:rgba(251,247,239,.86);box-shadow:0 18px 46px rgba(26,22,18,.16);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.18rem;line-height:1.02;font-weight:900;text-align:center;color:#1a1612}
+  .rci-fullbleed .rcif-chip > div > span{display:block;margin-bottom:7px;font-family:'Manrope',sans-serif;font-size:.49rem;font-weight:950;letter-spacing:.17em;text-transform:uppercase;color:#c8462c}
+  .rci-fullbleed .rcif-center b span{display:inline;margin:0;font:inherit;letter-spacing:0;text-transform:none}
+  .rci-fullbleed .rcif-left{left:45.2%;top:38.2%;transform:translate(-50%,-50%);border-top:4px solid #c8462c}
+  .rci-fullbleed .rcif-right{left:78.4%;top:38.2%;transform:translate(-50%,-50%);border-top:4px solid #5B8FD4}
+  .rci-fullbleed .rcif-center{left:62.2%;top:57.4%;transform:translate(-50%,-50%);min-width:145px;min-height:170px;border-radius:999px;background:rgba(26,22,18,.88);color:#fbf7ef;border-color:rgba(184,149,74,.48)}
+  .rci-fullbleed .rcif-center b{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.12rem;line-height:1}.rci-fullbleed .rcif-center .g{color:#5B8FD4}.rci-fullbleed .rcif-center .n{color:#fbf7ef;font-style:italic;font-weight:600}.rci-fullbleed .rcif-center .r{color:#C8462C}
+  .rci-fullbleed .rcif-center small{display:block;margin-top:10px;font-family:'Manrope',sans-serif;font-size:.47rem;font-weight:950;letter-spacing:.15em;text-transform:uppercase;color:#f0d27f}
+  #cs-referral-community-fullbleed-v2 .rcif-wash{background:linear-gradient(90deg,rgba(251,247,239,.46) 0%,rgba(251,247,239,.30) 26%,rgba(251,247,239,.04) 46%,rgba(26,22,18,.00) 74%,rgba(26,22,18,.10) 100%),linear-gradient(180deg,rgba(251,247,239,.02),rgba(26,22,18,.08))}
+  #cs-referral-community-fullbleed-v2 .rcif-title{color:#1a1612;text-shadow:0 18px 54px rgba(251,247,239,.62)}
+  #cs-referral-community-fullbleed-v2 .rcif-title em{color:#b8954a}
+  #cs-referral-community-fullbleed-v2 .rcif-left{left:42.8%;top:39%}
+  #cs-referral-community-fullbleed-v2 .rcif-right{left:75%;top:38.2%}
+  #cs-referral-community-fullbleed-v2 .rcif-center{left:58.9%;top:46.8%}
+  #cs-referral-community-fullbleed-v3 .rcif-wash{background:linear-gradient(90deg,rgba(6,14,25,.72) 0%,rgba(6,14,25,.50) 27%,rgba(6,14,25,.14) 48%,rgba(26,22,18,.00) 76%,rgba(26,22,18,.08) 100%),linear-gradient(180deg,rgba(26,22,18,.00),rgba(26,22,18,.12))}
+  #cs-referral-community-fullbleed-v3 .rcif-title{top:292px;color:#fbf7ef;text-shadow:0 24px 58px rgba(0,0,0,.58)}
+  #cs-referral-community-fullbleed-v3 .rcif-title em{color:#f0d27f}
+  #cs-referral-community-fullbleed-v3 .rcif-left{left:32.6%;top:37.2%}
+  #cs-referral-community-fullbleed-v3 .rcif-right{left:78.6%;top:37.2%}
+  #cs-referral-community-fullbleed-v3 .rcif-center{left:55.7%;top:50.2%}
+  html[data-export="1"] .rci-fullbleed .rcif-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+  @media (max-width:1500px){
+    .rci-fullbleed .rcif-title{left:58px;top:270px;width:min(540px,36vw);font-size:clamp(3.28rem,4.6vw,5rem)}
+    .rci-fullbleed .rcif-chip{min-width:160px;min-height:62px;padding:14px 18px;font-size:1rem}
+    .rci-fullbleed .rcif-center{min-width:120px;min-height:148px}
+    .rci-fullbleed .rcif-center b{font-size:1.7rem}
+  }
+</style>
+<div class="casey-slide ds-focus rci-fullbleed" id="cs-referral-community-fullbleed-v1" data-shown="0" onclick="if(window.csReferralCommunityFullbleed1Advance&&window.csReferralCommunityFullbleed1Advance()) event.stopPropagation()" style="display:none" aria-label="Full-bleed candidate one for referral sales engine becoming community intelligence">
+  <img class="rcif-bg" src="assets/generated/referral-community-intelligence/referral-community-fullbleed-v1.png" alt="Full-bleed double loop background showing a human referral loop feeding a community intelligence loop.">
+  <div class="rcif-wash"></div>
+  <div class="rcif-eye">Community intelligence</div>
+  <section class="rcif-stage">
+    <h1 class="rcif-title">The sales engine creates the graph.<em>The graph makes every room smarter.</em></h1>
+    <div class="rcif-chip rcif-left"><div><span>Human loop</span>Referral sales engine</div></div>
+    <div class="rcif-chip rcif-center"><div><b><span class="g">G</span><span class="n">n</span><span class="r">R</span></b><small>learns the room</small></div></div>
+    <div class="rcif-chip rcif-right"><div><span>Room loop</span>Community intelligence</div></div>
+  </section>
+</div>
+<div class="casey-slide ds-focus rci-fullbleed" id="cs-referral-community-fullbleed-v2" data-shown="0" onclick="if(window.csReferralCommunityFullbleed2Advance&&window.csReferralCommunityFullbleed2Advance()) event.stopPropagation()" style="display:none" aria-label="Full-bleed candidate two for referral sales engine becoming community intelligence">
+  <img class="rcif-bg" src="assets/generated/referral-community-intelligence/referral-community-fullbleed-v2.png" alt="Aerial full-bleed double loop background showing referral signals and community intelligence across a pickleball club.">
+  <div class="rcif-wash"></div>
+  <div class="rcif-eye">Community intelligence</div>
+  <section class="rcif-stage">
+    <h1 class="rcif-title">The sales engine creates the graph.<em>The graph makes every room smarter.</em></h1>
+    <div class="rcif-chip rcif-left"><div><span>Human loop</span>Referral sales engine</div></div>
+    <div class="rcif-chip rcif-center"><div><b><span class="g">G</span><span class="n">n</span><span class="r">R</span></b><small>learns the room</small></div></div>
+    <div class="rcif-chip rcif-right"><div><span>Room loop</span>Community intelligence</div></div>
+  </section>
+</div>
+<div class="casey-slide ds-focus rci-fullbleed" id="cs-referral-community-fullbleed-v3" data-shown="0" onclick="if(window.csReferralCommunityFullbleed3Advance&&window.csReferralCommunityFullbleed3Advance()) event.stopPropagation()" style="display:none" aria-label="Full-bleed candidate three for referral sales engine becoming community intelligence">
+  <img class="rcif-bg" src="assets/generated/referral-community-intelligence/referral-community-fullbleed-v3.png" alt="Premium full-bleed double flywheel background connecting referral sales with community intelligence.">
+  <div class="rcif-wash"></div>
+  <div class="rcif-eye">Community intelligence</div>
+  <section class="rcif-stage">
+    <h1 class="rcif-title">The sales engine creates the graph.<em>The graph makes every room smarter.</em></h1>
+    <div class="rcif-chip rcif-left"><div><span>Human loop</span>Referral sales engine</div></div>
+    <div class="rcif-chip rcif-center"><div><b><span class="g">G</span><span class="n">n</span><span class="r">R</span></b><small>learns the room</small></div></div>
+    <div class="rcif-chip rcif-right"><div><span>Room loop</span>Community intelligence</div></div>
+  </section>
+</div>
+<script>
+function csReferralCommunityFullbleedAdvance(id){ const s=document.getElementById(id); if(!s || s.getAttribute('data-shown')==='1') return false; s.setAttribute('data-shown','1'); return true; }
+function csReferralCommunityFullbleedReverse(id){ const s=document.getElementById(id); if(!s || s.getAttribute('data-shown')!=='1') return false; s.setAttribute('data-shown','0'); return true; }
+window.csReferralCommunityFullbleed1Advance = function(){ return csReferralCommunityFullbleedAdvance('cs-referral-community-fullbleed-v1'); };
+window.csReferralCommunityFullbleed2Advance = function(){ return csReferralCommunityFullbleedAdvance('cs-referral-community-fullbleed-v2'); };
+window.csReferralCommunityFullbleed3Advance = function(){ return csReferralCommunityFullbleedAdvance('cs-referral-community-fullbleed-v3'); };
+window.csReferralCommunityFullbleed1Reverse = function(){ return csReferralCommunityFullbleedReverse('cs-referral-community-fullbleed-v1'); };
+window.csReferralCommunityFullbleed2Reverse = function(){ return csReferralCommunityFullbleedReverse('cs-referral-community-fullbleed-v2'); };
+window.csReferralCommunityFullbleed3Reverse = function(){ return csReferralCommunityFullbleedReverse('cs-referral-community-fullbleed-v3'); };
+</script>
+
+<!-- cs-referral-community-intelligence - PINK-DOT ALT: referral sales engine + community intelligence [Codex 2026-06-22] -->
 <style>
   #cs-referral-community-intelligence{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#1a1612!important;color:#fbf7ef;cursor:pointer}
   #cs-referral-community-intelligence .rci-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.04) contrast(1.04) brightness(.94)}
@@ -38451,7 +38533,9 @@ const SLIDE_ORDER = [
   'cs-social-fitness-high',
   'cs-11e',
   'cs-18-vd4',
-  'cs-referral-community-intelligence',
+  'cs-referral-community-fullbleed-v1',
+  'cs-referral-community-fullbleed-v2',
+  'cs-referral-community-fullbleed-v3',
   'cs-revenue-util-profit-blue',
   'cs-samecourt-pyramid-image-led-pink',
   'cs-connection-value-ladder-pink',
@@ -38472,7 +38556,7 @@ const SLIDE_ALTS = {
   12: ['cs-connection-market-simple-white'],
   14: ['cs-fv6-referral-engine-blue'],
   15: ['cs-fv6-img'],
-  17: ['cs-invitation-word-of-mouth', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
+  17: ['cs-referral-community-intelligence', 'cs-invitation-word-of-mouth', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -40714,12 +40798,14 @@ const slideLabels = [
   'Social fitness habit', // 14 cs-social-fitness-high
   'NEPC proof / proving ground', // 15 cs-11e
   'Dave Velardo - Founder - CEO', // 16 cs-18-vd4
-  'Referral sales engine creates community intelligence', // 17 cs-referral-community-intelligence
-  'Same courts / utilization / net profit', // 18 cs-revenue-util-profit-blue
-  'Pyramid: competitive apex / social base', // 19 cs-samecourt-pyramid-image-led-pink
-  'Connection value has no ceiling', // 20 cs-connection-value-ladder-pink
-  'Networked reciprocity breakthrough', // 21 cs-networked-reciprocity
-  'Mission: abundant connection', // 22 cs-mv6-merge
+  'Community intelligence full-bleed attempt 1', // 17 cs-referral-community-fullbleed-v1
+  'Community intelligence full-bleed attempt 2', // 18 cs-referral-community-fullbleed-v2
+  'Community intelligence full-bleed attempt 3', // 19 cs-referral-community-fullbleed-v3
+  'Same courts / utilization / net profit', // 20 cs-revenue-util-profit-blue
+  'Pyramid: competitive apex / social base', // 21 cs-samecourt-pyramid-image-led-pink
+  'Connection value has no ceiling', // 22 cs-connection-value-ladder-pink
+  'Networked reciprocity breakthrough', // 23 cs-networked-reciprocity
+  'Mission: abundant connection', // 24 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -41420,6 +41506,9 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-gnr': 'csGnrAdvance',
     'cs-gnr-connected-pink': 'csGnrConnectedAdvance',
     'cs-invitation-word-of-mouth': 'csInvitationWordOfMouthAdvance',
+    'cs-referral-community-fullbleed-v1': 'csReferralCommunityFullbleed1Advance',
+    'cs-referral-community-fullbleed-v2': 'csReferralCommunityFullbleed2Advance',
+    'cs-referral-community-fullbleed-v3': 'csReferralCommunityFullbleed3Advance',
     'cs-referral-community-intelligence': 'csReferralCommunityIntelligenceAdvance',
     'cs-programmable-invitations': 'csProgrammableInvitationsAdvance',
     'cs-pbfirst': 'csPbfirstAdvance',
@@ -41505,6 +41594,9 @@ window.caseyReverseActiveReveal = function() {
     'cs-app-store-people-blue': 'csAppStorePeopleBlueReverse',
     'cs-gnr': 'csGnrReverse',
     'cs-gnr-connected-pink': 'csGnrConnectedReverse',
+    'cs-referral-community-fullbleed-v1': 'csReferralCommunityFullbleed1Reverse',
+    'cs-referral-community-fullbleed-v2': 'csReferralCommunityFullbleed2Reverse',
+    'cs-referral-community-fullbleed-v3': 'csReferralCommunityFullbleed3Reverse',
     'cs-referral-community-intelligence': 'csReferralCommunityIntelligenceReverse',
     'cs-pbfirst': 'csPbfirstReverse',
     'cs-samecourt': 'csSamecourtReverse',
