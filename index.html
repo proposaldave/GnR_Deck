@@ -8248,14 +8248,14 @@ window.cs1m5Reverse = function() {
   #cs-loneliness-epidemic .lonely-fill.hot{background:#c8462c;box-shadow:0 6px 18px rgba(200,70,44,.20)}
   #cs-loneliness-epidemic .lonely-val{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.18rem;font-weight:870;color:#1a1612}
   #cs-loneliness-epidemic .lonely-source{margin-top:18px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:rgba(26,22,18,.46)}
-  #cs-loneliness-epidemic .lonely-hint{position:absolute;left:50%;bottom:44px;z-index:4;transform:translateX(-50%);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.2rem;color:#b8954a;line-height:1;opacity:.75;transition:opacity .35s ease}
+  #cs-loneliness-epidemic .lonely-hint{display:none}
   #cs-loneliness-epidemic[data-stage="1"] .lonely-hint{opacity:0}
   html[data-export="1"] #cs-loneliness-epidemic .lonely-content{opacity:1!important;visibility:visible!important;transform:none!important}
   html[data-export="1"] #cs-loneliness-epidemic .lonely-hint{display:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-loneliness-epidemic" data-stage="0" onclick="if(window.csLonelinessEpidemicAdvance && window.csLonelinessEpidemicAdvance()) event.stopPropagation()" style="display:none">
-  <img class="lonely-bg" src="assets/generated/loneliness-epidemic/loneliness-epidemic-bg-v5.svg" alt="Fragmented real-world community with many nearby people and broken local connection paths">
-  <div class="lonely-eye">LONELINESS EPIDEMIC</div>
+  <img class="lonely-bg" src="assets/generated/loneliness-epidemic/loneliness-community-empty-v1.png" alt="Empty community club after hours with one person sitting alone, emphasizing loneliness and emotional isolation">
+  <div class="slide-eyebrow lonely-eye">LONELINESS EPIDEMIC</div>
   <div class="lonely-content">
     <section>
       <h1 class="lonely-head">America has more contacts and <em>fewer people to call.</em></h1>
@@ -38552,6 +38552,7 @@ const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
   'cs-tesla-community-value-pink',
   'cs-connection-value-ladder-pink',
+  'cs-loneliness-epidemic',
   'cs-1m8-invite-graph-blue',
   'cs-community-reciprocity-problem',
   'cs-thegap',
@@ -38583,13 +38584,13 @@ const TOTAL = SLIDE_ORDER.length;
 const SLIDE_ALTS = {
   1: ['cs-value-choice-image-annotated-pink'],
   3: ['cs-connection-value-scale-tipped-dark-pink', 'cs-connection-value-scale-tipped-cream-pink', 'cs-connection-pickleball-merge-pyramid-pink', 'cs-connection-pickleball-merge-scale-pink', 'cs-connection-pickleball-merge-map-pink'],
-  4: ['cs-1m8'],
-  5: ['cs-community-reciprocity-simple-white', 'cs-p10x-community-problem'],
-  12: ['cs-old-new-paradigm-simple-white'],
-  13: ['cs-connection-market-simple-white'],
-  15: ['cs-fv6-referral-engine-blue'],
-  16: ['cs-fv6-img'],
-  18: ['cs-referral-community-intelligence', 'cs-invitation-word-of-mouth', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
+  5: ['cs-1m8'],
+  6: ['cs-community-reciprocity-simple-white', 'cs-p10x-community-problem'],
+  13: ['cs-old-new-paradigm-simple-white'],
+  14: ['cs-connection-market-simple-white'],
+  16: ['cs-fv6-referral-engine-blue'],
+  17: ['cs-fv6-img'],
+  19: ['cs-referral-community-intelligence', 'cs-invitation-word-of-mouth', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -40818,27 +40819,28 @@ const slideLabels = [
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
   'Market size: people spend fortunes trying to feel alive', //  2 cs-tesla-community-value-pink
   'Connection value has no ceiling', //  3 cs-connection-value-ladder-pink
-  'The invitation engine for community builders', //  4 cs-1m8-invite-graph-blue
-  'Core problem: reciprocal community fit', //  5 cs-community-reciprocity-problem
-  'The most networkable, untapped dataset on the planet', //  6 cs-thegap
-  'Custom invitations don\'t scale.', //  7 cs-invite-operational-insanity-pink
-  'The rise of the personalized invitation feed', //  8 cs-gnr
-  'Community builder product', //  9 cs-community-builder-product
-  'Community builders are the new clubs', // 10 cs-community-builder-leaders
-  'Community builder engine', // 11 cs-community-builder-engine
-  'Old paradigm to new paradigm', // 12 cs-old-new-paradigm
-  'Connection market', // 13 cs-real-world-measurable-market
-  'Connection high vs workout high', // 14 cs-connection-workout-high
-  'Social fitness habit', // 15 cs-social-fitness-high
-  'NEPC proof / proving ground', // 16 cs-11e
-  'Dave Velardo - Founder - CEO', // 17 cs-18-vd4
-  'Community intelligence full-bleed attempt 1', // 18 cs-referral-community-fullbleed-v1
-  'Community intelligence full-bleed attempt 2', // 19 cs-referral-community-fullbleed-v2
-  'Community intelligence full-bleed attempt 3', // 20 cs-referral-community-fullbleed-v3
-  'Same courts / utilization / net profit', // 21 cs-revenue-util-profit-blue
-  'Pyramid: match-first apex / connection-first base', // 22 cs-samecourt-pyramid-image-led-pink
-  'Networked reciprocity breakthrough', // 23 cs-networked-reciprocity
-  'Mission: abundant connection', // 24 cs-mv6-merge
+  'Loneliness epidemic', //  4 cs-loneliness-epidemic
+  'The invitation engine for community builders', //  5 cs-1m8-invite-graph-blue
+  'Core problem: reciprocal community fit', //  6 cs-community-reciprocity-problem
+  'The most networkable, untapped dataset on the planet', //  7 cs-thegap
+  'Custom invitations don\'t scale.', //  8 cs-invite-operational-insanity-pink
+  'The rise of the personalized invitation feed', //  9 cs-gnr
+  'Community builder product', // 10 cs-community-builder-product
+  'Community builders are the new clubs', // 11 cs-community-builder-leaders
+  'Community builder engine', // 12 cs-community-builder-engine
+  'Old paradigm to new paradigm', // 13 cs-old-new-paradigm
+  'Connection market', // 14 cs-real-world-measurable-market
+  'Connection high vs workout high', // 15 cs-connection-workout-high
+  'Social fitness habit', // 16 cs-social-fitness-high
+  'NEPC proof / proving ground', // 17 cs-11e
+  'Dave Velardo - Founder - CEO', // 18 cs-18-vd4
+  'Community intelligence full-bleed attempt 1', // 19 cs-referral-community-fullbleed-v1
+  'Community intelligence full-bleed attempt 2', // 20 cs-referral-community-fullbleed-v2
+  'Community intelligence full-bleed attempt 3', // 21 cs-referral-community-fullbleed-v3
+  'Same courts / utilization / net profit', // 22 cs-revenue-util-profit-blue
+  'Pyramid: match-first apex / connection-first base', // 23 cs-samecourt-pyramid-image-led-pink
+  'Networked reciprocity breakthrough', // 24 cs-networked-reciprocity
+  'Mission: abundant connection', // 25 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
