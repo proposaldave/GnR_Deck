@@ -30761,6 +30761,62 @@ window.csFeatureStageUnlocksAdvance=function(){const s=document.getElementById('
   </section>
 </div>
 
+<!-- cs-referral-community-intelligence - MERGED MAIN slide: referral sales engine + community intelligence [Codex 2026-06-22] -->
+<style>
+  #cs-referral-community-intelligence{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#1a1612!important;color:#fbf7ef;cursor:pointer}
+  #cs-referral-community-intelligence .rci-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.04) contrast(1.04) brightness(.94)}
+  #cs-referral-community-intelligence .rci-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,16,29,.88) 0%,rgba(7,17,30,.74) 28%,rgba(7,17,30,.30) 47%,rgba(26,22,18,.06) 78%,rgba(26,22,18,.18) 100%),radial-gradient(ellipse at 52% 46%,rgba(184,149,74,.10),rgba(184,149,74,0) 38%),linear-gradient(180deg,rgba(26,22,18,.02),rgba(26,22,18,.24));pointer-events:none}
+  #cs-referral-community-intelligence .rci-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;text-shadow:0 2px 16px rgba(251,247,239,.22)}
+  #cs-referral-community-intelligence .rci-stage{position:absolute;inset:0;z-index:3;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .76s cubic-bezier(.22,1,.36,1),transform .76s cubic-bezier(.22,1,.36,1),visibility 0s linear .76s;pointer-events:none}
+  #cs-referral-community-intelligence[data-shown="1"] .rci-stage{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-referral-community-intelligence .rci-copy{position:absolute;left:74px;top:350px;width:min(650px,34vw);text-shadow:0 24px 58px rgba(0,0,0,.52)}
+  #cs-referral-community-intelligence .rci-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,5.6vw,6.35rem);line-height:.92;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance}
+  #cs-referral-community-intelligence .rci-title em{display:block;margin-top:.08em;font-style:italic;color:#f0d27f;font-weight:850}
+  #cs-referral-community-intelligence .rci-sub{margin:28px 0 0;max-width:610px;font-family:'Manrope',sans-serif;font-size:clamp(.98rem,1.16vw,1.24rem);line-height:1.44;font-weight:820;color:rgba(251,247,239,.80)}
+  #cs-referral-community-intelligence .rci-loop-label{position:absolute;z-index:4;width:250px;min-height:250px;transform:translate(-50%,-50%);display:grid;place-items:center;text-align:center;border-radius:50%;background:radial-gradient(circle at 50% 36%,rgba(255,252,244,.95),rgba(250,242,225,.74));border:1px solid rgba(184,149,74,.34);box-shadow:0 28px 72px rgba(26,22,18,.14),0 0 0 14px rgba(184,149,74,.08);color:#1a1612;backdrop-filter:blur(1px)}
+  #cs-referral-community-intelligence .rci-loop-label .rci-num{display:block;margin-bottom:9px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c}
+  #cs-referral-community-intelligence .rci-loop-label h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2rem;line-height:.96;font-weight:900;color:#1a1612;text-wrap:balance}
+  #cs-referral-community-intelligence .rci-loop-label p{margin:12px 0 0;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:950;letter-spacing:.17em;text-transform:uppercase;color:#b8954a}
+  #cs-referral-community-intelligence .rci-left{left:51.6%;top:45.8%;border-top:5px solid #c8462c}
+  #cs-referral-community-intelligence .rci-right{left:78.3%;top:45.8%;border-top:5px solid #5B8FD4}
+  #cs-referral-community-intelligence .rci-bridge{position:absolute;left:65.2%;top:45.8%;z-index:5;transform:translate(-50%,-50%);width:104px;min-height:246px;border-radius:999px;background:linear-gradient(180deg,rgba(26,22,18,.96),rgba(26,22,18,.86));box-shadow:0 26px 66px rgba(26,22,18,.28),0 0 0 1px rgba(184,149,74,.32) inset;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;color:#fbf7ef}
+  #cs-referral-community-intelligence .rci-brand{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.36rem;font-weight:900;line-height:1}#cs-referral-community-intelligence .rci-brand .g{color:#5B8FD4}#cs-referral-community-intelligence .rci-brand .n{color:#fbf7ef;font-style:italic;font-weight:600}#cs-referral-community-intelligence .rci-brand .r{color:#C8462C}
+  #cs-referral-community-intelligence .rci-bridge span{font-family:'Manrope',sans-serif;font-size:.50rem;font-weight:950;letter-spacing:.15em;line-height:1.4;text-transform:uppercase;color:#f0d27f}
+  #cs-referral-community-intelligence .rci-flow{position:absolute;left:44.2%;right:6.2%;bottom:82px;z-index:4;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+  #cs-referral-community-intelligence .rci-flow div{min-height:58px;display:grid;place-items:center;border:1px solid rgba(184,149,74,.32);background:rgba(251,247,239,.76);box-shadow:0 18px 38px rgba(26,22,18,.10);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.22rem;font-weight:900;color:#1a1612;text-align:center}
+  #cs-referral-community-intelligence .rci-flow div:nth-child(1){border-top:4px solid #5B8FD4}#cs-referral-community-intelligence .rci-flow div:nth-child(2){border-top:4px solid #b8954a}#cs-referral-community-intelligence .rci-flow div:nth-child(3){border-top:4px solid #c8462c}#cs-referral-community-intelligence .rci-flow div:nth-child(4){border-top:4px solid #5B8FD4}#cs-referral-community-intelligence .rci-flow div:nth-child(5){border-top:4px solid #1a1612}
+  html[data-export="1"] #cs-referral-community-intelligence .rci-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+  @media (max-width:1500px){
+    #cs-referral-community-intelligence .rci-copy{left:60px;top:300px;width:min(540px,35vw)}
+    #cs-referral-community-intelligence .rci-title{font-size:clamp(3.35rem,4.8vw,5.1rem)}
+    #cs-referral-community-intelligence .rci-sub{font-size:clamp(.86rem,1.02vw,1.04rem);max-width:500px}
+    #cs-referral-community-intelligence .rci-loop-label{width:202px;min-height:202px}
+    #cs-referral-community-intelligence .rci-loop-label h2{font-size:1.58rem}
+    #cs-referral-community-intelligence .rci-bridge{width:86px;min-height:204px}
+    #cs-referral-community-intelligence .rci-brand{font-size:1.92rem}
+    #cs-referral-community-intelligence .rci-flow{bottom:64px;gap:7px}
+    #cs-referral-community-intelligence .rci-flow div{min-height:48px;font-size:1.02rem}
+  }
+</style>
+<div class="casey-slide ds-focus" id="cs-referral-community-intelligence" data-shown="0" onclick="if(window.csReferralCommunityIntelligenceAdvance&&window.csReferralCommunityIntelligenceAdvance()) event.stopPropagation()" style="display:none" aria-label="Merged slide showing referral sales engine becoming community intelligence">
+  <img class="rci-bg" src="assets/generated/referral-community-intelligence/referral-community-intelligence-bg-v1.png" alt="Two luminous loops over a warm pickleball community: one referral loop feeding one community intelligence loop.">
+  <div class="rci-wash"></div>
+  <div class="rci-eye">Community intelligence</div>
+  <section class="rci-stage">
+    <div class="rci-copy">
+      <h1 class="rci-title">The sales engine creates the graph.<em>The graph makes every room smarter.</em></h1>
+      <p class="rci-sub">Every invite, yes, return, and referral teaches GnR who belongs together.</p>
+    </div>
+    <div class="rci-loop-label rci-left"><div><span class="rci-num">01</span><h2>Referral sales engine</h2><p>human loop</p></div></div>
+    <div class="rci-bridge"><div class="rci-brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div><span>learns the room</span></div>
+    <div class="rci-loop-label rci-right"><div><span class="rci-num">02</span><h2>Community intelligence</h2><p>learns the room</p></div></div>
+    <div class="rci-flow" aria-label="Invitation engine loop"><div>Invite</div><div>Accept</div><div>Show up</div><div>Return</div><div>Refer</div></div>
+  </section>
+</div>
+<script>
+window.csReferralCommunityIntelligenceAdvance = function(){ const s=document.getElementById('cs-referral-community-intelligence'); if(!s || s.getAttribute('data-shown')==='1') return false; s.setAttribute('data-shown','1'); return true; };
+window.csReferralCommunityIntelligenceReverse = function(){ const s=document.getElementById('cs-referral-community-intelligence'); if(!s || s.getAttribute('data-shown')!=='1') return false; s.setAttribute('data-shown','0'); return true; };
+</script>
 <!-- cs-fv6-host-abundance-pink - PINK-DOT ALT for cs-fv6-img [Codex 2026-06-20]
      Host-first rewrite inspired by the GnT AI landing seed: open-hearted community builder
      sparks belonging first; GnR then measures, graphs, reciprocates, predicts, compounds to abundance. -->
@@ -30864,7 +30920,7 @@ window.csFeatureStageUnlocksAdvance=function(){const s=document.getElementById('
             <circle cx="226" cy="240" r="176"/>
             <path d="M226 62 C360 64 432 186 389 312 C346 439 185 456 89 365 C-6 274 28 107 154 69" marker-end="url(#fh-blue-arrow)"/>
           </svg>
-          <div class="fh-loop-title"><div><b>Connection intelligence</b><span>learns the room</span></div></div>
+          <div class="fh-loop-title"><div><b>Community intelligence</b><span>learns the room</span></div></div>
           <div class="fh-node blue measure" data-pos="g1"><div class="fh-num">06</div><strong>Measure who connects</strong><small>invites &middot; returns &middot; referrals</small></div>
           <div class="fh-node blue" data-pos="g2"><div class="fh-num">07</div><strong>Map the room</strong></div>
           <div class="fh-node gold" data-pos="g3"><div class="fh-num">08</div><strong>Coordinate next</strong></div>
@@ -38395,8 +38451,7 @@ const SLIDE_ORDER = [
   'cs-social-fitness-high',
   'cs-11e',
   'cs-18-vd4',
-  'cs-invitation-word-of-mouth',
-  'cs-fv6-host-abundance-pink',
+  'cs-referral-community-intelligence',
   'cs-revenue-util-profit-blue',
   'cs-samecourt-pyramid-image-led-pink',
   'cs-connection-value-ladder-pink',
@@ -38417,7 +38472,7 @@ const SLIDE_ALTS = {
   12: ['cs-connection-market-simple-white'],
   14: ['cs-fv6-referral-engine-blue'],
   15: ['cs-fv6-img'],
-  18: ['cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
+  17: ['cs-invitation-word-of-mouth', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -40659,13 +40714,12 @@ const slideLabels = [
   'Social fitness habit', // 14 cs-social-fitness-high
   'NEPC proof / proving ground', // 15 cs-11e
   'Dave Velardo - Founder - CEO', // 16 cs-18-vd4
-  'Referrals power the community sales engine', // 17 cs-invitation-word-of-mouth
-  'Host sparks feeling; GnR compounds it', // 18 cs-fv6-host-abundance-pink
-  'Same courts / utilization / net profit', // 19 cs-revenue-util-profit-blue
-  'Pyramid: competitive apex / social base', // 20 cs-samecourt-pyramid-image-led-pink
-  'Connection value has no ceiling', // 21 cs-connection-value-ladder-pink
-  'Networked reciprocity breakthrough', // 22 cs-networked-reciprocity
-  'Mission: abundant connection', // 23 cs-mv6-merge
+  'Referral sales engine creates community intelligence', // 17 cs-referral-community-intelligence
+  'Same courts / utilization / net profit', // 18 cs-revenue-util-profit-blue
+  'Pyramid: competitive apex / social base', // 19 cs-samecourt-pyramid-image-led-pink
+  'Connection value has no ceiling', // 20 cs-connection-value-ladder-pink
+  'Networked reciprocity breakthrough', // 21 cs-networked-reciprocity
+  'Mission: abundant connection', // 22 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -40845,7 +40899,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
     const isGeneratedSillinessPinkAlt = /^cs-pb-silliness-generated-/.test(altId);
     const isInvitationPinkAlt = /^cs-invite-/.test(altId);
-    const isPinkAlt = (altId === 'cs-pb-silliness-purple-net-apology' || isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-magnetic' || altId === 'cs-work-evolution-prelude' || altId === 'cs-market-two-economics' || altId === 'cs-real-world-measurable-market' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-feeling-source-pink' || altId === 'cs-best-match-connection-value-pink' || altId === 'cs-connection-value-ladder-pink' || altId === 'cs-game-iq-community-eq-pink' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-samecourt-pyramid-white2' || altId === 'cs-samecourt-pyramid-previous-pink' || altId === 'cs-samecourt-pyramid-white2-pink' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-fv6-host-abundance-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-tesla-community-value-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
+    const isPinkAlt = (altId === 'cs-pb-silliness-purple-net-apology' || isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-magnetic' || altId === 'cs-work-evolution-prelude' || altId === 'cs-market-two-economics' || altId === 'cs-real-world-measurable-market' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-feeling-source-pink' || altId === 'cs-best-match-connection-value-pink' || altId === 'cs-connection-value-ladder-pink' || altId === 'cs-game-iq-community-eq-pink' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-samecourt-pyramid-white2' || altId === 'cs-samecourt-pyramid-previous-pink' || altId === 'cs-samecourt-pyramid-white2-pink' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-fv6-host-abundance-pink' || altId === 'cs-invitation-word-of-mouth' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-tesla-community-value-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (/^cs-p10x-/.test(altId) || altId === 'cs-pb-silliness-purple-chaotic-bounce' || altId === 'cs-pb-silliness-purple-rotation-confusion' || altId === 'cs-pb-silliness-generated-sections-pink' || altId === 'cs-pb-silliness-generated-kitchen-pink' || altId === 'cs-pb-silliness-generated-apology-pink' || altId === 'cs-pb-silliness-generated-rotation-pink' || altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
@@ -41366,6 +41420,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-gnr': 'csGnrAdvance',
     'cs-gnr-connected-pink': 'csGnrConnectedAdvance',
     'cs-invitation-word-of-mouth': 'csInvitationWordOfMouthAdvance',
+    'cs-referral-community-intelligence': 'csReferralCommunityIntelligenceAdvance',
     'cs-programmable-invitations': 'csProgrammableInvitationsAdvance',
     'cs-pbfirst': 'csPbfirstAdvance',
     'cs-samecourt': 'csSamecourtAdvance',
@@ -41450,6 +41505,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-app-store-people-blue': 'csAppStorePeopleBlueReverse',
     'cs-gnr': 'csGnrReverse',
     'cs-gnr-connected-pink': 'csGnrConnectedReverse',
+    'cs-referral-community-intelligence': 'csReferralCommunityIntelligenceReverse',
     'cs-pbfirst': 'csPbfirstReverse',
     'cs-samecourt': 'csSamecourtReverse',
     'cs-social-pickleball-paradigm': 'csSocialPickleballParadigmReverse',
