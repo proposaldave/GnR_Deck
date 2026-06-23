@@ -9025,6 +9025,116 @@ window.cs1m5Reverse = function() {
 })();
 </script>
 
+<!-- cs-ai-live-call-loop + cs-ai-pro-caller-scale - main-deck AI phone call expansion [Codex 2026-06-23] -->
+<style>
+  .ai-call-slide{background:#f3ead8!important;overflow:hidden;color:#1a1612;cursor:pointer}
+  .ai-call-slide .ac-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;filter:saturate(1.04) contrast(1.03) brightness(1.02)}
+  .ai-call-slide:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(251,247,239,.93) 0%,rgba(251,247,239,.78) 34%,rgba(251,247,239,.32) 61%,rgba(251,247,239,.18) 100%);pointer-events:none}
+  .ai-call-slide .ac-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;text-shadow:0 1px 0 rgba(251,247,239,.92),0 8px 20px rgba(26,22,18,.10)}
+  .ai-call-slide .ac-content{position:absolute;inset:0;z-index:3;box-sizing:border-box;padding:92px 94px 62px;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .76s cubic-bezier(.22,1,.36,1),transform .76s cubic-bezier(.22,1,.36,1),visibility 0s linear .76s}
+  .ai-call-slide[data-stage="1"] .ac-content,html[data-export="1"] .ai-call-slide .ac-content{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  .ai-call-slide .ac-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.8rem,5.25vw,6.25rem);line-height:.94;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance;text-shadow:0 2px 0 rgba(251,247,239,.82),0 24px 62px rgba(251,247,239,.68)}
+  .ai-call-slide .ac-title em{font-style:italic;color:#c8462c}
+  .ai-call-slide .ac-kicker{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#b8954a;margin-bottom:14px}
+  .ai-call-slide .ac-panel{background:rgba(251,247,239,.84);border:1px solid rgba(184,149,74,.32);box-shadow:0 22px 62px rgba(26,22,18,.11),inset 0 1px 0 rgba(255,255,255,.64);backdrop-filter:blur(3px);box-sizing:border-box}
+  .ai-call-slide .ac-panel.dark{background:rgba(26,22,18,.88);border-color:rgba(184,149,74,.40);color:#fbf7ef;box-shadow:0 24px 70px rgba(26,22,18,.24)}
+  .ai-call-slide .ac-mini{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;margin-bottom:9px}
+  .ai-call-slide .ac-big{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.12rem;line-height:1.02;font-weight:880;color:#1a1612}
+  .ai-call-slide .ac-copy{font-family:'Manrope',sans-serif;font-size:.96rem;line-height:1.34;font-weight:760;color:rgba(26,22,18,.68)}
+  #cs-ai-live-call-loop .ac-content{display:grid;grid-template-columns:.92fr 1.08fr;grid-template-rows:auto 1fr auto;gap:22px 30px;align-items:stretch}
+  #cs-ai-live-call-loop .ac-title-wrap{grid-column:1 / -1;max-width:1250px}
+  #cs-ai-live-call-loop .ac-today{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-self:start}
+  #cs-ai-live-call-loop .ac-decision{padding:22px 22px 21px;border-top:5px solid #5B8FD4;min-height:150px}
+  #cs-ai-live-call-loop .ac-decision:last-child{border-top-color:#b8954a}
+  #cs-ai-live-call-loop .ac-phone{position:relative;min-height:432px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;overflow:hidden}
+  #cs-ai-live-call-loop .ac-phone:before{content:"";position:absolute;left:50%;top:30px;bottom:30px;width:2px;background:linear-gradient(180deg,transparent,rgba(184,149,74,.48),transparent)}
+  #cs-ai-live-call-loop .ac-callhead{grid-column:1 / -1;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;letter-spacing:.17em;text-transform:uppercase;color:#b8954a;z-index:1}
+  #cs-ai-live-call-loop .ac-bubble{position:relative;z-index:1;padding:16px 17px;background:#fbf7ef;border:1px solid rgba(184,149,74,.25);font-family:'Manrope',sans-serif;font-size:.92rem;line-height:1.26;font-weight:820;color:#1a1612;box-shadow:0 12px 28px rgba(26,22,18,.08)}
+  #cs-ai-live-call-loop .ac-bubble.player{background:rgba(91,143,212,.10);border-color:rgba(91,143,212,.34)}
+  #cs-ai-live-call-loop .ac-wave{grid-column:1 / -1;position:relative;height:64px;margin-top:4px;overflow:hidden;background:linear-gradient(90deg,transparent,rgba(91,143,212,.12),rgba(200,70,44,.16),transparent)}
+  #cs-ai-live-call-loop .ac-wave:before{content:"";position:absolute;left:0;right:0;top:31px;height:3px;background:linear-gradient(90deg,#5B8FD4,#b8954a,#c8462c,#5B8FD4);box-shadow:0 0 18px rgba(200,70,44,.28)}
+  #cs-ai-live-call-loop .ac-wave span{position:absolute;bottom:10px;width:3px;background:#c8462c;border-radius:99px;opacity:.82}.ac-wave span:nth-child(1){left:12%;height:22px}.ac-wave span:nth-child(2){left:18%;height:38px}.ac-wave span:nth-child(3){left:26%;height:18px}.ac-wave span:nth-child(4){left:39%;height:46px}.ac-wave span:nth-child(5){left:51%;height:30px}.ac-wave span:nth-child(6){left:63%;height:52px}.ac-wave span:nth-child(7){left:72%;height:21px}.ac-wave span:nth-child(8){left:84%;height:42px}
+  #cs-ai-live-call-loop .ac-adapt{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;grid-column:1 / -1}
+  #cs-ai-live-call-loop .ac-step{padding:18px 16px 17px;border-top:4px solid #c8462c;min-height:118px}
+  #cs-ai-live-call-loop .ac-step:nth-child(2){border-top-color:#5B8FD4}#cs-ai-live-call-loop .ac-step:nth-child(3){border-top-color:#b8954a}#cs-ai-live-call-loop .ac-step:nth-child(4){border-top-color:#1a1612}
+  #cs-ai-live-call-loop .ac-step b{display:block;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:950;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,22,18,.54);margin-bottom:8px}
+  #cs-ai-live-call-loop .ac-step span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.34rem;line-height:1.04;font-weight:820;color:#1a1612}
+  #cs-ai-live-call-loop .ac-foot{grid-column:1 / -1;justify-self:center;padding:13px 20px;background:rgba(26,22,18,.88);color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;box-shadow:0 16px 42px rgba(26,22,18,.18)}
+  #cs-ai-pro-caller-scale:before{background:linear-gradient(90deg,rgba(251,247,239,.92) 0%,rgba(251,247,239,.68) 40%,rgba(251,247,239,.24) 70%,rgba(251,247,239,.10) 100%)}
+  #cs-ai-pro-caller-scale .ac-content{display:grid;grid-template-columns:.94fr 1.06fr;grid-template-rows:auto 1fr auto;gap:24px 34px;align-items:stretch}
+  #cs-ai-pro-caller-scale .ac-title-wrap{grid-column:1 / -1;max-width:1320px}
+  #cs-ai-pro-caller-scale .pro-card{position:relative;padding:32px;display:flex;flex-direction:column;justify-content:center;min-height:454px;overflow:hidden}
+  #cs-ai-pro-caller-scale .pro-card:before{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(184,149,74,.32),transparent 66%)}
+  #cs-ai-pro-caller-scale .pro-badge{width:148px;height:148px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#1a1612;color:#fbf7ef;border:3px solid #b8954a;box-shadow:0 20px 54px rgba(26,22,18,.18);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.3rem;font-weight:900;line-height:.92;margin-bottom:28px}
+  #cs-ai-pro-caller-scale .pro-card h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3rem;line-height:.98;font-weight:900;color:#1a1612;text-wrap:balance}
+  #cs-ai-pro-caller-scale .pro-card p{margin:18px 0 0;max-width:520px;font-family:'Manrope',sans-serif;font-size:1.08rem;line-height:1.36;font-weight:790;color:rgba(26,22,18,.68)}
+  #cs-ai-pro-caller-scale .scale-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-self:center}
+  #cs-ai-pro-caller-scale .scale-box{padding:23px 22px;min-height:154px;border-top:5px solid #5B8FD4}
+  #cs-ai-pro-caller-scale .scale-box:nth-child(2){border-top-color:#c8462c}#cs-ai-pro-caller-scale .scale-box:nth-child(3){border-top-color:#b8954a}#cs-ai-pro-caller-scale .scale-box:nth-child(4){border-top-color:#1a1612}
+  #cs-ai-pro-caller-scale .scale-box b{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.36rem;line-height:.94;font-weight:900;color:#1a1612;margin-bottom:12px}
+  #cs-ai-pro-caller-scale .scale-box span{display:block;font-family:'Manrope',sans-serif;font-size:.78rem;line-height:1.35;font-weight:880;letter-spacing:.11em;text-transform:uppercase;color:rgba(26,22,18,.58)}
+  #cs-ai-pro-caller-scale .pro-foot{grid-column:1 / -1;justify-self:center;align-self:end;padding:13px 20px;background:rgba(26,22,18,.88);color:#fbf7ef;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;text-align:center;box-shadow:0 16px 42px rgba(26,22,18,.18)}
+  #cs-ai-pro-caller-scale .pro-foot:before,#cs-ai-pro-caller-scale .pro-foot:after{content:none}
+  @media(max-width:1500px){.ai-call-slide .ac-content{padding:82px 60px 46px}.ai-call-slide .ac-title{font-size:clamp(3.2rem,4.8vw,5.25rem)}#cs-ai-live-call-loop .ac-content,#cs-ai-pro-caller-scale .ac-content{gap:18px 24px}#cs-ai-live-call-loop .ac-phone{min-height:364px;padding:22px}#cs-ai-live-call-loop .ac-decision{min-height:132px;padding:19px}#cs-ai-live-call-loop .ac-big{font-size:1.82rem}#cs-ai-live-call-loop .ac-step{min-height:96px;padding:15px 13px}#cs-ai-live-call-loop .ac-step span{font-size:1.12rem}#cs-ai-pro-caller-scale .pro-card{min-height:382px;padding:26px}#cs-ai-pro-caller-scale .pro-badge{width:126px;height:126px;font-size:2rem;margin-bottom:20px}#cs-ai-pro-caller-scale .pro-card h2{font-size:2.5rem}#cs-ai-pro-caller-scale .scale-box{min-height:132px;padding:19px 18px}#cs-ai-pro-caller-scale .scale-box b{font-size:2rem}}
+</style>
+<div class="casey-slide ds-focus ai-call-slide" id="cs-ai-live-call-loop" data-stage="0" onclick="if(window.csAiLiveCallLoopAdvance&&window.csAiLiveCallLoopAdvance()) event.stopPropagation()" style="display:none" aria-label="AI phone calls turn Dave assisted outreach into live adaptive conversations">
+  <img class="ac-bg" src="assets/generated/concept-rail/concept-natural-conversation-signal-bg-v1.png" alt="A warm pickleball community phone call turning voice signal into a connection graph" aria-hidden="true">
+  <div class="ac-eye slide-eyebrow">AI phone calls</div>
+  <section class="ac-content">
+    <div class="ac-title-wrap"><div class="ac-kicker">From Dave-assisted calls to autonomous learning</div><h1 class="ac-title">The script is not prewritten. <em>The conversation optimizes live.</em></h1></div>
+    <div class="ac-today">
+      <article class="ac-panel ac-decision"><div class="ac-mini">AI decides</div><div class="ac-big">Who to call next</div><p class="ac-copy">The graph picks the highest-value next conversation.</p></article>
+      <article class="ac-panel ac-decision"><div class="ac-mini">AI starts</div><div class="ac-big">The first question</div><p class="ac-copy">One opener creates the signal the model needs.</p></article>
+    </div>
+    <article class="ac-panel ac-phone">
+      <div class="ac-callhead">Live conversation signal</div>
+      <div class="ac-bubble">Would this group feel good if Bobby and Mary are in?</div>
+      <div class="ac-bubble player">Bobby is perfect. Mary is great, but mornings are better.</div>
+      <div class="ac-bubble">Who else would make that room feel right?</div>
+      <div class="ac-bubble player">If Katie joins, I have two friends who should come.</div>
+      <div class="ac-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </article>
+    <div class="ac-adapt">
+      <div class="ac-panel ac-step"><b>Listen</b><span>Tone, pace, hesitation</span></div>
+      <div class="ac-panel ac-step"><b>Infer</b><span>Social fit and intent</span></div>
+      <div class="ac-panel ac-step"><b>Ask</b><span>The next best question</span></div>
+      <div class="ac-panel ac-step"><b>Update</b><span>The invitation graph</span></div>
+    </div>
+    <div class="ac-foot">Hyper-optimization: every answer changes the next question.</div>
+  </section>
+</div>
+<div class="casey-slide ds-focus ai-call-slide" id="cs-ai-pro-caller-scale" data-stage="0" onclick="if(window.csAiProCallerScaleAdvance&&window.csAiProCallerScaleAdvance()) event.stopPropagation()" style="display:none" aria-label="Licensed pro AI caller scales trusted personal invitations">
+  <img class="ac-bg" src="assets/generated/concept-rail/concept-natural-conversation-signal-bg-v1.png" alt="A warm pickleball community phone call turning voice signal into a connection graph" aria-hidden="true">
+  <div class="ac-eye slide-eyebrow">AI pro caller</div>
+  <section class="ac-content">
+    <div class="ac-title-wrap"><div class="ac-kicker">Distribution meets personalization</div><h1 class="ac-title">A trusted pro can <em>personally invite everyone.</em></h1></div>
+    <article class="ac-panel pro-card">
+      <div class="pro-badge">PRO<br>AI</div>
+      <h2>Licensed famous-pro voice. Local-feeling invitation.</h2>
+      <p>The player answers because the call feels like it came from someone they already follow. GnR turns that attention into the right group, lesson, event, referral, or repeat habit.</p>
+    </article>
+    <div class="scale-grid">
+      <article class="ac-panel scale-box"><b>Unlimited</b><span>personal calls without an operator bottleneck</span></article>
+      <article class="ac-panel scale-box"><b>One job</b><span>pick the next person and first question</span></article>
+      <article class="ac-panel scale-box"><b>Live</b><span>next question adapts to answer and tone</span></article>
+      <article class="ac-panel scale-box"><b>Compounding</b><span>every call improves the graph and script</span></article>
+    </div>
+    <div class="pro-foot"><span>The pro gets the pickup. GnR gets the signal. The community gets better invitations.</span></div>
+  </section>
+</div>
+<script>
+(function(){
+  function wire(id, prefix){
+    function slide(){return document.getElementById(id)}
+    window[prefix+'Advance']=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage==='1')return false;s.dataset.stage='1';return true};
+    window[prefix+'Reverse']=function(){const s=slide();if(!s||!s.classList.contains('active'))return false;if(s.dataset.stage!=='1')return false;s.dataset.stage='0';return true};
+    function boot(){const s=slide();if(!s)return;new MutationObserver(function(){if(!s.classList.contains('active'))s.dataset.stage='0'}).observe(s,{attributes:true,attributeFilter:['class']})}
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+  }
+  wire('cs-ai-live-call-loop','csAiLiveCallLoop');
+  wire('cs-ai-pro-caller-scale','csAiProCallerScale');
+})();
+</script>
 <!-- cs-networked-reciprocity - connection behavior becomes a measurable reciprocity system [Codex 2026-06-19] -->
 <style>
   #cs-networked-reciprocity{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1A1612}
@@ -38695,7 +38805,7 @@ window.csA7m1Reverse = function() {
 // ACT 1 (universal truth + gap): cs-1 Title ? cs-1a Science ? cs-1b Missing Category ? cs-2 Previous Era
 // ACT 2 (enter pickleball): cs-3 24 Rounds ? cs-3b Each person ? cs-4 Matchmaking ? cs-5 Social Sports
 // ACT 3 (golden data): cs-6 Data Exists ? cs-7 Cost of Honesty ? cs-8 Cultural Shift ? cs-8b Measurement Leap ? cs-9 Invitation Feed
-// ACT 4+: cs-10 through cs-26 unchanged
+// ACT 4+: cs-10 through cs-28 active
 
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
@@ -38710,6 +38820,8 @@ const SLIDE_ORDER = [
   'cs-community-builder-product',
   'cs-community-builder-leaders',
   'cs-community-builder-engine',
+  'cs-ai-live-call-loop',
+  'cs-ai-pro-caller-scale',
   'cs-old-new-paradigm',
   'cs-real-world-measurable-market',
   'cs-connection-workout-high',
@@ -38736,11 +38848,11 @@ const SLIDE_ALTS = {
   3: ['cs-connection-value-scale-tipped-dark-pink', 'cs-connection-value-scale-tipped-cream-pink', 'cs-connection-pickleball-merge-pyramid-pink', 'cs-connection-pickleball-merge-scale-pink', 'cs-connection-pickleball-merge-map-pink'],
   5: ['cs-1m8'],
   6: ['cs-community-reciprocity-simple-white', 'cs-p10x-community-problem'],
-  13: ['cs-old-new-paradigm-simple-white'],
-  14: ['cs-connection-market-simple-white'],
-  16: ['cs-fv6-referral-engine-blue'],
-  17: ['cs-fv6-img'],
-  19: ['cs-referral-community-intelligence', 'cs-invitation-word-of-mouth', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
+  15: ['cs-old-new-paradigm-simple-white'],
+  16: ['cs-connection-market-simple-white'],
+  18: ['cs-fv6-referral-engine-blue'],
+  19: ['cs-fv6-img'],
+  21: ['cs-referral-community-intelligence', 'cs-invitation-word-of-mouth', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -40987,20 +41099,22 @@ const slideLabels = [
   'Community builder product', // 10 cs-community-builder-product
   'Community builders are the new clubs', // 11 cs-community-builder-leaders
   'Community builder engine', // 12 cs-community-builder-engine
-  'Old paradigm to new paradigm', // 13 cs-old-new-paradigm
-  'Connection market', // 14 cs-real-world-measurable-market
-  'Connection high vs workout high', // 15 cs-connection-workout-high
-  'Social fitness habit', // 16 cs-social-fitness-high
-  'NEPC proof / proving ground', // 17 cs-11e
-  'Dave Velardo - Founder - CEO', // 18 cs-18-vd4
-  'Community intelligence full-bleed attempt 1', // 19 cs-referral-community-fullbleed-v1
-  'Community intelligence full-bleed attempt 2', // 20 cs-referral-community-fullbleed-v2
-  'Community intelligence full-bleed attempt 3', // 21 cs-referral-community-fullbleed-v3
-  'Money: marketplace fee on paid experiences', // 22 cs-money-marketplace-fee
-  'Same courts / utilization / net profit', // 23 cs-revenue-util-profit-blue
-  'Pyramid: match-first apex / connection-first base', // 24 cs-samecourt-pyramid-image-led-pink
-  'Networked reciprocity breakthrough', // 25 cs-networked-reciprocity
-  'Mission: abundant connection', // 26 cs-mv6-merge
+  'AI phone calls: live optimization engine', // 13 cs-ai-live-call-loop
+  'AI pro caller: unlimited personal outreach', // 14 cs-ai-pro-caller-scale
+  'Old paradigm to new paradigm', // 15 cs-old-new-paradigm
+  'Connection market', // 16 cs-real-world-measurable-market
+  'Connection high vs workout high', // 17 cs-connection-workout-high
+  'Social fitness habit', // 18 cs-social-fitness-high
+  'NEPC proof / proving ground', // 19 cs-11e
+  'Dave Velardo - Founder - CEO', // 20 cs-18-vd4
+  'Community intelligence full-bleed attempt 1', // 21 cs-referral-community-fullbleed-v1
+  'Community intelligence full-bleed attempt 2', // 22 cs-referral-community-fullbleed-v2
+  'Community intelligence full-bleed attempt 3', // 23 cs-referral-community-fullbleed-v3
+  'Money: marketplace fee on paid experiences', // 24 cs-money-marketplace-fee
+  'Same courts / utilization / net profit', // 25 cs-revenue-util-profit-blue
+  'Pyramid: match-first apex / connection-first base', // 26 cs-samecourt-pyramid-image-led-pink
+  'Networked reciprocity breakthrough', // 27 cs-networked-reciprocity
+  'Mission: abundant connection', // 28 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -41671,6 +41785,8 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-money-marketplace-fee': 'csMoneyMarketplaceFeeAdvance',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkAdvance',
     'cs-community-builder-engine': 'csCommunityBuilderEngineAdvance',
+    'cs-ai-live-call-loop': 'csAiLiveCallLoopAdvance',
+    'cs-ai-pro-caller-scale': 'csAiProCallerScaleAdvance',
     'cs-networked-reciprocity': 'csNetworkedReciprocityAdvance',
     'cs-invite-engine-flow-pink': 'csInviteEngineFlowPinkAdvance',
     'cs-1m8-black-backup': 'cs1m8BlackBackupAdvance',
@@ -41761,6 +41877,8 @@ window.caseyReverseActiveReveal = function() {
     'cs-money-marketplace-fee': 'csMoneyMarketplaceFeeReverse',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkReverse',
     'cs-community-builder-engine': 'csCommunityBuilderEngineReverse',
+    'cs-ai-live-call-loop': 'csAiLiveCallLoopReverse',
+    'cs-ai-pro-caller-scale': 'csAiProCallerScaleReverse',
     'cs-networked-reciprocity': 'csNetworkedReciprocityReverse',
     'cs-invite-engine-flow-pink': 'csInviteEngineFlowPinkReverse',
     'cs-1m8-black-backup': 'cs1m8BlackBackupReverse',
@@ -42154,6 +42272,8 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-ai-live-call-loop' && window.csAiLiveCallLoopAdvance && window.csAiLiveCallLoopAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-ai-pro-caller-scale' && window.csAiProCallerScaleAdvance && window.csAiProCallerScaleAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     // [Dave 2026-05-18 LATEST] cs-samecourt (left = 'I'm a 3.9' card · right = 'I'm part of building my community' card) — scroll-down reveals the sc-item bullet stacks before next-slide nav.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) {
       setTimeout(() => { wheelLock = false; }, 600);
@@ -42375,6 +42495,8 @@ document.addEventListener('wheel', e => {
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-money-marketplace-fee' && window.csMoneyMarketplaceFeeReverse && window.csMoneyMarketplaceFeeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-ai-live-call-loop' && window.csAiLiveCallLoopReverse && window.csAiLiveCallLoopReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-ai-pro-caller-scale' && window.csAiProCallerScaleReverse && window.csAiProCallerScaleReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-networked-reciprocity' && window.csNetworkedReciprocityReverse && window.csNetworkedReciprocityReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
@@ -42526,6 +42648,8 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-money-marketplace-fee' && window.csMoneyMarketplaceFeeAdvance && window.csMoneyMarketplaceFeeAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-networked-reciprocity' && window.csNetworkedReciprocityAdvance && window.csNetworkedReciprocityAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-engine' && window.csCommunityBuilderEngineAdvance && window.csCommunityBuilderEngineAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-ai-live-call-loop' && window.csAiLiveCallLoopAdvance && window.csAiLiveCallLoopAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-ai-pro-caller-scale' && window.csAiProCallerScaleAdvance && window.csAiProCallerScaleAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11e' && window.cs11eAdvance && window.cs11eAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Advance && window.csFv6Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -42564,6 +42688,8 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-money-marketplace-fee' && window.csMoneyMarketplaceFeeReverse && window.csMoneyMarketplaceFeeReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-networked-reciprocity' && window.csNetworkedReciprocityReverse && window.csNetworkedReciprocityReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-engine' && window.csCommunityBuilderEngineReverse && window.csCommunityBuilderEngineReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-ai-live-call-loop' && window.csAiLiveCallLoopReverse && window.csAiLiveCallLoopReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-ai-pro-caller-scale' && window.csAiProCallerScaleReverse && window.csAiProCallerScaleReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11e' && window.cs11eReverse && window.cs11eReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && /^cs-fv6/.test(slideId || '') && window.csFv6Reverse && window.csFv6Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
