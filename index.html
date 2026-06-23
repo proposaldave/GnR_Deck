@@ -38268,6 +38268,54 @@ window.csA7m1Reverse = function() {
   </div>
 </div>
 
+<!-- [Codex 2026-06-22] Internal operator slide for the deck-building machine. Not a main-deck investor slide. -->
+<style>
+  #cs-deck-machine-operator { background:#f3ead8 !important; overflow:hidden; color:#1a1612; }
+  #cs-deck-machine-operator .dmo-bg { position:absolute; inset:0; background:radial-gradient(circle at 74% 26%, rgba(91,143,212,.16), transparent 30%), radial-gradient(circle at 24% 76%, rgba(200,70,44,.12), transparent 34%), linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%); }
+  #cs-deck-machine-operator .dmo-bg::after { content:""; position:absolute; inset:0; opacity:.18; background-image:linear-gradient(rgba(184,149,74,.20) 1px, transparent 1px), linear-gradient(90deg, rgba(184,149,74,.14) 1px, transparent 1px); background-size:42px 42px; }
+  #cs-deck-machine-operator .dmo-eye { position:absolute; top:28px; left:48px; z-index:4; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; padding:8px 11px; background:rgba(251,247,239,.76); border-radius:2px; box-shadow:0 10px 28px rgba(26,22,18,.05); }
+  #cs-deck-machine-operator .dmo-title { position:absolute; left:78px; top:116px; width:min(760px,45vw); z-index:3; margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.8rem,5.45vw,6.15rem); line-height:.96; letter-spacing:0; color:#1a1612; }
+  #cs-deck-machine-operator .dmo-title em { color:#b8954a; font-style:italic; }
+  #cs-deck-machine-operator .dmo-sub { position:absolute; left:84px; top:calc(116px + clamp(15rem,22vw,23.2rem)); z-index:3; max-width:650px; margin:0; font-family:'Manrope',sans-serif; font-size:clamp(1rem,1.2vw,1.24rem); line-height:1.5; font-weight:720; color:rgba(26,22,18,.72); }
+  #cs-deck-machine-operator .dmo-loop { position:absolute; left:84px; bottom:78px; right:84px; z-index:3; display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+  #cs-deck-machine-operator .dmo-step { min-height:104px; padding:20px 18px; background:rgba(251,247,239,.72); border:1px solid rgba(184,149,74,.34); box-shadow:0 18px 44px rgba(26,22,18,.07); border-radius:8px; font-family:'Manrope',sans-serif; }
+  #cs-deck-machine-operator .dmo-step b { display:block; font-size:.66rem; line-height:1.1; letter-spacing:.2em; text-transform:uppercase; color:#c8462c; margin-bottom:12px; }
+  #cs-deck-machine-operator .dmo-step span { display:block; font-size:1.04rem; line-height:1.28; font-weight:820; color:#1a1612; }
+  #cs-deck-machine-operator .dmo-board { position:absolute; right:76px; top:106px; width:min(760px,43vw); height:560px; z-index:3; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  #cs-deck-machine-operator .dmo-card { position:relative; padding:26px 26px 24px; background:rgba(251,247,239,.78); border:1px solid rgba(184,149,74,.34); border-radius:10px; box-shadow:0 24px 60px rgba(26,22,18,.08); overflow:hidden; }
+  #cs-deck-machine-operator .dmo-card::before { content:""; position:absolute; inset:0 auto 0 0; width:5px; background:#b8954a; opacity:.88; }
+  #cs-deck-machine-operator .dmo-card.blue::before { background:#5B8FD4; }
+  #cs-deck-machine-operator .dmo-card.red::before { background:#c8462c; }
+  #cs-deck-machine-operator .dmo-card.mint::before { background:#49B4A0; }
+  #cs-deck-machine-operator .dmo-card h2 { margin:0 0 13px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.58rem,2.05vw,2.36rem); line-height:1.02; letter-spacing:0; color:#1a1612; }
+  #cs-deck-machine-operator .dmo-card p { margin:0; font-family:'Manrope',sans-serif; font-size:.96rem; line-height:1.42; font-weight:680; color:rgba(26,22,18,.70); }
+  #cs-deck-machine-operator .dmo-mini { position:absolute; right:92px; bottom:76px; z-index:4; font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:850; letter-spacing:.18em; text-transform:uppercase; color:#1a1612; background:rgba(251,247,239,.76); border:1px solid rgba(184,149,74,.34); border-radius:999px; padding:12px 15px; }
+  #cs-deck-machine-operator.casey-entered .dmo-title, #cs-deck-machine-operator.casey-entered .dmo-sub, #cs-deck-machine-operator.casey-entered .dmo-board, #cs-deck-machine-operator.casey-entered .dmo-loop, #cs-deck-machine-operator.casey-entered .dmo-mini { animation:dmoIn .7s cubic-bezier(.22,1,.36,1) both; }
+  #cs-deck-machine-operator.casey-entered .dmo-board { animation-delay:.08s; }
+  #cs-deck-machine-operator.casey-entered .dmo-loop { animation-delay:.16s; }
+  @keyframes dmoIn { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  html[data-export="1"] #cs-deck-machine-operator .dmo-title, html[data-export="1"] #cs-deck-machine-operator .dmo-sub, html[data-export="1"] #cs-deck-machine-operator .dmo-board, html[data-export="1"] #cs-deck-machine-operator .dmo-loop, html[data-export="1"] #cs-deck-machine-operator .dmo-mini { opacity:1 !important; transform:none !important; animation:none !important; }
+</style>
+<div class="casey-slide ds-focus appendix-slide" id="cs-deck-machine-operator" style="display:none" aria-label="Deck machine operator prompt and collaboration loop">
+  <div class="dmo-bg" aria-hidden="true"></div>
+  <div class="dmo-eye slide-eyebrow">Deck machine</div>
+  <h1 class="dmo-title">Build the <em>machine</em> that builds the deck.</h1>
+  <p class="dmo-sub">Dave supplies taste, conviction, and corrections. Codex turns them into a repeatable system: requested edit, candidate slide, QA, commit, push, and a smarter restart prompt.</p>
+  <div class="dmo-board" aria-hidden="false">
+    <div class="dmo-card red"><h2>Requested edit first.</h2><p>Make the specific change Dave asked for before exploring. Preserve originals as dot candidates when replacing a slide.</p></div>
+    <div class="dmo-card blue"><h2>Then improve the machine.</h2><p>When Dave teaches a reusable rule, update the restart prompt or learnings so the next session starts smarter.</p></div>
+    <div class="dmo-card"><h2>Show ideas in the deck.</h2><p>Strategy thoughts become pink-dot, white-dot, blue-dot, or main-deck slide attempts, not only chat prose.</p></div>
+    <div class="dmo-card mint"><h2>Rollback is structural.</h2><p>Git keeps history. Dot rails keep alternatives. Trash preserves recoverable slide sources. No silent overwrite.</p></div>
+  </div>
+  <div class="dmo-loop" aria-hidden="true">
+    <div class="dmo-step"><b>01 Signal</b><span>Dave edits, rejects, sketches, reacts.</span></div>
+    <div class="dmo-step"><b>02 Rule</b><span>Capture the taste or strategy pattern.</span></div>
+    <div class="dmo-step"><b>03 Slide</b><span>Build the main or candidate attempt.</span></div>
+    <div class="dmo-step"><b>04 QA</b><span>Mirror, source check, Chrome, push.</span></div>
+    <div class="dmo-step"><b>05 Learn</b><span>Update the prompt for restart.</span></div>
+  </div>
+  <div class="dmo-mini">Next session source: DECK_MACHINE_PROMPT.md</div>
+</div>
 <!-- [Codex 2026-06-04] cs-hc-market-latent DELETED by porting deck/delete-latent-supply-alt; removed from current SLIDE_ALTS[3] and retained hidden as rollback source. -->
 <div class="casey-slide hc-market-slide" id="cs-hc-market-latent" data-deleted="1" style="display:none !important">
   <div class="hc-paper"></div>
@@ -38761,6 +38809,7 @@ const APPENDIX_ORDER = [
   'cs-1m6',
   'cs-business-model-options',
   'cs-trusted-reciprocity-works',
+  'cs-deck-machine-operator',
   'cs-invite-matchmaking-opener-pink',
   'cs-connection-choice',
 ];
