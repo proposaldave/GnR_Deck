@@ -10,6 +10,47 @@ That call is not just customer service. It is the first version of autonomous so
 
 The person gets a human connection experience. NEPC learns what they actually want. Give n Receive captures the signal. Then the next invitation, event, lesson, class, clinic, membership conversation, or referral ask gets smarter.
 
+## My Honest Opinion
+
+Yes, I think going all in on the phone-call strategy is the right wedge right now.
+
+Not because phone calls are magically scalable. They are not. The reason this is the right wedge is that phone calls are the fastest way to expose the hidden variables that every booking calendar, rating system, email blast, and app form misses:
+
+- what someone actually wants
+- whether they feel nervous, lonely, excited, ignored, confused, or ready
+- who they would enjoy seeing again
+- who they would bring
+- what would make membership feel worth it
+- what the club failed to explain
+- what event should exist next
+
+If the goal is autonomous social coordination, the system first needs high-quality social signal. A court booking system sees time slots. A rating system sees level. A phone call can reveal desire, trust, hesitation, belonging, referral paths, and the next human action. That is the raw material for the future product.
+
+So my recommendation is:
+
+```text
+go all in on the phone-call strategy as a proof sprint,
+but do not confuse the wedge with the whole company.
+```
+
+The wedge is Dave and NEPC making high-trust calls, capturing transcripts, learning what moves people, filling real events, scheduling lessons, surfacing referrals, and proving membership momentum. The company is the machine that learns from those calls and eventually helps any trusted host, coach, teacher, club, creator, organizer, or community builder coordinate real-world connection better than a group chat, calendar, or social feed can.
+
+This is why it can become bigger than pickleball. Pickleball is the live lab because the pain is obvious: people want to play, but what they really want is the right people, the right level, the right vibe, the right invitation, and the confidence to come back. That pattern exists in fitness, clubs, schools, churches, friend groups, founder communities, hobby groups, senior communities, and local neighborhoods.
+
+The risk is doing calls without discipline. Random calls become another Dave hustle loop. The winning version is different:
+
+```text
+every call produces one review card,
+one next action,
+one follow-up,
+one scorecard update,
+and one improvement to the protocol.
+```
+
+If 25 to 50 calls show that people are happy Dave called, reveal real demand, name friends, schedule next steps, and start membership conversations, then this is not just an NEPC tactic. It is proof of the core Give n Receive thesis: real-world communities grow when trusted human warmth is captured, organized, and turned into better next actions.
+
+My honest view: this is the strongest current bridge between saving Middleton, proving Give n Receive, and finding the future of real-world social networking. I would not spend this week polishing websites, debating pricing, or designing more abstract product plans ahead of it. I would fix Quo trust, run the calls, capture the signal, and let the product emerge from the evidence.
+
 ## The Loop
 
 1. Invite
