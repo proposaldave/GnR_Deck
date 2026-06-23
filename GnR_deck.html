@@ -38560,7 +38560,7 @@ window.csA7m1Reverse = function() {
 <nav class="casey-concept-nav" id="conceptNav" aria-label="Concept review slides"></nav>
 <nav class="casey-seed-nav" id="seedNav" aria-label="Seed investor deck slides"></nav>
 <nav class="casey-staff-nav" id="staffNav" aria-label="NEPC staff Give and Receive story slides"></nav>
-<nav class="casey-mini-nav" id="miniInvestorNav" aria-label="Investor mini deck slides" style="display:none!important"></nav>
+<nav class="casey-mini-nav" id="miniInvestorNav" aria-label="Friend mini deck slides"></nav>
 
 <!-- cs-a19 ("What Runs the World" · Land/Labor/Capital/Information/Attention/Intelligence ? Human Connection)
      ? DELETED 2026-05-02 per Dave (duplicate of cs-mv7 which was already removed). Slide div fully removed. -->
@@ -39017,9 +39017,15 @@ const STAFF_ORDER = [
 ];
 const STAFF_TOTAL = STAFF_ORDER.length;
 
-// Codex 2026-06-20: Dave moved the five-slide investor mini deck to trash and removed its dot rail.
-// Keep the array empty so the main deck order remains untouched.
-const MINI_INVESTOR_ORDER = [];
+// Codex 2026-06-23: friend mini deck. Dots point at live source slides only;
+// no slide DOM, copy, or main deck order changes.
+const MINI_INVESTOR_ORDER = [
+  { id: 'cs-loneliness-epidemic', label: 'Why this matters' },
+  { id: 'cs-1m8-invite-graph-blue', label: 'What GnR does' },
+  { id: 'cs-community-builder-product', label: 'How it works' },
+  { id: 'cs-community-builder-leaders', label: 'Who it is for' },
+  { id: 'cs-mv6-merge', label: 'Where it goes' },
+];
 const MINI_INVESTOR_TOTAL = MINI_INVESTOR_ORDER.length;
 
 
@@ -40635,7 +40641,7 @@ function miniInvestorGo(n) {
     cbar.style.width = ((n / MINI_INVESTOR_TOTAL) * 100) + '%';
   }
   const ccount = document.getElementById('ccount');
-  if (ccount) ccount.textContent = 'Mini ' + n + ' / ' + MINI_INVESTOR_TOTAL;
+  if (ccount) ccount.textContent = 'Friend ' + n + ' / ' + MINI_INVESTOR_TOTAL;
   updateMiniInvestorDots(n);
   requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
@@ -41250,15 +41256,15 @@ if (staffNav && Array.isArray(STAFF_ORDER)) {
   });
 }
 
-// Build separate investor-mini-deck rail. Dots point at live source slides.
+// Build separate friend mini-deck rail. Dots point at live source slides.
 const miniInvestorNav = document.getElementById('miniInvestorNav');
 if (miniInvestorNav && Array.isArray(MINI_INVESTOR_ORDER)) {
   MINI_INVESTOR_ORDER.forEach((item, i) => {
     const d = document.createElement('button');
     d.className = 'casey-dot mini-dot';
     const label = item.label || getSlideEyebrowText(item.id) || ('Mini ' + (i + 1));
-    d.title = label + ' - investor mini deck slide ' + (i + 1);
-    d.setAttribute('data-tooltip', 'Mini ' + (i + 1) + ': ' + label);
+    d.title = label + ' - friend mini deck slide ' + (i + 1);
+    d.setAttribute('data-tooltip', 'Friend ' + (i + 1) + ': ' + label);
     d.onclick = (e) => {
       e.stopPropagation();
       miniInvestorGo(i + 1);
@@ -41270,7 +41276,7 @@ if (miniInvestorNav && Array.isArray(MINI_INVESTOR_ORDER)) {
 document.getElementById('cbar').style.width = ((1/TOTAL)*100) + '%';
 document.getElementById('ccount').textContent = '1 / ' + TOTAL;
 
-// Mini investor deck mode: after a mini dot is clicked, scroll/click/down-arrow stays inside the five-slide path.
+// Friend mini deck mode: after a mini dot is clicked, scroll/click/down-arrow stays inside the five-slide path.
 function consumeMiniInvestorEvent(e, direction) {
   if (!inMiniInvestor) return false;
   const target = e.target;
