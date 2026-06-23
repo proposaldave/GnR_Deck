@@ -8417,6 +8417,92 @@ window.cs1m5Reverse = function() {
     return false;
   };
 </script>
+<!-- cs-money-marketplace-fee - accelerator money answer [Codex 2026-06-23] -->
+<style>
+  #cs-money-marketplace-fee{background:#f3ead8!important;overflow:hidden;color:#1a1612;cursor:pointer}
+  #cs-money-marketplace-fee .mm-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;filter:saturate(1.04) contrast(1.02) brightness(1.03)}
+  #cs-money-marketplace-fee:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(251,247,239,.80) 0%,rgba(251,247,239,.54) 30%,rgba(251,247,239,.23) 50%,rgba(251,247,239,.54) 72%,rgba(251,247,239,.88) 100%),radial-gradient(circle at 50% 50%,rgba(26,22,18,.22),transparent 22%);pointer-events:none}
+  #cs-money-marketplace-fee .mm-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c}
+  #cs-money-marketplace-fee .mm-content{position:absolute;inset:0;z-index:3;padding:96px 86px 58px;box-sizing:border-box;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:22px;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .74s cubic-bezier(.22,1,.36,1),transform .74s cubic-bezier(.22,1,.36,1),visibility 0s linear .74s}
+  #cs-money-marketplace-fee[data-stage="1"] .mm-content{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-money-marketplace-fee .mm-title{margin:0 auto;max-width:1320px;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.2rem,4.8vw,5.55rem);line-height:.96;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance;text-shadow:0 2px 0 rgba(251,247,239,.90),0 20px 52px rgba(251,247,239,.64)}
+  #cs-money-marketplace-fee .mm-title em{font-style:italic;color:#c8462c}
+  #cs-money-marketplace-fee .mm-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:22px;min-height:0;max-width:1500px;width:100%;margin:0 auto}
+  #cs-money-marketplace-fee .mm-card{background:rgba(251,247,239,.82);border:1px solid rgba(184,149,74,.34);box-shadow:0 24px 70px rgba(26,22,18,.13),inset 0 1px 0 rgba(255,255,255,.72);backdrop-filter:blur(2px);box-sizing:border-box}
+  #cs-money-marketplace-fee .mm-take{position:relative;padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:center;min-height:500px}
+  #cs-money-marketplace-fee .mm-take:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#c8462c,#b8954a,#5B8FD4)}
+  #cs-money-marketplace-fee .mm-num{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(6.2rem,9.4vw,10.2rem);line-height:.78;font-weight:900;color:#c8462c;letter-spacing:0}
+  #cs-money-marketplace-fee .mm-label{margin-top:20px;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:950;letter-spacing:.20em;text-transform:uppercase;color:#1a1612}
+  #cs-money-marketplace-fee .mm-note{margin-top:18px;font-family:'Manrope',sans-serif;font-size:1.12rem;line-height:1.38;font-weight:800;color:rgba(26,22,18,.72);max-width:430px}
+  #cs-money-marketplace-fee .mm-system{display:grid;grid-template-rows:auto 1fr auto;gap:16px;min-height:0}
+  #cs-money-marketplace-fee .mm-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  #cs-money-marketplace-fee .mm-step{position:relative;min-height:116px;padding:20px 18px 18px;background:rgba(251,247,239,.84);border:1px solid rgba(184,149,74,.30);box-shadow:0 14px 38px rgba(26,22,18,.08);box-sizing:border-box}
+  #cs-money-marketplace-fee .mm-step b{display:block;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#b8954a;margin-bottom:12px}
+  #cs-money-marketplace-fee .mm-step span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.5rem;line-height:1.05;font-weight:870;color:#1a1612}
+  #cs-money-marketplace-fee .mm-step.hot b{color:#c8462c}
+  #cs-money-marketplace-fee .mm-step.blue b{color:#5B8FD4}
+  #cs-money-marketplace-fee .mm-align{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;min-height:0}
+  #cs-money-marketplace-fee .mm-align-card{padding:20px 18px;background:rgba(251,247,239,.78);border:1px solid rgba(184,149,74,.24);box-shadow:0 12px 32px rgba(26,22,18,.07);display:flex;flex-direction:column;gap:10px;box-sizing:border-box}
+  #cs-money-marketplace-fee .mm-align-card strong{font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#c8462c}
+  #cs-money-marketplace-fee .mm-align-card span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.27rem;line-height:1.08;font-weight:820;color:#1a1612}
+  #cs-money-marketplace-fee .mm-proof{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:17px 22px;background:rgba(26,22,18,.86);color:#fbf7ef;box-shadow:0 18px 44px rgba(26,22,18,.18)}
+  #cs-money-marketplace-fee .mm-proof b{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.45rem;line-height:.9;color:#b8954a}
+  #cs-money-marketplace-fee .mm-proof span{font-family:'Manrope',sans-serif;font-size:.82rem;line-height:1.4;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:rgba(251,247,239,.84)}
+  #cs-money-marketplace-fee .mm-future{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;max-width:1450px;margin:0 auto}
+  #cs-money-marketplace-fee .mm-chip{padding:10px 14px;background:rgba(251,247,239,.80);border:1px solid rgba(184,149,74,.32);font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,22,18,.64);box-shadow:0 10px 28px rgba(26,22,18,.06)}
+  html[data-export="1"] #cs-money-marketplace-fee .mm-content{opacity:1!important;visibility:visible!important;transform:none!important}
+  @media(max-width:1500px){#cs-money-marketplace-fee .mm-content{padding:88px 58px 46px;gap:18px}#cs-money-marketplace-fee .mm-title{font-size:clamp(2.9rem,4.35vw,4.85rem)}#cs-money-marketplace-fee .mm-grid{grid-template-columns:.78fr 1.22fr;gap:16px;max-width:1240px}#cs-money-marketplace-fee .mm-take{min-height:438px;padding:28px 28px 24px}#cs-money-marketplace-fee .mm-num{font-size:clamp(5rem,8.2vw,8.6rem)}#cs-money-marketplace-fee .mm-flow,#cs-money-marketplace-fee .mm-align{gap:9px}#cs-money-marketplace-fee .mm-step{min-height:100px;padding:17px 14px 15px}#cs-money-marketplace-fee .mm-step span{font-size:1.22rem}#cs-money-marketplace-fee .mm-align-card{padding:17px 14px}#cs-money-marketplace-fee .mm-align-card span{font-size:1.08rem}#cs-money-marketplace-fee .mm-proof{padding:14px 18px}#cs-money-marketplace-fee .mm-proof b{font-size:2.05rem}#cs-money-marketplace-fee .mm-chip{font-size:.58rem;padding:8px 11px}}
+</style>
+<div class="casey-slide ds-focus" id="cs-money-marketplace-fee" data-stage="0" onclick="if(window.csMoneyMarketplaceFeeAdvance&&window.csMoneyMarketplaceFeeAdvance()) event.stopPropagation()" style="display:none" aria-label="Money model: 10 percent marketplace fee on paid community-builder-led experiences">
+  <img class="mm-bg" src="assets/generated/referral-sales-engine/referral-sales-engine-bg-v1.png" alt="Referral sales engine: community-builder-led invitations turning into measurable business value" aria-hidden="true">
+  <div class="mm-eye slide-eyebrow">Money model</div>
+  <section class="mm-content">
+    <h1 class="mm-title">GnR gets paid when <em>community builders create value.</em></h1>
+    <div class="mm-grid">
+      <article class="mm-card mm-take">
+        <div class="mm-num">10%</div>
+        <div class="mm-label">Marketplace fee</div>
+        <div class="mm-note">Paid community-builder-led experiences are the clean starting model.</div>
+      </article>
+      <section class="mm-system" aria-label="Money model loop">
+        <div class="mm-flow">
+          <div class="mm-step"><b>Create</b><span>Paid experience</span></div>
+          <div class="mm-step hot"><b>Invite</b><span>Followers + referrals</span></div>
+          <div class="mm-step"><b>Join</b><span>Players pay</span></div>
+          <div class="mm-step blue"><b>Capture</b><span>GnR earns when value is created</span></div>
+        </div>
+        <div class="mm-align">
+          <div class="mm-align-card"><strong>Builders</strong><span>Earn from rooms they create.</span></div>
+          <div class="mm-align-card"><strong>Clubs</strong><span>Fill courts and grow through referrals.</span></div>
+          <div class="mm-align-card"><strong>Players</strong><span>Get better experiences.</span></div>
+          <div class="mm-align-card"><strong>GnR</strong><span>Wins only when the community wins.</span></div>
+        </div>
+        <div class="mm-proof"><b>$5K</b><span>Local hospital ad sold already; the invitation feed can become trusted local media.</span></div>
+      </section>
+    </div>
+    <div class="mm-future" aria-label="Future revenue streams">
+      <span class="mm-chip">Club platform fees</span>
+      <span class="mm-chip">Revenue share</span>
+      <span class="mm-chip">Premium builder tools</span>
+      <span class="mm-chip">Feed advertising</span>
+      <span class="mm-chip">Other real-world communities</span>
+    </div>
+  </section>
+</div>
+<script>
+  window.csMoneyMarketplaceFeeAdvance = function(){
+    const slide = document.getElementById('cs-money-marketplace-fee');
+    if (!slide || !slide.classList.contains('active')) return false;
+    if (slide.dataset.stage !== '1') { slide.dataset.stage = '1'; return true; }
+    return false;
+  };
+  window.csMoneyMarketplaceFeeReverse = function(){
+    const slide = document.getElementById('cs-money-marketplace-fee');
+    if (!slide || !slide.classList.contains('active')) return false;
+    if (slide.dataset.stage === '1') { slide.dataset.stage = '0'; return true; }
+    return false;
+  };
+</script>
 <!-- cs-revenue-util-profit-blue - blue-dot proof alt beside title slide [Codex 2026-06-10] -->
 <style>
   #cs-revenue-util-profit-blue{background:#f3ead8!important;overflow:hidden;color:#1a1612}
@@ -38633,6 +38719,7 @@ const SLIDE_ORDER = [
   'cs-referral-community-fullbleed-v1',
   'cs-referral-community-fullbleed-v2',
   'cs-referral-community-fullbleed-v3',
+  'cs-money-marketplace-fee',
   'cs-revenue-util-profit-blue',
   'cs-samecourt-pyramid-image-led-pink',
   'cs-networked-reciprocity',
@@ -40909,10 +40996,11 @@ const slideLabels = [
   'Community intelligence full-bleed attempt 1', // 19 cs-referral-community-fullbleed-v1
   'Community intelligence full-bleed attempt 2', // 20 cs-referral-community-fullbleed-v2
   'Community intelligence full-bleed attempt 3', // 21 cs-referral-community-fullbleed-v3
-  'Same courts / utilization / net profit', // 22 cs-revenue-util-profit-blue
-  'Pyramid: match-first apex / connection-first base', // 23 cs-samecourt-pyramid-image-led-pink
-  'Networked reciprocity breakthrough', // 24 cs-networked-reciprocity
-  'Mission: abundant connection', // 25 cs-mv6-merge
+  'Money: marketplace fee on paid experiences', // 22 cs-money-marketplace-fee
+  'Same courts / utilization / net profit', // 23 cs-revenue-util-profit-blue
+  'Pyramid: match-first apex / connection-first base', // 24 cs-samecourt-pyramid-image-led-pink
+  'Networked reciprocity breakthrough', // 25 cs-networked-reciprocity
+  'Mission: abundant connection', // 26 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -41580,6 +41668,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-tesla-community-value-pink': 'csTeslaCommunityValueAdvance',
     'cs-community-builder-product': 'csCommunityBuilderProductAdvance',
     'cs-community-builder-leaders': 'csCommunityBuilderLeadersAdvance',
+    'cs-money-marketplace-fee': 'csMoneyMarketplaceFeeAdvance',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkAdvance',
     'cs-community-builder-engine': 'csCommunityBuilderEngineAdvance',
     'cs-networked-reciprocity': 'csNetworkedReciprocityAdvance',
@@ -41669,6 +41758,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-tesla-community-value-pink': 'csTeslaCommunityValueReverse',
     'cs-community-builder-product': 'csCommunityBuilderProductReverse',
     'cs-community-builder-leaders': 'csCommunityBuilderLeadersReverse',
+    'cs-money-marketplace-fee': 'csMoneyMarketplaceFeeReverse',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkReverse',
     'cs-community-builder-engine': 'csCommunityBuilderEngineReverse',
     'cs-networked-reciprocity': 'csNetworkedReciprocityReverse',
@@ -42058,6 +42148,7 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-money-marketplace-fee' && window.csMoneyMarketplaceFeeAdvance && window.csMoneyMarketplaceFeeAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-networked-reciprocity' && window.csNetworkedReciprocityAdvance && window.csNetworkedReciprocityAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-community-builder-engine' && window.csCommunityBuilderEngineAdvance && window.csCommunityBuilderEngineAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -42283,6 +42374,7 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-money-marketplace-fee' && window.csMoneyMarketplaceFeeReverse && window.csMoneyMarketplaceFeeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-networked-reciprocity' && window.csNetworkedReciprocityReverse && window.csNetworkedReciprocityReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6-merge' && window.csMv6MergeReverse && window.csMv6MergeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-teamreach-referral-compare' && window.csTeamreachCompareReverse && window.csTeamreachCompareReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
@@ -42431,6 +42523,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && document.querySelector('#cs-community-builder-product-heart-pink.active') && window.csCommunityBuilderProductHeartPinkAdvance && window.csCommunityBuilderProductHeartPinkAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-product' && window.csCommunityBuilderProductAdvance && window.csCommunityBuilderProductAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-money-marketplace-fee' && window.csMoneyMarketplaceFeeAdvance && window.csMoneyMarketplaceFeeAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-networked-reciprocity' && window.csNetworkedReciprocityAdvance && window.csNetworkedReciprocityAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-engine' && window.csCommunityBuilderEngineAdvance && window.csCommunityBuilderEngineAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmAdvance && window.csRwmmAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -42468,6 +42561,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && document.querySelector('#cs-community-builder-product-heart-pink.active') && window.csCommunityBuilderProductHeartPinkReverse && window.csCommunityBuilderProductHeartPinkReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-product' && window.csCommunityBuilderProductReverse && window.csCommunityBuilderProductReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-money-marketplace-fee' && window.csMoneyMarketplaceFeeReverse && window.csMoneyMarketplaceFeeReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-networked-reciprocity' && window.csNetworkedReciprocityReverse && window.csNetworkedReciprocityReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-community-builder-engine' && window.csCommunityBuilderEngineReverse && window.csCommunityBuilderEngineReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-real-world-measurable-market' && window.csRwmmReverse && window.csRwmmReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
