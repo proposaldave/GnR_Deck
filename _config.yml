@@ -1,0 +1,12 @@
+exclude:
+  - backups/
+  - deck_archive/
+  - design_refs/
+  - docs/
+  - exports/
+  - prompts/
+  - scripts/
+  - tmp/
+  - tools/
+  - GnR_deck_2026-04-30.pdf
+  - "*.backup-*"
