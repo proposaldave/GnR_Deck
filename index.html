@@ -13097,6 +13097,13 @@ window.csInvitationWordOfMouthAdvance = function() {
   slide.dataset.stage = '1';
   return true;
 };
+
+window.csInvitationWordOfMouthReverse = function() {
+  const slide = document.getElementById('cs-invitation-word-of-mouth');
+  if (!slide || slide.dataset.stage !== '1') return false;
+  slide.dataset.stage = '0';
+  return true;
+};
 </script>
 
 <div class="casey-slide ds-focus iwom-slide" id="cs-invitation-word-of-mouth-white" style="display:none">
@@ -39213,6 +39220,7 @@ const SLIDE_ORDER = [
   'cs-invite-operational-insanity-pink',
   'cs-gnr',
   'cs-community-builder-product',
+  'cs-invitation-word-of-mouth',
   'cs-community-builder-leaders',
   'cs-community-builder-engine',
   'cs-ai-live-call-loop',
@@ -39244,11 +39252,11 @@ const SLIDE_ALTS = {
   3: ['cs-connection-value-scale-tipped-dark-pink', 'cs-connection-value-scale-tipped-cream-pink', 'cs-connection-pickleball-merge-pyramid-pink', 'cs-connection-pickleball-merge-scale-pink', 'cs-connection-pickleball-merge-map-pink'],
   4: ['cs-1m8'],
   6: ['cs-p10x-community-problem'],
-  15: ['cs-old-new-paradigm-simple-white'],
-  16: ['cs-connection-market-simple-white'],
-  18: ['cs-fv6-referral-engine-blue'],
-  19: ['cs-fv6-img'],
-  21: ['cs-referral-community-intelligence', 'cs-invitation-word-of-mouth', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
+  16: ['cs-old-new-paradigm-simple-white'],
+  17: ['cs-connection-market-simple-white'],
+  19: ['cs-fv6-referral-engine-blue'],
+  20: ['cs-fv6-img'],
+  22: ['cs-referral-community-intelligence', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -41705,31 +41713,33 @@ const slideLabels = [
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
   'Market size: people spend fortunes trying to feel alive', //  2 cs-tesla-community-value-pink
   'Connection value has no ceiling', //  3 cs-connection-value-ladder-pink
-  'Loneliness epidemic', //  4 cs-loneliness-epidemic
-  'The invitation engine for community builders', //  5 cs-1m8-invite-graph-blue
+  'The invitation engine for community builders', //  4 cs-1m8-invite-graph-blue
+  'Loneliness epidemic', //  5 cs-loneliness-epidemic
   'Core problem: reciprocal community fit', //  6 cs-community-reciprocity-problem
   'The most networkable, untapped dataset on the planet', //  7 cs-thegap
   'Custom invitations don\'t scale.', //  8 cs-invite-operational-insanity-pink
   'The rise of the personalized invitation feed', //  9 cs-gnr
   'Community builder product', // 10 cs-community-builder-product
-  'The best communities are built by human connection leaders', // 11 cs-community-builder-leaders
-  'Community builder engine', // 12 cs-community-builder-engine
-  'AI phone calls: right person, right question', // 13 cs-ai-live-call-loop
-  'AI pro caller: unlimited personal outreach', // 14 cs-ai-pro-caller-scale
-  'Old paradigm to new paradigm', // 15 cs-old-new-paradigm
-  'Connection market', // 16 cs-real-world-measurable-market
-  'Workout high to connection high', // 17 cs-connection-workout-high
-  'Social fitness habit', // 18 cs-social-fitness-high
-  'NEPC proof / proving ground', // 19 cs-11e
-  'Dave Velardo - Founder - CEO', // 20 cs-18-vd4
-  'Community intelligence full-bleed attempt 1', // 21 cs-referral-community-fullbleed-v1
-  'Community intelligence full-bleed attempt 2', // 22 cs-referral-community-fullbleed-v2
-  'Community intelligence full-bleed attempt 3', // 23 cs-referral-community-fullbleed-v3
-  'Money: marketplace fee on paid experiences', // 24 cs-money-marketplace-fee
-  'Same courts / utilization / net profit', // 25 cs-revenue-util-profit-blue
-  'Pyramid: match-first apex / connection-first base', // 26 cs-samecourt-pyramid-image-led-pink
-  'Networked reciprocity breakthrough', // 27 cs-networked-reciprocity
-  'Mission: abundant connection', // 28 cs-mv6-merge
+  'Referrals: community sales engine', // 11 cs-invitation-word-of-mouth
+  'The best communities are built by human connection leaders', // 12 cs-community-builder-leaders
+  'Community builder engine', // 13 cs-community-builder-engine
+  'AI phone calls: right person, right question', // 14 cs-ai-live-call-loop
+  'AI pro caller: unlimited personal outreach', // 15 cs-ai-pro-caller-scale
+  'Old paradigm to new paradigm', // 16 cs-old-new-paradigm
+  'Connection market', // 17 cs-real-world-measurable-market
+  'Workout high to connection high', // 18 cs-connection-workout-high
+  'Social fitness habit', // 19 cs-social-fitness-high
+  'NEPC proof / proving ground', // 20 cs-11e
+  'Dave Velardo - Founder - CEO', // 21 cs-18-vd4
+  'Community intelligence full-bleed attempt 1', // 22 cs-referral-community-fullbleed-v1
+  'Community intelligence full-bleed attempt 2', // 23 cs-referral-community-fullbleed-v2
+  'Community intelligence full-bleed attempt 3', // 24 cs-referral-community-fullbleed-v3
+  'AI phone calls become the learning engine', // 25 cs-phone-call-learning-engine
+  'Money: marketplace fee on paid experiences', // 26 cs-money-marketplace-fee
+  'Same courts / utilization / net profit', // 27 cs-revenue-util-profit-blue
+  'Pyramid: match-first apex / connection-first base', // 28 cs-samecourt-pyramid-image-led-pink
+  'Networked reciprocity breakthrough', // 29 cs-networked-reciprocity
+  'Mission: abundant connection', // 30 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -41909,7 +41919,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
     const isGeneratedSillinessPinkAlt = /^cs-pb-silliness-generated-/.test(altId);
     const isInvitationPinkAlt = /^cs-invite-/.test(altId);
-    const isPinkAlt = (altId === 'cs-pb-silliness-purple-net-apology' || isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-magnetic' || altId === 'cs-work-evolution-prelude' || altId === 'cs-market-two-economics' || altId === 'cs-real-world-measurable-market' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-feeling-source-pink' || altId === 'cs-best-match-connection-value-pink' || altId === 'cs-connection-value-ladder-pink' || altId === 'cs-connection-value-scale-tipped-dark-pink' || altId === 'cs-connection-value-scale-tipped-cream-pink' || altId === 'cs-connection-pickleball-merge-pyramid-pink' || altId === 'cs-connection-pickleball-merge-scale-pink' || altId === 'cs-connection-pickleball-merge-map-pink' || altId === 'cs-game-iq-community-eq-pink' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-samecourt-pyramid-white2' || altId === 'cs-samecourt-pyramid-previous-pink' || altId === 'cs-samecourt-pyramid-white2-pink' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-fv6-host-abundance-pink' || altId === 'cs-invitation-word-of-mouth' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-tesla-community-value-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
+    const isPinkAlt = (altId === 'cs-pb-silliness-purple-net-apology' || isGeneratedSillinessPinkAlt || isInvitationPinkAlt || altId === 'cs-magnetic' || altId === 'cs-work-evolution-prelude' || altId === 'cs-market-two-economics' || altId === 'cs-real-world-measurable-market' || altId === 'cs-programmable-invitations' || altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-1m8' || altId === 'cs-frontier-brand-bg-pink' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-frontier-scale-pink-4' || altId === 'cs-feeling-source-pink' || altId === 'cs-best-match-connection-value-pink' || altId === 'cs-connection-value-ladder-pink' || altId === 'cs-connection-value-scale-tipped-dark-pink' || altId === 'cs-connection-value-scale-tipped-cream-pink' || altId === 'cs-connection-pickleball-merge-pyramid-pink' || altId === 'cs-connection-pickleball-merge-scale-pink' || altId === 'cs-connection-pickleball-merge-map-pink' || altId === 'cs-game-iq-community-eq-pink' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-samecourt-pyramid-white2' || altId === 'cs-samecourt-pyramid-previous-pink' || altId === 'cs-samecourt-pyramid-white2-pink' || altId === 'cs-referral-thesis-pink' || altId === 'cs-referral-builder-pink' || altId === 'cs-referral-loop-pink' || altId === 'cs-referral-data-pink' || altId === 'cs-referral-roadmap-pink' || altId === 'cs-two-markets-bg-only-pink' || altId === 'cs-two-markets-wall-pink' || altId === 'cs-connection-market-fills-courts-pink' || altId === 'cs-two-market-stack-pink' || altId === 'cs-referral-market-engine-pink' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-fv6-host-abundance-pink' || altId === 'cs-1m8-bg-reveal-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-unmeasured-value' || altId === 'cs-value-choice-image-annotated-pink' || altId === 'cs-tesla-community-value-pink' || altId === 'cs-value-choice-image-receipts-pink' || altId === 'cs-value-choice-image-only-pink' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-club-anti-dupr' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1' || altId === 'cs-pb-lab-right-lab-pink' || altId === 'cs-pb-lab-dataset-pink' || altId === 'cs-pb-silliness-story-score-pink' || altId === 'cs-pb-silliness-story-decision-pink' || altId === 'cs-pb-silliness-carnival-pink' || altId === 'cs-pb-silliness-ritual-pink' || altId === 'cs-pb-silliness-image-net-pink' || altId === 'cs-pb-silliness-image-open-pink' || altId === 'cs-pb-silliness-image-map-pink' || altId === 'cs-pb-silliness-chaos-pink' || altId === 'cs-pb-silliness-netdrip-pink' || altId === 'cs-pb-silliness-overhead-pink' || altId === 'cs-pb-silliness-ritual2-pink' || altId === 'cs-optimus-party-host-pink' || altId === 'cs-optimus-party-overhead-pink' || altId === 'cs-optimus-party-walkthrough-pink' || altId === 'cs-optimus-party-beacon-pink');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (/^cs-p10x-/.test(altId) || altId === 'cs-pb-silliness-purple-chaotic-bounce' || altId === 'cs-pb-silliness-purple-rotation-confusion' || altId === 'cs-pb-silliness-generated-sections-pink' || altId === 'cs-pb-silliness-generated-kitchen-pink' || altId === 'cs-pb-silliness-generated-apology-pink' || altId === 'cs-pb-silliness-generated-rotation-pink' || altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
@@ -42600,6 +42610,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueReverse',
     'cs-tesla-community-value-pink': 'csTeslaCommunityValueReverse',
     'cs-community-builder-product': 'csCommunityBuilderProductReverse',
+    'cs-invitation-word-of-mouth': 'csInvitationWordOfMouthReverse',
     'cs-community-builder-leaders': 'csCommunityBuilderLeadersReverse',
     'cs-money-marketplace-fee': 'csMoneyMarketplaceFeeReverse',
     'cs-community-builder-product-heart-pink': 'csCommunityBuilderProductHeartPinkReverse',
@@ -43190,6 +43201,10 @@ document.addEventListener('wheel', e => {
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-choice' && window.csConnectionChoiceReverse && window.csConnectionChoiceReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-invitation-word-of-mouth' && window.csInvitationWordOfMouthReverse && window.csInvitationWordOfMouthReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
