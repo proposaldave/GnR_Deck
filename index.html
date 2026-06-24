@@ -9273,6 +9273,130 @@ window.cs1m5Reverse = function() {
   window.phoneCoreSlideReverse=function(slide){slide=slide||document.querySelector('.casey-slide.active.phone-core-slide');if(!slide||!slide.classList.contains('active'))return false;if(slide.dataset.stage!=='1')return false;slide.dataset.stage='0';return true};
 })();
 </script>
+<!-- cs-phone-brainstorm-* - generated image story angles for phone-call strategy review [Codex 2026-06-23] -->
+<style>
+  .phone-brainstorm-slide{background:#f3ead8!important;overflow:hidden!important;color:#1a1612!important;cursor:pointer!important;padding:0!important;display:none;position:relative!important;width:100vw!important;height:100vh!important;min-height:100vh!important}
+  .phone-brainstorm-slide.active{display:block!important}
+  .phone-brainstorm-slide .pbs-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;filter:saturate(1.04) contrast(1.04) brightness(.98)}
+  .phone-brainstorm-slide::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.88) 28%,rgba(251,247,239,.34) 55%,rgba(26,22,18,.10) 100%)}
+  .phone-brainstorm-slide.pbs-soft-center::before{background:radial-gradient(circle at 49% 34%,rgba(251,247,239,.88) 0%,rgba(251,247,239,.70) 24%,rgba(251,247,239,.20) 54%,rgba(26,22,18,.16) 100%)}
+  .phone-brainstorm-slide.pbs-right::before{background:linear-gradient(270deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.86) 32%,rgba(251,247,239,.28) 58%,rgba(26,22,18,.12) 100%)}
+  .phone-brainstorm-slide.pbs-dark::before{background:linear-gradient(90deg,rgba(26,22,18,.86) 0%,rgba(26,22,18,.62) 32%,rgba(26,22,18,.14) 64%,rgba(26,22,18,.04) 100%)}
+  .phone-brainstorm-slide .pbs-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;text-transform:uppercase;font-size:.58rem;font-weight:700;letter-spacing:.22em;color:#C8462C;text-shadow:0 1px 0 rgba(251,247,239,.92),0 10px 24px rgba(26,22,18,.14)}
+  .phone-brainstorm-slide.pbs-dark .pbs-eye{color:#B8954A;text-shadow:0 12px 32px rgba(0,0,0,.35)}
+  .phone-brainstorm-slide .pbs-content{position:absolute;z-index:4;left:76px;top:122px;width:min(760px,46vw);display:block!important;padding:0!important;margin:0!important;min-height:0!important;box-sizing:border-box!important;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .68s cubic-bezier(.22,1,.36,1),visibility 0s linear .68s;pointer-events:none}
+  .phone-brainstorm-slide[data-stage="1"] .pbs-content,html[data-export="1"] .phone-brainstorm-slide .pbs-content,html[data-pdf="1"] .phone-brainstorm-slide .pbs-content{opacity:1;visibility:visible;transform:none;transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  .phone-brainstorm-slide.pbs-soft-center .pbs-content{left:50%;top:116px;transform:translate(-50%,18px);width:min(790px,50vw);text-align:center}
+  .phone-brainstorm-slide.pbs-soft-center[data-stage="1"] .pbs-content,html[data-export="1"] .phone-brainstorm-slide.pbs-soft-center .pbs-content,html[data-pdf="1"] .phone-brainstorm-slide.pbs-soft-center .pbs-content{transform:translate(-50%,0)}
+  .phone-brainstorm-slide.pbs-right .pbs-content{left:auto;right:76px;text-align:right;width:min(740px,43vw)}
+  .phone-brainstorm-slide .pbs-kicker{margin:0 0 18px;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#B8954A;text-shadow:0 1px 0 rgba(251,247,239,.72)}
+  .phone-brainstorm-slide .pbs-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.45rem,6vw,7.1rem);line-height:.91;font-weight:900;letter-spacing:0;color:#1A1612;text-wrap:balance;text-shadow:0 14px 38px rgba(251,247,239,.78)}
+  .phone-brainstorm-slide.pbs-dark .pbs-title{color:#fbf7ef;text-shadow:0 18px 42px rgba(0,0,0,.34)}
+  .phone-brainstorm-slide .pbs-title em{font-style:italic;color:#C8462C}
+  .phone-brainstorm-slide.pbs-dark .pbs-title em{color:#B8954A}
+  .phone-brainstorm-slide .pbs-sub{margin:24px 0 0;max-width:650px;font-family:'Manrope',sans-serif;font-size:clamp(1.05rem,1.28vw,1.36rem);line-height:1.42;font-weight:780;color:rgba(26,22,18,.74);text-shadow:0 2px 16px rgba(251,247,239,.62)}
+  .phone-brainstorm-slide.pbs-soft-center .pbs-sub{margin-left:auto;margin-right:auto;max-width:720px}
+  .phone-brainstorm-slide.pbs-right .pbs-sub{margin-left:auto;max-width:620px}
+  .phone-brainstorm-slide.pbs-dark .pbs-sub{color:rgba(251,247,239,.78);text-shadow:0 12px 28px rgba(0,0,0,.28)}
+  .phone-brainstorm-slide .pbs-foot{margin-top:28px;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.52)}
+  .phone-brainstorm-slide.pbs-dark .pbs-foot{color:rgba(251,247,239,.58)}
+  .phone-brainstorm-slide .pbs-hint{position:absolute;left:50%;bottom:30px;z-index:5;transform:translateX(-50%);width:50px;height:7px;border-radius:999px;background:rgba(26,22,18,.42);opacity:.72;transition:opacity .3s ease}
+  .phone-brainstorm-slide.pbs-dark .pbs-hint{background:rgba(251,247,239,.48)}
+  .phone-brainstorm-slide[data-stage="1"] .pbs-hint{opacity:0}
+  @media (max-width:1100px){.phone-brainstorm-slide .pbs-content{left:54px;top:104px;width:min(690px,56vw)}.phone-brainstorm-slide.pbs-right .pbs-content{right:54px;width:min(640px,52vw)}.phone-brainstorm-slide .pbs-title{font-size:clamp(3.3rem,5.4vw,5.25rem)}.phone-brainstorm-slide .pbs-sub{font-size:1rem}}
+</style>
+
+<div class="casey-slide ds-focus phone-brainstorm-slide pbs-soft-center" id="cs-phone-brainstorm-human-tech" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="The phone call is the number one technology that is still human">
+  <img class="pbs-bg" src="assets/generated/phone-call-brainstorm/phone-call-still-human-tech-v1.png" alt="Warm pickleball community with a human phone call at the center">
+  <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 01</div>
+  <section class="pbs-content">
+    <div class="pbs-kicker">Angle A</div>
+    <h1 class="pbs-title">The phone call is the <em>#1 technology</em> that is still human.</h1>
+    <p class="pbs-sub">A screen asks for input. A call lets a person feel seen, heard, and invited.</p>
+    <div class="pbs-foot">Use when the story needs one emotional thesis.</div>
+  </section>
+  <div class="pbs-hint"></div>
+</div>
+
+<div class="casey-slide ds-focus phone-brainstorm-slide" id="cs-phone-brainstorm-screen" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="Screens collect inputs calls create trust">
+  <img class="pbs-bg" src="assets/generated/phone-call-brainstorm/phone-call-beats-screen-v1.png" alt="Phone call on a table beside a fading app screen at a pickleball club">
+  <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 02</div>
+  <section class="pbs-content">
+    <div class="pbs-kicker">Angle B</div>
+    <h1 class="pbs-title">Screens collect inputs. <em>Calls create trust.</em></h1>
+    <p class="pbs-sub">The best signal arrives in hesitation, laughter, context, and the tiny yes before the yes.</p>
+    <div class="pbs-foot">Use when the deck needs to beat app fatigue.</div>
+  </section>
+  <div class="pbs-hint"></div>
+</div>
+
+<div class="casey-slide ds-focus phone-brainstorm-slide" id="cs-phone-brainstorm-router" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="AI chooses the next person and first question">
+  <img class="pbs-bg" src="assets/generated/phone-call-brainstorm/phone-call-ai-router-v1.png" alt="Founder at a club table with AI routing lines showing who to call next">
+  <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 03</div>
+  <section class="pbs-content">
+    <div class="pbs-kicker">Angle C</div>
+    <h1 class="pbs-title">AI does not need a script. It needs <em>the next move.</em></h1>
+    <p class="pbs-sub">Who now? What first question? What did the answer change?</p>
+    <div class="pbs-foot">Use when the story is founder-buildable today.</div>
+  </section>
+  <div class="pbs-hint"></div>
+</div>
+
+<div class="casey-slide ds-focus phone-brainstorm-slide" id="cs-phone-brainstorm-live" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="A live call is an adaptive search engine for people">
+  <img class="pbs-bg" src="assets/generated/phone-call-brainstorm/phone-call-live-conversation-v1.png" alt="Live phone conversation with branching voice signals over a real club courtyard">
+  <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 04</div>
+  <section class="pbs-content">
+    <div class="pbs-kicker">Angle D</div>
+    <h1 class="pbs-title">A live call is an <em>adaptive search engine</em> for people.</h1>
+    <p class="pbs-sub">Every answer rewrites the next question while the trust is still warm.</p>
+    <div class="pbs-foot">Use when the story needs hyper-optimization.</div>
+  </section>
+  <div class="pbs-hint"></div>
+</div>
+
+<div class="casey-slide ds-focus phone-brainstorm-slide pbs-dark" id="cs-phone-brainstorm-pro-voice" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="Famous AI voice is distribution call graph is the moat">
+  <img class="pbs-bg" src="assets/generated/phone-call-brainstorm/phone-call-ai-pro-voice-v1.png" alt="Generic pro coach voice persona calling players with a community graph behind it">
+  <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 05</div>
+  <section class="pbs-content">
+    <div class="pbs-kicker">Angle E</div>
+    <h1 class="pbs-title">The famous voice is distribution. <em>The call graph is the moat.</em></h1>
+    <p class="pbs-sub">AI persona later. Decision intelligence now.</p>
+    <div class="pbs-foot">Use when the story needs the future without overbuilding it.</div>
+  </section>
+  <div class="pbs-hint"></div>
+</div>
+
+<div class="casey-slide ds-focus phone-brainstorm-slide" id="cs-phone-brainstorm-money" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="Better calls fill paid real world experiences">
+  <img class="pbs-bg" src="assets/generated/phone-call-brainstorm/phone-call-paid-experiences-v1.png" alt="Full pickleball courts and community-builder-led paid experiences created from better calls">
+  <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 06</div>
+  <section class="pbs-content">
+    <div class="pbs-kicker">Angle F</div>
+    <h1 class="pbs-title">Better calls fill <em>real experiences.</em></h1>
+    <p class="pbs-sub">The loop turns demand into paid community-builder-led events people actually want.</p>
+    <div class="pbs-foot">Use when the story needs the money path.</div>
+  </section>
+  <div class="pbs-hint"></div>
+</div>
+
+<script>
+(function(){
+  function setStage(slide,value){ if(!slide) return false; slide.dataset.stage=String(value); return true; }
+  window.phoneBrainstormSlideAdvance=function(slide){
+    slide=slide||document.querySelector('.phone-brainstorm-slide.active');
+    if(!slide) return false;
+    var stage=parseInt(slide.dataset.stage||'0',10);
+    if(stage<1) return setStage(slide,1);
+    return false;
+  };
+  window.phoneBrainstormSlideReverse=function(slide){
+    slide=slide||document.querySelector('.phone-brainstorm-slide.active');
+    if(!slide) return false;
+    var stage=parseInt(slide.dataset.stage||'0',10);
+    if(stage>0) return setStage(slide,0);
+    return false;
+  };
+})();
+</script>
 <!-- cs-networked-reciprocity - connection behavior becomes a measurable reciprocity system [Codex 2026-06-19] -->
 <style>
   #cs-networked-reciprocity{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1A1612}
@@ -36821,6 +36945,12 @@ window.csA7m1Reverse = function() {
   .casey-dot.phone-core-dot.on { height:20px; border-radius:4px; background:#c8462c !important; border-color:rgba(200,70,44,.98) !important; box-shadow:0 0 16px rgba(200,70,44,.92) !important; }
   body.presenter-mode .casey-phone-core-nav { display:none !important; }
   html[data-export="1"] .casey-phone-core-nav, html[data-pdf="1"] .casey-phone-core-nav { display:none !important; }
+  /* Generated phone-call brainstorm review rail: new image-led story angles, separate from main deck. */
+  .casey-phone-brainstorm-nav { position:fixed; top:50%; right:168px; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:4px; z-index:1003; background:rgba(26,22,18,.56); backdrop-filter:blur(8px); padding:8px 5px; border-radius:10px; border:1px solid rgba(200,70,44,.48); max-height:calc(100vh - 220px); width:fit-content; }
+  .casey-dot.phone-brainstorm-dot { background:#C8462C !important; border:1px solid rgba(200,70,44,.98) !important; box-shadow:0 0 8px rgba(200,70,44,.52) !important; width:8px; height:8px; }
+  .casey-dot.phone-brainstorm-dot.on { height:20px; border-radius:4px; background:#B8954A !important; border-color:rgba(184,149,74,.98) !important; box-shadow:0 0 16px rgba(184,149,74,.92) !important; }
+  body.presenter-mode .casey-phone-brainstorm-nav { display:none !important; }
+  html[data-export="1"] .casey-phone-brainstorm-nav, html[data-pdf="1"] .casey-phone-brainstorm-nav { display:none !important; }
   .staff-slide { background:#fbf7ef !important; color:#1a1612 !important; }
   .staff-shell { position:relative; min-height:100%; height:100%; width:100%; overflow:hidden; padding:74px 92px 62px; box-sizing:border-box; background:radial-gradient(circle at 78% 24%, rgba(73,180,160,.16), transparent 34%),radial-gradient(circle at 17% 78%, rgba(184,149,74,.15), transparent 34%),linear-gradient(180deg,#fbf7ef 0%,#f3ead8 100%) !important; }
   .staff-shell.dark { background:radial-gradient(circle at 76% 30%, rgba(73,180,160,.28), transparent 36%),radial-gradient(circle at 22% 68%, rgba(184,149,74,.20), transparent 33%),linear-gradient(180deg,#101714 0%,#1a1612 100%) !important; color:#fbf7ef; }
@@ -37093,6 +37223,7 @@ window.csA7m1Reverse = function() {
   .casey-nav { right:82px !important; }
   .casey-mini-nav { right:112px !important; }
   .casey-phone-core-nav { right:140px !important; }
+  .casey-phone-brainstorm-nav { right:168px !important; }
 
 
   .concept-mini-label { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:850; letter-spacing:.2em; text-transform:uppercase; color:#b8954a; }
@@ -38952,6 +39083,7 @@ window.csA7m1Reverse = function() {
 <nav class="casey-staff-nav" id="staffNav" aria-label="NEPC staff Give and Receive story slides"></nav>
 <nav class="casey-mini-nav" id="miniInvestorNav" aria-label="Friend mini deck slides"></nav>
 <nav class="casey-phone-core-nav" id="phoneCoreNav" aria-label="Phone core strategy deck slides"></nav>
+<nav class="casey-phone-brainstorm-nav" id="phoneBrainstormNav" aria-label="Generated phone call brainstorm review slides"></nav>
 
 <!-- cs-a19 ("What Runs the World" · Land/Labor/Capital/Information/Attention/Intelligence ? Human Connection)
      ? DELETED 2026-05-02 per Dave (duplicate of cs-mv7 which was already removed). Slide div fully removed. -->
@@ -39429,6 +39561,17 @@ const PHONE_CORE_ORDER = [
   { id: 'cs-phone-core-company-bet', label: 'Human now, AI voice later' },
 ];
 const PHONE_CORE_TOTAL = PHONE_CORE_ORDER.length;
+// Codex 2026-06-23: generated phone-call brainstorm rail. Dots are new slides only;
+// main deck and phone-core company-bet deck stay untouched.
+const PHONE_BRAINSTORM_ORDER = [
+  { id: 'cs-phone-brainstorm-human-tech', label: '#1 technology that is still human' },
+  { id: 'cs-phone-brainstorm-screen', label: 'Calls beat screens' },
+  { id: 'cs-phone-brainstorm-router', label: 'AI chooses the next move' },
+  { id: 'cs-phone-brainstorm-live', label: 'Live adaptive conversation' },
+  { id: 'cs-phone-brainstorm-pro-voice', label: 'Famous AI voice later' },
+  { id: 'cs-phone-brainstorm-money', label: 'Calls fill paid experiences' },
+];
+const PHONE_BRAINSTORM_TOTAL = PHONE_BRAINSTORM_ORDER.length;
 // Codex 2026-06-23: friend mini deck. Dots point at live source slides only;
 // no slide DOM, copy, or main deck order changes.
 const MINI_INVESTOR_ORDER = [
@@ -39456,6 +39599,8 @@ let inMiniInvestor = false;
 let miniInvestorCurrent = 1;
 let inPhoneCore = false;
 let phoneCoreCurrent = 1;
+let inPhoneBrainstorm = false;
+let phoneBrainstormCurrent = 1;
 
 window.csWedgepbCodexAdvance = function() {
   const slide = document.getElementById('cs-wedgepb-codex');
@@ -40895,7 +41040,7 @@ window.conceptBgFirstReverse = function() {
 document.addEventListener('click', e => {
   if (!inConcept || !(window.conceptBgFirstAdvance && window.conceptBgFirstAdvance)) return;
   const target = e.target;
-  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.annotation-marker')) return;
+  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.casey-phone-brainstorm-nav,.annotation-marker')) return;
   if (window.conceptBgFirstAdvance()) {
     e.preventDefault();
     e.stopImmediatePropagation();
@@ -41054,6 +41199,7 @@ function phoneCoreGo(n) {
   inSeed = false;
   inStaff = false;
   inMiniInvestor = false;
+  inPhoneBrainstorm = false;
   const targetId = PHONE_CORE_ORDER[n - 1].id;
   const mainIndex = SLIDE_ORDER.indexOf(targetId);
   if (mainIndex >= 0) {
@@ -41064,6 +41210,7 @@ function phoneCoreGo(n) {
     updateConceptDots(0);
     updateSeedDots(0);
     updateStaffDots(0);
+    updatePhoneBrainstormDots(0);
   }
   inPhoneCore = true;
   inMiniInvestor = false;
@@ -41077,6 +41224,7 @@ function phoneCoreGo(n) {
   if (ccount) ccount.textContent = 'Phone ' + n + ' / ' + PHONE_CORE_TOTAL;
   updatePhoneCoreDots(n);
   updateMiniInvestorDots(0);
+  updatePhoneBrainstormDots(0);
   requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
@@ -41101,6 +41249,85 @@ function phoneCoreReverse() {
 window.phoneCoreGo = phoneCoreGo;
 window.phoneCoreAdvance = phoneCoreAdvance;
 window.phoneCoreReverse = phoneCoreReverse;
+function updatePhoneBrainstormDots(activeIndex) {
+  const brainNav = document.getElementById('phoneBrainstormNav');
+  if (!brainNav) return;
+  brainNav.querySelectorAll('.phone-brainstorm-dot').forEach((d, i) => {
+    d.classList.toggle('on', activeIndex === i + 1);
+  });
+}
+
+function showPhoneBrainstormStandaloneSlide(targetId) {
+  document.querySelectorAll('.casey-slide').forEach(s => {
+    s.classList.remove('active');
+    s.classList.remove('casey-entered');
+    s.style.display = 'none';
+  });
+  const target = document.getElementById(targetId);
+  if (target) {
+    if (target.hasAttribute('data-stage')) target.dataset.stage = '0';
+    target.style.display = '';
+    target.classList.add('active');
+    void target.offsetWidth;
+    target.classList.add('casey-entered');
+  }
+}
+
+function phoneBrainstormAdvanceActiveReveal(direction) {
+  const active = document.querySelector('.casey-slide.active');
+  if (!active || !active.classList.contains('phone-brainstorm-slide')) return false;
+  return direction > 0 ? (window.phoneBrainstormSlideAdvance && window.phoneBrainstormSlideAdvance(active)) : (window.phoneBrainstormSlideReverse && window.phoneBrainstormSlideReverse(active));
+}
+
+function phoneBrainstormGo(n) {
+  if (n < 1 || n > PHONE_BRAINSTORM_TOTAL) return;
+  inPhoneBrainstorm = true;
+  phoneBrainstormCurrent = n;
+  inAppendix = false;
+  inTrash = false;
+  inConcept = false;
+  inSeed = false;
+  inStaff = false;
+  inMiniInvestor = false;
+  inPhoneCore = false;
+  const targetId = PHONE_BRAINSTORM_ORDER[n - 1].id;
+  showPhoneBrainstormStandaloneSlide(targetId);
+  document.querySelectorAll('#cnav .casey-dot').forEach(d => d.classList.remove('on'));
+  updateConceptDots(0);
+  updateSeedDots(0);
+  updateStaffDots(0);
+  updateMiniInvestorDots(0);
+  updatePhoneCoreDots(0);
+  const cbar = document.getElementById('cbar');
+  if (cbar) {
+    cbar.style.background = 'linear-gradient(90deg,#c8462c,#b8954a)';
+    cbar.style.width = ((n / PHONE_BRAINSTORM_TOTAL) * 100) + '%';
+  }
+  const ccount = document.getElementById('ccount');
+  if (ccount) ccount.textContent = 'Brainstorm ' + n + ' / ' + PHONE_BRAINSTORM_TOTAL;
+  updatePhoneBrainstormDots(n);
+  requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
+  if (window.updateAnnotationBadge) updateAnnotationBadge();
+  if (window.renderAnnotationMarkers) renderAnnotationMarkers();
+}
+
+function phoneBrainstormAdvance() {
+  if (!inPhoneBrainstorm) return false;
+  if (phoneBrainstormAdvanceActiveReveal(1)) return true;
+  if (phoneBrainstormCurrent < PHONE_BRAINSTORM_TOTAL) phoneBrainstormGo(phoneBrainstormCurrent + 1);
+  return true;
+}
+
+function phoneBrainstormReverse() {
+  if (!inPhoneBrainstorm) return false;
+  if (phoneBrainstormAdvanceActiveReveal(-1)) return true;
+  if (phoneBrainstormCurrent > 1) phoneBrainstormGo(phoneBrainstormCurrent - 1);
+  return true;
+}
+
+window.phoneBrainstormGo = phoneBrainstormGo;
+window.phoneBrainstormAdvance = phoneBrainstormAdvance;
+window.phoneBrainstormReverse = phoneBrainstormReverse;
 function updateMiniInvestorDots(activeIndex) {
   const miniNav = document.getElementById('miniInvestorNav');
   if (!miniNav) return;
@@ -41133,6 +41360,8 @@ function miniInvestorGo(n) {
   inConcept = false;
   inSeed = false;
   inStaff = false;
+  inPhoneCore = false;
+  inPhoneBrainstorm = false;
   const targetId = MINI_INVESTOR_ORDER[n - 1].id;
   const mainIndex = SLIDE_ORDER.indexOf(targetId);
   if (mainIndex >= 0) {
@@ -41154,6 +41383,7 @@ function miniInvestorGo(n) {
   const ccount = document.getElementById('ccount');
   if (ccount) ccount.textContent = 'Friend ' + n + ' / ' + MINI_INVESTOR_TOTAL;
   updateMiniInvestorDots(n);
+  updatePhoneBrainstormDots(0);
   requestAnimationFrame(scrollActiveCaseyNavDotIntoView);
   if (window.updateAnnotationBadge) updateAnnotationBadge();
   if (window.renderAnnotationMarkers) renderAnnotationMarkers();
@@ -41786,6 +42016,22 @@ if (phoneCoreNav && Array.isArray(PHONE_CORE_ORDER)) {
     phoneCoreNav.appendChild(d);
   });
 }
+// Build generated phone-call brainstorm rail. Dots point at new generated image-led slides.
+const phoneBrainstormNav = document.getElementById('phoneBrainstormNav');
+if (phoneBrainstormNav && Array.isArray(PHONE_BRAINSTORM_ORDER)) {
+  PHONE_BRAINSTORM_ORDER.forEach((item, i) => {
+    const d = document.createElement('button');
+    d.className = 'casey-dot phone-brainstorm-dot';
+    const label = item.label || getSlideEyebrowText(item.id) || ('Brainstorm ' + (i + 1));
+    d.title = label + ' - generated phone call brainstorm slide ' + (i + 1);
+    d.setAttribute('data-tooltip', 'Brainstorm ' + (i + 1) + ': ' + label);
+    d.onclick = (e) => {
+      e.stopPropagation();
+      phoneBrainstormGo(i + 1);
+    };
+    phoneBrainstormNav.appendChild(d);
+  });
+}
 // Build separate friend mini-deck rail. Dots point at live source slides.
 const miniInvestorNav = document.getElementById('miniInvestorNav');
 if (miniInvestorNav && Array.isArray(MINI_INVESTOR_ORDER)) {
@@ -41810,7 +42056,7 @@ document.getElementById('ccount').textContent = '1 / ' + TOTAL;
 function consumePhoneCoreEvent(e, direction) {
   if (!inPhoneCore) return false;
   const target = e.target;
-  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.annotation-marker')) return false;
+  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.casey-phone-brainstorm-nav,.annotation-marker')) return false;
   const handled = direction > 0 ? phoneCoreAdvance() : phoneCoreReverse();
   if (handled) {
     e.preventDefault();
@@ -41839,18 +42085,58 @@ document.addEventListener('wheel', e => {
 document.addEventListener('click', e => {
   if (!inPhoneCore) return;
   const target = e.target;
-  if (target && target.closest && target.closest('.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav') && !target.closest('.casey-phone-core-nav')) {
+  if (target && target.closest && target.closest('.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-brainstorm-nav') && !target.closest('.casey-phone-core-nav')) {
     inPhoneCore = false;
     updatePhoneCoreDots(0);
     return;
   }
   consumePhoneCoreEvent(e, 1);
 }, true);
+// Generated phone-call brainstorm mode: each dot is a separate image-led story angle for review.
+function consumePhoneBrainstormEvent(e, direction) {
+  if (!inPhoneBrainstorm) return false;
+  const target = e.target;
+  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.casey-phone-brainstorm-nav,.annotation-marker')) return false;
+  const handled = direction > 0 ? phoneBrainstormAdvance() : phoneBrainstormReverse();
+  if (handled) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+  }
+  return handled;
+}
+
+document.addEventListener('keydown', e => {
+  if (!inPhoneBrainstorm) return;
+  if (e.key === 'Escape') {
+    inPhoneBrainstorm = false;
+    updatePhoneBrainstormDots(0);
+    return;
+  }
+  if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ' || e.key === 'Enter') consumePhoneBrainstormEvent(e, 1);
+  if (e.key === 'ArrowUp' || e.key === 'PageUp') consumePhoneBrainstormEvent(e, -1);
+}, true);
+
+document.addEventListener('wheel', e => {
+  if (!inPhoneBrainstorm || e.deltaY === 0) return;
+  consumePhoneBrainstormEvent(e, e.deltaY > 0 ? 1 : -1);
+}, { capture:true, passive:false });
+
+document.addEventListener('click', e => {
+  if (!inPhoneBrainstorm) return;
+  const target = e.target;
+  if (target && target.closest && target.closest('.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav') && !target.closest('.casey-phone-brainstorm-nav')) {
+    inPhoneBrainstorm = false;
+    updatePhoneBrainstormDots(0);
+    return;
+  }
+  consumePhoneBrainstormEvent(e, 1);
+}, true);
 // Friend mini deck mode: after a mini dot is clicked, scroll/click/down-arrow stays inside the five-slide path.
 function consumeMiniInvestorEvent(e, direction) {
   if (!inMiniInvestor) return false;
   const target = e.target;
-  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.annotation-marker')) return false;
+  if (target && target.closest && target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.casey-phone-brainstorm-nav,.annotation-marker')) return false;
   const handled = direction > 0 ? miniInvestorAdvance() : miniInvestorReverse();
   if (handled) {
     e.preventDefault();
@@ -41879,7 +42165,7 @@ document.addEventListener('wheel', e => {
 document.addEventListener('click', e => {
   if (!inMiniInvestor) return;
   const target = e.target;
-  if (target && target.closest && target.closest('.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-phone-core-nav') && !target.closest('.casey-mini-nav')) {
+  if (target && target.closest && target.closest('.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-phone-core-nav,.casey-phone-brainstorm-nav') && !target.closest('.casey-mini-nav')) {
     inMiniInvestor = false;
     updateMiniInvestorDots(0);
     return;
@@ -42942,7 +43228,7 @@ document.addEventListener('touchend', e => {
     const now = Date.now();
     const tapGap = now - presenterLastTapTime;
     const tapMove = Math.hypot(touch.clientX - presenterLastTapX, touch.clientY - presenterLastTapY);
-    const uiTarget = e.target && e.target.closest && e.target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.annotation-marker');
+    const uiTarget = e.target && e.target.closest && e.target.closest('input,textarea,button,a,#annotationOverlay,#speakerNotesOverlay,#slideSearch,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.casey-phone-brainstorm-nav,.annotation-marker');
     if (!uiTarget && tapGap > 0 && tapGap < 360 && tapMove < 44 && window.togglePresenterMode) {
       e.preventDefault();
       e.stopPropagation();
@@ -46282,7 +46568,7 @@ function renderAnnotationMarkers() {
 
 function handleAnnotationCapture(event) {
   if (!annotationsAllowedHere()) return;
-  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,#trashBtn,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.annotation-marker');
+  const ui = event.target.closest('#annotationBtn,#annotationOverlay,#speakerNotesBtn,#speakerNotesOverlay,#appendixBtn,#trashBtn,.casey-nav,.casey-concept-nav,.casey-seed-nav,.casey-staff-nav,.casey-mini-nav,.casey-phone-core-nav,.casey-phone-brainstorm-nav,.annotation-marker');
   if (ui || !annotationPickModeActive) return;
   const slide = event.target.closest('.casey-slide.active');
   if (!slide) return;
