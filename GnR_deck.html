@@ -39137,7 +39137,8 @@ window.csA7m1Reverse = function() {
 <nav class="casey-concept-nav" id="conceptNav" aria-label="Concept review slides"></nav>
 <nav class="casey-seed-nav" id="seedNav" aria-label="Seed investor deck slides"></nav>
 <nav class="casey-staff-nav" id="staffNav" aria-label="NEPC staff Give and Receive story slides"></nav>
-<nav class="casey-mini-nav" id="miniInvestorNav" aria-label="Friend mini deck slides"></nav>
+<!-- [Codex 2026-06-25] Friend mini deck rail moved to trash per Dave. Source slides remain in SLIDE_ORDER. -->
+<nav class="casey-mini-nav" id="miniInvestorNav" aria-label="Friend mini deck slides" data-deleted="1" style="display:none!important"></nav>
 <nav class="casey-phone-core-nav" id="phoneCoreNav" aria-label="Phone core strategy deck slides"></nav>
 <nav class="casey-phone-brainstorm-nav" id="phoneBrainstormNav" aria-label="Generated phone call brainstorm review slides"></nav>
 
@@ -39636,15 +39637,9 @@ const PHONE_BRAINSTORM_ORDER = [
   { id: 'cs-phone-brainstorm-money', label: 'Calls fill paid experiences' },
 ];
 const PHONE_BRAINSTORM_TOTAL = PHONE_BRAINSTORM_ORDER.length;
-// Codex 2026-06-23: friend mini deck. Dots point at live source slides only;
-// no slide DOM, copy, or main deck order changes.
-const MINI_INVESTOR_ORDER = [
-  { id: 'cs-1m8-invite-graph-blue', label: 'What GnR does' },
-  { id: 'cs-loneliness-epidemic', label: 'Why this matters' },
-  { id: 'cs-community-builder-product', label: 'How it works' },
-  { id: 'cs-community-builder-leaders', label: 'Who it is for' },
-  { id: 'cs-mv6-merge', label: 'Where it goes' },
-];
+// [Codex 2026-06-25] Friend mini deck moved to trash per Dave because these source slides already live in SLIDE_ORDER:
+// cs-1m8-invite-graph-blue, cs-loneliness-epidemic, cs-community-builder-product, cs-community-builder-leaders, cs-mv6-merge.
+const MINI_INVESTOR_ORDER = [];
 const MINI_INVESTOR_TOTAL = MINI_INVESTOR_ORDER.length;
 
 
