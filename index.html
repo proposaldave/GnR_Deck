@@ -9405,7 +9405,7 @@ window.cs1m5Reverse = function() {
   <div class="pbs-hint"></div>
 </div>
 
-<div class="casey-slide ds-focus phone-brainstorm-slide pbs-dark" id="cs-phone-brainstorm-pro-voice" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="Famous AI voice is distribution call graph is the moat">
+<div class="casey-slide ds-focus phone-brainstorm-slide pbs-dark trash-slide" id="cs-phone-brainstorm-pro-voice" data-deleted="1" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="Famous AI voice is distribution call graph is the moat">
   <img class="pbs-bg" src="assets/generated/phone-call-brainstorm/phone-call-ai-pro-voice-v1.png" alt="Generic pro coach voice persona calling players with a community graph behind it">
   <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 06</div>
   <section class="pbs-content">
@@ -9419,9 +9419,9 @@ window.cs1m5Reverse = function() {
 
 <div class="casey-slide ds-focus phone-brainstorm-slide" id="cs-phone-brainstorm-money" data-stage="0" onclick="if(window.phoneBrainstormSlideAdvance&&window.phoneBrainstormSlideAdvance(this)) event.stopPropagation()" style="display:none" aria-label="Better calls fill paid real world experiences">
   <img class="pbs-bg" src="assets/generated/phone-call-brainstorm/phone-call-paid-experiences-v1.png" alt="Full pickleball courts and community-builder-led paid experiences created from better calls">
-  <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 07</div>
+  <div class="pbs-eye slide-eyebrow">PHONE BRAINSTORM 06</div>
   <section class="pbs-content">
-    <div class="pbs-kicker">Angle F</div>
+    <div class="pbs-kicker">Angle E</div>
     <h1 class="pbs-title">Better calls fill <em>real experiences.</em></h1>
     <p class="pbs-sub">The loop turns demand into paid community-builder-led events people actually want.</p>
     <div class="pbs-foot">Use when the story needs the money path.</div>
@@ -39416,6 +39416,8 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 // Recoverable slide trash. These are intentionally out of the main deck and appendix,
 // but still visible inside the app so Dave can restore candidates later.
 const TRASH_ORDER = [
+  // Codex 2026-06-25: Dave requested moving PHONE BRAINSTORM 06 famous voice slide to trash.
+  'cs-phone-brainstorm-pro-voice',
   // Codex 2026-06-24: Dave requested moving the white-dot core problem alt to trash.
   'cs-community-reciprocity-simple-white',
   // Codex 2026-06-23: Dave requested one consolidated phone-call slide; prior phone-call variants moved here for recovery.
@@ -39628,7 +39630,6 @@ const PHONE_BRAINSTORM_ORDER = [
   { id: 'cs-phone-brainstorm-screen', label: 'Calls beat screens' },
   { id: 'cs-phone-brainstorm-router', label: 'AI chooses the next move' },
   { id: 'cs-phone-brainstorm-live', label: 'Live adaptive conversation' },
-  { id: 'cs-phone-brainstorm-pro-voice', label: 'Famous AI voice later' },
   { id: 'cs-phone-brainstorm-money', label: 'Calls fill paid experiences' },
 ];
 const PHONE_BRAINSTORM_TOTAL = PHONE_BRAINSTORM_ORDER.length;
