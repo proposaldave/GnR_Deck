@@ -31327,72 +31327,61 @@ window.csFeatureStageUnlocksAdvance=function(){const s=document.getElementById('
 <!-- cs-referral-community-fullbleed - MAIN review run: full-slide referral engine + community intelligence backgrounds [Codex 2026-06-22] -->
 <style>
   .rci-fullbleed{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#1a1612!important;color:#fbf7ef;cursor:pointer}
-  .rci-fullbleed .rcif-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.03) contrast(1.04) brightness(.95)}
-  .rci-fullbleed .rcif-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,14,25,.76) 0%,rgba(6,14,25,.52) 27%,rgba(6,14,25,.12) 49%,rgba(26,22,18,.04) 76%,rgba(26,22,18,.15) 100%),linear-gradient(180deg,rgba(26,22,18,.02),rgba(26,22,18,.16));pointer-events:none}
-  .rci-fullbleed .rcif-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;text-shadow:0 2px 16px rgba(251,247,239,.25)}
+  .rci-fullbleed .rcif-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(1.04) contrast(1.04) brightness(.96)}
+  .rci-fullbleed .rcif-wash{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 48%,rgba(251,247,239,.56) 0%,rgba(251,247,239,.34) 24%,rgba(251,247,239,.10) 45%,rgba(251,247,239,0) 70%),linear-gradient(90deg,rgba(26,22,18,.28) 0%,rgba(26,22,18,.05) 34%,rgba(26,22,18,.02) 62%,rgba(26,22,18,.28) 100%),linear-gradient(180deg,rgba(251,247,239,.00),rgba(26,22,18,.16));pointer-events:none}
+  .rci-fullbleed .rcif-eye{position:absolute;top:28px;left:48px;z-index:5;display:inline-block;padding:6px 9px 6px 10px;background:rgba(251,247,239,.88);border:1px solid rgba(184,149,74,.22);box-shadow:0 10px 26px rgba(26,22,18,.12);font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;text-shadow:0 1px 0 rgba(251,247,239,.96)}
   .rci-fullbleed .rcif-stage{position:absolute;inset:0;z-index:3;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .74s cubic-bezier(.22,1,.36,1),transform .74s cubic-bezier(.22,1,.36,1),visibility 0s linear .74s;pointer-events:none}
   .rci-fullbleed[data-shown="1"] .rcif-stage{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
-  .rci-fullbleed .rcif-title{position:absolute;left:70px;top:320px;width:min(660px,36vw);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.1rem,5.55vw,6.15rem);line-height:.92;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance;text-shadow:0 24px 58px rgba(0,0,0,.56)}
-  .rci-fullbleed .rcif-title em{display:block;margin-top:.08em;font-style:italic;color:#f0d27f;font-weight:850}
-  .rci-fullbleed .rcif-chip{position:absolute;z-index:4;display:grid;place-items:center;min-width:190px;min-height:72px;padding:18px 22px;box-sizing:border-box;border:1px solid rgba(184,149,74,.38);background:rgba(251,247,239,.86);box-shadow:0 18px 46px rgba(26,22,18,.16);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.18rem;line-height:1.02;font-weight:900;text-align:center;color:#1a1612}
-  .rci-fullbleed .rcif-chip > div > span{display:block;margin-bottom:7px;font-family:'Manrope',sans-serif;font-size:.49rem;font-weight:950;letter-spacing:.17em;text-transform:uppercase;color:#c8462c}
+  .rci-fullbleed .rcif-title{position:absolute;left:50%;right:auto;top:104px;transform:translateX(-50%);width:min(660px,38vw);margin:0;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.05rem,5.8vw,6.7rem);line-height:.90;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance;text-shadow:0 2px 0 rgba(251,247,239,.94),0 22px 56px rgba(251,247,239,.76)}
+  .rci-fullbleed .rcif-title em{display:block;margin-top:.03em;font-style:italic;color:#c8462c;font-weight:850;text-shadow:0 2px 0 rgba(251,247,239,.94),0 18px 46px rgba(251,247,239,.78)}\n  .rci-fullbleed .rcif-title .g{color:#5B8FD4}.rci-fullbleed .rcif-title .n{color:#1a1612;font-style:italic;font-weight:600}.rci-fullbleed .rcif-title .r{color:#C8462C}
+  .rci-fullbleed .rcif-chip{position:absolute;z-index:4;display:grid;place-items:center;width:270px;min-height:148px;padding:24px 26px;box-sizing:border-box;border:1px solid rgba(184,149,74,.44);border-top:5px solid var(--rcif-accent,#b8954a);border-radius:999px;background:rgba(251,247,239,.90);box-shadow:0 26px 70px rgba(26,22,18,.20),0 0 0 13px rgba(251,247,239,.13);backdrop-filter:blur(4px);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.08rem;line-height:.97;font-weight:900;text-align:center;color:#1a1612;text-wrap:balance}
+  .rci-fullbleed .rcif-chip > div > span{display:block;margin-bottom:10px;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:#c8462c}
+  .rci-fullbleed .rcif-left{--rcif-accent:#c8462c;left:25.1%;top:53%;transform:translate(-50%,-50%)}
+  .rci-fullbleed .rcif-right{--rcif-accent:#5B8FD4;left:75.7%;top:53%;transform:translate(-50%,-50%)}
+  .rci-fullbleed .rcif-center{left:50%;top:58%;transform:translate(-50%,-50%);width:182px;min-height:182px;padding:22px 18px;border-radius:999px;background:linear-gradient(180deg,rgba(26,22,18,.95),rgba(26,22,18,.86));color:#fbf7ef;border-color:rgba(184,149,74,.58);border-top-color:#b8954a;box-shadow:0 30px 80px rgba(26,22,18,.34),0 0 0 11px rgba(184,149,74,.12)}
   .rci-fullbleed .rcif-center b span{display:inline;margin:0;font:inherit;letter-spacing:0;text-transform:none}
-  .rci-fullbleed .rcif-left{left:45.2%;top:38.2%;transform:translate(-50%,-50%);border-top:4px solid #c8462c}
-  .rci-fullbleed .rcif-right{left:78.4%;top:38.2%;transform:translate(-50%,-50%);border-top:4px solid #5B8FD4}
-  .rci-fullbleed .rcif-center{left:62.2%;top:57.4%;transform:translate(-50%,-50%);min-width:145px;min-height:170px;border-radius:999px;background:rgba(26,22,18,.88);color:#fbf7ef;border-color:rgba(184,149,74,.48)}
-  .rci-fullbleed .rcif-center b{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.12rem;line-height:1}.rci-fullbleed .rcif-center .g{color:#5B8FD4}.rci-fullbleed .rcif-center .n{color:#fbf7ef;font-style:italic;font-weight:600}.rci-fullbleed .rcif-center .r{color:#C8462C}
-  .rci-fullbleed .rcif-center small{display:block;margin-top:10px;font-family:'Manrope',sans-serif;font-size:.47rem;font-weight:950;letter-spacing:.15em;text-transform:uppercase;color:#f0d27f}
-  #cs-referral-community-fullbleed-v2 .rcif-wash{background:linear-gradient(90deg,rgba(251,247,239,.46) 0%,rgba(251,247,239,.30) 26%,rgba(251,247,239,.04) 46%,rgba(26,22,18,.00) 74%,rgba(26,22,18,.10) 100%),linear-gradient(180deg,rgba(251,247,239,.02),rgba(26,22,18,.08))}
-  #cs-referral-community-fullbleed-v2 .rcif-title{color:#1a1612;text-shadow:0 18px 54px rgba(251,247,239,.62)}
-  #cs-referral-community-fullbleed-v2 .rcif-title em{color:#b8954a}
-  #cs-referral-community-fullbleed-v2 .rcif-left{left:42.8%;top:39%}
-  #cs-referral-community-fullbleed-v2 .rcif-right{left:75%;top:38.2%}
-  #cs-referral-community-fullbleed-v2 .rcif-center{left:58.9%;top:46.8%}
-  #cs-referral-community-fullbleed-v3 .rcif-wash{background:linear-gradient(90deg,rgba(6,14,25,.72) 0%,rgba(6,14,25,.50) 27%,rgba(6,14,25,.14) 48%,rgba(26,22,18,.00) 76%,rgba(26,22,18,.08) 100%),linear-gradient(180deg,rgba(26,22,18,.00),rgba(26,22,18,.12))}
-  #cs-referral-community-fullbleed-v3 .rcif-title{top:292px;color:#fbf7ef;text-shadow:0 24px 58px rgba(0,0,0,.58)}
-  #cs-referral-community-fullbleed-v3 .rcif-title em{color:#f0d27f}
-  #cs-referral-community-fullbleed-v3 .rcif-left{left:32.6%;top:37.2%}
-  #cs-referral-community-fullbleed-v3 .rcif-right{left:78.6%;top:37.2%}
-  #cs-referral-community-fullbleed-v3 .rcif-center{left:55.7%;top:50.2%}
+  .rci-fullbleed .rcif-center b{display:block;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.42rem;line-height:1}.rci-fullbleed .rcif-center .g{color:#5B8FD4}.rci-fullbleed .rcif-center .n{color:#fbf7ef;font-style:italic;font-weight:600}.rci-fullbleed .rcif-center .r{color:#C8462C}
+  .rci-fullbleed .rcif-center small{display:block;margin-top:13px;font-family:'Manrope',sans-serif;font-size:.52rem;font-weight:950;letter-spacing:.15em;line-height:1.35;text-transform:uppercase;color:#f0d27f}
   html[data-export="1"] .rci-fullbleed .rcif-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
   @media (max-width:1500px){
-    .rci-fullbleed .rcif-title{left:58px;top:270px;width:min(540px,36vw);font-size:clamp(3.28rem,4.6vw,5rem)}
-    .rci-fullbleed .rcif-chip{min-width:160px;min-height:62px;padding:14px 18px;font-size:1rem}
-    .rci-fullbleed .rcif-center{min-width:120px;min-height:148px}
-    .rci-fullbleed .rcif-center b{font-size:1.7rem}
+    .rci-fullbleed .rcif-title{top:88px;width:min(560px,38vw);font-size:clamp(3.35rem,5.1vw,5.3rem)}
+    .rci-fullbleed .rcif-chip{width:220px;min-height:124px;padding:20px 20px;font-size:1.68rem}
+    .rci-fullbleed .rcif-center{width:150px;min-height:150px}
+    .rci-fullbleed .rcif-center b{font-size:1.96rem}
+    .rci-fullbleed .rcif-center small{font-size:.46rem}
   }
 </style>
 <div class="casey-slide ds-focus rci-fullbleed" id="cs-referral-community-fullbleed-v1" data-shown="0" onclick="if(window.csReferralCommunityFullbleed1Advance&&window.csReferralCommunityFullbleed1Advance()) event.stopPropagation()" style="display:none" aria-label="Full-bleed candidate one for referral sales engine becoming community intelligence">
-  <img class="rcif-bg" src="assets/generated/referral-community-intelligence/referral-community-fullbleed-v1.png" alt="Full-bleed double loop background showing a human referral loop feeding a community intelligence loop.">
+  <img class="rcif-bg" src="assets/generated/referral-community-intelligence/referral-community-flywheel-bg-v1.png" alt="Two interlocking flywheels over a real pickleball community: left referral sales engine, right community intelligence.">
   <div class="rcif-wash"></div>
   <div class="rcif-eye">Community intelligence</div>
   <section class="rcif-stage">
-    <h1 class="rcif-title">The sales engine creates the graph.<em>The graph makes every room smarter.</em></h1>
-    <div class="rcif-chip rcif-left"><div><span>Human loop</span>Referral sales engine</div></div>
+    <h1 class="rcif-title"><span class="g">G</span><span class="n">n</span><span class="r">R</span> learns<em>the room.</em></h1>
+    <div class="rcif-chip rcif-left"><div><span>Left flywheel</span>Referral sales engine</div></div>
     <div class="rcif-chip rcif-center"><div><b><span class="g">G</span><span class="n">n</span><span class="r">R</span></b><small>learns the room</small></div></div>
-    <div class="rcif-chip rcif-right"><div><span>Room loop</span>Community intelligence</div></div>
+    <div class="rcif-chip rcif-right"><div><span>Right flywheel</span>Community intelligence</div></div>
   </section>
 </div>
 <div class="casey-slide ds-focus rci-fullbleed" id="cs-referral-community-fullbleed-v2" data-shown="0" onclick="if(window.csReferralCommunityFullbleed2Advance&&window.csReferralCommunityFullbleed2Advance()) event.stopPropagation()" style="display:none" aria-label="Full-bleed candidate two for referral sales engine becoming community intelligence">
-  <img class="rcif-bg" src="assets/cs-referral-community-cascade-pink.png" alt="Aerial full-bleed double loop background showing referral signals and community intelligence across a pickleball club.">
+  <img class="rcif-bg" src="assets/generated/referral-community-intelligence/referral-community-flywheel-bg-v1.png" alt="Two interlocking flywheels over a real pickleball community: left referral sales engine, right community intelligence.">
   <div class="rcif-wash"></div>
   <div class="rcif-eye">Community intelligence</div>
   <section class="rcif-stage">
-    <h1 class="rcif-title">The sales engine creates the graph.<em>The graph makes every room smarter.</em></h1>
-    <div class="rcif-chip rcif-left"><div><span>Human loop</span>Referral sales engine</div></div>
+    <h1 class="rcif-title"><span class="g">G</span><span class="n">n</span><span class="r">R</span> learns<em>the room.</em></h1>
+    <div class="rcif-chip rcif-left"><div><span>Left flywheel</span>Referral sales engine</div></div>
     <div class="rcif-chip rcif-center"><div><b><span class="g">G</span><span class="n">n</span><span class="r">R</span></b><small>learns the room</small></div></div>
-    <div class="rcif-chip rcif-right"><div><span>Room loop</span>Community intelligence</div></div>
+    <div class="rcif-chip rcif-right"><div><span>Right flywheel</span>Community intelligence</div></div>
   </section>
 </div>
 <div class="casey-slide ds-focus rci-fullbleed" id="cs-referral-community-fullbleed-v3" data-shown="0" onclick="if(window.csReferralCommunityFullbleed3Advance&&window.csReferralCommunityFullbleed3Advance()) event.stopPropagation()" style="display:none" aria-label="Full-bleed candidate three for referral sales engine becoming community intelligence">
-  <img class="rcif-bg" src="assets/generated/referral-community-intelligence/referral-community-fullbleed-v3.png" alt="Premium full-bleed double flywheel background connecting referral sales with community intelligence.">
+  <img class="rcif-bg" src="assets/generated/referral-community-intelligence/referral-community-flywheel-bg-v1.png" alt="Two interlocking flywheels over a real pickleball community: left referral sales engine, right community intelligence.">
   <div class="rcif-wash"></div>
   <div class="rcif-eye">Community intelligence</div>
   <section class="rcif-stage">
-    <h1 class="rcif-title">The sales engine creates the graph.<em>The graph makes every room smarter.</em></h1>
-    <div class="rcif-chip rcif-left"><div><span>Human loop</span>Referral sales engine</div></div>
+    <h1 class="rcif-title"><span class="g">G</span><span class="n">n</span><span class="r">R</span> learns<em>the room.</em></h1>
+    <div class="rcif-chip rcif-left"><div><span>Left flywheel</span>Referral sales engine</div></div>
     <div class="rcif-chip rcif-center"><div><b><span class="g">G</span><span class="n">n</span><span class="r">R</span></b><small>learns the room</small></div></div>
-    <div class="rcif-chip rcif-right"><div><span>Room loop</span>Community intelligence</div></div>
+    <div class="rcif-chip rcif-right"><div><span>Right flywheel</span>Community intelligence</div></div>
   </section>
 </div>
 <script>
