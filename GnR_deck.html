@@ -27714,23 +27714,23 @@ window.csConnectedFirstProblemReverse=function(){const s=document.getElementById
   </section>
 </div>
 <style>
-  #cs-human-conversation-title-a,#cs-human-conversation-title-b,#cs-human-conversation-thesis,#cs-human-conversation-ai-arc{background:#1a1612!important;overflow:hidden;cursor:pointer;color:#fbf7ef}
-  #cs-human-conversation-title-a .hc-bg,#cs-human-conversation-title-b .hc-bg,#cs-human-conversation-thesis .hc-bg,#cs-human-conversation-ai-arc .hc-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block!important;z-index:0;filter:saturate(1.02) contrast(1.03) brightness(.98);pointer-events:none}
-  #cs-human-conversation-title-a .hc-wash,#cs-human-conversation-title-b .hc-wash,#cs-human-conversation-thesis .hc-wash,#cs-human-conversation-ai-arc .hc-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.88) 22%,rgba(251,247,239,.48) 42%,rgba(26,22,18,.10) 68%,rgba(26,22,18,.20) 100%)}
-  #cs-human-conversation-thesis .hc-wash,#cs-human-conversation-ai-arc .hc-wash{background:linear-gradient(90deg,rgba(251,247,239,.94) 0%,rgba(251,247,239,.78) 26%,rgba(251,247,239,.36) 48%,rgba(26,22,18,.12) 76%,rgba(26,22,18,.24) 100%)}
-  #cs-human-conversation-title-a .hc-paper,#cs-human-conversation-title-b .hc-paper,#cs-human-conversation-thesis .hc-paper,#cs-human-conversation-ai-arc .hc-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.055) 1px,transparent 0);background-size:4px 4px;opacity:.38;mix-blend-mode:multiply}
-  #cs-human-conversation-title-a .slide-eyebrow,#cs-human-conversation-title-b .slide-eyebrow,#cs-human-conversation-thesis .slide-eyebrow,#cs-human-conversation-ai-arc .slide-eyebrow{position:absolute;top:28px!important;left:48px!important;z-index:6;font-family:'Manrope',sans-serif!important;font-size:.58rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#C8462C!important;background:transparent!important;padding:0!important;border:0!important;box-shadow:none!important;text-shadow:0 1px 0 rgba(251,247,239,.80)}
-  #cs-human-conversation-title-a .hc-stage,#cs-human-conversation-title-b .hc-stage,#cs-human-conversation-thesis .hc-stage,#cs-human-conversation-ai-arc .hc-stage{position:absolute;inset:0;z-index:3;display:grid;align-content:center;box-sizing:border-box;padding:112px 74px 78px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
-  #cs-human-conversation-title-a[data-stage="1"] .hc-stage,#cs-human-conversation-title-b[data-stage="1"] .hc-stage,#cs-human-conversation-thesis[data-stage="1"] .hc-stage,#cs-human-conversation-ai-arc[data-stage="1"] .hc-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
-  #cs-human-conversation-title-a .hc-copy,#cs-human-conversation-title-b .hc-copy,#cs-human-conversation-thesis .hc-copy,#cs-human-conversation-ai-arc .hc-copy{max-width:930px;text-shadow:0 3px 0 rgba(251,247,239,.74),0 18px 54px rgba(251,247,239,.72)}
-  #cs-human-conversation-title-a .hc-head,#cs-human-conversation-title-b .hc-head,#cs-human-conversation-thesis .hc-head,#cs-human-conversation-ai-arc .hc-head{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.25rem,6.4vw,7.35rem);line-height:.91;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance}
-  #cs-human-conversation-title-a .hc-head em,#cs-human-conversation-title-b .hc-head em,#cs-human-conversation-thesis .hc-head em,#cs-human-conversation-ai-arc .hc-head em{display:block;font-style:italic;color:#B8954A;font-weight:840}
-  #cs-human-conversation-title-b .hc-head,#cs-human-conversation-thesis .hc-head,#cs-human-conversation-ai-arc .hc-head{font-size:clamp(3.75rem,5.65vw,6.35rem)}
-  #cs-human-conversation-title-a .hc-sub,#cs-human-conversation-title-b .hc-sub,#cs-human-conversation-thesis .hc-sub,#cs-human-conversation-ai-arc .hc-sub{display:inline-block;margin:26px 0 0;padding:10px 14px 11px;max-width:790px;background:rgba(251,247,239,.78);border:1px solid rgba(184,149,74,.28);box-shadow:0 20px 44px rgba(26,22,18,.12);font-family:'Manrope',sans-serif;font-size:clamp(1.0rem,1.18vw,1.24rem);line-height:1.42;font-weight:850;color:#1a1612;text-shadow:0 1px 0 rgba(251,247,239,.80)}
-  #cs-human-conversation-title-a .hc-chip,#cs-human-conversation-title-b .hc-chip,#cs-human-conversation-thesis .hc-chip,#cs-human-conversation-ai-arc .hc-chip{display:inline-grid;place-items:center;min-height:42px;margin-top:24px;padding:0 16px;border-radius:999px;border:1px solid rgba(184,149,74,.48);background:rgba(184,149,74,.16);font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#1a1612}
+  #cs-human-conversation-title-a,#cs-human-conversation-title-b,#cs-human-conversation-feeling-signal,#cs-human-conversation-thesis,#cs-human-conversation-ai-arc{background:#1a1612!important;overflow:hidden;cursor:pointer;color:#fbf7ef}
+  #cs-human-conversation-title-a .hc-bg,#cs-human-conversation-title-b .hc-bg,#cs-human-conversation-feeling-signal .hc-bg,#cs-human-conversation-thesis .hc-bg,#cs-human-conversation-ai-arc .hc-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block!important;z-index:0;filter:saturate(1.02) contrast(1.03) brightness(.98);pointer-events:none}
+  #cs-human-conversation-title-a .hc-wash,#cs-human-conversation-title-b .hc-wash,#cs-human-conversation-feeling-signal .hc-wash,#cs-human-conversation-thesis .hc-wash,#cs-human-conversation-ai-arc .hc-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.88) 22%,rgba(251,247,239,.48) 42%,rgba(26,22,18,.10) 68%,rgba(26,22,18,.20) 100%)}
+  #cs-human-conversation-feeling-signal .hc-wash,#cs-human-conversation-thesis .hc-wash,#cs-human-conversation-ai-arc .hc-wash{background:linear-gradient(90deg,rgba(251,247,239,.94) 0%,rgba(251,247,239,.78) 26%,rgba(251,247,239,.36) 48%,rgba(26,22,18,.12) 76%,rgba(26,22,18,.24) 100%)}
+  #cs-human-conversation-title-a .hc-paper,#cs-human-conversation-title-b .hc-paper,#cs-human-conversation-feeling-signal .hc-paper,#cs-human-conversation-thesis .hc-paper,#cs-human-conversation-ai-arc .hc-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.055) 1px,transparent 0);background-size:4px 4px;opacity:.38;mix-blend-mode:multiply}
+  #cs-human-conversation-title-a .slide-eyebrow,#cs-human-conversation-title-b .slide-eyebrow,#cs-human-conversation-feeling-signal .slide-eyebrow,#cs-human-conversation-thesis .slide-eyebrow,#cs-human-conversation-ai-arc .slide-eyebrow{position:absolute;top:28px!important;left:48px!important;z-index:6;font-family:'Manrope',sans-serif!important;font-size:.58rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#C8462C!important;background:transparent!important;padding:0!important;border:0!important;box-shadow:none!important;text-shadow:0 1px 0 rgba(251,247,239,.80)}
+  #cs-human-conversation-title-a .hc-stage,#cs-human-conversation-title-b .hc-stage,#cs-human-conversation-feeling-signal .hc-stage,#cs-human-conversation-thesis .hc-stage,#cs-human-conversation-ai-arc .hc-stage{position:absolute;inset:0;z-index:3;display:grid;align-content:center;box-sizing:border-box;padding:112px 74px 78px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
+  #cs-human-conversation-title-a[data-stage="1"] .hc-stage,#cs-human-conversation-title-b[data-stage="1"] .hc-stage,#cs-human-conversation-feeling-signal[data-stage="1"] .hc-stage,#cs-human-conversation-thesis[data-stage="1"] .hc-stage,#cs-human-conversation-ai-arc[data-stage="1"] .hc-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-human-conversation-title-a .hc-copy,#cs-human-conversation-title-b .hc-copy,#cs-human-conversation-feeling-signal .hc-copy,#cs-human-conversation-thesis .hc-copy,#cs-human-conversation-ai-arc .hc-copy{max-width:930px;text-shadow:0 3px 0 rgba(251,247,239,.74),0 18px 54px rgba(251,247,239,.72)}
+  #cs-human-conversation-title-a .hc-head,#cs-human-conversation-title-b .hc-head,#cs-human-conversation-feeling-signal .hc-head,#cs-human-conversation-thesis .hc-head,#cs-human-conversation-ai-arc .hc-head{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.25rem,6.4vw,7.35rem);line-height:.91;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance}
+  #cs-human-conversation-title-a .hc-head em,#cs-human-conversation-title-b .hc-head em,#cs-human-conversation-feeling-signal .hc-head em,#cs-human-conversation-thesis .hc-head em,#cs-human-conversation-ai-arc .hc-head em{display:block;font-style:italic;color:#B8954A;font-weight:840}
+  #cs-human-conversation-title-b .hc-head,#cs-human-conversation-feeling-signal .hc-head,#cs-human-conversation-thesis .hc-head,#cs-human-conversation-ai-arc .hc-head{font-size:clamp(3.75rem,5.65vw,6.35rem)}
+  #cs-human-conversation-title-a .hc-sub,#cs-human-conversation-title-b .hc-sub,#cs-human-conversation-feeling-signal .hc-sub,#cs-human-conversation-thesis .hc-sub,#cs-human-conversation-ai-arc .hc-sub{display:inline-block;margin:26px 0 0;padding:10px 14px 11px;max-width:790px;background:rgba(251,247,239,.78);border:1px solid rgba(184,149,74,.28);box-shadow:0 20px 44px rgba(26,22,18,.12);font-family:'Manrope',sans-serif;font-size:clamp(1.0rem,1.18vw,1.24rem);line-height:1.42;font-weight:850;color:#1a1612;text-shadow:0 1px 0 rgba(251,247,239,.80)}
+  #cs-human-conversation-title-a .hc-chip,#cs-human-conversation-title-b .hc-chip,#cs-human-conversation-feeling-signal .hc-chip,#cs-human-conversation-thesis .hc-chip,#cs-human-conversation-ai-arc .hc-chip{display:inline-grid;place-items:center;min-height:42px;margin-top:24px;padding:0 16px;border-radius:999px;border:1px solid rgba(184,149,74,.48);background:rgba(184,149,74,.16);font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#1a1612}
   #cs-human-conversation-title-b .hc-copy{max-width:860px}
   #cs-human-conversation-thesis .hc-copy,#cs-human-conversation-ai-arc .hc-copy{max-width:900px}
-  html[data-export="1"] #cs-human-conversation-title-a .hc-stage,html[data-export="1"] #cs-human-conversation-title-b .hc-stage,html[data-export="1"] #cs-human-conversation-thesis .hc-stage,html[data-export="1"] #cs-human-conversation-ai-arc .hc-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+  html[data-export="1"] #cs-human-conversation-title-a .hc-stage,html[data-export="1"] #cs-human-conversation-title-b .hc-stage,html[data-export="1"] #cs-human-conversation-feeling-signal .hc-stage,html[data-export="1"] #cs-human-conversation-thesis .hc-stage,html[data-export="1"] #cs-human-conversation-ai-arc .hc-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-human-conversation-title-a" data-stage="0" onclick="if(window.csHumanConversationTitleAAdvance&&window.csHumanConversationTitleAAdvance()){event.stopPropagation();}" style="display:none" aria-label="Human Conversation title concept A">
   <img class="hc-bg" src="assets/generated/human-conversation/human-conversation-title-v1.png" alt="Text-free generated image: AI-guided human voice connection leading into a warm community gathering."/>
@@ -27743,6 +27743,12 @@ window.csConnectedFirstProblemReverse=function(){const s=document.getElementById
   <div class="hc-wash" aria-hidden="true"></div><div class="hc-paper" aria-hidden="true"></div>
   <div class="slide-eyebrow">human conversation 02</div>
   <section class="hc-stage"><div class="hc-copy"><h1 class="hc-head">The voice layer <em>for real community.</em></h1><p class="hc-sub">AI knows who to call and what to ask. Humans create the trust.</p><div class="hc-chip" aria-hidden="true">title direction b</div></div></section>
+</div>
+<div class="casey-slide ds-focus" id="cs-human-conversation-feeling-signal" data-stage="0" onclick="if(window.csHumanConversationFeelingAdvance&&window.csHumanConversationFeelingAdvance()){event.stopPropagation();}" style="display:none" aria-label="Human Conversation feeling signal">
+  <img class="hc-bg" src="assets/generated/human-conversation/human-conversation-feeling-signal-v1.png" alt="Text-free generated image: a human phone conversation revealing emotional signals across a warm community."/>
+  <div class="hc-wash" aria-hidden="true"></div><div class="hc-paper" aria-hidden="true"></div>
+  <div class="slide-eyebrow">human conversation signal</div>
+  <section class="hc-stage"><div class="hc-copy"><h1 class="hc-head">One human conversation <em>tells you how people feel.</em></h1><p class="hc-sub">Tone, pauses, warmth, hesitation, loneliness, trust: the signal is already in the call.</p><div class="hc-chip" aria-hidden="true">feeling is data</div></div></section>
 </div>
 <div class="casey-slide ds-focus" id="cs-human-conversation-thesis" data-stage="0" onclick="if(window.csHumanConversationThesisAdvance&&window.csHumanConversationThesisAdvance()){event.stopPropagation();}" style="display:none" aria-label="Human Conversation product thesis">
   <img class="hc-bg" src="assets/generated/human-conversation/human-conversation-ai-arc-v1.png" alt="Text-free generated image: community builder using AI-guided voice paths to reach people personally."/>
@@ -27763,6 +27769,8 @@ window.csHumanConversationTitleAAdvance=function(){return window.hcReviewAdvance
 window.csHumanConversationTitleAReverse=function(){return window.hcReviewReverse('cs-human-conversation-title-a');};
 window.csHumanConversationTitleBAdvance=function(){return window.hcReviewAdvance('cs-human-conversation-title-b');};
 window.csHumanConversationTitleBReverse=function(){return window.hcReviewReverse('cs-human-conversation-title-b');};
+window.csHumanConversationFeelingAdvance=function(){return window.hcReviewAdvance('cs-human-conversation-feeling-signal');};
+window.csHumanConversationFeelingReverse=function(){return window.hcReviewReverse('cs-human-conversation-feeling-signal');};
 window.csHumanConversationThesisAdvance=function(){return window.hcReviewAdvance('cs-human-conversation-thesis');};
 window.csHumanConversationThesisReverse=function(){return window.hcReviewReverse('cs-human-conversation-thesis');};
 window.csHumanConversationAiArcAdvance=function(){return window.hcReviewAdvance('cs-human-conversation-ai-arc');};
@@ -39507,6 +39515,7 @@ const SLIDE_ORDER = [
   'cs-connected-first-investor-email',
   'cs-human-conversation-title-a',
   'cs-human-conversation-title-b',
+  'cs-human-conversation-feeling-signal',
   'cs-human-conversation-thesis',
   'cs-human-conversation-ai-arc',
   'cs-networked-reciprocity',
@@ -42013,10 +42022,11 @@ const slideLabels = [
   'Temporary investor email draft', // 34 cs-connected-first-investor-email
   'Human Conversation title A', // 35 cs-human-conversation-title-a
   'Human Conversation title B', // 36 cs-human-conversation-title-b
-  'Human Conversation product thesis', // 37 cs-human-conversation-thesis
-  'Human Conversation AI arc', // 38 cs-human-conversation-ai-arc
-  'Networked reciprocity breakthrough', // 39 cs-networked-reciprocity
-  'Mission: abundant connection', // 40 cs-mv6-merge
+  'Human Conversation feeling signal', // 37 cs-human-conversation-feeling-signal
+  'Human Conversation product thesis', // 38 cs-human-conversation-thesis
+  'Human Conversation AI arc', // 39 cs-human-conversation-ai-arc
+  'Networked reciprocity breakthrough', // 40 cs-networked-reciprocity
+  'Mission: abundant connection', // 41 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -42848,6 +42858,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-connected-first-problem': 'csConnectedFirstProblemAdvance',
     'cs-human-conversation-title-a': 'csHumanConversationTitleAAdvance',
     'cs-human-conversation-title-b': 'csHumanConversationTitleBAdvance',
+    'cs-human-conversation-feeling-signal': 'csHumanConversationFeelingAdvance',
     'cs-human-conversation-thesis': 'csHumanConversationThesisAdvance',
     'cs-human-conversation-ai-arc': 'csHumanConversationAiArcAdvance',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueAdvance',
@@ -42948,6 +42959,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-connected-first-problem': 'csConnectedFirstProblemReverse',
     'cs-human-conversation-title-a': 'csHumanConversationTitleAReverse',
     'cs-human-conversation-title-b': 'csHumanConversationTitleBReverse',
+    'cs-human-conversation-feeling-signal': 'csHumanConversationFeelingReverse',
     'cs-human-conversation-thesis': 'csHumanConversationThesisReverse',
     'cs-human-conversation-ai-arc': 'csHumanConversationAiArcReverse',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueReverse',
