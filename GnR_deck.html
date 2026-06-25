@@ -27654,6 +27654,65 @@ window.csConnectionFirstEvolutionReverse=function(){const s=document.getElementB
 window.csConnectionFirstLifeAdvance=function(){const s=document.getElementById('cs-connection-first-life');if(!s)return false;if(s.dataset.stage!=='1'){s.dataset.stage='1';return true;}return false;};
 window.csConnectionFirstLifeReverse=function(){const s=document.getElementById('cs-connection-first-life');if(!s)return false;if(s.dataset.stage==='1'){s.dataset.stage='0';return true;}return false;};
 </script>
+<style>
+  #cs-connected-first-problem{background:#1a1612!important;overflow:hidden;cursor:pointer;color:#fbf7ef}
+  #cs-connected-first-problem .cfp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block!important;z-index:0;filter:saturate(1.04) contrast(1.04) brightness(.96);pointer-events:none}
+  #cs-connected-first-problem .cfp-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(6,9,13,.78) 0%,rgba(16,16,17,.66) 24%,rgba(26,22,18,.33) 48%,rgba(26,22,18,.06) 74%,rgba(26,22,18,.10) 100%),radial-gradient(ellipse at 29% 50%,rgba(26,22,18,.18) 0%,rgba(26,22,18,.08) 39%,rgba(26,22,18,0) 68%)}
+  #cs-connected-first-problem .cfp-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(251,247,239,.10) 1px,transparent 0);background-size:4px 4px;opacity:.26;mix-blend-mode:screen}
+  #cs-connected-first-problem .slide-eyebrow{position:absolute;top:28px!important;left:48px!important;z-index:6;display:inline-block;padding:6px 9px 6px 10px;background:rgba(251,247,239,.86);border:1px solid rgba(184,149,74,.22);box-shadow:0 12px 28px rgba(0,0,0,.20);font-family:'Manrope',sans-serif!important;font-size:.58rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#C8462C!important;text-shadow:0 1px 0 rgba(251,247,239,.95)}
+  #cs-connected-first-problem .cfp-stage{position:absolute;inset:0;z-index:3;display:grid;align-content:center;box-sizing:border-box;padding:114px 72px 78px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
+  #cs-connected-first-problem[data-stage="1"] .cfp-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-connected-first-problem .cfp-copy{max-width:930px;text-shadow:0 16px 50px rgba(0,0,0,.56),0 3px 0 rgba(0,0,0,.28)}
+  #cs-connected-first-problem .cfp-head{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.05rem,5.85vw,6.65rem);line-height:.92;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance}
+  #cs-connected-first-problem .cfp-head em{display:block;margin-top:8px;font-style:italic;color:#B8954A;font-weight:840}
+  #cs-connected-first-problem .cfp-sub{display:inline-block;margin:28px 0 0;padding:10px 14px 11px;max-width:820px;background:rgba(26,22,18,.54);border:1px solid rgba(251,247,239,.18);box-shadow:0 20px 44px rgba(0,0,0,.22);font-family:'Manrope',sans-serif;font-size:clamp(1.0rem,1.18vw,1.24rem);line-height:1.42;font-weight:850;color:#fbf7ef;text-shadow:0 2px 8px rgba(0,0,0,.55)}
+  #cs-connected-first-problem .cfp-note{display:inline-grid;place-items:center;min-height:42px;margin-top:24px;padding:0 16px;border-radius:999px;border:1px solid rgba(184,149,74,.52);background:rgba(184,149,74,.20);box-shadow:0 12px 28px rgba(0,0,0,.18);font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#fbf7ef;backdrop-filter:blur(4px)}
+  html[data-export="1"] #cs-connected-first-problem .cfp-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+  @media (max-width:1100px){#cs-connected-first-problem .cfp-stage{padding:96px 50px 66px}#cs-connected-first-problem .cfp-copy{max-width:780px}#cs-connected-first-problem .cfp-head{font-size:clamp(3.15rem,5.45vw,5.65rem)}#cs-connected-first-problem .cfp-sub{font-size:clamp(.88rem,1.02vw,1.08rem);max-width:700px}}
+</style>
+<div class="casey-slide ds-focus" id="cs-connected-first-problem" data-stage="0" onclick="if(window.csConnectedFirstProblemAdvance&&window.csConnectedFirstProblemAdvance()){event.stopPropagation();}" style="display:none" aria-label="None of us live connected-first yet">
+  <img class="cfp-bg" src="assets/generated/connected-first-problem/connected-first-problem-v1.png" alt="Text-free generated image: phone-lit isolation giving way to a warm real-world community connection high."/>
+  <div class="cfp-wash" aria-hidden="true"></div>
+  <div class="cfp-paper" aria-hidden="true"></div>
+  <div class="slide-eyebrow">connected-first problem</div>
+  <section class="cfp-stage" aria-hidden="false">
+    <div class="cfp-copy">
+      <h1 class="cfp-head">None of us live connected-first yet. <em>That is the problem.</em></h1>
+      <p class="cfp-sub">Technology, scorecards, and our own brains pull us away. The right community pulls us back into a connection high.</p>
+      <div class="cfp-note" aria-hidden="true">start where connection is easiest: pickleball</div>
+    </div>
+  </section>
+</div>
+<script>
+window.csConnectedFirstProblemAdvance=function(){const s=document.getElementById('cs-connected-first-problem');if(!s)return false;if(s.dataset.stage!=='1'){s.dataset.stage='1';return true;}return false;};
+window.csConnectedFirstProblemReverse=function(){const s=document.getElementById('cs-connected-first-problem');if(!s)return false;if(s.dataset.stage==='1'){s.dataset.stage='0';return true;}return false;};
+</script>
+<style>
+  #cs-connected-first-investor-email{background:#fbf7ef!important;overflow:hidden;color:#1a1612}
+  #cs-connected-first-investor-email .slide-eyebrow{position:absolute;top:28px!important;left:48px!important;z-index:4;font-family:'Manrope',sans-serif!important;font-size:.58rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#C8462C!important;background:transparent!important;padding:0!important;border:0!important;box-shadow:none!important;text-shadow:none!important}
+  #cs-connected-first-investor-email .cfi-paper{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at 18% 22%,rgba(184,149,74,.18) 0%,rgba(184,149,74,0) 44%),linear-gradient(135deg,#fbf7ef 0%,#f3ead8 100%)}
+  #cs-connected-first-investor-email .cfi-dot{position:absolute;right:90px;top:86px;width:190px;height:190px;border-radius:50%;border:1px solid rgba(184,149,74,.30);background:radial-gradient(circle,rgba(91,143,212,.15),rgba(184,149,74,.06) 62%,rgba(184,149,74,0));z-index:1}
+  #cs-connected-first-investor-email .cfi-wrap{position:absolute;left:170px;top:170px;width:min(1280px,76vw);z-index:2;display:block!important}
+  #cs-connected-first-investor-email .cfi-title{margin:0 0 30px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.45rem,3.45vw,3.95rem);line-height:.98;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance;display:block!important;max-width:1120px}
+  #cs-connected-first-investor-email .cfi-title em{font-style:italic;color:#B8954A}
+  #cs-connected-first-investor-email .cfi-body{max-width:1220px;font-family:'Manrope',sans-serif;font-size:clamp(1.20rem,1.48vw,1.62rem);line-height:1.48;font-weight:760;color:rgba(26,22,18,.82);display:block!important;position:relative!important;left:auto!important;top:auto!important;transform:none!important}
+  #cs-connected-first-investor-email .cfi-body p{margin:0 0 24px}
+  #cs-connected-first-investor-email .cfi-body strong{color:#1a1612;font-weight:900}
+  #cs-connected-first-investor-email .cfi-rule{width:160px;height:5px;margin:34px 0 0;border-radius:999px;background:linear-gradient(90deg,#5B8FD4,#B8954A,#C8462C)}
+</style>
+<div class="casey-slide ds-focus" id="cs-connected-first-investor-email" style="display:none" aria-label="Temporary investor email draft text">
+  <div class="cfi-paper" aria-hidden="true"></div>
+  <div class="cfi-dot" aria-hidden="true"></div>
+  <div class="slide-eyebrow">temporary email draft</div>
+  <section class="cfi-wrap">
+    <h1 class="cfi-title">Connected First <em>email draft</em></h1>
+    <div class="cfi-body">
+      <p><strong>Connected First is built on a simple belief:</strong> most of us do not live connected-first lives. Technology pulls us into feeds, life pulls us into scorecards, and our own brains pull us toward comparison, avoidance, and loneliness. The company exists to reverse that pull.</p>
+      <p>Future communities will do for connection what gyms did for the body: create a repeatable connection high. Pickleball is the perfect wedge because it already makes connection easy. The opportunity is to turn that natural energy into a system that helps people feel known, invited, useful, and missed, then make it repeatable, measurable, and eventually AI-assisted.</p>
+    </div>
+    <div class="cfi-rule" aria-hidden="true"></div>
+  </section>
+</div>
 <div class="casey-slide ds-focus" id="cs-samecourt-pink3" style="display:none">
 
   <img class="scf3-bg" src="assets/cs-samecourt-pink3.png" alt="Warehouse-scale pickleball facility filled with players at golden hour — courts, action, community gathering." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
@@ -39389,6 +39448,8 @@ const SLIDE_ORDER = [
   'cs-samecourt-pyramid-image-led-pink',
   'cs-connection-first-evolution',
   'cs-connection-first-life',
+  'cs-connected-first-problem',
+  'cs-connected-first-investor-email',
   'cs-networked-reciprocity',
   'cs-mv6-merge',
 ];
@@ -41889,8 +41950,10 @@ const slideLabels = [
   'Pyramid: rating-first top / connection-first base', // 30 cs-samecourt-pyramid-image-led-pink
   'The next era is connection-first', // 31 cs-connection-first-evolution
   'A connected-first life', // 32 cs-connection-first-life
-  'Networked reciprocity breakthrough', // 33 cs-networked-reciprocity
-  'Mission: abundant connection', // 34 cs-mv6-merge
+  'Connected-first problem', // 33 cs-connected-first-problem
+  'Temporary investor email draft', // 34 cs-connected-first-investor-email
+  'Networked reciprocity breakthrough', // 35 cs-networked-reciprocity
+  'Mission: abundant connection', // 36 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -42719,6 +42782,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-samecourt-pyramid-image-led-pink': 'csPyramidMarketAdvance',
     'cs-connection-first-evolution': 'csConnectionFirstEvolutionAdvance',
     'cs-connection-first-life': 'csConnectionFirstLifeAdvance',
+    'cs-connected-first-problem': 'csConnectedFirstProblemAdvance',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueAdvance',
     'cs-connection-value-ladder-pink': 'csConnectionValueLadderAdvance',
     'cs-connection-pricing-power': 'csConnectionPricingPowerAdvance',
@@ -42814,6 +42878,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-samecourt-pyramid-image-led-pink': 'csPyramidMarketReverse',
     'cs-connection-first-evolution': 'csConnectionFirstEvolutionReverse',
     'cs-connection-first-life': 'csConnectionFirstLifeReverse',
+    'cs-connected-first-problem': 'csConnectedFirstProblemReverse',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueReverse',
     'cs-connection-value-ladder-pink': 'csConnectionValueLadderReverse',
     'cs-connection-pricing-power': 'csConnectionPricingPowerReverse',
@@ -43180,6 +43245,7 @@ document.addEventListener('wheel', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketAdvance && window.csPyramidMarketAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionAdvance && window.csConnectionFirstEvolutionAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-life' && window.csConnectionFirstLifeAdvance && window.csConnectionFirstLifeAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connected-first-problem' && window.csConnectedFirstProblemAdvance && window.csConnectedFirstProblemAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyAdvance && window.csPickleballConnectionEasyAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-pricing-power' && window.csConnectionPricingPowerAdvance && window.csConnectionPricingPowerAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexAdvance && window.csWedgepbCodexAdvance()) {
@@ -43383,6 +43449,7 @@ document.addEventListener('wheel', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketReverse && window.csPyramidMarketReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionReverse && window.csConnectionFirstEvolutionReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-life' && window.csConnectionFirstLifeReverse && window.csConnectionFirstLifeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connected-first-problem' && window.csConnectedFirstProblemReverse && window.csConnectedFirstProblemReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyReverse && window.csPickleballConnectionEasyReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-pricing-power' && window.csConnectionPricingPowerReverse && window.csConnectionPricingPowerReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexReverse && window.csWedgepbCodexReverse()) {
@@ -43553,6 +43620,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketAdvance && window.csPyramidMarketAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionAdvance && window.csConnectionFirstEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-first-life' && window.csConnectionFirstLifeAdvance && window.csConnectionFirstLifeAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-connected-first-problem' && window.csConnectedFirstProblemAdvance && window.csConnectedFirstProblemAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyAdvance && window.csPickleballConnectionEasyAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-pricing-power' && window.csConnectionPricingPowerAdvance && window.csConnectionPricingPowerAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -43597,6 +43665,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketReverse && window.csPyramidMarketReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionReverse && window.csConnectionFirstEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-first-life' && window.csConnectionFirstLifeReverse && window.csConnectionFirstLifeReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-connected-first-problem' && window.csConnectedFirstProblemReverse && window.csConnectedFirstProblemReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyReverse && window.csPickleballConnectionEasyReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-pricing-power' && window.csConnectionPricingPowerReverse && window.csConnectionPricingPowerReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
