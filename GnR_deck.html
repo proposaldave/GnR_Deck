@@ -27572,7 +27572,53 @@ window.csConnectionPricingPowerReverse=function(){const s=document.getElementByI
 window.csGameIqCommunityEqAdvance=function(){const s=document.getElementById('cs-game-iq-community-eq-pink');if(!s)return false;if(s.dataset.stage!=='1'){s.dataset.stage='1';return true;}return false;};
 window.csGameIqCommunityEqReverse=function(){const s=document.getElementById('cs-game-iq-community-eq-pink');if(!s)return false;if(s.dataset.stage==='1'){s.dataset.stage='0';return true;}return false;};
 </script>
+<style>
+  #cs-connection-first-evolution{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
+  #cs-connection-first-evolution .cfe-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block!important;z-index:0;filter:saturate(1.04) contrast(1.02) brightness(1.01);pointer-events:none}
+  #cs-connection-first-evolution .cfe-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.97) 0%,rgba(251,247,239,.90) 22%,rgba(251,247,239,.62) 42%,rgba(251,247,239,.16) 64%,rgba(26,22,18,.10) 100%),radial-gradient(ellipse at 25% 53%,rgba(251,247,239,.96) 0%,rgba(251,247,239,.74) 38%,rgba(251,247,239,0) 66%)}
+  #cs-connection-first-evolution .cfe-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.05) 1px,transparent 0);background-size:4px 4px;opacity:.42;mix-blend-mode:multiply}
+  #cs-connection-first-evolution .slide-eyebrow{position:absolute;top:28px!important;left:48px!important;z-index:6;font-family:'Manrope',sans-serif!important;font-size:.58rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#C8462C!important;background:transparent!important;padding:0!important;border:0!important;box-shadow:none!important;text-shadow:none!important}
+  #cs-connection-first-evolution .cfe-stage{position:absolute;inset:0;z-index:3;display:grid;align-content:center;box-sizing:border-box;padding:116px 74px 82px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s}
+  #cs-connection-first-evolution[data-stage="1"] .cfe-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-connection-first-evolution .cfe-copy{max-width:900px;text-shadow:0 3px 0 rgba(251,247,239,.84),0 18px 54px rgba(251,247,239,.82)}
+  #cs-connection-first-evolution .cfe-head{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,6.4vw,7.25rem);line-height:.92;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance}
+  #cs-connection-first-evolution .cfe-head em{display:block;font-style:italic;color:#B8954A;font-weight:820}
+  #cs-connection-first-evolution .cfe-sub{margin:28px 0 0;max-width:800px;font-family:'Manrope',sans-serif;font-size:clamp(1.02rem,1.22vw,1.28rem);line-height:1.42;font-weight:850;color:rgba(26,22,18,.72)}
+  #cs-connection-first-evolution .cfe-rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(900px,54vw);margin-top:38px}
+  #cs-connection-first-evolution .cfe-step{min-height:82px;padding:15px 15px 13px;border:1px solid rgba(184,149,74,.28);background:rgba(251,247,239,.78);box-shadow:0 16px 34px rgba(26,22,18,.08);border-radius:8px;font-family:'Manrope',sans-serif;color:rgba(26,22,18,.64)}
+  #cs-connection-first-evolution .cfe-step b{display:block;margin-bottom:8px;font-size:.64rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.50)}
+  #cs-connection-first-evolution .cfe-step span{display:block;font-size:1.04rem;line-height:1.1;font-weight:900;color:#1a1612}
+  #cs-connection-first-evolution .cfe-step:nth-child(2){border-top:4px solid #C8462C}
+  #cs-connection-first-evolution .cfe-step:nth-child(3){border-top:4px solid #5B8FD4}
+  #cs-connection-first-evolution .cfe-step.final{border-color:rgba(184,149,74,.50);border-top:4px solid #B8954A;background:rgba(251,247,239,.92);box-shadow:0 22px 48px rgba(184,149,74,.20)}
+  #cs-connection-first-evolution .cfe-step.final span{color:#B8954A}
+  @media (max-width: 1100px){#cs-connection-first-evolution .cfe-stage{padding:94px 48px 66px}#cs-connection-first-evolution .cfe-copy{max-width:760px}#cs-connection-first-evolution .cfe-rail{width:min(760px,72vw);grid-template-columns:repeat(2,minmax(0,1fr))}}
+  html[data-export="1"] #cs-connection-first-evolution .cfe-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-connection-first-evolution" data-stage="0" onclick="if(window.csConnectionFirstEvolutionAdvance&&window.csConnectionFirstEvolutionAdvance()){event.stopPropagation();}" style="display:none" aria-label="The next era is connection-first">
+  <img class="cfe-bg" src="assets/generated/connection-first-evolution/connection-first-evolution-v1.png" alt="Text-free generated image: pickleball evolves from loose open play into a warm connection-first community scene."/>
+  <div class="cfe-wash" aria-hidden="true"></div>
+  <div class="cfe-paper" aria-hidden="true"></div>
+  <div class="slide-eyebrow">connection-first</div>
+  <section class="cfe-stage" aria-hidden="false">
+    <div class="cfe-copy">
+      <h1 class="cfe-head">The next era is <em>connection-first.</em></h1>
+      <p class="cfe-sub">Beyond who plays best. Beyond who creates value. Everyone feels connected first.</p>
+      <div class="cfe-rail" aria-hidden="true">
+        <div class="cfe-step"><b>01</b><span>Fence chaos</span></div>
+        <div class="cfe-step"><b>02</b><span>Rating-first</span></div>
+        <div class="cfe-step"><b>03</b><span>Choice data</span></div>
+        <div class="cfe-step final"><b>04</b><span>Connection-first</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+window.csConnectionFirstEvolutionAdvance=function(){const s=document.getElementById('cs-connection-first-evolution');if(!s)return false;if(s.dataset.stage!=='1'){s.dataset.stage='1';return true;}return false;};
+window.csConnectionFirstEvolutionReverse=function(){const s=document.getElementById('cs-connection-first-evolution');if(!s)return false;if(s.dataset.stage==='1'){s.dataset.stage='0';return true;}return false;};
+</script>
 <div class="casey-slide ds-focus" id="cs-samecourt-pink3" style="display:none">
+
   <img class="scf3-bg" src="assets/cs-samecourt-pink3.png" alt="Warehouse-scale pickleball facility filled with players at golden hour — courts, action, community gathering." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="scf3-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-18] Eyebrow ? headline SWAPPED. Eyebrow now carries the slide-mechanic label ("Flip the incentive ? Unleash connection & community"); the Munger quote is promoted to the slide HEADER. -->
@@ -39304,6 +39350,7 @@ const SLIDE_ORDER = [
   'cs-money-marketplace-fee',
   'cs-revenue-util-profit-blue',
   'cs-samecourt-pyramid-image-led-pink',
+  'cs-connection-first-evolution',
   'cs-networked-reciprocity',
   'cs-mv6-merge',
 ];
@@ -41802,8 +41849,9 @@ const slideLabels = [
   'Money: marketplace fee on paid experiences', // 28 cs-money-marketplace-fee
   'Same courts / utilization / net profit', // 29 cs-revenue-util-profit-blue
   'Pyramid: rating-first top / connection-first base', // 30 cs-samecourt-pyramid-image-led-pink
-  'Networked reciprocity breakthrough', // 31 cs-networked-reciprocity
-  'Mission: abundant connection', // 32 cs-mv6-merge
+  'The next era is connection-first', // 31 cs-connection-first-evolution
+  'Networked reciprocity breakthrough', // 32 cs-networked-reciprocity
+  'Mission: abundant connection', // 33 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -42630,6 +42678,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-social-pickleball-paradigm': 'csSocialPickleballParadigmAdvance',
     'cs-old-new-paradigm': 'csOldNewParadigmAdvance',
     'cs-samecourt-pyramid-image-led-pink': 'csPyramidMarketAdvance',
+    'cs-connection-first-evolution': 'csConnectionFirstEvolutionAdvance',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueAdvance',
     'cs-connection-value-ladder-pink': 'csConnectionValueLadderAdvance',
     'cs-connection-pricing-power': 'csConnectionPricingPowerAdvance',
@@ -42723,6 +42772,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-social-pickleball-paradigm': 'csSocialPickleballParadigmReverse',
     'cs-old-new-paradigm': 'csOldNewParadigmReverse',
     'cs-samecourt-pyramid-image-led-pink': 'csPyramidMarketReverse',
+    'cs-connection-first-evolution': 'csConnectionFirstEvolutionReverse',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueReverse',
     'cs-connection-value-ladder-pink': 'csConnectionValueLadderReverse',
     'cs-connection-pricing-power': 'csConnectionPricingPowerReverse',
@@ -43087,6 +43137,7 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-old-new-paradigm' && window.csOldNewParadigmAdvance && window.csOldNewParadigmAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketAdvance && window.csPyramidMarketAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionAdvance && window.csConnectionFirstEvolutionAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyAdvance && window.csPickleballConnectionEasyAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-pricing-power' && window.csConnectionPricingPowerAdvance && window.csConnectionPricingPowerAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexAdvance && window.csWedgepbCodexAdvance()) {
@@ -43288,6 +43339,7 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-old-new-paradigm' && window.csOldNewParadigmReverse && window.csOldNewParadigmReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketReverse && window.csPyramidMarketReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionReverse && window.csConnectionFirstEvolutionReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyReverse && window.csPickleballConnectionEasyReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-pricing-power' && window.csConnectionPricingPowerReverse && window.csConnectionPricingPowerReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexReverse && window.csWedgepbCodexReverse()) {
@@ -43456,6 +43508,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketAdvance && window.csPyramidMarketAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionAdvance && window.csConnectionFirstEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyAdvance && window.csPickleballConnectionEasyAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-pricing-power' && window.csConnectionPricingPowerAdvance && window.csConnectionPricingPowerAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -43498,6 +43551,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketReverse && window.csPyramidMarketReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionReverse && window.csConnectionFirstEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyReverse && window.csPickleballConnectionEasyReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-pricing-power' && window.csConnectionPricingPowerReverse && window.csConnectionPricingPowerReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
