@@ -27617,6 +27617,43 @@ window.csGameIqCommunityEqReverse=function(){const s=document.getElementById('cs
 window.csConnectionFirstEvolutionAdvance=function(){const s=document.getElementById('cs-connection-first-evolution');if(!s)return false;if(s.dataset.stage!=='1'){s.dataset.stage='1';return true;}return false;};
 window.csConnectionFirstEvolutionReverse=function(){const s=document.getElementById('cs-connection-first-evolution');if(!s)return false;if(s.dataset.stage==='1'){s.dataset.stage='0';return true;}return false;};
 </script>
+<style>
+  #cs-connection-first-life{background:#1a1612!important;overflow:hidden;cursor:pointer;color:#fbf7ef}
+  #cs-connection-first-life .cfl-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block!important;z-index:0;filter:saturate(1.02) contrast(1.03) brightness(.98);pointer-events:none}
+  #cs-connection-first-life .cfl-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(9,12,16,.82) 0%,rgba(15,16,17,.66) 23%,rgba(26,22,18,.25) 46%,rgba(26,22,18,.05) 73%,rgba(26,22,18,.10) 100%),radial-gradient(ellipse at 29% 47%,rgba(26,22,18,.26) 0%,rgba(26,22,18,.13) 35%,rgba(26,22,18,0) 68%)}
+  #cs-connection-first-life .cfl-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(251,247,239,.10) 1px,transparent 0);background-size:4px 4px;opacity:.28;mix-blend-mode:screen}
+  #cs-connection-first-life .slide-eyebrow{position:absolute;top:28px!important;left:48px!important;z-index:6;display:inline-block;padding:6px 9px 6px 10px;background:rgba(251,247,239,.86);border:1px solid rgba(184,149,74,.22);box-shadow:0 12px 28px rgba(0,0,0,.20);font-family:'Manrope',sans-serif!important;font-size:.58rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#C8462C!important;text-shadow:0 1px 0 rgba(251,247,239,.95)}
+  #cs-connection-first-life .cfl-stage{position:absolute;inset:0;z-index:3;display:grid;align-content:center;box-sizing:border-box;padding:114px 70px 78px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
+  #cs-connection-first-life[data-stage="1"] .cfl-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-connection-first-life .cfl-copy{max-width:880px;text-shadow:0 16px 50px rgba(0,0,0,.54),0 3px 0 rgba(0,0,0,.28)}
+  #cs-connection-first-life .cfl-head{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.15rem,6.15vw,7.05rem);line-height:.92;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance}
+  #cs-connection-first-life .cfl-head em{display:block;margin-top:6px;font-style:italic;color:#B8954A;font-weight:840}
+  #cs-connection-first-life .cfl-sub{display:inline-block;margin:28px 0 0;padding:10px 14px 11px;max-width:760px;background:rgba(26,22,18,.50);border:1px solid rgba(251,247,239,.18);box-shadow:0 20px 44px rgba(0,0,0,.22);font-family:'Manrope',sans-serif;font-size:clamp(1.02rem,1.22vw,1.30rem);line-height:1.38;font-weight:850;color:#fbf7ef;text-shadow:0 2px 8px rgba(0,0,0,.55)}
+  #cs-connection-first-life .cfl-words{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px;max-width:780px}
+  #cs-connection-first-life .cfl-words span{display:inline-grid;place-items:center;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid rgba(251,247,239,.26);background:rgba(251,247,239,.13);box-shadow:0 12px 28px rgba(0,0,0,.18);font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:#fbf7ef;backdrop-filter:blur(4px)}
+  #cs-connection-first-life .cfl-words span:nth-child(2){border-color:rgba(91,143,212,.42)}
+  #cs-connection-first-life .cfl-words span:nth-child(3){border-color:rgba(184,149,74,.52)}
+  #cs-connection-first-life .cfl-words span:nth-child(4){border-color:rgba(200,70,44,.42)}
+  html[data-export="1"] #cs-connection-first-life .cfl-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+  @media (max-width:1100px){#cs-connection-first-life .cfl-stage{padding:96px 50px 66px}#cs-connection-first-life .cfl-copy{max-width:760px}#cs-connection-first-life .cfl-head{font-size:clamp(3.3rem,5.7vw,5.8rem)}#cs-connection-first-life .cfl-sub{font-size:clamp(.92rem,1.08vw,1.08rem)}}
+</style>
+<div class="casey-slide ds-focus" id="cs-connection-first-life" data-stage="0" onclick="if(window.csConnectionFirstLifeAdvance&&window.csConnectionFirstLifeAdvance()){event.stopPropagation();}" style="display:none" aria-label="GnR sells the life connection makes possible">
+  <img class="cfl-bg" src="assets/generated/connection-first-life/connection-first-life-v1.png" alt="Text-free generated image: a person with a smartphone stepping from isolation toward a warm connected real-world community."/>
+  <div class="cfl-wash" aria-hidden="true"></div>
+  <div class="cfl-paper" aria-hidden="true"></div>
+  <div class="slide-eyebrow">connected-first life</div>
+  <section class="cfl-stage" aria-hidden="false">
+    <div class="cfl-copy">
+      <h1 class="cfl-head">GnR sells the life <em>connection makes possible.</em></h1>
+      <p class="cfl-sub">Known. Invited. Useful. Missed when you are gone.</p>
+      <div class="cfl-words" aria-hidden="true"><span>known</span><span>invited</span><span>useful</span><span>missed</span></div>
+    </div>
+  </section>
+</div>
+<script>
+window.csConnectionFirstLifeAdvance=function(){const s=document.getElementById('cs-connection-first-life');if(!s)return false;if(s.dataset.stage!=='1'){s.dataset.stage='1';return true;}return false;};
+window.csConnectionFirstLifeReverse=function(){const s=document.getElementById('cs-connection-first-life');if(!s)return false;if(s.dataset.stage==='1'){s.dataset.stage='0';return true;}return false;};
+</script>
 <div class="casey-slide ds-focus" id="cs-samecourt-pink3" style="display:none">
 
   <img class="scf3-bg" src="assets/cs-samecourt-pink3.png" alt="Warehouse-scale pickleball facility filled with players at golden hour — courts, action, community gathering." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
@@ -39351,6 +39388,7 @@ const SLIDE_ORDER = [
   'cs-revenue-util-profit-blue',
   'cs-samecourt-pyramid-image-led-pink',
   'cs-connection-first-evolution',
+  'cs-connection-first-life',
   'cs-networked-reciprocity',
   'cs-mv6-merge',
 ];
@@ -41850,8 +41888,9 @@ const slideLabels = [
   'Same courts / utilization / net profit', // 29 cs-revenue-util-profit-blue
   'Pyramid: rating-first top / connection-first base', // 30 cs-samecourt-pyramid-image-led-pink
   'The next era is connection-first', // 31 cs-connection-first-evolution
-  'Networked reciprocity breakthrough', // 32 cs-networked-reciprocity
-  'Mission: abundant connection', // 33 cs-mv6-merge
+  'A connected-first life', // 32 cs-connection-first-life
+  'Networked reciprocity breakthrough', // 33 cs-networked-reciprocity
+  'Mission: abundant connection', // 34 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -42679,6 +42718,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-old-new-paradigm': 'csOldNewParadigmAdvance',
     'cs-samecourt-pyramid-image-led-pink': 'csPyramidMarketAdvance',
     'cs-connection-first-evolution': 'csConnectionFirstEvolutionAdvance',
+    'cs-connection-first-life': 'csConnectionFirstLifeAdvance',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueAdvance',
     'cs-connection-value-ladder-pink': 'csConnectionValueLadderAdvance',
     'cs-connection-pricing-power': 'csConnectionPricingPowerAdvance',
@@ -42773,6 +42813,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-old-new-paradigm': 'csOldNewParadigmReverse',
     'cs-samecourt-pyramid-image-led-pink': 'csPyramidMarketReverse',
     'cs-connection-first-evolution': 'csConnectionFirstEvolutionReverse',
+    'cs-connection-first-life': 'csConnectionFirstLifeReverse',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueReverse',
     'cs-connection-value-ladder-pink': 'csConnectionValueLadderReverse',
     'cs-connection-pricing-power': 'csConnectionPricingPowerReverse',
@@ -43138,6 +43179,7 @@ document.addEventListener('wheel', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-old-new-paradigm' && window.csOldNewParadigmAdvance && window.csOldNewParadigmAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketAdvance && window.csPyramidMarketAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionAdvance && window.csConnectionFirstEvolutionAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-life' && window.csConnectionFirstLifeAdvance && window.csConnectionFirstLifeAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyAdvance && window.csPickleballConnectionEasyAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-pricing-power' && window.csConnectionPricingPowerAdvance && window.csConnectionPricingPowerAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexAdvance && window.csWedgepbCodexAdvance()) {
@@ -43340,6 +43382,7 @@ document.addEventListener('wheel', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-old-new-paradigm' && window.csOldNewParadigmReverse && window.csOldNewParadigmReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketReverse && window.csPyramidMarketReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionReverse && window.csConnectionFirstEvolutionReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-first-life' && window.csConnectionFirstLifeReverse && window.csConnectionFirstLifeReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyReverse && window.csPickleballConnectionEasyReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-pricing-power' && window.csConnectionPricingPowerReverse && window.csConnectionPricingPowerReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexReverse && window.csWedgepbCodexReverse()) {
@@ -43509,6 +43552,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketAdvance && window.csPyramidMarketAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionAdvance && window.csConnectionFirstEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-connection-first-life' && window.csConnectionFirstLifeAdvance && window.csConnectionFirstLifeAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyAdvance && window.csPickleballConnectionEasyAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-pricing-power' && window.csConnectionPricingPowerAdvance && window.csConnectionPricingPowerAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -43552,6 +43596,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketReverse && window.csPyramidMarketReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-first-evolution' && window.csConnectionFirstEvolutionReverse && window.csConnectionFirstEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-connection-first-life' && window.csConnectionFirstLifeReverse && window.csConnectionFirstLifeReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyReverse && window.csPickleballConnectionEasyReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-pricing-power' && window.csConnectionPricingPowerReverse && window.csConnectionPricingPowerReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
