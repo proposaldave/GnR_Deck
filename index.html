@@ -9607,7 +9607,39 @@ window.cs1m8InviteGraphBlueReverse = function(){
   return true;
 };
 </script>
+<style>
+  #cs-pickleball-connection-easy{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
+  #cs-pickleball-connection-easy .pce-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block!important;z-index:0;filter:saturate(1.04) contrast(1.02) brightness(1.01);pointer-events:none}
+  #cs-pickleball-connection-easy .pce-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.88) 22%,rgba(251,247,239,.55) 42%,rgba(251,247,239,.14) 62%,rgba(26,22,18,.10) 100%),radial-gradient(ellipse at 26% 50%,rgba(251,247,239,.96) 0%,rgba(251,247,239,.72) 39%,rgba(251,247,239,0) 66%)}
+  #cs-pickleball-connection-easy .pce-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(26,22,18,.055) 1px,transparent 0);background-size:4px 4px;opacity:.42;mix-blend-mode:multiply}
+  #cs-pickleball-connection-easy .slide-eyebrow{position:absolute;top:28px!important;left:48px!important;z-index:5;font-family:'Manrope',sans-serif!important;font-size:.58rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#C8462C!important;background:transparent!important;padding:0!important;border:0!important;box-shadow:none!important;text-shadow:none!important}
+  #cs-pickleball-connection-easy .pce-stage{position:absolute;inset:0;z-index:3;display:grid;align-content:center;box-sizing:border-box;padding:112px 76px 84px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s}
+  #cs-pickleball-connection-easy[data-stage="1"] .pce-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-pickleball-connection-easy .pce-copy{max-width:900px;text-shadow:0 3px 0 rgba(251,247,239,.86),0 18px 54px rgba(251,247,239,.82)}
+  #cs-pickleball-connection-easy .pce-head{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:5.75rem;line-height:.96;font-weight:900;letter-spacing:0;color:#1a1612;text-wrap:balance}
+  #cs-pickleball-connection-easy .pce-head em{font-style:italic;color:#B8954A;font-weight:820}
+  #cs-pickleball-connection-easy .pce-rule{width:168px;height:2px;margin:34px 0 0;background:linear-gradient(90deg,#5B8FD4,#B8954A,#C8462C);border-radius:999px;box-shadow:0 8px 24px rgba(184,149,74,.22)}
+  @media (max-width: 1100px){#cs-pickleball-connection-easy .pce-stage{padding:96px 52px 72px}#cs-pickleball-connection-easy .pce-copy{max-width:760px}#cs-pickleball-connection-easy .pce-head{font-size:4.45rem}}
+  html[data-export="1"] #cs-pickleball-connection-easy .pce-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+</style>
+<div class="casey-slide ds-focus" id="cs-pickleball-connection-easy" data-stage="0" onclick="if(window.csPickleballConnectionEasyAdvance&&window.csPickleballConnectionEasyAdvance()){event.stopPropagation();}" style="display:none" aria-label="Pickleball is the number one activity today that makes connection easy">
+  <img class="pce-bg" src="assets/generated/pickleball-connection-easy/pickleball-connection-easy-v1.png" alt="Text-free generated image: warm social pickleball courts where people connect through games, sideline conversations, and welcoming rotations."/>
+  <div class="pce-wash" aria-hidden="true"></div>
+  <div class="pce-paper" aria-hidden="true"></div>
+  <div class="slide-eyebrow">the wedge</div>
+  <section class="pce-stage" aria-hidden="false">
+    <div class="pce-copy">
+      <h1 class="pce-head">Pickleball is the <em>#1 activity today</em> that makes connection easy.</h1>
+      <div class="pce-rule" aria-hidden="true"></div>
+    </div>
+  </section>
+</div>
+<script>
+window.csPickleballConnectionEasyAdvance=function(){const s=document.getElementById('cs-pickleball-connection-easy');if(!s)return false;if(s.dataset.stage!=='1'){s.dataset.stage='1';return true;}return false;};
+window.csPickleballConnectionEasyReverse=function(){const s=document.getElementById('cs-pickleball-connection-easy');if(!s)return false;if(s.dataset.stage==='1'){s.dataset.stage='0';return true;}return false;};
+</script>
 <!-- [Dave 2026-05-24] BLACK-DOT rollback backup of cs-1m8 before spirit/community + network digitizes copy edit. -->
+
 <div class="casey-slide ds-measure trash-slide" id="cs-1m8-black-backup" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
@@ -39244,6 +39276,7 @@ window.csA7m1Reverse = function() {
 const SLIDE_ORDER = [
   'cs-frontier-scale-pink-2',
   'cs-1m8-invite-graph-blue',
+  'cs-pickleball-connection-easy',
   'cs-tesla-community-value-pink',
   'cs-connection-value-ladder-pink',
   'cs-connection-pricing-power',
@@ -39283,13 +39316,13 @@ const TOTAL = SLIDE_ORDER.length;
 const SLIDE_ALTS = {
   1: ['cs-value-choice-image-annotated-pink'],
   2: ['cs-1m8'],
-  4: ['cs-connection-pickleball-merge-pyramid-pink', 'cs-connection-pickleball-merge-scale-pink', 'cs-connection-pickleball-merge-map-pink'],
-  7: ['cs-p10x-community-problem'],
-  17: ['cs-old-new-paradigm-simple-white'],
-  18: ['cs-connection-market-simple-white'],
-  20: ['cs-fv6-referral-engine-blue'],
-  21: ['cs-fv6-img'],
-  23: ['cs-referral-community-intelligence', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
+  5: ['cs-connection-pickleball-merge-pyramid-pink', 'cs-connection-pickleball-merge-scale-pink', 'cs-connection-pickleball-merge-map-pink'],
+  8: ['cs-p10x-community-problem'],
+  18: ['cs-old-new-paradigm-simple-white'],
+  19: ['cs-connection-market-simple-white'],
+  21: ['cs-fv6-referral-engine-blue'],
+  22: ['cs-fv6-img'],
+  24: ['cs-referral-community-intelligence', 'cs-fv6-host-abundance-pink', 'cs-host-abundance-simple-white', 'cs-best-match-connection-value-pink', 'cs-game-iq-community-eq-pink'],
 };
 
 // [Codex 2026-05-26] Green-dot background-image review alts.
@@ -41741,35 +41774,36 @@ const slideLabels = [
   null,
   '#1 predictor of a fulfilling life', //  1 cs-frontier-scale-pink-2
   'The invitation engine for community builders', //  2 cs-1m8-invite-graph-blue
-  'Market size: people spend fortunes trying to feel alive', //  3 cs-tesla-community-value-pink
-  'Connection value has no ceiling', //  4 cs-connection-value-ladder-pink
-  'Connection is the pricing power', //  5 cs-connection-pricing-power
-  'Loneliness epidemic', //  6 cs-loneliness-epidemic
-  'Core problem: reciprocal community fit', //  7 cs-community-reciprocity-problem
-  'The most networkable, untapped dataset on the planet', //  8 cs-thegap
-  'Custom invitations don\'t scale.', //  9 cs-invite-operational-insanity-pink
-  'The rise of the personalized invitation feed', // 10 cs-gnr
-  'Community builder product', // 11 cs-community-builder-product
-  'Referrals: community sales engine', // 12 cs-invitation-word-of-mouth
-  'The best communities are built by human connection leaders', // 13 cs-community-builder-leaders
-  'Community builder engine', // 14 cs-community-builder-engine
-  'AI phone calls: right person, right question', // 15 cs-ai-live-call-loop
-  'AI pro caller: unlimited personal outreach', // 16 cs-ai-pro-caller-scale
-  'Old paradigm to new paradigm', // 17 cs-old-new-paradigm
-  'Connection market', // 18 cs-real-world-measurable-market
-  'Workout high to connection high', // 19 cs-connection-workout-high
-  'Social fitness habit', // 20 cs-social-fitness-high
-  'NEPC proof / proving ground', // 21 cs-11e
-  'Dave Velardo - Founder - CEO', // 22 cs-18-vd4
-  'Community intelligence full-bleed attempt 1', // 23 cs-referral-community-fullbleed-v1
-  'Community intelligence full-bleed attempt 2', // 24 cs-referral-community-fullbleed-v2
-  'Community intelligence full-bleed attempt 3', // 25 cs-referral-community-fullbleed-v3
-  'AI phone calls become the learning engine', // 26 cs-phone-call-learning-engine
-  'Money: marketplace fee on paid experiences', // 27 cs-money-marketplace-fee
-  'Same courts / utilization / net profit', // 28 cs-revenue-util-profit-blue
-  'Pyramid: rating-first top / connection-first base', // 29 cs-samecourt-pyramid-image-led-pink
-  'Networked reciprocity breakthrough', // 30 cs-networked-reciprocity
-  'Mission: abundant connection', // 31 cs-mv6-merge
+  'Pickleball makes connection easy', //  3 cs-pickleball-connection-easy
+  'Market size: people spend fortunes trying to feel alive', //  4 cs-tesla-community-value-pink
+  'Connection value has no ceiling', //  5 cs-connection-value-ladder-pink
+  'Connection is the pricing power', //  6 cs-connection-pricing-power
+  'Loneliness epidemic', //  7 cs-loneliness-epidemic
+  'Core problem: reciprocal community fit', //  8 cs-community-reciprocity-problem
+  'The most networkable, untapped dataset on the planet', //  9 cs-thegap
+  'Custom invitations don\'t scale.', // 10 cs-invite-operational-insanity-pink
+  'The rise of the personalized invitation feed', // 11 cs-gnr
+  'Community builder product', // 12 cs-community-builder-product
+  'Referrals: community sales engine', // 13 cs-invitation-word-of-mouth
+  'The best communities are built by human connection leaders', // 14 cs-community-builder-leaders
+  'Community builder engine', // 15 cs-community-builder-engine
+  'AI phone calls: right person, right question', // 16 cs-ai-live-call-loop
+  'AI pro caller: unlimited personal outreach', // 17 cs-ai-pro-caller-scale
+  'Old paradigm to new paradigm', // 18 cs-old-new-paradigm
+  'Connection market', // 19 cs-real-world-measurable-market
+  'Workout high to connection high', // 20 cs-connection-workout-high
+  'Social fitness habit', // 21 cs-social-fitness-high
+  'NEPC proof / proving ground', // 22 cs-11e
+  'Dave Velardo - Founder - CEO', // 23 cs-18-vd4
+  'Community intelligence full-bleed attempt 1', // 24 cs-referral-community-fullbleed-v1
+  'Community intelligence full-bleed attempt 2', // 25 cs-referral-community-fullbleed-v2
+  'Community intelligence full-bleed attempt 3', // 26 cs-referral-community-fullbleed-v3
+  'AI phone calls become the learning engine', // 27 cs-phone-call-learning-engine
+  'Money: marketplace fee on paid experiences', // 28 cs-money-marketplace-fee
+  'Same courts / utilization / net profit', // 29 cs-revenue-util-profit-blue
+  'Pyramid: rating-first top / connection-first base', // 30 cs-samecourt-pyramid-image-led-pink
+  'Networked reciprocity breakthrough', // 31 cs-networked-reciprocity
+  'Mission: abundant connection', // 32 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -42546,6 +42580,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-feeling-beyond-brand': 'csFeelingAdvance',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkAdvance',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueAdvance',
+    'cs-pickleball-connection-easy': 'csPickleballConnectionEasyAdvance',
     'cs-tesla-community-value-pink': 'csTeslaCommunityValueAdvance',
     'cs-community-builder-product': 'csCommunityBuilderProductAdvance',
     'cs-community-builder-leaders': 'csCommunityBuilderLeadersAdvance',
@@ -42639,6 +42674,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-feeling-beyond-brand': 'csFeelingReverse',
     'cs-1m8-bg-reveal-pink': 'cs1m8BgRevealPinkReverse',
     'cs-1m8-invite-graph-blue': 'cs1m8InviteGraphBlueReverse',
+    'cs-pickleball-connection-easy': 'csPickleballConnectionEasyReverse',
     'cs-tesla-community-value-pink': 'csTeslaCommunityValueReverse',
     'cs-community-builder-product': 'csCommunityBuilderProductReverse',
     'cs-invitation-word-of-mouth': 'csInvitationWordOfMouthReverse',
@@ -43051,6 +43087,7 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-old-new-paradigm' && window.csOldNewParadigmAdvance && window.csOldNewParadigmAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketAdvance && window.csPyramidMarketAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyAdvance && window.csPickleballConnectionEasyAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-pricing-power' && window.csConnectionPricingPowerAdvance && window.csConnectionPricingPowerAdvance()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexAdvance && window.csWedgepbCodexAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -43251,6 +43288,7 @@ document.addEventListener('wheel', e => {
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-old-new-paradigm' && window.csOldNewParadigmReverse && window.csOldNewParadigmReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketReverse && window.csPyramidMarketReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyReverse && window.csPickleballConnectionEasyReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-connection-pricing-power' && window.csConnectionPricingPowerReverse && window.csConnectionPricingPowerReverse()) { setTimeout(() => { wheelLock = false; }, 400); return; }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-wedgepb-codex' && window.csWedgepbCodexReverse && window.csWedgepbCodexReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -43418,6 +43456,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstAdvance && window.csPbfirstAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtAdvance && window.csSamecourtAdvance()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketAdvance && window.csPyramidMarketAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyAdvance && window.csPickleballConnectionEasyAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-pricing-power' && window.csConnectionPricingPowerAdvance && window.csConnectionPricingPowerAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionAdvance && window.csWorkEvolutionAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && document.querySelector('#cs-community-builder-product-heart-pink.active') && window.csCommunityBuilderProductHeartPinkAdvance && window.csCommunityBuilderProductHeartPinkAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -43459,6 +43498,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-pbfirst' && window.csPbfirstReverse && window.csPbfirstReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-samecourt' && window.csSamecourtReverse && window.csSamecourtReverse()) { setTimeout(() => { touchLock = false; }, 600); return; }
       if (!inAppendix && slideId === 'cs-samecourt-pyramid-image-led-pink' && window.csPyramidMarketReverse && window.csPyramidMarketReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-pickleball-connection-easy' && window.csPickleballConnectionEasyReverse && window.csPickleballConnectionEasyReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-connection-pricing-power' && window.csConnectionPricingPowerReverse && window.csConnectionPricingPowerReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-work-evolution-prelude' && window.csWorkEvolutionReverse && window.csWorkEvolutionReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && document.querySelector('#cs-community-builder-product-heart-pink.active') && window.csCommunityBuilderProductHeartPinkReverse && window.csCommunityBuilderProductHeartPinkReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
