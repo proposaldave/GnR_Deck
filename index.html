@@ -27788,6 +27788,19 @@ window.csConnectedFirstProblemReverse=function(){const s=document.getElementById
   #cs-human-conversation-title-b .hc-copy{max-width:860px}
   #cs-human-conversation-thesis .hc-copy,#cs-human-conversation-ai-arc .hc-copy{max-width:900px}
   html[data-export="1"] #cs-human-conversation-title-a .hc-stage,html[data-export="1"] #cs-human-conversation-title-b .hc-stage,html[data-export="1"] #cs-human-conversation-feeling-signal .hc-stage,html[data-export="1"] #cs-human-conversation-thesis .hc-stage,html[data-export="1"] #cs-human-conversation-ai-arc .hc-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+  #cs-human-conversation-member-journey{background:#1a1612!important;overflow:hidden;cursor:pointer;color:#fbf7ef}
+  #cs-human-conversation-member-journey .hc-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block!important;z-index:0;filter:saturate(1.05) contrast(1.05) brightness(.78);pointer-events:none}
+  #cs-human-conversation-member-journey .hc-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(26,22,18,.76) 0%,rgba(26,22,18,.48) 34%,rgba(26,22,18,.12) 64%,rgba(26,22,18,.22) 100%)}
+  #cs-human-conversation-member-journey .hc-paper{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(circle at 26% 72%,rgba(184,149,74,.18),transparent 34%),radial-gradient(circle at 64% 42%,rgba(91,143,212,.12),transparent 36%);mix-blend-mode:screen;opacity:.72}
+  #cs-human-conversation-member-journey .slide-eyebrow{position:absolute;top:28px!important;left:48px!important;z-index:6;font-family:'Manrope',sans-serif!important;font-size:.58rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#C8462C!important;background:transparent!important;padding:0!important;border:0!important;box-shadow:none!important;text-shadow:0 2px 14px rgba(26,22,18,.88)}
+  #cs-human-conversation-member-journey .hc-stage{position:absolute;inset:0;z-index:3;display:grid;align-content:end;box-sizing:border-box;padding:112px 78px 74px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1),visibility 0s linear .72s;pointer-events:none}
+  #cs-human-conversation-member-journey[data-stage="1"] .hc-stage{opacity:1;visibility:visible;transform:none;transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
+  #cs-human-conversation-member-journey .hc-copy{max-width:900px;text-shadow:0 20px 54px rgba(0,0,0,.72),0 2px 0 rgba(0,0,0,.36)}
+  #cs-human-conversation-member-journey .hc-head{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.9rem,5.95vw,6.65rem);line-height:.92;font-weight:900;letter-spacing:0;color:#fbf7ef;text-wrap:balance}
+  #cs-human-conversation-member-journey .hc-head em{display:block;font-style:italic;color:#B8954A;font-weight:840}
+  #cs-human-conversation-member-journey .hc-sub{display:inline-block;margin:24px 0 0;padding:11px 15px 12px;max-width:780px;background:rgba(26,22,18,.70);border:1px solid rgba(184,149,74,.38);box-shadow:0 22px 54px rgba(0,0,0,.28);font-family:'Manrope',sans-serif;font-size:clamp(1rem,1.16vw,1.22rem);line-height:1.42;font-weight:850;color:#fbf7ef;text-shadow:none}
+  #cs-human-conversation-member-journey .hc-chip{display:inline-grid;place-items:center;min-height:42px;margin-top:22px;padding:0 16px;border-radius:999px;border:1px solid rgba(184,149,74,.58);background:rgba(184,149,74,.18);font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#fbf7ef}
+  html[data-export="1"] #cs-human-conversation-member-journey .hc-stage{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-human-conversation-title-a" data-stage="0" onclick="if(window.csHumanConversationTitleAAdvance&&window.csHumanConversationTitleAAdvance()){event.stopPropagation();}" style="display:none" aria-label="Human Conversation title concept A">
   <img class="hc-bg" src="assets/generated/human-conversation/human-conversation-title-v1.png" alt="Text-free generated image: AI-guided human voice connection leading into a warm community gathering."/>
@@ -27806,6 +27819,12 @@ window.csConnectedFirstProblemReverse=function(){const s=document.getElementById
   <div class="hc-wash" aria-hidden="true"></div><div class="hc-paper" aria-hidden="true"></div>
   <div class="slide-eyebrow">human conversation signal</div>
   <section class="hc-stage"><div class="hc-copy"><h1 class="hc-head">One human conversation <em>tells you how people feel.</em></h1><p class="hc-sub">Tone, pauses, warmth, hesitation, loneliness, trust: the signal is already in the call.</p><div class="hc-chip" aria-hidden="true">feeling is data</div></div></section>
+</div>
+<div class="casey-slide ds-focus" id="cs-human-conversation-member-journey" data-stage="0" onclick="if(window.csHumanConversationMemberJourneyAdvance&&window.csHumanConversationMemberJourneyAdvance()){event.stopPropagation();}" style="display:none" aria-label="Human Conversation member journey to connection leader">
+  <img class="hc-bg" src="assets/generated/member-journey/member-journey-leader-loop.png" alt="Text-free generated image: a new community member journeying from first visit through human phone call, connection high, and becoming a community leader."/>
+  <div class="hc-wash" aria-hidden="true"></div><div class="hc-paper" aria-hidden="true"></div>
+  <div class="slide-eyebrow">member journey</div>
+  <section class="hc-stage"><div class="hc-copy"><h1 class="hc-head">First visit. Connection high. <em>Connection leader.</em></h1><p class="hc-sub">A trusted call captures the signal. Better invites create the feeling. The member becomes the person who creates it for others.</p><div class="hc-chip" aria-hidden="true">conversation builds community</div></div></section>
 </div>
 <div class="casey-slide ds-focus" id="cs-human-conversation-thesis" data-stage="0" onclick="if(window.csHumanConversationThesisAdvance&&window.csHumanConversationThesisAdvance()){event.stopPropagation();}" style="display:none" aria-label="Human Conversation product thesis">
   <img class="hc-bg" src="assets/generated/human-conversation/human-conversation-ai-arc-v1.png" alt="Text-free generated image: community builder using AI-guided voice paths to reach people personally."/>
@@ -27828,6 +27847,8 @@ window.csHumanConversationTitleBAdvance=function(){return window.hcReviewAdvance
 window.csHumanConversationTitleBReverse=function(){return window.hcReviewReverse('cs-human-conversation-title-b');};
 window.csHumanConversationFeelingAdvance=function(){return window.hcReviewAdvance('cs-human-conversation-feeling-signal');};
 window.csHumanConversationFeelingReverse=function(){return window.hcReviewReverse('cs-human-conversation-feeling-signal');};
+window.csHumanConversationMemberJourneyAdvance=function(){return window.hcReviewAdvance('cs-human-conversation-member-journey');};
+window.csHumanConversationMemberJourneyReverse=function(){return window.hcReviewReverse('cs-human-conversation-member-journey');};
 window.csHumanConversationThesisAdvance=function(){return window.hcReviewAdvance('cs-human-conversation-thesis');};
 window.csHumanConversationThesisReverse=function(){return window.hcReviewReverse('cs-human-conversation-thesis');};
 window.csHumanConversationAiArcAdvance=function(){return window.hcReviewAdvance('cs-human-conversation-ai-arc');};
@@ -39574,6 +39595,7 @@ const SLIDE_ORDER = [
   'cs-human-conversation-title-a',
   'cs-human-conversation-title-b',
   'cs-human-conversation-feeling-signal',
+  'cs-human-conversation-member-journey',
   'cs-human-conversation-thesis',
   'cs-human-conversation-ai-arc',
   'cs-networked-reciprocity',
@@ -42078,14 +42100,15 @@ const slideLabels = [
   'The next era is connection-first', // 31 cs-connection-first-evolution
   'A connected-first life', // 32 cs-connection-first-life
   'Connected-first problem', // 33 cs-connected-first-problem
-  'Temporary investor email draft', // 34 cs-connected-first-investor-email
-  'Human Conversation title A', // 35 cs-human-conversation-title-a
-  'Human Conversation title B', // 36 cs-human-conversation-title-b
-  'Human Conversation feeling signal', // 37 cs-human-conversation-feeling-signal
-  'Human Conversation product thesis', // 38 cs-human-conversation-thesis
-  'Human Conversation AI arc', // 39 cs-human-conversation-ai-arc
-  'Networked reciprocity breakthrough', // 40 cs-networked-reciprocity
-  'Mission: abundant connection', // 41 cs-mv6-merge
+  'Temporary investor email draft', // 35 cs-connected-first-investor-email
+  'Human Conversation title A', // 36 cs-human-conversation-title-a
+  'Human Conversation title B', // 37 cs-human-conversation-title-b
+  'Human Conversation feeling signal', // 38 cs-human-conversation-feeling-signal
+  'Human Conversation member journey', // 39 cs-human-conversation-member-journey
+  'Human Conversation product thesis', // 40 cs-human-conversation-thesis
+  'Human Conversation AI arc', // 41 cs-human-conversation-ai-arc
+  'Networked reciprocity breakthrough', // 42 cs-networked-reciprocity
+  'Mission: abundant connection', // 43 cs-mv6-merge
 ];
 
 // --- Tooltip text resolver [Dave 2026-05-07] --------------------------------
@@ -42918,6 +42941,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-human-conversation-title-a': 'csHumanConversationTitleAAdvance',
     'cs-human-conversation-title-b': 'csHumanConversationTitleBAdvance',
     'cs-human-conversation-feeling-signal': 'csHumanConversationFeelingAdvance',
+    'cs-human-conversation-member-journey': 'csHumanConversationMemberJourneyAdvance',
     'cs-human-conversation-thesis': 'csHumanConversationThesisAdvance',
     'cs-human-conversation-ai-arc': 'csHumanConversationAiArcAdvance',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueAdvance',
@@ -43019,6 +43043,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-human-conversation-title-a': 'csHumanConversationTitleAReverse',
     'cs-human-conversation-title-b': 'csHumanConversationTitleBReverse',
     'cs-human-conversation-feeling-signal': 'csHumanConversationFeelingReverse',
+    'cs-human-conversation-member-journey': 'csHumanConversationMemberJourneyReverse',
     'cs-human-conversation-thesis': 'csHumanConversationThesisReverse',
     'cs-human-conversation-ai-arc': 'csHumanConversationAiArcReverse',
     'cs-best-match-connection-value-pink': 'csBestMatchConnectionValueReverse',
