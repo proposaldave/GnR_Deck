@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Member Journey Image Variations</title>
+  <style>
+    :root {
+      --paper:#fbf7ef;
+      --ink:#1a1612;
+      --gold:#b8954a;
+      --blue:#5b8fd4;
+      --red:#c8462c;
+      --line:rgba(26,22,18,.16);
+      --muted:rgba(26,22,18,.66);
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:Manrope,Inter,Arial,sans-serif;
+    }
+    main {
+      max-width:1500px;
+      margin:0 auto;
+      padding:44px 44px 58px;
+    }
+    .eyebrow {
+      margin:0 0 14px;
+      color:var(--red);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    h1 {
+      max-width:980px;
+      margin:0 0 18px;
+      font-family:Georgia,serif;
+      font-size:68px;
+      line-height:.94;
+      letter-spacing:0;
+    }
+    h1 em {
+      color:var(--red);
+      font-style:normal;
+    }
+    .lead {
+      max-width:1040px;
+      margin:0 0 30px;
+      color:var(--muted);
+      font-size:21px;
+      line-height:1.42;
+    }
+    .hero {
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      gap:26px;
+      align-items:stretch;
+      margin-bottom:24px;
+    }
+    .hero img,
+    .card img {
+      display:block;
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      background:#111;
+    }
+    .hero .copy {
+      border:2px solid var(--red);
+      padding:30px;
+      background:rgba(255,255,255,.35);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    h2 {
+      margin:0 0 12px;
+      font-family:Georgia,serif;
+      font-size:44px;
+      line-height:1;
+    }
+    p {
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.42;
+    }
+    .claim {
+      margin-top:8px;
+      color:var(--ink);
+      font-family:Georgia,serif;
+      font-size:29px;
+      line-height:1.12;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .card {
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.32);
+      padding:14px;
+    }
+    .card h3 {
+      margin:16px 0 7px;
+      font-family:Georgia,serif;
+      font-size:28px;
+      line-height:1;
+    }
+    .card p { font-size:15px; }
+    .tag {
+      display:inline-block;
+      margin-top:4px;
+      color:var(--red);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Generated member journey slide directions</div>
+    <h1>From first visit to <em>connection leader.</em></h1>
+    <p class="lead">The simplified investor story: a first experience earns trust, a human conversation captures the signal, the system routes the member into better moments, the member feels the connection high, then becomes the leader who creates it for others.</p>
+
+    <section class="hero">
+      <img src="member-journey-leader-loop.png" alt="Recommended generated member journey loop slide">
+      <div class="copy">
+        <div class="eyebrow">Recommended base image</div>
+        <h2>Leader Loop</h2>
+        <p>This is the strongest investor image. It shows the community as the center, the member journey as the loop, the phone call as the trust/data moment, and the end state as new leadership.</p>
+        <div class="claim">Human conversations turn first visits into connection leaders.</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <img src="member-journey-cinematic.png" alt="Cinematic generated member journey slide">
+        <span class="tag">Emotional montage</span>
+        <h3>Cinematic Journey</h3>
+        <p>Best for a human, premium deck background. Strong arrival-to-community arc, less explicit operating-system logic.</p>
+      </article>
+      <article class="card">
+        <img src="member-journey-operating-system.png" alt="Operating system generated member journey slide">
+        <span class="tag">Product logic</span>
+        <h3>Operating System</h3>
+        <p>Best for showing routing, data, and compounding community intelligence. Stronger product slide, slightly more technical.</p>
+      </article>
+      <article class="card">
+        <img src="member-journey-connection-high.png" alt="Connection high generated member journey slide">
+        <span class="tag">Simplest feeling</span>
+        <h3>Connection High</h3>
+        <p>Best for the emotional promise. Simple and memorable, but less complete as a full member-journey slide.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
