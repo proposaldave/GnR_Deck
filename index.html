@@ -8224,37 +8224,48 @@ window.cs1m5Reverse = function() {
 
 <!-- cs-loneliness-epidemic - early public-health problem framing [Codex 2026-06-18] -->
 <style>
-  #cs-loneliness-epidemic{background:#f3ead8!important;overflow:hidden;cursor:pointer;color:#1a1612}
-  #cs-loneliness-epidemic:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(243,234,216,.84) 0%,rgba(243,234,216,.68) 30%,rgba(243,234,216,.24) 54%,rgba(26,22,18,.16) 100%)}
-  #cs-loneliness-epidemic .lonely-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;filter:saturate(.98) contrast(1.05) brightness(.94)}
-  #cs-loneliness-epidemic .lonely-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;background:rgba(251,247,239,.78);padding:7px 10px;border-radius:2px;box-shadow:0 8px 24px rgba(26,22,18,.06)}
-  #cs-loneliness-epidemic .lonely-content{position:absolute;left:82px;right:82px;top:128px;bottom:82px;z-index:3;display:grid;grid-template-columns:minmax(520px,.92fr) minmax(620px,1.08fr);gap:42px;align-items:center;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .74s cubic-bezier(.22,1,.36,1),transform .74s cubic-bezier(.22,1,.36,1),visibility 0s linear .74s}
+  #cs-loneliness-epidemic{background:#1a1612!important;overflow:hidden;cursor:pointer;color:#fbf7ef}
+  #cs-loneliness-epidemic:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(12,10,8,.88) 0%,rgba(12,10,8,.74) 32%,rgba(12,10,8,.26) 57%,rgba(12,10,8,.06) 100%),linear-gradient(0deg,rgba(12,10,8,.42) 0%,rgba(12,10,8,0) 42%),radial-gradient(circle at 78% 20%,rgba(184,149,74,.12),transparent 34%)}
+  #cs-loneliness-epidemic .lonely-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;z-index:0;display:block;filter:saturate(.78) contrast(1.08) brightness(.78)}
+  #cs-loneliness-epidemic .lonely-eye{position:absolute;top:38px!important;left:52px!important;z-index:5;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:850;letter-spacing:.24em;text-transform:uppercase;color:#e96547;background:transparent!important;padding:0!important;border-radius:0!important;box-shadow:none!important;text-shadow:none!important}
+  #cs-loneliness-epidemic .lonely-eye:after{content:'';display:inline-block;width:54px;height:1px;margin:0 0 3px 16px;background:rgba(233,101,71,.64)}
+  #cs-loneliness-epidemic .lonely-content{position:absolute;left:88px;right:88px;top:112px;bottom:72px;z-index:3;display:grid;grid-template-columns:minmax(560px,.84fr) minmax(720px,1.16fr);gap:74px;align-items:center;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .74s cubic-bezier(.22,1,.36,1),transform .74s cubic-bezier(.22,1,.36,1),visibility 0s linear .74s}
   #cs-loneliness-epidemic[data-stage="1"] .lonely-content{opacity:1;visibility:visible;transform:none;transition:opacity .82s cubic-bezier(.22,1,.36,1),transform .82s cubic-bezier(.22,1,.36,1),visibility 0s linear 0s}
-  #cs-loneliness-epidemic .lonely-head{margin:0 0 24px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.65rem,5.25vw,6.08rem);font-weight:890;line-height:.93;letter-spacing:0;color:#1a1612;text-wrap:balance;text-shadow:0 2px 0 rgba(251,247,239,.94),0 18px 42px rgba(251,247,239,.82)}
-  #cs-loneliness-epidemic .lonely-head em{font-style:italic;color:#c8462c;font-weight:860}
-  #cs-loneliness-epidemic .lonely-sub{display:inline-block;max-width:760px;margin:0;padding:11px 15px 12px;background:rgba(251,247,239,.88);border:1px solid rgba(184,149,74,.28);box-shadow:0 14px 34px rgba(26,22,18,.12);font-family:'Manrope',sans-serif;font-size:clamp(1.04rem,1.28vw,1.32rem);font-weight:860;line-height:1.48;color:#1a1612;text-shadow:0 1px 0 rgba(251,247,239,.72)}
-  #cs-loneliness-epidemic .lonely-proof{display:grid;grid-template-rows:auto auto;gap:18px}
-  #cs-loneliness-epidemic .lonely-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  #cs-loneliness-epidemic .lonely-stat,#cs-loneliness-epidemic .lonely-chart{background:rgba(251,247,239,.78);border:1px solid rgba(184,149,74,.24);box-shadow:0 20px 52px rgba(26,22,18,.10),inset 0 1px 0 rgba(255,255,255,.68);backdrop-filter:blur(2px)}
-  #cs-loneliness-epidemic .lonely-stat{min-height:138px;padding:23px 24px 21px;display:flex;flex-direction:column;justify-content:center}
-  #cs-loneliness-epidemic .lonely-num{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.05rem,4.25vw,4.92rem);font-weight:900;line-height:.86;color:#b8954a;letter-spacing:0}
+  #cs-loneliness-epidemic .lonely-content>section{min-height:0!important;width:auto!important}
+  #cs-loneliness-epidemic .lonely-content>section:first-child{display:block!important;align-self:center;max-width:650px;padding-bottom:24px}
+  #cs-loneliness-epidemic .lonely-head{margin:0 0 30px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.25rem,5.2vw,5.9rem);font-weight:880;line-height:.92;letter-spacing:-.025em;color:#fbf7ef;text-wrap:balance;text-shadow:0 20px 48px rgba(0,0,0,.30)}
+  #cs-loneliness-epidemic .lonely-head em{display:block;margin-top:10px;font-style:italic;color:#e96547;font-weight:860}
+  #cs-loneliness-epidemic .lonely-sub{display:block;position:relative;max-width:590px;margin:0;padding:0 0 0 22px;background:transparent;border:0;border-left:3px solid #b8954a;box-shadow:none;font-family:'Manrope',sans-serif;font-size:clamp(1.08rem,1.32vw,1.42rem);font-weight:650;line-height:1.5;color:rgba(251,247,239,.84);text-shadow:0 8px 28px rgba(0,0,0,.28)}
+  #cs-loneliness-epidemic .lonely-proof{display:block!important;min-height:0!important;width:auto!important;align-self:end;margin-bottom:8px;padding:38px 40px 30px;background:rgba(251,247,239,.94)!important;border:1px solid rgba(251,247,239,.56);border-top:4px solid #c8462c;box-shadow:0 28px 72px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.74);backdrop-filter:blur(12px);color:#1a1612}
+  #cs-loneliness-epidemic .lonely-stats{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  #cs-loneliness-epidemic .lonely-stat{min-height:134px;padding:0 28px;display:flex;flex-direction:column;justify-content:center;background:transparent;border:0;box-shadow:none;backdrop-filter:none}
+  #cs-loneliness-epidemic .lonely-stat:first-child{padding-left:0}
+  #cs-loneliness-epidemic .lonely-stat:nth-child(2){border-left:1px solid rgba(26,22,18,.13)}
+  #cs-loneliness-epidemic .lonely-num{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.55rem,4.35vw,4.85rem);font-weight:900;line-height:.84;color:#b8954a;letter-spacing:-.035em}
   #cs-loneliness-epidemic .lonely-stat:nth-child(2) .lonely-num{color:#5b8fd4}
-  #cs-loneliness-epidemic .lonely-stat span:last-child{margin-top:13px;font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;line-height:1.45;color:rgba(26,22,18,.68)}
-  #cs-loneliness-epidemic .lonely-chart{padding:24px 28px 22px}
-  #cs-loneliness-epidemic .lonely-chart-title{margin-bottom:18px;font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:950;letter-spacing:.2em;text-transform:uppercase;color:#c8462c}
-  #cs-loneliness-epidemic .lonely-compare{display:grid;gap:14px;font-family:'Manrope',sans-serif}
-  #cs-loneliness-epidemic .lonely-compare-row{display:grid;grid-template-columns:minmax(178px,.9fr) 98px 98px minmax(180px,1fr);align-items:center;gap:13px;padding:15px 0;border-top:1px solid rgba(26,22,18,.10)}
+  #cs-loneliness-epidemic .lonely-stat span:last-child{margin-top:15px;font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;line-height:1.4;color:rgba(26,22,18,.62)}
+  #cs-loneliness-epidemic .lonely-chart{padding:0;background:transparent;border:0;box-shadow:none;backdrop-filter:none}
+  #cs-loneliness-epidemic .lonely-chart-title{margin:28px 0 2px;padding-top:28px;border-top:1px solid rgba(26,22,18,.13);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.42rem,1.65vw,1.78rem);font-weight:860;letter-spacing:-.01em;text-transform:none;color:#1a1612}
+  #cs-loneliness-epidemic .lonely-compare{display:grid;gap:0;font-family:'Manrope',sans-serif}
+  #cs-loneliness-epidemic .lonely-compare-row{display:grid;grid-template-columns:minmax(220px,1.25fr) 90px 100px minmax(140px,.8fr);align-items:center;gap:16px;padding:20px 0;border-top:1px solid rgba(26,22,18,.10)}
   #cs-loneliness-epidemic .lonely-compare-row:first-child{border-top:0}
-  #cs-loneliness-epidemic .lonely-metric{font-size:.76rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;line-height:1.35;color:rgba(26,22,18,.64)}
-  #cs-loneliness-epidemic .lonely-year{font-size:.66rem;font-weight:950;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,22,18,.48)}
-  #cs-loneliness-epidemic .lonely-year b{display:block;margin-top:4px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.08rem;font-weight:880;line-height:.92;letter-spacing:0;color:#b8954a}
+  #cs-loneliness-epidemic .lonely-metric{font-size:.70rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;line-height:1.45;color:rgba(26,22,18,.58)}
+  #cs-loneliness-epidemic .lonely-year{font-size:.61rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,22,18,.42)}
+  #cs-loneliness-epidemic .lonely-year b{display:block;margin-top:5px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.16rem;font-weight:880;line-height:.88;letter-spacing:-.02em;color:#b8954a}
+  #cs-loneliness-epidemic .lonely-year.now{position:relative;padding-left:18px}
+  #cs-loneliness-epidemic .lonely-year.now:before{content:'\2192';position:absolute;left:-10px;bottom:4px;font-family:'Manrope',sans-serif;font-size:1.05rem;font-weight:700;color:rgba(26,22,18,.28)}
   #cs-loneliness-epidemic .lonely-year.now b{color:#c8462c}
-  #cs-loneliness-epidemic .lonely-takeaway{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:760;line-height:1.04;color:#1a1612;text-wrap:balance}
-  #cs-loneliness-epidemic .lonely-source{margin-top:18px;font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:rgba(26,22,18,.46)}
+  #cs-loneliness-epidemic .lonely-takeaway{justify-self:end;padding:7px 10px;border-radius:999px;background:rgba(200,70,44,.08);font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:900;line-height:1.15;color:#9f351f;text-align:center;white-space:nowrap}
+  #cs-loneliness-epidemic .lonely-source{margin-top:13px;padding-top:15px;border-top:1px solid rgba(26,22,18,.10);font-family:'Manrope',sans-serif;font-size:.57rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:rgba(26,22,18,.38)}
   #cs-loneliness-epidemic .lonely-hint{display:none}
   #cs-loneliness-epidemic[data-stage="1"] .lonely-hint{opacity:0}
   html[data-export="1"] #cs-loneliness-epidemic .lonely-content{opacity:1!important;visibility:visible!important;transform:none!important}
   html[data-export="1"] #cs-loneliness-epidemic .lonely-hint{display:none!important}
+  @media (max-width:1400px){
+    #cs-loneliness-epidemic .lonely-content{left:64px;right:64px;gap:48px;grid-template-columns:minmax(480px,.82fr) minmax(640px,1.18fr)}
+    #cs-loneliness-epidemic .lonely-proof{padding:32px 32px 26px}
+    #cs-loneliness-epidemic .lonely-compare-row{grid-template-columns:minmax(190px,1.15fr) 78px 88px minmax(128px,.72fr);gap:12px}
+  }
 </style>
 <div class="casey-slide ds-focus" id="cs-loneliness-epidemic" data-stage="0" onclick="if(window.csLonelinessEpidemicAdvance && window.csLonelinessEpidemicAdvance()) event.stopPropagation()" style="display:none">
   <img class="lonely-bg" src="assets/generated/loneliness-epidemic/loneliness-smartphone-isolation-v1.png" alt="One isolated person alone at night holding a glowing smartphone, emphasizing loneliness, depression, and disconnection without a real person to call">
